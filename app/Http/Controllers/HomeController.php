@@ -31,7 +31,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        SendBirthdaySms::dispatch();
         $ads=Ads::latest()->get();
         $blogs= Blog::latest()->take(3)->get();
         $businesses=Business::all();
