@@ -126,7 +126,7 @@
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group mb-0">
                                                         <select class="js-example-basic-single" name="city_id">
-                                                            <option value="">Şehir Seçiniz 1</option>
+                                                            <option value="">Şehir Seçiniz</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name}}</option>
                                                             @empty
