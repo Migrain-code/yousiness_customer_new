@@ -113,7 +113,7 @@
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group mb-0">
                                                         <select class="js-example-basic-single" style="" name="service_id">
-                                                            <option value="">Hizmet Seçiniz</option>
+                                                            <option value="">Hizmet Seçiniz 1</option>
                                                             @forelse($services as $service)
                                                                 <option value="{{$service->id}}">{{$service->name}}</option>
                                                             @empty
