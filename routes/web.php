@@ -9,19 +9,20 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('/salon-kategori/{slug}', 'businessCategory')->name('business.category');
     Route::get('/salon/{slug}/detay', 'businessDetail')->name('business.detail');
 
-    Route::get('sayfa/{slug}', [\App\Http\Controllers\HomeController::class, 'pageDetail'])->name('page.detail');
+    Route::get('sayfa/{slug}', 'pageDetail')->name('page.detail');
 
     Route::get('/bloglar','blogs')->name('blog.index');
     Route::get('/blog/{slug}/detay','blogDetail')->name('blog.detail');
 
     Route::get('/etkinlikler','activities')->name('activity.index');
     Route::get('/etkinlik/{slug}/detay','activityDetail')->name('activity.detail');
-    Route::post('/activity/personel/control', [\App\Http\Controllers\HomeController::class, 'personelControl'])->name('activity.personel.control');
+    Route::post('/activity/personel/control', 'personelControl')->name('activity.personel.control');
+
+    Route::get('/hakkimizda','about')->name('about');
+    Route::get('/sss','faq')->name('faq');
 
     Route::get('/tum-hizmetler','allService')->name('service.all');
     Route::get('/hizmet/{slug}','serviceDetail')->name('service.detail');
-    Route::get('/hakkimizda','about')->name('about');
-    Route::get('/sss','faq')->name('faq');
 
     Route::post('/hizmet-ara','serviceSearch')->name('searchService');
     Route::get('/hizmet-ara/{city}/{service}','serviceAllGet')->name('serviceAllGet');
@@ -44,6 +45,7 @@ Route::controller(\App\Http\Controllers\AppointmentController::class)->prefix('r
     Route::get('/{business}/adim-2', 'step2Show')->name('step2.show');
     Route::post('/adim-2/save', 'step2Store')->name('step2.store');
     Route::get('/{business}/adim-3', 'step3Show')->name('step3.show');
+    Route::post('/personel/zaman/kontrol', 'personelTimeControl')->name('personel.time.control');
     Route::post('/adim-3/save', 'step3Store')->name('step3.store');
     Route::get('/{business}/adim-4', 'step4Show')->name('step4.show');
     Route::post('/adim-4/save', 'step4Store')->name('step4.store');

@@ -5,21 +5,41 @@
             <h4 class="card-title mb-0">Filtreler</h4>
         </div>
         <div class="card-body">
+            @if(isset($service) and isset($service->subCategories))
+                <form method="get" action="{{route('service.detail', $service->slug)}}">
+                    <div class="filter-widget">
+                        <h4>Hizmet Seçiniz</h4>
+                        <div>
+                            <select class="js-example-basic-single" name="alt_kategori">
+                                @forelse($service->subCategories as $sub_service)
+                                    <option value="{{$sub_service->slug}}">{{$sub_service->name}}</option>
+                                @empty
 
-            @if(isset($service))
-            <div class="filter-widget">
-                <h4>Hizmet Seçiniz</h4>
-                <div>
-                    <select class="js-example-basic-single" name="sub_category">
-                        @forelse($service->subCategories as $sub_service)
-                            <option value="{{$sub_service->id}}">{{$sub_service->name}}</option>
-                        @empty
+                                @endforelse
+                            </select>
 
-                        @endforelse
-                    </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-five w-100 p-2">Ara</button>
 
-                </div>
-            </div>
+                </form>
+            @elseif(isset($service))
+                <form method="get" action="{{route('service.detail', $service->category->slug)}}">
+                    <div class="filter-widget">
+                        <h4>Hizmet Seçiniz</h4>
+                        <div>
+                            <select class="js-example-basic-single" name="alt-kategori">
+                                @forelse($service->category->subCategories as $sub_service)
+                                    <option value="{{$sub_service->slug}}">{{$sub_service->name}}</option>
+                                @empty
+
+                                @endforelse
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-five w-100 p-2">Ara</button>
+
+                </form>
             @endif
             @if(isset($city))
                 <div class="filter-widget">
@@ -53,7 +73,6 @@
                     </div>
                 </div>
             @endif
-            <button type="button" class="btn-five w-100 p-2">Ara</button>
 
         </div>
     </div>

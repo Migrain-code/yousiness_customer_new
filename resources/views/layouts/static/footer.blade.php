@@ -7,20 +7,20 @@
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <img src="{{asset(config('settings.logo'))}}" alt="logo">
+                            <img src="{{image(setting('logo_white'))}}" alt="logo">
                         </div>
                         <div class="footer-about-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>{{setting('footer_about')}}</p>
                         </div>
                         <div class="footer-widget footer-menu footer-menu-five">
                             <ul>
-                                <li><a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                                <li><a href="{{setting('facebook_url')}}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
                                 </li>
-                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                                <li><a href="{{setting('twitter_url')}}" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
                                 </li>
-                                <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a>
+                                <li><a href="{{setting('linkedin_url')}}" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a>
                                 </li>
-                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                                <li><a href="{{setting('instagram_url')}}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                                 </li>
                             </ul>
                         </div>
@@ -56,7 +56,7 @@
                             <li><a href="{{route('faq')}}">S.S.S</a>
                             </li>
                             <li>
-                                <a href="{{env('remote_url')}}">İşletmeler İçin</a>
+                                <a href="{{image('')}}">İşletmeler İçin</a>
                             </li>
 
                         </ul>

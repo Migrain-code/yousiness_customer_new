@@ -20,5 +20,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.60/inputmask/jquery.inputmask.js"></script>
+<script>
+    document.getElementById('phone').addEventListener('input', function(event) {
+        var inputValue = event.target.value;
 
+        // İlk karakter 0 ise, input değerini sadece "-" ile değiştir
+        if (inputValue.charAt(0) === '0') {
+            event.target.value = '-'.repeat(inputValue.length);
+        }
+    });
+</script>
 @yield('scripts')

@@ -11,13 +11,13 @@
 									</span>
                     </a>
                     <a href="/" class="navbar-brand logo">
-                        <img src="{{asset(config('settings.logo'))}}" class="img-fluid" alt="Logo">
+                        <img src="{{image(setting('logo'))}}" class="img-fluid" alt="Logo">
                     </a>
                 </div>
                 <div class="main-menu-wrapper">
                     <div class="menu-header">
                         <a href="/" class="menu-logo">
-                            <img src="{{asset(config('settings.logo'))}}" class="img-fluid" alt="Logo">
+                            <img src="{{image(setting('logo'))}}" class="img-fluid" alt="Logo">
                         </a>
                         <a id="menu_close" class="menu-close" href="javascript:void(0);"><i class="fas fa-times"></i>
                         </a>
@@ -60,7 +60,7 @@
                     @endif
 
                     <li class="nav-item">
-                        <a class="nav-link btn-five-light" href="{{env('REMOTE_URL')}}" target="_blank">İşletmeler İçin</a>
+                        <a class="nav-link btn-five-light" href="{{image('')}}" target="_blank">İşletmeler İçin</a>
                     </li>
                 </ul>
             </nav>

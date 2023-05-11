@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendBirthdaySms;
 use App\Models\Activity;
 use App\Models\ActivityBusiness;
 use App\Models\Ads;
@@ -22,30 +23,28 @@ use App\Models\Page;
 use App\Models\Personel;
 use App\Models\ServiceCategory;
 use App\Models\ServiceSubCategory;
-use App\Models\SocialMedia;
 use App\Models\Sponsor;
-use App\Models\Swiper;
-use App\Services\Sms;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        SendBirthdaySms::dispatch();
         $ads=Ads::latest()->get();
         $blogs= Blog::latest()->take(3)->get();
         $businesses=Business::all();
         $activities=Activity::latest()->take(4)->get();
-
-        return view('welcome', compact( 'blogs', 'businesses','ads', 'activities'));
+        $featuredServices=ServiceSubCategory::whereNotNull('featured')->orderBy('featured', 'asc')->get();
+        return view('welcome', compact( 'blogs', 'businesses','ads', 'activities', 'featuredServices'));
     }
     public function pageDetail($slug)
     {
         $page=Page::where('slug', $slug)->firstOrFail();
         return view('page.detail', compact('page'));
     }
+
     public function personelControl(Request $request)
     {
 
@@ -85,10 +84,6 @@ class HomeController extends Controller
                 'message'=>"Girdiğiniz telefon numarası sistemde kayıtlı değil",
             ]);
         }
-    }
-    public function smsSend()
-    {
-        Sms::send('05537021355', 'Test Mesajı');
     }
     public function contact()
     {
@@ -135,11 +130,22 @@ class HomeController extends Controller
         return view('service.index', compact('serviceAll'));
     }
 
-    public function serviceDetail($slug)
+    public function serviceDetail($slug, Request $request)
     {
-        $service=ServiceCategory::where('slug', $slug)->firstOrFail();
-        $businesses=$service->businessService()->paginate(5);
-
+        if(count($request->all()) == 0){
+            $service=ServiceCategory::where('slug', $slug)->firstOrFail();/*hizmet kategorisini bul*/
+            $businesses=$service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
+                ->select('business_id')
+                ->groupBy('business_id')
+                ->paginate(5);
+        }
+        else{
+            $service=ServiceSubCategory::where('slug', $request->input('alt-kategori'))->firstOrFail();/*hizmet kategorisini bul*/
+            $businesses=$service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
+                ->select('business_id')
+                ->groupBy('business_id')
+                ->paginate(5);
+        }
         return view('service.detail', compact('businesses', 'service'));
     }
     public function activities()

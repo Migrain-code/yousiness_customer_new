@@ -223,7 +223,7 @@
                                 <p>İstediğiniz şehirden veya hizmetten salonları bulun.</p>
                             </div>
                             <div class="looking-info-btn">
-                                <a href="search.html" class="btn btn-five">Salon Ara <i class="feather-arrow-right ms-1"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-five">Salon Ara <i class="feather-arrow-right ms-1"></i></a>
                             </div>
                         </div>
                     </div>
@@ -233,7 +233,7 @@
                                 <i class="fas fa-tablets"></i>
                             </div>
                             <div class="looking-info-five">
-                                <a href="pharmacy-search.html">En iyi hizmeti alın</a>
+                                <a href="javascript:void(0)">En iyi hizmeti alın</a>
                                 <p>İhtiyaçlarınıza yönelik tüm hizmetler sitemizde.</p>
                             </div>
                             <div class="looking-info-btn">
@@ -247,7 +247,7 @@
                                 <i class="fas fa-vial"></i>
                             </div>
                             <div class="looking-info-five">
-                                <a href="#">Puan Kazanın</a>
+                                <a href="javascript:void(0)">Puan Kazanın</a>
                                 <p>Hızlı Randevu üzerinden oluşturduğunuz randevularınızda aldığınız hizmetlerden puan kazanın, kazandığınız puanları harcayın..</p>
                             </div>
                             <div class="looking-info-btn">
@@ -278,7 +278,7 @@
                         <div class="clinic-grid-five w-100 hvr-bounce-to-bottom">
                             <div class="clinic-grid-img">
                                 <div class="clinic-img-five">
-                                    <img src="{{asset($category->icon)}}" alt="">
+                                    <img src="{{image($category->icon)}}" alt="">
                                 </div>
                             </div>
                             <div class="clinic-grid-info">
@@ -306,7 +306,7 @@
     <!-- Clinic Section Five -->
 
     <!-- Doctor Section Five -->
-    <section class="doctor-section-five" style="background-image: url('{{asset('front/main_page_bg.jpg')}}')">
+    <section class="doctor-section-five" style="background-image: url('{{image('front/main_page_bg.jpg')}}')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
@@ -314,7 +314,7 @@
                         <div class="doctor-details">
                             <h4>İŞLETME MİSİNİZ?</h4>
                             <p>Eğer bir işletmeyseniz ve sistem hakkında bilgi sahibi olmak istiyorsanız "Hadi başlayalım butonuna tıklayın".</p>
-                            <a href="booking.html" class="btn">Hadi Başlayalım</a>
+                            <a href="javascript:void(0)" class="btn">Hadi Başlayalım</a>
                         </div>
                     </div>
                 </div>
@@ -328,7 +328,7 @@
                         <div class="doctor-details doctor-details-one">
                             <h4>MÜŞTERİ Mİ?</h4>
                             <p>Müşteriyseniz ve sistemi keşif etmek ya da bilgi sahibi olmak istiyorsanız "Hadi keşfedelim" butonuna tıklayın.</p>
-                            <a href="booking.html" class="btn">Hadi Keşfedelim</a>
+                            <a href="javascript:void(0)" class="btn">Hadi Keşfedelim</a>
                         </div>
                     </div>
                 </div>
@@ -348,17 +348,17 @@
                 </div>
             </div>
             <div class="row">
-                @forelse($services->first()->subCategories as $subCategory)
+                @forelse($featuredServices as $subCategory)
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="/front/assets/img/salon_type/service-2.png" alt="" class="img-fluid">
+                                <img src="{{image($subCategory->category->icon)}}" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
-                                <a href="#">{{$subCategory->name}}</a>
+                                <a href="{{route('service.detail', [$subCategory->category->slug, 'alt-kategori'=> $subCategory->slug])}}">{{$subCategory->name}}</a>
                             </div>
                             <div class="specialist-nav-five ms-auto">
-                                <a href="#"><i class="feather-arrow-right"></i></a>
+                                <a href="{{route('service.detail', [$subCategory->category->slug, 'alt-kategori'=> $subCategory->slug])}}"><i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -386,7 +386,7 @@
                         <div class="blog-grid-five w-100">
                             <div class="blog-five-img">
                                 <a href="{{route('activity.detail', $activity->slug)}}">
-                                    <img src="{{asset($activity->image)}}" class="img-fluid blog-details-img" alt="">
+                                    <img src="{{image($activity->image)}}" class="img-fluid blog-details-img" alt="">
                                 </a>
                                 <div class="blog-item-info">
                                     <div class="blog-news-date">
@@ -397,7 +397,7 @@
                                     </div>
                                     <div class="blog-doctors-profile">
                                     <a href="{{route('activity.detail', $activity->slug)}}">
-                                            <img src="{{asset(config('settings.favicon'))}}" alt="" class="me-2">
+                                            <img src="{{image(config('settings.favicon'))}}" alt="" class="me-2">
                                             <span>Admin</span>
                                         </a>
                                     </div>
@@ -445,7 +445,7 @@
                         <div class="blog-grid-five w-100">
                             <div class="blog-five-img">
                                 <a href="{{route('blog.detail', $blog->slug)}}">
-                                    <img src="{{asset($blog->image)}}" class="img-fluid blog-details-img" alt="">
+                                    <img src="{{image($blog->image)}}" class="img-fluid blog-details-img" alt="">
                                 </a>
                                 <div class="blog-item-info">
                                     <div class="blog-news-date">
@@ -456,7 +456,7 @@
                                     </div>
                                     <div class="blog-doctors-profile">
                                         <a href="{{route('blog.detail', $blog->slug)}}">
-                                            <img src="/front/favicon.png" alt="" class="me-2">
+                                            <img src="{{image(setting('favicon'))}}" alt="" class="me-2">
                                             <span>{{config('settings.site_owner')}}</span>
                                         </a>
                                     </div>

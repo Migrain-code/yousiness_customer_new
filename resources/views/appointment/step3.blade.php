@@ -30,7 +30,7 @@
                                             <div class="card schedule-widget mb-0">
                                                 <!-- Schedule Header -->
                                                 <div class="schedule-header">
-
+                                                    @include('layouts.component.error')
                                                     <!-- Schedule Nav -->
                                                     <div class="schedule-nav">
                                                         <div class="col-md-6 text-end aos" data-aos="fade-up">
@@ -72,8 +72,8 @@
                                                                     @else
                                                                         <div class="form-check-inline visits me-1">
                                                                             <label class="visit-btns">
-                                                                                <input type="radio" name="appointment_time" class="form-check-input" value="{{$date->format('d.m.Y '. $i->format('H:i'))}}">
-                                                                                <span class="visit-rsn" data-bs-toggle="tooltip">{{$i->format('H:i')}}</span>
+                                                                                <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="{{$date->format('d.m.Y '. $i->format('H:i'))}}" required>
+                                                                                <span class="visit-rsn" data-bs-toggle="tooltip" title="Saat Seçimi Zorunludur">{{$i->format('H:i')}}</span>
                                                                             </label>
                                                                         </div>
                                                                     @endif
@@ -116,6 +116,31 @@
                 link.classList.remove('active');
             });
             $(this).addClass('nav-link active');
+        });
+    </script>
+    <script>
+        $('input[name="appointment_time"]').on('change', function() {
+            var selected = $('input[name="appointment_time"]:checked');
+            var selectedValue=selected.val();
+            $.ajax({
+               url:'{{route('personel.time.control')}}',
+               method:'POST',
+               data:{
+                    '_token':'{{csrf_token()}}',
+                    'time':selectedValue,
+               },
+               dataType:"JSON",
+               success:function (res){
+                   Swal.fire({
+                       title: res.title,
+                       text: res.message,
+                       icon: res.icon,
+                       confirmButtonText: "Tamam"
+                   });
+                   selected.prop('checked', false);
+                   selected.attr('disabled', 'disabled');
+               } 
+            });
         });
     </script>
 @endsection
