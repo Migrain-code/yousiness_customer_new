@@ -7,20 +7,18 @@
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <img src="{{image(setting('logo_white'))}}" alt="logo">
+                            <img src="{{image(setting('speed_logo_white'))}}" alt="logo">
                         </div>
                         <div class="footer-about-content">
                             <p>{{setting('footer_about')}}</p>
                         </div>
                         <div class="footer-widget footer-menu footer-menu-five">
                             <ul>
-                                <li><a href="{{setting('facebook_url')}}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                                <li><a href="{{setting('speed_facebook_url')}}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
                                 </li>
-                                <li><a href="{{setting('twitter_url')}}" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                                <li><a href="{{setting('speed_twitter_url')}}" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
                                 </li>
-                                <li><a href="{{setting('linkedin_url')}}" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a>
-                                </li>
-                                <li><a href="{{setting('instagram_url')}}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                                <li><a href="{{setting('speed_intagram_url')}}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                                 </li>
                             </ul>
                         </div>
@@ -33,12 +31,12 @@
                         <h2 class="footer-title">İletişime Geç</h2>
                         <div class="footer-contact-info">
                             <div class="footer-address"><span><i class="feather-map-pin"></i></span>
-                                <p>{{setting('site_address')}}</p>
+                                <p>{{setting('speed_address')}}</p>
                             </div>
                             <p><i class="feather-phone"></i>
-                                {{setting('site_phone')}}</p>
+                                {{setting('speed_phone')}}</p>
                             <p class="mb-0"><i class="feather-mail"></i>
-                                {{setting('site_email')}}</p>
+                                {{setting('speed_email')}}</p>
                         </div>
                     </div>
                     <!-- /Footer Widget -->
@@ -56,7 +54,7 @@
                             <li><a href="{{route('faq')}}">S.S.S</a>
                             </li>
                             <li>
-                                <a href="{{image('')}}">İşletmeler İçin</a>
+                                <a href="{{env('REMOTE_URL')}}">İşletmeler İçin</a>
                             </li>
 
                         </ul>
@@ -68,13 +66,12 @@
                     <div class="footer-widget footer-menu">
                         <h2 class="footer-title">Önerilen Linkler</h2>
                         <ul>
-                            @forelse($globalData['pages'] as $page)
-                                <li><a href="{{route('page.detail', $page->slug)}}">{{$page->title}}</a>
+
+                            {{--
+                                 <li><a href="{{route('page.detail', $page->slug)}}">{{$page->title}}</a>
                                 </li>
-                            @empty
-                                <li><a href="javascript:void(0)">Link Bulunamadı</a>
-                                </li>
-                            @endforelse
+                            --}}
+
                         </ul>
                     </div>
                     <!-- /Footer Widget -->
@@ -92,7 +89,7 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-6">
                         <div class="copyright-text">
-                            <p class="mb-0">&copy; {{setting('site_title')}}. Tüm hakları saklıdır.</p>
+                            <p class="mb-0">&copy; {{setting('speed_site_title')}}. Tüm hakları saklıdır.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6">

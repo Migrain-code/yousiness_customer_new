@@ -36,7 +36,7 @@
                               <div class="blog-grid-five w-100">
                                  <div class="blog-five-img">
                                     <a href="{{route('activity.detail', $activity->slug)}}">
-                                       <img src="{{asset($activity->image)}}" class="img-fluid blog-details-img" alt="">
+                                       <img src="{{image($activity->image)}}" class="img-fluid blog-details-img" alt="">
                                     </a>
                                     <div class="blog-item-info">
                                        <div class="blog-news-date">
@@ -47,8 +47,8 @@
                                        </div>
                                        <div class="blog-doctors-profile">
                                           <a href="{{route('activity.detail', $activity->slug)}}">
-                                             <img src="{{asset(config('settings.favicon'))}}" alt="" class="me-2">
-                                             <span>{{config('settings.site_owner')}}</span>
+                                             <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
+                                             <span>Admin</span>
                                           </a>
                                        </div>
                                     </div>

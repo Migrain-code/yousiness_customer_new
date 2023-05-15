@@ -11,7 +11,7 @@
                         <div class="row align-items-center justify-content-center">
                             <div class="col-md-12 col-lg-6 login-right">
                                 <div class="login-header text-center">
-                                    <h3>{{config('settings.site_title')}} Kayıt Ol</h3>
+                                    <h3>{{setting('speed_site_title')}} Kayıt Ol</h3>
                                 </div>
                                 @include('layouts.component.error')
                                 @include('layouts.component.alert')

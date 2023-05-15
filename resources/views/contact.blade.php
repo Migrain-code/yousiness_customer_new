@@ -42,7 +42,7 @@
                         </div>
                         <div class="infor-details text-center">
                             <label>Telefon</label>
-                            <p>{{config('settings.site_phone')}}</p>
+                            <p>{{setting('speed_phone')}}</p>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="infor-details text-center">
                             <label>E-posta</label>
-                            <p>{{config('settings.site_email')}}</p>
+                            <p>{{setting('speed_email')}}</p>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="infor-details text-center">
                             <label>Adres</label>
-                            <p>{{config('settings.site_address')}}</p>
+                            <p>{{setting('speed_address')}}</p>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
 
     <!-- Contact Map -->
     <section class="contact-map d-flex">
-        {!! config('settings.site_map') !!}
+        {!! setting('speed_address_map') !!}
     </section>
     <!-- /Contact Map -->
 

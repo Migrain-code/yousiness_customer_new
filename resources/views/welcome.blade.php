@@ -88,15 +88,15 @@
         }
     </style>
     <!-- Home Five Banner -->
-    <section class="home-section-five" style="background-image: url('/front/assets/img/bg-1.jpg')">
+    <section class="home-section-five" style="background-image: url('{{image(main('speed_main_page_header_image'))}}')">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="banner-wrapper-five aos" data-aos="fade-up">
                         <div class="section-search-five text-center">
-                            <span>Dünyanın En Hızlı </span>
-                            <h2>Hizmet ve Randevu Arama Sitesi</h2>
-                            <p>Size en yakın şehrin en iyi işletmelerini keşfedin..</p>
+                            <span>{{main('speed_main_page_small_title')}} </span>
+                            <h2>{{main('speed_main_page_big_title')}}</h2>
+                            <p>{{main('speed_main_page_description')}}</p>
                             <div class="search-box-five">
                                 <div class="col-md-12">
                                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
@@ -202,66 +202,69 @@
     <!-- /Home Five Banner -->
 
     <!-- Looking Section Five -->
-    <section class="looking-section-five">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Neden Hızlı Randevu?</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="looking-bg-five">
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                        <div class="looking-grid-five looking-grid-blue w-100">
-                            <div class="looking-icon-five">
-                                <i class="fas fa-user-md"></i>
-                            </div>
-                            <div class="looking-info-five">
-                                <a href="#">SALONLARI ARAYIN</a>
-                                <p>İstediğiniz şehirden veya hizmetten salonları bulun.</p>
-                            </div>
-                            <div class="looking-info-btn">
-                                <a href="javascript:void(0)" class="btn btn-five">Salon Ara <i class="feather-arrow-right ms-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                        <div class="looking-grid-five looking-grid-green w-100">
-                            <div class="looking-icon-five">
-                                <i class="fas fa-tablets"></i>
-                            </div>
-                            <div class="looking-info-five">
-                                <a href="javascript:void(0)">En iyi hizmeti alın</a>
-                                <p>İhtiyaçlarınıza yönelik tüm hizmetler sitemizde.</p>
-                            </div>
-                            <div class="looking-info-btn">
-                                <a href="#services" class="btn btn-five">Hizmetleri Göster <i class="feather-arrow-right ms-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                        <div class="looking-grid-five looking-grid-orange w-100">
-                            <div class="looking-icon-five">
-                                <i class="fas fa-vial"></i>
-                            </div>
-                            <div class="looking-info-five">
-                                <a href="javascript:void(0)">Puan Kazanın</a>
-                                <p>Hızlı Randevu üzerinden oluşturduğunuz randevularınızda aldığınız hizmetlerden puan kazanın, kazandığınız puanları harcayın..</p>
-                            </div>
-                            <div class="looking-info-btn">
-                                <a href="#services" class="btn btn-five">Puan Kazan <i class="feather-arrow-right ms-1"></i></a>
-                            </div>
+    @if(setting('speed_main_page_section_1') == 1)
+        <section class="looking-section-five">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                            <h2 class="title-five">{{main('speed_section_1_main_title')}}</h2>
                         </div>
                     </div>
                 </div>
+                <div class="looking-bg-five">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
+                            <div class="looking-grid-five looking-grid-blue w-100">
+                                <div class="looking-icon-five">
+                                   <img src="{{image(main('speed_section_1_box_1_image'))}}" style="width: 100px;border-radius: 50%;">
+                                </div>
+                                <div class="looking-info-five">
+                                    <a href="#">{{main('speed_section_1_box_1_title')}}</a>
+                                    <p>{{main('speed_section_1_box_1_description')}}</p>
+                                </div>
+                                <div class="looking-info-btn">
+                                    <a href="javascript:void(0)" class="btn btn-five">Salon Ara <i class="feather-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
+                            <div class="looking-grid-five looking-grid-green w-100">
+                                <div class="looking-icon-five">
+                                    <img src="{{image(main('speed_section_1_box_2_image'))}}" style="width: 100px;border-radius: 50%;">
+                                </div>
+                                <div class="looking-info-five">
+                                    <a href="#">{{main('speed_section_1_box_2_title')}}</a>
+                                    <p>{{main('speed_section_1_box_2_description')}}</p>
+                                </div>
+                                <div class="looking-info-btn">
+                                    <a href="#services" class="btn btn-five">Hizmetleri Göster <i class="feather-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
+                            <div class="looking-grid-five looking-grid-orange w-100">
+                                <div class="looking-icon-five">
+                                    <img src="{{image(main('speed_section_1_box_3_image'))}}" style="width: 100px;border-radius: 50%;">
+                                </div>
+                                <div class="looking-info-five">
+                                    <a href="#">{{main('speed_section_1_box_3_title')}}</a>
+                                    <p>{{main('speed_section_1_box_3_description')}}</p>
+                                </div>
+                                <div class="looking-info-btn">
+                                    <a href="#services" class="btn btn-five">Puan Kazan <i class="feather-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
     <!-- /Looking Section Five -->
 
     <!-- Clinic Section Five -->
+    @if(setting('speed_main_page_section_2') == 1)
     <section class="clinic-section-five">
         <div class="container">
             <div class="row">
@@ -303,8 +306,9 @@
             --->
         </div>
     </section>
+    @endif
     <!-- Clinic Section Five -->
-
+    @if(setting('speed_main_page_section_3') == 1)
     <!-- Doctor Section Five -->
     <section class="doctor-section-five" style="background-image: url('{{image('front/main_page_bg.jpg')}}')">
         <div class="container">
@@ -312,23 +316,23 @@
                 <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
                     <div class="doctor-grid-five w-100">
                         <div class="doctor-details">
-                            <h4>İŞLETME MİSİNİZ?</h4>
-                            <p>Eğer bir işletmeyseniz ve sistem hakkında bilgi sahibi olmak istiyorsanız "Hadi başlayalım butonuna tıklayın".</p>
-                            <a href="javascript:void(0)" class="btn">Hadi Başlayalım</a>
+                            <h4>{{main('speed_section_3_box_1_title')}}</h4>
+                            <p>{{main('speed_section_3_box_1_description')}}</p>
+                            <a href="{{env('REMOTE_URL')}}" class="btn">Hadi Başlayalım</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 doctor-img2 aos" data-aos="fade-up">
                     <div class="doctor-grid-five w-100">
-                        <img src="/front/assets/img/salon_type/salon-image.png" alt="" class="img-fluid" style="">
+                        <img src="{{image(main('speed_section_3_main_image'))}}" alt="" class="img-fluid" style="">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
                     <div class="doctor-grid-five w-100">
                         <div class="doctor-details doctor-details-one">
-                            <h4>MÜŞTERİ Mİ?</h4>
-                            <p>Müşteriyseniz ve sistemi keşif etmek ya da bilgi sahibi olmak istiyorsanız "Hadi keşfedelim" butonuna tıklayın.</p>
-                            <a href="javascript:void(0)" class="btn">Hadi Keşfedelim</a>
+                            <h4>{{main('speed_section_3_box_2_title')}}</h4>
+                            <p>{{main('speed_section_3_box_2_description')}}</p>
+                            <a href="{{route('customer.register')}}" class="btn">Hadi Keşfedelim</a>
                         </div>
                     </div>
                 </div>
@@ -336,7 +340,8 @@
         </div>
     </section>
     <!-- Doctor Section Five -->
-
+    @endif
+    @if(setting('speed_main_page_section_4') == 1)
     <!-- Browse Section Five -->
     <section class="browse-section-five" id="services">
         <div class="container">
@@ -352,7 +357,7 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="{{image($subCategory->category->icon)}}" alt="" class="img-fluid">
+                                <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="{{route('service.detail', [$subCategory->category->slug, 'alt-kategori'=> $subCategory->slug])}}">{{$subCategory->name}}</a>
@@ -369,7 +374,8 @@
         </div>
     </section>
     <!-- /Browse Section Five -->
-
+    @endif
+    @if(setting('speed_main_page_section_5') == 1)
     <!-- Best Section Five -->
     <section class="best-section-five">
         <div class="container">
@@ -397,7 +403,7 @@
                                     </div>
                                     <div class="blog-doctors-profile">
                                     <a href="{{route('activity.detail', $activity->slug)}}">
-                                            <img src="{{image(config('settings.favicon'))}}" alt="" class="me-2">
+                                            <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
                                             <span>Admin</span>
                                         </a>
                                     </div>
@@ -427,8 +433,8 @@
         </div>
     </section>
     <!-- /Best Section Five -->
-
-
+    @endif
+    @if(setting('speed_main_page_section_6') == 1)
     <!-- Blog Section Five -->
     <section class="blog-section-five">
         <div class="container">
@@ -456,8 +462,8 @@
                                     </div>
                                     <div class="blog-doctors-profile">
                                         <a href="{{route('blog.detail', $blog->slug)}}">
-                                            <img src="{{image(setting('favicon'))}}" alt="" class="me-2">
-                                            <span>{{config('settings.site_owner')}}</span>
+                                            <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
+                                            <span>Admin</span>
                                         </a>
                                     </div>
                                 </div>
@@ -485,7 +491,7 @@
         </div>
     </section>
     <!-- /Blog Section Five -->
-
+    @endif
 @endsection
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

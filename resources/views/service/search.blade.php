@@ -79,7 +79,7 @@
                                     <div class="doc-info-left">
                                         <div class="doctor-img">
                                             <a href="{{route('business.detail', $business->slug)}}">
-                                                <img src="{{asset($business->logo)}}" class="img-fluid" alt="User Image">
+                                                <img src="{{image($business->logo)}}" class="img-fluid" alt="User Image">
                                             </a>
                                         </div>
                                         <div class="doc-info-cont">

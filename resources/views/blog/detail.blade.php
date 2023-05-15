@@ -12,10 +12,10 @@
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">SSS</li>
+                            <li class="breadcrumb-item active" aria-current="page">Blog İçeriği</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Sık Sorulan Sorular</h2>
+                    <h2 class="breadcrumb-title">Blog detayı</h2>
                 </div>
 
             </div>
@@ -28,7 +28,7 @@
                     <div class="blog-view">
                         <div class="blog blog-single-post">
                             <div class="blog-image">
-                                <a href="javascript:void(0);"><img alt="" src="{{asset($blog->image)}}" class="img-fluid"></a>
+                                <a href="javascript:void(0);"><img alt="" src="{{image($blog->image)}}" class="img-fluid"></a>
                             </div>
                             <h3 class="blog-title">{{$blog->title}}</h3>
                             <div class="blog-info clearfix">
@@ -36,7 +36,10 @@
                                     <ul>
                                         <li>
                                             <div class="post-author">
-                                                <a href="#"><img src="/front/favicon.png" alt="Post Author"> <span>{{config('settings.site_owner')}}</span></a>
+                                                <a href="#">
+                                                    <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
+                                                    <span>Admin</span>
+                                                </a>
                                             </div>
                                         </li>
                                         <li><i class="far fa-calendar"></i>{{$blog->created_at->format('d.m.Y')}}</li>

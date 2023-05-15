@@ -71,11 +71,11 @@
                                 <div class="slick-wrapper">
                                     <div class="pharm-slider">
                                         <div class="col-12 d-flex">
-                                            <a href="javascript:void(0);"><img alt="" src="{{asset($activity->image)}}" class="img-fluid"></a>
+                                            <a href="javascript:void(0);"><img alt="" src="{{image($activity->image)}}" class="img-fluid"></a>
 
                                         </div>
                                         <div class="col-12 d-flex">
-                                            <a href="javascript:void(0);"><img alt="" src="{{asset($activity->image)}}" class="img-fluid"></a>
+                                            <a href="javascript:void(0);"><img alt="" src="{{image($activity->image)}}" class="img-fluid"></a>
 
                                         </div>
                                     </div>
@@ -87,7 +87,10 @@
                                     <ul>
                                         <li>
                                             <div class="post-author">
-                                                <a href="#"><img src="{{asset(config('settings.favicon'))}}" alt="Admin"> <span>Admin</span></a>
+                                                <a href="#">
+                                                    <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
+                                                    <span>Admin</span>
+                                                </a>
                                             </div>
                                         </li>
                                         <li><i class="far fa-calendar"></i><span data-bs-toggle="tooltip" title="Başlangıç Tarihi">{{$activity->start_date->format('d.m.Y H:i')}}</span> - <span data-bs-toggle="tooltip" title="Bitiş Tarihi">{{$activity->stop_date->format('d.m.Y H:i')}}</span></li>
@@ -124,16 +127,16 @@
                             </div>
                             <div class="card-body pb-0">
                                 <div class="row">
-                                    @forelse($activity->personels as $business)
+                                    @forelse($activity->personels as $personel)
                                         <div class="col-lg-4 col-md-4 d-flex aos" data-aos="fade-up">
                                             <div class="clinic-grid-five w-100 hvr-bounce-to-bottom pb-0">
                                                 <div class="clinic-grid-img">
                                                     <div class="clinic-img-five clinic-img-five1">
-                                                        <img src="{{$business->personel->image}}" alt="" style="width: 100%;height: 140px;border-radius: 5px;">
+                                                        <img src="{{image($personel->personel->image)}}" alt="" style="width: 100%;height: 140px;border-radius: 5px;">
                                                     </div>
                                                 </div>
                                                 <div class="clinic-grid-info">
-                                                    <p>{{$business->personel->name}}</p>
+                                                    <p>{{$personel->personel->name}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -156,7 +159,7 @@
                                             <div class="blog-grid-five w-100" style="margin-bottom: 10px">
                                                 <div class="blog-five-img" style="border-radius: 5px">
                                                     <a href="{{$sponsor->link}}">
-                                                        <img src="{{$sponsor->image}}" class="img-fluid blog-details-img" alt="">
+                                                        <img src="{{image($sponsor->image)}}" class="img-fluid blog-details-img" alt="">
                                                     </a>
                                                     @if($sponsor->status==1)
                                                         <div class="blog-item-info">
@@ -197,7 +200,7 @@
                                     <li>
                                         <div class="post-thumb">
                                             <a href="{{route('activity.detail', $activity->slug)}}">
-                                                <img class="img-fluid" src="{{$activity->image}}" alt="">
+                                                <img class="img-fluid" src="{{image($activity->image)}}" alt="">
                                             </a>
                                         </div>
                                         <div class="post-info">

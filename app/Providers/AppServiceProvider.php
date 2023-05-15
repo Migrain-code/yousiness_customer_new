@@ -9,6 +9,8 @@ use App\Models\BusinessInfo;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\ForBusiness;
+use App\Models\MaingPage;
+use App\Models\MainPage;
 use App\Models\Page;
 use App\Models\ServiceCategory;
 use App\Models\Setting;
@@ -57,8 +59,13 @@ class AppServiceProvider extends ServiceProvider
         foreach (ForBusiness::all() as $item) {
             $sections[$item->name] = $item->value;
         }
+        $main_pages=[];
+        foreach (MaingPage::all() as $item) {
+            $main_pages[$item->name] = $item->value;
+        }
         \Config::set('sections', $sections);
         \Config::set('settings', $settings);
+        \Config::set('main_pages', $main_pages);
         $globalData = [
             'use_pages' => Page::whereIn('slug', ['gizlilik-kosullari', 'sartlar-ve-kosullar'])->get(),
             'pages'=>Page::whereNotIn('slug', ['gizlilik-kosullari', 'sartlar-ve-kosullar'])->where('status', 1)->take('5')->get(),

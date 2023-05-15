@@ -24,13 +24,13 @@
     <!-- /Breadcrumb -->
 
     <!-- Page Content -->
-    <section class="about-section" style="background-image: url('{{config('sections.section_1_image')}}')">
+    <section class="about-section" style="background-image: url('{{image(config('sections.speed_about_main_image'))}}')">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-12 aos" data-aos="fade-left" style="background-color: rgba(255,255,255,0.7); padding: 15px;border-radius: 15px">
-                    <h3 class="mb-4">{{config('sections.section_1_title')}}</h3>
+                <div class="col-lg-12 col-md-12 aos" data-aos="fade-left" style="background-color: rgba(255,255,255,0.7); padding: 15px;border-radius: 15px">
+                    <h3 class="mb-4">{{config('sections.speed_about_main_title')}}</h3>
                     <p>
-                        {{config('sections.section_1_description')}}
+                        {{config('sections.speed_about_main_description')}}
                     </p>
                 </div>
                 <div class="col-md-6">
@@ -45,33 +45,33 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 category-col d-flex">
                     <div class="category-subox pb-0 d-flex flex-wrap w-100">
-                        <h4>{{config('sections.section_2_box_1_title')}}</h4>
-                        <p>{{config('sections.section_2_box_1_description')}}</p>
+                        <h4>{{config('sections.speed_section_1_box_1_title')}}</h4>
+                        <p>{{config('sections.speed_section_1_box_1_description')}}</p>
                         <div class="subox-img">
                             <div class="subox-circle">
-                                <img src="{{asset(config('sections.section_2_box_1_icon'))}}" alt="" width="42">
+                                <img src="{{image(config('sections.speed_section_1_box_1_image'))}}" alt="" width="42">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 category-col d-flex">
                     <div class="category-subox pb-0 d-flex flex-wrap w-100">
-                        <h4>{{config('sections.section_2_box_2_title')}}</h4>
-                        <p>{{config('sections.section_2_box_2_description')}}</p>
+                        <h4>{{config('sections.speed_section_1_box_2_title')}}</h4>
+                        <p>{{config('sections.speed_section_1_box_2_description')}}</p>
                         <div class="subox-img">
                             <div class="subox-circle">
-                                <img src="{{asset(config('sections.section_2_box_2_icon'))}}" alt="" width="42">
+                                <img src="{{image(config('sections.speed_section_1_box_2_image'))}}" alt="" width="42">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 category-col d-flex">
                     <div class="category-subox pb-0 d-flex flex-wrap w-100">
-                        <h4>{{config('sections.section_2_box_3_title')}}</h4>
-                        <p>{{config('sections.section_2_box_3_description')}}</p>
+                        <h4>{{config('sections.speed_section_1_box_3_title')}}</h4>
+                        <p>{{config('sections.speed_section_1_box_3_description')}}</p>
                         <div class="subox-img">
                             <div class="subox-circle">
-                                <img src="{{asset(config('sections.section_2_box_3_icon'))}}" alt="" width="42">
+                                <img src="{{image(config('sections.speed_section_1_box_3_image'))}}" alt="" width="42">
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                   @foreach($services as $service)
                         <div class="feature-col">
                             <div class="feature-subox d-flex flex-wrap justify-content-center">
-                                <img src="{{asset($service->cover_image)}}" style="width: 323px;height: 217px" class="img-fluid" alt="Features">
+                                <img src="{{image($service->cover_image)}}" style="width: 323px;height: 217px" class="img-fluid" alt="Features">
                                 <h4>{{$service->name}}</h4>
                             </div>
                         </div>
@@ -118,13 +118,15 @@
 
                        @forelse($sponsors as $sponsor)
                             <!-- Slider Item -->
-                            <div class="speicality-item text-center" style="width: 100%; background: aliceblue;display: inline-block;padding: 10px; border-radius: 15px;">
-                                <div class="speicality-img">
-                                    <img src="{{asset($sponsor->image)}}" class="img-fluid" alt="Speciality">
+                            <a href="{{$sponsor->link}}">
+                                <div class="speicality-item text-center" style="width: 100%; background: aliceblue;display: inline-block;padding: 10px; border-radius: 15px;">
+                                    <div class="speicality-img">
+                                        <img src="{{image($sponsor->image)}}" style="border-radius: 50%;height: 150px" class="img-fluid" alt="Speciality">
 
+                                    </div>
+                                    <p>{{$sponsor->name}}</p>
                                 </div>
-                                <p>{{$sponsor->name}}</p>
-                            </div>
+                            </a>
                             <!-- /Slider Item -->
                         @empty
 
@@ -155,7 +157,7 @@
                             <!-- Slider Item -->
                             <div class="testimonial-item text-center">
                                 <div class="testimonial-img">
-                                    <img src="{{asset($comment->image)}}" class="img-fluid" style="height: 150px" alt="Speciality">
+                                    <img src="{{image($comment->image)}}" class="img-fluid" style="height: 150px" alt="Speciality">
                                 </div>
                                 <div class="testimonial-content">
                                     <p>{{$comment->description}}</p>
