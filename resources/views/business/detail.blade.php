@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', $business->name)
+@section('meta_description', $business->name ." Detayı")
 @section('styles')
 
 @endsection

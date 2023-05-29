@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Sık Sorulan Sorular')
+@section('meta_description', 'Hızlı Randevu Sık Sorulan Sorular')
 @section('styles')
  <link rel="stylesheet" href="/front/assets/css/custom-accordion.css">
 @endsection

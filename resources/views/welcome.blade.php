@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
+@section('title', 'Anasayfa')
 @section('meta_description', config('settings.meta_description'))
 @section('styles')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -376,121 +376,126 @@
     <!-- /Browse Section Five -->
     @endif
     @if(setting('speed_main_page_section_5') == 1)
-    <!-- Best Section Five -->
-    <section class="best-section-five">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Yaklaşan Etkinlikler!</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                @forelse($activities as $activity)
-                    <div class="col-lg-4 col-md-6 mb-2 d-flex aos" data-aos="fade-up">
-                        <div class="blog-grid-five w-100">
-                            <div class="blog-five-img">
-                                <a href="{{route('activity.detail', $activity->slug)}}">
-                                    <img src="{{image($activity->image)}}" class="img-fluid blog-details-img" alt="">
-                                </a>
-                                <div class="blog-item-info">
-                                    <div class="blog-news-date">
-                                    <a href="{{route('activity.detail', $activity->slug)}}">
-                                            <i class="feather-calendar me-2"></i>
-                                            <span>{{$activity->created_at->translatedFormat('d F Y')}}</span>
-                                        </a>
-                                    </div>
-                                    <div class="blog-doctors-profile">
-                                    <a href="{{route('activity.detail', $activity->slug)}}">
-                                            <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
-                                            <span>Admin</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-info-five">
-                                <h3 class="blog-news-title">
-                                <a href="{{route('activity.detail', $activity->slug)}}">{{$activity->title}}</a>
-                                </h3>
-                                <p>
-                                    {{\Illuminate\Support\Str::limit(strip_tags($activity->description), 100, '...')}}
-                                </p>
-                            <a href="{{route('activity.detail', $activity->slug)}}" class="btn-five" style="max-width: 200px;margin: 0 auto"> Detayı Göster</a>
-
+        @if($activities->count() > 0)
+            <!-- Best Section Five -->
+            <section class="best-section-five">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                                <h2 class="title-five">Yaklaşan Etkinlikler!</h2>
                             </div>
                         </div>
                     </div>
-                @empty
-                @endforelse
+                    <div class="row justify-content-center">
+                        @forelse($activities as $activity)
+                            <div class="col-lg-4 col-md-6 mb-2 d-flex aos" data-aos="fade-up">
+                                <div class="blog-grid-five w-100">
+                                    <div class="blog-five-img">
+                                        <a href="{{route('activity.detail', $activity->slug)}}">
+                                            <img src="{{image($activity->image)}}" class="img-fluid blog-details-img" alt="">
+                                        </a>
+                                        <div class="blog-item-info">
+                                            <div class="blog-news-date">
+                                                <a href="{{route('activity.detail', $activity->slug)}}">
+                                                    <i class="feather-calendar me-2"></i>
+                                                    <span>{{$activity->created_at->translatedFormat('d F Y')}}</span>
+                                                </a>
+                                            </div>
+                                            <div class="blog-doctors-profile">
+                                                <a href="{{route('activity.detail', $activity->slug)}}">
+                                                    <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
+                                                    <span>Admin</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="blog-info-five">
+                                        <h3 class="blog-news-title">
+                                            <a href="{{route('activity.detail', $activity->slug)}}">{{$activity->title}}</a>
+                                        </h3>
+                                        <p>
+                                            {{\Illuminate\Support\Str::limit(strip_tags($activity->description), 100, '...')}}
+                                        </p>
+                                        <a href="{{route('activity.detail', $activity->slug)}}" class="btn-five" style="max-width: 200px;margin: 0 auto"> Detayı Göster</a>
 
-            </div>
-            @if($activities->count() >= 4)
-                <div class="doctor-see-btn text-center aos" data-aos="fade-up">
-                    <a href="{{route('activity.index')}}" class="btn btn-six">Tüm etkinlikler</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+                        @endforelse
+
+                    </div>
+                    @if($activities->count() >= 4)
+                        <div class="doctor-see-btn text-center aos" data-aos="fade-up">
+                            <a href="{{route('activity.index')}}" class="btn btn-six">Tüm etkinlikler</a>
+                        </div>
+                    @endif
                 </div>
-            @endif
-        </div>
-    </section>
-    <!-- /Best Section Five -->
+            </section>
+            <!-- /Best Section Five -->
+        @endif
+
     @endif
     @if(setting('speed_main_page_section_6') == 1)
-    <!-- Blog Section Five -->
-    <section class="blog-section-five">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Son Yayınlanan Bloglarımız</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                @forelse($blogs as $blog)
-                    <div class="col-lg-4 col-md-6 mb-2 d-flex aos" data-aos="fade-up">
-                        <div class="blog-grid-five w-100">
-                            <div class="blog-five-img">
-                                <a href="{{route('blog.detail', $blog->slug)}}">
-                                    <img src="{{image($blog->image)}}" class="img-fluid blog-details-img" alt="">
-                                </a>
-                                <div class="blog-item-info">
-                                    <div class="blog-news-date">
-                                        <a href="{{route('blog.detail', $blog->slug)}}">
-                                            <i class="feather-calendar me-2"></i>
-                                            <span>{{$blog->created_at->format('d.m.Y')}}</span>
-                                        </a>
-                                    </div>
-                                    <div class="blog-doctors-profile">
-                                        <a href="{{route('blog.detail', $blog->slug)}}">
-                                            <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
-                                            <span>Admin</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-info-five">
-                                <h3 class="blog-news-title">
-                                    <a href="{{route('blog.detail', $blog->slug)}}">{{$blog->title}}</a>
-                                </h3>
-                                <p>{{substr(strip_tags($blog->description), 0, 200)}}</p>
-                                <a href="{{route('blog.detail', $blog->slug)}}" class="read-news">Haberi Oku</a>
+        @if($blogs->count() > 0)
+            <!-- Blog Section Five -->
+            <section class="blog-section-five">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                                <h2 class="title-five">Son Yayınlanan Bloglarımız</h2>
                             </div>
                         </div>
                     </div>
-                @empty
+                    <div class="row justify-content-center">
+                        @forelse($blogs as $blog)
+                            <div class="col-lg-4 col-md-6 mb-2 d-flex aos" data-aos="fade-up">
+                                <div class="blog-grid-five w-100">
+                                    <div class="blog-five-img">
+                                        <a href="{{route('blog.detail', $blog->slug)}}">
+                                            <img src="{{image($blog->image)}}" class="img-fluid blog-details-img" alt="">
+                                        </a>
+                                        <div class="blog-item-info">
+                                            <div class="blog-news-date">
+                                                <a href="{{route('blog.detail', $blog->slug)}}">
+                                                    <i class="feather-calendar me-2"></i>
+                                                    <span>{{$blog->created_at->format('d.m.Y')}}</span>
+                                                </a>
+                                            </div>
+                                            <div class="blog-doctors-profile">
+                                                <a href="{{route('blog.detail', $blog->slug)}}">
+                                                    <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
+                                                    <span>Admin</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="blog-info-five">
+                                        <h3 class="blog-news-title">
+                                            <a href="{{route('blog.detail', $blog->slug)}}">{{$blog->title}}</a>
+                                        </h3>
+                                        <p>{{substr(strip_tags($blog->description), 0, 200)}}</p>
+                                        <a href="{{route('blog.detail', $blog->slug)}}" class="read-news">Haberi Oku</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
 
-                @endforelse
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="blog-five-btn aos" data-aos="fade-up">
-                        <a href="{{route('blog.index')}}" class="btn btn-six">Daha Fazla</a>
+                        @endforelse
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="blog-five-btn aos" data-aos="fade-up">
+                                <a href="{{route('blog.index')}}" class="btn btn-six">Daha Fazla</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- /Blog Section Five -->
+            </section>
+            <!-- /Blog Section Five -->
+        @endif
     @endif
 @endsection
 @section('scripts')

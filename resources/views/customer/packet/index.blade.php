@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', "Paket Satın Alımlarım")
+@section('meta_description', "Paket Alımlarım")
 @section('styles')
 
 @endsection

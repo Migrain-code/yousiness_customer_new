@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'). ",Salonlar")
-@section('meta_description', config('settings.meta_description'). ", Salonlar")
+@section('title', "Salonlar")
+@section('meta_description', " Salonlar")
 @section('styles')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>

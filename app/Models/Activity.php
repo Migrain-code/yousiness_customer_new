@@ -12,7 +12,7 @@ class Activity extends Model
 
     public function personels()
     {
-        return $this->hasMany(ActivityBusiness::class, 'activity_id', 'id');
+        return $this->hasMany(ActivityBusiness::class, 'activity_id', 'id')->where('status', 1);
     }
     public function sponsors()
     {

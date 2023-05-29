@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', $blog->meta_keys)
+@section('meta_description', $blog->meta_description)
 @section('styles')
 
 @endsection

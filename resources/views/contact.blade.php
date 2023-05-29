@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
+@section('title', "İletişim")
 @section('meta_description', config('settings.meta_description'))
 @section('styles')
 
@@ -42,7 +42,7 @@
                         </div>
                         <div class="infor-details text-center">
                             <label>Telefon</label>
-                            <p>{{setting('speed_phone')}}</p>
+                            <p>{{setting('speed_contact_phone')}}</p>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="infor-details text-center">
                             <label>E-posta</label>
-                            <p>{{setting('speed_email')}}</p>
+                            <p>{{setting('speed_contact_email')}}</p>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="infor-details text-center">
                             <label>Adres</label>
-                            <p>{{setting('speed_address')}}</p>
+                            <p>{{setting('speed_contact_address')}}</p>
                         </div>
                     </div>
                 </div>

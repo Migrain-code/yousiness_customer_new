@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', $activity->meta_keys)
+@section('meta_description', $activity->meta_description)
 @section('styles')
     <style>
         .pulse-button {
@@ -123,7 +123,7 @@
 
                         <div class="card blog-comments clearfix" style="border-radius: 18px">
                             <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                                <h4 class="card-title">Katılımcılar (12)</h4>
+                                <h4 class="card-title">Katılımcılar ({{$activity->personels->count()}})</h4>
                             </div>
                             <div class="card-body pb-0">
                                 <div class="row">
@@ -141,7 +141,9 @@
                                             </div>
                                         </div>
                                     @empty
-
+                                        <div class="alert alert-warning text-center">
+                                            Katılımcı Bulunamadı
+                                        </div>
                                     @endforelse
 
                                 </div>
@@ -161,17 +163,21 @@
                                                     <a href="{{$sponsor->link}}">
                                                         <img src="{{image($sponsor->image)}}" class="img-fluid blog-details-img" alt="">
                                                     </a>
-                                                    @if($sponsor->status==1)
+
                                                         <div class="blog-item-info">
 
                                                             <div class="blog-doctors-profile">
                                                                 <a href="{{$sponsor->link}}">
                                                                     <i class="fa fa-check-circle text-success me-2" style="font-size: 35px"></i>
-                                                                    Ana Sponsor
+                                                                    @if($sponsor->status==1)
+                                                                        Ana Sponsor
+                                                                    @else
+                                                                        {{$sponsor->name}}
+                                                                    @endif
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                    @endif
+
                                                 </div>
                                             </div>
                                         </div>

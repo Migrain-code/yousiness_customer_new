@@ -31,12 +31,14 @@
                         <h2 class="footer-title">İletişime Geç</h2>
                         <div class="footer-contact-info">
                             <div class="footer-address"><span><i class="feather-map-pin"></i></span>
-                                <p>{{setting('speed_address')}}</p>
+                                <p>{{setting('speed_contact_address')}}</p>
                             </div>
                             <p><i class="feather-phone"></i>
-                                {{setting('speed_phone')}}</p>
-                            <p class="mb-0"><i class="feather-mail"></i>
-                                {{setting('speed_email')}}</p>
+                                {{setting('speed_contact_phone')}}</p>
+                            <p class="mb-0">
+                                <i class="feather-mail"></i>
+                                <span>{{setting('speed_contact_email')}}</span>
+                            </p>
                         </div>
                     </div>
                     <!-- /Footer Widget -->
