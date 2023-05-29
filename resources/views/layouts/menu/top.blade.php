@@ -4,20 +4,21 @@
         <div class="nav-bg-five">
             <nav class="navbar navbar-expand-lg header-nav nav-transparent">
                 <div class="navbar-header">
-                    <a id="mobile_btn" href="javascript:void(0);">	<span class="bar-icon">
+                    <a href="/" class="navbar-brand logo">
+                        <img src="{{image(setting('speed_logo_white'))}}" class="img-fluid" alt="Logo">
+                    </a>
+                    <a id="mobile_btn" href="javascript:void(0);" style="float: right">	<span class="bar-icon">
 									<span></span>
 									<span></span>
 									<span></span>
 									</span>
                     </a>
-                    <a href="/" class="navbar-brand logo">
-                        <img src="{{image(setting('speed_logo_white'))}}" class="img-fluid" alt="Logo">
-                    </a>
+
                 </div>
                 <div class="main-menu-wrapper">
                     <div class="menu-header">
                         <a href="/" class="menu-logo">
-                            <img src="{{image(setting('speed_logo_white'))}}" class="img-fluid" alt="Logo">
+                            <img src="{{image(setting('speed_logo_white'))}}" class="img-fluid" style="max-width: 95% !important;" alt="Logo">
                         </a>
                         <a id="menu_close" class="menu-close" href="javascript:void(0);"><i class="fas fa-times"></i>
                         </a>

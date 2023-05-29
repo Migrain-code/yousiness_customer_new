@@ -26444,14 +26444,15 @@ ul {
 		width: 100%;
 	}
 	#mobile_btn {
-		left: 0;
+		right: 0;
 		margin-right: 0;
 		padding: 0 15px;
 		position: absolute;
 		z-index: 99;
 	}
 	.navbar-brand.logo {
-		width: 100%;
+		position: absolute;
+		left: 0;
 		text-align: center;
 		margin-right: 0;
 	}
