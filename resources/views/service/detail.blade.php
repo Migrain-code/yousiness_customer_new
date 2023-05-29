@@ -43,6 +43,17 @@
             top: 65%;
             width: 0;
         }
+        .card-img{
+
+            height: 250px;
+        }
+        .doc-name {
+            font-size: 30px !important;
+
+
+        }
+
+
     </style>
 @endsection
 @section('content')
@@ -72,70 +83,76 @@
                 @include('service.filter')
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <!-- Business Widget -->
-                    @forelse($businesses as $business)
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="doctor-widget">
-                                    <div class="doc-info-left">
-                                        <div class="doctor-img">
-                                            <a href="{{route('business.detail', $business->business->slug)}}">
-                                                <img src="{{asset($business->business->logo)}}" class="img-fluid" alt="User Image">
-                                            </a>
-                                        </div>
-                                        <div class="doc-info-cont">
-                                            <h4 class="doc-name"><a href="{{route('business.detail', $business->business->slug)}}">{{$business->business->name}}</a></h4>
-                                            @if($business->business->approve_type==1)
-                                                <p class="doc-speciality">
-                                                    <span class="badge badge-success fs-7"><i class="fas fa-check-circle"></i> Anında Onay</span>
-                                                </p>
-                                            @endif
-                                            <div class="clinic-details">
-                                                <p class="doc-location"><i class="fas fa-map-marker-alt"></i> {{$business->business->cities->name. ", ". $business->business->districts->name}}</p>
+                    <div class="row">
+                        @forelse($businesses as $business)
+                           <div class="col-6">
+                               <div class="card">
+                                   <div class="card-img">
+                                       <div style="max-width: 250px; max-height: 40px; position: absolute; top:0; left:0; padding: 5px; background-color: #0000005e; font-size: 20px; color: white; font-weight: 800;">
+                                           {{$business->business->districts->name}}
+                                       </div>
+                                       <img src="{{asset($business->business->wallpaper)}}" class="card-img" alt="User Image">
+                                   </div>
+                                   <div class="card-body">
+                                       <div class="doctor-widget">
+                                           <div class="doc-info-left">
 
-                                            </div>
-                                            <div style="margin-bottom: 5px;">
-                                                <span class="text-success" style="font-size: 19px;font-weight: bold"> {{$business->business->services()->min('price')}} TL</span>'den başlayan fiyatlar
-                                            </div>
-                                            <div class="rating">
-                                                @if($business->business->comments->count() > 0)
-                                                    @for($i=0; $i < 5; $i++ )
-                                                        <i class="fas fa-star @if($i < $business->business->comments->sum('point') / $business->business->comments->count()) filled @endif"></i>
-                                                    @endfor
-                                                @else
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                @endif
+                                               <div class="doc-info-cont">
+                                                   <h4 class="doc-name"><a href="{{route('business.detail', $business->business->slug)}}">{{$business->business->name}}</a></h4>
+                                                   @if($business->business->approve_type==1)
+                                                       <p class="doc-speciality">
+                                                           <span class="badge badge-success fs-7"><i class="fas fa-check-circle"></i> Anında Onay</span>
+                                                       </p>
+                                                   @endif
+                                                   <div class="clinic-details">
+                                                       <p class="doc-location"><i class="fas fa-map-marker-alt"></i> {{$business->business->cities->name. ", ". $business->business->districts->name}}</p>
 
-                                                <span class="d-inline-block average-rating">
+                                                   </div>
+
+                                                   <div class="rating">
+                                                       @if($business->business->comments->count() > 0)
+                                                           @for($i=0; $i < 5; $i++ )
+                                                               <i class="fas fa-star @if($i < $business->business->comments->sum('point') / $business->business->comments->count()) filled @endif"></i>
+                                                           @endfor
+                                                       @else
+                                                           <i class="fas fa-star"></i>
+                                                           <i class="fas fa-star"></i>
+                                                           <i class="fas fa-star"></i>
+                                                           <i class="fas fa-star"></i>
+                                                           <i class="fas fa-star"></i>
+                                                       @endif
+
+                                                       <span class="d-inline-block average-rating">
                                                     <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->business->comments->count()}} Yorum
                                                 </span>
-                                            </div>
+                                                   </div>
 
-                                            <div class="clinic-services">
-                                                <span>{{$business->business->type->name}}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="doc-info-right">
-                                        <div class="clini-infos">
-
-                                        </div>
-                                        <div class="clinic-booking">
-                                            <a class="view-pro-btn" href="{{route('business.detail', $business->business->slug)}}">Profili Görüntüle</a>
-                                            <a class="apt-btn" href="{{route('business.detail', $business->business->slug)}}">Randevu Al</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                                   <div class="clinic-services">
+                                                       <span>{{$business->business->type->name}}</span>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div class="doc-info-right">
+                                               <div class="clini-infos">
+                                                   <div style="margin-bottom: 5px;">
+                                                       <span class="text-success" style="font-size: 19px;font-weight: bold"> {{$business->business->services()->min('price')}} TL</span>'den başlayan fiyatlar
+                                                   </div>
+                                               </div>
+                                               <div class="clinic-booking">
+                                                   <a class="apt-btn" style="margin-top: 50px;" href="{{route('business.detail', $business->business->slug)}}">Randevu Al</a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                        @empty
+                            <div class="alert alert-danger text-center aos" data-aos="fade-down">
+                                Aradığınız türde hizmet veren işletme kaydı bulunamadı.
                             </div>
-                        </div>
-                    @empty
-                        <div class="alert alert-danger text-center aos" data-aos="fade-down">
-                            Aradığınız türde hizmet veren işletme kaydı bulunamadı.
-                        </div>
-                    @endforelse
+                        @endforelse
+                    </div>
+
 
 
                     <div class="load-more text-center">
@@ -145,10 +162,8 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
 
     </div>

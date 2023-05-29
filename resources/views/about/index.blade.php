@@ -168,10 +168,8 @@
                             <!-- /Slider Item -->
                         @empty
                         @endforelse
-
                     </div>
                     <!-- /Slider -->
-
                 </div>
             </div>
         </div>

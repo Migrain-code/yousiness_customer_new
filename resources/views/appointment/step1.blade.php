@@ -70,6 +70,7 @@
         }
 
     </style>
+
 </head>
 <body class="home-five">
 
@@ -89,6 +90,7 @@
                             <a href="#" style="color: white;font-weight: bold">Randevu Al</a>
                         </div>
                     </div>
+
                     @include('appointment.summary')
                     <div class="col-lg-8 col-md-12">
                         <div class="onboarding-content-box content-wrap">
@@ -115,6 +117,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="onboarding-btn">
                                 <a href="javascript:void(0)" onclick="$('#select-service-form').submit()">Devam Et</a>
