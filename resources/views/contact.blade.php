@@ -28,7 +28,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
-                    <h3 class="mb-4">İletişim</h3>
+                    <h3 class="mb-4">İletişim1</h3>
                     <p>Aklınıza takılan ve dökümanlarda bulamadığınız sorunlar mı var? Aşağıdaki formu doldurun veya iletişim bilgilerinden bize ulaşın.</p>
                 </div>
             </div>
