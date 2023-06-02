@@ -84,8 +84,9 @@
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <!-- Business Widget -->
                     <div class="row">
-                        @forelse($businesses as $business)
-                           <div class="col-6">
+
+                         @forelse($businesses as $business)
+                           <div class="col-lg-4">
                                <div class="card">
                                    <div class="card-img">
                                        <div style="max-width: 250px; max-height: 40px; position: absolute; top:0; left:0; padding: 5px; background-color: #0000005e; font-size: 20px; color: white; font-weight: 800;">
@@ -146,11 +147,12 @@
                                    </div>
                                </div>
                            </div>
-                        @empty
+                         @empty
                             <div class="alert alert-danger text-center aos" data-aos="fade-down">
                                 Aradığınız türde hizmet veren işletme kaydı bulunamadı.
                             </div>
-                        @endforelse
+                         @endforelse
+
                     </div>
 
 

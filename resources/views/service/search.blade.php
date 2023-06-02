@@ -73,7 +73,10 @@
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <!-- Business Widget -->
                     @forelse($businesses as $business)
+                   <div class="row">
+                      <div class="col-6">
                         <div class="card">
+
                             <div class="card-body">
                                 <div class="doctor-widget">
                                     <div class="doc-info-left">
@@ -94,7 +97,7 @@
 
                                             </div>
                                             <div style="margin-bottom: 5px;">
-                                                <span class="text-success" style="font-size: 19px;font-weight: bold"> {{$business->services()->min('price')}} TL</span>'den başlayan fiyatlar
+                                                <span class="text-success" style="font-size: 19px;font-weight: bold"> {{$business->services()->min('price')}} TL</span>'den başlasssssssssyan fiyatlar
                                             </div>
                                             <div class="rating">
                                                 @if($business->comments->count() > 0)
@@ -131,6 +134,8 @@
                                 </div>
                             </div>
                         </div>
+                      </div>
+                   </div>
                     @empty
                         <div class="alert alert-danger text-center aos" data-aos="fade-down">
                             Aradığınız türde hizmet veren işletme kaydı bulunamadı.

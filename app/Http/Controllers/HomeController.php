@@ -323,6 +323,7 @@ class HomeController extends Controller
                 $query->where('category', $service->id);
             })
             ->paginate(5);
+
         return view('service.search', compact('businesses', 'service'));
     }
     /*

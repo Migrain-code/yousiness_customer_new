@@ -89,16 +89,18 @@
     </style>
     <!-- Home Five Banner -->
     <section class="home-section-five" style="background-image: url('{{image(main('speed_main_page_header_image'))}}')">
-        <div class="container">
+        <div class="container mb-2">
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="banner-wrapper-five aos" data-aos="fade-up">
                         <div class="section-search-five text-center">
+                          <div class="tit-secret">
                             <span>{{main('speed_main_page_small_title')}} </span>
                             <h2>{{main('speed_main_page_big_title')}}</h2>
                             <p>{{main('speed_main_page_description')}}</p>
+                          </div>
                             <div class="search-box-five">
-                                <div class="col-md-12">
+                                <div class="col-md-12 p-0">
                                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
                                         <li class="nav-item"><a class="nav-link active" href="#solid-rounded-tab1" data-bs-toggle="tab">Hizmet</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#solid-rounded-tab2" data-bs-toggle="tab">Salon Türü</a></li>
@@ -191,7 +193,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -201,6 +202,11 @@
     </section>
     <!-- /Home Five Banner -->
 
+    <!-- Reklam Başlangıç  -->
+    <aside>
+
+    </aside>
+    <!-- Reklam Bitiş  -->
     <!-- Looking Section Five -->
     @if(setting('speed_main_page_section_1') == 1)
         <section class="looking-section-five">
@@ -382,7 +388,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+           <div class="row col-lg-12">
+                    @for($i=0; $i<8; $i++)
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
@@ -396,24 +403,51 @@
                             </div>
                         </div>
                     </div>
-            </div>
-        </div>
-        <div class="container">
+                   @endfor
+                        <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
+                            <div class="specialist-card-five d-flex hvr-bounce-to-right">
+                                <div class="specialist-img-five">
+                                    <img src="" alt="" class="img-fluid">
+                                </div>
+                                <div class="specialist-info">
+                                    <a href="">Tüm Kuaförler</a>
+                                </div>
+                                <div class="specialist-nav-five ms-auto">
+                                    <a href=""><i class="feather-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+           </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mt-5 ">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
                         <h2 class="title-five">Güzellik Merkezleri</h2>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+            <div class="row col-lg-12">
+                @for($i=0; $i<8; $i++)
+                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+                        <div class="specialist-card-five d-flex hvr-bounce-to-right">
+                            <div class="specialist-img-five">
+                                <img src="" alt="" class="img-fluid">
+                            </div>
+                            <div class="specialist-info">
+                                <a href="">Güzellik Merkezleri</a>
+                            </div>
+                            <div class="specialist-nav-five ms-auto">
+                                <a href=""><i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endfor
+                <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
                     <div class="specialist-card-five d-flex hvr-bounce-to-right">
                         <div class="specialist-img-five">
                             <img src="" alt="" class="img-fluid">
                         </div>
                         <div class="specialist-info">
-                            <a href="">İstanbul Güzellik Merkezleri</a>
+                            <a href="">Tüm Güzellik Merkezleri</a>
                         </div>
                         <div class="specialist-nav-five ms-auto">
                             <a href=""><i class="feather-arrow-right"></i></a>
@@ -421,23 +455,36 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mt-5 ">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
                         <h2 class="title-five">Berberler</h2>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+            <div class="row col-lg-12">
+                @for($i=0; $i<8; $i++)
+                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+                        <div class="specialist-card-five d-flex hvr-bounce-to-right">
+                            <div class="specialist-img-five">
+                                <img src="" alt="" class="img-fluid">
+                            </div>
+                            <div class="specialist-info">
+                                <a href="">Berberler</a>
+                            </div>
+                            <div class="specialist-nav-five ms-auto">
+                                <a href=""><i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endfor
+                <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
                     <div class="specialist-card-five d-flex hvr-bounce-to-right">
                         <div class="specialist-img-five">
                             <img src="" alt="" class="img-fluid">
                         </div>
                         <div class="specialist-info">
-                            <a href="">İstanbul Berberler</a>
+                            <a href="">Tüm Berberler</a>
                         </div>
                         <div class="specialist-nav-five ms-auto">
                             <a href=""><i class="feather-arrow-right"></i></a>
@@ -445,7 +492,11 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
+
+
     </section>
     <!-- /Browse Section Five -->
     @endif
