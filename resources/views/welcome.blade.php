@@ -3,7 +3,7 @@
 @section('meta_description', config('settings.meta_description'))
 @section('styles')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.css" integrity="sha512-ShLuspGzRsTiMlQ2Rg0e+atjy/gVQr3oYKnKmQkHQ6sxcnDAEOtOaPz2rRmeygV2CtnwUawDyHkGgH4zUbP3Hw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .select2-container {
             width: 100% !important;
@@ -215,6 +215,29 @@
                             <!-- Reklam Bitiş  -->
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="glide my-2" data-aos="fade-up">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide" style="text-align: center ;">
+                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px; object-fit: cover;"></li>
+                        <li class="glide__slide" style="text-align: center;">
+                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
+                        <li class="glide__slide" style="text-align: center ;">
+                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;">
+                        </li>
+                        <li class="glide__slide" style="text-align: center;">
+                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
+                        <li class="glide__slide" style="text-align: center;">
+                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
+                        <li class="glide__slide" style="text-align: center;">
+                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
+                        <li class="glide__slide" style="text-align: center;">
+                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
+                        <li class="glide__slide" style="text-align: center;">
+                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -649,9 +672,27 @@
 </script>
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function() {
             $('.js-example-basic-single').select2();
+
+            const options = {
+                type : "careousel",
+                perView : 5,
+                autoplay: "1500",
+                hoverpause: true,
+                breakpoints: {
+                    1024: {
+                        perView: 2
+                    },
+                    600: {
+                        perView: 1
+                    }
+                }
+            };
+
+            new Glide('.glide', options).mount()
 
         });
         // Arama kutusunu seçin
