@@ -1,26 +1,22 @@
-<div class="col-md-12 col-lg-4 col-xl-3">
-    <!-- Search Filter -->
+ <div class="col-md-12 col-lg-4 col-xl-3">
+    <!-- Search Filter  <button type="submit" class="btn-five w-100 p-2">Ara</button>-->
     <div class="card search-filter">
         <div class="card-header">
-            <h4 class="card-title mb-0">Filtreler</h4>
-        </div>
-        <div class="card-body">
+            <h4 class="card-title mb-0">Filtrele</h4>
             @if(isset($service) and isset($service->subCategories))
-                <form method="get" action="{{route('service.detail', $service->slug)}}">
+                <form class="mr-1" method="get" action="{{route('service.detail', $service->slug)}}">
                     <div class="filter-widget">
-                        <h4>Hizmet Seçiniz</h4>
-                        <div>
+                        <div style="display: flex">
                             <select class="js-example-basic-single" name="alt_kategori">
                                 @forelse($service->subCategories as $sub_service)
                                     <option value="{{$sub_service->slug}}">{{$sub_service->name}}</option>
                                 @empty
-
                                 @endforelse
                             </select>
-
+                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> <span class="fa fa-search"></span></button>
                         </div>
                     </div>
-                    <button type="submit" class="btn-five w-100 p-2">Ara</button>
+
 
                 </form>
             @elseif(isset($service))
@@ -32,15 +28,17 @@
                                 @forelse($service->category->subCategories as $sub_service)
                                     <option value="{{$sub_service->slug}}">{{$sub_service->name}}</option>
                                 @empty
-
                                 @endforelse
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn-five w-100 p-2">Ara</button>
+                    <button type="submit" class="btn-five w-10 p-2"> <span class="fa fa-search"></span></button>
 
                 </form>
             @endif
+        </div>
+        <div class="card-body">
+
             @if(isset($city))
                 <div class="filter-widget">
                     <h4>İlçe Seçiniz</h4>

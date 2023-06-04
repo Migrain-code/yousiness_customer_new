@@ -62,15 +62,15 @@
                   <div class="main-nav-secdefault">
                     @if(auth('customer')->check())
                         <li class="nav-item">
-                            <a class="nav-link btn-five" href="{{route('customer.home')}}">Hesabım</a>
+                            <a class="nav-link btn-five" href="{{route('customer.home')}}">HESABIM</a>
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link btn-five" href="{{route('customer.login')}}">Giriş Yap</a>
+                            <a class="nav-link btn-five" href="{{route('customer.login')}}">GİRİŞ YAP</a>
                         </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link btn-five-light" href="{{image('')}}" target="_blank">İşletmeler İçin</a>
+                        <a class="nav-link btn-five-light" href="{{image('')}}" target="_blank">İŞLETMELER</a>
                     </li>
                   </div>
                 </ul>

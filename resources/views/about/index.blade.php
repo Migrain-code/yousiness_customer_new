@@ -117,6 +117,7 @@
                     <div class="specialities-slider slider">
 
                        @forelse($sponsors as $sponsor)
+                          @for($i=0; $i<12;$i++)
                             <!-- Slider Item -->
                             <a href="{{$sponsor->link}}">
                                 <div class="speicality-item text-center" style="width: 100%; background: aliceblue;display: inline-block;padding: 10px; border-radius: 15px;">
@@ -128,6 +129,7 @@
                                 </div>
                             </a>
                             <!-- /Slider Item -->
+                            @endfor
                         @empty
 
                         @endforelse

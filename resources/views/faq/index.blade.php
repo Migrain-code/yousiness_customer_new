@@ -23,10 +23,7 @@
     </div>
     <div class="content" style="min-height: 264.8px;">
         <div class="container">
-
             <div class="accordion" id="accordionExample">
-
-
                 <div class="section-header section-header-five text-center aos aos-init aos-animate" data-aos="fade-up">
                     <h2 class="title-five">Sık Sorulan Sorular</h2>
                 </div>

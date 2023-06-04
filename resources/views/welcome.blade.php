@@ -3,6 +3,7 @@
 @section('meta_description', config('settings.meta_description'))
 @section('styles')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <style>
         .select2-container {
             width: 100% !important;
@@ -194,6 +195,24 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Reklam Başlangıç  -->
+                   <!--         <aside>
+                              <div class="rek-sec">
+                                <div class="container col-md-8">
+                                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
+                                        <div class=" reklam" >
+                                            <div class="carousel-item active mt-3 ">
+                                                <img style="width: 100px;height: 80px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
+                                                <img style="width: 120px;height: 110px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
+                                                <img style="width: 140px;height: 120px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
+                                                <img style="width: 120px;height: 110px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
+                                                <img style="width: 100px;height: 80px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aside> -->
+                            <!-- Reklam Bitiş  -->
                         </div>
                     </div>
                 </div>
@@ -201,12 +220,6 @@
         </div>
     </section>
     <!-- /Home Five Banner -->
-
-    <!-- Reklam Başlangıç  -->
-    <aside>
-
-    </aside>
-    <!-- Reklam Bitiş  -->
     <!-- Looking Section Five -->
     @if(setting('speed_main_page_section_1') == 1)
         <section class="looking-section-five">
@@ -363,7 +376,8 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid">
+                                <!-- <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid"> -->
+                                <img src="front/assets/img/star.png" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="{{route('service.detail', [$subCategory->category->slug, 'alt-kategori'=> $subCategory->slug])}}">{{$subCategory->name}}</a>
@@ -393,7 +407,7 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="" alt="" class="img-fluid">
+                                <img src="front/assets/img/kuafor.png" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="">İstanbul Kuaförleri</a>
@@ -407,7 +421,7 @@
                         <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
                             <div class="specialist-card-five d-flex hvr-bounce-to-right">
                                 <div class="specialist-img-five">
-                                    <img src="" alt="" class="img-fluid">
+                                    <img src="front/assets/img/list.png" alt="" class="img-fluid">
                                 </div>
                                 <div class="specialist-info">
                                     <a href="">Tüm Kuaförler</a>
@@ -430,7 +444,7 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="" alt="" class="img-fluid">
+                                <img src="front/assets/img/pretty.png" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="">Güzellik Merkezleri</a>
@@ -444,7 +458,7 @@
                 <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
                     <div class="specialist-card-five d-flex hvr-bounce-to-right">
                         <div class="specialist-img-five">
-                            <img src="" alt="" class="img-fluid">
+                            <img src="front/assets/img/list.png" alt="" class="img-fluid">
                         </div>
                         <div class="specialist-info">
                             <a href="">Tüm Güzellik Merkezleri</a>
@@ -467,7 +481,7 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="" alt="" class="img-fluid">
+                                <img src="front/assets/img/barber.png" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="">Berberler</a>
@@ -481,7 +495,7 @@
                 <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
                     <div class="specialist-card-five d-flex hvr-bounce-to-right">
                         <div class="specialist-img-five">
-                            <img src="" alt="" class="img-fluid">
+                            <img src="front/assets/img/list.png" alt="" class="img-fluid">
                         </div>
                         <div class="specialist-info">
                             <a href="">Tüm Berberler</a>
@@ -612,7 +626,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <div class="blog-five-btn aos" data-aos="fade-up">
+                            <div class="blog-five-btn aos" style="margin: 149px 0 0px;" data-aos="fade-up">
                                 <a href="{{route('blog.index')}}" class="btn btn-six">Daha Fazla</a>
                             </div>
                         </div>
@@ -623,6 +637,16 @@
         @endif
     @endif
 @endsection
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
@@ -658,4 +682,6 @@
             xhr.send();
         });
     </script>
+    <script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
+
 @endsection
