@@ -607,7 +607,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">Son Yayınlanan Bloglarımız</h2>
+                                <h2 class="title-five">Son Yayınlanan Bloglarımız1</h2>
                             </div>
                         </div>
                     </div>
