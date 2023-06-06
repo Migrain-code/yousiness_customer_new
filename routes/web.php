@@ -42,6 +42,7 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::post('/iletisim/save', 'contactStore')->name('contact.store');
 
 });
+
 Route::controller(\App\Http\Controllers\AppointmentController::class)->prefix('randevu-al')->group(function (){
     Route::get('/{business}/hizmet/{service}/adim-1', 'step1Show')->name('step1.show');
     Route::post('/adim-1/save', 'step1Store')->name('step1.store');
@@ -55,7 +56,6 @@ Route::controller(\App\Http\Controllers\AppointmentController::class)->prefix('r
     Route::get('/adim-4/save', 'step4StoreNoPost')->name('step4.no_post');
     Route::get('/randevu-olusturuldu', 'step5Show')->name('step5.show');
 });
-
 Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
     Route::get('/login', [\App\Http\Controllers\Customer\Auth\LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [\App\Http\Controllers\Customer\Auth\LoginController::class, 'login']);

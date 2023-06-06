@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/front/assets/css/app.min.css">
 @endsection
 @section('content')
-
+    <a href="/resources/views/appointment/step1">Step 1</a>
     <div class="container mt-5">
         <div class="company-title">
             <div class="row">
@@ -119,7 +119,6 @@
                                                         <button class="appointment-button ms-4">Randevu Al</button>
                                                     </div>
                                                 </div>
-
                                             </li>
                                         </ul>
                                     </div>

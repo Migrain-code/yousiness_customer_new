@@ -23211,7 +23211,10 @@ ul {
 	.comment_rating {
 		width: 100px !important;
 		margin-left:  127px !important;
-
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
 	}
 
 
@@ -23280,6 +23283,10 @@ ul {
 	.setting_price {
 		margin-left: 155px !important;
 	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
+	}
 
 }
 @media (max-width: 415px) {
@@ -23339,6 +23346,10 @@ ul {
 	.mobil_hizmet_setting_buton {
 		margin-left: 108px !important;
 	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
+	}
 }
 @media (max-width: 385px) {
 	.bar-icon {
@@ -23396,6 +23407,10 @@ ul {
 	}
 	.mobil_hizmet_setting_buton {
 		margin-left: 80px !important;
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
 	}
 
 }
@@ -23455,6 +23470,10 @@ ul {
 	}
 	.mobil_hizmet_setting_buton {
 		margin-left: 65px !important;
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
 	}
 }
 @media (max-width: 361px) {
@@ -23516,6 +23535,10 @@ ul {
 	}
 	.mobil_hizmet_setting_buton {
 		margin-left: 55px !important;
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
 	}
 
 }

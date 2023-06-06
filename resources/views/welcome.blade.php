@@ -199,29 +199,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Reklam Başlangıç  -->
-                   <!--         <aside>
-                              <div class="rek-sec">
-                                <div class="container col-md-8">
-                                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
-                                        <div class=" reklam" >
-                                            <div class="carousel-item active mt-3 ">
-                                                <img style="width: 100px;height: 80px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                                <img style="width: 120px;height: 110px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                                <img style="width: 140px;height: 120px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                                <img style="width: 120px;height: 110px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                                <img style="width: 100px;height: 80px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </aside> -->
-                            <!-- Reklam Bitiş  -->
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="glide my-2" data-aos="fade-up">
+           <div class="row adds_mobil">
+                 <div class="glide my-2" data-aos="fade-up">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         <li class="glide__slide" style="text-align: center ;">
@@ -244,6 +228,7 @@
                     </ul>
                 </div>
             </div>
+           </div>
         </div>
     </section>
     <!-- /Home Five Banner -->
