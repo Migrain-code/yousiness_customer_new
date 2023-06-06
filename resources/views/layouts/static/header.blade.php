@@ -8,6 +8,7 @@
 
     <!-- Favicons -->
     <link type="image/x-icon" href="{{image(setting('speed_favicon'))}}" rel="icon">
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @include('layouts.component.styles')

@@ -12,6 +12,9 @@
         .select2-container--default .select2-search--dropdown .select2-search__field {
             border: 1px solid #0db9f2;
             border-radius: 5px;
+            width: 275px;
+            margin: -46px 34px 0 42px;
+
         }
         .select2-results__option {
             padding: 6px;
@@ -47,6 +50,7 @@
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
+
         .select2-container--default .select2-selection--single .select2-selection__arrow b {
             border-color: #888 transparent transparent transparent;
             border-style: solid;

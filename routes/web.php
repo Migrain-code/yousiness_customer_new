@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
 
+    Route::get('/test',function () {
+       return view('test');
+    });
     Route::get('/', 'index')->name('welcome');
     Route::get('/salonlar', 'allBusiness')->name('business.all');
     Route::get('/salon-kategori/{slug}', 'businessCategory')->name('business.category');

@@ -51,8 +51,6 @@
         }
         .doc-name {
             font-size: 30px !important;
-
-
         }
 
 
@@ -132,7 +130,7 @@
 
                                                    <div class="clinic-services">
                                                        <span>{{$business->business->type->name}}</span>
-                                                   </div>
+                                                    </div>
                                                </div>
                                            </div>
                                            <div class="doc-info-right">

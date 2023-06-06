@@ -16,8 +16,6 @@
                             <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> <span class="fa fa-search"></span></button>
                         </div>
                     </div>
-
-
                 </form>
             @elseif(isset($service))
                 <form method="get" action="{{route('service.detail', $service->category->slug)}}">
