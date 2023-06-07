@@ -1,0 +1,597 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/127.0.0.1:8000"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "0b1e6fec-fe1c-43e8-b2a5-f6ce298f8bde",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "description": "",
+            "item": [
+                {
+                    "name": "POST api\/auth\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phone\":\"error\",\"password\":\"tc?yfk~ow4j\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"voluptatem\",\"phone\":\"quasi\",\"birthday\":\"quasi\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "City",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/city\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/city\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/city\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "\u015eehir Listesi. Direk get iste\u011fi at\u0131lacak Header veya body g\u00f6nderimine gerek yok",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "45"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"cities\":[{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},{\"id\":2,\"slug\":\"adiyaman\",\"name\":\"ADIYAMAN\"},{\"id\":3,\"slug\":\"afyon\",\"name\":\"AFYON\"},{\"id\":4,\"slug\":\"agri\",\"name\":\"A\\u011eRI\"},{\"id\":5,\"slug\":\"amasya\",\"name\":\"AMASYA\"},{\"id\":6,\"slug\":\"ankara\",\"name\":\"ANKARA\"},{\"id\":7,\"slug\":\"antalya\",\"name\":\"ANTALYA\"},{\"id\":8,\"slug\":\"artvin\",\"name\":\"ARTV\\u0130N\"},{\"id\":9,\"slug\":\"aydin\",\"name\":\"AYDIN\"},{\"id\":10,\"slug\":\"balikesir\",\"name\":\"BALIKES\\u0130R\"},{\"id\":11,\"slug\":\"bilecik\",\"name\":\"B\\u0130LEC\\u0130K\"},{\"id\":12,\"slug\":\"bingol\",\"name\":\"B\\u0130NG\\u00d6L\"},{\"id\":13,\"slug\":\"bitlis\",\"name\":\"B\\u0130TL\\u0130S\"},{\"id\":14,\"slug\":\"bolu\",\"name\":\"BOLU\"},{\"id\":15,\"slug\":\"burdur\",\"name\":\"BURDUR\"},{\"id\":16,\"slug\":\"bursa\",\"name\":\"BURSA\"},{\"id\":17,\"slug\":\"canakkale\",\"name\":\"\\u00c7ANAKKALE\"},{\"id\":18,\"slug\":\"cankiri\",\"name\":\"\\u00c7ANKIRI\"},{\"id\":19,\"slug\":\"corum\",\"name\":\"\\u00c7ORUM\"},{\"id\":20,\"slug\":\"denizli\",\"name\":\"DEN\\u0130ZL\\u0130\"},{\"id\":21,\"slug\":\"diyarbakir\",\"name\":\"D\\u0130YARBAKIR\"},{\"id\":22,\"slug\":\"edirne\",\"name\":\"ED\\u0130RNE\"},{\"id\":23,\"slug\":\"elazig\",\"name\":\"ELAZI\\u011e\"},{\"id\":24,\"slug\":\"erzincan\",\"name\":\"ERZ\\u0130NCAN\"},{\"id\":25,\"slug\":\"erzurum\",\"name\":\"ERZURUM\"},{\"id\":26,\"slug\":\"eskisehir\",\"name\":\"ESK\\u0130\\u015eEH\\u0130R\"},{\"id\":27,\"slug\":\"gaziantep\",\"name\":\"GAZ\\u0130ANTEP\"},{\"id\":28,\"slug\":\"giresun\",\"name\":\"G\\u0130RESUN\"},{\"id\":29,\"slug\":\"gumushane\",\"name\":\"G\\u00dcM\\u00dc\\u015eHANE\"},{\"id\":30,\"slug\":\"hakkari\",\"name\":\"HAKKAR\\u0130\"},{\"id\":31,\"slug\":\"hatay\",\"name\":\"HATAY\"},{\"id\":32,\"slug\":\"isparta\",\"name\":\"ISPARTA\"},{\"id\":33,\"slug\":\"icel\",\"name\":\"\\u0130\\u00c7EL\"},{\"id\":34,\"slug\":\"istanbul\",\"name\":\"\\u0130STANBUL\"},{\"id\":35,\"slug\":\"izmir\",\"name\":\"\\u0130ZM\\u0130R\"},{\"id\":36,\"slug\":\"kars\",\"name\":\"KARS\"},{\"id\":37,\"slug\":\"kastamonu\",\"name\":\"KASTAMONU\"},{\"id\":38,\"slug\":\"kayseri\",\"name\":\"KAYSER\\u0130\"},{\"id\":39,\"slug\":\"kirklareli\",\"name\":\"KIRKLAREL\\u0130\"},{\"id\":40,\"slug\":\"kirsehir\",\"name\":\"KIR\\u015eEH\\u0130R\"},{\"id\":41,\"slug\":\"kocaeli\",\"name\":\"KOCAEL\\u0130\"},{\"id\":42,\"slug\":\"konya\",\"name\":\"KONYA\"},{\"id\":43,\"slug\":\"kutahya\",\"name\":\"K\\u00dcTAHYA\"},{\"id\":44,\"slug\":\"malatya\",\"name\":\"MALATYA\"},{\"id\":45,\"slug\":\"manisa\",\"name\":\"MAN\\u0130SA\"},{\"id\":46,\"slug\":\"kahramanmaras\",\"name\":\"KAHRAMANMARA\\u015e\"},{\"id\":47,\"slug\":\"mardin\",\"name\":\"MARD\\u0130N\"},{\"id\":48,\"slug\":\"mugla\",\"name\":\"MU\\u011eLA\"},{\"id\":49,\"slug\":\"mus\",\"name\":\"MU\\u015e\"},{\"id\":50,\"slug\":\"nevsehir\",\"name\":\"NEV\\u015eEH\\u0130R\"},{\"id\":51,\"slug\":\"nigde\",\"name\":\"N\\u0130\\u011eDE\"},{\"id\":52,\"slug\":\"ordu\",\"name\":\"ORDU\"},{\"id\":53,\"slug\":\"rize\",\"name\":\"R\\u0130ZE\"},{\"id\":54,\"slug\":\"sakarya\",\"name\":\"SAKARYA\"},{\"id\":55,\"slug\":\"samsun\",\"name\":\"SAMSUN\"},{\"id\":56,\"slug\":\"siirt\",\"name\":\"S\\u0130\\u0130RT\"},{\"id\":57,\"slug\":\"sinop\",\"name\":\"S\\u0130NOP\"},{\"id\":58,\"slug\":\"sivas\",\"name\":\"S\\u0130VAS\"},{\"id\":59,\"slug\":\"tekirdag\",\"name\":\"TEK\\u0130RDA\\u011e\"},{\"id\":60,\"slug\":\"tokat\",\"name\":\"TOKAT\"},{\"id\":61,\"slug\":\"trabzon\",\"name\":\"TRABZON\"},{\"id\":62,\"slug\":\"tunceli\",\"name\":\"TUNCEL\\u0130\"},{\"id\":63,\"slug\":\"sanliurfa\",\"name\":\"\\u015eANLIURFA\"},{\"id\":64,\"slug\":\"usak\",\"name\":\"U\\u015eAK\"},{\"id\":65,\"slug\":\"van\",\"name\":\"VAN\"},{\"id\":66,\"slug\":\"yozgat\",\"name\":\"YOZGAT\"},{\"id\":67,\"slug\":\"zonguldak\",\"name\":\"ZONGULDAK\"},{\"id\":68,\"slug\":\"aksaray\",\"name\":\"AKSARAY\"},{\"id\":69,\"slug\":\"bayburt\",\"name\":\"BAYBURT\"},{\"id\":70,\"slug\":\"karaman\",\"name\":\"KARAMAN\"},{\"id\":71,\"slug\":\"kirikkale\",\"name\":\"KIRIKKALE\"},{\"id\":72,\"slug\":\"batman\",\"name\":\"BATMAN\"},{\"id\":73,\"slug\":\"sirnak\",\"name\":\"\\u015eIRNAK\"},{\"id\":74,\"slug\":\"bartin\",\"name\":\"BARTIN\"},{\"id\":75,\"slug\":\"ardahan\",\"name\":\"ARDAHAN\"},{\"id\":76,\"slug\":\"igdir\",\"name\":\"I\\u011eDIR\"},{\"id\":77,\"slug\":\"yalova\",\"name\":\"YALOVA\"},{\"id\":78,\"slug\":\"karabuk\",\"name\":\"KARAB\\u00dcK\"},{\"id\":79,\"slug\":\"kilis\",\"name\":\"K\\u0130L\\u0130S\"},{\"id\":80,\"slug\":\"osmaniye\",\"name\":\"OSMAN\\u0130YE\"},{\"id\":81,\"slug\":\"duzce\",\"name\":\"D\\u00dcZCE\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/city\/get",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/city\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/city\/get"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"city_id\":16}"
+                        },
+                        "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Customer (Lists)",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/customer\/get",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/get"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Status Codes\n<ul>\n<li>200 Ba\u015far\u0131l\u0131<\/li>\n<li>422 Validator Hatas\u0131<\/li>\n<li> 401 Unauthorized Hatas\u0131 <\/li>\n<\/ul>\nBu m\u00fc\u015fteri bilgilerini d\u00f6nd\u00fcrecek",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "51"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Unauthorized\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/customer\/favorite\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/favorite\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/favorite\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu m\u00fc\u015fterinin ekledi\u011fi favori i\u015fletmelerin kay\u0131tlar\u0131n\u0131 d\u00f6nd\u00fcrecek",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "50"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Unauthorized\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/customer\/deal\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/deal\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/deal\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu m\u00fc\u015fterinin daha \u00f6nce randevu ald\u0131\u011f\u0131 i\u015fletmelerin kay\u0131tlar\u0131n\u0131 d\u00f6nd\u00fcrecek",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "49"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Unauthorized\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/customer\/order\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/order\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/order\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu m\u00fc\u015fterinin vermi\u015f oldu\u011fu \u00fcr\u00fcn sipari\u015flerini listeleyecek",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "48"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Unauthorized\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/customer\/packet\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/packet\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/packet\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu m\u00fc\u015fterinin i\u015fletmelerden alm\u0131\u015f oldu\u011fu paketlerin listesini verecek",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "47"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Unauthorized\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/customer\/appointment\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/appointment\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/appointment\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu m\u00fc\u015fterinin randevu listesini verecek",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "46"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Unauthorized\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Customer (Update)",
+            "description": "",
+            "item": [
+                {
+                    "name": "POST api\/customer\/update\/profile",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/update\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/update\/profile"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"accusantium\",\"phone\":\"nihil\",\"birthday\":\"2023-06-07T15:41:04\"}"
+                        },
+                        "description": "Bu m\u00fc\u015fterinin profil bilgilerini g\u00fcncelleyecek endpoint\n<ul>\n<li> city_id ve district_id zorunlu alan de\u011fildir istenirse g\u00f6nderilebilir <\/li>\n<li>Tarih format\u0131 2001-09-08 \u015feklinde (YY-AA-GG) \u015feklinde olma\u0131d\u0131r <\/li>\n<\/ul>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/customer\/update\/password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/update\/password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/update\/password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"password\":\"1jirr:9\"}"
+                        },
+                        "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

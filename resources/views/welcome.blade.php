@@ -3,7 +3,6 @@
 @section('meta_description', config('settings.meta_description'))
 @section('styles')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.css" integrity="sha512-ShLuspGzRsTiMlQ2Rg0e+atjy/gVQr3oYKnKmQkHQ6sxcnDAEOtOaPz2rRmeygV2CtnwUawDyHkGgH4zUbP3Hw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .select2-container {
             width: 100% !important;
@@ -12,9 +11,6 @@
         .select2-container--default .select2-search--dropdown .select2-search__field {
             border: 1px solid #0db9f2;
             border-radius: 5px;
-            width: 275px;
-            margin: -46px 34px 0 42px;
-
         }
         .select2-results__option {
             padding: 6px;
@@ -50,7 +46,6 @@
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
-
         .select2-container--default .select2-selection--single .select2-selection__arrow b {
             border-color: #888 transparent transparent transparent;
             border-style: solid;
@@ -199,39 +194,19 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-           <div class="row adds_mobil">
-                 <div class="glide my-2" data-aos="fade-up">
-                <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides">
-                        <li class="glide__slide" style="text-align: center ;">
-                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px; object-fit: cover;"></li>
-                        <li class="glide__slide" style="text-align: center;">
-                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
-                        <li class="glide__slide" style="text-align: center ;">
-                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;">
-                        </li>
-                        <li class="glide__slide" style="text-align: center;">
-                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
-                        <li class="glide__slide" style="text-align: center;">
-                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
-                        <li class="glide__slide" style="text-align: center;">
-                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
-                        <li class="glide__slide" style="text-align: center;">
-                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
-                        <li class="glide__slide" style="text-align: center;">
-                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px;  object-fit: cover;"></li>
-                    </ul>
-                </div>
-            </div>
-           </div>
         </div>
     </section>
     <!-- /Home Five Banner -->
+
+    <!-- Reklam Başlangıç  -->
+    <aside>
+
+    </aside>
+    <!-- Reklam Bitiş  -->
     <!-- Looking Section Five -->
     @if(setting('speed_main_page_section_1') == 1)
         <section class="looking-section-five">
@@ -388,8 +363,7 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <!-- <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid"> -->
-                                <img src="front/assets/img/star.png" alt="" class="img-fluid">
+                                <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="{{route('service.detail', [$subCategory->category->slug, 'alt-kategori'=> $subCategory->slug])}}">{{$subCategory->name}}</a>
@@ -419,7 +393,7 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="front/assets/img/kuafor.png" alt="" class="img-fluid">
+                                <img src="" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="">İstanbul Kuaförleri</a>
@@ -433,7 +407,7 @@
                         <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
                             <div class="specialist-card-five d-flex hvr-bounce-to-right">
                                 <div class="specialist-img-five">
-                                    <img src="front/assets/img/list.png" alt="" class="img-fluid">
+                                    <img src="" alt="" class="img-fluid">
                                 </div>
                                 <div class="specialist-info">
                                     <a href="">Tüm Kuaförler</a>
@@ -456,7 +430,7 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="front/assets/img/pretty.png" alt="" class="img-fluid">
+                                <img src="" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="">Güzellik Merkezleri</a>
@@ -470,7 +444,7 @@
                 <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
                     <div class="specialist-card-five d-flex hvr-bounce-to-right">
                         <div class="specialist-img-five">
-                            <img src="front/assets/img/list.png" alt="" class="img-fluid">
+                            <img src="" alt="" class="img-fluid">
                         </div>
                         <div class="specialist-info">
                             <a href="">Tüm Güzellik Merkezleri</a>
@@ -493,7 +467,7 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="front/assets/img/barber.png" alt="" class="img-fluid">
+                                <img src="" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="">Berberler</a>
@@ -507,7 +481,7 @@
                 <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
                     <div class="specialist-card-five d-flex hvr-bounce-to-right">
                         <div class="specialist-img-five">
-                            <img src="front/assets/img/list.png" alt="" class="img-fluid">
+                            <img src="" alt="" class="img-fluid">
                         </div>
                         <div class="specialist-info">
                             <a href="">Tüm Berberler</a>
@@ -596,7 +570,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">Son Yayınlanan Bloglarımız1</h2>
+                                <h2 class="title-five">Son Yayınlanan Bloglarımız</h2>
                             </div>
                         </div>
                     </div>
@@ -638,7 +612,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <div class="blog-five-btn aos" style="margin: 149px 0 0px;" data-aos="fade-up">
+                            <div class="blog-five-btn aos" data-aos="fade-up">
                                 <a href="{{route('blog.index')}}" class="btn btn-six">Daha Fazla</a>
                             </div>
                         </div>
@@ -649,39 +623,11 @@
         @endif
     @endif
 @endsection
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        effect: "cards",
-        grabCursor: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-</script>
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function() {
             $('.js-example-basic-single').select2();
-
-            const options = {
-                type : "careousel",
-                perView : 5,
-                autoplay: "1500",
-                hoverpause: true,
-                breakpoints: {
-                    1024: {
-                        perView: 2
-                    },
-                    600: {
-                        perView: 1
-                    }
-                }
-            };
-
-            new Glide('.glide', options).mount()
 
         });
         // Arama kutusunu seçin
@@ -712,6 +658,4 @@
             xhr.send();
         });
     </script>
-    <script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
-
 @endsection

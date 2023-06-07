@@ -9,6 +9,17 @@ class ProductSales extends Model
 {
     use HasFactory;
 
+    const PAYMENT_TYPES = [
+        0 => 'Nakit Ödeme',
+        1 => 'Banka/Kredi Kartı',
+        2 => 'EFT/Havale',
+        3 => 'Diğer',
+    ];
+
+    public function paymentType()
+    {
+        return self::PAYMENT_TYPES[$this->payment_type];
+    }
     public function customer()
     {
         return $this->hasOne(Customer::class,'id', 'customer_id');

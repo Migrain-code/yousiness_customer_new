@@ -29,6 +29,10 @@ use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
+    public function selectTest()
+    {
+
+    }
     public function index()
     {
         $ads=Ads::latest()->get();

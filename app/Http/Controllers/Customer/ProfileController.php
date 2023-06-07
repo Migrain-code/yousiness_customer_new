@@ -18,7 +18,7 @@ class ProfileController extends Controller
         $customer->city_id=$request->input('city_id');
         $customer->district_id=$request->input('district_id');
         if ($request->hasFile('profile')){
-            $customer->image='storage/'.$request->file('profile')->store('customer_profiles');
+            $customer->image = $request->file('profile')->store('customer_profiles');
         }
         if ($customer->save()){
             return back()->with('response', [
