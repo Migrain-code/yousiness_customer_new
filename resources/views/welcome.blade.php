@@ -205,7 +205,7 @@
                 </div>
             </div>
            <div class="row adds_mobil">
-                 <div class="glide my-2" data-aos="fade-up">
+                 <div class="glide mt-4" data-aos="fade-up">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         <li class="glide__slide" style="text-align: center ;">
@@ -673,7 +673,7 @@
                 hoverpause: true,
                 breakpoints: {
                     1024: {
-                        perView: 2
+                        perView: 3
                     },
                     600: {
                         perView: 1
@@ -712,6 +712,7 @@
             xhr.send();
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
 
 @endsection

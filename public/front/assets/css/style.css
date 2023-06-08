@@ -1473,7 +1473,7 @@ button.bg-danger:hover {
 	color: #fff;
 }
 .tab-content {
-	padding-top: 20px;
+	padding-top: 5px;
 }
 .nav-tabs .nav-link {
 	border-radius: 0;
@@ -22676,7 +22676,6 @@ ul {
 	}
 	.flex-column {
 		flex-wrap: nowrap;
-		flex-direction: row!important;
 		overflow-y: scroll;
 	}
 	.list__content {
@@ -22702,6 +22701,8 @@ ul {
 -----------------------*/
 
 @media only screen and (min-width:768px) {
+
+
 
 	.avatar-xxl {
 		width: 8rem;

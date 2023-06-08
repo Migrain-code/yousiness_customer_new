@@ -140,3 +140,34 @@
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
+
+.btn-group .col-sm-6{
+	padding: 0 !important;
+}
+.btn-group .col-sm-6 .s1{
+	margin-left: auto !important;
+}
+.btn-group .col-sm-6 .s2{
+	margin-right: auto !important;
+}
+
+@media only screen and (max-width: 767.98px) {
+
+
+	.tab-titles, .appointment button{
+		font-size: 0.875rem !important;
+	}
+
+	.service-name {
+		font-size: 1rem !important;
+	}
+	.glide img{
+		height: 300px !important;
+		margin-top: 1rem;
+	}
+	.btn-group .col-sm-6{
+		padding: 0;
+		margin: 0 auto;
+	}
+
+}
