@@ -27908,13 +27908,15 @@ ul {
 		width: 100%;
 	}
 }
-@media (min-width: 1360px);
-.container, .container-lg, .container-md, .container-sm, .container-xl {
-	max-width: 1360px;
-}
+@media (min-width: 1360px){
+	.container, .container-lg, .container-md, .container-sm, .container-xl {
+		max-width: 1360px;
+	}
 	.select2-search--dropdown {
 		display: none;
 	}
+}
+
 .company-name {
 	padding: 10px;
 	color: black !important;
