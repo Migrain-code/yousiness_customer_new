@@ -23012,7 +23012,7 @@ ul {
 	}
 }
 
-@media (min-width: 1371px) {
+@media (min-width: 1372px) {
 	.card-header > form > .filter-widget  {
 		margin-left: 120px !important;
 		width: 245px !important;
@@ -23021,13 +23021,17 @@ ul {
 		padding-left: 20px !important;
 	}
 }
-@media (max-width: 1370px) {
+@media (max-width: 1371px) {
 	.card-header > form > .filter-widget  {
 		margin-left: -16px !important;
 	}
 	.select2-container .select2-selection--single .select2-selection__rendered {
 		padding-left: 22px !important;
 	}
+	.mobil_hizmet_setting_buton {
+		margin-left: 25px !important;
+	}
+
 }
 @media (max-width: 835px) {
 	.bar-icon {
@@ -23036,6 +23040,66 @@ ul {
 	.card-header > form > .filter-widget  {
 		margin-left: 460px !important;
 	}
+	.select2-container--default .select2-search--dropdown .select2-search__field {
+		width: 250px !important;
+	}
+	.rating {
+		margin: -18px -19px -19px 3px;
+	}
+	.company_left_menu {
+		font-size: 12px;
+	}
+	.company-buttons {
+		height: 40px !important;
+		width: 60px !important;
+	}
+	.ust_menu_mar {
+		margin: -13px -13px;
+	}
+	.company_mobil_name {
+		margin: -10px 36px !important;
+	}
+	.personal_mobil_img	{
+		width: 275px !important;
+		height: 150px !important;
+		margin-left: 95px !important;
+	}
+	.mobil_name_setting {
+		margin: 180px !important;
+		font-size: 12px !important;
+		font-weight: bold !important;
+	}
+	.col-md-2 {
+		width: 100% !important;
+	}
+	.company_genel_yorum {
+		width: 309px;
+		margin: 40px -127px;
+		font-size: 15px;
+		padding-left: 0px !important;
+	}
+	.comment_mobil_img {
+		margin: -43px;
+	}
+	.comment_company_position {
+		font-size: 18px !important;
+		margin-top: 20px !important;
+		margin-left: -100px !important;
+	}
+	.comment_rating {
+		width: 120px !important;
+		margin-left:  25px !important;
+	}
+	.mobil_hizmet_setting {
+		margin-left: 1px !important;
+		font-size: 14px;
+	}
+	.mobil_hizmet_setting_buton {
+		margin-left: -24px !important;
+	}
+	.setting_price {
+		margin-left: 10px !important;
+	}
 }
 @media (max-width: 801px) {
 	.bar-icon {
@@ -23043,6 +23107,66 @@ ul {
 	}
 	.card-header > form > .filter-widget  {
 		margin-left: 428px !important;
+	}
+	.select2-container--default .select2-search--dropdown .select2-search__field {
+		width: 230px !important;
+	}
+	.rating {
+		margin: -18px -19px -19px 3px;
+	}
+	.company_left_menu {
+		font-size: 12px;
+	}
+	.company-buttons {
+		height: 40px !important;
+		width: 62px !important;
+	}
+	.ust_menu_mar {
+		margin: -13px -13px;
+	}
+	.company_mobil_name {
+		margin: -10px 36px !important;
+}
+	.personal_mobil_img	{
+		width: 275px !important;
+		height: 150px !important;
+		margin-left: 95px !important;
+	}
+	.mobil_name_setting {
+		margin: 180px !important;
+		font-size: 12px !important;
+		font-weight: bold !important;
+	}
+	.col-md-2 {
+		width: 100% !important;
+	}
+	.company_genel_yorum {
+		width: 309px;
+		margin: 40px -127px;
+		font-size: 15px;
+		padding-left: 0px !important;
+	}
+	.comment_mobil_img {
+		margin: -43px;
+	}
+	.comment_company_position {
+		font-size: 18px !important;
+		margin-top: 20px !important;
+		margin-left: -100px !important;
+	}
+	.comment_rating {
+		width: 120px !important;
+		margin-left:  30px !important;
+	}
+	.mobil_hizmet_setting {
+		margin-left: 1px !important;
+		font-size: 14px;
+	}
+	.mobil_hizmet_setting_buton {
+		margin-left: -24px !important;
+	}
+	.setting_price {
+		margin-left: 10px !important;
 	}
 
 }
@@ -23060,6 +23184,39 @@ ul {
 	.card-header > form > .filter-widget  {
 		margin-left: 395px !important;
 	}
+	.personal_mobil_img	{
+		width: 275px !important;
+		height: 150px !important;
+		margin-left: 30px !important;
+	}
+	.mobil_name_setting {
+		margin: 110px !important;
+		font-size: 12px !important;
+		font-weight: bold !important;
+	}
+	.company_genel_yorum {
+		width: 309px;
+		margin: 34px -109px;
+		font-size: 15px;
+		padding-left: 0px !important;
+	}
+	.comment_mobil_img {
+		margin: -43px;
+	}
+	.comment_company_position {
+		font-size: 18px !important;
+		margin-top: 20px !important;
+		margin-left: 0 !important;
+	}
+	.comment_rating {
+		width: 100px !important;
+		margin-left:  127px !important;
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
+	}
+
 
 }
 @media (max-width: 601px) {
@@ -23069,13 +23226,129 @@ ul {
 	.card-header > form > .filter-widget  {
 		margin-left: 245px !important;
 	}
+	.select2-container--default .select2-search--dropdown .select2-search__field {
+		width: 488px !important;
+	}
+	.rating {
+		margin: -18px -19px -19px 3px;
+	}
+	.company_left_menu {
+		font-size: 12px;
+	}
+	.company-buttons {
+		height: 40px !important;
+		width: 150px !important;
+	}
+	.ust_menu_mar {
+		margin: -13px -13px;
+	}
+	.personal_mobil_img	{
+		width: 275px !important;
+		height: 150px !important;
+		margin-left: 50px !important;
+	}
+	.mobil_name_setting {
+		margin: 130px !important;
+		font-size: 12px !important;
+		font-weight: bold !important;
+	}
+	.personal_flex_setting {
+		display: flex !important;
+	}
+	.company_genel_yorum {
+		width: 309px;
+		margin: 34px -109px;
+		font-size: 15px;
+		padding-left: 0px !important;
+	}
+	.comment_mobil_img {
+		margin: -43px;
+	}
+	.comment_company_position {
+		font-size: 18px !important;
+		margin-top: 20px !important;
+		margin-left: 0 !important;
+	}
+	.comment_rating {
+		width: 100px !important;
+		margin-left:  127px !important;
+	}
+	.mobil_hizmet_setting {
+		margin-left: 25px !important;
+		font-size: 16px	;
+	}
+	.mobil_hizmet_setting_buton {
+		margin-left: 150px !important;
+	}
+	.setting_price {
+		margin-left: 155px !important;
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
+	}
+
 }
-@media (max-width: 414px) {
+@media (max-width: 415px) {
 	.bar-icon {
 		left: 151px;
 	}
 	.card-header > form > .filter-widget  {
 		margin-left: 59px !important;
+	}
+	.select2-container--default .select2-search--dropdown .select2-search__field {
+		width: 300px !important;
+	}
+	.rating {
+		margin: -18px -19px -19px 3px;
+	}
+	.company_left_menu {
+		font-size: 12px;
+	}
+	.company-buttons {
+		height: 40px !important;
+		width: 105px !important;
+	}
+	.ust_menu_mar {
+		margin: -13px -13px;
+	}
+	.personal_mobil_img	{
+		width: 275px !important;
+		height: 150px !important;
+		margin-left: 55px !important;
+	}
+	.mobil_name_setting {
+		margin: 136px !important;
+		font-size: 12px !important;
+		font-weight: bold !important;
+	}
+	.company_genel_yorum {
+		width: 309px;
+		margin: 34px -109px;
+		font-size: 15px;
+		padding-left: 0px !important;
+	}
+	.comment_mobil_img {
+		margin: -43px;
+	}
+	.comment_company_position {
+		font-size: 18px !important;
+		margin-top: 20px !important;
+		margin-left: 0 !important;
+	}
+	.comment_rating {
+		width: 100px !important;
+		margin-left:  127px !important;
+	}
+	.mobil_hizmet_setting {
+		margin-left: 25px !important;
+	}
+	.mobil_hizmet_setting_buton {
+		margin-left: 108px !important;
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
 	}
 }
 @media (max-width: 385px) {
@@ -23085,6 +23358,61 @@ ul {
 	.card-header > form > .filter-widget  {
 		margin-left: 27px !important;
 	}
+	.select2-container--default .select2-search--dropdown .select2-search__field {
+		width: 270px !important;
+	}
+	.rating {
+		margin: -18px -19px -19px 3px;
+	}
+	.company_left_menu {
+		font-size: 12px;
+	}
+	.company-buttons {
+		height: 40px !important;
+		width: 94px !important;
+	}
+	.ust_menu_mar {
+		margin: -13px -13px;
+	}
+	.personal_mobil_img	{
+		width: 275px !important;
+		height: 150px !important;
+		margin-left: 44px !important;
+	}
+	.mobil_name_setting {
+		margin: 122px !important;
+		font-size: 12px !important;
+		font-weight: bold !important;
+	}
+	.company_genel_yorum {
+		width: 309px;
+		margin: 34px -109px;
+		font-size: 15px;
+		padding-left: 0 !important;
+	}
+	.comment_mobil_img {
+		margin: -43px;
+	}
+	.comment_company_position {
+		font-size: 18px !important;
+		margin-top: 20px !important;
+		margin-left: 0 !important;
+	}
+	.comment_rating {
+		width: 100px !important;
+		margin-left:  127px !important;
+	}
+	.mobil_hizmet_setting {
+		margin-left: 25px !important;
+	}
+	.mobil_hizmet_setting_buton {
+		margin-left: 80px !important;
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
+	}
+
 }
 @media (max-width: 376px) {
 	.bar-icon {
@@ -23092,6 +23420,60 @@ ul {
 	}
 	.card-header > form > .filter-widget  {
 		margin-left: 20px !important;
+	}
+	.select2-container--default .select2-search--dropdown .select2-search__field {
+		width: 260px !important;
+	}
+	.rating {
+		margin: -18px -19px -19px 3px;
+	}
+	.company_left_menu {
+		font-size: 12px;
+	}
+	.company-buttons {
+		height: 40px !important;
+		width: 94px !important;
+	}
+	.ust_menu_mar {
+		margin: -13px -13px;
+	}
+	.personal_mobil_img	{
+		width: 275px !important;
+		height: 150px !important;
+		margin-left: 40px !important;
+	}
+	.mobil_name_setting {
+		margin: 117px !important;
+		font-size: 12px !important;
+		font-weight: bold !important;
+	}
+	.company_genel_yorum {
+		width: 309px;
+		margin: 34px -109px;
+		font-size: 15px;
+		padding-left: 0 !important;
+	}
+	.comment_mobil_img {
+		margin: -43px;
+	}
+	.comment_company_position {
+		font-size: 18px !important;
+		margin-top: 20px !important;
+		margin-left: 0 !important;
+	}
+	.comment_rating {
+		width: 100px !important;
+		margin-left:  127px !important;
+	}
+	.mobil_hizmet_setting {
+		margin-left: 25px !important;
+	}
+	.mobil_hizmet_setting_buton {
+		margin-left: 65px !important;
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
 	}
 }
 @media (max-width: 361px) {
@@ -23103,7 +23485,65 @@ ul {
 	.card-header > form > .filter-widget  {
 		margin-left: 5px !important;
 	}
+	.select2-container--default .select2-search--dropdown .select2-search__field {
+		width: 250px !important;
+	}
+	.rating {
+		margin: -18px -19px -19px 3px;
+	}
+	.company_left_menu {
+		font-size: 12px;
+	}
+	.company-buttons {
+		height: 40px !important;
+		width: 90px !important;
+	}
+	.ust_menu_mar {
+		margin: -13px -13px;
+	}
+	.personal_mobil_img	{
+		width: 275px !important;
+		height: 150px !important;
+		margin-left: 30px !important;
+	}
+	.mobil_name_setting {
+		margin: 110px !important;
+		font-size: 12px !important;
+		font-weight: bold !important;
+	}
+	.company_genel_yorum {
+		width: 309px;
+		margin: 34px -109px;
+		font-size: 15px;
+		padding-left: 0 !important;
+	}
+	.comment_mobil_img {
+		margin: -43px;
+	}
+	.comment_company_position {
+		font-size: 18px !important;
+		margin-top: 20px !important;
+		margin-left: 0 !important;
+	}
+	.comment_rating {
+		width: 100px !important;
+		margin-left:  127px !important;
+
+	}
+	.mobil_hizmet_setting {
+		margin-left: 25px !important;
+	}
+	.mobil_hizmet_setting_buton {
+		margin-left: 55px !important;
+	}
+	.adds_mobil {
+		margin-top: 95px;
+		margin-bottom: -165px;
+	}
+
 }
+
+
 
 @media only screen and (max-width: 1199.98px) {
 	.header-nav {
@@ -27464,11 +27904,36 @@ ul {
 	}
 	.work .guide {
 		width: 100%;
+		width: 100%;
 	}
 }
 @media (min-width: 1360px);
 .container, .container-lg, .container-md, .container-sm, .container-xl {
 	max-width: 1360px;
 }
-
-
+	.select2-search--dropdown {
+		display: none;
+	}
+.company-name {
+	padding: 10px;
+	color: black !important;
+}
+.company-buttons {
+	height: 50px;
+	width: 103px;
+}
+.comment_company_position {
+	margin-top: 50px;
+	margin-left: -125px;
+}
+.informations .rating {
+	margin: 0 -130px 7px!important;
+}
+.personal_mobil_img {
+	width: 100%;
+	height: 80px;
+}
+.company_genel_yorum {
+	padding-top: 5px;
+	padding-left: 135px;
+}

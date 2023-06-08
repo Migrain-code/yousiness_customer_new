@@ -6,10 +6,12 @@ use App\Services\Sms;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
+
 
 class Customer extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, HasApiTokens;
     protected $guarded = [];
 
     public function active_appointments()

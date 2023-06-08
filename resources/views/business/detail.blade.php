@@ -2,21 +2,33 @@
 @section('title', $business->name)
 @section('meta_description', $business->name ." Detayı")
 @section('styles')
-
+    <link rel="stylesheet" href="/front/assets/css/app.min.css">
 @endsection
 @section('content')
-    <div class="content" style="margin-top: -30px;">
-        <section class="profil__cover">
-            <img src="{{asset($business->wallpaper)}}" class="cover" alt="{{$business->name}}">
-            <div class="bottom">
-                <div class="container">
-                    <div class="in">
-                        <div class="photo__name">
-                            <figure class="photo rounded-circle" style="background-image: url('{{asset($business->logo)}}')">
-                            </figure>
-                            <h1 class="name">{{$business->name}}</h1>
+    <a href="/resources/views/appointment/step1">Step 1</a>
+    <div class="container mt-5">
+        <div class="company-title">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex">
+{{--                        <div class="company-logo">--}}
+{{--                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 100px; width: 100px;">--}}
+{{--                        </div>--}}
                         </div>
-                        <div class="star">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="d-flex mb-3">
+                         <div class="col-md-3">
+                           <img style="100px; width: 100px;" src="https://via.placeholder.com/200x200" alt="">
+                         </div>
+                        <div class="col-md-9 company_mobil_name ">
+                            <h3 class="company-name">MUHAMMET TÜRKMEN</h3>
                             <div class="rating">
                                 @if($business->comments->count() > 0)
                                     @for($i=0; $i < 5; $i++ )
@@ -29,343 +41,334 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 @endif
-                                <small><strong>({{$business->comments->count()}})</strong> </small>
-                            </div>
-                            <div class="point">
-                                {{number_format($business->comments->sum('point') / $business->comments->count(), 1)}}
+                                <span class="d-inline-block average-rating">
+                                                    <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->comments->count()}} Yorum
+                                </span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        <nav class="profil__menu">
-            <div class="container">
-                <ul style="list-style: none">
-                    <li>
-                        <div class="clinic-details">
-                            <p class="doc-location"><i class="fas fa-map-marker-alt"></i> {{$business->cities->name. ", ". $business->districts->name}}</p>
+
+                    <div class="col-md-12 hidden-sm hidden-xs" >
+                        <div class="btn-group btn-group-toggle ust_menu_mar">
+                            <a href="#galeri_company"><button type="button" class="company-buttons btn-search border border-right active company_left_menu" ><i class="fa fa-comment"></i> Galeri</button></a>
+                            <a href="#adres_company"> <button type="button" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-map"></i> Adres</button></a>
+                            <a href="#iletisim_company"><button type="button" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-phone"></i> İletişim</button></a>
+                            <a href="#yorumlar_company"><button type="button"  style="width: 122px;" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-comment"></i> Yorumlar</button></a>
                         </div>
-                    </li>
-                    <li>
-                        @if($business->approve_type==1)
-                            <p class="doc-speciality" style="margin-bottom: 2px;">
-                                <span class="badge badge-success fs-7"><i class="fas fa-check-circle"></i> Anında Onay</span>
-                            </p>
-                        @endif
-                    </li>
-                    <li>
-
-                    </li>
-                    <li class="price__button">
-                        <div class="clinic-booking">
-                            {{--<a class="apt-btn" href="{{route('step1.show', $business->slug)}}" style="padding: 0px 9px;">Randevu Al</a>---}}
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="mt-5">
-
-            <!-- Business Details Tab -->
-            <div class="card" style="border: none;">
-                <div class="card-body pt-0" style="background-color: rgba(0, 113, 220, 0.05)">
-
-                    <!-- Tab Menu -->
-                    <nav class="user-tabs mb-4">
-                        <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#business_services" data-bs-toggle="tab">Hizmetler</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#business_about" data-bs-toggle="tab">Hakkında</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#business_comments" data-bs-toggle="tab">Yorumlar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#business_work_time" data-bs-toggle="tab">Çalışma Saatleri</a>
-                            </li>
-
+                    </div>
+                    <div class="tabs mt-5">
+                        <ul>
+                            <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
+                            <li class="tab-titles p-3" onclick="tabsFunction(this)">Kadın</li>
                         </ul>
-                    </nav>
-                    <!-- /Tab Menu -->
+                        <div class="tab-contents">
+                            <div class="tab-content active">
 
-                    <!-- Tab Content -->
-                    <div class="tab-content pt-0">
-
-                        <!-- Overview Content -->
-                        <div role="tabpanel" id="business_about" class="tab-pane fade">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-12">
-
-                                    <!-- About Details -->
-                                    <div class="widget about-widget">
-                                        <h4 class="widget-title">Hakkımızda</h4>
-                                        <p>
-                                            {!! $business->about !!}
-                                        </p>
+                                <div class="service-card" onclick="cardChange(this)">
+                                    <div class="service-title p-2">
+                                        <span>Hizmet Adı</span>
                                     </div>
-                                    <!-- /About Details -->
+                                    <div class="services">
+                                      @for($i=0; $i<5; $i++)
+                                        <ul class="col-md-12 col-sm-12 w-100 mb-1 border-bottom ms-2 mt-2">
+                                            <li class="col-md-4 mobil_hizmet_setting"><span>Hizmetimiz</span></li>
+                                            <li class="col-md-4 mobil_hizmet_setting setting_price" > 170 ₺</li>
+                                            <li class="col-md-4 mobil_hizmet_setting_buton"><a href="#" class="appointment-button" >Randevu Al</a></li>
+                                        </ul>
+                                      @endfor
+                                    </div>
+                                </div>
 
-                                    <!-- Personel List -->
-                                    <div class="widget about-widget">
-                                        <h4 class="widget-title">Personeller</h4>
-                                        <div class="row">
-                                            <div class="col-lg-12 aos" data-aos="fade-up">
-                                                <div class="doctor-sliders owl-carousel owl-theme">
-                                                    @forelse($business->personel as $personel)
-                                                        <!-- Doctor Widget -->
-                                                        <div class="profile-widget">
-                                                            <div class="doc-img">
-                                                                <a href="#">
-                                                                    <img class="img-fluid" alt="User Image" src="{{asset($personel->image)}}" style="height: 250px;">
-                                                                </a>
-
-                                                            </div>
-                                                            <div class="pro-content">
-                                                                <h3 class="title" style="font-size: 17px">
-                                                                    <a href="#">{{$personel->name}}</a>
-                                                                </h3>
-                                                            </div>
-                                                        </div>
-                                                        <!-- /Doctor Widget -->
-                                                    @empty
-
-                                                    @endforelse
-
+                                <div class="service-card mt-1" onclick="cardChange(this)">
+                                    <div class="service-title p-2">
+                                        <span>Hizmet Adı</span>
+                                    </div>
+                                    <div class="services">
+                                        <ul class="d-flex flex-column">
+                                            <li class="my-1 ps-1">
+                                                <div class="d-flex justify-content-between w-100">
+                                                    <div class="service-name">Hizmet</div>
+                                                    <div class="appointment">
+                                                        <span class="price">170 $</span>
+                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </li>
+                                            <li class="my-1 ps-1">
+                                                <div class="d-flex justify-content-between w-100">
+                                                    <div class="service-name">Hizmet</div>
+                                                    <div class="appointment">
+                                                        <span class="price">170 $</span>
+                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="my-1 ps-1">
+                                                <div class="d-flex justify-content-between w-100">
+                                                    <div class="service-name">Hizmet</div>
+                                                    <div class="appointment">
+                                                        <span class="price">170 $</span>
+                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                    </div>
+                                                </div>
+                                            </li><li class="my-1 ps-1">
+                                                <div class="d-flex justify-content-between w-100">
+                                                    <div class="service-name">Hizmet</div>
+                                                    <div class="appointment">
+                                                        <span class="price">170 $</span>
+                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <!-- /Personel List -->
-
-                                    <!-- Gallery List -->
-                                    <div class="widget about-widget">
-                                        <h4 class="widget-title">Fotoğraf Galerisi</h4>
-                                        <div id="lightgallery" style="background: #e5f1fb80;padding: 15px;border-radius: 18px;">
-                                            @forelse($business->gallery as $gallery)
-                                                <a href="{{asset($gallery->way)}}">
-                                                    <img src="{{asset($gallery->way)}}"  alt="" style="width: 200px;height: 150px;border-radius: 18px;margin-right: 10px;margin-bottom: 10px;">
-                                                </a>
-                                            @empty
-                                                <div class="alert alert-warning text-center">İşletmenin Fotoğraf Galerisi Bulunamadı</div>
-                                            @endforelse
-
-                                        </div>
+                                </div>
+                                <div class="service-card mt-1" onclick="cardChange(this)">
+                                    <div class="service-title p-2">
+                                        <span>Hizmet Adı</span>
                                     </div>
-                                    <!-- /Gallery List -->
+                                    <div class="services">
+                                        <ul class="d-flex flex-column">
+                                            <li class="my-1 ps-1">
+                                                <div class="d-flex justify-content-between w-100">
+                                                    <div class="service-name">Hizmet</div>
+                                                    <div class="appointment">
+                                                        <span class="price">170 $</span>
+                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="my-1 ps-1">
+                                                <div class="d-flex justify-content-between w-100">
+                                                    <div class="service-name">Hizmet</div>
+                                                    <div class="appointment">
+                                                        <span class="price">170 $</span>
+                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="my-1 ps-1">
+                                                <div class="d-flex justify-content-between w-100">
+                                                    <div class="service-name">Hizmet</div>
+                                                    <div class="appointment">
+                                                        <span class="price">170 $</span>
+                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="my-1 ps-1">
+                                                <div class="d-flex justify-content-between w-100">
+                                                    <div class="service-name">Hizmet</div>
+                                                    <div class="appointment">
+                                                        <span class="price">170 $</span>
+                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="service-card mt-1" onclick="cardChange(this)">
+                                    <div class="service-title p-2">
+                                        <span>Hizmet Adı</span>
+                                    </div>
+                                    <div class="services">
+                                        <ul class="d-flex flex-column">
+                                            <li class="d-flex justify-content-between w-100">
+                                                <div class="service-name">Hizmet</div>
+                                                <div class="appointment">
+                                                    <span class="price">170 $</span>
+                                                    <button class="appointment-button ms-4">Randevu Al</button>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex justify-content-between"></li>
+                                            <li class="d-flex justify-content-between"></li>
+                                            <li class="d-flex justify-content-between"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                               @foreach($womanServiceCategories as $womanCategories)
+                                 <div class="service-card mt-1" onclick="cardChange(this)">
+                                    <div class="service-title p-2">
+                                        <span>{{$loop -> index }}</span>
+                                    </div>
+                                    <div class="services">
+                                        <ul class="d-flex flex-column">
+                                            @foreach($womanCategories as $service )
+                                            <li class="my-1 ps-1">
+                                                <div class="d-flex justify-content-between w-100">
+                                                    <div class="service-name">{{$service -> subCategory -> name}}</div>
+                                                    <div class="appointment">
+                                                        <span class="price">{{$service -> price}}</span>
+                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                            </li>
+                                        </ul>
+                                    </div>
 
                                 </div>
+                               @endforeach
                             </div>
                         </div>
-                        <!-- /Overview Content -->
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="image">
+                        <img src="https://via.placeholder.com/500x700" alt="" style="height: 500px; width: 100%;" class="main-image">
+                        <div class="" >
 
-                        <!-- Comment Content -->
-                        <div role="tabpanel" id="business_comments" class="tab-pane fade">
-                            <div class="card blog-comments clearfix" style="border-radius: 18px">
-                                <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                                    <h4 class="card-title" id="head-3">Yorumlar ({{$business->comments()->where('status', 1)->count()}})</h4>
+                                <div class="col-md-12 mt-2 mx-auto">
+                                    @for($i=0; $i<3; $i++)
+                                    <img src="https://via.placeholder.com/200x200"  alt="" style="width: 106px; height: 100px;" class="option-image" onclick="photoChange(this)">
+                                    @endfor
                                 </div>
-                                <div class="card-body pb-0">
-                                    <ul class="comments-list">
-                                        @forelse($business->comments()->where('status', 1)->get() as $comment)
-                                        <li style="background: aliceblue;border-radius: 15px;" class="py-1 my-2">
-                                            <div class="comment">
-                                                <div class="comment-author">
-                                                    <img class="avatar" alt="" src="{{$comment->customer->image}}">
-                                                </div>
-                                                <div class="comment-block">
-													<span class="comment-by">
-                                                          <span class="blog-author-name">{{$comment->customer->name}}</span>
-													</span>
-                                                    <p>{{$comment->content}}.</p>
-                                                    <p class="blog-date">{{$comment->created_at->translatedFormat('d F Y')}}</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        @empty
-                                            <div class="alert alert-warning">İşletme ile ilgili yorum bulunmamaktadır.</div>
-                                        @endforelse
-
-                                    </ul>
-                                </div>
-                            </div>
 
                         </div>
-                        <!-- /Reviews Content -->
-
-                        <!-- Business Work Content -->
-                        <div role="tabpanel" id="business_work_time" class="tab-pane fade">
-                            <div class="row">
-                                <div class="col-md-6 offset-md-3">
-
-                                    <!-- Business Hours Widget -->
-                                    <div class="widget business-widget">
-                                        <div class="widget-content">
-                                            <div class="listing-hours">
-                                                <div class="listing-day current">
-                                                    <div class="day">Bugün <span>{{now()->translatedFormat('d F Y')}}</span></div>
-                                                    <div class="time-items">
-                                                        <span class="open-status">
-                                                            @if($business->end_time > \Illuminate\Support\Carbon::now() or \Illuminate\Support\Carbon::now() > $business->start_time)
-                                                                <span class="badge bg-success-light">Açık</span>
-                                                            @else
-                                                                <span class="badge bg-danger-light">Kapalı</span>
-                                                            @endif
-
-                                                        </span>
-                                                        <span class="time">{{$business->start_time}} - {{$business->end_time}}</span>
-                                                    </div>
-                                                </div>
-
-                                                @forelse($dayList as $day)
-                                                    <div class="listing-day">
-                                                        <div class="day">{{$day->name}}</div>
-                                                        <div class="time-items">
-                                                            <span class="time">
-                                                                @if($day->id == $business->off_day)
-                                                                    <span class="badge bg-danger-light">Kapalı</span>
-                                                                @else
-                                                                    {{$business->start_time}} - {{$business->end_time}}
-                                                                @endif
-                                                            </span>
-                                                        </div>
-                                                    </div>
-
-                                                @empty
-
-                                                @endforelse
-                                            </div>
+                    </div>
+                    <hr>
+                    <div class="informations">
+                        <div>
+                            <div class="information-title ms-0">
+                                <h2 id="iletisim_company">İLETİŞİM </h2>
+                                    <div class="container mt-2 ms-1" >
+                                        <div class=" d-flex">
+                                          <p> <h4> <span><i class="fa fa-phone "> <u>0(212)111 44 22</u></i></span></h4>
                                         </div>
                                     </div>
-                                    <!-- /Business Hours Widget -->
 
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="information-title">
+                                <h2>Hakkımızda</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus excepturi quisquam, omnis possimus corrupti temporibus at eaque laudantium, aliquam dolorem veritatis expedita suscipit obcaecati, atque iste molestias nostrum! Quaerat, iure.</p>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="information-title" >
+                                <h2 id="adres_company">Adress</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus excepturi quisquam, omnis possimus corrupti temporibus at eaque laudantium, aliquam dolorem veritatis expedita suscipit obcaecati, atque iste molestias nostrum! Quaerat, iure.</p>
+                                <div class="text-center">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12038.523963649952!2d29.101360000000007!3d41.03332845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac8f76d1706ed%3A0xd630fb5e3d1e2cf8!2zw5xtcmFuaXllLCBFbG1hbMSxa2VudCwgMzQ3NjQgw5xtcmFuaXllL8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1685841493951!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="information-title">
+                                <h2>Çalışma Saatleri</h2>
+                                <div class="days d-flex justify-content-between mt-4">
+                                    <span class="day">Pazartesi</span>
+                                    <span class="clock">10:00 - 17:00</span>
+                                </div>
+                                <hr>
+                                <div class="days d-flex justify-content-between">
+                                    <span class="day">Salı</span>
+                                    <span class="clock">10:00 - 17:00</span>
+                                </div>
+                                <hr>
+                                <div class="days d-flex justify-content-between">
+                                    <span class="day">Çarşamba</span>
+                                    <span class="clock">10:00 - 17:00</span>
+                                </div>
+                                <hr>
+                                <div class="days d-flex justify-content-between">
+                                    <span class="day">Perşembe</span>
+                                    <span class="clock">10:00 - 17:00</span>
+                                </div>
+                                <hr>
+                                <div class="days d-flex justify-content-between">
+                                    <span class="day">Cuma</span>
+                                    <span class="clock">10:00 - 17:00</span>
+                                </div>
+                                <hr>
                             </div>
                         </div>
-                        <!-- /Business Hours Content -->
-
-                        <!-- Business Services Content -->
-                        <div role="tabpanel" id="business_services" class="tab-pane fade show active">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-12">
-                                    <!-- About Details -->
-                                    <div class="widget about-widget">
-
-                                        <h3>Hizmetler</h3>
-                                        <section class="services__list">
-                                            <!-- hizmet tab -->
-                                            <ul class="nav nav-tabs list__tab" id="myTab" role="tablist">
-                                               @if($business->type->id == 3)
-                                                    <li class="nav-item" role="presentation">
-                                                        <button class="nav-link active" id="service-tab" data-bs-toggle="tab" data-bs-target="#service-tab-pane-woman" type="button" role="tab" aria-controls="service-tab-pane" aria-selected="true"><i class="fa fa-venus me-2"></i><span>Kadın</span></button>
-                                                    </li>
-                                                    <li class="nav-item" role="presentation">
-                                                        <button class="nav-link" id="type-tab" data-bs-toggle="tab" data-bs-target="#service-tab-pane-man" type="button" role="tab" aria-controls="type-tab-pane" aria-selected="false" tabindex="-1"><i class="fa fa-mars me-2"></i><span>Erkek</span></button>
-                                                    </li>
-                                                @elseif($business->type->id == 2)
-                                                    <li class="nav-item" role="presentation">
-                                                        <button class="nav-link active" id="type-tab" data-bs-toggle="tab" data-bs-target="#service-tab-pane-man" type="button" role="tab" aria-controls="type-tab-pane" aria-selected="false" tabindex="-1"><i class="fa fa-mars me-2"></i><span>Erkek</span></button>
-                                                    </li>
-                                                @elseif($business->type->id == 1)
-                                                    <li class="nav-item" role="presentation">
-                                                        <button class="nav-link active" id="service-tab" data-bs-toggle="tab" data-bs-target="#service-tab-pane-woman" type="button" role="tab" aria-controls="service-tab-pane" aria-selected="true"><i class="fa fa-venus me-2"></i><span>Kadın</span></button>
-                                                    </li>
-                                               @endif
-                                            </ul>
-                                            <div class="tab-content" id="myTabContent">
-                                                @if($business->type->id == 3)
-                                                    <div class="tab-pane fade @if($business->type->id==1 or $business->type->id == 3) show active @endif" id="service-tab-pane-woman" role="tabpanel" aria-labelledby="service-tab" tabindex="0">
-                                                    <!-- hizmet listesi woman-->
-                                                        <div class="d-flex align-items-start">
-                                                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                                            @forelse($womanCategories as $womanCategorie)
-                                                                    <button class="nav-link {{$loop->first ? "active" : ""}}" @if($loop->first) style="margin-top: 15px;" @endif id="v-pills-services-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-services-{{$womanCategorie->slug}}k" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">{{$womanCategorie->name}}</button>
-                                                            @empty
-                                                            @endforelse
-                                                        </div>
-
-                                                        <div class="tab-content list__content" id="v-pills-tabContent">
-                                                            @forelse($womanServiceCategories as $womanCategories)
-                                                                <div class="tab-pane fade {{$loop->first ? "show active" : ""}}" id="v-pills-services-{{$womanCategories->first()->categorys->slug}}k" role="tabpanel" aria-labelledby="v-pills-services-1-tab" tabindex="0">
-                                                                    <ul class="s__list">
-                                                                        <li class="head"><span>Hizmet</span><span>Fiyat</span><span>İşlem</span></li>
-                                                                        @forelse($womanCategories as $service)
-                                                                                <li>
-                                                                                    <span>{{$service->subCategory->name}}</span>
-                                                                                    <label>{{$service->price}}TL</label>
-
-                                                                                    <a href="{{route('step1.show', [$business->slug, $service->id])}}">Randevu Al</a>
-                                                                                </li>
-                                                                        @empty
-                                                                        @endforelse
-
-                                                                    </ul>
-                                                                </div>
-                                                            @empty
-                                                            @endforelse
-
-                                                        </div>
-                                                    </div>
-                                                    <!-- /hizmet listesi -->
-                                                    </div>
-                                                    <!-- hizmet listesi man-->
-
-                                                    <div class="tab-pane fade" id="service-tab-pane-man" role="tabpanel" aria-labelledby="service-tab" tabindex="0">
-                                                        <!-- hizmet listesi -->
-                                                        <div class="d-flex align-items-start">
-                                                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                                                @forelse($manCategories as $manCategorie)
-                                                                    <button class="nav-link {{$loop->first ? "active": ""}}" @if($loop->first) style="margin-top: 15px;" @endif id="v-pills-services-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-services-{{$manCategorie->slug}}e" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">{{$manCategorie->name}}</button>
-                                                                @empty
-                                                                @endforelse
-                                                            </div>
-
-                                                            <div class="tab-content list__content" id="v-pills-tabContent">
-                                                                @forelse($manServiceCategories as $manCategories)
-                                                                    <div class="tab-pane fade {{$loop->first ? "show active" : ""}}" id="v-pills-services-{{$manCategories->first()->categorys->slug}}e" role="tabpanel" aria-labelledby="v-pills-services-1-tab" tabindex="0">
-                                                                        <ul class="s__list">
-                                                                            <li class="head"><span>Hizmet</span><span>Fiyat</span><span>İşlem</span></li>
-                                                                            @forelse($manCategories as $service)
-                                                                                <li>
-                                                                                    <span>{{$service->subCategory->name}}</span>
-                                                                                    <label>{{$service->price}}TL</label>
-
-                                                                                    <a href="{{route('step1.show', [$business->slug, $service->id])}}">Randevu Al</a>
-                                                                                </li>
-                                                                            @empty
-                                                                            @endforelse
-
-                                                                        </ul>
-                                                                    </div>
-                                                                @empty
-                                                                @endforelse
-
-                                                            </div>
-                                                        </div>
-                                                        <!-- /hizmet listesi -->
-                                                    </div>
-                                                @endif
-                                            </div>
-                                            <!-- /hizmet tab -->
-                                        </section>
-
+                        <div>
+                            <div class="information-title">
+                                <h2>Personeller</h2>
+                              <div class="col-md-12">
+                                <div class="row">
+                                  @for($i=0; $i < 4; $i++)
+                                    <div class="col-md-2 col-xs-2 ">
+                                        <img class="personal_mobil_img personal_flex_setting" src="https://via.placeholder.com/200x200" alt="Personal">
+                                        <span class="col-md-2"><small class="mobil_name_setting">Mehmet Öztoprak</small></span>
                                     </div>
+                                  @endfor
                                 </div>
+                              </div>
                             </div>
+                        </div>
+                        <hr>
+                        <div class="information-title">
+                          <div class="d-flex">
+                            <h2 id="yorumlar_company">Yorumlar</h2>
+                            <div class="rating" style="padding-top: 5px;padding-left: 150px;">
+                                @if($business->comments->count() > 0)
+                                    @for($i=0; $i < 5; $i++ )
+                                        <i class="fas fa-star @if($i < $business->comments->sum('point') / $business->comments->count()) filled @endif"></i>
+                                    @endfor
+                                @else
+                                    <i class="fas fa-star" style="font-weight: 42px;"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                @endif
+                            </div>
+                              <h3 class="company_genel_yorum">(1000) Yorum, (2000) Müşteri Puanlaması</h3>
+                          </div>
+                            <hr>
+                           <div class="col-md-12 d-flex">
+                               <div class="col-md-3 m-5">
+                                 <div class="">
+                                   <img src="https://via.placeholder.com/100x100" class="comment_mobil_img" alt="">
+                                 </div>
+                               </div>
+                               <div class="col-md-9 ">
+                                  <h2 class="comment_company_position">Muhammet Türkmen</h2>
+                                   <div class="rating ">
+                                     <div class="comment_rating">
+                                       @if($business->comments->count() > 0)
+                                           @for($i=0; $i < 5; $i++ )
+                                               <i class="fas fa-star @if($i < $business->comments->sum('point') / $business->comments->count()) filled @endif"></i>
+                                           @endfor
+                                       @else
+                                           <i class="fas fa-star"></i>
+                                           <i class="fas fa-star"></i>
+                                           <i class="fas fa-star"></i>
+                                           <i class="fas fa-star"></i>
+                                           <i class="fas fa-star"></i>
+                                       @endif
+                                     </div>
+                                   </div>
+                               </div>
+                           </div>
+                            <div class="col-md-12">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aperiam consequuntur dolor ea esse eveniet exercitationem, laborum magni maxime officia pariatur quis reprehenderit repudiandae totam unde ut, veritatis voluptates.</p>
+                            </div>
+                            <hr>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <!-- /Business Details Tab -->
-
         </div>
     </div>
+
 
 @endsection
 @section('scripts')
 
+    <script src="/front/assets/js/app.min.js" ></script>
 @endsection

@@ -27,7 +27,7 @@
                 <div class="section-header section-header-five text-center aos aos-init aos-animate" data-aos="fade-up">
                     <h2 class="title-five">Sık Sorulan Sorular</h2>
                 </div>
-                <div class="accordion-item ">
+                <div class="accordion-item">
                     <h2 class="accordion-header ">
                         <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             <p class="paragraf mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, omnis!</p>

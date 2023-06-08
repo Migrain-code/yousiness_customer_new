@@ -12,6 +12,9 @@
         .select2-container--default .select2-search--dropdown .select2-search__field {
             border: 1px solid #0db9f2;
             border-radius: 5px;
+            width: 275px;
+            margin: -46px 34px 0 42px;
+
         }
         .select2-results__option {
             padding: 6px;
@@ -47,6 +50,7 @@
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
+
         .select2-container--default .select2-selection--single .select2-selection__arrow b {
             border-color: #888 transparent transparent transparent;
             border-style: solid;
@@ -195,29 +199,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Reklam Başlangıç  -->
-                   <!--         <aside>
-                              <div class="rek-sec">
-                                <div class="container col-md-8">
-                                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
-                                        <div class=" reklam" >
-                                            <div class="carousel-item active mt-3 ">
-                                                <img style="width: 100px;height: 80px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                                <img style="width: 120px;height: 110px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                                <img style="width: 140px;height: 120px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                                <img style="width: 120px;height: 110px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                                <img style="width: 100px;height: 80px;" class="rounded-circle reklam-ayar mx-3" src="https://via.placeholder.com/200x200" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </aside> -->
-                            <!-- Reklam Bitiş  -->
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="glide my-2" data-aos="fade-up">
+           <div class="row adds_mobil">
+                 <div class="glide my-2" data-aos="fade-up">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         <li class="glide__slide" style="text-align: center ;">
@@ -240,6 +228,7 @@
                     </ul>
                 </div>
             </div>
+           </div>
         </div>
     </section>
     <!-- /Home Five Banner -->
