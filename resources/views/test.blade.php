@@ -1,3660 +1,457 @@
-@extends('layouts.master')
-@section('title', "İletişim")
-@section('meta_description', config('settings.meta_description'))
-@section('styles')
+<!DOCTYPE html>
+<html lang="en">
 
-@endsection
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizo HTML Template - V.9</title>
+    <!-- FontAwesome-cdn include -->
+    <link rel="stylesheet" href="../../../../ajax/libs/font-awesome/5.15.3/css/all.min-3.css">
+    <!-- Google fonts include -->
+    <link href="../../../../css2-3?family=Jost:wght@400;500;600;700;800&family=Lato&display=swap" rel="stylesheet">
+    <!-- Bootstrap-css include -->
+    <link rel="stylesheet" href="/front/appointment/css/bootstrap.min.css">
+    <!-- Animate-css include -->
+    <link rel="stylesheet" href="/front/appointment/css/animate.min.css">
+    <!-- Main-StyleSheet include -->
+    <link rel="stylesheet" href="/front/appointment/css/style.css">
+</head>
 
-    <div class="container">
-        <form method="post" action="https://test.hizlirandevu.istanbulyazilim.net/randevu-al/adim-2/save" id="step2-form" class="col-lg-12">
-            <input type="hidden" name="_token" value="bvNyTX9kKMNrgxjLfkLELObSJl1ZDoMfJ9R0a6o4">                                                                                            <div class="form-group">
-                <label><b>Lazer Epilasyon (Bacak)</b> için personel seçiniz</label>
-                <select class="form-select" name="personels[]" id="lastSelect">
-                    <option value="">Lazer Epilasyon (Bacak) için personel seçiniz</option>
-                    <option value="1">Chase Soto</option>
-                </select>
-            </div>
-
-        </form>
-        <hr>
-    </div>
-
-  <div class="container">
-    <div class="card schedule-widget mb-0">
-        <!-- Schedule Header -->
-        <div class="schedule-header">
-            <!-- Schedule Nav -->
-            <div class="schedule-nav">
-                <div class="col-md-6 text-end aos aos-init aos-animate" data-aos="fade-up">
-                    <div class="owl-nav slide-nav-3 text-end nav-control"><button type="button" role="presentation" class="owl-prev"><i class="fas fa-chevron-left custom-arrow"></i></button><button type="button" role="presentation" class="owl-next"><i class="fas fa-chevron-right custom-arrow"></i></button></div>
+<body>
+<div class="wrapper position-relative overflow-hidden">
+    <div class="container-md-fluid p-3 p-lg-0 me-5">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="form_logo position-absolute">
+                    <a href="index.html">
+                        <img src="/front/appointment/images/logo/logo.png" alt="image-not-found">
+                    </a>
                 </div>
-                <ul class="nav nav-tabs nav-justified">
-                    <div class="owl-carousel clinic-feature owl-theme aos owl-loaded owl-drag aos-init aos-animate" data-aos="fade-up">
-                        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1959px, 0px, 0px); transition: all 0s ease 0s; width: 7688px;"><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_17_06_2023"><b>17 Haziran</b> <br> Cts</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_18_06_2023"><b>18 Haziran</b> <br> Paz</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_19_06_2023"><b>19 Haziran</b> <br> Pts</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_20_06_2023"><b>20 Haziran</b> <br> Sal</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_21_06_2023"><b>21 Haziran</b> <br> Çar</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_22_06_2023"><b>22 Haziran</b> <br> Per</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_23_06_2023"><b>23 Haziran</b> <br> Cum</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_24_06_2023"><b>24 Haziran</b> <br> Cts</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_25_06_2023"><b>25 Haziran</b> <br> Paz</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_26_06_2023"><b>26 Haziran</b> <br> Pts</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_27_06_2023"><b>27 Haziran</b> <br> Sal</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_28_06_2023"><b>28 Haziran</b> <br> Çar</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_29_06_2023"><b>29 Haziran</b> <br> Per</a>
-                                        </li>
-                                    </div></div><div class="owl-item active" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  active" data-bs-toggle="tab" href="#slot_05_06_2023"><b>05 Haziran</b> <br> Pts</a>
-                                        </li>
-                                    </div></div><div class="owl-item active" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_06_06_2023"><b>06 Haziran</b> <br> Sal</a>
-                                        </li>
-                                    </div></div><div class="owl-item active" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_07_06_2023"><b>07 Haziran</b> <br> Çar</a>
-                                        </li>
-                                    </div></div><div class="owl-item active" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_08_06_2023"><b>08 Haziran</b> <br> Per</a>
-                                        </li>
-                                    </div></div><div class="owl-item active" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_09_06_2023"><b>09 Haziran</b> <br> Cum</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_10_06_2023"><b>10 Haziran</b> <br> Cts</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_11_06_2023"><b>11 Haziran</b> <br> Paz</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_12_06_2023"><b>12 Haziran</b> <br> Pts</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_13_06_2023"><b>13 Haziran</b> <br> Sal</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_14_06_2023"><b>14 Haziran</b> <br> Çar</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_15_06_2023"><b>15 Haziran</b> <br> Per</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_16_06_2023"><b>16 Haziran</b> <br> Cum</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_17_06_2023"><b>17 Haziran</b> <br> Cts</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_18_06_2023"><b>18 Haziran</b> <br> Paz</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_19_06_2023"><b>19 Haziran</b> <br> Pts</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_20_06_2023"><b>20 Haziran</b> <br> Sal</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_21_06_2023"><b>21 Haziran</b> <br> Çar</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_22_06_2023"><b>22 Haziran</b> <br> Per</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_23_06_2023"><b>23 Haziran</b> <br> Cum</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_24_06_2023"><b>24 Haziran</b> <br> Cts</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_25_06_2023"><b>25 Haziran</b> <br> Paz</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_26_06_2023"><b>26 Haziran</b> <br> Pts</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_27_06_2023"><b>27 Haziran</b> <br> Sal</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_28_06_2023"><b>28 Haziran</b> <br> Çar</a>
-                                        </li>
-                                    </div></div><div class="owl-item" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_29_06_2023"><b>29 Haziran</b> <br> Per</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  active" data-bs-toggle="tab" href="#slot_05_06_2023"><b>05 Haziran</b> <br> Pts</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_06_06_2023"><b>06 Haziran</b> <br> Sal</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_07_06_2023"><b>07 Haziran</b> <br> Çar</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_08_06_2023"><b>08 Haziran</b> <br> Per</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_09_06_2023"><b>09 Haziran</b> <br> Cum</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_10_06_2023"><b>10 Haziran</b> <br> Cts</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_11_06_2023"><b>11 Haziran</b> <br> Paz</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_12_06_2023"><b>12 Haziran</b> <br> Pts</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_13_06_2023"><b>13 Haziran</b> <br> Sal</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_14_06_2023"><b>14 Haziran</b> <br> Çar</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_15_06_2023"><b>15 Haziran</b> <br> Per</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_16_06_2023"><b>16 Haziran</b> <br> Cum</a>
-                                        </li>
-                                    </div></div><div class="owl-item cloned" style="width: 135.731px; margin-right: 15px;"><div class="item custom-owl">
-                                        <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                            <a class="nav-link custom-link  " data-bs-toggle="tab" href="#slot_17_06_2023"><b>17 Haziran</b> <br> Cts</a>
-                                        </li>
-                                    </div></div></div></div><div class="owl-dots disabled"></div></div>
-                </ul>
+                <div class="steps_area step_area_fixed d-none d-xl-block">
+                    <div class="image_holder">
+                        <img class="overflow-hidden" src="/front/appointment/images/background/bg_0.png" alt="image-not-found">
+                    </div>
+                    <div class="progress_bar step_items position-absolute">
+                        <div class="step d-block text-center bg-white position-relative active current">1</div>
+                        <div class="step d-block text-center bg-white position-relative">2
+                        </div>
+                        <div class="step d-block text-center bg-white position-relative">3
+                        </div>
+                        <div class="step d-block text-center bg-white position-relative last">4
+                        </div>
+                    </div>
+                    <div class="count_box d-flex flex-row mt-5 rounded-pill position-absolute">
+                        <div class="count_clock ps-3">
+                            <img src="/front/appointment/images/clock/clock.png" alt="image-not-found">
+                        </div>
+                        <div class="count_title px-2">
+                            <h4 class="text-white pe-5">Quiz</h4>
+                            <span class="text-white">Time start</span>
+                        </div>
+                        <div class="count_number p-3 d-flex justify-content-around align-items-center position-relative overflow-hidden bg-white rounded-pill countdown_timer" data-countdown="2022/10/24">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /Schedule Nav -->
+            <div class="col-xl-8 ps-5 pt-5">
+                <form class="multisteps_form" id="wizard" method="POST" action="../mail.php">
+                    <!------------------- Step-1 -------------------->
+                    <div class="multisteps_form_panel active">
+                        <!-- form-content -->
+                        <div class="form_content">
+                            <div class="step_content d-flex justify-content-between pt-5 pb-2">
+                                <h4>QUIZ</h4>
+                                <span class="text-end text-uppercase">question 1 to 4</span>
+                            </div>
+                            <div class="step_progress_bar">
+                                <div class="progress rounded-pill">
+                                    <div class="progress-bar" style="width:25%"></div>
+                                </div>
+                            </div>
+                            <div class="question_title py-5">
+                                <h1 class="text-capitalize">What Option Best Describes Clyde’s Activity Level ?</h1>
+                            </div>
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 form_items radio-list">
+                                <div class="col">
+                                    <label id="opt_1" class="step_1 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_25ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_0.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    None
+                                 </span>
+                                        <p class="step_box_desc">
+                                            My horse likes to relax
+                                        </p>
+                                        <input for="opt_1" type="radio" class="required" name="stp_1_select_option" value="None">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_2" class="step_1 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_50ms">
+                                        <div class="step_box_icon"><img src="/front/appointment/images/item-img/item_1.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">Light</span>
+                                        <p class="step_box_desc">My horse likes to relax</p>
+                                        <input for="opt_2" type="radio" name="stp_1_select_option" value="Light">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_3" class="step_1 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_100ms">
+                                        <div class="step_box_icon"><img src="/front/appointment/images/item-img/item_2.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">Moderate</span>
+                                        <p class="step_box_desc">My horse likes to relax</p>
+                                        <input for="opt_3" id="condition1" type="radio" name="stp_1_select_option" value="Moderate">
+                                        <span class="position-absolute">Conditional</span>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_4" class="step_1 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_150ms">
+                                        <div class="step_box_icon"><img src="/front/appointment/images/item-img/item_3.png" data-toggle="modal" data-target="#exampleModalCenter" alt="image-not-found"></div>
+                                        <span class="step_box_text pt-2">Hizmet Ekle</span>
+                                        <p class="step_box_desc"></p>
+                                        <input for="opt_4" type="radio" name="stp_1_select_option" value="Heavy">
+                                    </label>
+                                </div>
 
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="tab-content">
+                                                    <div class="tab-pane show active" id="solid-rounded-justified-tab1">
+                                                        <div class="accordion" id="accordionWoman">
+                                                            <div class="accordion-item">
+                                                                <h2 class="accordion-header" id="headingWoman">
+                                                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse Woman" aria-expanded="true" aria-controls="collapseWoman">
+
+                                                                    </button>
+                                                                </h2>
+                                                                <div id="collapseWoman" class="accordion-collapse collapse show" aria-labelledby="headingWoman" data-bs-parent="#accordionWoman">
+                                                                    <div class="accordion-body">
+                                                                        <div class="row">
+                                                                            <div class="col-10">
+                                                                                <label class="custom_check">
+                                                                                    <input type="checkbox" value=""  name="service_ids[]">
+                                                                                    <span class="checkmark"></span>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="col-2">
+                                                                                <span class="text-success fw-bold"> TL</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane show active " id="solid-rounded-justified-tab2">
+                                                        <div class="accordion" id="accordionMan">
+                                                            <div class="accordion-item">
+                                                                <h2 class="accordion-header" id="headingMan">
+                                                                    <button class="accordion-button" type="button"  data-bs-toggle="collapse" data-bs-target="#collapseMan" aria-expanded="true" aria-controls="collapse Man">
+                                                                    </button>
+                                                                </h2>
+                                                                <div id="collapse Man" class="accordion-collapse  collapse show  collapsed " aria-labelledby="headingMan" data-bs-parent="#accordionMan">
+                                                                    <div class="accordion-body">
+
+                                                                        <div class="row">
+                                                                            <div class="col-10">
+                                                                                <label class="custom_check">
+                                                                                    <input type="checkbox" value="" name="service_ids[]">
+                                                                                    <span class="checkmark"></span>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="col-2">
+                                                                                <span class="text-success fw-bold">TL</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row col-md-10 mt-lg-5 mt-4 conditional" data-condition="#condition1 && stp_1_select_option == 'Moderate'">
+                                <div class="form-inner-area">
+                                    <label for="field">
+                                        <h6>Which Sector</h6>
+                                    </label>
+                                    <input type="text" name="field" class="form-control required" minlength="2" placeholder="Write Here">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form-btn -->
+                        <div class="form_btn pt-5 d-flex justify-content-between">
+                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Next
+                                Question <span><i class="fas fa-arrow-right"></i></span></button>
+                        </div>
+                    </div>
+                    <!------------------- Step-2 -------------------->
+                    <div class="multisteps_form_panel">
+                        <!-- form-content -->
+                        <div class="form_content">
+                            <div class="step_content d-flex justify-content-between pt-5 pb-2">
+                                <h4>QUIZ</h4>
+                                <span class="text-end text-uppercase">question 2 to 4</span>
+                            </div>
+                            <div class="step_progress_bar">
+                                <div class="progress rounded-pill">
+                                    <div class="progress-bar" style="width:50%"></div>
+                                </div>
+                            </div>
+                            <div class="question_title py-5">
+                                <h1 class="text-capitalize">The islands with coral covered surfaces in Bay of Bengal are</h1>
+                            </div>
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 form_items check-list">
+                                <div class="col">
+                                    <label id="opt_5" class="step_2 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_25ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_0.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    Andaman islands
+                                 </span>
+
+                                        <input for="opt_5" type="checkbox" class="required" name="stp_2_select_option" value="Andaman islands">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_6" class="step_2 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_50ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_1.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    Nicobar islands
+                                 </span>
+
+                                        <input for="opt_6" type="checkbox" name="stp_2_select_option" value="Nicobar islands">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_7" class="step_2 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_100ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_2.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    both (a) and (b)
+                                 </span>
+
+                                        <input for="opt_7" type="checkbox" name="stp_2_select_option" value="both (a) and (b)">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_8" class="step_2 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_150ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_3.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    None of the above
+                                 </span>
+
+                                        <input for="opt_8" type="checkbox" name="stp_2_select_option" value="None of the above">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form-btn -->
+                        <div class="form_btn pt-5 d-flex justify-content-between">
+                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Last
+                                Question</button>
+                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Next
+                                Question <span><i class="fas fa-arrow-right"></i></span></button>
+                        </div>
+                    </div>
+                    <!------------------- Step-3 -------------------->
+                    <div class="multisteps_form_panel">
+                        <!-- form-content -->
+                        <div class="form_content">
+                            <div class="step_content d-flex justify-content-between pt-5 pb-2">
+                                <h4>QUIZ</h4>
+                                <span class="text-end text-uppercase">question 3 to 4</span>
+                            </div>
+                            <div class="step_progress_bar">
+                                <div class="progress rounded-pill">
+                                    <div class="progress-bar" style="width:75%"></div>
+                                </div>
+                            </div>
+                            <div class="question_title py-5">
+                                <h1 class="text-capitalize">The length of the day is determined in</h1>
+                            </div>
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 form_items radio-list">
+                                <div class="col">
+                                    <label id="opt_9" class="step_3 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_25ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_0.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    solar terms
+                                 </span>
+                                        <p class="step_box_desc">
+                                            My horse likes to relax
+                                        </p>
+                                        <input for="opt_9" type="radio" class="required" name="stp_3_select_option" value="solar terms">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_10" class="step_3 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_50ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_1.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    astronomical units
+                                 </span>
+                                        <p class="step_box_desc">
+                                            My horse likes to relax
+                                        </p>
+                                        <input for="opt_10" type="radio" name="stp_3_select_option" value="astronomical
+                                    units">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_11" class="step_3 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_100ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_2.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    length of the hours
+                                 </span>
+                                        <p class="step_box_desc">
+                                            My horse likes to relax
+                                        </p>
+                                        <input for="opt_11" type="radio" name="stp_3_select_option" value="length of
+                                    the hours">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_12" class="step_3 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_150ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_3.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    None of the above
+                                 </span>
+                                        <p class="step_box_desc">
+                                            My horse likes to relax
+                                        </p>
+                                        <input for="opt_12" type="radio" name="stp_3_select_option" value="None of
+                                    the above">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form-btn -->
+                        <div class="form_btn pt-5 d-flex justify-content-between">
+                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Last
+                                Question</button>
+                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Next
+                                Question <span><i class="fas fa-arrow-right"></i></span></button>
+                        </div>
+                    </div>
+                    <!------------------ Step-4 -------------------->
+                    <div class="multisteps_form_panel">
+                        <!-- form-content -->
+                        <div class="form_content">
+                            <div class="step_content d-flex justify-content-between pt-5 pb-2">
+                                <h4>QUIZ</h4>
+                                <span class="text-end text-uppercase">question 4 to 4</span>
+                            </div>
+                            <div class="step_progress_bar">
+                                <div class="progress rounded-pill">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="question_title py-5">
+                                <h1 class="text-capitalize">The greatest variety of animal and plant species is fund in</h1>
+                            </div>
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 form_items check-list">
+                                <div class="col">
+                                    <label id="opt_13" class="step_4 checkbox d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_25ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_0.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    temperate grasslands
+                                 </span>
+                                        <input for="opt_13" type="checkbox" class="required" name="stp_4_select_option" value="temperate
+                                       grasslands">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_14" class="step_4 checkbox d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_50ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_1.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    tropical moist forests
+                                 </span>
+                                        <input for="opt_14" type="checkbox" name="stp_4_select_option" value="tropical
+                                       moist forests">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_15" class="step_4 checkbox d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_100ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_2.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">
+                                    tundra regions
+                                 </span>
+                                        <input for="opt_15" type="checkbox" name="stp_4_select_option" value="tundra
+                                       regions">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label id="opt_16" class="step_4 checkbox d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_150ms">
+                                        <div class="step_box_icon">
+                                            <img src="/front/appointment/images/item-img/item_3.png" alt="image-not-found">
+                                        </div>
+                                        <span class="step_box_text pt-2">in hot deserts</span>
+                                        <input for="opt_16" type="checkbox" name="stp_4_select_option" value="in hot deserts">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form-btn -->
+                        <div class="form_btn pt-5 d-flex justify-content-between">
+                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Last
+                                Question</button>
+                            <button type="submit" class="next_btn text-uppercase text-white" id="nextBtn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <!-- /Schedule Header -->
-
-        <!-- Schedule Content -->
-        <form class="tab-content schedule-cont" id="step-3-form" method="post" action="https://test.hizlirandevu.istanbulyazilim.net/randevu-al/adim-3/save">
-            <input type="hidden" name="_token" value="bvNyTX9kKMNrgxjLfkLELObSJl1ZDoMfJ9R0a6o4">                                                    <!-- Sunday Slot -->
-            <div id="slot_05_06_2023" class="tab-pane fade show active">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="05.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_06_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="06.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_07_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="07.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_08_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="08.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_09_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="09.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_10_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="10.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_11_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="11.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_12_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="12.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_13_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="13.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_14_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="14.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_15_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="15.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_16_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="16.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_17_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="17.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_18_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="18.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_19_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="19.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_20_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="20.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_21_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="21.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_22_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="22.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_23_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="23.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_24_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="24.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_25_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="25.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_26_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="26.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_27_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="27.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_28_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="28.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div id="slot_29_06_2023" class="tab-pane fade ">
-                <div class="doc-times">
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 09:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">09:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 10:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 10:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">10:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 11:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 11:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">11:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 12:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 12:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">12:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 13:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 13:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">13:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 14:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 14:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">14:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 15:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 15:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">15:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 16:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 16:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">16:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 17:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 17:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">17:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 18:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 18:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">18:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 19:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:00</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 19:30" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">19:30</span>
-                        </label>
-                    </div>
-                    <div class="form-check-inline visits me-1">
-                        <label class="visit-btns">
-                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="29.06.2023 20:00" required="">
-                            <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Saat Seçimi Zorunludur">20:00</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <!-- /Sunday Slot -->
-
-
-        </form>
-        <!-- /Schedule Content -->
-
     </div>
-  </div>
-@endsection
-@section('scripts')
+</div>
+<!-- jQuery-js include -->
+<script src="/front/appointment/js/jquery-3.6.0.min.js"></script>
+<!-- Countdown-js include -->
+<script src="/front/appointment/js/countdown.js"></script>
+<!-- Bootstrap-js include -->
+<script src="/front/appointment/js/bootstrap.min.js"></script>
+<!-- jQuery-validate-js include -->
+<script src="/front/appointment/js/jquery.validate.min.js"></script>
+<!-- jQuery-validate-js include -->
+<script src="/front/appointment/js/conditionize.flexible.jquery.min.js"></script>
+<!-- Custom-js include -->
+<script src="/front/appointment/js/script.js"></script>
 
-@endsection
+</body>
+
+</html>

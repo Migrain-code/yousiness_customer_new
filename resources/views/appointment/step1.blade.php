@@ -251,81 +251,59 @@
                                                                             <div class="col-md-12 mt-3">
                                                                               <form id="regForm">
                                                                                  <div class="all-steps" id="all-steps"> <span class="step"></span> <span class="step"></span> <span class="step"></span> <span class="step"></span> </div>
+
                                                                                <div class="tab">
-                                                                                  <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified">
-                                                                                    @if($business->type->id == 3)
-                                                                                        <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab1" data-bs-toggle="tab">Kadın</a></li>
-                                                                                        <li class="nav-item"><a class="nav-link" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Erkek</a></li>
-                                                                                    @elseif($business->type->id==2)
-                                                                                        <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Erkek</a></li>
-                                                                                    @elseif($business->type->id==1)
-                                                                                        <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab1" data-bs-toggle="tab">Kadın</a></li>
-                                                                                    @endif
-                                                                                </ul>
                                                                                 <div class="tab-content">
                                                                                     <div class="tab-pane show active" id="solid-rounded-justified-tab1">
                                                                                         <div class="accordion" id="accordionWoman">
-                                                                                            @forelse($womanServiceCategories as $womanCategories)
                                                                                                 <div class="accordion-item">
-                                                                                                    <h2 class="accordion-header" id="heading{{$womanCategories->first()->category}}Woman">
-                                                                                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$womanCategories->first()->category}}Woman" aria-expanded="true" aria-controls="collapse{{$womanCategories->first()->category}}Woman">
-                                                                                                            {{$womanCategories->first()->categorys->name}}
+                                                                                                    <h2 class="accordion-header" id="headingWoman">
+                                                                                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse Woman" aria-expanded="true" aria-controls="collapseWoman">
+
                                                                                                         </button>
                                                                                                     </h2>
-                                                                                                    <div id="collapse{{$womanCategories->first()->category}}Woman" class="accordion-collapse collapse show" aria-labelledby="heading{{$womanCategories->first()->category}}Woman" data-bs-parent="#accordionWoman">
+                                                                                                    <div id="collapseWoman" class="accordion-collapse collapse show" aria-labelledby="headingWoman" data-bs-parent="#accordionWoman">
                                                                                                         <div class="accordion-body">
-                                                                                                            @forelse($womanCategories as $service)
                                                                                                                 <div class="row">
                                                                                                                     <div class="col-10">
                                                                                                                         <label class="custom_check">
-                                                                                                                            <input type="checkbox" value="{{$service->id}}" @checked(in_array($service->id, $serviceIds)) name="service_ids[]">
-                                                                                                                            <span class="checkmark"></span> {{$service->subCategory->name}}
+                                                                                                                            <input type="checkbox" value=""  name="service_ids[]">
+                                                                                                                            <span class="checkmark"></span>
                                                                                                                         </label>
                                                                                                                     </div>
                                                                                                                     <div class="col-2">
-                                                                                                                        <span class="text-success fw-bold">{{$service->price}} TL</span>
+                                                                                                                        <span class="text-success fw-bold"> TL</span>
                                                                                                                     </div>
                                                                                                                 </div>
-
-                                                                                                            @empty
-                                                                                                            @endforelse
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                            @empty
-                                                                                            @endforelse
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div class="tab-pane @if($business->type->id==2) show active @endif" id="solid-rounded-justified-tab2">
+                                                                                    <div class="tab-pane show active " id="solid-rounded-justified-tab2">
                                                                                         <div class="accordion" id="accordionMan">
-                                                                                            @forelse($manServiceCategories as $manCategories)
                                                                                                 <div class="accordion-item">
-                                                                                                    <h2 class="accordion-header" id="heading{{$manCategories->first()->category}}Man">
-                                                                                                        <button class="accordion-button" type="button"  data-bs-toggle="collapse" data-bs-target="#collapse{{$manCategories->first()->category}}Man" aria-expanded="true" aria-controls="collapse{{$manCategories->first()->category}}Man">
-                                                                                                            {{$manCategories->first()->categorys->name}}
+                                                                                                    <h2 class="accordion-header" id="headingMan">
+                                                                                                        <button class="accordion-button" type="button"  data-bs-toggle="collapse" data-bs-target="#collapseMan" aria-expanded="true" aria-controls="collapse Man">
                                                                                                         </button>
                                                                                                     </h2>
-                                                                                                    <div id="collapse{{$manCategories->first()->category}}Man" class="accordion-collapse @if($loop->first) collapse show @else collapsed @endif" aria-labelledby="heading{{$manCategories->first()->category}}Man" data-bs-parent="#accordionMan">
+                                                                                                    <div id="collapse Man" class="accordion-collapse  collapse show  collapsed " aria-labelledby="headingMan" data-bs-parent="#accordionMan">
                                                                                                         <div class="accordion-body">
-                                                                                                            @forelse($manCategories as $service)
+
                                                                                                                 <div class="row">
                                                                                                                     <div class="col-10">
                                                                                                                         <label class="custom_check">
-                                                                                                                            <input type="checkbox" value="{{$service->id}}" name="service_ids[]">
-                                                                                                                            <span class="checkmark"></span> {{$service->subCategory->name}}
+                                                                                                                            <input type="checkbox" value="" name="service_ids[]">
+                                                                                                                            <span class="checkmark"></span>
                                                                                                                         </label>
                                                                                                                     </div>
                                                                                                                     <div class="col-2">
-                                                                                                                        <span class="text-success fw-bold">{{$service->price}} TL</span>
+                                                                                                                        <span class="text-success fw-bold">TL</span>
                                                                                                                     </div>
                                                                                                                 </div>
-                                                                                                            @empty
-                                                                                                            @endforelse
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                            @empty
-                                                                                            @endforelse
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>

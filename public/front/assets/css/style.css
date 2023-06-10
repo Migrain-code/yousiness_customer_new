@@ -5332,7 +5332,7 @@ html.menu-opened body {
 }
 .doctor-search-form.trans input, select {
 	background-color: transparent;
-    border: 2px solid #c2d6f3 !important;
+    border: 2px solid white !important;
 }
 .doctor-search-form.trans input::placeholder, .doctor-search-form.trans select::placeholder {
 	color: #fff;

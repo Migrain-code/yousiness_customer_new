@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
     Route::get('select/test', 'selectTest')->name('select.test');
     Route::get('/test',function () {
-       return view('test');
+       return view('test2');
     });
     Route::get('/', 'index')->name('welcome');
     Route::get('/salonlar', 'allBusiness')->name('business.all');
