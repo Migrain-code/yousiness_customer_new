@@ -154,7 +154,7 @@
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group mb-0">
                                                         <select class="js-example-basic-single" style="" name="category_id">
-                                                            <option value="">Salon Türü Seçiniz S</option>
+                                                            <option value="">Salon Türü Seçiniz</option>
                                                             @forelse($categories as $category)
                                                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                                             @empty

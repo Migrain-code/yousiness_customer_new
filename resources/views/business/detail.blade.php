@@ -29,7 +29,7 @@
                            <img style="100px; width: 100px;" src="https://via.placeholder.com/200x200" alt="">
                          </div>
                         <div class="col-md-9 company_mobil_name ">
-                            <h3 class="company-name">MUHAMMET TÜRKMENs</h3>
+                            <h3 class="company-name">MUHAMMET TÜRKMEN</h3>
                             <div class="rating">
                                 @if($business->comments->count() > 0)
                                     @for($i=0; $i < 5; $i++ )
