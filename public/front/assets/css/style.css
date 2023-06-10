@@ -23170,6 +23170,10 @@ ul {
 		margin-left: 10px !important;
 	}
 
+	.detail-links {
+		width: 100%;
+		margin: 0 auto;
+	}
 }
 @media (max-width: 769px) {
 	.header-nav {
@@ -23308,7 +23312,7 @@ ul {
 	}
 	.company-buttons {
 		height: 40px !important;
-		width: 105px !important;
+		width: 90px !important;
 	}
 	.ust_menu_mar {
 		margin: -13px -13px;

@@ -29,7 +29,7 @@
                            <img style="100px; width: 100px;" src="https://via.placeholder.com/200x200" alt="">
                          </div>
                         <div class="col-md-9 company_mobil_name ">
-                            <h3 class="company-name">MUHAMMET TÜRKMEN</h3>
+                            <h3 class="company-name">MUHAMMET TÜRKMENs</h3>
                             <div class="rating">
                                 @if($business->comments->count() > 0)
                                     @for($i=0; $i < 5; $i++ )
@@ -49,20 +49,19 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12 hidden-sm hidden-xs" >
-                        <div class="btn-group btn-group-toggle ust_menu_mar">
-                            <div class="row">
-                                <div class="col-sm-6 d-flex s1">
+
+                        <div class="btn-group btn-group-toggle ust_menu_mar detail-links">
+                            <div class="d-flex detail-links">
+
                                     <a href="#galeri_company"><button type="button" class="company-buttons btn-search border border-right active company_left_menu" ><i class="fa fa-comment"></i> Galeri</button></a>
                                     <a href="#adres_company"> <button type="button" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-map"></i> Adres</button></a>
-                                </div>
-                                <div class="col-sm-6 d-flex s2">
+
                                     <a href="#iletisim_company"><button type="button" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-phone"></i> İletişim</button></a>
                                     <a href="#yorumlar_company"><button type="button"  style="width: 122px;" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-comment"></i> Yorumlar</button></a>
-                                </div>
+
                             </div>
                          </div>
-                    </div>
+
                     <div class="tabs mt-5">
                         <ul>
                             <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
