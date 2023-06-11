@@ -77,11 +77,11 @@
                                         <ul class="d-flex flex-column">
                                       @for($i=0; $i<5; $i++)
                                             <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
+                                                <div class="d-flex justify-content-between w-100 border-bottom">
                                                     <div class="service-name">Hizmet</div>
                                                     <div class="appointment">
                                                         <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
+                                                        <button class="appointment-button ms-4 ">Randevu Al</button>
                                                     </div>
                                                 </div>
 
@@ -98,7 +98,7 @@
                                     <div class="services">
                                         <ul class="d-flex flex-column">
                                             <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
+                                                <div class="d-flex justify-content-between w-100 border-bottom">
                                                     <div class="service-name">Hizmet</div>
                                                     <div class="appointment">
                                                         <span class="price">170 $</span>

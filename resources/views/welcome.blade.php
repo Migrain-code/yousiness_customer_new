@@ -12,8 +12,7 @@
         .select2-container--default .select2-search--dropdown .select2-search__field {
             border: 1px solid #0db9f2;
             border-radius: 5px;
-            width: 275px;
-            margin: -46px 34px 0 42px;
+
 
         }
         .select2-results__option {
@@ -206,7 +205,7 @@
             </div>
            <div class="row adds_mobil">
                  <div class="glide mt-4" data-aos="fade-up">
-                <div class="glide__track" data-glide-el="track">
+                <div class="glide__track" data-glide-el="track" style="margin-bottom: -70px !important;">
                     <ul class="glide__slides">
                         <li class="glide__slide" style="text-align: center ;">
                             <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px; object-fit: cover;"></li>

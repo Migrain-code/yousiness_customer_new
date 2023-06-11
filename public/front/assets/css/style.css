@@ -2150,7 +2150,7 @@ button.bg-danger:hover {
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: space-between;
     position: relative;
-	height: 85px;
+	height: 72px;
 	padding: 0 30px;
 	margin-bottom: 0;
 }
@@ -4225,11 +4225,11 @@ html.menu-opened body {
 }
 .rating {
 	list-style: none;
-	margin: 0 0 7px;
+	margin: -4px 20px 7px;
 	width: 100%;
 	background: none;
 	max-width: max-content;
-	padding: 5px;
+	/* padding: 5px; */
 	border-radius: 5px;
 }
 .rating i {
@@ -7716,6 +7716,7 @@ body .multi-optn {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 3px;
+	width: 265px;
 }
 .doc-name a{
 	color: #ff8a00;
@@ -7775,12 +7776,13 @@ body .multi-optn {
     display: inline-block;
     font-size: 12px;
     padding: 3px 10px;
+	margin: 40px -9px 0 0px;
 }
 .clinic-services span + span {
     margin-left: 5px;
 }
 .clini-infos {
-    margin-bottom: 15px;
+	margin: 64px -262px 0;
 }
 .clini-infos h2 b.strike{
 	text-decoration: line-through;
@@ -7823,10 +7825,12 @@ body .multi-optn {
 	color: #fff;
 }
 .clinic-booking a.apt-btn {
+	width: 165px;
 	border: 1px solid #ff8a00;
-    background-color: #ff8a00;
-    color: #fff;
-	padding: 10px 9px;
+	background-color: #ff8a00;
+	color: #fff;
+	padding: 5px 0;
+	margin: 20px -165px;
 }
 .clinic-booking a.apt-btn:hover, .clinic-booking a.apt-btn:focus {
 	background-color: #0db9f2;
@@ -17984,6 +17988,7 @@ body.home-five {
 	font-size: 16px;
 	font-weight: 500;
 	color: #3E5463;
+
 }
 .nav-bg-five .main-nav .has-submenu.active > a {
     color: #063B6F;
@@ -23021,6 +23026,31 @@ ul {
 	.select2-container .select2-selection--single .select2-selection__rendered {
 		padding-left: 20px !important;
 	}
+	.doctor-widget .doc-name {
+		font-size: 30px;
+		font-weight: 500;
+		margin-bottom: 3px;
+		width: 381px;
+		text-align: center;
+	}
+	.clinic-details {
+		display: block !important;
+		margin: 0 0 -25px;
+	}
+	.doc-location {
+		margin: 7px !important;
+	}
+	.clini-infos {
+		margin: 42px -220px 0;
+	}
+	.clinic-booking a.apt-btn {
+		width: 165px;
+		border: 1px solid #ff8a00;
+		background-color: #ff8a00;
+		color: #fff;
+		padding: 5px 0;
+		margin: 35px -165px 0;
+	}
 }
 @media (max-width: 1371px) {
 	.card-header > form > .filter-widget  {
@@ -23032,6 +23062,7 @@ ul {
 	.mobil_hizmet_setting_buton {
 		margin-left: 25px !important;
 	}
+
 
 }
 @media (max-width: 835px) {

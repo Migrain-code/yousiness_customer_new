@@ -99,17 +99,6 @@
                         <div class="step d-block text-center bg-white position-relative last">4
                         </div>
                     </div>
-                    <div class="count_box d-flex flex-row mt-5 rounded-pill position-absolute">
-                        <div class="count_clock ps-3">
-                            <img src="/front/appointment/images/clock/clock.png" alt="image-not-found">
-                        </div>
-                        <div class="count_title px-2">
-                            <h4 class="text-white pe-5">Quiz</h4>
-                            <span class="text-white">Time start</span>
-                        </div>
-                        <div class="count_number p-3 d-flex justify-content-around align-items-center position-relative overflow-hidden bg-white rounded-pill countdown_timer" data-countdown="2022/10/24">
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-xl-8 ps-5 pt-5">
@@ -119,8 +108,7 @@
                         <!-- form-content -->
                         <div class="form_content">
                             <div class="step_content d-flex justify-content-between pt-5 pb-2">
-                                <h4>QUIZ</h4>
-                                <span class="text-end text-uppercase">question 1 to 4</span>
+                                <h4>Randevu Al</h4>
                             </div>
                             <div class="step_progress_bar">
                                 <div class="progress rounded-pill">
@@ -128,51 +116,17 @@
                                 </div>
                             </div>
                             <div class="question_title py-5">
-                                <h1 class="text-capitalize">What Option Best Describes Clyde’s Activity Level ?</h1>
+                                <h1 class="text-capitalize">Almak İstediğiniz Hizmeti Seçiniz</h1>
                             </div>
                             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 form_items radio-list">
-                                <div class="col">
-                                    <label id="opt_1" class="step_1 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_25ms">
-                                        <div class="step_box_icon">
-                                            <img src="/front/appointment/images/item-img/item_0.png" alt="image-not-found">
-                                        </div>
-                                        <span class="step_box_text pt-2">
-                                    None
-                                 </span>
-                                        <p class="step_box_desc">
-                                            My horse likes to relax
-                                        </p>
-                                        <input for="opt_1" type="radio" class="required" name="stp_1_select_option" value="None">
-                                    </label>
-                                </div>
-                                <div class="col">
-                                    <label id="opt_2" class="step_1 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_50ms">
-                                        <div class="step_box_icon"><img src="/front/appointment/images/item-img/item_1.png" alt="image-not-found">
-                                        </div>
-                                        <span class="step_box_text pt-2">Light</span>
-                                        <p class="step_box_desc">My horse likes to relax</p>
-                                        <input for="opt_2" type="radio" name="stp_1_select_option" value="Light">
-                                    </label>
-                                </div>
-                                <div class="col">
-                                    <label id="opt_3" class="step_1 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_100ms">
-                                        <div class="step_box_icon"><img src="/front/appointment/images/item-img/item_2.png" alt="image-not-found">
-                                        </div>
-                                        <span class="step_box_text pt-2">Moderate</span>
-                                        <p class="step_box_desc">My horse likes to relax</p>
-                                        <input for="opt_3" id="condition1" type="radio" name="stp_1_select_option" value="Moderate">
-                                        <span class="position-absolute">Conditional</span>
-                                    </label>
-                                </div>
-                                <div class="col">
+                                <div class="col" data-toggle="modal" data-target="#exampleModalCenter">
                                     <label id="opt_4" class="step_1 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_150ms">
-                                        <div class="step_box_icon"><img src="/front/appointment/images/item-img/item_3.png" data-toggle="modal" data-target="#exampleModalCenter" alt="image-not-found"></div>
+                                        <div class="step_box_icon"><img src="/front/appointment/images/item-img/item_3.png"  alt="image-not-found"></div>
                                         <span class="step_box_text pt-2">Hizmet Ekle</span>
                                         <p class="step_box_desc"></p>
                                         <input for="opt_4" type="radio" name="stp_1_select_option" value="Heavy">
                                     </label>
                                 </div>
-
                             </div>
                             <div class="row col-md-10 mt-lg-5 mt-4 conditional" data-condition="#condition1 && stp_1_select_option == 'Moderate'">
                                 <div class="form-inner-area">
@@ -185,8 +139,7 @@
                         </div>
                         <!-- Form-btn -->
                         <div class="form_btn pt-5 d-flex justify-content-between">
-                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Next
-                                Question <span><i class="fas fa-arrow-right"></i></span></button>
+                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Sonraki <span><i class="fas fa-arrow-right"></i></span></button>
                         </div>
                     </div>
                     <!------------------- Step-2 -------------------->
@@ -194,8 +147,7 @@
                         <!-- form-content -->
                         <div class="form_content">
                             <div class="step_content d-flex justify-content-between pt-5 pb-2">
-                                <h4>QUIZ</h4>
-                                <span class="text-end text-uppercase">question 2 to 4</span>
+                                <h4>Randevu Al</h4>
                             </div>
                             <div class="step_progress_bar">
                                 <div class="progress rounded-pill">
@@ -203,14 +155,14 @@
                                 </div>
                             </div>
                             <div class="question_title py-5">
-                                <h1 class="text-capitalize">The islands with coral covered surfaces in Bay of Bengal are</h1>
+                                <h1 class="text-capitalize">Hizmetiniz İçin Personelinizi Seçiniz</h1>
                             </div>
                             <div class="accordion" id="accordionExample">
                                 <div class="section-header section-header-five text-center aos aos-init aos-animate" data-aos="fade-up">
 
                                 </div>
                                 <select class="js-example-basic-single" style="" name="service_id">
-                                    <option value="">Hizmet Seçiniz</option>
+                                    <option value="">Personel Seçiniz</option>
                                         <option value="">Masar Çıldıran</option>
                                         <option value="">Fuat Özkanlımayan</option>
                                         <option value="">Özkan Delgin</option>
@@ -220,10 +172,8 @@
                         </div>
                         <!-- Form-btn -->
                         <div class="form_btn pt-5 d-flex justify-content-between">
-                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Last
-                                Question</button>
-                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Next
-                                Question <span><i class="fas fa-arrow-right"></i></span></button>
+                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Önceki</button>
+                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Sonraki <span><i class="fas fa-arrow-right"></i></span></button>
                         </div>
                     </div>
                     <!------------------- Step-3 -------------------->
@@ -231,8 +181,7 @@
                         <!-- form-content -->
                         <div class="form_content">
                             <div class="step_content d-flex justify-content-between pt-5 pb-2">
-                                <h4>QUIZ</h4>
-                                <span class="text-end text-uppercase">question 3 to 4</span>
+                                <h4>Randevu AL</h4>
                             </div>
                             <div class="step_progress_bar">
                                 <div class="progress rounded-pill">
@@ -240,7 +189,7 @@
                                 </div>
                             </div>
                             <div class="question_title py-5">
-                                <h1 class="text-capitalize">The length of the day is determined in</h1>
+                                <h1 class="text-capitalize">Hizmetiniz İçin Randevu Tarihini Seçiniz</h1>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
@@ -265,8 +214,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-
-                                        <form class="tab-content schedule-cont" id="step-3-form" method="post" action="">
+                                        <div class="tab-content schedule-cont" id="step-3-form" >
                                                 <div id="slot_0" class="tab-pane fade show active">
                                                     <div class="doc-times">
                                                                 <div class="form-check-inline visits me-1">
@@ -284,7 +232,7 @@
                                                                 </div>
                                                     </div>
                                                 </div>
-                                        </form>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -292,10 +240,8 @@
                         </div>
                         <!-- Form-btn -->
                         <div class="form_btn pt-5 d-flex justify-content-between">
-                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Last
-                                Question</button>
-                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Next
-                                Question <span><i class="fas fa-arrow-right"></i></span></button>
+                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Önceki</button>
+                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Sonraki <span><i class="fas fa-arrow-right"></i></span></button>
                         </div>
                     </div>
                     <!------------------ Step-4 -------------------->
@@ -303,8 +249,7 @@
                         <!-- form-content -->
                         <div class="form_content">
                             <div class="step_content d-flex justify-content-start ">
-                                <h4>QUIZ</h4>
-                                <span class="text-end text-uppercase">question 4 to 4</span>
+                                <h4>Randevu Al</h4>
                             </div>
                             <div class="step_progress_bar">
                                 <div class="progress rounded-pill">
@@ -312,66 +257,27 @@
                                 </div>
                             </div>
                             <div class="question_title py-5">
-                                <h1 class="text-capitalize">The greatest variety of animal and plant species is fund in</h1>
+                                <h1 class="text-capitalize">Hizmet Randevu Sahibi</h1>
                             </div>
-                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 form_items check-list">
-                                <div class="col">
-                                    <label id="opt_13" class="step_4 checkbox d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_25ms">
-                                        <div class="step_box_icon">
-                                            <img src="assets/images/item-img/item_0.png" alt="image-not-found">
-                                        </div>
-                                        <span class="step_box_text pt-2">
-                                    temperate grasslands
-                                 </span>
-                                        <input for="opt_13" type="checkbox" class="required" name="stp_4_select_option" value="temperate
-                                       grasslands">
-                                    </label>
-                                </div>
-                                <div class="col">
-                                    <label id="opt_14" class="step_4 checkbox d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_50ms">
-                                        <div class="step_box_icon">
-                                            <img src="assets/images/item-img/item_1.png" alt="image-not-found">
-                                        </div>
-                                        <span class="step_box_text pt-2">
-                                    tropical moist forests
-                                 </span>
-                                        <input for="opt_14" type="checkbox" name="stp_4_select_option" value="tropical
-                                       moist forests">
-                                    </label>
-                                </div>
-                                <div class="col">
-                                    <label id="opt_15" class="step_4 checkbox d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_100ms">
-                                        <div class="step_box_icon">
-                                            <img src="assets/images/item-img/item_2.png" alt="image-not-found">
-                                        </div>
-                                        <span class="step_box_text pt-2">
-                                    tundra regions
-                                 </span>
-                                        <input for="opt_15" type="checkbox" name="stp_4_select_option" value="tundra
-                                       regions">
-                                    </label>
-                                </div>
-                                <div class="col">
-                                    <label id="opt_16" class="step_4 checkbox d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_150ms">
-                                        <div class="step_box_icon">
-                                            <img src="assets/images/item-img/item_3.png" alt="image-not-found">
-                                        </div>
-                                        <span class="step_box_text pt-2">in hot deserts</span>
-                                        <input for="opt_16" type="checkbox" name="stp_4_select_option" value="in hot deserts">
-                                    </label>
-                                </div>
+                            <label for="">Ad Soyad</label>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control mb-2" placeholder="Adınız ve soyadınızı giriniz">
                             </div>
+                            <label for="">İletişim Numarası</label>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control mb-2" placeholder="İletişim Numaranızı giriniz">
+                            </div>
+
                         </div>
                         <!-- Form-btn -->
                         <div class="form_btn pt-5 d-flex justify-content-between">
-                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Last
-                                Question</button>
-                            <button type="submit" class="next_btn text-uppercase text-white" id="nextBtn">Submit</button>
+                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Önceki</button>
+                            <button type="submit" class="next_btn text-uppercase text-white" id="nextBtn">Randevu Al</button>
                         </div>
                     </div>
-
+                </form>
             </div>
-            </form>
+
         </div>
     </div>
 @endsection

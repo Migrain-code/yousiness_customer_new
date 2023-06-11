@@ -26,14 +26,14 @@
                     <ul class="main-nav black-font">
                       <div class="main-nav-sec">
                         @if(auth('customer')->check())
-                        <li class="active">	<a href="{{route('customer.home')}}">HESABIM</a></li>
+                        <li class="active">	<a href="{{route('customer.home')}}">Hesabım</a></li>
                         @else
-                        <li class="active">	<a href="{{route('customer.login')}}">GİRİŞ YAP</a></li>
+                        <li class="active">	<a href="{{route('customer.login')}}">Giriş Yap</a></li>
                         @endif
-                        <li class="active"><a  href="/">İŞLETMELER</a></li>
+                        <li class="active"><a  href="/">İşletmeler</a></li>
                       </div>
-                        <li class="active">	<a href="/">ANASAYFA</a></li>
-                        <li class="has-submenu"><a href="{{route('business.all')}}">SALONLAR <i class="fas fa-chevron-down"></i></a>
+                        <li class="active">	<a href="/">Anasayfa</a></li>
+                        <li class="has-submenu"><a href="{{route('business.all')}}">Salonlar <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 @foreach($categories as $category)
                                     <li>
@@ -42,7 +42,7 @@
                                @endforeach
                             </ul>
                         </li>
-                        <li class="has-submenu"><a href="{{route('service.all')}}">HİZMETLER <i class="fas fa-chevron-down"></i></a>
+                        <li class="has-submenu"><a href="{{route('service.all')}}">Hizmetler <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 @foreach($services as $service)
                                     <li>
@@ -51,10 +51,10 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li class=""><a href="{{route('about')}}">HAKKIMIZDA</a></li>
-                        <li class=""><a href="{{route('faq')}}">S.S.S</a></li>
-                        <li class=""><a href="{{route('blog.index')}}">BLOGLAR</a></li>
-                        <li class=""><a href="{{route('contact')}}">İLETİŞİM</a></li>
+                        <li class=""><a href="{{route('about')}}">Hakkımızda</a></li>
+                        <li class=""><a href="{{route('faq')}}">s.s.s</a></li>
+                        <li class=""><a href="{{route('blog.index')}}">Bloglar</a></li>
+                        <li class=""><a href="{{route('contact')}}">İletişim</a></li>
                     </ul>
                 </div>
 
@@ -62,15 +62,15 @@
                   <div class="main-nav-secdefault">
                     @if(auth('customer')->check())
                         <li class="nav-item">
-                            <a class="nav-link btn-five" href="{{route('customer.home')}}">HESABIM</a>
+                            <a class="nav-link btn-five" href="{{route('customer.home')}}">Hesabım</a>
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link btn-five" href="{{route('customer.login')}}">GİRİŞ YAP</a>
+                            <a class="nav-link btn-five" href="{{route('customer.login')}}">Giriş Yap</a>
                         </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link btn-five-light" href="{{image('')}}" target="_blank">İŞLETMELER</a>
+                        <a class="nav-link btn-five-light" href="{{image('')}}" target="_blank">İşletmeler</a>
                     </li>
                   </div>
                 </ul>
