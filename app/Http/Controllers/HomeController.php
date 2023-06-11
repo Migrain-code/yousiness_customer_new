@@ -50,7 +50,6 @@ class HomeController extends Controller
 
     public function personelControl(Request $request)
     {
-
         $personel=Personel::where('email', $request->phone)->first();
         if ($personel){
             if (Hash::check($request->password, $personel->password)){

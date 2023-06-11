@@ -1,474 +1,389 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Hızlı randevu</title>
-
-    <!-- Favicons -->
-    @include('layouts.component.styles')
+@extends('layouts.master')
+@section('styles')
+    <!-- Animate-css include -->
+    <link rel="stylesheet" href="/front/appointment/css/animate.min.css">
+    <!-- Main-StyleSheet include -->
+    <link rel="stylesheet" href="/front/appointment/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <style>
+        .accordion-item {
+            border: 1px solid white;
+            border-radius: 30px;
+        }
+        .accordion-button  {
+            border: 1px solid white !important;
+            border-radius: 30px !important;
+        }
+        .accordion-header {
+            border: 1px solid orange;
+            border-radius: 30px;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #FC9F33 !important;
+        }
+    </style>
     <style>
         .select2-container {
             width: 100% !important;
-            box-sizing: border-box;
-            display: inline-block;
-            margin: 0;
-            position: relative;
-            vertical-align: middle;
+            background-color: transparent;
         }
-        .accordion-button:focus {
-            z-index: 3;
-            border-color: #ff8a00;
-            background-color: #ff8a00;
-            outline: 0;
-            color: white;
-            box-shadow: 0 0 0 0.25rem rgb(255, 138, 0);
+        .select2-container--default .select2-search--dropdown .select2-search__field {
+            border: 1px solid #0db9f2;
+            border-radius: 5px;
         }
-        .accordion-button:not(.collapsed) {
-            color: white;
-            background-color: #ff8a00;
-            box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
-        }
-        .accordion-button:not(.collapsed)::after {
-            background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
-            transform: rotate(-180deg);
-        }
-        .select2-container--default.select2-container--disabled .select2-selection--multiple {
-            background-color: #ff8a00;
-            cursor: default;
-        }
-        .select2-container--default .select2-selection--multiple .select2-selection__choice {
-            background-color: #ffffff;
-            border: 1px solid #aaa;
-            border-radius: 12px;
-            box-sizing: border-box;
-            display: inline-block;
-            margin-left: 5px;
-            margin-top: 5px;
-            padding: 0;
-            padding-left: 20px;
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            vertical-align: bottom;
-            white-space: nowrap;
-        }
-        .select2-container--default .select2-selection--multiple {
-            background-color: #4CAF50;
-            border: 1px solid #aaa;
-            border-radius: 18px;
-            cursor: text;
-            padding-bottom: 5px;
-            padding-right: 5px;
-            position: relative;
-        }
-        .select2-results {
-            display: none !important;
-        }
-        /* your CSS goes here*/
-        body {
-            background: #eee
-        }
-        #regForm {
-            background-color: #ffffff;
-            margin: 0px auto;
-            font-family: Raleway;
-
-            border-radius: 10px
-        }
-        h1 {
-            text-align: center
-        }
-        input {
-            padding: 10px;
-            width: 100%;
-            font-size: 17px;
-            font-family: Raleway;
-            border: 1px solid #aaaaaa
-        }
-        input.invalid {
-            background-color: #ffdddd
-        }
-        .tab {
-            display: none
-        }
-        button {
-            background-color: #4CAF50;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 17px;
-            font-family: Raleway;
-            cursor: pointer
-        }
-        button:hover {
-            opacity: 0.8
-        }
-        #prevBtn {
-
-        }
-        .step {
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbbbbb;
-            border: none;
-            border-radius: 50%;
-            display: inline-block;
-            opacity: 0.5
-        }
-        .step.active {
-            opacity: 1
-        }
-        .step.finish {
-            background-color: #4CAF50
-        }
-        .all-steps {
-            text-align: center;
-            margin-top: 30px;
-            margin-bottom: 30px
-        }
-        .thanks-message {
-            display: none
-        }
-        .container {
-            display: f;
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 9px;
-            cursor: pointer;
-            font-size: 22px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
+        .select2-results__option {
+            padding: 6px;
+            border-radius: 5px;
             user-select: none;
+            -webkit-user-select: none;
+        }
+        .select2-container--default .select2-selection--single {
+            background-color: #fff;
+            border: 1px solid #aaa;
+            height: 50px;
 
+            padding-top: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
         }
-        /* Hide the browser's default radio button */
-
-        .container input[type="radio"] {
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 26px;
             position: absolute;
-            opacity: 0;
-            cursor: pointer;
+            top: 5px;
+            right: 1px;
+            width: 20px;
         }
-        /* Create a custom radio button */
-        .checkmark {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 25px;
-            width: 25px;
-            background-color: #eee;
-            border-radius: 50%;
+        .select2-results__options {
+            list-style: none;
+            margin: 8px;
+            padding: 0;
         }
-        /* On mouse-over, add a grey background color */
-        .container:hover input~.checkmark {
-            background-color: #ccc;
+        .select2-container--open .select2-dropdown--below {
+            border-top: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
         }
-        /* When the radio button is checked, add a blue background */
-        .container input:checked~.checkmark {
-            background-color: #2196F3;
-        }
-        /* Create the indicator (the dot/circle - hidden when not checked) */
-        .checkmark:after {
-            content: "";
-            position: absolute;
+        .select2-container--default .select2-selection--single .select2-selection__arrow b {
             display: none;
-        }
-        /* Show the indicator (dot/circle) when checked */
-        .container input:checked~.checkmark:after {
-            display: block;
-        }
-        /* Style the indicator (dot/circle) */
-        .container .checkmark:after {
-            top: 9px;
-            left: 9px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: white;
+            border-color: #888 transparent transparent transparent;
+            border-style: solid;
+            border-width: 5px 4px 0 4px;
+            height: 0;
+            left: 0%;
+            margin-left: -4px;
+            margin-top: -2px;
+            position: absolute;
+            top: 65%;
+            width: 0;
         }
     </style>
-</head>
-<body class="home-five">
+@endsection
+@section('content')
+    <div class="container-md-fluid p-3 p-lg-0 me-5">
+        <div class="row">
+            <div class="col-xl-4">
 
-<!-- Main Wrapper -->
-<div class="main-wrapper">
-
-    <!-- Header -->
-    @include('layouts.menu.top')
-
-    <!-- /Breadcrumb -->
-    <div class="onboard-wrapper">
-        <div class="right-panel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 p-0">
-                        <div class="right-panel-title text-center">
-                            <a href="#" style="color: white;font-weight: bold">Randevu Al</a>
-                        </div>
+                <div class="steps_area step_area_fixed d-none d-xl-block">
+                    <div class="image_holder">
+                        <img class="overflow-hidden" src="/front/appointment/images/background/bg_0.png" alt="image-not-found">
                     </div>
-
-                    @include('appointment.summary')
-                    <div class="col-lg-8 ">
-                        <div class="onboarding-content-box content-wrap">
-                            <div class="onborad-set">
-                                <div class="onboarding-title">
-                                    <h2>Hizmet Seçiniz?<span>*</span></h2>
-                                    <h6>Not: Birden fazla hizmet seçebilirsiniz.</h6>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>Seçtiğiniz Hizmetler</label>
-                                        <select class="js-example-basic-single" multiple name="service_ids">
-                                            @forelse($selectedServices as $service)
-                                                <option value="{{$service->id}}" selected>{{$service->subCategory->name}}</option>
-                                            @empty
-                                            @endforelse
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="onboarding-content">
-                                    <div class="row">
-                                        <div class="container mt-5">
-                                            <div class="row d-flex justify-content-center align-items-center">
-                                                <div class="col-md-12">
-                                                    <div class="content" >
-                                                        <div class="container">
-                                                            <div class="accordion" id="accordionExample">
-                                                                <div class="accordion-item col-md-12 ">
-                                                                    <h2 class="accordion-header ">
-                                                                        <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                                            <p class="paragraf mt-3">HİZMET EKLE/ÇIKAR </p>
-                                                                        </button>
-                                                                    </h2>
-
-                                                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                                                        <div class="accordion-body">
-                                                                            <div class="col-md-12 mt-3">
-                                                                              <form id="regForm">
-                                                                                 <div class="all-steps" id="all-steps"> <span class="step"></span> <span class="step"></span> <span class="step"></span> <span class="step"></span> </div>
-
-                                                                               <div class="tab">
-                                                                                <div class="tab-content">
-                                                                                    <div class="tab-pane show active" id="solid-rounded-justified-tab1">
-                                                                                        <div class="accordion" id="accordionWoman">
-                                                                                                <div class="accordion-item">
-                                                                                                    <h2 class="accordion-header" id="headingWoman">
-                                                                                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse Woman" aria-expanded="true" aria-controls="collapseWoman">
-
-                                                                                                        </button>
-                                                                                                    </h2>
-                                                                                                    <div id="collapseWoman" class="accordion-collapse collapse show" aria-labelledby="headingWoman" data-bs-parent="#accordionWoman">
-                                                                                                        <div class="accordion-body">
-                                                                                                                <div class="row">
-                                                                                                                    <div class="col-10">
-                                                                                                                        <label class="custom_check">
-                                                                                                                            <input type="checkbox" value=""  name="service_ids[]">
-                                                                                                                            <span class="checkmark"></span>
-                                                                                                                        </label>
-                                                                                                                    </div>
-                                                                                                                    <div class="col-2">
-                                                                                                                        <span class="text-success fw-bold"> TL</span>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="tab-pane show active " id="solid-rounded-justified-tab2">
-                                                                                        <div class="accordion" id="accordionMan">
-                                                                                                <div class="accordion-item">
-                                                                                                    <h2 class="accordion-header" id="headingMan">
-                                                                                                        <button class="accordion-button" type="button"  data-bs-toggle="collapse" data-bs-target="#collapseMan" aria-expanded="true" aria-controls="collapse Man">
-                                                                                                        </button>
-                                                                                                    </h2>
-                                                                                                    <div id="collapse Man" class="accordion-collapse  collapse show  collapsed " aria-labelledby="headingMan" data-bs-parent="#accordionMan">
-                                                                                                        <div class="accordion-body">
-
-                                                                                                                <div class="row">
-                                                                                                                    <div class="col-10">
-                                                                                                                        <label class="custom_check">
-                                                                                                                            <input type="checkbox" value="" name="service_ids[]">
-                                                                                                                            <span class="checkmark"></span>
-                                                                                                                        </label>
-                                                                                                                    </div>
-                                                                                                                    <div class="col-2">
-                                                                                                                        <span class="text-success fw-bold">TL</span>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                               </div>
-                                                                                  <div class="tab">
-                                                                                      <p><input placeholder="First Name" oninput="this.className = ''" name="first"></p>
-                                                                                      <p><input placeholder="Last Name" oninput="this.className = ''" name="last"></p>
-                                                                                      <p><input placeholder="Email" oninput="this.className = ''" name="email"></p>
-                                                                                      <p><input placeholder="Phone" oninput="this.className = ''" name="phone"></p>
-                                                                                      <p><input placeholder="Street Address" oninput="this.className = ''" name="address"></p>
-                                                                                      <p><input placeholder="City" oninput="this.className = ''" name="city"></p>
-                                                                                      <p><input placeholder="State" oninput="this.className = ''" name="state"></p>
-                                                                                      <p><input placeholder="Country" oninput="this.className = ''" name="country"></p>
-                                                                                  </div>
-                                                                                  <div class="tab">
-                                                                                      <p><input placeholder="Credit Card #" oninput="this.className = ''" name="email"></p>
-                                                                                      <p>Exp Month
-                                                                                          <select id="month">
-                                                                                              <option value="1">January</option>
-                                                                                              <option value="2">February</option>
-                                                                                              <option value="3">March</option>
-                                                                                              <option value="4">April</option>
-                                                                                              <option value="5">May</option>
-                                                                                              <option value="6">June</option>
-                                                                                              <option value="7">July</option>
-                                                                                              <option value="8">August</option>
-                                                                                              <option value="9">September</option>
-                                                                                              <option value="10">October</option>
-                                                                                              <option value="11">November</option>
-                                                                                              <option value="12">December</option>
-                                                                                          </select></p>
-                                                                                      <p>Exp Year
-                                                                                          <select id="year">
-                                                                                              <option value="2021">2021</option>
-                                                                                              <option value="2022">2022</option>
-                                                                                              <option value="2023">2023</option>
-                                                                                              <option value="2024">2024</option>
-                                                                                          </select></p>
-
-                                                                                      <p><input placeholder="CVV" oninput="this.className = ''" name="phone"></p>
-                                                                                  </div>
-                                                                                  <div class="thanks-message text-center" id="text-message"> <img src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
-                                                                                      <h3>Thanks for your Donation!</h3> <span>Your donation has been entered! We will contact you shortly!</span>
-                                                                                  </div>
-
-                                                                              </form>
-                                                                            </div>
-                                                                            <div style="overflow:auto; float: right;"  class="col-md-4" id="nextprevious">
-                                                                                <div style="float:right;">
-                                                                                    <button style="width: 100px;" type="button" class="btn btn-outline-success col-md-3 mb-2 mx-auto" id="nextBtn" onclick="nextPrev(1)">İlerle</button>
-                                                                                </div>
-                                                                                <div style="float:left;">
-                                                                                    <button style="width: 100px;" type="button" class="btn btn-outline-danger col-md-3 mb-2" id="prevBtn" onclick="nextPrev(-1)">Önceki</button>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
+                    <div class="progress_bar step_items position-absolute">
+                        <div class="step d-block text-center bg-white position-relative active current">1</div>
+                        <div class="step d-block text-center bg-white position-relative">2
+                        </div>
+                        <div class="step d-block text-center bg-white position-relative">3
+                        </div>
+                        <div class="step d-block text-center bg-white position-relative last">4
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-xl-8 ps-5 pt-5">
+                <form class="multisteps_form" id="wizard" method="POST" action="">
+                    <!------------------- Step-1 -------------------->
+                    <div class="multisteps_form_panel active">
+                        <!-- form-content -->
+                        <div class="form_content">
+                            <div class="step_content d-flex justify-content-between pt-5 pb-2">
+                                <h4>Randevu Al</h4>
+                            </div>
+                            <div class="step_progress_bar">
+                                <div class="progress rounded-pill">
+                                    <div class="progress-bar" style="width:25%"></div>
+                                </div>
+                            </div>
+                            <div class="question_title py-5">
+                                <h1 class="text-capitalize">Almak İstediğiniz Hizmeti Seçiniz</h1>
+                            </div>
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 form_items radio-list">
+                                <div class="col" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <label id="opt_4" class="step_1 d-flex flex-column bg-white text-center animate__animated animate__fadeInRight animate_150ms">
+                                        <div class="step_box_icon"><img src="/front/appointment/images/item-img/item_3.png"  alt="image-not-found"></div>
+                                        <span class="step_box_text pt-2">Hizmet Ekle</span>
+                                        <p class="step_box_desc"></p>
+                                        <input for="opt_4" type="radio" name="stp_1_select_option" value="Heavy">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row col-md-10 mt-lg-5 mt-4 conditional" data-condition="#condition1 && stp_1_select_option == 'Moderate'">
+                                <div class="form-inner-area">
+                                    <label for="field">
+                                        <h6>Which Sector</h6>
+                                    </label>
+                                    <input type="text" name="field" class="form-control required" minlength="2" placeholder="Write Here">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form-btn -->
+                        <div class="form_btn pt-5 d-flex justify-content-between">
+                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Sonraki <span><i class="fas fa-arrow-right"></i></span></button>
+                        </div>
+                    </div>
+                    <!------------------- Step-2 -------------------->
+                    <div class="multisteps_form_panel">
+                        <!-- form-content -->
+                        <div class="form_content">
+                            <div class="step_content d-flex justify-content-between pt-5 pb-2">
+                                <h4>Randevu Al</h4>
+                            </div>
+                            <div class="step_progress_bar">
+                                <div class="progress rounded-pill">
+                                    <div class="progress-bar" style="width:50%"></div>
+                                </div>
+                            </div>
+                            <div class="question_title py-5">
+                                <h1 class="text-capitalize">Hizmetiniz İçin Personelinizi Seçiniz</h1>
+                            </div>
+                            <div class="accordion" id="accordionExample">
+                                <div class="section-header section-header-five text-center aos aos-init aos-animate" data-aos="fade-up">
+
+                                </div>
+                                <select class="js-example-basic-single" style="" name="service_id">
+                                    <option value="">Personel Seçiniz</option>
+                                    <option value="">Masar Çıldıran</option>
+                                    <option value="">Fuat Özkanlımayan</option>
+                                    <option value="">Özkan Delgin</option>
+                                    <option value="">Nazdrowya Canova</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Form-btn -->
+                        <div class="form_btn pt-5 d-flex justify-content-between">
+                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Önceki</button>
+                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Sonraki <span><i class="fas fa-arrow-right"></i></span></button>
+                        </div>
+                    </div>
+                    <!------------------- Step-3 -------------------->
+                    <div class="multisteps_form_panel">
+                        <!-- form-content -->
+                        <div class="form_content">
+                            <div class="step_content d-flex justify-content-between pt-5 pb-2">
+                                <h4>Randevu AL</h4>
+                            </div>
+                            <div class="step_progress_bar">
+                                <div class="progress rounded-pill">
+                                    <div class="progress-bar" style="width:75%"></div>
+                                </div>
+                            </div>
+                            <div class="question_title py-5">
+                                <h1 class="text-capitalize">Hizmetiniz İçin Randevu Tarihini Seçiniz</h1>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card schedule-widget mb-0">
+                                        <!-- Schedule Header -->
+                                        <div class="schedule-header">
+                                            @include('layouts.component.error')
+                                            <!-- Schedule Nav -->
+                                            <div class="schedule-nav">
+                                                <div class="col-md-6 text-end aos" data-aos="fade-up">
+                                                    <div class="owl-nav slide-nav-3 text-end nav-control"></div>
+                                                </div>
+                                                <ul class="nav nav-tabs nav-justified">
+                                                    <div class="owl-carousel clinic-feature owl-theme aos" data-aos="fade-up">
+
+                                                        <div class="item custom-owl">
+                                                            <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
+                                                                <a class="nav-link custom-link active" data-bs-toggle="tab" href="#slot_0"><b>Pazartesi</b> <br> </a>
+                                                            </li>
+                                                        </div>
+                                                    </div>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content schedule-cont" id="step-3-form" >
+                                            <div id="slot_0" class="tab-pane fade show active">
+                                                <div class="doc-times">
+                                                    <div class="form-check-inline visits me-1">
+                                                        <label class="visit-btns">
+                                                            <input type="radio" name="appointment_time" disabled class="form-check-input" value="Tarih ve saat">
+                                                            <span class="visit-rsn" data-bs-toggle="tooltip" title="">12.45</span>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check-inline visits me-1">
+                                                        <label class="visit-btns">
+                                                            <input type="radio" name="appointment_time" class="form-check-input aktive-time" value="Tarih" required>
+                                                            <span class="visit-rsn" data-bs-toggle="tooltip" title="Saat Seçimi Zorunludur">12.45</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form-btn -->
+                        <div class="form_btn pt-5 d-flex justify-content-between">
+                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Önceki</button>
+                            <button type="button" class="js-btn-next next_btn text-uppercase text-white" id="nextBtn">Sonraki <span><i class="fas fa-arrow-right"></i></span></button>
+                        </div>
+                    </div>
+                    <!------------------ Step-4 -------------------->
+                    <div class="multisteps_form_panel">
+                        <!-- form-content -->
+                        <div class="form_content">
+                            <div class="step_content d-flex justify-content-start ">
+                                <h4>Randevu Al</h4>
+                            </div>
+                            <div class="step_progress_bar">
+                                <div class="progress rounded-pill">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="question_title py-5">
+                                <h1 class="text-capitalize">Hizmet Randevu Sahibi</h1>
+                            </div>
+                            <label for="">Ad Soyad</label>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control mb-2" placeholder="Adınız ve soyadınızı giriniz">
+                            </div>
+                            <label for="">İletişim Numarası</label>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control mb-2" placeholder="İletişim Numaranızı giriniz">
+                            </div>
+
+                        </div>
+                        <!-- Form-btn -->
+                        <div class="form_btn pt-5 d-flex justify-content-between">
+                            <button type="button" class="js-btn-prev prev_btn text-uppercase bg-white" id="prevBtn"><span><i class="fas fa-arrow-left"></i></span> Önceki</button>
+                            <button type="submit" class="next_btn text-uppercase text-white" id="nextBtn">Randevu Al</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
         </div>
     </div>
-    <!-- Page Content -->
+@endsection
 
+@section('scripts')
 
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified">
+                    <li class="nav-item"><a class="nav-link " href="#solid-rounded-justified-tab1" data-bs-toggle="tab">Kadın</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Erkek</a></li>
+                </ul>
+                <div class="modal-body">
+                    <div class="tab-content">
+                        <div class="tab-pane" id="solid-rounded-justified-tab1">
+                            <div class="accordion" id="accordionWoman">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingWoman">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse Woman" aria-expanded="true" aria-controls="collapseWoman">
 
-<!-- jQuery -->
-<script src="/front/assets/js/jquery-3.6.0.min.js"></script>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWoman" class="accordion-collapse collapse show" aria-labelledby="headingWoman" data-bs-parent="#accordionWoman">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-10">
+                                                    <label class="custom_check">
+                                                        <input type="checkbox" value=""  name="service_ids[]">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <span class="text-success fw-bold"> TL</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane show active " id="solid-rounded-justified-tab2">
+                            <div class="accordion" id="accordionMan">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingMan">
+                                        <button class="accordion-button" type="button"  data-bs-toggle="collapse" data-bs-target="#collapseMan" aria-expanded="true" aria-controls="collapse Man">AAAA
+                                        </button>
+                                    </h2>
+                                    <div id="collapse Man" class="accordion-collapse  collapse show  collapsed " aria-labelledby="headingMan" data-bs-parent="#accordionMan">
+                                        <div class="accordion-body">
 
-<!-- Bootstrap Core JS -->
-<script src="/front/assets/js/bootstrap.bundle.min.js"></script>
+                                            <div class="row">
+                                                <div class="col-10">
+                                                    <label class="custom_check">
+                                                        <input type="checkbox" value="" name="service_ids[]">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <span class="text-success fw-bold">TL</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- Owl Carousel JS -->
-<script src="/front/assets/js/owl.carousel.min.js"></script>
+    <!-- jQuery-js include -->
+    <script src="/front/appointment/js/jquery-3.6.0.min.js"></script>
+    <!-- Countdown-js include -->
+    <script src="/front/appointment/js/countdown.js"></script>
+    <!-- Bootstrap-js include -->
+    <script src="/front/appointment/js/bootstrap.min.js"></script>
+    <!-- jQuery-validate-js include -->
+    <script src="/front/appointment/js/jquery.validate.min.js"></script>
+    <!-- jQuery-validate-js include -->
+    <script src="/front/appointment/js/conditionize.flexible.jquery.min.js"></script>
+    <!-- Custom-js include -->
+    <script src="/front/appointment/js/script.js"></script>
+    {{--    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>--}}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
 
-<!-- Slick JS -->
-<script src="/front/assets/js/slick.js"></script>
+        });
+    </script>
+    <script src="/front/assets/js/custom.js"></script>
 
-<!-- Feather Icon JS -->
-<script src="/front/assets/js/feather.min.js"></script>
+@endsection
 
-<!-- Animation JS -->
-<script src="/front/assets/js/aos.js"></script>
-
-<!-- Custom JS -->
-<script src="/front/assets/js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
-</script>
-<script>
-    //your javascript goes here
-    var currentTab = 0;
-    document.addEventListener("DOMContentLoaded", function(event) {
-        showTab(currentTab);
-    });
-    function showTab(n) {
-        var x = document.getElementsByClassName("tab");
-        x[n].style.display = "block";
-        if (n == 0) {
-            document.getElementById("prevBtn").style.display = "none";
-        } else {
-            document.getElementById("prevBtn").style.display = "inline";
-        }
-        if (n == (x.length - 1)) {
-            document.getElementById("nextBtn").innerHTML = "Submit";
-        } else {
-            document.getElementById("nextBtn").innerHTML = "Next";
-        }
-        fixStepIndicator(n)
-    }
-    function nextPrev(n) {
-        var x = document.getElementsByClassName("tab");
-        if (n == 1 && !validateForm()) return false;
-        x[currentTab].style.display = "none";
-        currentTab = currentTab + n;
-        if (currentTab >= x.length) {
-            // document.getElementById("regForm").submit();
-            // return false;
-            //alert("sdf");
-            document.getElementById("nextprevious").style.display = "none";
-            document.getElementById("all-steps").style.display = "none";
-            document.getElementById("register").style.display = "none";
-            document.getElementById("text-message").style.display = "block";
-        }
-        showTab(currentTab);
-    }
-    function validateForm() {
-        var x, y, i, valid = true;
-        x = document.getElementsByClassName("tab");
-        y = x[currentTab].getElementsByTagName("input");
-        for (i = 0; i < y.length; i++) {
-            if (y[i].value == "") {
-                y[i].className += " invalid";
-                valid = false;
-            }
-        }
-        if (valid) { document.getElementsByClassName("step")[currentTab].className += " finish"; }
-        return valid;
-    }
-    function fixStepIndicator(n) {
-        var i, x = document.getElementsByClassName("step");
-        for (i = 0; i < x.length; i++) { x[i].className = x[i].className.replace(" active", ""); }
-        x[n].className += " active";
-    }
-</script>
-</body>
-</html>

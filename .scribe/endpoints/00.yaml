@@ -26,19 +26,19 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: error
+        example: adipisci
         type: string
         custom: []
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: 'tc?yfk~ow4j'
+        example: 'AY+(e938X2"?YwO'
         type: string
         custom: []
     cleanBodyParameters:
-      phone: error
-      password: 'tc?yfk~ow4j'
+      phone: adipisci
+      password: 'AY+(e938X2"?YwO'
     fileParameters: []
     responses: []
     responseFields: []
@@ -71,27 +71,27 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: voluptatem
+        example: explicabo
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: quasi
+        example: nihil
         type: string
         custom: []
       birthday:
         name: birthday
         description: 'The birthday of the user. Format (Y-m-d).'
         required: true
-        example: quasi
+        example: aliquam
         type: date
         custom: []
     cleanBodyParameters:
-      name: voluptatem
-      phone: quasi
-      birthday: quasi
+      name: explicabo
+      phone: nihil
+      birthday: aliquam
     fileParameters: []
     responses: []
     responseFields: []

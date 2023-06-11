@@ -2165,6 +2165,18 @@ button.bg-danger:hover {
 		width: 300px;
 		height: 70px;
 	}
+	.comment-profile{
+		display: none;
+	}
+	.comment-profile-mobile{
+		display: block;
+	}
+}
+.comment-profile{
+	display: block;
+}
+.comment-profile-mobile{
+	display: none;
 }
 .main-nav {
 	display: -webkit-box;
@@ -18010,6 +18022,21 @@ body.home-five {
 }
 /* Mobil-Yan Ekran Başlangı. */
 @media only screen and (max-width: 576px) {
+	.comment-profile{
+		display: none;
+	}
+	.comment-profile-mobile{
+		display: block;
+	}
+	.mobile-header{
+		align-items: center!important;
+		gap: 0.5rem!important;
+		display: flex!important;
+	}
+	.mobile-rating-bar{
+		float: right !important;
+		margin: 0 19px 7px!important;
+	}
 	.nav-bg-five .black-font > li > a {
 		font-size: 15px;
 	}

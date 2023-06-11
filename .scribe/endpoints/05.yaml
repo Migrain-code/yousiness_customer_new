@@ -1,0 +1,79 @@
+name: Blog
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/blog/list
+    metadata:
+      groupName: Blog
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"blogs":[{"id":8,"title":"Rem rem aut assumend","image":"storage\/blog_images\/0WjyPETNcu4AeYA8fLjbDDnUJAFwsosrUC4EtWez.jpg","content":"The History Of Web Design\r\n                                    While you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\r\n                                    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.!The History Of Web Design 1While you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.! asdasd","created_at":"14.03.2023"}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '29'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/blog/get
+    metadata:
+      groupName: Blog
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      blog_id:
+        name: blog_id
+        description: ''
+        required: true
+        example: 13
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      blog_id: 13
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

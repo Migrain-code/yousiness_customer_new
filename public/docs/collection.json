@@ -10,11 +10,100 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "0b1e6fec-fe1c-43e8-b2a5-f6ce298f8bde",
+        "_postman_id": "f7563671-5caa-4f8e-bc67-fcf20f3f3dc9",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Activity",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/activity\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/activity\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/activity\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "30"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"activities\":[{\"id\":2,\"title\":\"Etkinlik 2\",\"description\":\"<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\\\/p>\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/activity_images\\\/9EShJVkDl8i73zdODQNmwpOmFaYfk5AK1jQacPT9.jpg\",\"start_time\":\"11.03.2002 16:03\",\"end_time\":\"21.11.1989 04:43\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/activity\/get",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/activity\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/activity\/get"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"activity_id\":8}"
+                        },
+                        "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
         {
             "name": "Authentication",
             "description": "",
@@ -41,7 +130,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"error\",\"password\":\"tc?yfk~ow4j\"}"
+                            "raw": "{\"phone\":\"adipisci\",\"password\":\"AY+(e938X2\\\"?YwO\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +161,96 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"voluptatem\",\"phone\":\"quasi\",\"birthday\":\"quasi\"}"
+                            "raw": "{\"name\":\"explicabo\",\"phone\":\"nihil\",\"birthday\":\"aliquam\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Blog",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/blog\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blog\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/blog\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "29"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"blogs\":[{\"id\":8,\"title\":\"Rem rem aut assumend\",\"image\":\"storage\\\/blog_images\\\/0WjyPETNcu4AeYA8fLjbDDnUJAFwsosrUC4EtWez.jpg\",\"content\":\"The History Of Web Design\\r\\n                                    While you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\\r\\n                                    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.!The History Of Web Design 1While you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.! asdasd\",\"created_at\":\"14.03.2023\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/blog\/get",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blog\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/blog\/get"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"blog_id\":13}"
                         },
                         "description": "",
                         "auth": {
@@ -126,7 +304,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "45"
+                                    "value": "31"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -161,7 +339,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":16}"
+                            "raw": "{\"city_id\":9}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -219,7 +397,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "51"
+                                    "value": "37"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -275,7 +453,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "50"
+                                    "value": "36"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -331,7 +509,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "49"
+                                    "value": "35"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -387,7 +565,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "48"
+                                    "value": "34"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -443,7 +621,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "47"
+                                    "value": "33"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -499,7 +677,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "46"
+                                    "value": "32"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -544,7 +722,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"accusantium\",\"phone\":\"nihil\",\"birthday\":\"2023-06-07T15:41:04\"}"
+                            "raw": "{\"name\":\"accusamus\",\"phone\":\"suscipit\",\"birthday\":\"2023-06-11T02:07:32\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin profil bilgilerini g\u00fcncelleyecek endpoint\n<ul>\n<li> city_id ve district_id zorunlu alan de\u011fildir istenirse g\u00f6nderilebilir <\/li>\n<li>Tarih format\u0131 2001-09-08 \u015feklinde (YY-AA-GG) \u015feklinde olma\u0131d\u0131r <\/li>\n<\/ul>",
                         "auth": {
@@ -579,7 +757,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"1jirr:9\"}"
+                            "raw": "{\"password\":\"4A=A+\\\\6NV\\\\2g@$u\\\/Hl\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -587,6 +765,233 @@
                         }
                     },
                     "response": []
+                }
+            ]
+        },
+        {
+            "name": "Salon Type",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/salons\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/salons\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/salons\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "27"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"salon_types\":[{\"name\":\"Berberler\",\"icon\":\"front\\\/assets\\\/img\\\/salon_type\\\/1.png\",\"color\":\"#ff890e\"},{\"name\":\"Kuaf\\u00f6rler\",\"icon\":\"front\\\/assets\\\/img\\\/salon_type\\\/2.png\",\"color\":\"#ff890f\"},{\"name\":\"G\\u00fczellik ve Estetik Merkezleri\",\"icon\":\"front\\\/assets\\\/img\\\/salon_type\\\/3.png\",\"color\":\"#ff490e\"},{\"name\":\"Spalar\",\"icon\":\"front\\\/assets\\\/img\\\/salon_type\\\/4.png\",\"color\":\"#ff890e\"},{\"name\":\"Solaryum Merkezleri\",\"icon\":\"front\\\/assets\\\/img\\\/salon_type\\\/5.png\",\"color\":null},{\"name\":\"Sa\\u011fl\\u0131kl\\u0131 Ya\\u015fam Merkezleri\",\"icon\":\"front\\\/assets\\\/img\\\/salon_type\\\/6.png\",\"color\":null},{\"name\":\"D\\u00f6\\u011fme ve Tatto Merkezleri\",\"icon\":\"front\\\/assets\\\/img\\\/salon_type\\\/7.png\",\"color\":null},{\"name\":\"Tesett\\u00fcr Kuaf\\u00f6rleri\",\"icon\":\"front\\\/assets\\\/img\\\/salon_type\\\/8.png\",\"color\":null}]}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Search",
+            "description": "",
+            "item": [
+                {
+                    "name": "POST api\/search\/service",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/search\/service",
+                            "query": [
+                                {
+                                    "key": "service_id",
+                                    "value": "illo",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "city_id",
+                                    "value": "harum",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=illo&city_id=harum"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Burada hizmet t\u00fcr\u00fcne veya \u015fehir verisine g\u00f6re i\u015fletmelerin verisi d\u00f6nd\u00fcr\u00fcl\u00fcr.\n<b>Not:<\/b> city_id ve service_id ikisinden sadece biri de g\u00f6nderilebilir.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/search\/business\/type",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/search\/business\/type",
+                            "query": [
+                                {
+                                    "key": "category_id",
+                                    "value": "ut",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "city_id",
+                                    "value": "asperiores",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=ut&city_id=asperiores"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Burada i\u015fletme t\u00fcr\u00fcne veya \u015fehir verisine g\u00f6re i\u015fletmelerin verisi d\u00f6nd\u00fcr\u00fcl\u00fcr.\n<b>Not:<\/b> city_id ve category_id ikisinden sadece <u> \"biri de\"<\/u> g\u00f6nderilebilir.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/search\/business\/name",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/search\/business\/name",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/search\/business\/name"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"sit\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Services",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/services\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/services\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/services\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "28"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"services\":[{\"id\":12,\"name\":\"Sa\\u00e7\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/service_images\\\/kQ4pSF0CNQcXaaNAGd9Oi0izMCPOXTGM9ltRXfSN.jpg\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/service_images\\\/kQ4pSF0CNQcXaaNAGd9Oi0izMCPOXTGM9ltRXfSN.jpg\",\"order\":1},{\"id\":17,\"name\":\"Solaryum\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/service_images\\\/o7vUHGhpv0Vsnlvj4cpZ3Tcw8JMlFwJsGLy7qJv4.jpg\",\"order\":2},{\"id\":18,\"name\":\"Lazer Epilasyon\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/service_images\\\/gw1do05kln6HAqb1XvomK34FB4q1Dndlm7c27oN3.jpg\",\"order\":3},{\"id\":16,\"name\":\"A\\u011fda\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/service_images\\\/yk3gV3cugay4QNX5fB6lMtsvk4f3uwhWUii6dpdD.jpg\",\"order\":4},{\"id\":15,\"name\":\"Estetik ve G\\u00fczellik\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/service_images\\\/h2NAJwZKfQVtgHn77pIWzbcwJo3gyE9RmDQx01zT.jpg\",\"order\":5},{\"id\":14,\"name\":\"Makyaj\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/service_images\\\/EiwadKGShlrYIeiWUkFB26UIAQxmBQmZYeTjHgix.jpg\",\"order\":6},{\"id\":19,\"name\":\"Masaj\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/masaj.jpg\",\"order\":7},{\"id\":13,\"name\":\"T\\u0131rnak\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/service_images\\\/lgojosGdyrQAkwqTI2ZtxezdJvQSzeTlpXfnQvkX.jpg\",\"order\":8},{\"id\":21,\"name\":\"D\\u00f6vme & Tattoo\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/tatto.jpg\",\"order\":9},{\"id\":22,\"name\":\"Spor, Yoga, Pilates\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/yoga.jpg\",\"order\":10},{\"id\":23,\"name\":\"Beslenme Dan\\u0131\\u015fmanl\\u0131\\u011f\\u0131\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/diyetisyen.jpg\",\"order\":11},{\"id\":20,\"name\":\"Di\\u011fer\",\"image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/assets\\\/img\\\/salon_type\\\/service-2.png\",\"cover_image\":\"http:\\\/\\\/127.0.0.1:8001\\\/front\\\/other.png\",\"order\":12}]}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         }

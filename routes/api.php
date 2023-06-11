@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Customer\AuthController;
 use App\Http\Controllers\Api\Customer\CustomerController;
 use App\Http\Controllers\Api\City\CityController;
+use App\Http\Controllers\Api\Activity\ActivityController;
+use App\Http\Controllers\Api\Blog\BlogController;
+use App\Http\Controllers\Api\Service\ServiceController;
+use \App\Http\Controllers\Api\Salon\SalonController;
+use App\Http\Controllers\Api\Search\SearchController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,3 +43,26 @@ Route::prefix('city')->group(function (){
    Route::post('get', [CityController::class, 'get']);
 });
 
+Route::prefix('activity')->group(function (){
+    Route::get('list', [ActivityController::class, 'index']);
+    Route::post('get', [ActivityController::class, 'get']);
+});
+
+Route::prefix('blog')->group(function (){
+    Route::get('list', [BlogController::class, 'index']);
+    Route::post('get', [BlogController::class, 'get']);
+});
+
+Route::prefix('services')->group(function (){
+    Route::get('list' ,[ServiceController::class, 'index']);
+});
+
+Route::prefix('salons')->group(function (){
+    Route::get('list', [SalonController::class, 'index']);
+});
+
+Route::prefix('search')->group(function (){
+   Route::post('service', [SearchController::class, 'searchService']);
+   Route::post('business/type', [SearchController::class, 'searchBusinessType']);
+   Route::post('business/name', [SearchController::class, 'searchBusinessName']);
+});
