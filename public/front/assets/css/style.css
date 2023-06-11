@@ -23078,6 +23078,9 @@ ul {
 		padding: 5px 0;
 		margin: 35px -165px 0;
 	}
+	.glide_mobil_slide {
+		margin-bottom: -70px !important;
+	}
 }
 @media (max-width: 1371px) {
 	.card-header > form > .filter-widget  {
@@ -23088,6 +23091,9 @@ ul {
 	}
 	.mobil_hizmet_setting_buton {
 		margin-left: 25px !important;
+	}
+	.glide_mobil_slide {
+		margin-bottom: -75px !important;
 	}
 
 
@@ -23103,7 +23109,8 @@ ul {
 		width: 250px !important;
 	}
 	.rating {
-		margin: -18px -19px -19px 3px;
+		margin: -35px 0 0 183px;
+		font-size: 26px;
 	}
 	.company_left_menu {
 		font-size: 12px;
@@ -23159,6 +23166,53 @@ ul {
 	.setting_price {
 		margin-left: 10px !important;
 	}
+
+	.clini-infos {
+		margin: 0px -172px;
+	}
+	.
+	.doc-info-right {
+		margin: 170px 0 0 -900px;
+		width: 302px;
+	}
+	.clinic-details {
+		margin: -30px 405px 0;
+		width: 300px;
+		display: block !important;
+	}
+	.clinic-services span {
+		margin: 15px -4px 3px 605px;
+	}
+	.doctor-widget .doc-name {
+		margin: 0 0px;
+		font-size: 32px !important;
+		width: 561px;
+	}
+	.clini-infos {
+		margin: -117px -157px;
+	}
+	.clinic-booking a.apt-btn {
+		margin: -265px 0px 0 209px;
+		width: 314px;
+	}
+	.doc-info-right {
+		margin: 170px 0 0 -900px;
+		width: 302px;
+	}
+	.clinic-details {
+		margin: -30px 376px 0;
+		width: 300px;
+		display: block !important;
+	}
+	.clinic-services span {
+		margin: 15px -4px 3px 564px;
+	}
+	.clinic-booking {
+		margin: 310px 0 0 0;
+	}
+	.glide_mobil_slide {
+		margin-bottom: -40px !important;
+	}
 }
 @media (max-width: 801px) {
 	.bar-icon {
@@ -23171,7 +23225,8 @@ ul {
 		width: 230px !important;
 	}
 	.rating {
-		margin: -18px -19px -19px 3px;
+		margin: -47px 0 0 180px;
+		font-size: 36px;
 	}
 	.company_left_menu {
 		font-size: 12px;
@@ -23232,6 +23287,36 @@ ul {
 		width: 100%;
 		margin: 0 auto;
 	}
+	.doctor-widget .doc-name {
+		margin: 0 0px;
+		font-size: 32px !important;
+		width: 561px;
+	}
+	.clini-infos {
+		margin: -117px -147px;
+	}
+	.clinic-booking a.apt-btn {
+		margin: -265px 0px 0 214px;
+		width: 314px;
+	}
+	.doc-info-right {
+		margin: 170px 0 0 -900px;
+		width: 302px;
+	}
+	.clinic-details {
+		margin: -30px 376px 0;
+		width: 300px;
+		display: block !important;
+	}
+	.clinic-services span {
+		margin: 15px -4px 3px 564px;
+	}
+	.clinic-booking {
+		margin: 310px 0 0 0;
+	}
+	.glide_mobil_slide {
+		margin-bottom: -35px !important;
+	}
 }
 @media (max-width: 769px) {
 	.header-nav {
@@ -23279,6 +23364,19 @@ ul {
 		margin-top: 95px;
 		margin-bottom: -165px;
 	}
+	.doctor-widget .doc-name {
+		margin: 0 -25px;
+		font-size: 32px !important;
+		width: 561px;
+	}
+	.clini-infos {
+		margin: -70px -2px 2px 185px;
+		font-size: 24px;
+	}
+	.clinic-booking a.apt-btn {
+		margin: 20px 0px 0 0;
+		width: 515px;
+	}
 
 
 }
@@ -23293,7 +23391,8 @@ ul {
 		width: 488px !important;
 	}
 	.rating {
-		margin: -18px -19px -19px 3px;
+		margin: 10px 0 0 96px;
+		font-size: 25px;
 	}
 	.company_left_menu {
 		font-size: 12px;
@@ -23350,6 +23449,32 @@ ul {
 		margin-top: 95px;
 		margin-bottom: -165px;
 	}
+	.doctor-widget .doc-name {
+		margin: 0 -25px;
+		font-size: 32px !important;
+		width: 561px;
+	}
+	.clini-infos {
+		margin: -180px -2px 2px -95px;
+		font-size: 15px;
+	}
+	.clinic-booking a.apt-btn {
+		margin: 20px 0px 0 0;
+		width: 515px;
+	}
+	.doc-info-left {
+		margin: 0 -95px !important;
+	}
+	.doctor-widget {
+		height: 150px;
+	}
+
+	.clinic-booking {
+		margin: 33px 0 0 0 !important;
+	}
+	.glide_mobil_slide {
+		margin-bottom: 10px !important;
+	}
 
 }
 @media (max-width: 415px) {
@@ -23363,7 +23488,7 @@ ul {
 		width: 300px !important;
 	}
 	.rating {
-		margin: -18px -19px -19px 3px;
+		margin: -2px -19px -19px 90px;
 	}
 	.company_left_menu {
 		font-size: 12px;
@@ -23413,6 +23538,19 @@ ul {
 		margin-top: 95px;
 		margin-bottom: -165px;
 	}
+	.doctor-widget .doc-name {
+		font-size: 24px !important;
+	}
+	.clini-infos {
+		margin: 10px -300px 0;
+	}
+	.clinic-booking a.apt-btn {
+		margin: 20px 0px 0 0;
+	}
+	.glide_mobil_slide {
+		margin-bottom: 10px !important;
+	}
+
 }
 @media (max-width: 385px) {
 	.bar-icon {
@@ -23425,7 +23563,7 @@ ul {
 		width: 270px !important;
 	}
 	.rating {
-		margin: -18px -19px -19px 3px;
+		margin: 0px -19px -19px 67px;
 	}
 	.company_left_menu {
 		font-size: 12px;
@@ -23475,6 +23613,18 @@ ul {
 		margin-top: 95px;
 		margin-bottom: -165px;
 	}
+	.doctor-widget .doc-name {
+		font-size: 24px !important;
+	}
+	.clini-infos {
+		margin: 10px -300px 0;
+	}
+	.clinic-booking a.apt-btn {
+		margin: 20px 0px 0 0;
+	}
+	.glide_mobil_slide {
+		margin-bottom: 10px !important;
+	}
 
 }
 @media (max-width: 376px) {
@@ -23488,7 +23638,7 @@ ul {
 		width: 260px !important;
 	}
 	.rating {
-		margin: -18px -19px -19px 3px;
+		margin: -2px -19px -19px 57px;
 	}
 	.company_left_menu {
 		font-size: 12px;
@@ -23538,6 +23688,18 @@ ul {
 		margin-top: 95px;
 		margin-bottom: -165px;
 	}
+	.doctor-widget .doc-name {
+		font-size: 24px !important;
+	}
+	.clini-infos {
+		margin: 10px -300px 0;
+	}
+	.clinic-booking a.apt-btn {
+		margin: 20px 0px 0 0;
+	}
+	.glide_mobil_slide {
+		margin-bottom: 10px !important;
+	}
 }
 @media (max-width: 361px) {
 	.bar-icon {
@@ -23552,7 +23714,7 @@ ul {
 		width: 250px !important;
 	}
 	.rating {
-		margin: -18px -19px -19px 3px;
+		margin: -2px -32px -44px 45px;
 	}
 	.company_left_menu {
 		font-size: 12px;
@@ -23603,8 +23765,20 @@ ul {
 		margin-top: 95px;
 		margin-bottom: -165px;
 	}
-
+	.doctor-widget .doc-name {
+		font-size: 24px !important;
+	}
+	.clini-infos {
+		margin: 10px -300px 0;
+	}
+	.clinic-booking a.apt-btn {
+		margin: 20px 0px 0 0;
+	}
+	.glide_mobil_slide {
+		margin-bottom: 10px !important;
+	}
 }
+
 
 
 
