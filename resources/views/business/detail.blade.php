@@ -6,7 +6,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 @section('content')
-    <a href="/resources/views/appointment/step1">Step 1</a>
+    <div class="gallery">
+
+        <div class="gallery-background d-flex justify-content-center align-items-center">
+            <i class="fa-regular fa-xmark xmark-icon"></i>
+            <div class="container">
+               <div>
+                   <div class="glide">
+                       <div class="glide__track" data-glide-el="track">
+                           <ul class="glide__slides">
+                               <li class="glide__slide text-center"><img class="gallery-slide" src="https://via.placeholder.com/200x200" alt="" ></li>
+                               <li class="glide__slide text-center"><img class="gallery-slide" src="https://via.placeholder.com/500x500" alt=""  ></li>
+                               <li class="glide__slide text-center"><img class="gallery-slide" src="https://via.placeholder.com/500x500" alt=""  ></li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
     <div class="container mt-5">
         <div class="company-title">
             <div class="row">
@@ -53,7 +76,7 @@
                         <div class="btn-group btn-group-toggle ust_menu_mar detail-links">
                             <div class="d-flex detail-links ">
 
-                                    <a href="#galeri_company"><button type="button" class="company-buttons btn-search border border-right active company_left_menu" ><i class="fa fa-comment"></i> Galeri</button></a>
+                                    <a  class="gallery-button"><button type="button" class="company-buttons btn-search border border-right active company_left_menu" ><i class="fa fa-comment"></i> Galeri</button></a>
                                     <a href="#adres_company"> <button type="button" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-map"></i> Adres</button></a>
 
                                     <a href="#iletisim_company"><button type="button" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-phone"></i> İletişim</button></a>
@@ -235,7 +258,7 @@
                 </div>
                 <div class="col-md-7">
 
-                        <div class="glide">
+                        <div class="glide-slider"  >
                             <div class="glide__track" data-glide-el="track">
                                 <ul class="glide__slides">
                                     <li class="glide__slide"><img src="https://via.placeholder.com/200x200" alt="" style="width: 100%; height: 500px; object-fit: cover"></li>
@@ -378,6 +401,20 @@
 @endsection
 @section('scripts')
 
+    <script>
+        const xmark = document.querySelector(".xmark-icon");
+        const gallery = document.querySelector(".gallery");
+        const galleryButton = document.querySelector(".gallery-button");
+        xmark.addEventListener("click", () => {
+            gallery.style.display = "none";
+        });
+        galleryButton.addEventListener("click", () => {
+            gallery.style.display = "block";
+            document.querySelector(".glide").style.opacity = "100";
+            document.querySelector(".glide").style.height = "50%";
+        });
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const options = {
@@ -386,7 +423,16 @@
             autoplay : 1500,
         }
 
-        new Glide('.glide', options).mount()
+        new Glide('.glide-slider', options).mount()
+    </script>
+    <script>
+        const options2 = {
+            type : "carousel",
+            perView : 1,
+            autoplay : 1500
+        }
+
+        new Glide('.glide', options2).mount()
     </script>
     <script>
         AOS.init({
