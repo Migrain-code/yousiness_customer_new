@@ -6,20 +6,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 @section('content')
+
+
     <div class="gallery">
 
         <div class="gallery-background d-flex justify-content-center align-items-center">
             <i class="fa-regular fa-xmark xmark-icon"></i>
             <div class="container">
                <div>
-                   <div class="glide">
-                       <div class="glide__track" data-glide-el="track">
-                           <ul class="glide__slides">
-                               <li class="glide__slide text-center"><img class="gallery-slide" src="https://via.placeholder.com/200x200" alt="" ></li>
-                               <li class="glide__slide text-center"><img class="gallery-slide" src="https://via.placeholder.com/500x500" alt=""  ></li>
-                               <li class="glide__slide text-center"><img class="gallery-slide" src="https://via.placeholder.com/500x500" alt=""  ></li>
-                           </ul>
+                   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                       <div class="carousel-indicators">
+                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                        </div>
+                       <div class="carousel-inner">
+                           <div class="carousel-item active">
+                               <img src="https://via.placeholder.com/500x500" style="height: 100%; object-fit: cover" class="d-block w-100" alt="...">
+                           </div>
+                           <div class="carousel-item">
+                               <img src="https://via.placeholder.com/500x500" style="height: 100%; object-fit: cover" class="d-block w-100" alt="...">
+                           </div>
+                           <div class="carousel-item">
+                               <img src="https://via.placeholder.com/500x500"style="height: 100%; object-fit: cover"  class="d-block w-100" alt="...">
+                           </div>
+                       </div>
+                       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                           <span class="visually-hidden">Previous</span>
+                       </button>
+                       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                           <span class="visually-hidden">Next</span>
+                       </button>
                    </div>
                </div>
             </div>
@@ -77,7 +96,7 @@
                             <div class="d-flex detail-links ">
 
                                     <a  class="gallery-button"><button type="button" class="company-buttons btn-search border border-right active company_left_menu" ><i class="fa fa-comment"></i> Galeri</button></a>
-                                    <a href="#adres_company"> <button type="button" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-map"></i> Adres</button></a>
+                                    <a href="#adres_company" class="adres"> <button type="button" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-map"></i> Adres</button></a>
 
                                     <a href="#iletisim_company"><button type="button" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-phone"></i> İletişim</button></a>
                                     <a href="#comments"><button type="button"  style="width: 122px;" class=" company-buttons btn-search border border-right company_left_menu"><i class="fa fa-comment"></i> Yorumlar</button></a>
@@ -403,15 +422,16 @@
 
     <script>
         const xmark = document.querySelector(".xmark-icon");
-        const gallery = document.querySelector(".gallery");
+        const gallery = document.querySelector(".gallery-background");
         const galleryButton = document.querySelector(".gallery-button");
         xmark.addEventListener("click", () => {
             gallery.style.display = "none";
         });
         galleryButton.addEventListener("click", () => {
-            gallery.style.display = "block";
-            document.querySelector(".glide").style.opacity = "100";
-            document.querySelector(".glide").style.height = "50%";
+            gallery.style.height = "100vh";
+            gallery.style.width = "100vw";
+            gallery.style.opacity = "100";
+            console.log("a")
         });
 
     </script>

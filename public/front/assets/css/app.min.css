@@ -200,16 +200,17 @@
 
 
 }
+
 /*GALLERY*/
 .gallery {
-	display: none;
 	position: fixed;
 	top: 0;
 	z-index: 20;
 }
 .gallery-background {
-	width: 100vw;
-	height: 100vh;
+	width: 0;
+	height: 0;
+	opacity: 0;
 	background-color: rgba(0, 0, 0, 0.6);
 }
 .xmark-icon{
@@ -222,8 +223,7 @@
 }
 .glide {
 	width: 50%;
-	height: 0;
-	opacity: 0;
+	height: 50%;
 }
 .gallery-slide {
 	width: 50%;
