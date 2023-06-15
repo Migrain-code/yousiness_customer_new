@@ -203,15 +203,17 @@
 
 /*GALLERY*/
 .gallery {
+	display: none;
+	height: 100vh;
+	width: 100vw;
 	position: fixed;
 	top: 0;
 	z-index: 20;
 }
 .gallery-background {
-	width: 0;
-	height: 0;
-	opacity: 0;
 	background-color: rgba(0, 0, 0, 0.6);
+	height: 100%;
+	width: 100%;
 }
 .xmark-icon{
 	display: block;
@@ -220,7 +222,13 @@
 	color: #fff;
 	top: 15px;
 	right: 15px;
+	cursor: pointer;
+	transition: all 300ms ease-in-out;
 }
+.xmark-icon:hover {
+	color: red;
+}
+
 .glide {
 	width: 50%;
 	height: 50%;

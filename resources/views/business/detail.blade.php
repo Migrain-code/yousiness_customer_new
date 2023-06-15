@@ -3,6 +3,7 @@
 @section('meta_description', $business->name ." Detayı")
 @section('styles')
     <link rel="stylesheet" href="/front/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 @section('content')
@@ -11,7 +12,7 @@
     <div class="gallery">
 
         <div class="gallery-background d-flex justify-content-center align-items-center">
-            <i class="fa-regular fa-xmark xmark-icon"></i>
+            <i class="fa-solid fa-xmark xmark-icon"></i>
             <div class="container">
                <div>
                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -422,16 +423,13 @@
 
     <script>
         const xmark = document.querySelector(".xmark-icon");
-        const gallery = document.querySelector(".gallery-background");
+        const gallery = document.querySelector(".gallery");
         const galleryButton = document.querySelector(".gallery-button");
         xmark.addEventListener("click", () => {
             gallery.style.display = "none";
         });
         galleryButton.addEventListener("click", () => {
-            gallery.style.height = "100vh";
-            gallery.style.width = "100vw";
-            gallery.style.opacity = "100";
-            console.log("a")
+            gallery.style.display = "block";
         });
 
     </script>
