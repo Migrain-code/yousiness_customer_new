@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Customer;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerCreateRequest;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\PasswordResetRequest;
 use App\Http\Resources\Customer;
 use App\Services\Sms;
 use Illuminate\Http\Request;
@@ -60,5 +61,35 @@ class AuthController extends Controller
             'password' => Hash::make(Str::random(8)),
             'verification_code'=>$generateCode
         ]);
+    }
+    /**
+     *
+     * @bodyParam phone string required The phone number of the user.
+     *
+     */
+    public function passwordReset(PasswordResetRequest $request)
+    {
+        $customer= \App\Models\Customer::whereEmail($request->phone)->first();
+        if (!$customer){
+            return response()->json([
+                'status'=>"error",
+                'message'=>"Bu telefon numarası sistemde kayıtlı değil",
+            ]);
+        }
+        else{
+            $generatePassword=rand(1000000, 9999999);
+
+            $phone=str_replace(array('(', ')', '-', ' '), '', $customer->email);
+            Sms::send($phone,config('settings.site_title'). " Sistemine giriş için yeni şifreniz ".$generatePassword." olarak güncellendi. Panelinize girerek şifrenizi size uygun bir şifre ile değiştirebilirsiniz.");
+
+            $customer->password=Hash::make($generatePassword);
+            $customer->password_status=1;
+            $customer->save();
+            return response()->json([
+                'status'=>"success",
+                'message'=>"Yeni şifreniz sms olarak gönderildi. Gelen şifreyi girerek sistemi kullanmaya devam edebilirsiniz",
+            ]);
+
+        }
     }
 }

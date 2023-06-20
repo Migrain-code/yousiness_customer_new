@@ -207,9 +207,12 @@
                  <div class="glide mt-4" data-aos="fade-up">
                 <div class="glide__track glide_mobil_slide" data-glide-el="track" >
                     <ul class="glide__slides ">
-                        <li class="glide__slide" style="text-align: center ;">
-                            <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px; object-fit: cover;"></li>
-
+                        @forelse($ads as $ad)
+                            <li class="glide__slide" style="text-align: center ;">
+                                <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px; object-fit: cover;">
+                            </li>
+                        @empty
+                        @endforelse
                     </ul>
                 </div>
             </div>

@@ -4,442 +4,201 @@
     <link rel="stylesheet" href="/front/appointment/css/animate.min.css">
     <!-- Main-StyleSheet include -->
     <link rel="stylesheet" href="/front/appointment/css/style.css">
+    <link rel="stylesheet" href="/front/assets/css/app.min.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+    <style>
+        .accordion-item {
+            border: 1px solid white;
+            border-radius: 30px;
+        }
+        .accordion-button  {
+            border: 1px solid white !important;
+            border-radius: 30px !important;
+        }
+        .accordion-header {
+            border: 1px solid orange;
+            border-radius: 30px;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #FC9F33 !important;
+        }
+    </style>
+    <style>
+        .select2-container {
+            width: 100% !important;
+            background-color: transparent;
+        }
+        .select2-container--default .select2-search--dropdown .select2-search__field {
+            border: 1px solid #0db9f2;
+            border-radius: 5px;
+        }
+        .select2-results__option {
+            padding: 6px;
+            border-radius: 5px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .select2-container--default .select2-selection--single {
+            background-color: #fff;
+            border: 1px solid #aaa;
+            height: 50px;
+            padding-top: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 26px;
+            position: absolute;
+            top: 5px;
+            right: 1px;
+            width: 20px;
+        }
+        .select2-results__options {
+            list-style: none;
+            margin: 8px;
+            padding: 0;
+        }
+        .select2-container--open .select2-dropdown--below {
+            border-top: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow b {
+            display: none;
+            border-color: #888 transparent transparent transparent;
+            border-style: solid;
+            border-width: 5px 4px 0 4px;
+            height: 0;
+            left: 0%;
+            margin-left: -4px;
+            margin-top: -2px;
+            position: absolute;
+            top: 65%;
+            width: 0;
+        }
+    </style>
 
 @endsection
 @section('content')
-    <div class="add-appointment fixed-top justify-content-center align-items-center" style="height: 100vh; width: 100vw; background-color: rgba(0, 0, 0, 0.6);">
-        <i class="fa-solid fa-xmark appointment-xmark" style="position: absolute; top: 15px; right: 15px; font-size: 35px; cursor: pointer;"></i>
-        <div class="tabs tabs-appointment" style="background-color: #fff; padding: 15px; border-radius: 15px;">
-            <ul>
-                <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
-                <li class="tab-titles p-3" onclick="tabsFunction(this)">Kadın</li>
-            </ul>
-            <div class="tab-contents">
-                <div class="tab-content active">
-                    <div class="service-card" onclick="cardChange(this)">
-                        <div class="service-title p-2">
-                            <span>Hizmet Adı</span>
-                        </div>
-                        <div class="services">
-                            <ul class="d-flex flex-column">
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
+    <div class="row">
+        <div class="container">
+            <div class="col-md-10 mx-auto">
+                <div class="appointment-form">
+                    <form action="">
+
+                        <div class="container">
+                            <span class="appointment-company-name" style="font-size: 14px; font-weight: bold; text-transform: uppercase">{{$business->name}}</span>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="step-1 my-3">
+                                        <h2 style="font-size: 22px;">Hizmet Seçimi</h2>
+                                        <div>
+                                            <div style="color: rgb(168, 159, 159);">
+                                                @forelse($selectedServices as $service)
+                                                    {{$service->subCategory->name}}
+                                                @empty
+                                                    <div class="alert alert-waring">Hizmet Seçimi Yapılmadı. <u>Lütfen Hizmet Seçiniz</u></div>
+                                                @endforelse
+                                            </div>
+                                            <button class="appointment-button add-appointment-btn" type="button">Ekle/Çıkar</button>
                                         </div>
                                     </div>
+                                    <div class="step-2 my-3">
+                                        <h2 style="font-size: 22px;">Personel Seçimi</h2>
+                                        <span style="font-weight: bold; " class="mt-2 d-block">Saç Kaynağı için personel seçin.</span>
+                                        <select name="" id="" class="cmb_box-personel mt-2 js-example-basic-single">
+                                            <option value="">Çalışan 1</option>
+                                            <option value="">Çalışan 2</option>
+                                            <option value="">Çalışan 3</option>
+                                        </select>
+                                        <span style="font-weight: bold; " class="mt-2 d-block">Fön için personel seçin.</span>
+                                        <select name="" id="" class="cmb_box-personel mt-2 js-example-basic-single">
+                                            <option value="">Çalışan 1</option>
+                                            <option value="">Çalışan 2</option>
+                                            <option value="">Çalışan 3</option>
+                                        </select>
+                                        <button class="btn-date my-3 fs-5 fw-light p-3" type="button">Tarih Seç</button>
+                                    </div>
+                                    <div class="step-3 my-3">
+                                        <h2 style="font-size: 22px;">Tarih Seçimi</h2>
+                                        <div class="days container">
+                                            <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
+                                            <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
+                                            <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
+                                            <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
+                                            <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
+                                            <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
+                                            <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
+                                            <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
+                                            <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
 
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
                                         </div>
                                     </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
+                                    <div class="step-4 my-3">
+                                        <h2 style="font-size: 22px;">Saat Seçimi</h2>
+                                        <div class="clock container">
+                                            <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
+                                            <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
+                                            <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
+                                            <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
+                                            <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
+                                            <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
+                                            <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
                                         </div>
                                     </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
+                                    <div class="step-5 my-3">
+                                        <h2 style="font-size: 22px;">İletişim</h2>
+                                        <div class="container">
+                                            <input type="text" placeholder="Telefon Numaranız" class="w-100 p-2">
+                                            <div class="contact-buttons d-flex justify-content-between mt-2">
+                                                <button class="btn btn-danger">İptal</button>
+                                                <button class="btn btn-success">Bitir</button>
+                                            </div>
                                         </div>
                                     </div>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="service-card mt-1" onclick="cardChange(this)">
-                        <div class="service-title p-2">
-                            <span>Hizmet Adı</span>
-                        </div>
-                        <div class="services">
-                            <ul class="d-flex flex-column">
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="brief-card mx-auto">
+                                        <h2 class="text-center py-2" style="background-color: #565A5C; color: #fff; width: 100%; margin: 0 !important;">Özet</h2>
+                                        <ul>
+                                            <li class="d-flex justify-content-between my-2">
+                                                <span style="font-weight: bold;">Salon</span>
+                                                <span class="brief-company-name">company name</span>
+                                            </li>
+                                            <hr>
+                                            <li class="d-flex justify-content-between my-2">
+                                                <span style="font-weight: bold;">Hizmetler</span>
+                                                <span class="brief-services">-</span>
+                                            </li>
+                                            <hr>
+                                            <li class="d-flex justify-content-between my-2">
+                                                <span style="font-weight: bold;">Personel</span>
+                                                <span class="brief-personel">-</span>
+                                            </li>
+                                            <hr>
+                                            <li class="d-flex justify-content-between my-2">
+                                                <span style="font-weight: bold;">Tarih</span>
+                                                <span class="brief-date"></span>
+                                            </li>
+                                            <hr>
+                                            <li class="d-flex justify-content-between my-2">
+                                                <span style="font-weight: bold;">Saat</span>
+                                                <span class="brief-clock">12:45</span>
+                                            </li>
+                                        </ul>
                                     </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li><li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="service-card mt-1" onclick="cardChange(this)">
-                        <div class="service-title p-2">
-                            <span>Hizmet Adı</span>
-                        </div>
-                        <div class="services">
-                            <ul class="d-flex flex-column">
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="service-card mt-1" onclick="cardChange(this)">
-                        <div class="service-title p-2">
-                            <span>Hizmet Adı</span>
-                        </div>
-                        <div class="services">
-                            <ul class="d-flex flex-column">
-                                <li class="d-flex justify-content-between w-100">
-                                    <div class="service-name">Hizmet</div>
-                                    <div class="appointment">
-                                        <span class="price">170 $</span>
-                                        <button type="button" class="appointment-button ms-4">Ekle</button>
-                                    </div>
-                                </li>
-                                <li class="d-flex justify-content-between"></li>
-                                <li class="d-flex justify-content-between"></li>
-                                <li class="d-flex justify-content-between"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-content">
-                    <div class="service-card" onclick="cardChange(this)">
-                        <div class="service-title p-2">
-                            <span>Kategori</span>
-                        </div>
-                        <div class="services">
-                            <ul class="d-flex flex-column">
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="service-card mt-1" onclick="cardChange(this)">
-                        <div class="service-title p-2">
-                            <span>Kategori</span>
-                        </div>
-                        <div class="services">
-                            <ul class="d-flex flex-column">
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li><li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="service-card mt-1" onclick="cardChange(this)">
-                        <div class="service-title p-2">
-                            <span>Kategori</span>
-                        </div>
-                        <div class="services">
-                            <ul class="d-flex flex-column">
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li class="my-1 ps-1">
-                                    <div class="d-flex justify-content-between w-100">
-                                        <div class="service-name">Hizmet</div>
-                                        <div class="appointment">
-                                            <span class="price">170 $</span>
-                                            <button type="button" class="appointment-button ms-4">Ekle</button>
-                                        </div>
-                                    </div>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="appointment-form">
-        <form action="">
-
-            <div class="container">
-                <span class="appointment-company-name" style="font-size: 14px; font-weight: bolds;">COMPANY NAME</span>
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="step-1 my-3">
-                            <h2 style="font-size: 22px;">Hizmet Seçimi</h2>
-                            <div>
-                                <span style="color: rgb(168, 159, 159);">Saç Kaynağı, Fön</span>
-                                <button class="appointment-button add-appointment-btn" type="button">Ekle/Çıkar</button>
-                            </div>
-                        </div>
-                        <div class="step-2 my-3">
-                            <h2 style="font-size: 22px;">Personel Seçimi</h2>
-                            <span style="font-weight: bold; " class="mt-2 d-block">Saç Kaynağı için personel seçin.</span>
-                            <select name="" id="" class="cmb_box-personel mt-2">
-                                <option value="">Çalışan 1</option>
-                                <option value="">Çalışan 2</option>
-                                <option value="">Çalışan 3</option>
-                            </select>
-                            <span style="font-weight: bold; " class="mt-2 d-block">Fön için personel seçin.</span>
-                            <select name="" id="" class="cmb_box-personel mt-2 ">
-                                <option value="">Çalışan 1</option>
-                                <option value="">Çalışan 2</option>
-                                <option value="">Çalışan 3</option>
-                            </select>
-                            <button class="btn-date my-3 fs-5 fw-light p-3" type="button">Tarih Seç</button>
-                        </div>
-                        <div class="step-3 my-3">
-                            <h2 style="font-size: 22px;">Tarih Seçimi</h2>
-                            <div class="days container">
-                                <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
-                                <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
-                                <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
-                                <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
-                                <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
-                                <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
-                                <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
-                                <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
-                                <button type="button" class="btn-day mx-2 my-2">17 Haziran 2023</button>
-
-                            </div>
-                        </div>
-                        <div class="step-4 my-3">
-                            <h2 style="font-size: 22px;">Saat Seçimi</h2>
-                            <div class="clock container">
-                                <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
-                                <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
-                                <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
-                                <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
-                                <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
-                                <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
-                                <button type="button" class="btn-clock" style="font-size: 18px" >18:20</button>
-                            </div>
-                        </div>
-                        <div class="step-5 my-3">
-                            <h2 style="font-size: 22px;">İletişim</h2>
-                            <div class="container">
-                                <input type="text" placeholder="Telefon Numaranız" class="w-100 p-2">
-                                <div class="contact-buttons d-flex justify-content-between mt-2">
-                                    <button class="btn btn-danger">İptal</button>
-                                    <button class="btn btn-success">Bitir</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="brief-card mx-auto">
-                            <h2 class="text-center py-2" style="background-color: #565A5C; color: #fff; width: 100%; margin: 0 !important;">Özet</h2>
-                            <ul>
-                                <li class="d-flex justify-content-between my-2">
-                                    <span style="font-weight: bold;">Salon</span>
-                                    <span class="brief-company-name">company name</span>
-                                </li>
-                                <hr>
-                                <li class="d-flex justify-content-between my-2">
-                                    <span style="font-weight: bold;">Hizmetler</span>
-                                    <span class="brief-services">-</span>
-                                </li>
-                                <hr>
-                                <li class="d-flex justify-content-between my-2">
-                                    <span style="font-weight: bold;">Personel</span>
-                                    <span class="brief-personel">-</span>
-                                </li>
-                                <hr>
-                                <li class="d-flex justify-content-between my-2">
-                                    <span style="font-weight: bold;">Tarih</span>
-                                    <span class="brief-date"></span>
-                                </li>
-                                <hr>
-                                <li class="d-flex justify-content-between my-2">
-                                    <span style="font-weight: bold;">Saat</span>
-                                    <span class="brief-clock">12:45</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
+                    </form>
+
                 </div>
             </div>
-
-        </form>
+        </div>
 
     </div>
 @endsection

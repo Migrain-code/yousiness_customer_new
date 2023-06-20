@@ -33,27 +33,27 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: accusamus
+        example: commodi
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: suscipit
+        example: aut
         type: string
         custom: []
       birthday:
         name: birthday
         description: 'value geçerli bir tarih olmalıdır.'
         required: true
-        example: '2023-06-11T02:07:32'
+        example: '2023-06-19T01:01:45'
         type: string
         custom: []
     cleanBodyParameters:
-      name: accusamus
-      phone: suscipit
-      birthday: '2023-06-11T02:07:32'
+      name: commodi
+      phone: aut
+      birthday: '2023-06-19T01:01:45'
     fileParameters: []
     responses: []
     responseFields: []
@@ -93,11 +93,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 4A=A+\6NV\2g@$u/Hl
+        example: aA|PW;w
         type: string
         custom: []
     cleanBodyParameters:
-      password: 4A=A+\6NV\2g@$u/Hl
+      password: aA|PW;w
     fileParameters: []
     responses: []
     responseFields: []

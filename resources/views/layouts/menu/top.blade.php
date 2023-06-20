@@ -4,6 +4,7 @@
         <div class="nav-bg-five">
             <nav class="navbar navbar-expand-lg header-nav header-nav nav-transparent">
                 <div class="navbar-header">
+
                     <a href="/" class="navbar-brand logo">
                         <img src="{{image(setting('speed_logo_white'))}}" class="img-fluid" alt="Logo">
                     </a>

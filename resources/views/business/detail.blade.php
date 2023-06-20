@@ -5,6 +5,13 @@
     <link rel="stylesheet" href="/front/assets/css/app.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+        }
+    </style>
 @endsection
 @section('content')
 
@@ -107,171 +114,75 @@
 
                     <div class="tabs mt-5">
                         <ul>
-                            <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
-                            <li class="tab-titles p-3" onclick="tabsFunction(this)">Kadın</li>
+                            @if($business->type->id == 3)
+                                <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
+                                <li class="tab-titles p-3" onclick="tabsFunction(this)">Kadın</li>
+                            @elseif($business->type->id == 2)
+                                <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
+                            @elseif($business->type->id == 1)
+                                <li class="tab-titles p-3" onclick="tabsFunction(this)">Kadın</li>
+                            @endif
                         </ul>
                         <div class="tab-contents">
                             <div class="tab-content active">
+                                @forelse($manServiceCategories as $manCategories)
+                                    <div class="service-card" onclick="cardChange(this)">
+                                        <div class="service-title p-2">
+                                            <span>{{$manCategories->first()->categorys->name}}</span>
+                                        </div>
+                                        <div class="services">
+                                            <ul class="d-flex flex-column">
+                                                @forelse($manCategories as $service)
+                                                    <li class="my-1 ps-1">
+                                                        <div class="d-flex justify-content-between align-items-center w-100">
+                                                            <div class="service-name">{{$service->subCategory->name}}</div>
+                                                            <div class="appointment">
+                                                                <span class="price">{{$service->price}} TL</span>
+                                                                <a href="{{route('step1.show', [$business->slug, $service->id])}}" class="appointment-button ms-4 ">Randevu Al</a>
+                                                            </div>
+                                                        </div>
 
-                                <div class="service-card" onclick="cardChange(this)">
-                                    <div class="service-title p-2">
-                                        <span>Hizmet Adı</span>
-                                    </div>
-                                    <div class="services">
-                                        <ul class="d-flex flex-column">
-                                      @for($i=0; $i<5; $i++)
-                                            <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <div class="service-name fw-bold">Hizmet</div>
-                                                    <div class="appointment">
-                                                        <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
+                                                    </li>
+                                                @empty
+                                                @endforelse
 
-                                            </li>
-                                      @endfor
-                                        </ul>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="service-card mt-1" onclick="cardChange(this)">
-                                    <div class="service-title p-2">
-                                        <span>Hizmet Adı</span>
-                                    </div>
-                                    <div class="services">
-                                        <ul class="d-flex flex-column">
-                                            <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
-                                                    <div class="service-name">Hizmet</div>
-                                                    <div class="appointment">
-                                                        <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
-                                                    <div class="service-name">Hizmet</div>
-                                                    <div class="appointment">
-                                                        <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
-                                                    <div class="service-name">Hizmet</div>
-                                                    <div class="appointment">
-                                                        <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
-                                            </li><li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
-                                                    <div class="service-name">Hizmet</div>
-                                                    <div class="appointment">
-                                                        <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="service-card mt-1" onclick="cardChange(this)">
-                                    <div class="service-title p-2">
-                                        <span>Hizmet Adı</span>
-                                    </div>
-                                    <div class="services">
-                                        <ul class="d-flex flex-column">
-                                            <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
-                                                    <div class="service-name">Hizmet</div>
-                                                    <div class="appointment">
-                                                        <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
+                                @empty
+                                @endforelse
 
-                                            </li>
-                                            <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
-                                                    <div class="service-name">Hizmet</div>
-                                                    <div class="appointment">
-                                                        <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
-
-                                            </li>
-                                            <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
-                                                    <div class="service-name">Hizmet</div>
-                                                    <div class="appointment">
-                                                        <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
-
-                                            </li>
-                                            <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between w-100">
-                                                    <div class="service-name">Hizmet</div>
-                                                    <div class="appointment">
-                                                        <span class="price">170 $</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
-
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="service-card mt-1" onclick="cardChange(this)">
-                                    <div class="service-title p-2">
-                                        <span>Hizmet Adı</span>
-                                    </div>
-                                    <div class="services">
-                                        <ul class="d-flex flex-column">
-                                            <li class="d-flex justify-content-between w-100">
-                                                <div class="service-name">Hizmet</div>
-                                                <div class="appointment">
-                                                    <span class="price">170 $</span>
-                                                    <button class="appointment-button ms-4">Randevu Al</button>
-                                                </div>
-                                            </li>
-                                            <li class="d-flex justify-content-between"></li>
-                                            <li class="d-flex justify-content-between"></li>
-                                            <li class="d-flex justify-content-between"></li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                             <div class="tab-content">
-                               @foreach($womanServiceCategories as $womanCategories)
-                                 <div class="service-card mt-1" onclick="cardChange(this)">
-                                    <div class="service-title p-2">
-                                        <span>{{$loop -> index }}</span>
-                                    </div>
-                                    <div class="services">
-                                        <ul class="d-flex flex-column">
-                                            @foreach($womanCategories as $service )
-                                            <li class="my-1 ps-1">
-                                                <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <div class="service-name">{{$service -> subCategory -> name}}</div>
-                                                    <div class="appointment d-flex flex-row">
-                                                        <span class="price d-flex align-items-center">{{$service -> price}}</span>
-                                                        <button class="appointment-button ms-4">Randevu Al</button>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                            </li>
-                                        </ul>
+                                @forelse($womanServiceCategories as $womanCategories)
+                                    <div class="service-card" onclick="cardChange(this)">
+                                        <div class="service-title p-2">
+                                            <span>{{$womanCategories->first()->categorys->name}}</span>
+                                        </div>
+                                        <div class="services">
+                                            <ul class="d-flex flex-column">
+                                                @forelse($womanCategories as $service)
+                                                    <li class="my-1 ps-1">
+                                                        <div class="d-flex justify-content-between align-items-center w-100">
+                                                            <div class="service-name">{{$service->subCategory->name}}</div>
+                                                            <div class="appointment">
+                                                                <span class="price">{{$service->price}} TL</span>
+                                                                <a href="{{route('step1.show', [$business->slug, $service->id])}}" class="appointment-button ms-4 ">Randevu Al</a>
+                                                            </div>
+                                                        </div>
+
+                                                    </li>
+                                                @empty
+                                                @endforelse
+
+                                            </ul>
+                                        </div>
                                     </div>
 
-                                </div>
-                               @endforeach
+                                @empty
+                                @endforelse
+
                             </div>
                         </div>
                     </div>

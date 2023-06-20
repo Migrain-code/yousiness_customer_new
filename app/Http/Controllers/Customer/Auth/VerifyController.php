@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\BasicMail;
 use App\Models\Business;
 use App\Models\Customer;
+use App\Models\SmsConfirmation;
 use App\Providers\RouteServiceProvider;
 use App\Services\Sms;
 use Illuminate\Http\Request;
@@ -26,12 +27,16 @@ class VerifyController extends Controller
 
     public function phoneVerifyAction(Request $request)
     {
-
+        //$request->dd();
         $customer=Customer::where('email', $request->phone)->first();
         if ($customer){
             $generateCode=rand(100000, 999999);
-            $customer->verification_code=$generateCode;
-            $customer->save();
+            $smsConfirmation = new SmsConfirmation();
+            $smsConfirmation->action = "CUSTOMER VERIFY";
+            $smsConfirmation->phone = $customer->email;
+            $smsConfirmation->code = $generateCode;
+            $smsConfirmation->expire_at = now()->addMinute(3);
+            $smsConfirmation->save();
             $phone=str_replace(array('(', ')', '-', ' '), '', $request->phone);
             Sms::send($phone,config('settings.site_title'). " Sistemine giriş için, telefon numarası doğrulama kodunuz ". $generateCode);
             return to_route('customer.verify')->with('response', [
@@ -46,14 +51,22 @@ class VerifyController extends Controller
             ]);
         }
     }
-    public function verify(Request $request)
+
+    public function verifyCode(Request $request)
     {
+
         $request->validate([
             'verification_code' => ['required', 'numeric', 'digits:6'],
         ]);
-
-        $user = Customer::where('verification_code', $request->input('verification_code'))->first();
-        if ($user){
+        $code = SmsConfirmation::where("code", $request->verification_code)->first();
+        if ($code){
+            if ($code->expire_at < now()){
+                return to_route('customer.phone.verify')->with('response', [
+                    'status'=>"warning",
+                    'message'=>"Doğrulama Kodunun Süresi Dolmuş."
+                ]);
+            }
+            $user = Customer::where('email', $code->phone)->first();
             $generatePassword=rand(100000, 999999);
             $user->password=Hash::make($generatePassword);
             $user->verification_code=null;
@@ -63,7 +76,6 @@ class VerifyController extends Controller
 
             $phone=str_replace(array('(', ')', '-', ' '), '', $user->email);
             Sms::send($phone,config('settings.site_title'). "Sistemine giriş için şifreniz ".$generatePassword);
-
             return to_route('customer.login')->with('response', [
                 'status'=>"success",
                 'message'=>"Telefon Numaranız doğrulandı. Sisteme giriş için şifreniz gönderildi."
@@ -75,8 +87,6 @@ class VerifyController extends Controller
                 'message'=>"Doğrulama Kodu Hatalı."
             ]);
         }
-
-
     }
     public function showForgotView()
     {

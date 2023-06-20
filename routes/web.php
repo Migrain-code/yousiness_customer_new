@@ -3,10 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
-    Route::get('select/test', 'selectTest')->name('select.test');
-    Route::get('/test',function () {
-       return view('test2');
-    });
     Route::get('/', 'index')->name('welcome');
     Route::get('/salonlar', 'allBusiness')->name('business.all');
     Route::get('/salon-kategori/{slug}', 'businessCategory')->name('business.category');
@@ -45,7 +41,7 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
 
 Route::controller(\App\Http\Controllers\AppointmentController::class)->prefix('randevu-al')->group(function (){
     Route::get('/{business}/hizmet/{service}/adim-1', 'step1Show')->name('step1.show');
-    Route::post('/adim-1/save', 'step1Store')->name('step1.store');
+    Route::get('/adim-1/save', 'step1Store')->name('step1.store');
     Route::get('/{business}/adim-2', 'step2Show')->name('step2.show');
     Route::post('/adim-2/save', 'step2Store')->name('step2.store');
     Route::get('/{business}/adim-3', 'step3Show')->name('step3.show');
@@ -72,7 +68,7 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
     Route::post('/telefon-dogrulama', [\App\Http\Controllers\Customer\Auth\VerifyController::class, 'phoneVerifyAction'])->name('phone.verify.action');
 
     Route::get('/verify-phone', [\App\Http\Controllers\Customer\Auth\VerifyController::class, 'index'])->name('verify');
-    Route::post('/verify/phone', [\App\Http\Controllers\Customer\Auth\VerifyController::class, 'verify'])->name('verifyPhone');
+    Route::post('/code/test', [\App\Http\Controllers\Customer\Auth\VerifyController::class, 'verifyCode'])->name('verify.code');
 
     Route::middleware(['auth:customer', 'active'])->group(function () {
         Route::get('/home', [\App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home');

@@ -25,7 +25,11 @@
         <div class="container-fluid">
 
             <div class="row">
-
+                <div class="backdrop"></div>
+                <div class="w-100 text-end position-absolute text-white font-w800 customer-menu-buttons" style="right: 5px; top: 50px;font-size: 25px">
+                    <input type="checkbox" id="customer-menu-toggle" class="customer-menu-toggle" style="visibility: hidden">
+                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Menü</label>
+                </div>
                 <!-- Profile Sidebar -->
                 @include('customer.layouts.sidebar')
                 <!-- / Profile Sidebar -->
@@ -74,5 +78,6 @@
     </div>
 @endsection
 @section('scripts')
+    <script src="/front/assets/js/cutomer-menu.js"></script>
 
 @endsection

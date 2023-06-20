@@ -28,19 +28,19 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: adipisci
+        example: culpa
         type: string
         custom: []
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: 'AY+(e938X2"?YwO'
+        example: 'ZinkV<*+Q`klo'
         type: string
         custom: []
     cleanBodyParameters:
-      phone: adipisci
-      password: 'AY+(e938X2"?YwO'
+      phone: culpa
+      password: 'ZinkV<*+Q`klo'
     fileParameters: []
     responses: []
     responseFields: []
@@ -73,27 +73,64 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: explicabo
+        example: nisi
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: nihil
+        example: blanditiis
         type: string
         custom: []
       birthday:
         name: birthday
         description: 'The birthday of the user. Format (Y-m-d).'
         required: true
-        example: aliquam
+        example: enim
         type: date
         custom: []
     cleanBodyParameters:
-      name: explicabo
-      phone: nihil
-      birthday: aliquam
+      name: nisi
+      phone: blanditiis
+      birthday: enim
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/password-reset
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      phone:
+        name: phone
+        description: 'The phone number of the user.'
+        required: true
+        example: molestias
+        type: string
+        custom: []
+    cleanBodyParameters:
+      phone: molestias
     fileParameters: []
     responses: []
     responseFields: []

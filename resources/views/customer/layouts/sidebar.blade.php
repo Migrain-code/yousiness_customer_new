@@ -1,8 +1,9 @@
 <!-- Profile Sidebar -->
-<div class="col-md-5 col-lg-4 col-xl-3">
+<div class="col-md-5 col-lg-4 col-xl-3 customer-menu">
     <div class="profile-sidebar">
         <div class="widget-profile pro-widget-content">
             <div class="profile-info-widget">
+
                 <a href="#" class="booking-doc-img">
                     <img src="https://via.placeholder.com/200x200" alt="User Image">
                 </a>

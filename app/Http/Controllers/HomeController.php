@@ -36,6 +36,7 @@ class HomeController extends Controller
     public function index()
     {
         $ads=Ads::latest()->get();
+
         $blogs= Blog::where('status', 1)->latest()->take(3)->get();
         $businesses=Business::all();
         $activities=Activity::where('status', 1)->latest()->take(4)->get();

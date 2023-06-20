@@ -11,17 +11,17 @@
                         <div class="row align-items-center justify-content-center">
                             <div class="col-md-12 col-lg-6 login-right">
                                 <div class="text-center my-2">
-                                    <img src="{{image(setting('speed_white_logo'))}}">
+                                    <img src="{{image(setting('speed_logo_white'))}}">
                                 </div>
                                 <div class="login-header text-center">
                                     <h2>Numara Doğrulama</h2>
                                 </div>
                                 @include('layouts.component.error')
                                 @include('layouts.component.alert')
-                                <form action="{{route('customer.verifyPhone')}}" method="post">
+                                <form action="{{route('customer.verify.code')}}" method="post">
                                     @csrf
                                     <div class="form-group form-focus">
-                                        <input type="text" id="code" class="form-control floating phone" name="verification_code">
+                                        <input type="text" id="code"  class="form-control floating phone" name="verification_code">
                                         <label class="focus-label">Doğrulama Kodu</label>
                                     </div>
                                     <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Gönder</button>
