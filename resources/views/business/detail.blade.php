@@ -192,9 +192,13 @@
                         <div class="glide-slider"  >
                             <div class="glide__track" data-glide-el="track">
                                 <ul class="glide__slides">
-                                    <li class="glide__slide"><img src="https://via.placeholder.com/200x200" alt="" style="width: 100%; height: 500px; object-fit: cover"></li>
-                                    <li class="glide__slide"><img src="https://via.placeholder.com/500x500" alt=""  style="width: 100%; height: 500px; object-fit: cover""></li>
-                                    <li class="glide__slide"><img src="https://via.placeholder.com/500x500" alt=""  style="width: 100%; height: 500px; object-fit: cover""></li>
+                                    @forelse($business->gallery as $gallery)
+                                        <li class="glide__slide">
+                                            <img src="{{image($gallery->way)}}" alt="" style="width: 100%; height: 500px; object-fit: cover">
+                                        </li>
+                                    @empty
+                                        <div class="alert alert-warning text-center">İşletmenin Fotoğraf Galerisi Bulunamadı</div>
+                                    @endforelse
                                 </ul>
                             </div>
                         </div>
@@ -216,16 +220,16 @@
                         <div>
                             <div class="information-title" data-aos="fade-up">
                                 <h2 data-aos="fade-left">Hakkımızda</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus excepturi quisquam, omnis possimus corrupti temporibus at eaque laudantium, aliquam dolorem veritatis expedita suscipit obcaecati, atque iste molestias nostrum! Quaerat, iure.</p>
+                                <p> {!! $business->about !!} </p>
                             </div>
                             <hr>
                         </div>
                         <div>
                             <div class="information-title" data-aos="fade-up">
                                 <h2 id="adres_company" data-aos="fade-left">Adress</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus excepturi quisquam, omnis possimus corrupti temporibus at eaque laudantium, aliquam dolorem veritatis expedita suscipit obcaecati, atque iste molestias nostrum! Quaerat, iure.</p>
+                                <p> {{$business->address}}.</p>
                                 <div class="text-center">
-                                    <iframe class="adress-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12038.523963649952!2d29.101360000000007!3d41.03332845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac8f76d1706ed%3A0xd630fb5e3d1e2cf8!2zw5xtcmFuaXllLCBFbG1hbMSxa2VudCwgMzQ3NjQgw5xtcmFuaXllL8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1685841493951!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    {!! $business->embed !!}
                                 </div>
                             </div>
                             <hr>
@@ -233,94 +237,85 @@
                         <div>
                             <div class="information-title" data-aos="fade-up">
                                 <h2 data-aos="fade-left">Çalışma Saatleri</h2>
-                                <div class="days d-flex justify-content-between mt-4">
-                                    <span class="day">Pazartesi</span>
-                                    <span class="clock">10:00 - 17:00</span>
-                                </div>
-                                <hr>
-                                <div class="days d-flex justify-content-between">
-                                    <span class="day">Salı</span>
-                                    <span class="clock">10:00 - 17:00</span>
-                                </div>
-                                <hr>
-                                <div class="days d-flex justify-content-between">
-                                    <span class="day">Çarşamba</span>
-                                    <span class="clock">10:00 - 17:00</span>
-                                </div>
-                                <hr>
-                                <div class="days d-flex justify-content-between">
-                                    <span class="day">Perşembe</span>
-                                    <span class="clock">10:00 - 17:00</span>
-                                </div>
-                                <hr>
-                                <div class="days d-flex justify-content-between">
-                                    <span class="day">Cuma</span>
-                                    <span class="clock">10:00 - 17:00</span>
-                                </div>
-                                <hr>
+                                @forelse($dayList as $day)
+                                    <div class="days d-flex justify-content-between mt-4">
+                                        <span class="day">{{$day->name}}</span>
+                                        <span class="clock">
+                                            @if($day->id == $business->off_day)
+                                                <span class="badge bg-danger-light">Kapalı</span>
+                                            @else
+                                                {{$business->start_time}} - {{$business->end_time}}
+                                            @endif
+                                        </span>
+                                    </div>
+                                    <hr>
+                                @empty
+
+                                @endforelse
                             </div>
                         </div>
                         <div>
                             <div class="information-title" data-aos="fade-up">
                                 <h2 data-aos="fade-left">Personeller</h2>
                                 <div class="row">
-                                    @for($i=0; $i < 4; $i++)
-                                        <div class="col-md-3">
-                                            <img class="personal_mobil_img personal_flex_setting" src="https://via.placeholder.com/200x200" alt="Personal" style="max-width: 100%">
-                                            <span class="d-block text-center"><small>Mehmet Öztoprak</small></span>
+                                    @forelse($business->personel as $personel)
+                                        <div class="col-md-2 col-xs-2 ">
+                                            <img class="personal_mobil_img personal_flex_setting" src="{{image($personel->image)}}" alt="Personal">
+                                            <span class="d-block text-center"><small>{{$personel->name}}</small></span>
                                         </div>
-                                    @endfor
+                                    @empty
+
+                                    @endforelse
                                 </div>
                             </div>
                         </div>
                         <hr>
-                        <div class="comments" id="comments">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <h2 class="comment-title">Müşteri Yorumları</h2>
+                        <div class="information-title" data-aos="fade-up">
+                            <div class="d-flex">
+                                <h2 id="yorumlar_company " data-aos="fade-left">Yorumlar</h2>
+                                <div class="rating" style="padding-top: 5px;padding-left: 150px;" data-aos="fade-left">
+                                    @if($business->comments()->where('status', 1)->count() > 0)
+                                        @for($i=0; $i < 5; $i++ )
+                                            <i class="fas fa-star @if($i < $business->comments()->where('status', 1)->sum('point') / $business->comments()->where('status', 1)->count()) filled @endif"></i>
+                                        @endfor
+                                    @else
+                                        <i class="fas fa-star" style="font-weight: 42px;"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    @endif
                                 </div>
-                                <div class="col-md-10">
-                                    <div class="stars">
-                                        <div class="d-flex justify-content-between align-items-center h-100">
-                                            <div>
-                                                <span class="stars-icon"><i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i></span>
-                                                <span>315 Yorum, 584 Puanlama</span>
-                                            </div>
-                                            <div>
-                                                <span>oran</span>
-                                            </div>
+                                <h3 class="company_genel_yorum" data-aos="fade-left">({{$business->comments()->where('status', 1)->count()}}) Yorum</h3>
+                            </div>
+                            <hr>
+                            @forelse($business->comments()->where('status', 1)->get() as $comment)
+                                <div class="row">
+                                    <div class="col-md-2 comment-profile">
+                                        <img src="{{storage($comment->customer->image)}}" alt="" style="width: 110px;border-radius: 15px">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="mobile-header">
+                                            <img src="{{storage($comment->customer->image)}}" class="comment-profile-mobile" style="width: 50px;height: 50px;border-radius: 50%"  alt="">
+                                            <h2> {{$comment->customer->name}} </h2>
                                         </div>
-                                        <hr>
-                                        <div class="comment">
-                                            <div class="profile d-flex align-items-center justify-content-between">
-                                                <div class="d-flex">
-                                                    <div class="profile-logo">
-                                                        <img src="https://via.placeholder.com/100x100" style="height: 100px; width: 100px" alt="">
-                                                    </div>
-                                                    <div class="d-flex align-items-center profile-name ms-2">
-                                                        <span>Kullanıcı adı</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="comment-date">
-                                                    <span class="date-span">14.06.2023</span>
-                                                </div>
-                                            </div>
-                                            <div class="comment-paragraph my-3">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, mollitia.</p>
-                                                <div class="company-answer">
-                                                     <p class="fst-italic"><span class="fw-bold">company name : </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, natus.</p>
-                                                </div>
-                                            </div>
+                                        <div class="rating mobile-rating-bar" style="margin: 0 -1px 7px!important;">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div style="clear: both">
+                                            <p>{{$comment->content}}</p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
+                        @empty
+                            <div class="alert alert-warning">İşletme ile ilgili yorum bulunmamaktadır.</div>
+
+                        @endforelse
                     </div>
                 </div>
             </div>
