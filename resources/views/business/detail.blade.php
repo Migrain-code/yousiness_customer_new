@@ -259,8 +259,8 @@
                                 <h2 data-aos="fade-left">Personeller</h2>
                                 <div class="row">
                                     @forelse($business->personel as $personel)
-                                        <div class="col-md-2 col-xs-2 ">
-                                            <img class="personal_mobil_img personal_flex_setting" src="{{image($personel->image)}}" alt="Personal">
+                                        <div class="col-md-4 col-xs-4 ">
+                                            <img class="personal_mobil_img personal_flex_setting" style="max-width: 250px" src="{{image($personel->image)}}" alt="Personal">
                                             <span class="d-block text-center"><small>{{$personel->name}}</small></span>
                                         </div>
                                     @empty
