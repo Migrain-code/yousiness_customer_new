@@ -4,8 +4,8 @@
         <div class="card-header">
             <h4 class="card-title mb-0">Filtrele</h4>
             @if(isset($service) and isset($service->subCategories))
-                <form class="mr-1" method="get" action="{{route('service.detail', $service->slug)}}">
-                    <div class="filter-widget">
+                <form class="" method="get" action="{{route('service.detail', $service->slug)}}">
+                    <div class="filter-widget" style="margin-left: 5px !important;">
                         <div style="display: flex">
                             <select class="js-example-basic-single" name="alt_kategori">
                                 @forelse($service->subCategories as $sub_service)
