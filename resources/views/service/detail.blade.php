@@ -135,13 +135,13 @@
 
                          @forelse($businesses as $business)
                             <div class="row widget-container bg-white @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer" onclick="businessDetailLink('{{route("business.detail", $business->business->slug)}}')">
-                                <div class="col-lg-4 p-0">
+                                <div class="col-lg-3 p-0">
                                     <div class="position-relative">
                                         <img src="{{asset($business->business->wallpaper)}}" class="card-img" alt="User Image">
                                         <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;transform: rotate(-35deg)">Öne Çıkan</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-7">
                                     <div class="clinic-details p-3" style="margin-left: 10%">
                                         <h4 class="doc-name mt-1"><a href="{{route('business.detail', $business->business->slug)}}">{{$business->business->name}}</a></h4>
                                         <div class="rating mt-1">
