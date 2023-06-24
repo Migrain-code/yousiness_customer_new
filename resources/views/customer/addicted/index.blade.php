@@ -49,7 +49,7 @@
                                                 <div class="profile-widget">
                                                     <div class="doc-img">
                                                         <a href="{{route('business.detail', $business->slug)}}">
-                                                            <img class="img-fluid" alt="User Image" src="{{$business->logo}}">
+                                                            <img class="img-fluid" alt="User Image" src="{{image($business->logo)}}">
                                                         </a>
                                                     </div>
                                                     <div class="pro-content">

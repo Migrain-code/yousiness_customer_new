@@ -123,7 +123,7 @@
                                                                     {{$packet->created_at->translatedFormat('H:i')}}
                                                                 </span>
                                                             </td>
-                                                            <td data-label="İşlemler"><a href="{{route('customer.packet.detail', $packet->id)}}">Detay</a></td>
+                                                            <td data-label="İşlemler"><a class="btn-five" href="{{route('customer.packet.detail', $packet->id)}}">Detay</a></td>
                                                         </tr>
                                                     @empty
 

@@ -39,19 +39,11 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
 
 });
 
-Route::controller(\App\Http\Controllers\AppointmentController::class)->prefix('randevu-al')->group(function (){
-    Route::get('/{business}/hizmet/{service}/adim-1', 'step1Show')->name('step1.show');
-    Route::get('/adim-1/save', 'step1Store')->name('step1.store');
-    Route::get('/{business}/adim-2', 'step2Show')->name('step2.show');
-    Route::post('/adim-2/save', 'step2Store')->name('step2.store');
-    Route::get('/{business}/adim-3', 'step3Show')->name('step3.show');
-    Route::post('/personel/zaman/kontrol', 'personelTimeControl')->name('personel.time.control');
-    Route::post('/adim-3/save', 'step3Store')->name('step3.store');
-    Route::get('/{business}/adim-4', 'step4Show')->name('step4.show');
-    Route::post('/adim-4/save', 'step4Store')->name('step4.store');
-    Route::get('/adim-4/save', 'step4StoreNoPost')->name('step4.no_post');
-    Route::get('/randevu-olusturuldu', 'step5Show')->name('step5.show');
-});
+
+Route::get('randevu-olustur/{business}', [\App\Http\Controllers\AppointmentController::class, 'step1Show'])->name('step1.show');
+Route::get('randevu-olustur/adim-1/save', [\App\Http\Controllers\AppointmentController::class, 'step1Store'])->name('step1.store');
+Route::post('randevu-olustur', [\App\Http\Controllers\AppointmentController::class, 'appointmentCreate'])->name('appointment.create');
+Route::get('randevu-olusturuldu/{appointment}', [\App\Http\Controllers\AppointmentController::class, 'step5Show'])->name('appointment.success');
 Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
     Route::get('/login', [\App\Http\Controllers\Customer\Auth\LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [\App\Http\Controllers\Customer\Auth\LoginController::class, 'login']);

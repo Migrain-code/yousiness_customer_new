@@ -17,11 +17,12 @@ use Illuminate\Support\Facades\Hash;
 
 class AppointmentController extends Controller
 {
-    public function step1Show($business, $service)
+    public function step1Show($business)
     {
-        $business = Business::where('slug', $business)->firstOrFail();
-        $service = BusinessService::find($service);
 
+        $business = Business::where('slug', $business)->firstOrFail();
+
+        /*service modal queries */
         $womanServices = $business->services()->where('type', 1)->get();
         $manServices = $business->services()->where('type', 2)->get();
         $womanServiceCategories = $womanServices->groupBy('category');
@@ -38,43 +39,124 @@ class AppointmentController extends Controller
         session()->put('appointment', $array);
         $selectedServices = [];
         $serviceIds = [];
+        $ap_services = [];
+        $selectedPersonelIds = [];
+        $personels = [];
+        $remainingDate = [];
+        $offDay = [];
+        $filledTime = [];
+        $remainingDays = Carbon::now()->diffInDays(Carbon::now()->copy()->endOfMonth());
+        $disabledDays = [];
 
-        $selectedServices[] = $service;
-        $serviceIds[] = $service->id;
+        if (isset(\request()["request"])) {
+            if (isset(\request()["request"]["services"])) {
+                foreach (\request()["request"]["services"] as $service_id) {
+                    $selectedServices[] = BusinessService::find($service_id);
+                    $serviceIds[] = $service_id;
+                    $ap_services[] = BusinessService::find($service_id);
+                }
+            } else {
+                return to_route('business.detail', $business->slug);
+            }
+            if (isset(\request()["request"]["personels"])) {
+                foreach (\request()["request"]["personels"] as $personel_id) {
+                    $selectedPersonelIds [] = $personel_id;
+                }
+            }
+            if (isset(\request()["request"]["step"])) { /*personel seçilmiş ise*/
+                foreach ($selectedPersonelIds as $personel_id) {
+                    $personels[] = Personel::find($personel_id);
+                }
+                for ($i = 0; $i < $remainingDays; $i++) {
+                    $days = Carbon::now()->addDays($i);
+                    if ($days < Carbon::now()->endOfMonth()) {
+                        $remainingDate[] = $days;
+                    }
+                }
+                $filledTime = $this->findTimes($business);
+                foreach ($filledTime as $time) {
+                    $disabledDays[] = $time[0]->format('d.m.Y H:i');
+                }
+            }
+        } else {
+            return to_route('business.detail', $business->slug);
+        }
 
-        return view('appointment.step1', compact('business', 'manServiceCategories', 'womanServiceCategories', 'womanCategories', 'manCategories', 'selectedServices', 'serviceIds'));
+        /*end modal queries*/
+        return view('appointment.step1', compact('business', 'personels', 'remainingDate', 'disabledDays', 'selectedPersonelIds', 'manServiceCategories', 'womanServiceCategories', 'womanCategories', 'manCategories', 'selectedServices', 'serviceIds', 'ap_services'));
     }
 
     public function step1Store(Request $request)
     {
 
-        $sessionArray = session('appointment');
-        $serviceArray = $request->service_ids;
-        $mergeArray = array_merge($sessionArray, array("appointment_services" => $serviceArray));
-
-        session()->put('appointment', $mergeArray);
-        return to_route('step2.show', session('appointment')['businessSlug']);
+        return to_route('step1.show', ['business' => session('appointment')["businessSlug"], 'request' => $request->all()]);
     }
 
-    public function step2Show($business)
+    public function appointmentCreate(Request $request)
     {
-        $business = Business::where('slug', $business)->firstOrFail();
-        $ap_services = [];
-
-        foreach (session('appointment')['appointment_services'] as $service) {
-            $ap_services[] = BusinessService::find($service);
+        $business = Business::find($request->business_id);
+        if (Auth::guard('customer')->check()) {
+            $appointment = new Appointment();
+            $appointment->business_id = $business->id;
+            $appointment->customer_id = Auth::guard('customer')->id();
+        } else {
+            $request->validate([
+                'name' => "required",
+                'surname' => "required",
+                'phone' => "required",
+            ], [], [
+                'name' => 'Ad',
+                'surname' => 'Soyad',
+                'phone' => 'Telefon',
+            ]);
+            $appointment = new Appointment();
+            $appointment->business_id = $business->id;
+            $customer = new Customer();
+            $customer->name = $request->input('name');
+            $customer->phone = $request->input('phone');
+            $customer->email = null;
+            $customer->image = "admin/users.svg";
+            $customer->password = Hash::make('123456');
+            $customer->save();
+            $appointment->customer_id = $customer->id;
         }
 
-        return view('appointment.step2', compact('ap_services'));
+        if ($business->approve_type == 1) {
+            $appointment->status = 1;
+        } else {
+            $appointment->status = 0;
+        }
+        $appointment->save();
+
+        $loop = 0;
+        $clock = Carbon::parse($request->input('appointment_date'));
+        $sumTime = 0;
+        //dd($request->all());
+        foreach ($request->services as $service) {
+            $appointmentService = new AppointmentServices();
+            $appointmentService->appointment_id = $appointment->id;
+            $appointmentService->personel_id = $request->personels[$loop];
+            $appointmentService->service_id = $service;
+            $findService = BusinessService::find($service);
+            $appointmentService->start_time = $clock->format('d.m.Y H:i');
+            $appointmentService->end_time = $clock->addMinute($findService->time)->format('d.m.Y H:i');
+            $sumTime += $findService->time;
+            $appointmentService->save();
+            $loop++;
+        }
+        $appointment->start_time = Carbon::parse($request->input('appointment_date'))->format('d.m.Y H:i');
+        $appointment->end_time = Carbon::parse($request->input('appointment_date'))->addMinute($sumTime)->format('d.m.Y H:i');
+        $appointment->save();
+        return to_route('appointment.success', $appointment->id);
     }
 
-    public function step2Store(Request $request)
+    public function step5Show($appointment)
     {
-        $sessionArray = session('appointment');
-        $personelArray = $request->personels;
-        $mergeArray = array_merge($sessionArray, array("personels" => $personelArray));
-        session()->put('appointment', $mergeArray);
-        return to_route('step3.show', session('appointment')['businessSlug']);
+        $appointment = Appointment::find($appointment);
+        $business = $appointment->business;
+        $customer = $appointment->customer;
+        $customer->sendSms($business->name . ' İşletmesine ' . $appointment->start_time . ' - ' . $appointment->end_time . ' arasında randevunuz alındı.');
+        return view('appointment.step5', compact('appointment', 'business'));
     }
 
     public function findTimes($business)
@@ -89,190 +171,19 @@ class AppointmentController extends Controller
         return $times;
     }
 
-    public function step3Show()
-    {
-        $business = Business::where('slug', session('appointment')['businessSlug'])->firstOrFail();
-        $personels = [];
-        foreach (session('appointment')['personels'] as $personel_id) {
-            $personels[] = Personel::find($personel_id);
-        }
-        $ap_services = [];
-        foreach (session('appointment')['appointment_services'] as $service) {
-            $ap_services[] = BusinessService::find($service);
-        }
-        $remainingDate = [];
-        $offDay = [];
-        $filledTime = [];
-        $remainingDays = Carbon::now()->diffInDays(Carbon::now()->copy()->endOfMonth());
-
-        for ($i = 0; $i < $remainingDays; $i++) {
-            $days = Carbon::now()->addDays($i);
-            if ($days < Carbon::now()->endOfMonth()) {
-                $remainingDate[] = $days;
-            }
-        }
-        $filledTime = $this->findTimes($business);
-        $disabledDays = [];
-        foreach ($filledTime as $time) {
-            $disabledDays[] = $time[0]->format('d.m.Y H:i');
-        }
-
-        return view('appointment.step3', compact('personels', 'ap_services', 'remainingDate', 'business', 'disabledDays'));
-    }
-
     public function personelTimeControl(Request $request)
     {
-
-        //dd();
         $status = 0;
         $formattedTime = Carbon::parse($request->time)->format('H:i');
         foreach (session('appointment')['personels'] as $personel_id) {
             $personal = Personel::find($personel_id);
             if ($formattedTime > Carbon::parse($personal->end_time)->format('H:i')) {
                 return response()->json([
-                    'title'=>"Hata",
+                    'title' => "Hata",
                     'icon' => "error",
                     'message' => $personal->name . " İsimli Personelin Mesai Saatleri Dışında Bir Saat Seçtiniz. İsterseniz Bir gün sonrasına randevu alabilirsiniz."
                 ]);
             }
         }
-    }
-
-    public function step3Store(Request $request)
-    {
-        $request->validate([
-           'appointment_time' => 'required',
-
-        ], [], [
-            'appointment_time'=>'Randevu tarihi ve saati'
-        ]);
-        $sessionArray = session('appointment');
-
-        $mergeArray = array_merge($sessionArray, array("appointment_date" => $request->appointment_time));
-        session()->put('appointment', $mergeArray);
-
-        if (Auth::guard('customer')->check()) {
-            return to_route('step4.no_post');
-        } else {
-            return to_route('step4.show', session('appointment')['businessSlug']);
-        }
-    }
-
-    public function step4StoreNoPost()
-    {
-        $sessionArray = session('appointment');
-        $business = Business::where('slug', session('appointment')['businessSlug'])->firstOrFail();
-        $appointment = new Appointment();
-        $appointment->business_id = $business->id;
-        $customer = Auth::guard('customer')->user();
-        $appointment->customer_id = $customer->id;
-        if ($business->approve_type == 1) {
-            $appointment->status = 1;
-        } else {
-            $appointment->status = 0;
-        }
-        $appointment->save();
-        $loop = 0;
-        $clock = Carbon::parse($sessionArray['appointment_date']);
-        $sumTime = 0;
-        foreach ($sessionArray['appointment_services'] as $service) {
-            $appointmentService = new AppointmentServices();
-            $appointmentService->appointment_id = $appointment->id;
-            $appointmentService->personel_id = $sessionArray['personels'][$loop];
-            $appointmentService->service_id = $service;
-            $findService = BusinessService::find($service);
-
-            $appointmentService->start_time = $clock->format('d.m.Y H:i');
-            $appointmentService->end_time = $clock->addMinute($findService->time)->format('d.m.Y H:i');
-            $sumTime += $findService->time;
-            $appointmentService->save();
-            $loop++;
-        }
-        $appointment->start_time = Carbon::parse($sessionArray['appointment_date'])->format('d.m.Y H:i');
-        $appointment->end_time = Carbon::parse($sessionArray['appointment_date'])->addMinute($sumTime)->format('d.m.Y H:i');
-        $appointment->save();
-
-        $mergeArray = array_merge(session('appointment'), array("appointment_detail" => $appointment));
-        session()->put('appointment', $mergeArray);
-        return to_route('step5.show');
-    }
-
-    public function step4Show()
-    {
-        $business = Business::where('slug', session('appointment')['businessSlug'])->firstOrFail();
-        $personels = [];
-        foreach (session('appointment')['personels'] as $personel_id) {
-            $personels[] = Personel::find($personel_id);
-        }
-        $ap_services = [];
-        foreach (session('appointment')['appointment_services'] as $service) {
-            $ap_services[] = BusinessService::find($service);
-        }
-
-        return view('appointment.step4', compact('personels', 'ap_services', 'business'));
-    }
-
-    public function step4Store(Request $request)
-    {
-        $request->validate([
-            'name' => "required",
-            'surname' => "required",
-        ], [], [
-            'name' => 'Ad',
-            'surname' => 'Soyad',
-            'phone' => 'Telefon',
-        ]);
-        $sessionArray = session('appointment');
-        $business = Business::where('slug', session('appointment')['businessSlug'])->firstOrFail();
-        //dd($business);
-        $appointment = new Appointment();
-        $appointment->business_id = $business->id;
-        $customer = new Customer();
-        $customer->name = $request->input('name');
-        $customer->phone = $request->input('phone');
-        $customer->email = null;
-        $customer->image = "admin/users.svg";
-        $customer->password = Hash::make('123456');
-        $customer->save();
-
-        $appointment->customer_id = $customer->id;
-        if ($business->approve_type == 1) {
-            $appointment->status = 1;
-        } else {
-            $appointment->status = 0;
-        }
-        $appointment->save();
-        $loop = 0;
-        $clock = Carbon::parse($sessionArray['appointment_date']);
-        $sumTime = 0;
-        foreach ($sessionArray['appointment_services'] as $service) {
-            $appointmentService = new AppointmentServices();
-            $appointmentService->appointment_id = $appointment->id;
-            $appointmentService->personel_id = $sessionArray['personels'][$loop];
-            $appointmentService->service_id = $service;
-            $findService = BusinessService::find($service);
-
-            $appointmentService->start_time = $clock->format('d.m.Y H:i');
-            $appointmentService->end_time = $clock->addMinute($findService->time)->format('d.m.Y H:i');
-            $sumTime += $findService->time;
-            $appointmentService->save();
-            $loop++;
-        }
-        $appointment->start_time = Carbon::parse($sessionArray['appointment_date'])->format('d.m.Y H:i');
-        $appointment->end_time = Carbon::parse($sessionArray['appointment_date'])->addMinute($sumTime)->format('d.m.Y H:i');
-        $appointment->save();
-
-        $mergeArray = array_merge(session('appointment'), array("appointment_detail" => $appointment));
-        session()->put('appointment', $mergeArray);
-        return to_route('step5.show');
-    }
-
-    public function step5Show()
-    {
-        $appointment = session('appointment')['appointment_detail'];
-        $business = $appointment->business;
-        $customer = $appointment->customer;
-        $customer->sendSms($business->name . ' İşletmesine ' . $appointment->start_time . ' - ' . $appointment->end_time . ' arasında randevunuz alındı.');
-        return view('appointment.step5', compact('appointment', 'business'));
     }
 }

@@ -48,13 +48,13 @@
                                             <div class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="profile-widget">
                                                     <div class="doc-img">
-                                                        <a href="doctor-profile.html">
-                                                            <img class="img-fluid" alt="User Image" src="{{$favorite->business->logo}}">
+                                                        <a href="{{route('business.detail', $favorite->business->slug)}}">
+                                                            <img class="img-fluid" alt="User Image" src="{{image($favorite->business->logo)}}">
                                                         </a>
                                                     </div>
                                                     <div class="pro-content">
                                                         <h3 class="title">
-                                                            <a href="doctor-profile.html">{{$favorite->business->name}}</a>
+                                                            <a href="{{route('business.detail', $favorite->business->slug)}}">{{$favorite->business->name}}</a>
                                                             <i class="fas fa-check-circle verified"></i>
                                                         </h3>
 

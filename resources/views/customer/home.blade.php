@@ -41,38 +41,34 @@
                             <div class="card flex-fill">
                                 <div class="card-header">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-12">
                                             <h3 class="card-title">Hesap Özeti</h3>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <div class="text-end">
-                                                <a title="Edit Profile" class="btn btn-primary btn-sm" href="#account_modal" data-bs-toggle="modal"><i class="fas fa-pencil"></i> Kişisel Bilgiler</a>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="profile-view-bottom">
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="info-list">
                                                     <div class="title">Ad Soyad</div>
                                                     <div class="text" id="bank_name">{{auth('customer')->user()->name}}</div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="info-list">
                                                     <div class="title">Doğum Tarihi</div>
                                                     <div class="text" id="branch_name">{{\Illuminate\Support\Carbon::parse(auth('customer')->user()->birthday)->translatedFormat('d F Y')}}</div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="info-list">
                                                     <div class="title">Hesap Kodu</div>
                                                     <div class="text" id="account_no">#{{auth('customer')->user()->id}}</div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="info-list">
                                                     <div class="title">Durumu</div>
                                                     <div class="text" id="account_name">
@@ -136,8 +132,8 @@
                                             <div class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="profile-widget">
                                                     <div class="doc-img">
-                                                        <a href="doctor-profile.html">
-                                                            <img class="img-fluid" alt="User Image" src="{{$appointment->business->logo}}">
+                                                        <a href="{{route('business.detail', $appointment->business->slug)}}">
+                                                            <img class="img-fluid" alt="User Image" src="{{image($appointment->business->logo)}}">
                                                         </a>
                                                         <a href="javascript:void(0)" class="fav-btn addFav" @if(in_array($appointment->business_id, $favorites)) style="background-color: #fb1612;color: white"  @endif b_id="{{$appointment->business_id}}">
                                                             <i class="far fa-bookmark"></i>
@@ -145,12 +141,12 @@
                                                     </div>
                                                     <div class="pro-content">
                                                         <h3 class="title">
-                                                            <a href="doctor-profile.html">{{$appointment->business->name}}</a>
+                                                            <a href="{{route('business.detail', $appointment->business->slug)}}">{{$appointment->business->name}}</a>
                                                             <i class="fas fa-check-circle verified"></i>
                                                         </h3>
                                                         <div class="logo-container" style="display: flex; align-items: center">
                                                             @foreach($appointment->services as $service)
-                                                                <img src="{{asset($service->personel->image)}}" alt="Logo 1" style="width: 35px;{{$loop->index!=0 ? "margin-left: -20px;" :""}}">
+                                                                <img src="{{image($service->personel->image)}}" alt="Logo 1" style="width: 35px;height: 35px;border-radius: 50% {{$loop->index!=0 ? "margin-left: -20px;" :""}}">
                                                             @endforeach
 
                                                         </div>

@@ -31,7 +31,7 @@
 }
 
 .tab-titles {
-	background-color: #fff;	
+	background-color: #fff;
 	transition: all 300ms ease-in-out;
 	cursor: pointer;
 	font-size: 16px;
@@ -43,8 +43,8 @@
 .tab-titles.active {
 	background-color: #ff8a00;
 	color: #fff;
-	
-	
+
+
 		-webkit-border-top-left-radius: 15px;
 	-webkit-border-top-right-radius: 15px;
 	-moz-border-radius-topleft: 15px;
@@ -70,7 +70,7 @@
 	font-weight: bolder;
 	transition: all 300ms ease-in-out;
 	border-radius: 5px;
-	
+
 }
 .service-title:hover {
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -245,53 +245,7 @@
 	}
 }
 /*STEP FORM*/
-.appointment-form {
-	background-color: #F9F9F9;
-	height: 100vh;
-}
-.appointment-xmark {
-	cursor: pointer;
-	transition: all 300ms ease-in-out;
-}
-.appointment-xmark:hover {
-	color: #fff;
-}
-.add-appointment {
-	display: none;
-}
-.add-appointment.active {
-	display: flex;
-}
-.step-1 {
-	display: block;
-}
-.step-2 {
-	display: block;
-}
-.step-3 {
-	display: none;
-}
-.step-4 {
-	display: none;
-}
-.step-5 {
-	display: none;
-}
-.step-1.active {
-	display: block;
-}
-.step-2.active {
-	display: block;
-}
-.step-3.active {
-	display: block;
-}
-.step-4.active {
-	display: block;
-}
-.step-5.active {
-	display: block;
-}
+
 .tabs-appointment {
 	width: 25%;
 }

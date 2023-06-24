@@ -138,7 +138,8 @@
                                                             <div class="service-name">{{$service->subCategory->name}}</div>
                                                             <div class="appointment">
                                                                 <span class="price">{{$service->price}} TL</span>
-                                                                <a href="{{route('step1.show', [$business->slug, $service->id])}}" class="appointment-button ms-4 ">Randevu Al</a>
+                                                                <a href="{{ route('step1.show', ['business' => $business->slug, 'request' => array('services' => array($service->id))])}}" class="appointment-button ms-4 ">Randevu Al</a>
+
                                                             </div>
                                                         </div>
 
@@ -168,7 +169,7 @@
                                                             <div class="service-name">{{$service->subCategory->name}}</div>
                                                             <div class="appointment">
                                                                 <span class="price">{{$service->price}} TL</span>
-                                                                <a href="{{route('step1.show', [$business->slug, $service->id])}}" class="appointment-button ms-4 ">Randevu Al</a>
+                                                                <a href="{{ route('step1.show', ['business' => $business->slug, 'services' => array($service->id)])}}" class="appointment-button ms-4 ">Randevu Al</a>
                                                             </div>
                                                         </div>
 

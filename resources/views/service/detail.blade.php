@@ -138,7 +138,7 @@
                                 <div class="col-lg-3 p-0">
                                     <div class="position-relative">
                                         <img src="{{asset($business->business->wallpaper)}}" class="card-img" alt="User Image">
-                                        <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;transform: rotate(-35deg)">Öne Çıkan</span>
+                                        <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-7">

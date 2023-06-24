@@ -39,8 +39,8 @@
                             <div class="card flex-fill">
                                 <div class="card-header">
                                     <div class="row">
-                                        <div class="col-sm-6">
-                                            <h3 class="card-title">Paket Özeti</h3>
+                                        <div class="col-sm-12">
+                                            <h3 class="card-title w-100">Paket Özeti</h3>
                                         </div>
                                     </div>
                                 </div>

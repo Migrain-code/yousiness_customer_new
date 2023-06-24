@@ -55,7 +55,7 @@
                                                 <!-- /Schedule Header -->
 
                                                 <!-- Schedule Content -->
-                                                <form class="tab-content schedule-cont" id="step-3-form" method="post" action="{{route('step3.store')}}">
+                                                <form class="tab-content schedule-cont" id="step-3-form" method="post" action="">
                                                     @csrf
                                                     <!-- Sunday Slot -->
                                                     @forelse($remainingDate as $date)
