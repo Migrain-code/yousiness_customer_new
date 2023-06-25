@@ -14,10 +14,6 @@ class Customer extends Authenticatable
     use HasFactory, HasApiTokens;
     protected $guarded = [];
 
-    public function active_appointments()
-    {
-        return $this->hasMany(Appointment::class, 'customer_id', 'id')->where('status', 1)->orWhere('status', 0)->latest();
-    }
     public function appointments()
     {
         return $this->hasMany(Appointment::class, 'customer_id', 'id')->where('status','<>' ,1)->where('status','<>' ,0)->latest();

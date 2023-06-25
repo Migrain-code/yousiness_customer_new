@@ -2,65 +2,14 @@
 @section('title', 'Anasayfa')
 @section('meta_description', config('settings.meta_description'))
 @section('styles')
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.css" integrity="sha512-ShLuspGzRsTiMlQ2Rg0e+atjy/gVQr3oYKnKmQkHQ6sxcnDAEOtOaPz2rRmeygV2CtnwUawDyHkGgH4zUbP3Hw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+
     <style>
-        .select2-container {
-            width: 100% !important;
-            background-color: transparent;
-        }
-        .select2-container--default .select2-search--dropdown .select2-search__field {
-            border: 1px solid #0db9f2;
-            border-radius: 5px;
-
-
-        }
-        .select2-results__option {
-            padding: 6px;
-            border-radius: 5px;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        .select2-container--default .select2-selection--single {
-            background-color: #fff;
-            border: 1px solid #aaa;
-            height: 50px;
-
-            padding-top: 10px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .select2-container--default .select2-selection--single .select2-selection__arrow {
-            height: 26px;
-            position: absolute;
-            top: 5px;
-            right: 1px;
-            width: 20px;
-        }
-        .select2-results__options {
-            list-style: none;
-            margin: 8px;
-            padding: 0;
-        }
-        .select2-container--open .select2-dropdown--below {
-            border-top: none;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-        }
-
-        .select2-container--default .select2-selection--single .select2-selection__arrow b {
-            border-color: #888 transparent transparent transparent;
-            border-style: solid;
-            border-width: 5px 4px 0 4px;
-            height: 0;
-            left: 0%;
-            margin-left: -4px;
-            margin-top: -2px;
-            position: absolute;
-            top: 65%;
-            width: 0;
+        .ts-dropdown [data-selectable] .highlight {
+            background: rgb(129 129 129);
+            border-radius: 14px;
+            padding: 5px;
         }
     </style>
 @endsection
@@ -118,7 +67,7 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group mb-0">
-                                                        <select class="js-example-basic-single" style="" name="service_id">
+                                                        <select id="select-service" class="js-example-basic-single" placeholder="Hizmet Seçiniz" style="" name="service_id">
                                                             <option value="">Hizmet Seçiniz</option>
                                                             @forelse($services as $service)
                                                                 <option value="{{$service->id}}">{{$service->name}}</option>
@@ -131,7 +80,7 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group mb-0">
-                                                        <select class="js-example-basic-single" name="city_id">
+                                                        <select class="js-example-basic-single" placeholder="Şehir Seçiniz" name="city_id">
                                                             <option value="">Şehir Seçiniz</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name}}</option>
@@ -152,7 +101,7 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group mb-0">
-                                                        <select class="js-example-basic-single" style="" name="category_id">
+                                                        <select id="select-salon-type" class="js-example-basic-single" placeholder="Salon Türü Seçiniz" style="" name="category_id">
                                                             <option value="">Salon Türü Seçiniz</option>
                                                             @forelse($categories as $category)
                                                                 <option value="{{$category->id}}">{{$category->name}}</option>
@@ -165,7 +114,7 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group mb-0">
-                                                        <select class="js-example-basic-single" name="city_id">
+                                                        <select class="js-example-basic-single" placeholder="Şehir Seçiniz" id="select-city-2" name="city_id">
                                                             <option value="">Şehir Seçiniz</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name}}</option>
@@ -203,20 +152,7 @@
                     </div>
                 </div>
             </div>
-           <div class="row adds_mobil">
-                 <div class="glide mt-4" data-aos="fade-up">
-                <div class="glide__track glide_mobil_slide" data-glide-el="track" >
-                    <ul class="glide__slides ">
-                        @forelse($ads as $ad)
-                            <li class="glide__slide" style="text-align: center ;">
-                                <img src="https://via.placeholder.com/200x200" alt="" style="height: 200px; width: 200px; object-fit: cover;">
-                            </li>
-                        @empty
-                        @endforelse
-                    </ul>
-                </div>
-            </div>
-           </div>
+
         </div>
     </section>
     <!-- /Home Five Banner -->
@@ -300,7 +236,7 @@
                         <div class="clinic-grid-five w-100 hvr-bounce-to-bottom">
                             <div class="clinic-grid-img">
                                 <div class="clinic-img-five">
-                                    <img src="{{image($category->icon)}}" alt="">
+                                    <img src="{{asset($category->icon)}}" alt="">
                                 </div>
                             </div>
                             <div class="clinic-grid-info">
@@ -376,8 +312,8 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <!-- <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid"> -->
-                                <img src="front/assets/img/star.png" alt="" class="img-fluid">
+
+                                <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="{{route('service.detail', [$subCategory->category->slug, 'alt-kategori'=> $subCategory->slug])}}">{{$subCategory->name}}</a>
@@ -648,11 +584,22 @@
     });
 </script>
 @section('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script>
         $(document).ready(function() {
-            $('.js-example-basic-single').select2();
+            var selectElements = document.querySelectorAll('.js-example-basic-single');
+
+            // Her bir öğeye Tom Select'i uygulayın
+            selectElements.forEach(function(element) {
+                new TomSelect(element, {
+                    autocomplete: false,
+                    maxItems: 1,
+                    language: 'tr'
+                });
+            });
 
             const options = {
                 type : "careousel",
@@ -701,6 +648,5 @@
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
 
 @endsection

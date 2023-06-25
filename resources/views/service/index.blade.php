@@ -39,7 +39,7 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
-                                <img src="{{asset($service->image)}}" alt="" class="img-fluid">
+                                <img src="{{image($service->image)}}" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
                                 <a href="{{route('service.detail', $service->slug)}}">{{$service->name}}</a>

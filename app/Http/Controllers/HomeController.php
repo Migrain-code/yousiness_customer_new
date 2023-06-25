@@ -25,6 +25,7 @@ use App\Models\ServiceCategory;
 use App\Models\ServiceSubCategory;
 use App\Models\Sponsor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
@@ -180,6 +181,7 @@ class HomeController extends Controller
     {
         $businessCategory=BusinessCategory::where('slug', $slug)->firstOrFail();
         $businesses=$businessCategory->businesses()->paginate(5);
+
         return view('business.category', compact('businesses'));
     }
     public function getInfo(Request $request)

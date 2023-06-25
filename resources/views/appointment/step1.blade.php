@@ -1,9 +1,28 @@
 @extends('layouts.master')
 @section('styles')
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
 
     <style>
+        .step-1{
+            background: #d3d3d370;
+            border-radius: 15px;
+            padding: 10px;
+        }
+        .step-2{
+            background: #d3d3d370;
+            border-radius: 15px;
+            padding: 10px;
+        }
+        .step-3{
+            background: #d3d3d370;
+            border-radius: 15px;
+            padding: 10px;
+        }
+        .step-5{
+            background: #d3d3d370;
+            border-radius: 15px;
+            padding: 10px;
+        }
         .accordion-item {
             border: 1px solid white;
             border-radius: 30px;
@@ -34,11 +53,13 @@
             <div class="col-md-10 mx-auto">
                 <div class="appointment-form">
                         <div class="container">
-                            <span class="appointment-company-name" style="font-size: 14px; font-weight: bold; text-transform: uppercase">{{$business->name}}</span>
                             <div class="row">
                                 <div class="col-md-7">
                                     <div class="step-1 my-3">
-                                        <h2 style="font-size: 22px;">Hizmet Seçimi</h2>
+                                        <div class="d-flex align-items-center">
+                                            <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">1</span>
+                                            <h2 style="font-size: 22px;">Hizmet Seçimi</h2>
+                                        </div>
                                         <div>
                                             <div style="color: rgb(168, 159, 159);">
                                                 @forelse($selectedServices as $service)
@@ -47,10 +68,15 @@
                                                     <div class="alert alert-waring">Hizmet Seçimi Yapılmadı. <u>Lütfen Hizmet Seçiniz</u></div>
                                                 @endforelse
                                             </div>
-                                            <button class="btn-five mt-2" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg" type="button">Ekle/Çıkar</button>
+                                            <button class="btn-five mt-2" style="margin-left: auto" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg" type="button">Ekle/Çıkar</button>
+
                                         </div>
                                     </div>
                                     <div class="step-2 my-3">
+                                        <div class="d-flex align-items-center">
+                                            <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">2</span>
+                                            <h2 style="font-size: 22px;">Personel Seçimi</h2>
+                                        </div>
                                         <form method="get" action="{{route('step1.store', ['business' => $business->slug])}}">
                                             <input type="hidden" name="step" value="3">
                                             @foreach($ap_services as $service)
@@ -66,12 +92,16 @@
                                                     </select>
                                                 </div>
                                             @endforeach
-                                            <button class="btn btn-success my-3 fs-5 fw-light p-3" type="submit">Tarih Seç</button>
+                                            <button class="btn btn-success my-3 fs-5 fw-light p-3" type="submit">Personelleri Seç</button>
                                         </form>
                                     </div>
-                                    <div class="step-3 my-3">
-                                        <h2 style="font-size: 22px;">Tarih/Saat Seçimi</h2>
-                                        @if(isset(request()["request"]["step"]))
+                                    @if(isset(request()["request"]["step"]))
+                                        <div class="step-3 my-3" id="step_3">
+
+                                                <div class="d-flex align-items-center mb-1">
+                                                    <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">3</span>
+                                                    <h2 style="font-size: 22px;">Tarih ve Saat Seçimi</h2>
+                                                </div>
                                                 <div class="card schedule-widget mb-0">
                                                     <!-- Schedule Header -->
                                                     <div class="schedule-header">
@@ -134,11 +164,15 @@
                                                     <!-- /Schedule Content -->
 
                                                 </div>
-                                            @endif
-                                    </div>
 
-                                    <div class="step-5 my-3">
-                                        <h2 style="font-size: 22px;">İletişim</h2>
+                                    </div>
+                                    @endif
+                                    @if(isset(request()["request"]["step"]))
+                                        <div class="step-5 my-3" id="step-4">
+                                        <div class="d-flex align-items-center mb-1">
+                                            <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">4</span>
+                                            <h2 style="font-size: 22px;">İletişim Bilgileri</h2>
+                                        </div>
                                         <div class="">
                                             <form class="col-lg-12" method="post" id="step-4-form" action="{{route('appointment.create')}}">
                                                 @csrf
@@ -174,6 +208,7 @@
 
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                                 <div class="col-md-5">
                                     <div class="brief-card mx-auto">
@@ -201,14 +236,14 @@
                                                     @forelse($personels as $personel)
                                                         {!! $personel->name."<br> "!!}
                                                     @empty
-                                                        <div class="alert alert-waring">Personel Seçimi Yapılmadı. <u>Lütfen Personel Seçiniz</u></div>
+                                                        <div class="badge badge-danger">Personel Seçimi Yapılmadı. <u>Lütfen Personel Seçiniz</u></div>
                                                     @endforelse
                                                 </span>
                                             </li>
                                             <hr>
                                             <li class="d-flex justify-content-between my-2">
                                                 <span style="font-weight: bold;">Tarih</span>
-                                                <span class="brief-date appointment_date"></span>
+                                                <span class="brief-date appointment_date">-</span>
                                             </li>
                                             <hr>
 
@@ -326,10 +361,30 @@
             </form>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
     <script>
         $(document).ready(function() {
+            var selectElements = document.querySelectorAll('.js-example-basic-single');
+
+            // Her bir öğeye Tom Select'i uygulayın
+            selectElements.forEach(function(element) {
+                new TomSelect(element, {
+                    autocomplete: false,
+                    maxItems: 1,
+                    language: 'tr'
+                });
+            });
+            var elementId = "step_3";
+            scrollToElement(elementId);
         });
+        function scrollToElement(elementId) {
+            var element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+
     </script>
     <script>
         $('.custom-link').on('click', function (){
@@ -345,6 +400,7 @@
             let val = $(this).val();
             $("#appointment_date").val(val);
             $(".appointment_date").text(val);
+            scrollToElement("step-4");
         })
     </script>
 

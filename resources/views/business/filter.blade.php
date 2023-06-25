@@ -9,49 +9,35 @@
                 <h4>Cinsiyet</h4>
                 <div>
                     <label class="custom_check">
-                        <input type="checkbox" name="gender_type" checked>
+                        <input type="radio" name="gender_type" value="1" checked>
                         <span class="checkmark"></span> Kadın
                     </label>
                 </div>
                 <div>
                     <label class="custom_check">
-                        <input type="checkbox" name="gender_type">
+                        <input type="radio" name="gender_type" value="2">
                         <span class="checkmark"></span> Erkek
+                    </label>
+                </div>
+                <div>
+                    <label class="custom_check">
+                        <input type="radio" name="gender_type" value="3">
+                        <span class="checkmark"></span> Her İkisi De
                     </label>
                 </div>
             </div>
             <div class="filter-widget">
-                <h4>İşletme Türü</h4>
-                <div>
-                    <label class="custom_check">
-                        <input type="checkbox" name="select_specialist" checked>
-                        <span class="checkmark"></span> Berberler
-                    </label>
-                </div>
-                <div>
-                    <label class="custom_check">
-                        <input type="checkbox" name="select_specialist" checked>
-                        <span class="checkmark"></span> Kuaförler
-                    </label>
-                </div>
 
                 <div>
-                    <label class="custom_check">
-                        <input type="checkbox" name="select_specialist">
-                        <span class="checkmark"></span> Lazer Epilasyon
-                    </label>
-                </div>
-                <div>
-                    <label class="custom_check">
-                        <input type="checkbox" name="select_specialist">
-                        <span class="checkmark"></span> Solaryum
-                    </label>
-                </div>
-                <div>
-                    <label class="custom_check">
-                        <input type="checkbox" name="select_specialist">
-                        <span class="checkmark"></span> Cilt Bakım
-                    </label>
+                    <div class="form-group">
+                        <label>Şehir</label>
+                        <select id="js-example-basic-single">
+                            <option value="">Şehir Seçiniz</option>
+                            @foreach($cities as $city)
+                                <option value="{{$city->id}}">{{$city->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
             </div>
 

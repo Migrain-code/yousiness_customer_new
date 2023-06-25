@@ -9,6 +9,7 @@ use App\Models\Email;
 use App\Models\Image;
 use App\Models\ProjectRequest;
 use App\Models\Promoter;
+use App\Models\SmsConfirmation;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Services\Sms;
@@ -81,13 +82,19 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param array $data
-     * @return \Illuminate\Database\Eloquent\Model|Promoter
+     * @return \Illuminate\Database\Eloquent\Model|Customer
      */
     protected function create(array $data)
     {
         $generateCode=rand(100000, 999999);
+        $smsConfirmation = new SmsConfirmation();
+        $smsConfirmation->phone = $data['email'];
+        $smsConfirmation->action = "CUSTOMER-REGISTER";
+        $smsConfirmation->code = $generateCode;
+        $smsConfirmation->expire_at = now()->addMinute(3);
+        $smsConfirmation->save();
         $phone=str_replace(array('(', ')', '-', ' '), '', $data["email"]);
-        Sms::send($phone,config('settings.site_title'). "Sistemine giriş için, telefon numarası doğrulama kodunuz ". $generateCode);
+        Sms::send($phone,config('settings.site_title'). "Sistemine kayıt için, telefon numarası doğrulama kodunuz ". $generateCode);
 
         return Customer::create([
             'name' => $data['name'],
@@ -96,7 +103,6 @@ class RegisterController extends Controller
             'status'=>1,
             'birthday'=>$data['birthday'],
             'password' => Hash::make(Str::random(8)),
-            'verification_code'=>$generateCode
         ]);
     }
     protected function registered(Request $request, $user)

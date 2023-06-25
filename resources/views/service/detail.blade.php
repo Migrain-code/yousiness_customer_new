@@ -2,49 +2,7 @@
 @section('title', "Salonlar")
 @section('meta_description', " Salonlar")
 @section('styles')
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
-        .select2-container {
-            background-color: transparent;
-            width: 200px !important;
-            right: -30px;
-            bottom: -8px;
-        }
-        .select2-container--default .select2-search--dropdown .select2-search__field {
-            border: 1px solid #0db9f2;
-            border-radius: 15px;
-        }
-        .select2-container--default .select2-selection--single {
-            background-color: #fff;
-            border: 1px solid #aaa;
-            height: 40px;
-            padding-top: 5px;
-            border-radius: 15px;
-        }
-        .select2-results__options {
-            list-style: none;
-            margin: 8px;
-            padding: 0;
-        }
-        .select2-container--open .select2-dropdown--below {
-            border-top: none;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-        }
-        .select2-container--default .select2-selection--single .select2-selection__arrow b {
-            border-color: #888 transparent transparent transparent;
-            border-style: solid;
-            border-width: 5px 4px 0 4px;
-            height: 0;
-            left: 0%;
-            margin-left: -175px;
-            margin-top: -2px;
-            position: absolute;
-            top: 65%;
-            width: 0;
-        }
         .card-img{
 
             height: 250px;
@@ -104,6 +62,8 @@
             }
         }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+
 @endsection
 @section('content')
     <div class="breadcrumb-bar">
@@ -132,12 +92,11 @@
                 @include('service.filter')
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <!-- Business Widget -->
-
                          @forelse($businesses as $business)
                             <div class="row widget-container bg-white @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer" onclick="businessDetailLink('{{route("business.detail", $business->business->slug)}}')">
                                 <div class="col-lg-3 p-0">
                                     <div class="position-relative">
-                                        <img src="{{asset($business->business->wallpaper)}}" class="card-img" alt="User Image">
+                                        <img src="{{image($business->business->logo)}}" class="card-img" alt="User Image">
                                         <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
                                     </div>
                                 </div>
@@ -203,7 +162,21 @@
 
 @endsection
 @section('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var selectElements = document.querySelectorAll('.js-example-basic-single');
+
+            // Her bir öğeye Tom Select'i uygulayın
+            selectElements.forEach(function (element) {
+                new TomSelect(element, {
+                    autocomplete: false,
+                    maxItems: 1,
+                    language: 'tr'
+                });
+            });
+        });
+    </script>
     <script>
         function businessDetailLink(url){
             window.location.href= url;

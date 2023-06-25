@@ -4,20 +4,13 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
-use App\Models\AppointmentServices;
 use App\Models\Business;
 use App\Models\BusinessComment;
-use App\Models\BusinessService;
-use App\Models\Customer;
 use App\Models\CustomerFavorite;
 use App\Models\District;
 use App\Models\PackageSale;
-use App\Models\Personel;
-use App\Models\PersonelService;
-use App\Models\ProductSales;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -25,12 +18,18 @@ class HomeController extends Controller
     public function index()
     {
         $customer = auth('customer')->user();
-
+        $activeAppointments = Appointment::where('customer_id', $customer->id)
+            ->where(function ($query) {
+                $query->where('status', 1)
+                    ->orWhere('status', 0);
+            })
+            ->latest()
+            ->get();
         $appointments = [];
         $sum_total = 0;/*total system payout*/
         $appointmentTotal = 0;/*appointment payment*/
         $appointmentTotals = [];
-        foreach ($customer->active_appointments as $appointment) {
+        foreach ($activeAppointments as $appointment) {
             if (Carbon::parse($appointment->end_time) > Carbon::now()) {
                 $appointments[] = $appointment;
                 $total = 0;

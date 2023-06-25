@@ -69,7 +69,6 @@ class VerifyController extends Controller
             $user = Customer::where('email', $code->phone)->first();
             $generatePassword=rand(100000, 999999);
             $user->password=Hash::make($generatePassword);
-            $user->verification_code=null;
             $user->password_status=1;
             $user->verify_phone=1;
             $user->save();
