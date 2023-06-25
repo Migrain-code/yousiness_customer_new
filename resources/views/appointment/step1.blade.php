@@ -18,64 +18,14 @@
         }
         .accordion-button:not(.collapsed) {
             background-color: #FC9F33 !important;
+            color: white !important;
         }
-    </style>
-    <style>
-        .select2-container {
-            width: 100% !important;
-            background-color: transparent;
+        .accordion-button:focus {
+            box-shadow: none !important;
         }
-        .select2-container--default .select2-search--dropdown .select2-search__field {
-            border: 1px solid #0db9f2;
-            border-radius: 5px;
-        }
-        .select2-results__option {
-            padding: 6px;
-            border-radius: 5px;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        .select2-container--default .select2-selection--single {
-            background-color: #fff;
-            border: 1px solid #aaa;
-            height: 50px;
-            padding-top: 10px;
-            border-radius: 5px;
 
-        }
-        .select2-container--default .select2-selection--single .select2-selection__arrow {
-            height: 26px;
-            position: absolute;
-            top: 5px;
-            right: 1px;
-            width: 20px;
-        }
-        .select2-results__options {
-            list-style: none;
-            margin: 8px;
-            padding: 0;
-        }
-        .select2-container--open .select2-dropdown--below {
-            border-top: none;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-        }
-        .select2-container--default .select2-selection--single .select2-selection__arrow b {
-            display: none;
-            border-color: #888 transparent transparent transparent;
-            border-style: solid;
-            border-width: 5px 4px 0 4px;
-            height: 0;
-            left: 0%;
-            margin-left: -4px;
-            margin-top: -2px;
-            position: absolute;
-            top: 65%;
-            width: 0;
-        }
     </style>
+
 
 @endsection
 @section('content')
@@ -301,7 +251,7 @@
                             <div class="tab-pane show active" id="solid-rounded-justified-tab1">
                                 <div class="accordion" id="accordionWoman">
                                     @forelse($womanServiceCategories as $womanCategories)
-                                        <div class="accordion-item">
+                                        <div class="accordion-item mb-2">
                                             <h2 class="accordion-header" id="heading{{$womanCategories->first()->category}}Woman">
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$womanCategories->first()->category}}Woman" aria-expanded="true" aria-controls="collapse{{$womanCategories->first()->category}}Woman">
                                                     {{$womanCategories->first()->categorys->name}}
@@ -334,7 +284,7 @@
                             <div class="tab-pane @if($business->type->id==2) show active @endif" id="solid-rounded-justified-tab2">
                                 <div class="accordion" id="accordionMan">
                                     @forelse($manServiceCategories as $manCategories)
-                                        <div class="accordion-item">
+                                        <div class="accordion-item mb-2">
                                             <h2 class="accordion-header" id="heading{{$manCategories->first()->category}}Man">
                                                 <button class="accordion-button" type="button"  data-bs-toggle="collapse" data-bs-target="#collapse{{$manCategories->first()->category}}Man" aria-expanded="true" aria-controls="collapse{{$manCategories->first()->category}}Man">
                                                     {{$manCategories->first()->categorys->name}}
@@ -377,11 +327,8 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.js-example-basic-single').select2();
-
         });
     </script>
     <script>
