@@ -66,7 +66,7 @@
                                                 @csrf
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
-                                                    <div class="form-group mb-0">
+                                                    <div class="form-group my-1">
                                                         <select id="select-service" class="js-example-basic-single" placeholder="Hizmet Seçiniz" style="" name="service_id">
                                                             <option value="">Hizmet Seçiniz</option>
                                                             @forelse($services as $service)
@@ -79,7 +79,7 @@
                                                 </div>
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
-                                                    <div class="form-group mb-0">
+                                                    <div class="form-group my-1">
                                                         <select class="js-example-basic-single" placeholder="Şehir Seçiniz" name="city_id">
                                                             <option value="">Şehir Seçiniz</option>
                                                             @forelse($cities as $city)
@@ -100,7 +100,7 @@
                                                 @csrf
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
-                                                    <div class="form-group mb-0">
+                                                    <div class="form-group my-1">
                                                         <select id="select-salon-type" class="js-example-basic-single" placeholder="Salon Türü Seçiniz" style="" name="category_id">
                                                             <option value="">Salon Türü Seçiniz</option>
                                                             @forelse($categories as $category)
@@ -113,7 +113,7 @@
                                                 </div>
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
-                                                    <div class="form-group mb-0">
+                                                    <div class="form-group my-1">
                                                         <select class="js-example-basic-single" placeholder="Şehir Seçiniz" id="select-city-2" name="city_id">
                                                             <option value="">Şehir Seçiniz</option>
                                                             @forelse($cities as $city)
