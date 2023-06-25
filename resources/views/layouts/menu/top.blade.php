@@ -18,8 +18,7 @@
                 <div class="main-menu-wrapper ">
                     <div class="menu-header">
                         <a href="/" class="menu-logo">
-                            <img src="/front/assets/img/logo-mobil-menu.png" class="img-fluid"  alt="Logo">
-                          <!-- <img src="{{image(setting('speed_logo_white'))}}" class="img-fluid" style="max-width: 95% !important;" alt="Logo">  -->
+                            <img src="{{image(setting('speed_logo_white'))}}" class="img-fluid"  alt="Logo">
                         </a>
                         <a id="menu_close" class="menu-close" href="javascript:void(0);"><i class="fas fa-times"></i>
                         </a>
