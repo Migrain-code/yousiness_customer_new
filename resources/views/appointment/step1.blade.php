@@ -119,7 +119,11 @@
                                                                     @forelse($remainingDate as $date)
                                                                         <div class="item custom-owl">
                                                                             <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                                                                <a class="nav-link custom-link  {{\Illuminate\Support\Carbon::now()->format('d.m.Y')==$date->format('d.m.Y') ? "active" : ""}}" data-bs-toggle="tab" href="#slot_{{$date->format('d_m_Y')}}"><b>{{$date->translatedFormat('d F')}}</b> <br> {{$date->translatedFormat('D')}}</a>
+                                                                                <a class="nav-link custom-link  {{\Illuminate\Support\Carbon::now()->format('d.m.Y')==$date->format('d.m.Y') ? "active" : ""}}" data-bs-toggle="tab" href="#slot_{{$date->format('d_m_Y')}}">
+                                                                                    <b>{{$date->translatedFormat('d F')}}</b>
+                                                                                    <br>
+                                                                                    {{$date->translatedFormat('D')}}
+                                                                                </a>
                                                                             </li>
                                                                         </div>
                                                                     @empty
@@ -128,7 +132,9 @@
                                                             </ul>
                                                         </div>
                                                         <!-- /Schedule Nav -->
-
+                                                        @php
+                                                            dd("asdsa")
+                                                        @endphp
                                                     </div>
                                                     <!-- /Schedule Header -->
 
