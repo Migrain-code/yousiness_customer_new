@@ -42,7 +42,9 @@
         .accordion-button:focus {
             box-shadow: none !important;
         }
-
+        .ts-dropdown-content{
+            font-size: 20px;
+        }
     </style>
 
 
