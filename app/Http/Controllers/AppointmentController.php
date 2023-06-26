@@ -79,7 +79,7 @@ class AppointmentController extends Controller
                 foreach ($filledTime as $time) {
                     $disabledDays[] = $time[0]->format('d.m.Y H:i');
                 }
-                dd($disabledDays);
+
             }
         } else {
             return to_route('business.detail', $business->slug);
