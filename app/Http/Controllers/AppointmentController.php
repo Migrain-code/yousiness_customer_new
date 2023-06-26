@@ -64,6 +64,7 @@ class AppointmentController extends Controller
                 }
             }
             if (isset(\request()["request"]["step"])) { /*personel seçilmiş ise*/
+                dd("step");
                 foreach ($selectedPersonelIds as $personel_id) {
                     $personels[] = Personel::find($personel_id);
                 }
@@ -88,7 +89,7 @@ class AppointmentController extends Controller
 
     public function step1Store(Request $request)
     {
-        $request->dd();
+
         return to_route('step1.show', ['business' => session('appointment')["businessSlug"], 'request' => $request->all()]);
     }
 
