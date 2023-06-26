@@ -95,9 +95,6 @@
                                             @endforeach
                                             <button class="btn btn-success my-3 fs-5 fw-light p-3" type="submit">Tarih/Saat Seç</button>
                                         </form>
-                                        @php
-                                            dd("asd");
-                                        @endphp
                                     </div>
                                     @if(isset(request()["request"]["step"]))
                                         <div class="step-3 my-3" id="step_3">
@@ -171,6 +168,9 @@
 
                                     </div>
                                     @endif
+                                    @php
+                                        dd("asd");
+                                    @endphp
                                     @if(isset(request()["request"]["step"]))
                                         <div class="step-5 my-3" id="step-4">
                                         <div class="d-flex align-items-center mb-1">
