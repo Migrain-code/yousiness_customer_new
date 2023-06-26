@@ -92,7 +92,7 @@
                                                     </select>
                                                 </div>
                                             @endforeach
-                                            <button class="btn btn-success my-3 fs-5 fw-light p-3" type="submit">Personelleri Seç</button>
+                                            <button class="btn btn-success my-3 fs-5 fw-light p-3" type="submit">Tarih/Saat Seç</button>
                                         </form>
                                     </div>
                                     @if(isset(request()["request"]["step"]))
@@ -210,7 +210,7 @@
                                     </div>
                                     @endif
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-5 my-3">
                                     <div class="brief-card mx-auto">
                                         <h2 class="text-center py-2" style="background-color: #565A5C; color: #fff; width: 100%; margin: 0 !important;">Özet</h2>
                                         <ul>
