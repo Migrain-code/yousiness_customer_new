@@ -132,9 +132,7 @@
                                                             </ul>
                                                         </div>
                                                         <!-- /Schedule Nav -->
-                                                        @php
-                                                            dd("asdsa")
-                                                        @endphp
+
                                                     </div>
                                                     <!-- /Schedule Header -->
 
@@ -145,23 +143,7 @@
                                                         @forelse($remainingDate as $date)
                                                             <div id="slot_{{$date->format('d_m_Y')}}" class="tab-pane fade {{\Illuminate\Support\Carbon::now()->format('d.m.Y')==$date->format('d.m.Y') ? "show active" : ""}}">
                                                                 <div class="doc-times">
-                                                                    @for($i=\Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range))
-                                                                        @if(in_array($date->format('d.m.Y '. $i->format('H:i')), $disabledDays) or \Illuminate\Support\Carbon::parse($date->format('d.m.Y '). $i->format('H:i')) < \Illuminate\Support\Carbon::now())
-                                                                            <div class="form-check-inline visits me-1">
-                                                                                <label class="visit-btns">
-                                                                                    <input type="radio" name="appointment_time" disabled class="form-check-input" value="{{$date->format('d.m.Y '. $i->format('H:i'))}}">
-                                                                                    <span class="visit-rsn" data-bs-toggle="tooltip" title="@if(\Illuminate\Support\Carbon::parse($date->format('d.m.Y '). $i->format('H:i')) < \Illuminate\Support\Carbon::now()) Kapalı @else Dolu @endif">{{$i->format('H:i')}}</span>
-                                                                                </label>
-                                                                            </div>
-                                                                        @else
-                                                                            <div class="form-check-inline visits me-1">
-                                                                                <label class="visit-btns">
-                                                                                    <input type="radio" name="appointment_time" class="form-check-input active-time" value="{{$date->format('d.m.Y '. $i->format('H:i'))}}" required>
-                                                                                    <span class="visit-rsn" data-bs-toggle="tooltip" title="Saat Seçimi Zorunludur">{{$i->format('H:i')}}</span>
-                                                                                </label>
-                                                                            </div>
-                                                                        @endif
-                                                                    @endfor
+
                                                                 </div>
                                                             </div>
                                                         @empty
