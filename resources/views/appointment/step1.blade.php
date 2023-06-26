@@ -143,7 +143,9 @@
                                                         @forelse($remainingDate as $date)
                                                             <div id="slot_{{$date->format('d_m_Y')}}" class="tab-pane fade {{\Illuminate\Support\Carbon::now()->format('d.m.Y')==$date->format('d.m.Y') ? "show active" : ""}}">
                                                                 <div class="doc-times">
+                                                                    @for($i=\Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range))
 
+                                                                    @endfor
                                                                 </div>
                                                             </div>
                                                         @empty
