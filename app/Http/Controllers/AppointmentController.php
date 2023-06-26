@@ -64,7 +64,7 @@ class AppointmentController extends Controller
                 }
             }
             if (isset(\request()["request"]["step"])) { /*personel seçilmiş ise*/
-                dd("step");
+
                 foreach ($selectedPersonelIds as $personel_id) {
                     $personels[] = Personel::find($personel_id);
                 }
@@ -75,6 +75,7 @@ class AppointmentController extends Controller
                     }
                 }
                 $filledTime = $this->findTimes($business);
+                dd($filledTime);
                 foreach ($filledTime as $time) {
                     $disabledDays[] = $time[0]->format('d.m.Y H:i');
                 }
