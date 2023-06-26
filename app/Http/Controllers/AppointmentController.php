@@ -84,7 +84,7 @@ class AppointmentController extends Controller
         } else {
             return to_route('business.detail', $business->slug);
         }
-        dd($remainingDate);
+
         /*end modal queries*/
         return view('appointment.step1', compact('business', 'personels', 'remainingDate', 'disabledDays', 'selectedPersonelIds', 'manServiceCategories', 'womanServiceCategories', 'womanCategories', 'manCategories', 'selectedServices', 'serviceIds', 'ap_services'));
     }
