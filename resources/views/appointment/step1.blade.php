@@ -70,7 +70,7 @@
                                                     <div class="alert alert-waring">Hizmet Seçimi Yapılmadı. <u>Lütfen Hizmet Seçiniz</u></div>
                                                 @endforelse
                                             </div>
-                                            <button class="btn-five mt-2" style="margin-left: auto" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg" type="button">Ekle/Çıkar</button>
+                                            <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg" type="button">Ekle/Çıkar</button>
 
                                         </div>
                                     </div>
@@ -95,7 +95,7 @@
                                                     </select>
                                                 </div>
                                             @endforeach
-                                            <button class="btn btn-success my-3 fs-5 fw-light p-3" type="submit">Tarih/Saat Seç</button>
+                                            <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" type="submit">Tarih/Saat Seç</button>
                                         </form>
                                     </div>
 
