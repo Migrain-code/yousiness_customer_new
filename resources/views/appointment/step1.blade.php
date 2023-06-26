@@ -79,9 +79,7 @@
                                         </div>
                                         <form method="get" action="{{route('step1.store', ['business' => $business->slug])}}">
                                             <input type="hidden" name="step" value="3">
-                                            @php
-                                                dd("asd");
-                                            @endphp
+
                                             @foreach($ap_services as $service)
                                                 <input type="hidden" name="services[]" value="{{$service->id}}">
                                                 <div class="form-group">
@@ -97,6 +95,9 @@
                                             @endforeach
                                             <button class="btn btn-success my-3 fs-5 fw-light p-3" type="submit">Tarih/Saat Seç</button>
                                         </form>
+                                        @php
+                                            dd("asd");
+                                        @endphp
                                     </div>
                                     @if(isset(request()["request"]["step"]))
                                         <div class="step-3 my-3" id="step_3">
