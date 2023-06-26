@@ -88,7 +88,7 @@ class AppointmentController extends Controller
 
     public function step1Store(Request $request)
     {
-
+        $request->dd();
         return to_route('step1.show', ['business' => session('appointment')["businessSlug"], 'request' => $request->all()]);
     }
 

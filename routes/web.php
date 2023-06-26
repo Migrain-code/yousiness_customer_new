@@ -44,6 +44,7 @@ Route::get('randevu-olustur/{business}', [\App\Http\Controllers\AppointmentContr
 Route::get('randevu-olustur/adim-1/save', [\App\Http\Controllers\AppointmentController::class, 'step1Store'])->name('step1.store');
 Route::post('randevu-olustur', [\App\Http\Controllers\AppointmentController::class, 'appointmentCreate'])->name('appointment.create');
 Route::get('randevu-olusturuldu/{appointment}', [\App\Http\Controllers\AppointmentController::class, 'step5Show'])->name('appointment.success');
+
 Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
     Route::get('/login', [\App\Http\Controllers\Customer\Auth\LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [\App\Http\Controllers\Customer\Auth\LoginController::class, 'login']);
