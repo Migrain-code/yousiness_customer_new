@@ -79,6 +79,9 @@
                                         </div>
                                         <form method="get" action="{{route('step1.store', ['business' => $business->slug])}}">
                                             <input type="hidden" name="step" value="3">
+                                            @php
+                                                dd("asd");
+                                            @endphp
                                             @foreach($ap_services as $service)
                                                 <input type="hidden" name="services[]" value="{{$service->id}}">
                                                 <div class="form-group">
