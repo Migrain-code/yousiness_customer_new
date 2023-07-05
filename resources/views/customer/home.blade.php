@@ -166,7 +166,7 @@
                                                         </ul>
                                                         <div class="row row-sm">
                                                             <div class="col-6">
-                                                                <a href="{{route('customer.home')}}" class="btn btn-outline-warning w-100">Detay</a>
+                                                                <a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-warning w-100">Detay</a>
                                                             </div>
                                                             @if($appointment->status==0)
                                                                 <div class="col-6">

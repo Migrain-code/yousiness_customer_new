@@ -43,10 +43,11 @@
             @endif
             @if(isset($city))
                 <div class="filter-widget">
-                    <h4>İlçe Seçiniz</h4>
+
                     <div>
 
                         <select class="js-example-basic-single" name="sub_category">
+                            <option value="">İlçe Seçiniz</option>
                             @forelse($city->districts as $district)
                                 <option value="{{$district->id}}">{{$district->name}}</option>
                             @empty
@@ -59,10 +60,10 @@
             @endif
             @if(isset($category))
                 <div class="filter-widget">
-                    <h4>Şehir Seçiniz</h4>
                     <div>
 
                         <select class="js-example-basic-single" name="sub_category">
+                            <option value="">İl Seçiniz</option>
                             @forelse($cities as $city)
                                 <option value="{{$city->id}}">{{$city->name}}</option>
                             @empty

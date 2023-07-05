@@ -151,8 +151,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="row adds_mobil">
+                    <div class="glide mt-4" data-aos="fade-up">
+                        <div class="glide__track glide_mobil_slide" data-glide-el="track" style="margin-bottom: -70px !important;">
+                            <ul class="glide__slides">
+                                @forelse($ads as $ad)
+                                <li class="glide__slide" style="text-align: center ;">
+                                    <img src="{{image($ad->image)}}" alt="" style="height: 200px; width: 200px; object-fit: cover;border-radius: 5px"></li>
+                                @empty
+                                @endforelse
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </section>
     <!-- /Home Five Banner -->
@@ -331,117 +343,35 @@
     </section>
     <section class="browse-section-five" id="services">
         <div class="container">
+            @forelse($featuredCategories as $fCategory)
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Kuaförler</h2>
+                        <h2 class="title-five">{{$fCategory->category->name}}</h2>
                     </div>
                 </div>
             </div>
            <div class="row col-lg-12">
-                    @for($i=0; $i<8; $i++)
-                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
-                        <div class="specialist-card-five d-flex hvr-bounce-to-right">
-                            <div class="specialist-img-five">
-                                <img src="front/assets/img/kuafor.png" alt="" class="img-fluid">
-                            </div>
-                            <div class="specialist-info">
-                                <a href="">İstanbul Kuaförleri</a>
-                            </div>
-                            <div class="specialist-nav-five ms-auto">
-                                <a href=""><i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                   @endfor
-                        <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
+                    <!---Buraya Şehirlerin Döngüsü gelecek---->
+                    @foreach($fCategory->cities as $city)
+                        <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                             <div class="specialist-card-five d-flex hvr-bounce-to-right">
                                 <div class="specialist-img-five">
-                                    <img src="front/assets/img/list.png" alt="" class="img-fluid">
+                                    <img src="/front/map.png" alt="" class="img-fluid">
                                 </div>
                                 <div class="specialist-info">
-                                    <a href="">Tüm Kuaförler</a>
+                                    <a href="{{route('categoryAllGet', [$city->city->slug, $fCategory->category->slug])}}">{{$city->city->name}} {{$fCategory->category->name}}</a>
                                 </div>
                                 <div class="specialist-nav-five ms-auto">
-                                    <a href=""><i class="feather-arrow-right"></i></a>
+                                    <a href="{{route('categoryAllGet', [$city->city->slug, $fCategory->category->slug])}}"><i class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
+                    @endforeach
            </div>
-            <div class="row">
-                <div class="col-md-12 mt-5 ">
-                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Güzellik Merkezleri</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row col-lg-12">
-                @for($i=0; $i<8; $i++)
-                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
-                        <div class="specialist-card-five d-flex hvr-bounce-to-right">
-                            <div class="specialist-img-five">
-                                <img src="front/assets/img/pretty.png" alt="" class="img-fluid">
-                            </div>
-                            <div class="specialist-info">
-                                <a href="">Güzellik Merkezleri</a>
-                            </div>
-                            <div class="specialist-nav-five ms-auto">
-                                <a href=""><i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                @endfor
-                <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
-                    <div class="specialist-card-five d-flex hvr-bounce-to-right">
-                        <div class="specialist-img-five">
-                            <img src="front/assets/img/list.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="specialist-info">
-                            <a href="">Tüm Güzellik Merkezleri</a>
-                        </div>
-                        <div class="specialist-nav-five ms-auto">
-                            <a href=""><i class="feather-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 mt-5 ">
-                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Berberler</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row col-lg-12">
-                @for($i=0; $i<8; $i++)
-                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
-                        <div class="specialist-card-five d-flex hvr-bounce-to-right">
-                            <div class="specialist-img-five">
-                                <img src="front/assets/img/barber.png" alt="" class="img-fluid">
-                            </div>
-                            <div class="specialist-info">
-                                <a href="">Berberler</a>
-                            </div>
-                            <div class="specialist-nav-five ms-auto">
-                                <a href=""><i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                @endfor
-                <div class="col-lg-3 col-md-6 mx-auto aos" data-aos="fade-up">
-                    <div class="specialist-card-five d-flex hvr-bounce-to-right">
-                        <div class="specialist-img-five">
-                            <img src="front/assets/img/list.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="specialist-info">
-                            <a href="">Tüm Berberler</a>
-                        </div>
-                        <div class="specialist-nav-five ms-auto">
-                            <a href=""><i class="feather-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @empty
+            @endforelse
+
 
 
         </div>

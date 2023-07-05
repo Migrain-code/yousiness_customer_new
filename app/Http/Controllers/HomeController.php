@@ -19,6 +19,7 @@ use App\Models\CustomerContact;
 use App\Models\CustomerFaq;
 use App\Models\DayList;
 use App\Models\Faq;
+use App\Models\FeaturedCategorie;
 use App\Models\Page;
 use App\Models\Personel;
 use App\Models\ServiceCategory;
@@ -26,14 +27,12 @@ use App\Models\ServiceSubCategory;
 use App\Models\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
-    public function selectTest()
-    {
 
-    }
     public function index()
     {
         $ads=Ads::latest()->get();
@@ -42,7 +41,9 @@ class HomeController extends Controller
         $businesses=Business::all();
         $activities=Activity::where('status', 1)->latest()->take(4)->get();
         $featuredServices=ServiceSubCategory::whereNotNull('featured')->orderBy('featured', 'asc')->get();
-        return view('welcome', compact( 'blogs', 'businesses','ads', 'activities', 'featuredServices'));
+        $featuredCategories =FeaturedCategorie::where('status', 1)->get();
+
+        return view('welcome', compact( 'featuredCategories','blogs', 'businesses','ads', 'activities', 'featuredServices', 'featuredCategories'));
     }
     public function pageDetail($slug)
     {

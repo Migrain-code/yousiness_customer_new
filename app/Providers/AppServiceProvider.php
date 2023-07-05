@@ -12,6 +12,7 @@ use App\Models\ForBusiness;
 use App\Models\MaingPage;
 use App\Models\MainPage;
 use App\Models\Page;
+use App\Models\RecommendedLink;
 use App\Models\ServiceCategory;
 use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
@@ -63,6 +64,7 @@ class AppServiceProvider extends ServiceProvider
         foreach (MaingPage::all() as $item) {
             $main_pages[$item->name] = $item->value;
         }
+
         \Config::set('sections', $sections);
         \Config::set('settings', $settings);
         \Config::set('main_pages', $main_pages);
@@ -82,7 +84,8 @@ class AppServiceProvider extends ServiceProvider
         View::share('services', $services);
         $categories=BusinessCategory::all();
         View::share('categories', $categories);
-
+        $recommendedLinks = RecommendedLink::select('title', 'url')->get();
+        View::share('recommendedLinks', $recommendedLinks);
         Paginator::useBootstrapFour();
     }
 }

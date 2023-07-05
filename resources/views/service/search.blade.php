@@ -2,48 +2,68 @@
 @section('title', "Salonlar")
 @section('meta_description', "Salonlar")
 @section('styles')
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
-        .select2-container {
-            width: 100% !important;
-            background-color: transparent;
+        .card-img{
+
+            height: 250px;
         }
-        .select2-container--default .select2-search--dropdown .select2-search__field {
-            border: 1px solid #0db9f2;
-            border-radius: 15px;
+        .doc-name {
+            font-size: 30px !important;
         }
-        .select2-container--default .select2-selection--single {
-            background-color: #fff;
-            border: 1px solid #aaa;
-            height: 40px;
-            padding-top: 5px;
-            border-radius: 15px;
+        .single-comment{
+            padding:10px;
+            margin-top:10px;
+            max-height:65px;
+            overflow:hidden;
+            margin-bottom: 20px;
+            background-color: #efefef;
+            border: 1px solid #efefef;
+            border-radius: 12px;
         }
-        .select2-results__options {
-            list-style: none;
-            margin: 8px;
-            padding: 0;
+        .widget-footer{
+            border-left: 1px solid #00000073;
+            padding-left: 35px;
         }
-        .select2-container--open .select2-dropdown--below {
-            border-top: none;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
+        .clinic-details{
+            margin: 0px !important;
         }
-        .select2-container--default .select2-selection--single .select2-selection__arrow b {
-            border-color: #888 transparent transparent transparent;
-            border-style: solid;
-            border-width: 5px 4px 0 4px;
-            height: 0;
-            left: 0%;
-            margin-left: -4px;
-            margin-top: -2px;
-            position: absolute;
-            top: 65%;
-            width: 0;
+        @media (max-width: 1000px) {
+            .clinic-details{
+                text-align: center;
+                padding: 15px;
+                margin-left: 0px !important;
+                width: 100% !important;
+            }
+            .widget-footer{
+                border-left: 1px solid #00000073;
+                padding-left: 0px;
+                text-align: center;
+            }
+            .widget-container{
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+        @media (max-width: 768px) {
+            .clinic-details{
+                text-align: center;
+                padding: 15px;
+                margin-left: 0px !important;
+                width: 100% !important;
+            }
+            .widget-container{
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .widget-footer{
+                border-left: 1px solid #00000073;
+                padding-left: 0px;
+                text-align: center;
+            }
         }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+
 @endsection
 @section('content')
     <div class="breadcrumb-bar">
@@ -73,74 +93,59 @@
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <!-- Business Widget -->
                     @forelse($businesses as $business)
-                   <div class="row">
-                      <div class="col-6">
-                        <div class="card">
-
-                            <div class="card-body">
-                                <div class="doctor-widget">
-                                    <div class="doc-info-left">
-                                        <div class="doctor-img">
-                                            <a href="{{route('business.detail', $business->slug)}}">
-                                                <img src="{{image($business->logo)}}" class="img-fluid" alt="User Image">
-                                            </a>
-                                        </div>
-                                        <div class="doc-info-cont">
-                                            <h4 class="doc-name"><a href="{{route('business.detail', $business->slug)}}">{{$business->name}}</a></h4>
-                                            @if($business->approve_type==1)
-                                                <p class="doc-speciality">
-                                                    <span class="badge badge-success fs-7"><i class="fas fa-check-circle"></i> Anında Onay</span>
-                                                </p>
-                                            @endif
-                                            <div class="clinic-details">
-                                                <p class="doc-location"><i class="fas fa-map-marker-alt"></i> {{$business->cities->name. ", ". $business->districts->name}}</p>
-
-                                            </div>
-                                            <div style="margin-bottom: 5px;">
-                                                <span class="text-success" style="font-size: 19px;font-weight: bold"> {{$business->services()->min('price')}} TL</span>'den başlasssssssssyan fiyatlar
-                                            </div>
-                                            <div class="rating">
-                                                @if($business->comments->count() > 0)
-                                                    @for($i=0; $i < 5; $i++ )
-                                                        <i class="fas fa-star @if($i < $business->comments->sum('point') / $business->comments->count()) filled @endif"></i>
-                                                    @endfor
-                                                @else
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                @endif
-
-                                                <span class="d-inline-block average-rating">
+                        <div class="row widget-container bg-white @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer" onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')">
+                            <div class="col-lg-3 p-0">
+                                <div class="position-relative">
+                                    <img src="{{image($business->logo)}}" class="card-img" alt="User Image">
+                                    <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="clinic-details p-3" style="margin-left: 10%">
+                                    <h4 class="doc-name mt-1"><a href="{{route('business.detail', $business->slug)}}">{{$business->name}}</a></h4>
+                                    <div class="rating mt-1">
+                                        @if($business->comments->count() > 0)
+                                            @for($i=0; $i < 5; $i++ )
+                                                <i class="fas fa-star @if($i < $business->comments->sum('point') / $business->comments->count()) filled @endif"></i>
+                                            @endfor
+                                        @else
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        @endif
+                                        <span class="d-inline-block average-rating">
                                                     <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->comments->count()}} Yorum
-                                                </span>
-                                            </div>
-
-                                            <div class="clinic-services">
-                                                <span>{{$business->type->name}}</span>
-                                            </div>
-                                        </div>
+                                            </span>
                                     </div>
-                                    <div class="doc-info-right">
-                                        <div class="clini-infos">
+                                    <p class="doc-location mt-1"><i class="fas fa-map-marker-alt"></i> {{$business->cities->name. ", ". $business->districts->name}}</p>
+                                    <div class="alert alert-success py-1 mt-1">Hizli Randvuya Özel %10 İndirim </div>
 
-                                        </div>
-                                        <div class="clinic-booking">
-                                            <a class="view-pro-btn" href="{{route('business.detail', $business->slug)}}">Profili Görüntüle</a>
-                                            <a class="apt-btn" href="{{route('business.detail', $business->slug)}}">Randevu Al</a>
-                                        </div>
+                                    <div class="single-comment mt-1">
+                                        asdasdasldhas
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-2 col-sm-12 widget-footer">
+
+                                <div>
+                                    <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}} TL</span>
+                                    'den başlayan
+                                </div>
+                                @if($business->approve_type==0)
+                                    <p class="doc-speciality">
+                                        <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Anında Onay</span>
+                                    </p>
+                                @endif
+                            </div>
                         </div>
-                      </div>
-                   </div>
                     @empty
                         <div class="alert alert-danger text-center aos" data-aos="fade-down">
                             Aradığınız türde hizmet veren işletme kaydı bulunamadı.
                         </div>
                     @endforelse
+
 
 
                     <div class="load-more text-center">
@@ -160,8 +165,25 @@
 
 @endsection
 @section('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
     <script>
+        $(document).ready(function() {
+            var selectElements = document.querySelectorAll('.js-example-basic-single');
+
+            // Her bir öğeye Tom Select'i uygulayın
+            selectElements.forEach(function (element) {
+                new TomSelect(element, {
+                    autocomplete: false,
+                    maxItems: 1,
+                    language: 'tr'
+                });
+            });
+        });
+    </script>
+    <script>
+        function businessDetailLink(url){
+            window.location.href= url;
+        }
         $(document).ready(function() {
             $('.js-example-basic-single').select2();
         });

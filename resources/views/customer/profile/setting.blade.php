@@ -52,7 +52,7 @@
                                                 <div class="form-group">
                                                     <div class="change-avatar">
                                                         <div class="profile-img">
-                                                            <img src="{{asset(auth('customer')->user()->image)}}" alt="User Image">
+                                                            <img src="{{storage(auth('customer')->user()->image)}}" alt="User Image">
                                                         </div>
                                                         <div class="upload-img">
                                                             <div class="change-photo-btn">

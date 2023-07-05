@@ -68,11 +68,12 @@
                     <div class="footer-widget footer-menu">
                         <h2 class="footer-title">Önerilen Linkler</h2>
                         <ul>
-
-                            {{--
-                                 <li><a href="{{route('page.detail', $page->slug)}}">{{$page->title}}</a>
+                            @forelse($recommendedLinks as $link)
+                                 <li>
+                                     <a href="{{$link->url}}">{{$link->title}}</a>
                                 </li>
-                            --}}
+                            @empty
+                            @endforelse
 
                         </ul>
                     </div>
