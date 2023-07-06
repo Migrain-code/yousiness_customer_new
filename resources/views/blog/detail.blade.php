@@ -126,7 +126,7 @@
                                     <li>
                                         <div class="post-thumb">
                                             <a href="{{route('blog.detail', $row->slug)}}">
-                                                <img class="img-fluid" src="{{asset($row->image)}}" alt="">
+                                                <img class="img-fluid" src="{{image($row->image)}}" alt="">
                                             </a>
                                         </div>
                                         <div class="post-info">
