@@ -7,7 +7,7 @@
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <img src="{{image(setting('speed_logo_white'))}}" alt="logo">
+                            <img src="{{image(setting('speed_logo_dark'))}}" alt="logo">
                         </div>
                         <div class="footer-about-content">
                             <p>{{setting('footer_about')}}</p>
