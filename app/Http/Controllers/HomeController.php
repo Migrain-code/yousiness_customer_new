@@ -175,7 +175,7 @@ class HomeController extends Controller
 
     public function faq()
     {
-        $faqs= CustomerFaq::all();
+        $faqs= Faq::all();
         return view('faq.index', compact('faqs'));
     }
     public function businessCategory($slug)
