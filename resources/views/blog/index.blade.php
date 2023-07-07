@@ -54,7 +54,7 @@
                                        <div class="blog-doctors-profile">
                                           <a href="{{route('blog.detail', $blog->slug)}}">
                                              <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
-                                             <span>{{config('settings.site_owner')}}</span>
+                                             <span>Admin</span>
                                           </a>
                                        </div>
                                     </div>
