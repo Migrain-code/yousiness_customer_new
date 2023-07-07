@@ -12,7 +12,7 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
 
     Route::get('/bloglar','blogs')->name('blog.index');
     Route::get('/blog/{slug}/detay','blogDetail')->name('blog.detail');
-
+    Route::post('/blog/yorum/kaydet', 'blogCommentStore')->name('blog.comment.store');
     Route::get('/etkinlikler','activities')->name('activity.index');
     Route::get('/etkinlik/{slug}/detay','activityDetail')->name('activity.detail');
     Route::post('/activity/personel/control', 'personelControl')->name('activity.personel.control');
@@ -44,7 +44,7 @@ Route::get('randevu-olustur/{business}', [\App\Http\Controllers\AppointmentContr
 Route::get('randevu-olustur/adim-1/save', [\App\Http\Controllers\AppointmentController::class, 'step1Store'])->name('step1.store');
 Route::post('randevu-olustur', [\App\Http\Controllers\AppointmentController::class, 'appointmentCreate'])->name('appointment.create');
 Route::get('randevu-olusturuldu/{appointment}', [\App\Http\Controllers\AppointmentController::class, 'step5Show'])->name('appointment.success');
-
+Route::post('appointment/time/control', [\App\Http\Controllers\AppointmentController::class, 'appointmentTimeControl'])->name('appointment.time.control');
 Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
     Route::get('/login', [\App\Http\Controllers\Customer\Auth\LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [\App\Http\Controllers\Customer\Auth\LoginController::class, 'login']);

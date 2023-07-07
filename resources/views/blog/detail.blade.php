@@ -43,7 +43,7 @@
                                             </div>
                                         </li>
                                         <li><i class="far fa-calendar"></i>{{$blog->created_at->format('d.m.Y')}}</li>
-                                        <li><i class="far fa-comments"></i>{{$blog->comments->count()}} Yorum</li>
+                                        <li><i class="far fa-comments"></i>{{$comments->count()}} Yorum</li>
 
                                     </ul>
                                 </div>
@@ -73,25 +73,45 @@
                             </div>
                             <div class="card-body pb-0">
                                 <ul class="comments-list">
-                                    @forelse($blog->comments as $comment)
+                                    @forelse($comments as $comment)
                                         <li>
                                             <div class="comment">
                                                 <div class="comment-author">
-                                                    <img class="avatar" alt="" src="{{asset($comment->business->logo)}}">
+                                                    <img class="avatar" alt="" src="{{storage($comment->customer->image)}}">
                                                 </div>
                                                 <div class="comment-block">
 													<span class="comment-by">
-														<span class="blog-author-name">{{$comment->business->name}}</span>
+														<span class="blog-author-name">{{$comment->customer->name}}</span>
 													</span>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    <p>{{$comment->comment}}</p>
                                                     <p class="blog-date">{{$blog->created_at->translatedFormat('d F Y')}}</p>
                                                 </div>
                                             </div>
                                         </li>
                                     @empty
+                                        <div class="alert alert-info">İlk Yorumu Yapan Sen Ol!</div>
                                     @endforelse
 
                                 </ul>
+                                    @if($comments->count() > 2)
+                                        <div class="text-center w-100 d-flex justify-content-center">
+                                            {!! $comments->links() !!}
+                                        </div>
+                                    @endif
+
+                                <form class="my-2" method="post" action="{{route('blog.comment.store')}}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label>Yorum Yap</label>
+                                        <textarea class="form-control" name="comment" placeholder="Yorumunuz" rows="5"></textarea>
+                                        <input type="hidden" name="blog_id" value="{{$blog->id}}">
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary" style="width: 300px">
+                                            Gönder
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

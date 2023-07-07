@@ -45,7 +45,7 @@ class AppointmentController extends Controller
         $remainingDate = [];
         $offDay = [];
         $filledTime = [];
-        $remainingDays = Carbon::now()->diffInDays(Carbon::now()->copy()->endOfMonth());
+        $remainingDays = Carbon::now()->subDays(1)->diffInDays(Carbon::now()->copy()->endOfMonth());
         $disabledDays = [];
 
         if (isset(\request()["request"])) {
@@ -77,9 +77,8 @@ class AppointmentController extends Controller
                 $filledTime = $this->findTimes($business);
 
                 foreach ($filledTime as $time) {
-                    $disabledDays[] = $time[0]->format('d.m.Y H:i');
+                    $disabledDays[] = $time;
                 }
-
             }
         } else {
             return to_route('business.detail', $business->slug);
@@ -91,12 +90,12 @@ class AppointmentController extends Controller
 
     public function step1Store(Request $request)
     {
-
         return to_route('step1.show', ['business' => session('appointment')["businessSlug"], 'request' => $request->all()]);
     }
 
     public function appointmentCreate(Request $request)
     {
+
         $business = Business::find($request->business_id);
         if (Auth::guard('customer')->check()) {
             $appointment = new Appointment();
@@ -164,29 +163,33 @@ class AppointmentController extends Controller
 
     public function findTimes($business)
     {
-        $times = [];
-
+        $disableds = [];
         foreach ($business->appointments()->whereNotIn('status', [8])->get() as $appointment) {
-            foreach ($appointment->services as $service) {
-                $times[] = [Carbon::parse($service->start_time)];
+            $startDateTime = Carbon::parse($appointment->start_time);
+            $endDateTime = Carbon::parse($appointment->end_time);
+
+            $currentDateTime = $startDateTime->copy();
+            while ($currentDateTime <= $endDateTime) {
+                $disableds[] = $currentDateTime->format('d.m.Y H:i');
+                $currentDateTime->addMinutes($business->appoinment_range);
             }
         }
-        return $times;
+
+        return $disableds;
     }
 
-    public function personelTimeControl(Request $request)
+    public function appointmentTimeControl(Request $request)
     {
-        $status = 0;
-        $formattedTime = Carbon::parse($request->time)->format('H:i');
-        foreach (session('appointment')['personels'] as $personel_id) {
-            $personal = Personel::find($personel_id);
-            if ($formattedTime > Carbon::parse($personal->end_time)->format('H:i')) {
-                return response()->json([
-                    'title' => "Hata",
-                    'icon' => "error",
-                    'message' => $personal->name . " İsimli Personelin Mesai Saatleri Dışında Bir Saat Seçtiniz. İsterseniz Bir gün sonrasına randevu alabilirsiniz."
-                ]);
-            }
+        $business = Business::find($request->business_id);
+        $filledTime = $this->findTimes($business);
+
+        if(in_array($request->time,$filledTime)){
+            return response()->json([
+                'title' => "Hata",
+                'icon' => "error",
+                'message' => "Seçtiğiniz Tarih ve saatte randevu kaydı yapıldı. Sistem üzerinde ayarlama yapmaya devam ederseniz kalıcı olarak engelleneceksiniz."
+            ]);
         }
+
     }
 }

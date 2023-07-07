@@ -5,7 +5,7 @@
             <div class="profile-info-widget">
 
                 <a href="#" class="booking-doc-img">
-                    <img src="https://via.placeholder.com/200x200" alt="User Image">
+                    <img src="{{storage(auth('customer')->user()->image)}}" alt="User Image">
                 </a>
                 <div class="profile-det-info">
                     <h3>{{auth('customer')->user()->name}}</h3>

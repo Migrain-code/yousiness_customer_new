@@ -7,6 +7,7 @@ use App\Models\Activity;
 use App\Models\ActivityBusiness;
 use App\Models\Ads;
 use App\Models\Blog;
+use App\Models\BlogComment;
 use App\Models\Business;
 use App\Models\BusinessCategory;
 use App\Models\BusinessComment;
@@ -268,7 +269,25 @@ class HomeController extends Controller
         $blog=Blog::where('slug', $slug)->firstOrFail();
         $heads=$this->headers($blog->description);
         $blogs=Blog::latest()->take(4)->get();
-        return view('blog.detail', compact('blog', 'heads', 'blogs'));
+        $comments = $blog->comments()->paginate(3);
+
+        return view('blog.detail', compact('blog', 'heads', 'blogs', 'comments'));
+    }
+
+    public function blogCommentStore(Request $request)
+    {
+        $blogComment= new BlogComment();
+        $blogComment->blog_id = $request->input('blog_id');
+        $blogComment->customer_id = auth('customer')->id();
+        $blogComment->comment = $request->input('comment');
+        $blogComment->ip = $request->ip();
+        if ($blogComment->save()){
+            return back()->with('response', [
+                'status' => "success",
+                'message' => "Yorumunuz Gönderildi. İncelendikten Sonra Yayına Alınacak"
+            ]);
+        }
+
     }
     public function detail($slug){
         $business=Business::where('slug', $slug)->first();

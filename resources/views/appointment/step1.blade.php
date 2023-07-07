@@ -86,7 +86,7 @@
                                                 <input type="hidden" name="services[]" value="{{$service->id}}">
                                                 <div class="form-group">
                                                     <label><b>{{$service->subCategory->name}}</b> için personel seçiniz</label>
-                                                    <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif>
+                                                    <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif required>
                                                         <option value="">{{$service->subCategory->name}} için personel seçiniz</option>
                                                         @forelse($service->personels as $service_personel)
                                                             <option value="{{$service_personel->personel->id}}" @selected(in_array($service_personel->personel->id, $selectedPersonelIds))>{{$service_personel->personel->name}}</option>
@@ -121,7 +121,7 @@
                                                                     @forelse($remainingDate as $date)
                                                                         <div class="item custom-owl">
                                                                             <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                                                                <a class="nav-link custom-link  {{\Illuminate\Support\Carbon::now()->format('d.m.Y')==$date->format('d.m.Y') ? "active" : ""}}" data-bs-toggle="tab" href="#slot_{{$date->format('d_m_Y')}}">
+                                                                                <a class="nav-link custom-link @if(\Illuminate\Support\Carbon::now()->format('d.m.Y')==$date->format('d.m.Y')) active @else passive @endif" data-bs-toggle="tab" href="#slot_{{$date->format('d_m_Y')}}">
                                                                                     <b>{{$date->translatedFormat('d F')}}</b>
                                                                                     <br>
                                                                                     {{$date->translatedFormat('D')}}
@@ -147,12 +147,14 @@
                                                                 <div class="doc-times">
                                                                     @for($i=\Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range))
                                                                         @if(in_array($date->format('d.m.Y '. $i->format('H:i')), $disabledDays) or \Illuminate\Support\Carbon::parse($date->format('d.m.Y '). $i->format('H:i')) < \Illuminate\Support\Carbon::now())
-                                                                            <div class="form-check-inline visits me-1">
-                                                                                <label class="visit-btns">
-                                                                                    <input type="radio" name="appointment_time" disabled class="form-check-input" value="{{$date->format('d.m.Y '. $i->format('H:i'))}}">
-                                                                                    <span class="visit-rsn" data-bs-toggle="tooltip" title="@if(\Illuminate\Support\Carbon::parse($date->format('d.m.Y '). $i->format('H:i')) < \Illuminate\Support\Carbon::now()) Kapalı @else Dolu @endif">{{$i->format('H:i')}}</span>
-                                                                                </label>
-                                                                            </div>
+                                                                            @if(\Illuminate\Support\Carbon::parse($date->format('d.m.Y '). $i->format('H:i')) > \Illuminate\Support\Carbon::now())
+                                                                                    <div class="form-check-inline visits me-1 opened_times">
+                                                                                        <label class="visit-btns">
+                                                                                            <input type="radio" name="appointment_time" disabled class="form-check-input" value="{{$date->format('d.m.Y '. $i->format('H:i'))}}">
+                                                                                            <span class="visit-rsn" data-bs-toggle="tooltip" title="@if(\Illuminate\Support\Carbon::parse($date->format('d.m.Y '). $i->format('H:i')) < \Illuminate\Support\Carbon::now()) Kapalı @else Dolu @endif">{{$i->format('H:i')}}</span>
+                                                                                        </label>
+                                                                                    </div>
+                                                                            @endif
                                                                         @else
                                                                             <div class="form-check-inline visits me-1">
                                                                                 <label class="visit-btns">
@@ -341,7 +343,7 @@
                                                         <div class="row">
                                                             <div class="col-10">
                                                                 <label class="custom_check">
-                                                                    <input type="checkbox" value="{{$service->id}}" @checked(in_array($service->id, $serviceIds)) name="service_ids[]">
+                                                                    <input type="checkbox" value="{{$service->id}}" @checked(in_array($service->id, $serviceIds)) name="services[]">
                                                                     <span class="checkmark"></span> {{$service->subCategory->name}}
                                                                 </label>
                                                             </div>
@@ -413,7 +415,47 @@
             scrollToElement("step-4");
         })
     </script>
+    <script>
+        $('input[name="appointment_time"]').on('change', function() {
+            var selected = $('input[name="appointment_time"]:checked');
+            var selectedValue=selected.val();
+            $.ajax({
+                url:'{{route('appointment.time.control')}}',
+                method:'POST',
+                data:{
+                    '_token':'{{csrf_token()}}',
+                    'time':selectedValue,
+                    'business_id': '{{$business->id}}'
+                },
+                dataType:"JSON",
+                success:function (res){
+                    Swal.fire({
+                        title: res.title,
+                        text: res.message,
+                        icon: res.icon,
+                        confirmButtonText: "Tamam"
+                    });
+                    selected.prop('checked', false);
+                    selected.attr('disabled', 'disabled');
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function (){
+            var openedTimesDiv = document.querySelector('.tab-pane');
+            var timeDivs = openedTimesDiv.querySelectorAll('.opened_times');
+            var timeDivCount = timeDivs.length;
+            if (timeDivCount === 0) {
+                var alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-danger';
+                alertDiv.textContent = 'Mesai saatleri dışında';
+                openedTimesDiv.appendChild(alertDiv);
+            }
+
+        });
 
 
+    </script>
 @endsection
 

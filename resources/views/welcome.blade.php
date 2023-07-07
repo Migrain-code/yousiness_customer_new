@@ -485,18 +485,18 @@
                                         <a href="{{route('blog.detail', $blog->slug)}}" class="read-news">Haberi Oku</a>
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="row text-center">
+                                <div class="blog-five-btn aos" data-aos="fade-up">
+                                    <a href="{{route('blog.index')}}" class="btn btn-six">Daha Fazla</a>
+                                </div>
                             </div>
                         @empty
 
                         @endforelse
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <div class="blog-five-btn aos" style="margin: 149px 0 0px;" data-aos="fade-up">
-                                <a href="{{route('blog.index')}}" class="btn btn-six">Daha Fazla</a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </section>
             <!-- /Blog Section Five -->
