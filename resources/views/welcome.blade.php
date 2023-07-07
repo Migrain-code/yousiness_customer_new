@@ -487,14 +487,15 @@
                                 </div>
 
                             </div>
-                            <div class="row text-center">
-                                <div class="blog-five-btn aos" data-aos="fade-up">
-                                    <a href="{{route('blog.index')}}" class="btn btn-six">Daha Fazla</a>
-                                </div>
-                            </div>
+
                         @empty
 
                         @endforelse
+                        <div class="row text-center">
+                            <div class="blog-five-btn aos" data-aos="fade-up">
+                                <a href="{{route('blog.index')}}" class="btn btn-six">Daha Fazla</a>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
