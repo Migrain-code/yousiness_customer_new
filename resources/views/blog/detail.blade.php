@@ -99,19 +99,23 @@
                                         </div>
                                     @endif
 
-                                <form class="my-2" method="post" action="{{route('blog.comment.store')}}">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label>Yorum Yap</label>
-                                        <textarea class="form-control" name="comment" placeholder="Yorumunuz" rows="5"></textarea>
-                                        <input type="hidden" name="blog_id" value="{{$blog->id}}">
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary" style="width: 300px">
-                                            Gönder
-                                        </button>
-                                    </div>
-                                </form>
+                                @if(auth('customer')->check())
+                                    <form class="my-2" method="post" action="{{route('blog.comment.store')}}">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label>Yorum Yap</label>
+                                            <textarea class="form-control" name="comment" placeholder="Yorumunuz" rows="5"></textarea>
+                                            <input type="hidden" name="blog_id" value="{{$blog->id}}">
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary" style="width: 300px">
+                                                Gönder
+                                            </button>
+                                        </div>
+                                    </form>
+                                @else
+                                    <div class="alert alert-warning my-2">Yorum Yapmak İçin <a href="{{route('customer.login')}}"><b>Giriş Yapmanız</b></a> Gerekmektedir!</div>
+                                @endif
                             </div>
                         </div>
                     </div>

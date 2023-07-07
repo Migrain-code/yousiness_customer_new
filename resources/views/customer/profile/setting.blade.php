@@ -95,7 +95,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label">İl</label>
-                                                        <select name="city_id" class="form-select" id="city_select">
+                                                        <select name="city_id" class="form-control" style="border: 1px solid black !important;" id="city_select">
                                                             <option value="">İl Seçiniz</option>
                                                             @foreach($cities as $city)
                                                                 <option value="{{$city->id}}" @selected(auth('customer')->user()->city_id==$city->id)>{{$city->name}}</option>
@@ -110,14 +110,14 @@
                                                     <div class="form-group">
                                                         <label class="control-label">İlçe</label>
                                                         @if(auth('customer')->user()->city_id)
-                                                            <select name="district_id" class="form-select" id="district_select">
+                                                            <select name="district_id" class="form-select" style="border: 1px solid black !important;" id="district_select">
                                                                 <option value="">İlçe Seçiniz</option>
                                                                 @foreach(auth('customer')->user()->city->districts as $district)
                                                                     <option value="{{$district->id}}" @selected(auth('customer')->user()->district_id==$district->id)>{{$district->name}}</option>
                                                                 @endforeach
                                                             </select>
                                                         @else
-                                                            <select name="district_id" class="form-select" id="district_select">
+                                                            <select name="district_id" class="form-select" style="border: 1px solid black !important;" id="district_select">
                                                                 <option value="">İlçe Seçiniz</option>
                                                             </select>
                                                         @endif
