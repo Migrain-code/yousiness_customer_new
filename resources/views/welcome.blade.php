@@ -460,7 +460,7 @@
                                 <div class="blog-grid-five w-100">
                                     <div class="blog-five-img">
                                         <a href="{{route('blog.detail', $blog->slug)}}">
-                                            <img src="{{image($blog->image)}}" class="img-fluid blog-details-img" alt="">
+                                            <img src="{{image($blog->image)}}" class="img-fluid blog-details-img" style="height: 285px;" alt="">
                                         </a>
                                         <div class="blog-item-info">
                                             <div class="blog-news-date">
