@@ -21,10 +21,7 @@
                                         <input type="text" class="form-control floating" name="name">
                                         <label class="focus-label">Ad Soyad</label>
                                     </div>
-                                    <div class="form-group form-focus">
-                                        <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control floating">
-                                        <label class="focus-label" style="top:-19px">Doğum Tarihi</label>
-                                    </div>
+
                                     <div class="form-group form-focus">
                                         <input type="text" id="phone" class="form-control floating phone" name="email">
                                         <label class="focus-label">Telefon</label>

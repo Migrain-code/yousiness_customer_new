@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', "Paket Satın Alımlarım")
+@section('meta_description', "Paket Alımlarım")
 @section('styles')
     <style>
         @media (max-width: 768px) {
@@ -64,7 +64,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Geçmiş Randevular</h2>
+                    <h2 class="breadcrumb-title">Paketlerim</h2>
                 </div>
 
             </div>
@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Geçmiş Randevularınızın Listesi</h3>
+                                        <h3>Satın Aldığınız Paketler</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -98,41 +98,41 @@
                                                 <table class="table table-hover table-center mb-0">
                                                     <thead>
                                                     <tr>
-                                                        <th>#</th>
-                                                        <th>Randevu kodu</th>
                                                         <th>İşletme Adı</th>
+                                                        <th>Yorumunuz</th>
+                                                        <th>Puanınız</th>
                                                         <th>Tarihi</th>
-                                                        <th>Durumu</th>
-                                                        <th>İşlemler</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @forelse($customer->appointments as $appointment)
-                                                            <tr>
-                                                                <td data-label="#">{{$loop->index + 1}}</td>
-                                                                <td data-label="Randevu kodu">#{{$appointment->id}}</td>
-                                                                <td data-label="İşletme Adı">{{$appointment->business->name}}</td>
-                                                                <td data-label="Tarihi">{{$appointment->start_time}}</td>
-                                                                <td data-label="Durumu">{!!$appointment->status('html') !!}</td>
-                                                                <td data-label="İşlemler"><a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-info">Detay</a></td>
-                                                            </tr>
-
-                                                        @empty
-                                                            <tr>
-                                                                <td colspan="6">
-                                                                    <div class="alert alert-warning">
-                                                                        Geçmiş Randevu Kaydınız Bulunamadı
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        @endforelse
+                                                    @forelse($businessComments as $comment)
+                                                        <tr>
+                                                            <td data-label="İşletme Adı"><a href="{{route('business.detail', $comment->business->slug)}}">{{$comment->business->name}}</a></td>
+                                                            <td data-label="Yorumunuz"># {{$comment->content}}</td>
+                                                            <td data-label="Puanınız"> {{$comment->point}} Yıldız</td>
+                                                            <td data-label="Tarihi">
+                                                                {{$comment->created_at->translatedFormat('d F y')}}
+                                                                <span class="d-block text-info" style="padding-left: 3px">
+                                                                    {{$comment->created_at->translatedFormat('H:i:s')}}
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="8">
+                                                                <div class="alert alert-warning">
+                                                                    Yorum Kaydınız Bulunamadı
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    @endforelse
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                         <div class="card-footer">
                                             <div class="d-flex justify-content-center">
-
+                                                {{$businessComments->links()}}
                                             </div>
                                         </div>
                                     </div>

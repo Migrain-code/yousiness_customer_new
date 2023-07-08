@@ -41,11 +41,11 @@ class HomeController extends Controller
             }
         }
         $sum_total += $appointmentTotal;
-        $orderTotal =$customer->orders->sum('total');/*product sale payments*/
-        $sum_total+=$orderTotal;
-        $packetPayment=$customer->packets->sum('total');
-        $sum_total+=$packetPayment;
-        $payments = ['appointment' => $appointmentTotal, 'total' => $sum_total, 'orderTotal'=> $orderTotal, 'packetPayment'=>$packetPayment];
+        $orderTotal = $customer->orders->sum('total');/*product sale payments*/
+        $sum_total += $orderTotal;
+        $packetPayment = $customer->packets->sum('total');
+        $sum_total += $packetPayment;
+        $payments = ['appointment' => $appointmentTotal, 'total' => $sum_total, 'orderTotal' => $orderTotal, 'packetPayment' => $packetPayment];
 
         /*business favorite id array*/
         $favorites = [];
@@ -65,8 +65,8 @@ class HomeController extends Controller
 
     public function appointmentDetail($id)
     {
-        $appointment=Appointment::find($id);
-        if ($appointment){
+        $appointment = Appointment::find($id);
+        if ($appointment) {
             return view('customer.appointment.detail', compact('appointment'));
         }
     }
@@ -74,50 +74,54 @@ class HomeController extends Controller
     public function addComment(Request $request)
     {
         $request->validate([
-            'rating'=>"required|min:1",
-            'content'=>"required",
-            'terms'=>"accepted",
+            'rating' => "required|min:1",
+            'content' => "required",
+            'terms' => "accepted",
         ], [], [
-            'rating'=>"Puan",
-            'content'=>"Yorum Metni",
-            'terms'=>"Şartlar ve Koşullar"
+            'rating' => "Puan",
+            'content' => "Yorum Metni",
+            'terms' => "Şartlar ve Koşullar"
         ]);
-        $businessComment=new BusinessComment();
-        $businessComment->business_id=$request->input('business_id');
-        $businessComment->point=$request->input('rating');
-        $businessComment->content=$request->input('content');
-        if ($businessComment->save()){
+        $businessComment = new BusinessComment();
+        $businessComment->business_id = $request->input('business_id');
+        $businessComment->customer_id = auth('customer')->id();
+        $businessComment->point = $request->input('rating');
+        $businessComment->content = $request->input('content');
+        if ($businessComment->save()) {
             Appointment::find($request->input('appointment_id'))->update([
-                'comment_status'=>1,
+                'comment_status' => 1,
             ]);
             return back()->with('response', [
-               'status'=>"success",
-               'message'=>"Yorumunuz Başarılı Bir Şekilde İletildi"
+                'status' => "success",
+                'message' => "Yorumunuz Başarılı Bir Şekilde İletildi"
             ]);
         }
     }
+
     public function packets()
     {
         $customer = auth('customer')->user();
-        $packets= $customer->packets()->paginate(4);
-        $packageTypes=[
+        $packets = $customer->packets()->paginate(setting('speed_pagination_number'));
+        $packageTypes = [
             'Seans',
             'Dakika'
         ];
         return view('customer.packet.index', compact('packets', 'packageTypes'));
     }
+
     public function packetDetail($id)
     {
-        $packageTypes=[
+        $packageTypes = [
             'Seans',
             'Dakika'
         ];
-        $packet=PackageSale::find($id);
-        if ($packet){
+        $packet = PackageSale::find($id);
+        if ($packet) {
             return view('customer.packet.detail', compact('packet', 'packageTypes'));
         }
         abort(404);
     }
+
     public function orders()
     {
         $customer = auth('customer')->user();
@@ -127,15 +131,22 @@ class HomeController extends Controller
             'EFT/Havale',
             'Diğer',
         ];
-        $orders=$customer->orders()->paginate(5);
+        $orders = $customer->orders()->paginate(setting('speed_pagination_number'));
 
         return view('customer.order.index', compact('customer', 'orders', 'paymentTypes'));
     }
+
     public function favorites()
     {
         $customer = auth('customer')->user();
-        $favorites=CustomerFavorite::where('customer_id', $customer->id)->paginate(8);
+        $favorites = CustomerFavorite::where('customer_id', $customer->id)->paginate(setting('speed_pagination_number'));
         return view('customer.favorite.index', compact('customer', 'favorites'));
+    }
+
+    public function comments()
+    {
+        $businessComments = BusinessComment::where('customer_id', auth('customer')->id())->paginate(setting('speed_pagination_number'));
+        return view('customer.comment.index', compact('businessComments'));
     }
 
     public function addicted()
@@ -165,7 +176,7 @@ class HomeController extends Controller
         $appointment = Appointment::find($request->id);
         $appointment->status = 8;
         $appointment->save();
-        $appointment->customer->sendSms($appointment->business->name. ' İşletmesine ' . $appointment->start_time.' tarihindeki randevunuz iptal edildi.');
+        $appointment->customer->sendSms($appointment->business->name . ' İşletmesine ' . $appointment->start_time . ' tarihindeki randevunuz iptal edildi.');
         return response()->json([
             'status' => "success",
             'message' => $appointment->start_date . "Tarihindeki Randevunuz Başarılı Bir Şekilde İptal Edildi",
@@ -174,14 +185,28 @@ class HomeController extends Controller
 
     public function addFavorite(Request $request)
     {
-        $favorite = new CustomerFavorite();
-        $favorite->customer_id = auth('customer')->id();
-        $favorite->business_id = $request->id;
-        $favorite->save();
-        return response()->json([
-            'status' => "success",
-            'message' => "İşletme Favorilerinize Eklendi",
-        ]);
+        $existBusiness = CustomerFavorite::where('customer_id', auth('customer')->id())
+            ->where('business_id', $request->id)
+            ->first();
+        if ($existBusiness) {
+            $existBusiness->delete();
+            return response()->json([
+                'status' => "info",
+                'message' => "İşletme Favorilerinizden Çıkarıldı",
+                'type' => "delete"
+            ]);
+        } else {
+            $favorite = new CustomerFavorite();
+            $favorite->customer_id = auth('customer')->id();
+            $favorite->business_id = $request->id;
+            $favorite->save();
+            return response()->json([
+                'status' => "success",
+                'message' => "İşletme Favorilerinize Eklendi",
+                'type' => "add"
+            ]);
+        }
+
     }
 
     public function removeFavorite(Request $request)

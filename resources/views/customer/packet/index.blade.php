@@ -126,7 +126,13 @@
                                                             <td data-label="İşlemler"><a class="btn-five" href="{{route('customer.packet.detail', $packet->id)}}">Detay</a></td>
                                                         </tr>
                                                     @empty
-
+                                                        <tr>
+                                                            <td colspan="8">
+                                                                <div class="alert alert-warning">
+                                                                    Paket Kaydınız Bulunamadı
+                                                                </div>
+                                                            </td>
+                                                        </tr>
                                                     @endforelse
                                                     </tbody>
                                                 </table>

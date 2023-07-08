@@ -142,15 +142,9 @@
                                                     <div class="pro-content">
                                                         <h3 class="title">
                                                             <a href="{{route('business.detail', $appointment->business->slug)}}">{{$appointment->business->name}}</a>
-                                                            <i class="fas fa-check-circle verified"></i>
                                                         </h3>
-                                                        <div class="logo-container" style="display: flex; align-items: center">
-                                                            @foreach($appointment->services as $service)
-                                                                <img src="{{image($service->personel->image)}}" alt="Logo 1" style="width: 35px;height: 35px;border-radius: 50% {{$loop->index!=0 ? "margin-left: -20px;" :""}}">
-                                                            @endforeach
 
-                                                        </div>
-                                                        <div class="my-2 mx-2">
+                                                        <div class="my-2">
                                                                {!! $appointment->status("html") !!}
                                                         </div>
                                                         <ul class="available-info">

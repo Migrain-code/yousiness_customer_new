@@ -328,10 +328,10 @@
                                 <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid">
                             </div>
                             <div class="specialist-info">
-                                <a href="{{route('service.detail', [$subCategory->category->slug, 'alt-kategori'=> $subCategory->slug])}}">{{$subCategory->name}}</a>
+                                <a href="{{route('serviceSubCategoryGet', [$subCategory->category->slug,  $subCategory->slug])}}">{{$subCategory->name}}</a>
                             </div>
                             <div class="specialist-nav-five ms-auto">
-                                <a href="{{route('service.detail', [$subCategory->category->slug, 'alt-kategori'=> $subCategory->slug])}}"><i class="feather-arrow-right"></i></a>
+                                <a href="{{route('serviceSubCategoryGet', [$subCategory->category->slug, $subCategory->slug])}}"><i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

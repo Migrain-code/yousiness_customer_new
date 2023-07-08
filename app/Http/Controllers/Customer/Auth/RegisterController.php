@@ -69,12 +69,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255', 'unique:customers'],
-            'birthday'=> ['required'],
         ], [], [
             'name' => 'Ad Soyad',
             'email' => 'Telefon',
             'password' => 'Parola',
-            'birthday'=>'Doğum Günü',
         ]);
     }
 
@@ -101,7 +99,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'phone' => $data['email'],
             'status'=>1,
-            'birthday'=>$data['birthday'],
             'password' => Hash::make(Str::random(8)),
         ]);
     }

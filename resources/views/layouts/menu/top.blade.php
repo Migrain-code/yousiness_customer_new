@@ -52,7 +52,7 @@
                             </ul>
                         </li>
                         <li class=""><a href="{{route('about')}}">Hakkımızda</a></li>
-                        <li class=""><a href="{{route('faq')}}">s.s.s</a></li>
+                        <li class=""><a href="{{route('faq')}}">Destek</a></li>
                         <li class=""><a href="{{route('blog.index')}}">Bloglar</a></li>
                         <li class=""><a href="{{route('contact')}}">İletişim</a></li>
                     </ul>

@@ -13,4 +13,10 @@ class BusinessComment extends Model
     {
         return $this->hasOne(Customer::class, 'id', 'customer_id');
     }
+
+    public function business()
+    {
+        return $this->hasOne(Business::class, 'id', 'business_id');
+
+    }
 }

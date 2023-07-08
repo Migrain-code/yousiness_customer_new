@@ -25,13 +25,14 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
 
     Route::post('/hizmet-ara','serviceSearch')->name('searchService');
     Route::get('/hizmet-ara/{city}/{service}','serviceAllGet')->name('serviceAllGet');
+    Route::get('/hizmet-turu-ara/{category}/{service}','serviceSubCategoryGet')->name('serviceSubCategoryGet');
     Route::get('/hizmet-ara/{city}','serviceCityGet')->name('serviceCityGet');
     Route::get('/hizmet/{service}','serviceGet')->name('serviceGet');
 
     Route::post('/salon-ara', 'businessCategorySearch')->name('businessCategorySearch');
     Route::get('/salon-ara/{city}/{category}','categoryAllGet')->name('categoryAllGet');
-    Route::get('/salon-ara/{city}','categoryCityGet')->name('categoryCityGet');
-    Route::get('/isletme-ara/{category}','categoryGet')->name('categoryGet');
+    Route::get('/sehir-ara/{city}','categoryCityGet')->name('categoryCityGet');
+    Route::get('/salon-ara/{category}','categoryGet')->name('categoryGet');
 
     Route::get('/live-search', 'liveSearch')->name('live-search');
     Route::get('/iletisim', 'contact')->name('contact');
@@ -65,6 +66,7 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
 
     Route::middleware(['auth:customer', 'active'])->group(function () {
         Route::get('/home', [\App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home');
+        Route::get('/yorumlar', [\App\Http\Controllers\Customer\HomeController::class, 'comments'])->name('comments');
         Route::get('/favori-isletmeler', [\App\Http\Controllers\Customer\HomeController::class, 'favorites'])->name('favorite.index');
         Route::get('/islem-yaptigim-isletmeler', [\App\Http\Controllers\Customer\HomeController::class, 'addicted'])->name('addicted.index');
         Route::get('/ürün-siparislerim', [\App\Http\Controllers\Customer\HomeController::class, 'orders'])->name('order.index');

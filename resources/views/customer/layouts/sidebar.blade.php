@@ -57,6 +57,12 @@
                             <span>Geçmiş Randevular</span>
                         </a>
                     </li>
+                    <li @if(request()->routeIs('customer.comments')) class="active" @endif>
+                        <a href="{{route('customer.comments')}}">
+                            <i class="fas fa-comment"></i>
+                            <span>Yorumlarım</span>
+                        </a>
+                    </li>
                     <li @if(request()->routeIs('customer.profile.edit')) class="active" @endif>
                         <a href="{{route('customer.profile.edit')}}">
                             <i class="fas fa-user-cog"></i>

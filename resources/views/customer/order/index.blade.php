@@ -120,7 +120,13 @@
                                                                 </td>
                                                             </tr>
                                                         @empty
-
+                                                            <tr>
+                                                                <td colspan="7">
+                                                                    <div class="alert alert-warning">
+                                                                        Sipariş Kaydınız Bulunamadı
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
                                                         @endforelse
                                                     </tbody>
                                                 </table>

@@ -3,6 +3,29 @@
 @section('meta_description', "Salonlar")
 @section('styles')
     <style>
+        .fav-btn{
+            width: 38px;
+            top: 10px;
+            z-index: 2;
+            right: 10px;
+            font-size: 20px;
+            position: absolute;
+        }
+        .fav-btn-active{
+            width: 38px;
+            top: 10px;
+            z-index: 2;
+            right: 10px;
+            font-size: 20px;
+            position: absolute;
+            background-color:red;
+            color : white;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+    </style>
+    <style>
         .card-img{
 
             height: 250px;
@@ -93,16 +116,21 @@
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <!-- Business Widget -->
                     @forelse($businesses as $business)
-                        <div class="row widget-container bg-white @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer" onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')">
+                        <div class="row widget-container bg-white position-relative @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer">
+                            @if(auth('customer')->check())
+                                <a href="javascript:void(0)" data-toggle="tooltip" data-toggle="popover" title="Favorilere Ekle"  class="@if(in_array($business->id, $favoriteIds)) fav-btn-active @else fav-btn @endif addFav" b_id="{{$business->id}}">
+                                    <i class="far fa-bookmark"></i>
+                                </a>
+                            @endif
                             <div class="col-lg-3 p-0">
                                 <div class="position-relative">
-                                    <img src="{{image($business->logo)}}" class="card-img" alt="User Image">
+                                    <img onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')" src="{{image($business->logo)}}" class="card-img" alt="User Image">
                                     <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
                                 </div>
                             </div>
                             <div class="col-lg-7">
                                 <div class="clinic-details p-3" style="margin-left: 10%">
-                                    <h4 class="doc-name mt-1"><a href="{{route('business.detail', $business->slug)}}">{{$business->name}}</a></h4>
+                                    <h4 class="doc-name mt-1"><a onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')" href="{{route('business.detail', $business->slug)}}">{{$business->name}}</a></h4>
                                     <div class="rating mt-1">
                                         @if($business->comments->count() > 0)
                                             @for($i=0; $i < 5; $i++ )
@@ -179,5 +207,52 @@
         function businessDetailLink(url){
             window.location.href= url;
         }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
+        });
+        $('.addFav').on('click', function (){
+            var element =  $(this);
+
+            let b_id=$(this).attr('b_id');
+            $.ajax({
+                url: '{{route('customer.favorite.add')}}',
+                type: 'POST',
+                data: {
+                    '_token': '{{csrf_token()}}',
+                    'id': b_id
+                },
+                dataType:'json',
+                success:function (res){
+
+                    if(res.type == "add"){
+                        element.removeClass('fav-btn');
+                        element.addClass('fav-btn-active');
+                    }
+                    else{
+                        element.addClass('fav-btn');
+                        element.removeClass('fav-btn-active');
+                    }
+                    Swal.fire({
+                        position: 'center',
+                        icon: res.status,
+                        title: res.message,
+                        showConfirmButton: false,
+                        timer: 3000,
+                        background: '#fff',
+                        customClass: {
+                            title: 'text-primary fs-6',
+                            content: 'text-dark',
+                            popup: 'bg-light',
+
+                        },
+                        timerProgressBar: true,
+                        width: '25rem',
+                        height: '2.5rem',
+                        fontsize:'15px'
+                    })
+                }
+            });
+        });
     </script>
 @endsection

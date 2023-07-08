@@ -150,7 +150,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                         @forelse($packet->usages()->paginate(10) as $usage)
+                                         @forelse($packet->usages()->paginate(setting('speed_pagination_number')) as $usage)
                                             <tr>
                                                 <td>{{$usage->personel->name ?? "Silinmiş"}}</td>
                                                 <td>{{$usage->created_at->format('d.m.Y H:i')}}</td>
@@ -166,7 +166,7 @@
                                         </tbody>
                                     </table>
                                     <div class="d-flex justify-content-center my-2">
-                                        {{$packet->usages()->paginate(10)}}
+                                        {{$packet->usages()->paginate(setting('speed_pagination_number'))}}
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @forelse($packet->payments()->paginate(10) as $payment)
+                                        @forelse($packet->payments()->paginate(setting('speed_pagination_number')) as $payment)
                                             <tr>
                                                 <td>{{$payment->price}}</td>
                                                 <td>{{$payment->amount}}</td>
@@ -204,7 +204,7 @@
                                         </tbody>
                                     </table>
                                     <div class="d-flex justify-content-center my-2">
-                                        {{$packet->payments()->paginate(10)}}
+                                        {{$packet->payments()->paginate(setting('speed_pagination_number'))}}
                                     </div>
                                 </div>
                             </div>

@@ -107,7 +107,7 @@ class VerifyController extends Controller
             ]);
         }
         else{
-            $generatePassword=rand(1000000, 9999999);
+            $generatePassword=rand(100000, 999999);
 
             $phone=str_replace(array('(', ')', '-', ' '), '', $customer->email);
             Sms::send($phone,config('settings.site_title'). " Sistemine giriş için yeni şifreniz ".$generatePassword." olarak güncellendi. Panelinize girerek şifrenizi size uygun bir şifre ile değiştirebilirsiniz.");
