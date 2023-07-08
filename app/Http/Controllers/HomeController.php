@@ -188,6 +188,7 @@ class HomeController extends Controller
         $businessCategory=BusinessCategory::where('slug', $slug)->firstOrFail();
         $businesses=$businessCategory->businesses()->paginate(setting('speed_pagination_number'));
         $favoriteIds=[];
+        dd(auth('customer')->user()->favorites);
         foreach (auth('customer')->user()->favorites as $favorite){
             $favoriteIds[]= $favorite->business_id;
         }
