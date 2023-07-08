@@ -153,8 +153,10 @@ class HomeController extends Controller
                 ->paginate(setting('speed_pagination_number'));
         }
         $favoriteIds=[];
-        foreach (auth('customer')->user()->favorites as $favorite){
-            $favoriteIds[]= $favorite->business_id;
+        if (auth('customer')->check()){
+            foreach (auth('customer')->user()->favorites as $favorite){
+                $favoriteIds[]= $favorite->business_id;
+            }
         }
         return view('service.detail', compact('businesses', 'service', 'favoriteIds'));
     }
@@ -188,10 +190,12 @@ class HomeController extends Controller
         $businessCategory=BusinessCategory::where('slug', $slug)->firstOrFail();
         $businesses=$businessCategory->businesses()->paginate(setting('speed_pagination_number'));
         $favoriteIds=[];
-        dd(auth('customer')->user()->favorites);
-        foreach (auth('customer')->user()->favorites as $favorite){
-            $favoriteIds[]= $favorite->business_id;
+        if (auth('customer')->check()){
+            foreach (auth('customer')->user()->favorites as $favorite){
+                $favoriteIds[]= $favorite->business_id;
+            }
         }
+
         return view('business.category', compact('businesses', 'favoriteIds'));
     }
     public function getInfo(Request $request)
@@ -358,8 +362,10 @@ class HomeController extends Controller
             })
             ->paginate(setting('speed_pagination_number'));
         $favoriteIds=[];
-        foreach (auth('customer')->user()->favorites as $favorite){
-            $favoriteIds[]= $favorite->business_id;
+        if (auth('customer')->check()){
+            foreach (auth('customer')->user()->favorites as $favorite){
+                $favoriteIds[]= $favorite->business_id;
+            }
         }
         return view('service.search', compact('businesses', 'service', 'favoriteIds'));
     }
@@ -374,8 +380,10 @@ class HomeController extends Controller
             })
             ->paginate(setting('speed_pagination_number'));
         $favoriteIds=[];
-        foreach (auth('customer')->user()->favorites as $favorite){
-            $favoriteIds[]= $favorite->business_id;
+        if (auth('customer')->check()){
+            foreach (auth('customer')->user()->favorites as $favorite){
+                $favoriteIds[]= $favorite->business_id;
+            }
         }
         return view('service.search', compact('businesses', 'service', 'favoriteIds'));
     }
@@ -388,8 +396,10 @@ class HomeController extends Controller
         $city=City::where('slug', $city)->first();
         $businesses = Business::where('city', $city->id)->paginate(setting('speed_pagination_number'));
         $favoriteIds=[];
-        foreach (auth('customer')->user()->favorites as $favorite){
-            $favoriteIds[]= $favorite->business_id;
+        if (auth('customer')->check()){
+            foreach (auth('customer')->user()->favorites as $favorite){
+                $favoriteIds[]= $favorite->business_id;
+            }
         }
         return view('service.search', compact('businesses', 'city', 'favoriteIds'));
     }
@@ -445,8 +455,10 @@ class HomeController extends Controller
         $businesses = Business::where('category_id', $category->id)->paginate(setting('speed_pagination_number'));
 
         $favoriteIds=[];
-        foreach (auth('customer')->user()->favorites as $favorite){
-            $favoriteIds[]= $favorite->business_id;
+        if (auth('customer')->check()){
+            foreach (auth('customer')->user()->favorites as $favorite){
+                $favoriteIds[]= $favorite->business_id;
+            }
         }
 
         return view('service.search', compact('businesses', 'category', 'city', 'favoriteIds'));
@@ -462,8 +474,10 @@ class HomeController extends Controller
         $service=null;
         $businesses = Business::where('city', $city->id)->paginate(setting('speed_pagination_number'));
         $favoriteIds=[];
-        foreach (auth('customer')->user()->favorites as $favorite){
-            $favoriteIds[]= $favorite->business_id;
+        if (auth('customer')->check()){
+            foreach (auth('customer')->user()->favorites as $favorite){
+                $favoriteIds[]= $favorite->business_id;
+            }
         }
         return view('service.search', compact('businesses', 'service', 'city', 'favoriteIds'));
     }
@@ -472,8 +486,10 @@ class HomeController extends Controller
         $category=BusinessCategory::where('slug', $category)->first();
         $businesses = Business::where('category_id', $category->id)->paginate(setting('speed_pagination_number'));
         $favoriteIds=[];
-        foreach (auth('customer')->user()->favorites as $favorite){
-            $favoriteIds[]= $favorite->business_id;
+        if (auth('customer')->check()){
+            foreach (auth('customer')->user()->favorites as $favorite){
+                $favoriteIds[]= $favorite->business_id;
+            }
         }
         return view('service.search', compact('businesses', 'category', 'favoriteIds'));
 
