@@ -324,7 +324,8 @@
                             </div>
                             <hr>
                             @forelse($business->comments()->where('status', 1)->get() as $comment)
-                                <div class="row">
+                                @if(isset($comment->customer))
+                                    <div class="row">
                                     <div class="col-md-2 comment-profile">
                                         <img src="{{storage($comment->customer->image)}}" alt="" style="width: 110px;border-radius: 15px">
                                     </div>
@@ -345,6 +346,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                         </div>
                         @empty
                             <div class="alert alert-warning">İşletme ile ilgili yorum bulunmamaktadır.</div>
