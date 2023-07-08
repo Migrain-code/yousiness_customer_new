@@ -96,7 +96,7 @@
 
 
 .service-name {
-	font-size: 12px;
+	font-size: 14px;
 }
 .information-title h2 {
 	font-size: 22px;
@@ -136,7 +136,7 @@
   cursor: pointer;
   display: inline-flex;
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-size: bold;
   font-weight: 600;
   justify-content: center;
@@ -155,6 +155,7 @@
 
 .appointment-button:hover,
 .appointment-button:focus {
+	color: white;
   background-color: #fb8332;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
