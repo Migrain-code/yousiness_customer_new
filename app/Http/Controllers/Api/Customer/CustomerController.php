@@ -8,12 +8,14 @@ use App\Http\Requests\CustomerCreateRequest;
 use App\Http\Resources\AppointmentResource;
 use App\Http\Resources\BusinessResource;
 use App\Http\Resources\Customer;
+use App\Http\Resources\CustomerCommentResource;
 use App\Http\Resources\DealerList;
 use App\Http\Resources\FavoriteResource;
 use App\Http\Resources\PacketResource;
 use App\Http\Resources\ProductSaleResource;
 use App\Models\Appointment;
 use App\Models\Business;
+use App\Models\BusinessComment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
@@ -155,14 +157,21 @@ class CustomerController extends Controller
         }
         return response()->json(['error' => 'Unauthorized'], 401);
     }
-
+    /**
+     * GET api/customer/comment/list
+     *
+     * Bu müşterinin yorum listesini verecek
+     * @header Bearer {token}
+     *
+     *
+     */
     public function getCommentList()
     {
         $user = Auth::guard('api')->user();
         if ($user) {
-            $appintments = $user->appointments;
+            $comments = BusinessComment::where('customer_id', $user->id)->get();
             return response()->json([
-                'appointments' => AppointmentResource::collection($appintments)
+                'comments' => CustomerCommentResource::collection($comments)
             ]);
         }
         return response()->json(['error' => 'Unauthorized'], 401);

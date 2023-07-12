@@ -83,7 +83,7 @@ paths:
                 activity_id:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 10
               required:
                 - activity_id
       security: []
@@ -106,11 +106,11 @@ paths:
                 phone:
                   type: string
                   description: 'The phone number of the user.'
-                  example: non
+                  example: qui
                 password:
                   type: string
                   description: 'The password of the user.'
-                  example: lQw\pR
+                  example: 'tBL:7}J'
               required:
                 - phone
                 - password
@@ -134,11 +134,11 @@ paths:
                 name:
                   type: string
                   description: 'The phone number of the user.'
-                  example: quod
+                  example: architecto
                 phone:
                   type: string
                   description: 'The password of the user.'
-                  example: quas
+                  example: vitae
               required:
                 - name
                 - phone
@@ -162,7 +162,7 @@ paths:
                 phone:
                   type: string
                   description: 'The phone number of the user.'
-                  example: unde
+                  example: quos
               required:
                 - phone
       security: []
@@ -185,7 +185,7 @@ paths:
                 code:
                   type: string
                   description: 'The phone number of the user.'
-                  example: consequatur
+                  example: qui
               required:
                 - code
       security: []
@@ -260,7 +260,7 @@ paths:
                 blog_id:
                   type: integer
                   description: ''
-                  example: 8
+                  example: 16
               required:
                 - blog_id
       security: []
@@ -965,7 +965,7 @@ paths:
                 city_id:
                   type: integer
                   description: ''
-                  example: 7
+                  example: 15
               required:
                 - city_id
       security: []
@@ -1143,6 +1143,35 @@ paths:
       tags:
         - 'Customer (Lists)'
       security: []
+  /api/customer/comment/list:
+    get:
+      summary: 'GET api/customer/comment/list'
+      operationId: gETApicustomercommentlist
+      description: 'Bu müşterinin yorum listesini verecek'
+      parameters:
+        -
+          in: header
+          name: Bearer
+          description: ''
+          example: '{token}'
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Unauthorized
+                properties:
+                  error:
+                    type: string
+                    example: Unauthorized
+      tags:
+        - 'Customer (Lists)'
+      security: []
   /api/customer/update/profile:
     post:
       summary: 'POST api/customer/update/profile'
@@ -1169,11 +1198,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: occaecati
+                  example: amet
                 phone:
                   type: string
                   description: ''
-                  example: consectetur
+                  example: eaque
               required:
                 - name
                 - phone
@@ -1204,7 +1233,7 @@ paths:
                 password:
                   type: string
                   description: ''
-                  example: PYJ$^eV>Dtd~9L7^U8i
+                  example: '`YrA?k'
               required:
                 - password
       security: []
@@ -1333,22 +1362,22 @@ paths:
           in: query
           name: service_id
           description: ''
+          example: quibusdam
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: quibusdam
+        -
+          in: query
+          name: city_id
+          description: ''
           example: eum
           required: false
           schema:
             type: string
             description: ''
             example: eum
-        -
-          in: query
-          name: city_id
-          description: ''
-          example: ratione
-          required: false
-          schema:
-            type: string
-            description: ''
-            example: ratione
       responses: {  }
       tags:
         - Search
@@ -1363,22 +1392,22 @@ paths:
           in: query
           name: category_id
           description: ''
-          example: dolores
+          example: deserunt
           required: false
           schema:
             type: string
             description: ''
-            example: dolores
+            example: deserunt
         -
           in: query
           name: city_id
           description: ''
-          example: id
+          example: odit
           required: false
           schema:
             type: string
             description: ''
-            example: id
+            example: odit
       responses: {  }
       tags:
         - Search
@@ -1402,7 +1431,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: est
+                  example: minus
       security: []
   /api/services/list:
     get:

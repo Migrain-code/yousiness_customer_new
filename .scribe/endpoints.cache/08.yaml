@@ -26,19 +26,19 @@ endpoints:
         name: service_id
         description: ''
         required: false
-        example: eum
+        example: quibusdam
         type: string
         custom: []
       city_id:
         name: city_id
         description: ''
         required: false
-        example: ratione
+        example: eum
         type: string
         custom: []
     cleanQueryParameters:
-      service_id: eum
-      city_id: ratione
+      service_id: quibusdam
+      city_id: eum
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -72,19 +72,19 @@ endpoints:
         name: category_id
         description: ''
         required: false
-        example: dolores
+        example: deserunt
         type: string
         custom: []
       city_id:
         name: city_id
         description: ''
         required: false
-        example: id
+        example: odit
         type: string
         custom: []
     cleanQueryParameters:
-      category_id: dolores
-      city_id: id
+      category_id: deserunt
+      city_id: odit
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -119,11 +119,11 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: est
+        example: minus
         type: string
         custom: []
     cleanBodyParameters:
-      name: est
+      name: minus
     fileParameters: []
     responses: []
     responseFields: []

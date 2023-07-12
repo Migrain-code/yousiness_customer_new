@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "16bb6da0-6ed9-4851-b174-bcdbf4b2b5b0",
+        "_postman_id": "8a6a150b-5d68-4382-8e89-d8ea4c0abaa8",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -58,7 +58,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "52"
+                                    "value": "51"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":4}"
+                            "raw": "{\"activity_id\":10}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -130,7 +130,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"non\",\"password\":\"lQw\\\\pR\"}"
+                            "raw": "{\"phone\":\"qui\",\"password\":\"tBL:7}J\"}"
                         },
                         "description": "",
                         "auth": {
@@ -161,7 +161,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quod\",\"phone\":\"quas\"}"
+                            "raw": "{\"name\":\"architecto\",\"phone\":\"vitae\"}"
                         },
                         "description": "",
                         "auth": {
@@ -192,7 +192,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"unde\"}"
+                            "raw": "{\"phone\":\"quos\"}"
                         },
                         "description": "",
                         "auth": {
@@ -223,7 +223,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"consequatur\"}"
+                            "raw": "{\"code\":\"qui\"}"
                         },
                         "description": "",
                         "auth": {
@@ -277,7 +277,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "51"
+                                    "value": "50"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -312,7 +312,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":8}"
+                            "raw": "{\"blog_id\":16}"
                         },
                         "description": "",
                         "auth": {
@@ -366,7 +366,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "53"
+                                    "value": "52"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -401,7 +401,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":7}"
+                            "raw": "{\"city_id\":15}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -751,6 +751,62 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "GET api\/customer\/comment\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/comment\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/comment\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu m\u00fc\u015fterinin yorum listesini verecek",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "53"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Unauthorized\"}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -784,7 +840,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"occaecati\",\"phone\":\"consectetur\"}"
+                            "raw": "{\"name\":\"amet\",\"phone\":\"eaque\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin profil bilgilerini g\u00fcncelleyecek endpoint\n<ul>\n<li> city_id ve district_id zorunlu alan de\u011fildir istenirse g\u00f6nderilebilir <\/li>\n<li>Tarih format\u0131 2001-09-08 \u015feklinde (YY-AA-GG) \u015feklinde olma\u0131d\u0131r <\/li>\n<\/ul>",
                         "auth": {
@@ -819,7 +875,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"PYJ$^eV>Dtd~9L7^U8i\"}"
+                            "raw": "{\"password\":\"`YrA?k\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -901,7 +957,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "49"
+                                    "value": "48"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -929,18 +985,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "eum",
+                                    "value": "quibusdam",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "ratione",
+                                    "value": "eum",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=eum&city_id=ratione"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=quibusdam&city_id=eum"
                         },
                         "method": "POST",
                         "header": [
@@ -966,18 +1022,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "dolores",
+                                    "value": "deserunt",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "id",
+                                    "value": "odit",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=dolores&city_id=id"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=deserunt&city_id=odit"
                         },
                         "method": "POST",
                         "header": [
@@ -1016,7 +1072,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"est\"}"
+                            "raw": "{\"name\":\"minus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1070,7 +1126,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "50"
+                                    "value": "49"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
