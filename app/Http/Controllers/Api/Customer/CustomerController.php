@@ -156,6 +156,18 @@ class CustomerController extends Controller
         return response()->json(['error' => 'Unauthorized'], 401);
     }
 
+    public function getCommentList()
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $appintments = $user->appointments;
+            return response()->json([
+                'appointments' => AppointmentResource::collection($appintments)
+            ]);
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+
     /**
      * POST api/customer/update/profile
      *
@@ -248,4 +260,5 @@ class CustomerController extends Controller
         return response()->json(['error' => 'Unauthorized'], 401);
 
     }
+
 }

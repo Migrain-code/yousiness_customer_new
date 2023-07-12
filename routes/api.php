@@ -34,7 +34,7 @@ Route::prefix('customer')->group(function (){
     Route::get('/order/list', [CustomerController::class, 'getOrderList']);
     Route::get('/packet/list', [CustomerController::class, 'getPacketList']);
     Route::get('/appointment/list', [CustomerController::class, 'getAppointmentList']);
-
+    Route::get('/comment/list', [CustomerController::class, 'getCommentList']);
     Route::post('update/profile', [CustomerController::class, 'updateProfile']);
     Route::post('update/password', [CustomerController::class, 'updatePassword']);
     Route::post('update/image', [CustomerController::class, 'updateImage']);

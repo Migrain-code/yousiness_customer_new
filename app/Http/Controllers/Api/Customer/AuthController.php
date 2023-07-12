@@ -36,7 +36,10 @@ class AuthController extends Controller
         if (Auth::guard('customer')->attempt($credentials)) {
             $user = Auth::user();
             $token = $user->createToken('AuthToken')->accessToken;
-            return response()->json(['access_token' => $token]);
+            return response()->json([
+                'access_token' => $token,
+                'customer' => Customer::make($user)
+            ]);
         }
 
         return response()->json(['status' => 'danger', 'message' => "Telefon Numaranız veya Şifreniz Hatalı"], 401);
