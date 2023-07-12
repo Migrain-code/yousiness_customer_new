@@ -158,7 +158,14 @@ class CustomerController extends Controller
         }
         return response()->json(['error' => 'Unauthorized'], 401);
     }
-
+    /**
+     * GET api/customer/appointment/upcoming/list
+     *
+     * Bu müşterinin yaklaşan randevu listesini verecek
+     * @header Bearer {token}
+     *
+     *
+     */
     public function getAppointmentUpcomingList()
     {
         $user = Auth::guard('api')->user();

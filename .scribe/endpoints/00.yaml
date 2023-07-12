@@ -26,19 +26,19 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: qui
+        example: aut
         type: string
         custom: []
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: 'tBL:7}J'
+        example: 'J9Rg7wi!Ne^Z[?|'
         type: string
         custom: []
     cleanBodyParameters:
-      phone: qui
-      password: 'tBL:7}J'
+      phone: aut
+      password: 'J9Rg7wi!Ne^Z[?|'
     fileParameters: []
     responses: []
     responseFields: []
@@ -71,19 +71,19 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: architecto
+        example: nemo
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: vitae
+        example: accusantium
         type: string
         custom: []
     cleanBodyParameters:
-      name: architecto
-      phone: vitae
+      name: nemo
+      phone: accusantium
     fileParameters: []
     responses: []
     responseFields: []
@@ -116,11 +116,11 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: quos
+        example: alias
         type: string
         custom: []
     cleanBodyParameters:
-      phone: quos
+      phone: alias
     fileParameters: []
     responses: []
     responseFields: []
@@ -153,11 +153,11 @@ endpoints:
         name: code
         description: 'The phone number of the user.'
         required: true
-        example: qui
+        example: id
         type: string
         custom: []
     cleanBodyParameters:
-      code: qui
+      code: id
     fileParameters: []
     responses: []
     responseFields: []
