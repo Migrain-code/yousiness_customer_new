@@ -70,11 +70,11 @@ endpoints:
         name: activity_id
         description: ''
         required: true
-        example: 7
+        example: 4
         type: integer
         custom: []
     cleanBodyParameters:
-      activity_id: 7
+      activity_id: 4
     fileParameters: []
     responses: []
     responseFields: []

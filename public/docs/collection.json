@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "f947a518-5a34-4a88-ba81-2ca8546eb668",
+        "_postman_id": "16bb6da0-6ed9-4851-b174-bcdbf4b2b5b0",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":7}"
+                            "raw": "{\"activity_id\":4}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -130,7 +130,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"non\",\"password\":\"{Zn~=F(B,oVD\\\"f{L\"}"
+                            "raw": "{\"phone\":\"non\",\"password\":\"lQw\\\\pR\"}"
                         },
                         "description": "",
                         "auth": {
@@ -161,7 +161,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"dolores\",\"phone\":\"aspernatur\"}"
+                            "raw": "{\"name\":\"quod\",\"phone\":\"quas\"}"
                         },
                         "description": "",
                         "auth": {
@@ -192,7 +192,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"maiores\"}"
+                            "raw": "{\"phone\":\"unde\"}"
                         },
                         "description": "",
                         "auth": {
@@ -223,7 +223,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"iusto\"}"
+                            "raw": "{\"code\":\"consequatur\"}"
                         },
                         "description": "",
                         "auth": {
@@ -312,7 +312,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":5}"
+                            "raw": "{\"blog_id\":8}"
                         },
                         "description": "",
                         "auth": {
@@ -401,7 +401,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":17}"
+                            "raw": "{\"city_id\":7}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -784,7 +784,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"itaque\",\"phone\":\"dolorem\"}"
+                            "raw": "{\"name\":\"occaecati\",\"phone\":\"consectetur\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin profil bilgilerini g\u00fcncelleyecek endpoint\n<ul>\n<li> city_id ve district_id zorunlu alan de\u011fildir istenirse g\u00f6nderilebilir <\/li>\n<li>Tarih format\u0131 2001-09-08 \u015feklinde (YY-AA-GG) \u015feklinde olma\u0131d\u0131r <\/li>\n<\/ul>",
                         "auth": {
@@ -819,9 +819,37 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"\\\\@O4?t\\\\D]bbUMK#CH\"}"
+                            "raw": "{\"password\":\"PYJ$^eV>Dtd~9L7^U8i\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/customer\/update\/image",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/update\/image",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/update\/image"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu m\u00fc\u015fterinin profil foto\u011fraf\u0131n\u0131 g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> token <\/li>\n<li> profile <\/li>\n<\/ul>",
                         "auth": {
                             "type": "noauth"
                         }
@@ -901,18 +929,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "et",
+                                    "value": "eum",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "aliquam",
+                                    "value": "ratione",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=et&city_id=aliquam"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=eum&city_id=ratione"
                         },
                         "method": "POST",
                         "header": [
@@ -938,18 +966,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "consequuntur",
+                                    "value": "dolores",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "occaecati",
+                                    "value": "id",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=consequuntur&city_id=occaecati"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=dolores&city_id=id"
                         },
                         "method": "POST",
                         "header": [
@@ -988,7 +1016,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"temporibus\"}"
+                            "raw": "{\"name\":\"est\"}"
                         },
                         "description": "",
                         "auth": {

@@ -33,19 +33,19 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: itaque
+        example: occaecati
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: dolorem
+        example: consectetur
         type: string
         custom: []
     cleanBodyParameters:
-      name: itaque
-      phone: dolorem
+      name: occaecati
+      phone: consectetur
     fileParameters: []
     responses: []
     responseFields: []
@@ -85,11 +85,46 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '\@O4?t\D]bbUMK#CH'
+        example: PYJ$^eV>Dtd~9L7^U8i
         type: string
         custom: []
     cleanBodyParameters:
-      password: '\@O4?t\D]bbUMK#CH'
+      password: PYJ$^eV>Dtd~9L7^U8i
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/customer/update/image
+    metadata:
+      groupName: 'Customer (Update)'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST api/customer/update/image'
+      description: |-
+        Bu müşterinin profil fotoğrafını güncelleyecek endpoint
+        <br> Gerekli alanlar
+        <ul>
+        <li> token </li>
+        <li> profile </li>
+        </ul>
+      authenticated: false
+      custom: []
+    headers:
+      Bearer: '{token}'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []

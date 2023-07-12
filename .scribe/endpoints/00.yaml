@@ -33,12 +33,12 @@ endpoints:
         name: password
         description: 'The password of the user.'
         required: true
-        example: '{Zn~=F(B,oVD"f{L'
+        example: lQw\pR
         type: string
         custom: []
     cleanBodyParameters:
       phone: non
-      password: '{Zn~=F(B,oVD"f{L'
+      password: lQw\pR
     fileParameters: []
     responses: []
     responseFields: []
@@ -71,19 +71,19 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: dolores
+        example: quod
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: aspernatur
+        example: quas
         type: string
         custom: []
     cleanBodyParameters:
-      name: dolores
-      phone: aspernatur
+      name: quod
+      phone: quas
     fileParameters: []
     responses: []
     responseFields: []
@@ -116,11 +116,11 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: maiores
+        example: unde
         type: string
         custom: []
     cleanBodyParameters:
-      phone: maiores
+      phone: unde
     fileParameters: []
     responses: []
     responseFields: []
@@ -153,11 +153,11 @@ endpoints:
         name: code
         description: 'The phone number of the user.'
         required: true
-        example: iusto
+        example: consequatur
         type: string
         custom: []
     cleanBodyParameters:
-      code: iusto
+      code: consequatur
     fileParameters: []
     responses: []
     responseFields: []

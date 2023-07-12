@@ -64,11 +64,11 @@ endpoints:
         name: blog_id
         description: ''
         required: true
-        example: 5
+        example: 8
         type: integer
         custom: []
     cleanBodyParameters:
-      blog_id: 5
+      blog_id: 8
     fileParameters: []
     responses: []
     responseFields: []

@@ -39,7 +39,7 @@ class AuthController extends Controller
             return response()->json(['access_token' => $token]);
         }
 
-        return response()->json(['error' => 'Unauthorized'], 401);
+        return response()->json(['status' => 'danger', 'message' => "Telefon Numaranız veya Şifreniz Hatalı"], 401);
     }
 
     public function existPhone($phone)
