@@ -21,7 +21,7 @@ class ActivityDetailResource extends JsonResource
             'image' => image($this->image),
             'start_time' => $this->start_date->format('d.m.Y H:i'),
             'end_time' => $this->stop_date->format('d.m.Y H:i'),
-            'personals' => PersonelResource::collection($this->personels),
+            'personals' => ActivityPersonelsResource::collection($this->personels),
             'sponsors' => $this->sponsors,
             'personalCount'=> $this->personels->count(),
             'sponsorCount' => $this->sponsors->count(),
