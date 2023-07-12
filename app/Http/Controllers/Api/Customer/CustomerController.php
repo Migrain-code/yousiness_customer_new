@@ -219,4 +219,33 @@ class CustomerController extends Controller
         return response()->json(['error' => 'Unauthorized'], 401);
 
     }
+    /**
+     * POST api/customer/update/image
+     *
+     * Bu müşterinin profil fotoğrafını güncelleyecek endpoint
+     * <br> Gerekli alanlar
+     * <ul>
+     * <li> token </li>
+     * <li> profile </li>
+     *</ul>
+
+     * @header Bearer {token}
+     *@group Customer (Update)
+     *
+     */
+    public function updateImage(Request $request)
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $user->image = $request->profile;
+            if ($user->save()){
+                return response()->json([
+                    'status' => "success",
+                    'message'=> "Profiliniz Başarılı Bir Şekilde Güncellendi"
+                ]);
+            }
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+
+    }
 }

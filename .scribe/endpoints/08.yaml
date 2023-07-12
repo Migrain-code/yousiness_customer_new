@@ -1,0 +1,132 @@
+name: Search
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/search/service
+    metadata:
+      groupName: Search
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST api/search/service'
+      description: |-
+        Burada hizmet türüne veya şehir verisine göre işletmelerin verisi döndürülür.
+        <b>Not:</b> city_id ve service_id ikisinden sadece biri de gönderilebilir.
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      service_id:
+        name: service_id
+        description: ''
+        required: false
+        example: eum
+        type: string
+        custom: []
+      city_id:
+        name: city_id
+        description: ''
+        required: false
+        example: ratione
+        type: string
+        custom: []
+    cleanQueryParameters:
+      service_id: eum
+      city_id: ratione
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/search/business/type
+    metadata:
+      groupName: Search
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST api/search/business/type'
+      description: |-
+        Burada işletme türüne veya şehir verisine göre işletmelerin verisi döndürülür.
+        <b>Not:</b> city_id ve category_id ikisinden sadece <u> "biri de"</u> gönderilebilir.
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      category_id:
+        name: category_id
+        description: ''
+        required: false
+        example: dolores
+        type: string
+        custom: []
+      city_id:
+        name: city_id
+        description: ''
+        required: false
+        example: id
+        type: string
+        custom: []
+    cleanQueryParameters:
+      category_id: dolores
+      city_id: id
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/search/business/name
+    metadata:
+      groupName: Search
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: est
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: est
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

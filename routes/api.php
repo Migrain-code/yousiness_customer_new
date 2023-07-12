@@ -37,6 +37,7 @@ Route::prefix('customer')->group(function (){
 
     Route::post('update/profile', [CustomerController::class, 'updateProfile']);
     Route::post('update/password', [CustomerController::class, 'updatePassword']);
+    Route::post('update/image', [CustomerController::class, 'updateImage']);
 });
 
 Route::prefix('city')->group(function (){
