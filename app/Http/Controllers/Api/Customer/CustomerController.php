@@ -17,6 +17,7 @@ use App\Models\Appointment;
 use App\Models\Business;
 use App\Models\BusinessComment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -153,6 +154,30 @@ class CustomerController extends Controller
             $appintments = $user->appointments;
             return response()->json([
                 'appointments' => AppointmentResource::collection($appintments)
+            ]);
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+
+    public function getAppointmentUpcomingList()
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $appointments = [];
+            $activeAppointments = Appointment::where('customer_id', $user->id)
+                ->where(function ($query) {
+                    $query->where('status', 1)
+                        ->orWhere('status', 0);
+                })
+                ->latest()
+                ->get();
+            foreach ($activeAppointments as $appointment) {
+                if (Carbon::parse($appointment->end_time) > Carbon::now()) {
+                    $appointments[] = $appointment;
+                }
+            }
+            return response()->json([
+                'appointments' => AppointmentResource::collection($appointments)
             ]);
         }
         return response()->json(['error' => 'Unauthorized'], 401);
