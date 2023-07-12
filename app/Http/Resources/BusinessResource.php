@@ -16,7 +16,7 @@ class BusinessResource extends JsonResource
     {
         return [
            'name' => $this->name,
-           'image' => $this->logo,
+           'logo' => image($this->logo),
            'city' => new City($this->cities),
            'district' => new District($this->districts),
            'start_time' => $this->start_time,
