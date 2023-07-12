@@ -25,7 +25,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"blogs":[{"id":8,"title":"Rem rem aut assumend","image":"storage\/blog_images\/0WjyPETNcu4AeYA8fLjbDDnUJAFwsosrUC4EtWez.jpg","content":"The History Of Web Design\r\n                                    While you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\r\n                                    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.!The History Of Web Design 1While you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.! asdasd","created_at":"14.03.2023"}]}'
+        content: '{"blogs":[{"id":8,"title":"Rem rem aut assumend","image":"storage\/blog_images\/0WjyPETNcu4AeYA8fLjbDDnUJAFwsosrUC4EtWez.jpg","content":"The History Of Web Design\r\nWhile you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\r\nBring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.!\r\n&nbsp;\r\nThe History Of Web Design 1\r\nWhile you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\r\nBring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.! asdasd","created_at":"14.03.2023"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -64,11 +64,11 @@ endpoints:
         name: blog_id
         description: ''
         required: true
-        example: 6
+        example: 5
         type: integer
         custom: []
     cleanBodyParameters:
-      blog_id: 6
+      blog_id: 5
     fileParameters: []
     responses: []
     responseFields: []

@@ -18,7 +18,6 @@ class CustomerCreateRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'phone' => ['required', 'string'],
-            'birthday' => ['required', 'date'],
         ];
     }
 

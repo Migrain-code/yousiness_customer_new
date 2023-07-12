@@ -7,6 +7,7 @@ use App\Http\Requests\CustomerCreateRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\PasswordResetRequest;
 use App\Http\Resources\Customer;
+use App\Models\SmsConfirmation;
 use App\Services\Sms;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,25 +43,68 @@ class AuthController extends Controller
     /**
      *
      * @bodyParam name string required The phone number of the user.
-     * @bodyParam birthday date required The birthday of the user. Format (Y-m-d).
      * @bodyParam phone string required The password of the user.
      *
      */
     public function register(CustomerCreateRequest $request)
     {
         $generateCode=rand(100000, 999999);
-        $phone=str_replace(array('(', ')', '-', ' '), '', $request->phone);
-        Sms::send($phone,config('settings.site_title'). "Sistemine giriş için, telefon numarası doğrulama kodunuz ". $generateCode);
+        $smsConfirmation = new SmsConfirmation();
+        $smsConfirmation->phone = $request->input('phone');
+        $smsConfirmation->action = "CUSTOMER-REGISTER";
+        $smsConfirmation->code = $generateCode;
+        $smsConfirmation->expire_at = now()->addMinute(3);
+        $smsConfirmation->save();
+        $phone=str_replace(array('(', ')', '-', ' '), '', $request->input('phone'));
+        Sms::send($phone,config('settings.site_title'). "Sistemine kayıt için, telefon numarası doğrulama kodunuz ". $generateCode);
 
-        return \App\Models\Customer::create([
+        \App\Models\Customer::create([
             'name' => $request->input('name'),
             'email' => $request->input('phone'),
             'phone' => $request->input('phone'),
             'status'=>1,
-            'birthday'=> $request->input('birthday'),
             'password' => Hash::make(Str::random(8)),
-            'verification_code'=>$generateCode
         ]);
+        return response()->json([
+            'status' => "success",
+            'message' => "Kayıt Oluşturuldu.Lütfen Telefon Numaranızı Doğrulayınız"
+        ]);
+    }
+    /**
+     *
+     * @bodyParam code string required The phone number of the user.
+     *
+     */
+    public function verifyCode(Request $request)
+    {
+        $code = SmsConfirmation::where("code", $request->code)->first();
+        if ($code){
+            if ($code->expire_at < now()){
+                return response()->json([
+                    'status'=>"warning",
+                    'message'=>"Doğrulama Kodunun Süresi Dolmuş."
+                ]);
+            }
+            $user = \App\Models\Customer::where('email', $code->phone)->first();
+            $generatePassword=rand(100000, 999999);
+            $user->password=Hash::make($generatePassword);
+            $user->password_status=1;
+            $user->verify_phone=1;
+            $user->save();
+
+            $phone=str_replace(array('(', ')', '-', ' '), '', $user->email);
+            Sms::send($phone,config('settings.site_title'). "Sistemine giriş için şifreniz ".$generatePassword);
+            return response()->json([
+                'status'=>"success",
+                'message'=>"Telefon Numaranız doğrulandı. Sisteme giriş için şifreniz gönderildi."
+            ]);
+        }
+        else{
+            return response()->json([
+                'status'=>"danger",
+                'message'=>"Doğrulama Kodu Hatalı."
+            ]);
+        }
     }
     /**
      *

@@ -31,27 +31,19 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: commodi
+        example: itaque
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: aut
-        type: string
-        custom: []
-      birthday:
-        name: birthday
-        description: 'value geçerli bir tarih olmalıdır.'
-        required: true
-        example: '2023-06-19T01:01:45'
+        example: dolorem
         type: string
         custom: []
     cleanBodyParameters:
-      name: commodi
-      phone: aut
-      birthday: '2023-06-19T01:01:45'
+      name: itaque
+      phone: dolorem
     fileParameters: []
     responses: []
     responseFields: []
@@ -91,11 +83,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: aA|PW;w
+        example: '\@O4?t\D]bbUMK#CH'
         type: string
         custom: []
     cleanBodyParameters:
-      password: aA|PW;w
+      password: '\@O4?t\D]bbUMK#CH'
     fileParameters: []
     responses: []
     responseFields: []

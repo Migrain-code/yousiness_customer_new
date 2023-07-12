@@ -26,19 +26,19 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: culpa
+        example: non
         type: string
         custom: []
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: 'ZinkV<*+Q`klo'
+        example: '{Zn~=F(B,oVD"f{L'
         type: string
         custom: []
     cleanBodyParameters:
-      phone: culpa
-      password: 'ZinkV<*+Q`klo'
+      phone: non
+      password: '{Zn~=F(B,oVD"f{L'
     fileParameters: []
     responses: []
     responseFields: []
@@ -71,27 +71,19 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: nisi
+        example: dolores
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: blanditiis
+        example: aspernatur
         type: string
         custom: []
-      birthday:
-        name: birthday
-        description: 'The birthday of the user. Format (Y-m-d).'
-        required: true
-        example: enim
-        type: date
-        custom: []
     cleanBodyParameters:
-      name: nisi
-      phone: blanditiis
-      birthday: enim
+      name: dolores
+      phone: aspernatur
     fileParameters: []
     responses: []
     responseFields: []
@@ -124,11 +116,48 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: molestias
+        example: maiores
         type: string
         custom: []
     cleanBodyParameters:
-      phone: molestias
+      phone: maiores
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/verify/code
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'The phone number of the user.'
+        required: true
+        example: iusto
+        type: string
+        custom: []
+    cleanBodyParameters:
+      code: iusto
     fileParameters: []
     responses: []
     responseFields: []

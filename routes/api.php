@@ -25,6 +25,7 @@ Route::prefix('auth')->group(function (){
     Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:10,1');
     Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:10,1');
     Route::post('/password-reset', [AuthController::class, 'passwordReset'])->middleware('throttle:10,1');
+    Route::post('/verify/code', [AuthController ::class, 'verifyCode']);
 });
 Route::prefix('customer')->group(function (){
     Route::get('/get', [CustomerController::class, 'getUser']);

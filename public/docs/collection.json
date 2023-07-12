@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "9cf2ce3a-0c81-4852-b580-0e9d0d2a270c",
+        "_postman_id": "f947a518-5a34-4a88-ba81-2ca8546eb668",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":12}"
+                            "raw": "{\"activity_id\":7}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -130,7 +130,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"culpa\",\"password\":\"ZinkV<*+Q`klo\"}"
+                            "raw": "{\"phone\":\"non\",\"password\":\"{Zn~=F(B,oVD\\\"f{L\"}"
                         },
                         "description": "",
                         "auth": {
@@ -161,7 +161,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"nisi\",\"phone\":\"blanditiis\",\"birthday\":\"enim\"}"
+                            "raw": "{\"name\":\"dolores\",\"phone\":\"aspernatur\"}"
                         },
                         "description": "",
                         "auth": {
@@ -192,7 +192,38 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"molestias\"}"
+                            "raw": "{\"phone\":\"maiores\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/verify\/code",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/verify\/code",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/verify\/code"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"code\":\"iusto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -254,7 +285,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"blogs\":[{\"id\":8,\"title\":\"Rem rem aut assumend\",\"image\":\"storage\\\/blog_images\\\/0WjyPETNcu4AeYA8fLjbDDnUJAFwsosrUC4EtWez.jpg\",\"content\":\"The History Of Web Design\\r\\n                                    While you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\\r\\n                                    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.!The History Of Web Design 1While you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.! asdasd\",\"created_at\":\"14.03.2023\"}]}",
+                            "body": "{\"blogs\":[{\"id\":8,\"title\":\"Rem rem aut assumend\",\"image\":\"storage\\\/blog_images\\\/0WjyPETNcu4AeYA8fLjbDDnUJAFwsosrUC4EtWez.jpg\",\"content\":\"The History Of Web Design\\r\\nWhile you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\\r\\nBring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.!\\r\\n&nbsp;\\r\\nThe History Of Web Design 1\\r\\nWhile you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\\r\\nBring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.! asdasd\",\"created_at\":\"14.03.2023\"}]}",
                             "name": ""
                         }
                     ]
@@ -281,7 +312,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":6}"
+                            "raw": "{\"blog_id\":5}"
                         },
                         "description": "",
                         "auth": {
@@ -370,7 +401,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":12}"
+                            "raw": "{\"city_id\":17}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -753,7 +784,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"commodi\",\"phone\":\"aut\",\"birthday\":\"2023-06-19T01:01:45\"}"
+                            "raw": "{\"name\":\"itaque\",\"phone\":\"dolorem\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin profil bilgilerini g\u00fcncelleyecek endpoint\n<ul>\n<li> city_id ve district_id zorunlu alan de\u011fildir istenirse g\u00f6nderilebilir <\/li>\n<li>Tarih format\u0131 2001-09-08 \u015feklinde (YY-AA-GG) \u015feklinde olma\u0131d\u0131r <\/li>\n<\/ul>",
                         "auth": {
@@ -788,7 +819,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"aA|PW;w\"}"
+                            "raw": "{\"password\":\"\\\\@O4?t\\\\D]bbUMK#CH\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -870,18 +901,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "labore",
+                                    "value": "et",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "quasi",
+                                    "value": "aliquam",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=labore&city_id=quasi"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=et&city_id=aliquam"
                         },
                         "method": "POST",
                         "header": [
@@ -907,18 +938,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "soluta",
+                                    "value": "consequuntur",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "consequuntur",
+                                    "value": "occaecati",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=soluta&city_id=consequuntur"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=consequuntur&city_id=occaecati"
                         },
                         "method": "POST",
                         "header": [
@@ -957,7 +988,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"recusandae\"}"
+                            "raw": "{\"name\":\"temporibus\"}"
                         },
                         "description": "",
                         "auth": {
