@@ -1,7 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+Route::get('/test', function (){
+    $existingData = \App\Models\Business::find(0);
+    for($i = 0; $i < 1000; $i++){
+        $newData = $existingData->replicate();
+        $newData->email = "123456".$i;
+        $newData->save();
+    }
+});
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
     Route::get('/', 'index')->name('welcome');
     Route::get('/salonlar', 'allBusiness')->name('business.all');

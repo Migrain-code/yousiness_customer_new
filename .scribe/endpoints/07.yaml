@@ -1,12 +1,12 @@
-name: 'Salon Type'
+name: 'Salon List'
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/salons/list
+    uri: api/salons/all
     metadata:
-      groupName: 'Salon Type'
+      groupName: 'Salon List'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -25,7 +25,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"salon_types":[{"name":"Berberler","icon":"front\/assets\/img\/salon_type\/1.png","color":"#ff890e"},{"name":"Kuaf\u00f6rler","icon":"front\/assets\/img\/salon_type\/2.png","color":"#ff890f"},{"name":"G\u00fczellik ve Estetik Merkezleri","icon":"front\/assets\/img\/salon_type\/3.png","color":"#ff490e"},{"name":"Spalar","icon":"front\/assets\/img\/salon_type\/4.png","color":"#ff890e"},{"name":"Solaryum Merkezleri","icon":"front\/assets\/img\/salon_type\/5.png","color":null},{"name":"Sa\u011fl\u0131kl\u0131 Ya\u015fam Merkezleri","icon":"front\/assets\/img\/salon_type\/6.png","color":null},{"name":"D\u00f6\u011fme ve Tatto Merkezleri","icon":"front\/assets\/img\/salon_type\/7.png","color":null},{"name":"Tesett\u00fcr Kuaf\u00f6rleri","icon":"front\/assets\/img\/salon_type\/8.png","color":null}]}'
+        content: '{"salons":[{"name":"Muhammet T\u00fcrkmen","icon":null,"color":null},{"name":"Furkan Studyo","icon":null,"color":null}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

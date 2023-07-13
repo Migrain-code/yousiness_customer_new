@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "953ca740-1dcd-4e27-9859-b208eec65e6c",
+        "_postman_id": "d8d21cbe-caf9-463f-b499-47af5961c0e0",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":7}"
+                            "raw": "{\"activity_id\":8}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -130,7 +130,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"aut\",\"password\":\"J9Rg7wi!Ne^Z[?|\"}"
+                            "raw": "{\"phone\":\"provident\",\"password\":\"OMeLRR;Y9QnQ!-u\"}"
                         },
                         "description": "",
                         "auth": {
@@ -161,7 +161,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"nemo\",\"phone\":\"accusantium\"}"
+                            "raw": "{\"name\":\"eius\",\"phone\":\"quaerat\"}"
                         },
                         "description": "",
                         "auth": {
@@ -192,7 +192,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"alias\"}"
+                            "raw": "{\"phone\":\"cum\"}"
                         },
                         "description": "",
                         "auth": {
@@ -223,7 +223,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"id\"}"
+                            "raw": "{\"code\":\"ab\"}"
                         },
                         "description": "",
                         "auth": {
@@ -312,7 +312,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":15}"
+                            "raw": "{\"blog_id\":12}"
                         },
                         "description": "",
                         "auth": {
@@ -401,7 +401,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":10}"
+                            "raw": "{\"city_id\":2}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -896,7 +896,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"nihil\",\"phone\":\"nam\"}"
+                            "raw": "{\"name\":\"unde\",\"phone\":\"culpa\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin profil bilgilerini g\u00fcncelleyecek endpoint\n<ul>\n<li> city_id ve district_id zorunlu alan de\u011fildir istenirse g\u00f6nderilebilir <\/li>\n<li>Tarih format\u0131 2001-09-08 \u015feklinde (YY-AA-GG) \u015feklinde olma\u0131d\u0131r <\/li>\n<\/ul>",
                         "auth": {
@@ -931,7 +931,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\";g=C]frGe\"}"
+                            "raw": "{\"password\":\"{_mhs,E*b5\\\"8|\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -967,6 +967,64 @@
                         }
                     },
                     "response": []
+                }
+            ]
+        },
+        {
+            "name": "Salon List",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/salons\/all",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/salons\/all",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/salons\/all"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "47"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"salons\":[{\"name\":\"Muhammet T\\u00fcrkmen\",\"icon\":null,\"color\":null},{\"name\":\"Furkan Studyo\",\"icon\":null,\"color\":null}]}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -1013,7 +1071,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "47"
+                                    "value": "46"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1041,18 +1099,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "totam",
+                                    "value": "velit",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "odit",
+                                    "value": "ipsum",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=totam&city_id=odit"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=velit&city_id=ipsum"
                         },
                         "method": "POST",
                         "header": [
@@ -1078,18 +1136,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "ut",
+                                    "value": "assumenda",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "ipsam",
+                                    "value": "aperiam",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=ut&city_id=ipsam"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=assumenda&city_id=aperiam"
                         },
                         "method": "POST",
                         "header": [
@@ -1128,7 +1186,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"optio\"}"
+                            "raw": "{\"name\":\"voluptatem\"}"
                         },
                         "description": "",
                         "auth": {
