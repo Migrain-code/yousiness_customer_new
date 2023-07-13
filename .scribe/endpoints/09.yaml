@@ -1,0 +1,132 @@
+name: Search
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/search/service
+    metadata:
+      groupName: Search
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST api/search/service'
+      description: |-
+        Burada hizmet türüne veya şehir verisine göre işletmelerin verisi döndürülür.
+        <b>Not:</b> city_id ve service_id ikisinden sadece biri de gönderilebilir.
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      service_id:
+        name: service_id
+        description: ''
+        required: false
+        example: velit
+        type: string
+        custom: []
+      city_id:
+        name: city_id
+        description: ''
+        required: false
+        example: ipsum
+        type: string
+        custom: []
+    cleanQueryParameters:
+      service_id: velit
+      city_id: ipsum
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/search/business/type
+    metadata:
+      groupName: Search
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST api/search/business/type'
+      description: |-
+        Burada işletme türüne veya şehir verisine göre işletmelerin verisi döndürülür.
+        <b>Not:</b> city_id ve category_id ikisinden sadece <u> "biri de"</u> gönderilebilir.
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      category_id:
+        name: category_id
+        description: ''
+        required: false
+        example: assumenda
+        type: string
+        custom: []
+      city_id:
+        name: city_id
+        description: ''
+        required: false
+        example: aperiam
+        type: string
+        custom: []
+    cleanQueryParameters:
+      category_id: assumenda
+      city_id: aperiam
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/search/business/name
+    metadata:
+      groupName: Search
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: voluptatem
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: voluptatem
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

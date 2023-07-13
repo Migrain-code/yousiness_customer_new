@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 Route::get('/test', function (){
-    $existingData = \App\Models\Business::find(0);
+    $existingData = \App\Models\Business::find(8);
     for($i = 0; $i < 1000; $i++){
         $newData = $existingData->replicate();
         $newData->email = "123456".$i;
