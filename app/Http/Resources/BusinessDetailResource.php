@@ -23,10 +23,11 @@ class BusinessDetailResource extends JsonResource
             'district' => new District($this->districts),
             'start_time' => $this->start_time,
             'category' => $this->category->name,
+            'about' => $this->about,
             'comments' => BusinessCommentResource::collection($this->comments),
             'personals' => PersonelResource::collection($this->personel),
             'gallery' => BusinessGalleryResource::collection($this->gallery),
-
+            
         ];
     }
 }
