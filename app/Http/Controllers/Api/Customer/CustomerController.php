@@ -288,9 +288,10 @@ class CustomerController extends Controller
      */
     public function updateImage(Request $request)
     {
+        $request->dd();
         $user = Auth::guard('api')->user();
         if ($user) {
-            $user->image = $request->profile;
+
             if ($user->save()){
                 return response()->json([
                     'status' => "success",
@@ -302,4 +303,22 @@ class CustomerController extends Controller
 
     }
 
+    public function base64Converter($base64Data)
+    {
+        $imageData = base64_decode($base64Data);
+        dd($imageData);
+        $image = imagecreatefromstring($imageData);
+
+        if ($image !== false) {
+            $path = storage_path('app/public/newImage/') . uniqid() . '.png';
+            imagepng($image, $path);
+            imagedestroy($image);
+
+            // PNG dosyasının storage'a kaydedildiği yol
+            return $path;
+        } else {
+            // Geçersiz bir resim verisi
+            return  "Hatalı Format";
+        }
+    }
 }
