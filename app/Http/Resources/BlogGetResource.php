@@ -18,7 +18,7 @@ class BlogGetResource extends JsonResource
             "id" => $this->id,
             'title' => $this->title,
             'image' => image($this->image),
-            'content' => strip_tags($this->description),
+            'content' => $this->description,
             'created_at' => $this->created_at->format('d.m.Y'),
             'comments' => BlogCommentResource::collection($this->comments),
         ];
