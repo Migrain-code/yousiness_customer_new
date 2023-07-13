@@ -291,7 +291,7 @@ class CustomerController extends Controller
         $user = Auth::guard('api')->user();
 
         if ($user) {
-            $request->dd();
+
             if ($request->hasFile('profilePhoto')){
                 $user->image= $request->file('profilePhoto')->store('customer_new_profile');
                 if ($user->save()){
