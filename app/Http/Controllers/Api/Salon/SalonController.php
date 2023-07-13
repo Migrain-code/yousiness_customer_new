@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Salon;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\BusinessCategoryResource;
+use App\Http\Resources\BusinessDetailResource;
 use App\Http\Resources\BusinessResource;
 use App\Models\Business;
 use App\Models\BusinessCategory;
@@ -35,5 +36,26 @@ class SalonController extends Controller
         return response()->json([
             'salons' => BusinessResource::collection($businesses),
         ]);
+    }
+    /**
+     *
+     * @group Salon List
+     *
+     */
+    public function get(Request $request)
+    {
+        $business = Business::find($request->id);
+        if ($business){
+            return response()->json([
+                'status' => "success",
+                'salon' => BusinessDetailResource::make($business),
+            ]);
+        }
+        else{
+            return response()->json([
+                'status' => "danger",
+                'salon' => "İşletme Bulunamadı"
+            ]);
+        }
     }
 }

@@ -62,6 +62,7 @@ Route::prefix('services')->group(function (){
 
 Route::prefix('salons')->group(function (){
     Route::get('all', [SalonController::class, 'all']);
+    Route::post('get', [SalonController::class, 'get']);
     Route::get('list', [SalonController::class, 'index']);
 });
 
