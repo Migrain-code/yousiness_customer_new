@@ -290,13 +290,23 @@ class CustomerController extends Controller
     {
         $user = Auth::guard('api')->user();
         if ($user) {
-            $user->image= $request->file('profilePhoto')->store('customer_new_profile');
-            if ($user->save()){
-                return response()->json([
-                    'status' => "success",
-                    'message'=> "Profiliniz Başarılı Bir Şekilde Güncellendi"
-                ]);
+            if ($request->hasFile('profilePhoto')){
+                $user->image= $request->file('profilePhoto')->store('customer_new_profile');
+                if ($user->save()){
+                    return response()->json([
+                        'status' => "success",
+                        'message'=> "Profiliniz Başarılı Bir Şekilde Güncellendi"
+                    ]);
+                }
             }
+            else{
+                    return response()->json([
+                        'status' => "warning",
+                        'message'=> "Profil Fotoğrafı Seçilmedi"
+                    ]);
+            }
+
+
         }
         return response()->json(['error' => 'Unauthorized'], 401);
 
