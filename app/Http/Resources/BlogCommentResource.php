@@ -17,6 +17,7 @@ class BlogCommentResource extends JsonResource
         return [
           'comment' => $this->comment,
           'created_at' => $this->created_at->format('d.m.Y'),
+          'customer' => Customer::collection($this->customer),
         ];
     }
 }
