@@ -290,7 +290,7 @@ class CustomerController extends Controller
     {
         $user = Auth::guard('api')->user();
         if ($user) {
-            $user->image= $request->file('profile')->store('customer_new_profile');
+            $user->image= $request->file('profilePhoto')->store('customer_new_profile');
             if ($user->save()){
                 return response()->json([
                     'status' => "success",
