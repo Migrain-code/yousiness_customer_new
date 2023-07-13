@@ -103,6 +103,19 @@ class Business extends Authenticatable
 
     public function comments()
     {
-        return $this->hasMany(BusinessComment::class, 'business_id', 'id')->latest();
+        return $this->hasMany(BusinessComment::class, 'business_id', 'id')->where('status', 1)->latest();
+    }
+
+    public function points()
+    {
+        $businessComments = $this->hasMany(BusinessComment::class, 'business_id', 'id')->where('status', 1);
+        $point = $businessComments->sum("point");
+
+        if ($point == 0 || $businessComments->count() == 0) {
+            return 0;
+        } else {
+            $total = $point / $businessComments->count();
+            return $total;
+        }
     }
 }

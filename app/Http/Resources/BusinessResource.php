@@ -15,11 +15,13 @@ class BusinessResource extends JsonResource
     public function toArray($request)
     {
         return [
+           'id' => $this->id,
            'name' => $this->name,
            'logo' => image($this->logo),
            'city' => new City($this->cities),
            'district' => new District($this->districts),
            'start_time' => $this->start_time,
+            'point' => $this->comments->count(),
         ];
     }
 }

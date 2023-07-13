@@ -30,7 +30,8 @@ class SalonController extends Controller
      */
     public function all()
     {
-        $businesses = Business::all();
+        $businesses = Business::select('id','name', 'logo', 'start_time', 'city', 'district')->with('cities', 'districts', 'comments')->get();
+
         return response()->json([
             'salons' => BusinessResource::collection($businesses),
         ]);
