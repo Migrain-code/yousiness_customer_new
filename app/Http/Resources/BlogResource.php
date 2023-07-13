@@ -17,7 +17,7 @@ class BlogResource extends JsonResource
         return [
            "id" => $this->id,
            'title' => $this->title,
-           'image' => $this->image,
+           'image' => image($this->image),
            'content' => strip_tags($this->description),
            'created_at' => $this->created_at->format('d.m.Y'),
         ];
