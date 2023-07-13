@@ -46,6 +46,7 @@ class SalonController extends Controller
     {
         /*Salon Detayı*/
         $business = Business::find($request->id);
+
         if ($business){
             return response()->json([
                 'status' => "success",

@@ -29,6 +29,7 @@ class BusinessDetailResource extends JsonResource
             'personals' => PersonelResource::collection($this->personel),
             'gallery' => BusinessGalleryResource::collection($this->gallery),
             'services' => BusinessServiceResource::collection($this->services),
+            'point' => $this->points(),
         ];
     }
 }
