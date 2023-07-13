@@ -294,7 +294,10 @@ class CustomerController extends Controller
             $requestData = $request->all();
 
             // Dizi şeklinde verileri döndür
-            return $requestData;
+            return response()->json([
+                'status' => "TEST",
+                'data' => $requestData,
+            ]);
             if ($request->hasFile('profilePhoto')){
                 $user->image= $request->file('profilePhoto')->store('customer_new_profile');
                 if ($user->save()){
