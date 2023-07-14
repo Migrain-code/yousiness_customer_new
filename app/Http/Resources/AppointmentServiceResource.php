@@ -16,6 +16,7 @@ class AppointmentServiceResource extends JsonResource
     {
         return [
           'personel' => PersonelResource::make($this->personel),
+          'name' => $this->service->subCategory->name,
           'start_time' => $this->start_time,
           'end_time' => $this->end_time,
         ];
