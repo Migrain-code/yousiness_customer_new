@@ -122,4 +122,11 @@ class Business extends Authenticatable
             return $total;
         }
     }
+    public function scopeOrderByAppointmentCount($query)
+    {
+        return $query->leftJoin('appointments', 'businesses.id', '=', 'appointments.business_id')
+            ->select('businesses.*')
+            ->groupBy('businesses.id')
+            ->orderByRaw('COUNT(appointments.id) DESC');
+    }
 }

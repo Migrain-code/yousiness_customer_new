@@ -192,6 +192,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="salon-list-POSTapi-salons-get">
                                 <a href="#salon-list-POSTapi-salons-get">POST api/salons/get</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="salon-list-GETapi-salons-popular">
+                                <a href="#salon-list-GETapi-salons-popular">GET api/salons/popular</a>
+                            </li>
                                                                         </ul>
                             </ul>
                     <ul id="tocify-header-salon-type" class="tocify-header">
@@ -386,7 +389,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/activity/get" \
     --header "Content-Type: application/json" \
     --data "{
-    \"activity_id\": 12
+    \"activity_id\": 16
 }"
 </code></pre></div>
 
@@ -402,7 +405,7 @@ const headers = {
 };
 
 let body = {
-    "activity_id": 12
+    "activity_id": 16
 };
 
 fetch(url, {
@@ -480,10 +483,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="activity_id"                data-endpoint="POSTapi-activity-get"
-               value="12"
+               value="16"
                data-component="body">
     <br>
-<p>Example: <code>12</code></p>
+<p>Example: <code>16</code></p>
         </div>
         </form>
 
@@ -620,8 +623,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
     --data "{
-    \"phone\": \"ut\",
-    \"password\": \"qp\'g$GcrQm_iJD?H)\"
+    \"phone\": \"repellendus\",
+    \"password\": \"*a:p\\\\)eB:=v;hs\"
 }"
 </code></pre></div>
 
@@ -637,8 +640,8 @@ const headers = {
 };
 
 let body = {
-    "phone": "ut",
-    "password": "qp'g$GcrQm_iJD?H)"
+    "phone": "repellendus",
+    "password": "*a:p\\)eB:=v;hs"
 };
 
 fetch(url, {
@@ -727,10 +730,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="phone"                data-endpoint="POSTapi-auth-login"
-               value="ut"
+               value="repellendus"
                data-component="body">
     <br>
-<p>The phone number of the user. Example: <code>ut</code></p>
+<p>The phone number of the user. Example: <code>repellendus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -738,10 +741,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-auth-login"
-               value="qp'g$GcrQm_iJD?H)"
+               value="*a:p\)eB:=v;hs"
                data-component="body">
     <br>
-<p>The password of the user. Example: <code>qp'g$GcrQm_iJD?H)</code></p>
+<p>The password of the user. Example: <code>*a:p\)eB:=v;hs</code></p>
         </div>
         </form>
 
@@ -761,8 +764,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/auth/register" \
     --header "Content-Type: application/json" \
     --data "{
-    \"name\": \"ipsam\",
-    \"phone\": \"quia\"
+    \"name\": \"alias\",
+    \"phone\": \"perspiciatis\"
 }"
 </code></pre></div>
 
@@ -778,8 +781,8 @@ const headers = {
 };
 
 let body = {
-    "name": "ipsam",
-    "phone": "quia"
+    "name": "alias",
+    "phone": "perspiciatis"
 };
 
 fetch(url, {
@@ -857,10 +860,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-auth-register"
-               value="ipsam"
+               value="alias"
                data-component="body">
     <br>
-<p>The phone number of the user. Example: <code>ipsam</code></p>
+<p>The phone number of the user. Example: <code>alias</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -868,10 +871,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="phone"                data-endpoint="POSTapi-auth-register"
-               value="quia"
+               value="perspiciatis"
                data-component="body">
     <br>
-<p>The password of the user. Example: <code>quia</code></p>
+<p>The password of the user. Example: <code>perspiciatis</code></p>
         </div>
         </form>
 
@@ -891,7 +894,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/auth/password-reset" \
     --header "Content-Type: application/json" \
     --data "{
-    \"phone\": \"tempora\"
+    \"phone\": \"fugiat\"
 }"
 </code></pre></div>
 
@@ -907,7 +910,7 @@ const headers = {
 };
 
 let body = {
-    "phone": "tempora"
+    "phone": "fugiat"
 };
 
 fetch(url, {
@@ -985,10 +988,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="phone"                data-endpoint="POSTapi-auth-password-reset"
-               value="tempora"
+               value="fugiat"
                data-component="body">
     <br>
-<p>The phone number of the user. Example: <code>tempora</code></p>
+<p>The phone number of the user. Example: <code>fugiat</code></p>
         </div>
         </form>
 
@@ -1008,7 +1011,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/auth/verify/code" \
     --header "Content-Type: application/json" \
     --data "{
-    \"code\": \"eos\"
+    \"code\": \"et\"
 }"
 </code></pre></div>
 
@@ -1024,7 +1027,7 @@ const headers = {
 };
 
 let body = {
-    "code": "eos"
+    "code": "et"
 };
 
 fetch(url, {
@@ -1102,10 +1105,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="POSTapi-auth-verify-code"
-               value="eos"
+               value="et"
                data-component="body">
     <br>
-<p>The phone number of the user. Example: <code>eos</code></p>
+<p>The phone number of the user. Example: <code>et</code></p>
         </div>
         </form>
 
@@ -1232,7 +1235,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/blog/get" \
     --header "Content-Type: application/json" \
     --data "{
-    \"blog_id\": 3
+    \"blog_id\": 6
 }"
 </code></pre></div>
 
@@ -1248,7 +1251,7 @@ const headers = {
 };
 
 let body = {
-    "blog_id": 3
+    "blog_id": 6
 };
 
 fetch(url, {
@@ -1326,10 +1329,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="blog_id"                data-endpoint="POSTapi-blog-get"
-               value="3"
+               value="6"
                data-component="body">
     <br>
-<p>Example: <code>3</code></p>
+<p>Example: <code>6</code></p>
         </div>
         </form>
 
@@ -1854,7 +1857,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/city/get" \
     --header "Content-Type: application/json" \
     --data "{
-    \"city_id\": 2
+    \"city_id\": 8
 }"
 </code></pre></div>
 
@@ -1870,7 +1873,7 @@ const headers = {
 };
 
 let body = {
-    "city_id": 2
+    "city_id": 8
 };
 
 fetch(url, {
@@ -1948,10 +1951,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="city_id"                data-endpoint="POSTapi-city-get"
-               value="2"
+               value="8"
                data-component="body">
     <br>
-<p>Example: <code>2</code></p>
+<p>Example: <code>8</code></p>
         </div>
         </form>
 
@@ -2902,8 +2905,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: {token}" \
     --header "Content-Type: application/json" \
     --data "{
-    \"name\": \"sint\",
-    \"phone\": \"deleniti\"
+    \"name\": \"aut\",
+    \"phone\": \"animi\"
 }"
 </code></pre></div>
 
@@ -2920,8 +2923,8 @@ const headers = {
 };
 
 let body = {
-    "name": "sint",
-    "phone": "deleniti"
+    "name": "aut",
+    "phone": "animi"
 };
 
 fetch(url, {
@@ -3010,10 +3013,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-customer-update-profile"
-               value="sint"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>sint</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -3021,10 +3024,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="phone"                data-endpoint="POSTapi-customer-update-profile"
-               value="deleniti"
+               value="animi"
                data-component="body">
     <br>
-<p>Example: <code>deleniti</code></p>
+<p>Example: <code>animi</code></p>
         </div>
         </form>
 
@@ -3050,7 +3053,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: {token}" \
     --header "Content-Type: application/json" \
     --data "{
-    \"password\": \"rfV;\\\\!Rf_S`a\"
+    \"password\": \"[jEekmLt\"
 }"
 </code></pre></div>
 
@@ -3067,7 +3070,7 @@ const headers = {
 };
 
 let body = {
-    "password": "rfV;\\!Rf_S`a"
+    "password": "[jEekmLt"
 };
 
 fetch(url, {
@@ -3156,10 +3159,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-customer-update-password"
-               value="rfV;\!Rf_S`a"
+               value="[jEekmLt"
                data-component="body">
     <br>
-<p>Example: <code>rfV;\!Rf_S</code>a`</p>
+<p>Example: <code>[jEekmLt</code></p>
         </div>
         </form>
 
@@ -19489,6 +19492,262 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                     </form>
 
+                    <h2 id="salon-list-GETapi-salons-popular">GET api/salons/popular</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-salons-popular">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/salons/popular"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/salons/popular"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-salons-popular">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 44
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;salons&quot;: [
+        {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 4
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;name&quot;: &quot;Furkan Studyo&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 55,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 47,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 87,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 39,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 71,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 31,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 1026,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 63,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-salons-popular" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-salons-popular"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-salons-popular"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-salons-popular" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-salons-popular">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-salons-popular" data-method="GET"
+      data-path="api/salons/popular"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-salons-popular', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-salons-popular"
+                    onclick="tryItOut('GETapi-salons-popular');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-salons-popular"
+                    onclick="cancelTryOut('GETapi-salons-popular');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-salons-popular"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/salons/popular</code></b>
+        </p>
+                    </form>
+
                 <h1 id="salon-type">Salon Type</h1>
 
     
@@ -19647,7 +19906,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/search/service?service_id=quod&amp;city_id=magni"</code></pre></div>
+    "http://127.0.0.1:8000/api/search/service?service_id=soluta&amp;city_id=molestiae"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -19656,8 +19915,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "service_id": "quod",
-    "city_id": "magni",
+    "service_id": "soluta",
+    "city_id": "molestiae",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -19723,10 +19982,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="service_id"                data-endpoint="POSTapi-search-service"
-               value="quod"
+               value="soluta"
                data-component="query">
     <br>
-<p>Example: <code>quod</code></p>
+<p>Example: <code>soluta</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -19734,10 +19993,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-search-service"
-               value="magni"
+               value="molestiae"
                data-component="query">
     <br>
-<p>Example: <code>magni</code></p>
+<p>Example: <code>molestiae</code></p>
             </div>
                 </form>
 
@@ -19755,7 +20014,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/search/business/type?category_id=ipsum&amp;city_id=officiis"</code></pre></div>
+    "http://127.0.0.1:8000/api/search/business/type?category_id=expedita&amp;city_id=maxime"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -19764,8 +20023,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "category_id": "ipsum",
-    "city_id": "officiis",
+    "category_id": "expedita",
+    "city_id": "maxime",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -19831,10 +20090,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="category_id"                data-endpoint="POSTapi-search-business-type"
-               value="ipsum"
+               value="expedita"
                data-component="query">
     <br>
-<p>Example: <code>ipsum</code></p>
+<p>Example: <code>expedita</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -19842,10 +20101,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-search-business-type"
-               value="officiis"
+               value="maxime"
                data-component="query">
     <br>
-<p>Example: <code>officiis</code></p>
+<p>Example: <code>maxime</code></p>
             </div>
                 </form>
 
@@ -19865,7 +20124,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/search/business/name" \
     --header "Content-Type: application/json" \
     --data "{
-    \"name\": \"ipsam\"
+    \"name\": \"debitis\"
 }"
 </code></pre></div>
 
@@ -19881,7 +20140,7 @@ const headers = {
 };
 
 let body = {
-    "name": "ipsam"
+    "name": "debitis"
 };
 
 fetch(url, {
@@ -19959,10 +20218,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-search-business-name"
-               value="ipsam"
+               value="debitis"
                data-component="body">
     <br>
-<p>Example: <code>ipsam</code></p>
+<p>Example: <code>debitis</code></p>
         </div>
         </form>
 

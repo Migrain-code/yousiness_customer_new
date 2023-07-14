@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "166a636e-4cf3-472d-904d-6b48b6ea48df",
+        "_postman_id": "f5d3a443-dc03-4b06-9527-c8f67ac0cc15",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":12}"
+                            "raw": "{\"activity_id\":16}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -188,7 +188,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"ut\",\"password\":\"qp'g$GcrQm_iJD?H)\"}"
+                            "raw": "{\"phone\":\"repellendus\",\"password\":\"*a:p\\\\)eB:=v;hs\"}"
                         },
                         "description": "",
                         "auth": {
@@ -219,7 +219,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ipsam\",\"phone\":\"quia\"}"
+                            "raw": "{\"name\":\"alias\",\"phone\":\"perspiciatis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -250,7 +250,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"tempora\"}"
+                            "raw": "{\"phone\":\"fugiat\"}"
                         },
                         "description": "",
                         "auth": {
@@ -281,7 +281,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"eos\"}"
+                            "raw": "{\"code\":\"et\"}"
                         },
                         "description": "",
                         "auth": {
@@ -370,7 +370,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":3}"
+                            "raw": "{\"blog_id\":6}"
                         },
                         "description": "",
                         "auth": {
@@ -459,7 +459,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":2}"
+                            "raw": "{\"city_id\":8}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -954,7 +954,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sint\",\"phone\":\"deleniti\"}"
+                            "raw": "{\"name\":\"aut\",\"phone\":\"animi\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin profil bilgilerini g\u00fcncelleyecek endpoint\n<ul>\n<li> city_id ve district_id zorunlu alan de\u011fildir istenirse g\u00f6nderilebilir <\/li>\n<li>Tarih format\u0131 2001-09-08 \u015feklinde (YY-AA-GG) \u015feklinde olma\u0131d\u0131r <\/li>\n<\/ul>",
                         "auth": {
@@ -989,7 +989,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"rfV;\\\\!Rf_S`a\"}"
+                            "raw": "{\"password\":\"[jEekmLt\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -1107,6 +1107,58 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "GET api\/salons\/popular",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/salons\/popular",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/salons\/popular"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "44"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"salons\":[{\"id\":8,\"name\":\"Muhammet T\\u00fcrkmen\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":4},{\"id\":9,\"name\":\"Furkan Studyo\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":0},{\"id\":55,\"name\":\"Muhammet T\\u00fcrkmen\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":0},{\"id\":47,\"name\":\"Muhammet T\\u00fcrkmen\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":0},{\"id\":87,\"name\":\"Muhammet T\\u00fcrkmen\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":0},{\"id\":39,\"name\":\"Muhammet T\\u00fcrkmen\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":0},{\"id\":71,\"name\":\"Muhammet T\\u00fcrkmen\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":0},{\"id\":31,\"name\":\"Muhammet T\\u00fcrkmen\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":0},{\"id\":1026,\"name\":\"Muhammet T\\u00fcrkmen\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":0},{\"id\":63,\"name\":\"Muhammet T\\u00fcrkmen\",\"logo\":\"http:\\\/\\\/127.0.0.1:8001\\\/storage\\\/business_logo\\\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg\",\"city\":{\"id\":1,\"slug\":\"adana\",\"name\":\"ADANA\"},\"district\":{\"id\":1,\"name\":\"ALADA\\u011e\"},\"start_time\":\"09:30\",\"point\":0}]}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -1181,18 +1233,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "quod",
+                                    "value": "soluta",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "magni",
+                                    "value": "molestiae",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=quod&city_id=magni"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=soluta&city_id=molestiae"
                         },
                         "method": "POST",
                         "header": [
@@ -1218,18 +1270,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "ipsum",
+                                    "value": "expedita",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "officiis",
+                                    "value": "maxime",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=ipsum&city_id=officiis"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=expedita&city_id=maxime"
                         },
                         "method": "POST",
                         "header": [
@@ -1268,7 +1320,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ipsam\"}"
+                            "raw": "{\"name\":\"debitis\"}"
                         },
                         "description": "",
                         "auth": {

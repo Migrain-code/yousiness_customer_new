@@ -60,4 +60,16 @@ class SalonController extends Controller
             ]);
         }
     }
+    /**
+     *
+     * @group Salon List
+     *
+     */
+    public function popular()
+    {
+        $businesses = Business::orderByAppointmentCount()->take(10)->get();
+        return response()->json([
+           'salons' => BusinessResource::collection($businesses)
+        ]);
+    }
 }

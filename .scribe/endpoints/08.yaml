@@ -68,3 +68,42 @@ endpoints:
     method: null
     route: null
     custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/salons/popular
+    metadata:
+      groupName: 'Salon List'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"salons":[{"id":8,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":4},{"id":9,"name":"Furkan Studyo","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":0},{"id":55,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":0},{"id":47,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":0},{"id":87,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":0},{"id":39,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":0},{"id":71,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":0},{"id":31,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":0},{"id":1026,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":0},{"id":63,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":0}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '44'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -64,11 +64,11 @@ endpoints:
         name: city_id
         description: ''
         required: true
-        example: 2
+        example: 8
         type: integer
         custom: []
     cleanBodyParameters:
-      city_id: 2
+      city_id: 8
     fileParameters: []
     responses: []
     responseFields: []
