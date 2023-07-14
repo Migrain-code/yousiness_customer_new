@@ -10,6 +10,7 @@ use App\Models\Activity;
 use App\Models\ActivityBusiness;
 use App\Models\Personel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ActivityController extends Controller
 {
@@ -22,9 +23,10 @@ class ActivityController extends Controller
     {
         $activities = Activity::where('status', 1)->get();
         return response()->json([
-           'activities' => ActivityResource::collection($activities),
+            'activities' => ActivityResource::collection($activities),
         ], 200);
     }
+
     /**
      * POST api/activity/get
      *
@@ -40,16 +42,17 @@ class ActivityController extends Controller
     public function get(ActivityGetRequest $request)
     {
         $activity = Activity::where('status', 1)->where('id', $request->activity_id)->first();
-        if ($activity){
+        if ($activity) {
             return response()->json([
-               'activity' => new ActivityDetailResource($activity)
+                'activity' => new ActivityDetailResource($activity)
             ], 200);
         }
         return response()->json([
-           'status' => "error",
-           'message' => "Etkinlik Bulunamadı"
+            'status' => "error",
+            'message' => "Etkinlik Bulunamadı"
         ]);
     }
+
     /**
      * POST api/activity/join
      *
@@ -61,40 +64,37 @@ class ActivityController extends Controller
      */
     public function personelControl(Request $request)
     {
-        $personel=Personel::where('email', $request->phone)->first();
-        if ($personel){
-            if (Hash::check($request->password, $personel->password)){
-                if($personel->activities()->where('activity_id', $request->activity_id)->first()){
+        $personel = Personel::where('email', $request->phone)->first();
+        if ($personel) {
+            if (Hash::check($request->password, $personel->password)) {
+                if ($personel->activities()->where('activity_id', $request->activity_id)->first()) {
                     return response()->json([
-                        'status'=>"warning",
-                        'message'=>"Bu etkinliğe zaten katıldınız",
+                        'status' => "warning",
+                        'message' => "Bu etkinliğe zaten katıldınız",
                     ]);
-                }
-                else{
-                    $activityPersonel=new ActivityBusiness();
-                    $activityPersonel->activity_id=$request->activity_id;
-                    $activityPersonel->personel_id=$personel->id;
-                    $activityPersonel->status=1;
-                    if ($activityPersonel->save()){
+                } else {
+                    $activityPersonel = new ActivityBusiness();
+                    $activityPersonel->activity_id = $request->activity_id;
+                    $activityPersonel->personel_id = $personel->id;
+                    $activityPersonel->status = 1;
+                    if ($activityPersonel->save()) {
                         return response()->json([
-                            'status'=>"success",
-                            'message'=>"Etkinliğe Katılımınız Onaylandı. Aşağıdaki Katılımcı Listesinden Görebilirsiniz",
+                            'status' => "success",
+                            'message' => "Etkinliğe Katılımınız Onaylandı. Aşağıdaki Katılımcı Listesinden Görebilirsiniz",
                         ]);
                     }
                 }
 
-            }
-            else{
+            } else {
                 return response()->json([
-                    'status'=>"danger",
-                    'message'=>"Kullanıcı Bilgisi Doğrulanamadı",
+                    'status' => "danger",
+                    'message' => "Kullanıcı Bilgisi Doğrulanamadı",
                 ]);
             }
-        }
-        else{
+        } else {
             return response()->json([
-                'status'=>"warning",
-                'message'=>"Girdiğiniz telefon numarası sistemde kayıtlı değil",
+                'status' => "warning",
+                'message' => "Girdiğiniz telefon numarası sistemde kayıtlı değil",
             ]);
         }
     }
