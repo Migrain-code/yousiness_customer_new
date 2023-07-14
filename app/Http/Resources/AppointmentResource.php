@@ -15,6 +15,7 @@ class AppointmentResource extends JsonResource
     public function toArray($request)
     {
         return [
+          'id' => $this->id,
           'business' => new BusinessResource($this->business),
           'date' => $this->start_time,
           'status' => $this->status("text"),

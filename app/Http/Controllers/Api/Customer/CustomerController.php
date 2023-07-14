@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Customer;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\CustomerCreateRequest;
+use App\Http\Resources\AppointmentDetailResoruce;
 use App\Http\Resources\AppointmentResource;
 use App\Http\Resources\BusinessResource;
 use App\Http\Resources\Customer;
@@ -154,6 +155,18 @@ class CustomerController extends Controller
             $appintments = $user->appointments;
             return response()->json([
                 'appointments' => AppointmentResource::collection($appintments)
+            ]);
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+
+    public function getAppointmentDetail(Request $request)
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $appintment = Appointment::where('id', $request->id)->first();
+            return response()->json([
+                'appointments' => AppointmentDetailResoruce::make($appintment)
             ]);
         }
         return response()->json(['error' => 'Unauthorized'], 401);
