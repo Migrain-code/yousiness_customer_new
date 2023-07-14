@@ -17,6 +17,7 @@ class CustomerCommentResource extends JsonResource
         return[
             'content' => $this->content,
             'point' => $this->point,
+            'created_at' => $this->created_at->format('d.m.Y H:i'),
             'business'=> BusinessResource::make($this->business)
         ];
     }
