@@ -54,7 +54,7 @@ class ActivityController extends Controller
      * POST api/activity/join
      *
      * <ul>
-     * <li> Göndermeniz Gereken Veriler activity_id, phone </li>
+     * <li> Göndermeniz Gereken Veriler activity_id, phone, password </li>
      *</ul>
      * @group Activity
      *

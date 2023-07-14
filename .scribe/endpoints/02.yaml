@@ -31,19 +31,19 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: voluptatem
+        example: eaque
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: perferendis
+        example: autem
         type: string
         custom: []
     cleanBodyParameters:
-      name: voluptatem
-      phone: perferendis
+      name: eaque
+      phone: autem
     fileParameters: []
     responses: []
     responseFields: []
@@ -83,11 +83,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '|pe$BeXQp%tq%'
+        example: 'hQSi#='
         type: string
         custom: []
     cleanBodyParameters:
-      password: '|pe$BeXQp%tq%'
+      password: 'hQSi#='
     fileParameters: []
     responses: []
     responseFields: []

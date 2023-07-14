@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "72b8e14e-58cf-4c2f-a595-579f07bf8b4b",
+        "_postman_id": "d7a10eef-757e-4509-8b1d-742eec3fa781",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -93,9 +93,33 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":2}"
+                            "raw": "{\"activity_id\":3}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/activity\/join",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/activity\/join",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/activity\/join"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "<ul>\n<li> G\u00f6ndermeniz Gereken Veriler activity_id, phone, password <\/li>\n<\/ul>",
                         "auth": {
                             "type": "noauth"
                         }
@@ -188,7 +212,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"fugiat\",\"password\":\">jZ7N(#,3\"}"
+                            "raw": "{\"phone\":\"eos\",\"password\":\"[p\\\/P=\\\"XbCOA\"}"
                         },
                         "description": "",
                         "auth": {
@@ -219,7 +243,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"a\",\"phone\":\"molestiae\"}"
+                            "raw": "{\"name\":\"voluptatem\",\"phone\":\"nam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -250,7 +274,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"magnam\"}"
+                            "raw": "{\"phone\":\"reiciendis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -281,7 +305,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"amet\"}"
+                            "raw": "{\"code\":\"impedit\"}"
                         },
                         "description": "",
                         "auth": {
@@ -370,7 +394,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":19}"
+                            "raw": "{\"blog_id\":8}"
                         },
                         "description": "",
                         "auth": {
@@ -982,7 +1006,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"voluptatem\",\"phone\":\"perferendis\"}"
+                            "raw": "{\"name\":\"eaque\",\"phone\":\"autem\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin profil bilgilerini g\u00fcncelleyecek endpoint\n<ul>\n<li> city_id ve district_id zorunlu alan de\u011fildir istenirse g\u00f6nderilebilir <\/li>\n<li>Tarih format\u0131 2001-09-08 \u015feklinde (YY-AA-GG) \u015feklinde olma\u0131d\u0131r <\/li>\n<\/ul>",
                         "auth": {
@@ -1017,7 +1041,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"|pe$BeXQp%tq%\"}"
+                            "raw": "{\"password\":\"hQSi#=\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -1261,18 +1285,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "nisi",
+                                    "value": "voluptas",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "consequatur",
+                                    "value": "et",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=nisi&city_id=consequatur"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=voluptas&city_id=et"
                         },
                         "method": "POST",
                         "header": [
@@ -1298,18 +1322,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "eius",
+                                    "value": "aut",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "dolorem",
+                                    "value": "facere",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=eius&city_id=dolorem"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=aut&city_id=facere"
                         },
                         "method": "POST",
                         "header": [
@@ -1348,7 +1372,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"asperiores\"}"
+                            "raw": "{\"name\":\"harum\"}"
                         },
                         "description": "",
                         "auth": {

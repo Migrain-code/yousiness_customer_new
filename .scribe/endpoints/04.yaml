@@ -70,11 +70,42 @@ endpoints:
         name: activity_id
         description: ''
         required: true
-        example: 2
+        example: 3
         type: integer
         custom: []
     cleanBodyParameters:
-      activity_id: 2
+      activity_id: 3
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/activity/join
+    metadata:
+      groupName: Activity
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST api/activity/join'
+      description: |-
+        <ul>
+        <li> Göndermeniz Gereken Veriler activity_id, phone, password </li>
+        </ul>
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
