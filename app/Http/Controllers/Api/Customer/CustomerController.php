@@ -308,10 +308,8 @@ class CustomerController extends Controller
      */
     public function updateImage(Request $request)
     {
-        $user = Auth::guard('api')->user();
-
+        $user = Customer::find($request->id);
         if ($user) {
-
             if ($request->hasFile('profilePhoto')){
                 $user->image= $request->file('profilePhoto')->store('customer_new_profile');
                 if ($user->save()){
