@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\Blog\BlogController;
 use App\Http\Controllers\Api\Service\ServiceController;
 use \App\Http\Controllers\Api\Salon\SalonController;
 use App\Http\Controllers\Api\Search\SearchController;
+use \App\Http\Controllers\Api\AdsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -50,7 +51,9 @@ Route::prefix('activity')->group(function (){
     Route::get('list', [ActivityController::class, 'index']);
     Route::post('get', [ActivityController::class, 'get']);
 });
-
+Route::prefix('ads')->group(function (){
+   Route::get('list', [AdsController::class, 'list']);
+});
 Route::prefix('blog')->group(function (){
     Route::get('list', [BlogController::class, 'index']);
     Route::post('get', [BlogController::class, 'get']);

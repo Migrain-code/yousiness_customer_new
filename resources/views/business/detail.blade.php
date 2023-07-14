@@ -91,7 +91,7 @@
                            <img style="100px; width: 100px;" src="https://via.placeholder.com/200x200" alt="">
                          </div>
                         <div class="mx-2 company-title d-flex flex-column justify-content-start my-auto">
-                            <h3 class="company-name">MUHAMMET TÜRKMEN</h3>
+                            <h3 class="company-name">{{$business->name}}</h3>
                             <div class="rating">
                                 @if($business->comments->count() > 0)
                                     @for($i=0; $i < 5; $i++ )
