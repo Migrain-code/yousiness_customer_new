@@ -51,6 +51,7 @@ Route::prefix('city')->group(function (){
 Route::prefix('activity')->group(function (){
     Route::get('list', [ActivityController::class, 'index']);
     Route::post('get', [ActivityController::class, 'get']);
+    Route::post('join', [ActivityController::class, 'personelControl']);
 });
 Route::prefix('ads')->group(function (){
    Route::get('list', [AdsController::class, 'list']);
