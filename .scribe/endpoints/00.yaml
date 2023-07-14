@@ -26,19 +26,19 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: repellendus
+        example: fugiat
         type: string
         custom: []
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: '*a:p\)eB:=v;hs'
+        example: '>jZ7N(#,3'
         type: string
         custom: []
     cleanBodyParameters:
-      phone: repellendus
-      password: '*a:p\)eB:=v;hs'
+      phone: fugiat
+      password: '>jZ7N(#,3'
     fileParameters: []
     responses: []
     responseFields: []
@@ -71,19 +71,19 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: alias
+        example: a
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: perspiciatis
+        example: molestiae
         type: string
         custom: []
     cleanBodyParameters:
-      name: alias
-      phone: perspiciatis
+      name: a
+      phone: molestiae
     fileParameters: []
     responses: []
     responseFields: []
@@ -116,11 +116,11 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: fugiat
+        example: magnam
         type: string
         custom: []
     cleanBodyParameters:
-      phone: fugiat
+      phone: magnam
     fileParameters: []
     responses: []
     responseFields: []
@@ -153,11 +153,11 @@ endpoints:
         name: code
         description: 'The phone number of the user.'
         required: true
-        example: et
+        example: amet
         type: string
         custom: []
     cleanBodyParameters:
-      code: et
+      code: amet
     fileParameters: []
     responses: []
     responseFields: []

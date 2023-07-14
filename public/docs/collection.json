@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "f5d3a443-dc03-4b06-9527-c8f67ac0cc15",
+        "_postman_id": "72b8e14e-58cf-4c2f-a595-579f07bf8b4b",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":16}"
+                            "raw": "{\"activity_id\":2}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -188,7 +188,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"repellendus\",\"password\":\"*a:p\\\\)eB:=v;hs\"}"
+                            "raw": "{\"phone\":\"fugiat\",\"password\":\">jZ7N(#,3\"}"
                         },
                         "description": "",
                         "auth": {
@@ -219,7 +219,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"alias\",\"phone\":\"perspiciatis\"}"
+                            "raw": "{\"name\":\"a\",\"phone\":\"molestiae\"}"
                         },
                         "description": "",
                         "auth": {
@@ -250,7 +250,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"fugiat\"}"
+                            "raw": "{\"phone\":\"magnam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -281,7 +281,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"et\"}"
+                            "raw": "{\"code\":\"amet\"}"
                         },
                         "description": "",
                         "auth": {
@@ -370,7 +370,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":6}"
+                            "raw": "{\"blog_id\":19}"
                         },
                         "description": "",
                         "auth": {
@@ -459,7 +459,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":8}"
+                            "raw": "{\"city_id\":9}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -811,6 +811,34 @@
                     ]
                 },
                 {
+                    "name": "POST api\/customer\/appointment\/get",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/appointment\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/appointment\/get"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu m\u00fc\u015fterinin randevu listesini verecek id g\u00f6nderilecek",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "GET api\/customer\/appointment\/upcoming\/list",
                     "request": {
                         "url": {
@@ -954,7 +982,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"aut\",\"phone\":\"animi\"}"
+                            "raw": "{\"name\":\"voluptatem\",\"phone\":\"perferendis\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin profil bilgilerini g\u00fcncelleyecek endpoint\n<ul>\n<li> city_id ve district_id zorunlu alan de\u011fildir istenirse g\u00f6nderilebilir <\/li>\n<li>Tarih format\u0131 2001-09-08 \u015feklinde (YY-AA-GG) \u015feklinde olma\u0131d\u0131r <\/li>\n<\/ul>",
                         "auth": {
@@ -989,7 +1017,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"[jEekmLt\"}"
+                            "raw": "{\"password\":\"|pe$BeXQp%tq%\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -1233,18 +1261,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "soluta",
+                                    "value": "nisi",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "molestiae",
+                                    "value": "consequatur",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=soluta&city_id=molestiae"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=nisi&city_id=consequatur"
                         },
                         "method": "POST",
                         "header": [
@@ -1270,18 +1298,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "expedita",
+                                    "value": "eius",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "maxime",
+                                    "value": "dolorem",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=expedita&city_id=maxime"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=eius&city_id=dolorem"
                         },
                         "method": "POST",
                         "header": [
@@ -1320,7 +1348,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"debitis\"}"
+                            "raw": "{\"name\":\"asperiores\"}"
                         },
                         "description": "",
                         "auth": {

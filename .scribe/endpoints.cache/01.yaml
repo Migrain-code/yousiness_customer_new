@@ -252,6 +252,35 @@ endpoints:
     custom: []
   -
     httpMethods:
+      - POST
+    uri: api/customer/appointment/get
+    metadata:
+      groupName: 'Customer (Lists)'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST api/customer/appointment/get'
+      description: 'Bu müşterinin randevu listesini verecek id gönderilecek'
+      authenticated: false
+      custom: []
+    headers:
+      Bearer: '{token}'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - GET
     uri: api/customer/appointment/upcoming/list
     metadata:

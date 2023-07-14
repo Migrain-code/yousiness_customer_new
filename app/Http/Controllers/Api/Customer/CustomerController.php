@@ -159,7 +159,14 @@ class CustomerController extends Controller
         }
         return response()->json(['error' => 'Unauthorized'], 401);
     }
-
+    /**
+     * POST api/customer/appointment/get
+     *
+     * Bu müşterinin randevu listesini verecek id gönderilecek
+     * @header Bearer {token}
+     *
+     *
+     */
     public function getAppointmentDetail(Request $request)
     {
         $user = Auth::guard('api')->user();
