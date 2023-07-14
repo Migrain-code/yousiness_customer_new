@@ -17,6 +17,7 @@ class CustomerCommentResource extends JsonResource
         return[
             'content' => $this->content,
             'point' => $this->point,
+            'business'=> BusinessResource::make($this->business)
         ];
     }
 }
