@@ -54,9 +54,6 @@ class ActivityController extends Controller
      * POST api/activity/join
      *
      * <ul>
-     * <li>Etkinliklerin gönderilen id ye göre verisini döndürür.  </li>
-     * <li>Ekinlikteki personel sayısını, detaylarını </li>
-     * <li>Sponsor sayısını ve detaylarını döndürür </li>
      * <li> Göndermeniz Gereken Veriler activity_id, phone </li>
      *</ul>
      * @group Activity
