@@ -314,9 +314,9 @@ class CustomerController extends Controller
 
         if ($user) {
             if ($request->profilePhoto){
-                $base64Image = // base64 verisi
-                $image = base64_decode($request->profilePhoto);
-                $path = 'new_images/profiles/' . Str::random(16). ".png";
+                $data = explode(',', $request->profilePhoto);
+                $image = base64_decode($data[1]);
+                $path = 'new_images/profiles/' . Str::random(64). ".png";
                 Storage::put($path, $image);
                 $user->image= $path;
                 if ($user->save()){
