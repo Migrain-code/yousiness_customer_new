@@ -23,6 +23,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 /**
  * @group Customer (Lists)
@@ -311,9 +313,12 @@ class CustomerController extends Controller
         $user = Auth::guard('api')->user();
 
         if ($user) {
-
-            if ($request->hasFile('profilePhoto')){
-                $user->image= $request->file('profilePhoto')->store('customer_new_profile');
+            if ($request->profilePhoto){
+                $base64Image = // base64 verisi
+                $image = base64_decode($request->profilePhoto);
+                $path = 'new_images/profiles/' . Str::random(16). ".jpg";
+                Storage::put($path, $image);
+                $user->image= $path;
                 if ($user->save()){
                     return response()->json([
                         'status' => "success",
