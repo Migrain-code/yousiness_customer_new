@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 /**
@@ -313,26 +314,37 @@ class CustomerController extends Controller
         $user = Auth::guard('api')->user();
 
         if ($user) {
-            if ($request->profilePhoto){
-                $newProfile = "data:image/jpeg;base64,".$request->profilePhoto;
-                $data = explode(',', $newProfile);
-                $image = base64_decode($data[1]);
-                $path = 'new_images/profiles/' . Str::random(64). ".jpeg";
-                Storage::put($path, $image);
-                $user->image= $path;
-                if ($user->save()){
-                    return response()->json([
-                        'status' => "success",
-                        'message'=> "Profiliniz Başarılı Bir Şekilde Güncellendi"
-                    ]);
+            $mime = $request->mime;
+            if ($mime === 'image/png' or $mime === 'image/jpeg' or $mime === 'image/jpg') {
+                if ($request->profilePhoto){
+                    $newProfile = "data:image/jpeg;base64,".$request->profilePhoto;
+                    $data = explode(',', $newProfile);
+                    $image = base64_decode($data[1]);
+                    if ($mime)
+                    $path = 'new_images/profiles/' . Str::random(64). ".jpeg";
+                    Storage::put($path, $image);
+                    $user->image= $path;
+                    if ($user->save()){
+                        return response()->json([
+                            'status' => "success",
+                            'message'=> "Profiliniz Başarılı Bir Şekilde Güncellendi"
+                        ]);
+                    }
                 }
-            }
-            else{
+                else{
                     return response()->json([
                         'status' => "warning",
                         'message'=> "Profil Fotoğrafı Seçilmedi"
                     ]);
+                }
+            } else {
+                return response()->json([
+                   'status' => "warning",
+                   'message' => "Sadece png, jpeg, jpg formatlarına izin veriliyor"
+                ]);
             }
+
+
 
 
         }
