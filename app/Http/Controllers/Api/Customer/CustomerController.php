@@ -245,7 +245,7 @@ class CustomerController extends Controller
      *
      *
      */
-    public function updateProfile(CustomerCreateRequest $request)
+    public function updateProfile(Request $request)
     {
         $user = Auth::guard('api')->user();
         if ($user) {
