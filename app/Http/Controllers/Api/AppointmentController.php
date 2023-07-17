@@ -19,6 +19,7 @@ class AppointmentController extends Controller
      * @group Appointment
      *
      *
+     *
      */
     public function businessGet(Request $request)
     {
