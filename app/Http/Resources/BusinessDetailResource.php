@@ -24,6 +24,7 @@ class BusinessDetailResource extends JsonResource
             'category' => $this->category->name,
             'about' => $this->about,
             'phone' => $this->phone,
+            'type' => $this->type_id,
             'address' => $this->address,
             'comments' => BusinessCommentResource::collection($this->comments),
             'personals' => PersonelResource::collection($this->personel),
