@@ -68,11 +68,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: \)GHMb2Il
+        example: 'csT^Mg#ib"J0'
         type: string
         custom: []
     cleanBodyParameters:
-      password: \)GHMb2Il
+      password: 'csT^Mg#ib"J0'
     fileParameters: []
     responses: []
     responseFields: []

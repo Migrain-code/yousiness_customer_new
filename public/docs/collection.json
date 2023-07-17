@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "fae59605-55dd-4a8f-a0a5-f2a8d68fa859",
+        "_postman_id": "3dd2c63b-2abd-425f-9923-f67631ffe0ef",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -58,7 +58,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "50"
+                                    "value": "49"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":13}"
+                            "raw": "{\"activity_id\":2}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -171,7 +171,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "49"
+                                    "value": "48"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -191,7 +191,7 @@
             "description": "",
             "item": [
                 {
-                    "name": "POST api\/appointmnet\/business\/get",
+                    "name": "POST \/api\/appointment\/business\/get",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -242,7 +242,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"fugit\",\"password\":\"~vRboJ):w@C\"}"
+                            "raw": "{\"phone\":\"dolorum\",\"password\":\"4B$^g}Y2V\\\"coVc{'\"}"
                         },
                         "description": "",
                         "auth": {
@@ -273,7 +273,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sunt\",\"phone\":\"vero\"}"
+                            "raw": "{\"name\":\"modi\",\"phone\":\"delectus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -304,7 +304,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"inventore\"}"
+                            "raw": "{\"phone\":\"laudantium\"}"
                         },
                         "description": "",
                         "auth": {
@@ -335,7 +335,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"eos\"}"
+                            "raw": "{\"code\":\"hic\"}"
                         },
                         "description": "",
                         "auth": {
@@ -389,7 +389,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "48"
+                                    "value": "47"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -424,7 +424,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":12}"
+                            "raw": "{\"blog_id\":7}"
                         },
                         "description": "",
                         "auth": {
@@ -478,7 +478,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "51"
+                                    "value": "50"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -513,7 +513,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":17}"
+                            "raw": "{\"city_id\":16}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -571,7 +571,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -627,7 +627,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "58"
+                                    "value": "57"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -683,7 +683,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "57"
+                                    "value": "56"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -739,7 +739,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "56"
+                                    "value": "55"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -795,7 +795,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "55"
+                                    "value": "54"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -851,7 +851,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "54"
+                                    "value": "53"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -935,7 +935,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "53"
+                                    "value": "52"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -991,7 +991,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "52"
+                                    "value": "51"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1064,7 +1064,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"\\\\)GHMb2Il\"}"
+                            "raw": "{\"password\":\"csT^Mg#ib\\\"J0\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -1146,7 +1146,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "46"
+                                    "value": "45"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1222,7 +1222,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "44"
+                                    "value": "43"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1234,6 +1234,30 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "POST api\/salons\/hizmet",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/salons\/hizmet",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/salons\/hizmet"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         },
@@ -1280,7 +1304,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "45"
+                                    "value": "44"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1308,18 +1332,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "aut",
+                                    "value": "quam",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "ad",
+                                    "value": "quo",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=aut&city_id=ad"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=quam&city_id=quo"
                         },
                         "method": "POST",
                         "header": [
@@ -1345,18 +1369,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "numquam",
+                                    "value": "qui",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "neque",
+                                    "value": "non",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=numquam&city_id=neque"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=qui&city_id=non"
                         },
                         "method": "POST",
                         "header": [
@@ -1395,7 +1419,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"molestiae\"}"
+                            "raw": "{\"name\":\"quis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1449,7 +1473,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "47"
+                                    "value": "46"
                                 },
                                 {
                                     "key": "access-control-allow-origin",

@@ -12,7 +12,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'POST api/appointmnet/business/get'
+      title: 'POST /api/appointment/business/get'
       description: |-
         Bu işletmenin hizmetlerini döndürecek
         <ul>
