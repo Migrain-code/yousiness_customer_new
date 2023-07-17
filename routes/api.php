@@ -73,6 +73,7 @@ Route::prefix('salons')->group(function (){
     Route::post('get', [SalonController::class, 'get']);
     Route::get('list', [SalonController::class, 'index']);
     Route::get('popular', [SalonController::class, 'popular']);
+    Route::post('hizmet', [SalonController::class, 'popularServices']);
 });
 
 Route::prefix('search')->group(function (){

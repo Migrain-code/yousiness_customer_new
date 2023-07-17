@@ -8,6 +8,7 @@ use App\Http\Resources\BusinessDetailResource;
 use App\Http\Resources\BusinessResource;
 use App\Models\Business;
 use App\Models\BusinessCategory;
+use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
 
 class SalonController extends Controller
@@ -71,5 +72,35 @@ class SalonController extends Controller
         return response()->json([
            'salons' => BusinessResource::collection($businesses)
         ]);
+    }
+    /**
+     *
+     * @group Salon List
+     *
+     */
+    public function popularServices(Request $request)
+    {
+
+        $service=ServiceCategory::where('id', $request->id)->first();
+        if ($service){
+            $businesses = Business::whereHas('services', function ($query) use ($service) {
+                $query->where('category', $service->id);
+            })->get();
+            if ($businesses->count() == 0){
+                return response()->json([
+                    'status' => 'warning',
+                    'message' => "Aradığınız Hizmet Türünde İşletme Kaydı Bulunamadı"
+                ]);
+            }
+            return response()->json([
+                'salons' => BusinessResource::collection($businesses)
+            ]);
+        }
+        else{
+            return response()->json([
+                'status' => 'warning',
+                'message' => "Hizmet Bulunamadı"
+            ]);
+        }
     }
 }
