@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\Service\ServiceController;
 use \App\Http\Controllers\Api\Salon\SalonController;
 use App\Http\Controllers\Api\Search\SearchController;
 use \App\Http\Controllers\Api\AdsController;
+use App\Http\Controllers\Api\AppointmentController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -42,7 +43,9 @@ Route::prefix('customer')->group(function (){
     Route::post('update/password', [CustomerController::class, 'updatePassword']);
     Route::post('update/image', [CustomerController::class, 'updateImage']);
 });
-
+Route::prefix('appointment')->group(function (){
+    Route::post('/business/get', [AppointmentController::class, 'businessGet']);
+});
 Route::prefix('city')->group(function (){
    Route::get('list', [CityController::class, 'index']);
    Route::post('get', [CityController::class, 'get']);

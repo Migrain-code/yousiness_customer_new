@@ -23,29 +23,12 @@ endpoints:
       custom: []
     headers:
       Bearer: '{token}'
-      Content-Type: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: true
-        example: eaque
-        type: string
-        custom: []
-      phone:
-        name: phone
-        description: ''
-        required: true
-        example: autem
-        type: string
-        custom: []
-    cleanBodyParameters:
-      name: eaque
-      phone: autem
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
@@ -85,11 +68,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'hQSi#='
+        example: \)GHMb2Il
         type: string
         custom: []
     cleanBodyParameters:
-      password: 'hQSi#='
+      password: \)GHMb2Il
     fileParameters: []
     responses: []
     responseFields: []
