@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class AppointmentController extends Controller
 {
     /**
-     * POST api/appointment/business/get
+     * POST /api/appointment/business/get
      *
      * Bu işletmenin hizmetlerini döndürecek
      * <ul>
