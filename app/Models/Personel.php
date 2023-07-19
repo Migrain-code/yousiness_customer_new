@@ -23,4 +23,10 @@ class Personel extends Model
     {
         return $this->hasMany(ActivityBusiness::class, 'personel_id', 'id');
     }
+
+    public function business()
+    {
+        return $this->hasOne(Business::class, 'id', 'business_id');
+
+    }
 }

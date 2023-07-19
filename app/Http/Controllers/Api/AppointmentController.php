@@ -8,7 +8,9 @@ use App\Http\Resources\PersonelResource;
 use App\Http\Resources\ServiceResource;
 use App\Models\Business;
 use App\Models\BusinessService;
+use App\Models\Personel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class AppointmentController extends Controller
 {
@@ -96,8 +98,8 @@ class AppointmentController extends Controller
 
     public function personalGet(Request $request)
     {
-        //$getData = json_decode($request->input('serviceIds'));
-        $getData = $request->serviceIds;
+        $getData = json_decode($request->input('serviceIds'));
+        //$getData = $request->serviceIds;
         $ap_services = [];
         foreach ($getData as $id){
 
@@ -112,5 +114,52 @@ class AppointmentController extends Controller
         return response()->json([
            'personels' => $ap_services,
         ]);
+    }
+
+    public function getDate(Request $request)
+    {
+        $getData = json_decode($request->input('personelIds'));
+        $personels=[];
+        //$getData = $request->personelIds;
+        foreach ($getData as $personel_id) {
+           $personels[]  = Personel::find($personel_id);
+        }
+        $business = $personels[0]->business;
+
+        $remainingDays = Carbon::now()->subDays(1)->diffInDays(Carbon::now()->copy()->endOfMonth());
+
+        for ($i = 0; $i < $remainingDays; $i++) {
+            $days = Carbon::now()->addDays($i);
+            if ($days < Carbon::now()->endOfMonth()) {
+                $remainingDate[] = $days->translatedFormat('d F');
+            }
+        }
+
+        $filledTime = $this->findTimes($business);
+
+        foreach ($filledTime as $time) {
+            $disabledDays[] = $time;
+        }
+        return response()->json([
+           'days' => $remainingDate,
+           'disabledDays' => $disabledDays,
+        ]);
+    }
+
+    public function findTimes($business)
+    {
+        $disableds = [];
+        foreach ($business->appointments()->whereNotIn('status', [8])->get() as $appointment) {
+            $startDateTime = Carbon::parse($appointment->start_time);
+            $endDateTime = Carbon::parse($appointment->end_time);
+
+            $currentDateTime = $startDateTime->copy();
+            while ($currentDateTime <= $endDateTime) {
+                $disableds[] = $currentDateTime->format('d.m.Y H:i');
+                $currentDateTime->addMinutes($business->appoinment_range);
+            }
+        }
+
+        return $disableds;
     }
 }
