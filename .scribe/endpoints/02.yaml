@@ -66,11 +66,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: ')"-H<UEv.N@b*'
+        example: '9JnMmk+4^3%S^#{C{S-'
         type: string
         custom: []
     cleanBodyParameters:
-      password: ')"-H<UEv.N@b*'
+      password: '9JnMmk+4^3%S^#{C{S-'
     fileParameters: []
     responses: []
     responseFields: []

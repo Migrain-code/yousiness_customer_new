@@ -28,19 +28,19 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: consequuntur
+        example: modi
         type: string
         custom: []
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: '5"p5"z:%%?mc@]Ym*m'
+        example: ';e;qn?sp>(M$;K~^q{/9'
         type: string
         custom: []
     cleanBodyParameters:
-      phone: consequuntur
-      password: '5"p5"z:%%?mc@]Ym*m'
+      phone: modi
+      password: ';e;qn?sp>(M$;K~^q{/9'
     fileParameters: []
     responses: []
     responseFields: []
@@ -73,19 +73,19 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: dolorem
+        example: libero
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: saepe
+        example: nihil
         type: string
         custom: []
     cleanBodyParameters:
-      name: dolorem
-      phone: saepe
+      name: libero
+      phone: nihil
     fileParameters: []
     responses: []
     responseFields: []
@@ -118,11 +118,11 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: optio
+        example: similique
         type: string
         custom: []
     cleanBodyParameters:
-      phone: optio
+      phone: similique
     fileParameters: []
     responses: []
     responseFields: []
@@ -155,11 +155,11 @@ endpoints:
         name: code
         description: 'The phone number of the user.'
         required: true
-        example: optio
+        example: beatae
         type: string
         custom: []
     cleanBodyParameters:
-      code: optio
+      code: beatae
     fileParameters: []
     responses: []
     responseFields: []
