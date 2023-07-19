@@ -26,19 +26,19 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: eligendi
+        example: ullam
         type: string
         custom: []
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: e%\lT|f_j
+        example: 'BSGM^4Q,xaYp'
         type: string
         custom: []
     cleanBodyParameters:
-      phone: eligendi
-      password: e%\lT|f_j
+      phone: ullam
+      password: 'BSGM^4Q,xaYp'
     fileParameters: []
     responses: []
     responseFields: []
@@ -71,19 +71,19 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: vel
+        example: eaque
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: sed
+        example: eos
         type: string
         custom: []
     cleanBodyParameters:
-      name: vel
-      phone: sed
+      name: eaque
+      phone: eos
     fileParameters: []
     responses: []
     responseFields: []
@@ -116,11 +116,11 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: nihil
+        example: qui
         type: string
         custom: []
     cleanBodyParameters:
-      phone: nihil
+      phone: qui
     fileParameters: []
     responses: []
     responseFields: []
@@ -153,11 +153,11 @@ endpoints:
         name: code
         description: 'The phone number of the user.'
         required: true
-        example: non
+        example: odit
         type: string
         custom: []
     cleanBodyParameters:
-      code: non
+      code: odit
     fileParameters: []
     responses: []
     responseFields: []

@@ -115,12 +115,23 @@ class AppointmentController extends Controller
            'personels' => $ap_services,
         ]);
     }
-
+    /**
+     * POST /api/appointment/date/get
+     *
+     * Bu tarihleri döndürecek
+     * <ul>
+     * <li>personelIds  gönderilecek </li>
+     *</ul>
+     * @group Appointment
+     *
+     *
+     *
+     */
     public function getDate(Request $request)
     {
-        $getData = json_decode($request->input('personelIds'));
+        //$getData = json_decode($request->input('personelIds'));
         $personels=[];
-        //$getData = $request->personelIds;
+        $getData = $request->personelIds;
         foreach ($getData as $personel_id) {
            $personels[]  = Personel::find($personel_id);
         }

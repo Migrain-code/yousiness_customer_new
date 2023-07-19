@@ -67,3 +67,35 @@ endpoints:
     method: null
     route: null
     custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/appointment/date/get
+    metadata:
+      groupName: Appointment
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST /api/appointment/date/get'
+      description: |-
+        Bu tarihleri döndürecek
+        <ul>
+        <li>personelIds  gönderilecek </li>
+        </ul>
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
