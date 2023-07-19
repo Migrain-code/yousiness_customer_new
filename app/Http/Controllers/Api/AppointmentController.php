@@ -183,9 +183,10 @@ class AppointmentController extends Controller
         }
 
         $clocks = [];
-
+        $loop = 0;
         for($i=\Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range)){
             $clock = [
+                'id' => $getDate->format('d_m_Y_'. $i->format('H_i')),
                 'saat' =>  $i->format('H:i'),
                 'value' => $getDate->format('d.m.Y '. $i->format('H:i')),
                 'durum' => in_array($getDate->format('d.m.Y '). $i->format('H:i'), $disabledDays) ? false : true,
