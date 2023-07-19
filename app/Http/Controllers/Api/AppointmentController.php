@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\AppointmentPersonelResource;
 use App\Http\Resources\PersonelResource;
 use App\Http\Resources\ServiceResource;
+use App\Models\Appointment;
+use App\Models\AppointmentServices;
 use App\Models\Business;
 use App\Models\BusinessService;
+use App\Models\Customer;
 use App\Models\Personel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -98,7 +101,6 @@ class AppointmentController extends Controller
 
     public function personalGet(Request $request)
     {
-        //$getData = json_decode($request->input('serviceIds'));
         $getData = $request->serviceIds;
         $ap_services = [];
         foreach ($getData as $id){
@@ -199,6 +201,72 @@ class AppointmentController extends Controller
         ]);
 
     }
+    /**
+     * POST /api/appointment/create
+     *
+     * Bu saatleri döndürecek
+     * <ul>
+     * <li>eğer giriş yapmışsa customer_id </li>
+     * <li>eğer giriş yapmamışsa name, surname, phone </li>
+     * <li>gerekli olanlar => business_id, services, appointment_date, personels </li>
+     *</ul>
+     * @group Appointment
+     *
+     *
+     *
+     */
+    public function create(Request $request)
+    {
+        $business = Business::find($request->business_id);
+        if (isset($request->customer_id)) {
+            $appointment = new Appointment();
+            $appointment->business_id = $business->id;
+            $appointment->customer_id = $request->customer_id;
+        } else {
+            $appointment = new Appointment();
+            $appointment->business_id = $business->id;
+            $customer = new Customer();
+            $customer->name = $request->input('name');
+            $customer->phone = $request->input('phone');
+            $customer->email = null;
+            $customer->image = "admin/users.svg";
+            $customer->password = Hash::make('123456');
+            $customer->save();
+            $appointment->customer_id = $customer->id;
+        }
+
+        if ($business->approve_type == 1) {
+            $appointment->status = 1;
+        } else {
+            $appointment->status = 0;
+        }
+        $appointment->save();
+
+        $loop = 0;
+        $clock = Carbon::parse($request->input('appointment_date'));
+        $sumTime = 0;
+
+        foreach (json_decode($request->services) as $service) {
+            $appointmentService = new AppointmentServices();
+            $appointmentService->appointment_id = $appointment->id;
+            $appointmentService->personel_id = $request->personels[$loop];
+            $appointmentService->service_id = $service;
+            $findService = BusinessService::find($service);
+            $appointmentService->start_time = $clock->format('d.m.Y H:i');
+            $appointmentService->end_time = $clock->addMinute($findService->time)->format('d.m.Y H:i');
+            $sumTime += $findService->time;
+            $appointmentService->save();
+            $loop++;
+        }
+        $appointment->start_time = Carbon::parse($request->input('appointment_date'))->format('d.m.Y H:i');
+        $appointment->end_time = Carbon::parse($request->input('appointment_date'))->addMinute($sumTime)->format('d.m.Y H:i');
+        $appointment->save();
+        return response()->json([
+           'status' => 'Success',
+           'message' => $business->name . " işletmesine " . $appointment->start_time ." - ". $appointment->end_time . " arasında randevu alındı",
+        ]);
+    }
+
     public function findTimes($business)
     {
         $disableds = [];
