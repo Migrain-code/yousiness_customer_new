@@ -15,6 +15,7 @@ use App\Models\Personel;
 use App\Services\Sms;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class AppointmentController extends Controller
 {
@@ -226,7 +227,7 @@ class AppointmentController extends Controller
             ]);
         }
         $business = Business::find($request->business_id);
-        if ($request->customer_id) {
+        if (isset($request->customer_id)) {
             $appointment = new Appointment();
             $appointment->business_id = $business->id;
             $appointment->customer_id = $request->customer_id;
