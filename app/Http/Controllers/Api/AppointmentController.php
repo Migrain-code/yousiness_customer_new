@@ -96,7 +96,8 @@ class AppointmentController extends Controller
 
     public function personalGet(Request $request)
     {
-        $getData = json_decode($request->input('serviceIds'));
+        //$getData = json_decode($request->input('serviceIds'));
+        $getData = $request->serviceIds;
         $ap_services = [];
         foreach ($getData as $id){
 
