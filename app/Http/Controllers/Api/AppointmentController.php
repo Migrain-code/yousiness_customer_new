@@ -98,8 +98,8 @@ class AppointmentController extends Controller
 
     public function personalGet(Request $request)
     {
-        //$getData = json_decode($request->input('serviceIds'));
-        $getData = $request->serviceIds;
+        $getData = json_decode($request->input('serviceIds'));
+        //$getData = $request->serviceIds;
         $ap_services = [];
         foreach ($getData as $id){
 
@@ -118,9 +118,9 @@ class AppointmentController extends Controller
 
     public function getDate(Request $request)
     {
-        //$getData = json_decode($request->input('personelIds'));
+        $getData = json_decode($request->input('personelIds'));
         $personels=[];
-        $getData = $request->personelIds;
+        //$getData = $request->personelIds;
         foreach ($getData as $personel_id) {
            $personels[]  = Personel::find($personel_id);
         }
@@ -131,18 +131,38 @@ class AppointmentController extends Controller
         for ($i = 0; $i < $remainingDays; $i++) {
             $days = Carbon::now()->addDays($i);
             if ($days < Carbon::now()->endOfMonth()) {
-                $remainingDate[] = $days->translatedFormat('d F');
+                $remainingDate[] = $days;
             }
         }
 
         $filledTime = $this->findTimes($business);
 
         foreach ($filledTime as $time) {
-            $disabledDays[] = $time;
+            $disabledDays[] = Carbon::parse($time)->format('H:i');
         }
+
+
+        foreach($remainingDate as $date){
+            $clocks = [];
+            for($i=\Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range)){
+                $clock = [
+                    'saat' =>  $i->format('H:i'),
+                    'value' => $date->format('d.m.Y '. $i->format('H:i')),
+                    'durum' => in_array($i->format('H:i'), $disabledDays) ? false : true,
+                ];
+                $clocks[] = $clock;
+            }
+
+            $dates[] = [
+                'date'  => $date->translatedFormat('d'),
+                'day' => $date->translatedFormat('D'),
+                'text' => $date->translatedFormat('F d D'),
+                'clocks' => $clocks
+            ];
+        }
+
         return response()->json([
-           'days' => $remainingDate,
-           'disabledDays' => $disabledDays,
+           'dates' => $dates,
         ]);
     }
 
