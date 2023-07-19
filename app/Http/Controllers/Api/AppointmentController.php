@@ -160,7 +160,18 @@ class AppointmentController extends Controller
            'business_id' => $business->id,
         ]);
     }
-
+    /**
+     * POST /api/appointment/clock/get
+     *
+     * Bu saatleri döndürecek
+     * <ul>
+     * <li>date ve business_id gönderilecek </li>
+     *</ul>
+     * @group Appointment
+     *
+     *
+     *
+     */
     public function getClock(Request $request)
     {
         $getDate = Carbon::parse($request->date);

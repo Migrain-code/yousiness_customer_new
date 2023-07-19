@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "5af917ff-36e1-41e7-b263-f5fdb46595cf",
+        "_postman_id": "b123ae73-fef4-4842-ab00-900cc626f8a8",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":11}"
+                            "raw": "{\"activity_id\":17}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -261,6 +261,30 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "POST \/api\/appointment\/clock\/get",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/appointment\/clock\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/appointment\/clock\/get"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu saatleri d\u00f6nd\u00fcrecek\n<ul>\n<li>date ve business_id g\u00f6nderilecek <\/li>\n<\/ul>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         },
@@ -290,7 +314,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"ullam\",\"password\":\"BSGM^4Q,xaYp\"}"
+                            "raw": "{\"phone\":\"consequuntur\",\"password\":\"5\\\"p5\\\"z:%%?mc@]Ym*m\"}"
                         },
                         "description": "",
                         "auth": {
@@ -321,7 +345,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"eaque\",\"phone\":\"eos\"}"
+                            "raw": "{\"name\":\"dolorem\",\"phone\":\"saepe\"}"
                         },
                         "description": "",
                         "auth": {
@@ -352,7 +376,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"qui\"}"
+                            "raw": "{\"phone\":\"optio\"}"
                         },
                         "description": "",
                         "auth": {
@@ -383,7 +407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"odit\"}"
+                            "raw": "{\"code\":\"optio\"}"
                         },
                         "description": "",
                         "auth": {
@@ -472,7 +496,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":1}"
+                            "raw": "{\"blog_id\":10}"
                         },
                         "description": "",
                         "auth": {
@@ -561,7 +585,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":11}"
+                            "raw": "{\"city_id\":13}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -1112,7 +1136,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"]'{C*\\\/0wu=FuO{Zr\"}"
+                            "raw": "{\"password\":\")\\\"-H<UEv.N@b*\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -1380,18 +1404,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "mollitia",
+                                    "value": "consectetur",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "cumque",
+                                    "value": "nisi",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=mollitia&city_id=cumque"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=consectetur&city_id=nisi"
                         },
                         "method": "POST",
                         "header": [
@@ -1417,18 +1441,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "porro",
+                                    "value": "sapiente",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "officiis",
+                                    "value": "sed",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=porro&city_id=officiis"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=sapiente&city_id=sed"
                         },
                         "method": "POST",
                         "header": [
@@ -1467,7 +1491,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sint\"}"
+                            "raw": "{\"name\":\"voluptas\"}"
                         },
                         "description": "",
                         "auth": {

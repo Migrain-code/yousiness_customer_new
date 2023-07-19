@@ -66,11 +66,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: "]'{C*/0wu=FuO{Zr"
+        example: ')"-H<UEv.N@b*'
         type: string
         custom: []
     cleanBodyParameters:
-      password: "]'{C*/0wu=FuO{Zr"
+      password: ')"-H<UEv.N@b*'
     fileParameters: []
     responses: []
     responseFields: []
