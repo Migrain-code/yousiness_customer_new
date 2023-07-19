@@ -157,7 +157,8 @@ class CustomerController extends Controller
         if ($user) {
             $appintments = $user->appointments;
             return response()->json([
-                'appointments' => AppointmentResource::collection($appintments)
+                'user' =>  $user,
+                /*'appointments' => AppointmentResource::collection($appintments)*/
             ]);
         }
         return response()->json(['error' => 'Unauthorized'], 401);
