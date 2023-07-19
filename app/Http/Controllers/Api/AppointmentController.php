@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AppointmentPersonelResource;
+use App\Http\Resources\PersonelResource;
 use App\Http\Resources\ServiceResource;
 use App\Models\Business;
+use App\Models\BusinessService;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
@@ -77,5 +80,36 @@ class AppointmentController extends Controller
                 'message' => 'İşletme Kaydı Bulunamadı',
             ]);
         }
+    }
+    /**
+     * POST /api/appointment/personal/get
+     *
+     * Bu hizmetlerin personellerini döndürecek
+     * <ul>
+     * <li>serviceIds  gönderilecek </li>
+     *</ul>
+     * @group Appointment
+     *
+     *
+     *
+     */
+
+    public function personalGet(Request $request)
+    {
+        $getData = json_decode($request->input('serviceIds'));
+        $ap_services = [];
+        foreach ($getData as $id){
+
+            $service = BusinessService::find($id);
+            $ap_services[] = [
+              'id' => $id,
+              'name' => $service->subCategory->name,
+              'personels' => AppointmentPersonelResource::collection($service->personels),
+            ];
+
+        }
+        return response()->json([
+           'personels' => $ap_services,
+        ]);
     }
 }

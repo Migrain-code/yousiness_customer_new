@@ -28,19 +28,19 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: dolorum
+        example: eligendi
         type: string
         custom: []
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: '4B$^g}Y2V"coVc{'''
+        example: e%\lT|f_j
         type: string
         custom: []
     cleanBodyParameters:
-      phone: dolorum
-      password: '4B$^g}Y2V"coVc{'''
+      phone: eligendi
+      password: e%\lT|f_j
     fileParameters: []
     responses: []
     responseFields: []
@@ -73,19 +73,19 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: modi
+        example: vel
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: delectus
+        example: sed
         type: string
         custom: []
     cleanBodyParameters:
-      name: modi
-      phone: delectus
+      name: vel
+      phone: sed
     fileParameters: []
     responses: []
     responseFields: []
@@ -118,11 +118,11 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: laudantium
+        example: nihil
         type: string
         custom: []
     cleanBodyParameters:
-      phone: laudantium
+      phone: nihil
     fileParameters: []
     responses: []
     responseFields: []
@@ -155,11 +155,11 @@ endpoints:
         name: code
         description: 'The phone number of the user.'
         required: true
-        example: hic
+        example: non
         type: string
         custom: []
     cleanBodyParameters:
-      code: hic
+      code: non
     fileParameters: []
     responses: []
     responseFields: []

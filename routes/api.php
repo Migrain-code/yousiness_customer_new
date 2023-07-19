@@ -45,6 +45,8 @@ Route::prefix('customer')->group(function (){
 });
 Route::prefix('appointment')->group(function (){
     Route::post('/business/get', [AppointmentController::class, 'businessGet']);
+    Route::post('/personal/get', [AppointmentController::class, 'personalGet']);
+
 });
 Route::prefix('city')->group(function (){
    Route::get('list', [CityController::class, 'index']);

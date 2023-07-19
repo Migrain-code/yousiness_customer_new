@@ -68,11 +68,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'csT^Mg#ib"J0'
+        example: 'ic[z[Rfv}eV+J1&b5d@<'
         type: string
         custom: []
     cleanBodyParameters:
-      password: 'csT^Mg#ib"J0'
+      password: 'ic[z[Rfv}eV+J1&b5d@<'
     fileParameters: []
     responses: []
     responseFields: []
