@@ -178,7 +178,7 @@ class AppointmentController extends Controller
     {
         $getDate = Carbon::parse($request->date);
         $business = Business::find($request->business_id);
-
+        $disabledDays=[];
         $filledTime = $this->findTimes($business);
         foreach ($filledTime as $time) {
             $disabledDays[] = $time;
