@@ -218,6 +218,12 @@ class AppointmentController extends Controller
      */
     public function create(Request $request)
     {
+        if (count($request->personels) != count($request->services)){
+            return response()->json([
+               'status' => "warning",
+               'message' => "Seçilen Hizmet Sayısı Kadar Personel Seçimi Yapılmalı"
+            ]);
+        }
         $business = Business::find($request->business_id);
         if (isset($request->customer_id)) {
             $appointment = new Appointment();
