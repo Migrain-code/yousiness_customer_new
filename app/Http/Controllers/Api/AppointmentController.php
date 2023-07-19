@@ -14,6 +14,7 @@ use App\Models\Customer;
 use App\Models\Personel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class AppointmentController extends Controller
 {
