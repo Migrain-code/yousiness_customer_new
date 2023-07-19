@@ -118,9 +118,9 @@ class AppointmentController extends Controller
 
     public function getDate(Request $request)
     {
-        $getData = json_decode($request->input('personelIds'));
+        //$getData = json_decode($request->input('personelIds'));
         $personels=[];
-        //$getData = $request->personelIds;
+        $getData = $request->personelIds;
         foreach ($getData as $personel_id) {
            $personels[]  = Personel::find($personel_id);
         }
