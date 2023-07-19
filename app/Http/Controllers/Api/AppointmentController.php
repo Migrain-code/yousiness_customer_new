@@ -246,7 +246,7 @@ class AppointmentController extends Controller
         $clock = Carbon::parse($request->input('appointment_date'));
         $sumTime = 0;
 
-        foreach (json_decode($request->services) as $service) {
+        foreach ($request->services as $service) {
             $appointmentService = new AppointmentServices();
             $appointmentService->appointment_id = $appointment->id;
             $appointmentService->personel_id = $request->personels[$loop];
