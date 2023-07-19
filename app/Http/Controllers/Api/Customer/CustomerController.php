@@ -201,14 +201,13 @@ class CustomerController extends Controller
                 })
                 ->latest()
                 ->get();
-
             foreach ($activeAppointments as $appointment) {
                 if (Carbon::parse($appointment->end_time) > Carbon::now()) {
                     $appointments[] = $appointment;
                 }
             }
             return response()->json([
-                'appointments' => AppointmentResource::collection($activeAppointments)
+                'appointments' => AppointmentResource::collection($appointments)
             ]);
         }
         return response()->json(['error' => 'Unauthorized'], 401);
