@@ -146,37 +146,47 @@ class AppointmentController extends Controller
             }
         }
 
-        $filledTime = $this->findTimes($business);
-
-        foreach ($filledTime as $time) {
-            $disabledDays[] = Carbon::parse($time)->format('H:i');
-        }
-
-
         foreach($remainingDate as $date){
-            $clocks = [];
-            for($i=\Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range)){
-                $clock = [
-                    'saat' =>  $i->format('H:i'),
-                    'value' => $date->format('d.m.Y '. $i->format('H:i')),
-                    'durum' => in_array($i->format('H:i'), $disabledDays) ? false : true,
-                ];
-                $clocks[] = $clock;
-            }
-
             $dates[] = [
                 'date'  => $date->translatedFormat('d'),
                 'day' => $date->translatedFormat('D'),
                 'text' => $date->translatedFormat('F d D'),
-                'clocks' => $clocks
+                'value' => $date,
             ];
         }
 
         return response()->json([
            'dates' => $dates,
+           'business_id' => $business->id,
         ]);
     }
 
+    public function getClock(Request $request)
+    {
+        $getDate = Carbon::parse($request->date);
+        $business = Business::find($request->business_id);
+
+        $filledTime = $this->findTimes($business);
+        foreach ($filledTime as $time) {
+            $disabledDays[] = $time;
+        }
+
+        $clocks = [];
+
+        for($i=\Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range)){
+            $clock = [
+                'saat' =>  $i->format('H:i'),
+                'value' => $getDate->format('d.m.Y '. $i->format('H:i')),
+                'durum' => in_array($getDate->format('d.m.Y '). $i->format('H:i'), $disabledDays) ? false : true,
+            ];
+            $clocks[] = $clock;
+        }
+
+        return response()->json([
+            'clocks' => $clocks,
+        ]);
+
+    }
     public function findTimes($business)
     {
         $disableds = [];
