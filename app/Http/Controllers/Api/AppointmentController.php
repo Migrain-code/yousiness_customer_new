@@ -133,14 +133,14 @@ class AppointmentController extends Controller
      */
     public function getDate(Request $request)
     {
-        return $request->all();
+
         //$getData = json_decode($request->input('personelIds'));
         $personels=[];
         $getData = $request->personelIds;
         foreach ($getData as $personel_id) {
            $personels[]  = Personel::find($personel_id);
         }
-        $business = $personels[0]->business;
+        $business = Business::find($request->business_id);
 
         $remainingDays = Carbon::now()->subDays(1)->diffInDays(Carbon::now()->copy()->endOfMonth());
 
