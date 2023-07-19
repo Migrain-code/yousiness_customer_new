@@ -12,6 +12,7 @@ use App\Models\Business;
 use App\Models\BusinessService;
 use App\Models\Customer;
 use App\Models\Personel;
+use App\Services\Sms;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -132,6 +133,7 @@ class AppointmentController extends Controller
      */
     public function getDate(Request $request)
     {
+        return $request->all();
         //$getData = json_decode($request->input('personelIds'));
         $personels=[];
         $getData = $request->personelIds;
@@ -269,7 +271,7 @@ class AppointmentController extends Controller
         $appointment->end_time = Carbon::parse($request->input('appointment_date'))->addMinute($sumTime)->format('d.m.Y H:i');
         $appointment->save();
         return response()->json([
-           'status' => 'Success',
+           'status' => 'success',
            'message' => $business->name . " işletmesine " . $appointment->start_time ." - ". $appointment->end_time . " arasında randevu alındı",
         ]);
     }
