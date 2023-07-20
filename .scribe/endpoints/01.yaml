@@ -1,274 +1,43 @@
-name: 'Customer (Lists)'
+name: Authentication
 description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/customer/get
-    metadata:
-      groupName: 'Customer (Lists)'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'GET api/customer/get'
-      description: |-
-        Status Codes
-        <ul>
-        <li>200 Başarılı</li>
-        <li>422 Validator Hatası</li>
-        <li> 401 Unauthorized Hatası </li>
-        </ul>
-        Bu müşteri bilgilerini döndürecek
-      authenticated: false
-      custom: []
-    headers:
-      Bearer: '{token}'
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"error":"Unauthorized"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/customer/favorite/list
-    metadata:
-      groupName: 'Customer (Lists)'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'GET api/customer/favorite/list'
-      description: 'Bu müşterinin eklediği favori işletmelerin kayıtlarını döndürecek'
-      authenticated: false
-      custom: []
-    headers:
-      Bearer: '{token}'
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"error":"Unauthorized"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/customer/deal/list
-    metadata:
-      groupName: 'Customer (Lists)'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'GET api/customer/deal/list'
-      description: 'Bu müşterinin daha önce randevu aldığı işletmelerin kayıtlarını döndürecek'
-      authenticated: false
-      custom: []
-    headers:
-      Bearer: '{token}'
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"error":"Unauthorized"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/customer/order/list
-    metadata:
-      groupName: 'Customer (Lists)'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'GET api/customer/order/list'
-      description: 'Bu müşterinin vermiş olduğu ürün siparişlerini listeleyecek'
-      authenticated: false
-      custom: []
-    headers:
-      Bearer: '{token}'
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"error":"Unauthorized"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/customer/packet/list
-    metadata:
-      groupName: 'Customer (Lists)'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'GET api/customer/packet/list'
-      description: 'Bu müşterinin işletmelerden almış olduğu paketlerin listesini verecek'
-      authenticated: false
-      custom: []
-    headers:
-      Bearer: '{token}'
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"error":"Unauthorized"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/customer/appointment/list
-    metadata:
-      groupName: 'Customer (Lists)'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'GET api/customer/appointment/list'
-      description: 'Bu müşterinin randevu listesini verecek'
-      authenticated: false
-      custom: []
-    headers:
-      Bearer: '{token}'
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"error":"Unauthorized"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - POST
-    uri: api/customer/appointment/get
+    uri: api/auth/register
     metadata:
-      groupName: 'Customer (Lists)'
+      groupName: Authentication
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'POST api/customer/appointment/get'
-      description: 'Bu müşterinin randevu listesini verecek id gönderilecek'
+      title: ''
+      description: ''
       authenticated: false
       custom: []
     headers:
-      Bearer: '{token}'
+      Content-Type: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The phone number of the user.'
+        required: true
+        example: sunt
+        type: string
+        custom: []
+      phone:
+        name: phone
+        description: 'The password of the user.'
+        required: true
+        example: ut
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: sunt
+      phone: ut
     fileParameters: []
     responses: []
     responseFields: []
@@ -279,38 +48,35 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/customer/appointment/upcoming/list
+      - POST
+    uri: api/auth/password-reset
     metadata:
-      groupName: 'Customer (Lists)'
+      groupName: Authentication
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'GET api/customer/appointment/upcoming/list'
-      description: 'Bu müşterinin yaklaşan randevu listesini verecek'
+      title: ''
+      description: ''
       authenticated: false
       custom: []
     headers:
-      Bearer: '{token}'
+      Content-Type: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"error":"Unauthorized"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
-          access-control-allow-origin: '*'
-        description: null
+    bodyParameters:
+      phone:
+        name: phone
+        description: 'The phone number of the user.'
+        required: true
+        example: iure
+        type: string
         custom: []
+    cleanBodyParameters:
+      phone: iure
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -319,38 +85,35 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/customer/comment/list
+      - POST
+    uri: api/auth/verify/code
     metadata:
-      groupName: 'Customer (Lists)'
+      groupName: Authentication
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'GET api/customer/comment/list'
-      description: 'Bu müşterinin yorum listesini verecek'
+      title: ''
+      description: ''
       authenticated: false
       custom: []
     headers:
-      Bearer: '{token}'
+      Content-Type: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"error":"Unauthorized"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
-          access-control-allow-origin: '*'
-        description: null
+    bodyParameters:
+      code:
+        name: code
+        description: 'The phone number of the user.'
+        required: true
+        example: et
+        type: string
         custom: []
+    cleanBodyParameters:
+      code: et
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null

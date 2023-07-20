@@ -21,11 +21,25 @@ use Illuminate\Validation\ValidationException;
  */
 class AuthController extends Controller
 {
+    function saveDevice($user, $deviceToken){
+        $device = Device::where('customer_id', $user->id)->first();
+        if ($device){
+            $device->token = $deviceToken;
+            $device->save();
+        }
+        else{
+            $device = new Device();
+            $device->customer_id = $user->id;
+            $device->token = $deviceToken;
+            $device->save();
+        }
+    }
     /**
      *
      * @header Accept application/json
      * @bodyParam phone string required The phone number of the user.
      * @bodyParam password string required The password of the user.
+     * @bodyParam device_token
      *
      */
     public function login(LoginRequest $request)
@@ -37,6 +51,10 @@ class AuthController extends Controller
         if (Auth::guard('customer')->attempt($credentials)) {
             $user = Auth::user();
             $token = $user->createToken('AuthToken')->accessToken;
+            if ($request->has('device_token')){
+                $deviceToken = $request->device_token;
+                $this->saveDevice($user, $deviceToken);
+            }
             return response()->json([
                 'access_token' => $token,
                 'customer' => Customer::make($user)

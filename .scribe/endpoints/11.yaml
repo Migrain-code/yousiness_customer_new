@@ -1,104 +1,12 @@
-name: Search
+name: 'Salon Type'
 description: ''
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: api/search/service
+      - GET
+    uri: api/salons/list
     metadata:
-      groupName: Search
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'POST api/search/service'
-      description: |-
-        Burada hizmet türüne veya şehir verisine göre işletmelerin verisi döndürülür.
-        <b>Not:</b> city_id ve service_id ikisinden sadece biri de gönderilebilir.
-      authenticated: false
-      custom: []
-    headers: []
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters:
-      service_id:
-        name: service_id
-        description: ''
-        required: false
-        example: eum
-        type: string
-        custom: []
-      city_id:
-        name: city_id
-        description: ''
-        required: false
-        example: ut
-        type: string
-        custom: []
-    cleanQueryParameters:
-      service_id: eum
-      city_id: ut
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/search/business/type
-    metadata:
-      groupName: Search
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'POST api/search/business/type'
-      description: |-
-        Burada işletme türüne veya şehir verisine göre işletmelerin verisi döndürülür.
-        <b>Not:</b> city_id ve category_id ikisinden sadece <u> "biri de"</u> gönderilebilir.
-      authenticated: false
-      custom: []
-    headers: []
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters:
-      category_id:
-        name: category_id
-        description: ''
-        required: false
-        example: incidunt
-        type: string
-        custom: []
-      city_id:
-        name: city_id
-        description: ''
-        required: false
-        example: eos
-        type: string
-        custom: []
-    cleanQueryParameters:
-      category_id: incidunt
-      city_id: eos
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/search/business/name
-    metadata:
-      groupName: Search
+      groupName: 'Salon Type'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -106,24 +14,26 @@ endpoints:
       description: ''
       authenticated: false
       custom: []
-    headers:
-      Content-Type: application/json
+    headers: []
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: false
-        example: neque
-        type: string
-        custom: []
-    cleanBodyParameters:
-      name: neque
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"salon_types":[{"name":"Berberler","icon":"front\/assets\/img\/salon_type\/1.png","color":"#ff890e"},{"name":"Kuaf\u00f6rler","icon":"front\/assets\/img\/salon_type\/2.png","color":"#ff890f"},{"name":"G\u00fczellik ve Estetik Merkezleri","icon":"front\/assets\/img\/salon_type\/3.png","color":"#ff490e"},{"name":"Spalar","icon":"front\/assets\/img\/salon_type\/4.png","color":"#ff890e"},{"name":"Solaryum Merkezleri","icon":"front\/assets\/img\/salon_type\/5.png","color":null},{"name":"Sa\u011fl\u0131kl\u0131 Ya\u015fam Merkezleri","icon":"front\/assets\/img\/salon_type\/6.png","color":null},{"name":"D\u00f6\u011fme ve Tatto Merkezleri","icon":"front\/assets\/img\/salon_type\/7.png","color":null},{"name":"Tesett\u00fcr Kuaf\u00f6rleri","icon":"front\/assets\/img\/salon_type\/8.png","color":null}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '44'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
