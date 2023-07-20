@@ -28,7 +28,18 @@ Route::get('/push/notify', function (){
     $title = 'Bildirim Başlığı Deneme';
     $body = 'Bildirim İçeriği Deneme';
     $notification = new \App\Services\Notification();
-    $notification->sendPushNotification($deviceToken, $title, $body);
+    $response = $notification->sendPushNotification($deviceToken, $title, $body);
+    dd($response);
+    if ($response == true){
+        return response()->json([
+            'status' => "success",
+            'message' => "Bildirim Gönderildi"
+        ]);
+    }
+    return response()->json([
+        'status' => "danger",
+        'message' => "Bildirim gönderilemedi"
+    ]);
 });
 Route::prefix('auth')->group(function (){
     Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:10,1');
