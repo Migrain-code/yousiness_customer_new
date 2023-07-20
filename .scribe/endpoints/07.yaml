@@ -30,7 +30,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '47'
+          x-ratelimit-remaining: '48'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -64,11 +64,11 @@ endpoints:
         name: blog_id
         description: ''
         required: true
-        example: 12
+        example: 17
         type: integer
         custom: []
     cleanBodyParameters:
-      blog_id: 12
+      blog_id: 17
     fileParameters: []
     responses: []
     responseFields: []

@@ -163,3 +163,35 @@ endpoints:
     method: null
     route: null
     custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/appointment/cancel
+    metadata:
+      groupName: Appointment
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST /api/appointment/cancel'
+      description: |-
+        Bu saatleri döndürecek
+        <ul>
+        <li>gönderilecek olan =>  appointment_id </li>
+        </ul>
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

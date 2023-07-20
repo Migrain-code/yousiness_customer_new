@@ -68,11 +68,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '9JnMmk+4^3%S^#{C{S-'
+        example: 'p+3E>Bw80V~0o,%dSXs`'
         type: string
         custom: []
     cleanBodyParameters:
-      password: '9JnMmk+4^3%S^#{C{S-'
+      password: 'p+3E>Bw80V~0o,%dSXs`'
     fileParameters: []
     responses: []
     responseFields: []

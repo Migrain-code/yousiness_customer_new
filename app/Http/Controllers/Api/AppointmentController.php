@@ -88,6 +88,7 @@ class AppointmentController extends Controller
             ]);
         }
     }
+
     /**
      * POST /api/appointment/personal/get
      *
@@ -105,20 +106,21 @@ class AppointmentController extends Controller
     {
         $getData = $request->serviceIds;
         $ap_services = [];
-        foreach ($getData as $id){
+        foreach ($getData as $id) {
 
             $service = BusinessService::find($id);
             $ap_services[] = [
-              'id' => $id,
-              'name' => $service->subCategory->name,
-              'personels' => AppointmentPersonelResource::collection($service->personels),
+                'id' => $id,
+                'name' => $service->subCategory->name,
+                'personels' => AppointmentPersonelResource::collection($service->personels),
             ];
 
         }
         return response()->json([
-           'personels' => $ap_services,
+            'personels' => $ap_services,
         ]);
     }
+
     /**
      * POST /api/appointment/date/get
      *
@@ -135,10 +137,10 @@ class AppointmentController extends Controller
     {
 
         //$getData = json_decode($request->input('personelIds'));
-        $personels=[];
+        $personels = [];
         $getData = $request->personelIds;
         foreach ($getData as $personel_id) {
-           $personels[]  = Personel::find($personel_id);
+            $personels[] = Personel::find($personel_id);
         }
         $business = Business::find($request->business_id);
 
@@ -151,9 +153,9 @@ class AppointmentController extends Controller
             }
         }
 
-        foreach($remainingDate as $date){
+        foreach ($remainingDate as $date) {
             $dates[] = [
-                'date'  => $date->translatedFormat('d'),
+                'date' => $date->translatedFormat('d'),
                 'day' => $date->translatedFormat('D'),
                 'text' => $date->translatedFormat('F d D'),
                 'value' => $date,
@@ -161,10 +163,11 @@ class AppointmentController extends Controller
         }
 
         return response()->json([
-           'dates' => $dates,
-           'business_id' => $business->id,
+            'dates' => $dates,
+            'business_id' => $business->id,
         ]);
     }
+
     /**
      * POST /api/appointment/clock/get
      *
@@ -181,7 +184,7 @@ class AppointmentController extends Controller
     {
         $getDate = Carbon::parse($request->date);
         $business = Business::find($request->business_id);
-        $disabledDays=[];
+        $disabledDays = [];
         $filledTime = $this->findTimes($business);
         foreach ($filledTime as $time) {
             $disabledDays[] = $time;
@@ -189,12 +192,12 @@ class AppointmentController extends Controller
 
         $clocks = [];
         $loop = 0;
-        for($i=\Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range)){
+        for ($i = \Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range)) {
             $clock = [
-                'id' => $getDate->format('d_m_Y_'. $i->format('H_i')),
-                'saat' =>  $i->format('H:i'),
-                'value' => $getDate->format('d.m.Y '. $i->format('H:i')),
-                'durum' => in_array($getDate->format('d.m.Y '). $i->format('H:i'), $disabledDays) ? false : true,
+                'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
+                'saat' => $i->format('H:i'),
+                'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
+                'durum' => in_array($getDate->format('d.m.Y ') . $i->format('H:i'), $disabledDays) ? false : true,
             ];
             $clocks[] = $clock;
         }
@@ -204,6 +207,7 @@ class AppointmentController extends Controller
         ]);
 
     }
+
     /**
      * POST /api/appointment/create
      *
@@ -220,10 +224,10 @@ class AppointmentController extends Controller
      */
     public function create(Request $request)
     {
-        if (count($request->personels) != count($request->services)){
+        if (count($request->personels) != count($request->services)) {
             return response()->json([
-               'status' => "warning",
-               'message' => "Seçilen Hizmet Sayısı Kadar Personel Seçimi Yapılmalı"
+                'status' => "warning",
+                'message' => "Seçilen Hizmet Sayısı Kadar Personel Seçimi Yapılmalı"
             ]);
         }
         $business = Business::find($request->business_id);
@@ -271,9 +275,40 @@ class AppointmentController extends Controller
         $appointment->end_time = Carbon::parse($request->input('appointment_date'))->addMinute($sumTime)->format('d.m.Y H:i');
         $appointment->save();
         return response()->json([
-           'status' => 'success',
-           'message' => $business->name . " işletmesine " . $appointment->start_time ." - ". $appointment->end_time . " arasında randevu alındı",
+            'status' => 'success',
+            'message' => $business->name . " işletmesine " . $appointment->start_time . " - " . $appointment->end_time . " arasında randevu alındı",
         ]);
+    }
+
+    /**
+     * POST /api/appointment/cancel
+     *
+     * Bu saatleri döndürecek
+     * <ul>
+     * <li>gönderilecek olan =>  appointment_id </li>
+     *</ul>
+     * @group Appointment
+     *
+     *
+     *
+     */
+    public function cancel(Request $request)
+    {
+        $appointment = Appointment::find($request->appointment_id);
+        if ($appointment) {
+            $appointment->status = 8;
+            $appointment->save();
+            return response()->json([
+                'status' => 'success',
+                'message' => "Randevu İptal Edildi"
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'warning',
+                'message' => "Randevu Bulunamadı"
+            ]);
+        }
+
     }
 
     public function findTimes($business)

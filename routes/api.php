@@ -49,6 +49,7 @@ Route::prefix('appointment')->group(function (){
     Route::post('/date/get', [AppointmentController::class, 'getDate']);
     Route::post('/clock/get', [AppointmentController::class, 'getClock']);
     Route::post('/create', [AppointmentController::class, 'create']);
+    Route::post('/cancel', [AppointmentController::class, 'cancel']);
 });
 Route::prefix('city')->group(function (){
    Route::get('list', [CityController::class, 'index']);
