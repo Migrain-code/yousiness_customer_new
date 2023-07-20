@@ -44,7 +44,7 @@ class Notification{
 
         $statusCode = $response->getStatusCode();
         $result = $response->getBody();
-        if ($statusCode == 200){
+        if ($statusCode == "200"){
             return response()->json([
                'status' => "success",
                'message' => "Bildirim Gönderildi"
