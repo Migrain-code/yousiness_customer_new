@@ -17,6 +17,7 @@ class Customer extends JsonResource
     {
         return [
            'id' => $this->id,
+           'isNotify' => $this->is_notify,
            'name'=> $this->name,
            'phone' => $this->email,
            'city' => new City($this->whenLoaded('city')),
