@@ -55,13 +55,12 @@ class AuthController extends Controller
             if ($request->has('device_token')){
                 $deviceToken = $request->device_token;
                 $this->saveDevice($user, $deviceToken);
+                $deviceToken = $user->device->token;
+                $title = 'Merhaba '. $user->name;
+                $body = 'HizliRandevuya Tekrar Giriş Yaptın';
+                $notification = new \App\Services\Notification();
+                $response = $notification->sendPushNotification($deviceToken, $title, $body);
             }
-
-            $deviceToken = $user->device->token;
-            $title = 'Merhaba '. $user->name;
-            $body = 'HizliRandevuya Tekrar Giriş Yaptın';
-            $notification = new \App\Services\Notification();
-            $response = $notification->sendPushNotification($deviceToken, $title, $body);
 
             return response()->json([
                 'access_token' => $token,
