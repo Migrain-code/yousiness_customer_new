@@ -41,10 +41,10 @@ class Notification{
             'headers' => $headers,
             'json' => $data,
         ]);
-        dd($response);
+
         $statusCode = $response->getStatusCode();
         $result = $response->getBody();
-
+        dd($statusCode);
         // İşlemlerinizi gerçekleştirin
     }
 
