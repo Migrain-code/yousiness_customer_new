@@ -47,11 +47,11 @@
                 <div class="col-md-12">
                     <div class="banner-wrapper-five aos" data-aos="fade-up">
                         <div class="section-search-five text-center">
-                          <div class="tit-secret">
-                            <span>{{main('speed_main_page_small_title')}} </span>
-                            <h2>{{main('speed_main_page_big_title')}}</h2>
-                            <p>{{main('speed_main_page_description')}}</p>
-                          </div>
+                            <div class="tit-secret">
+                                <span>{{main('speed_main_page_small_title')}} </span>
+                                <h2>{{main('speed_main_page_big_title')}}</h2>
+
+                            </div>
                             <div class="search-box-five">
                                 <div class="col-md-12 p-0">
                                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
@@ -145,25 +145,30 @@
                                             </form>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
-
+                            <div class="text-center mt-3">
+                                <p style="margin-top: 50px">{{main('speed_main_page_description')}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row adds_mobil">
+
+                <div class="row adds_mobil" style="margin-top: 145px;">
                     <div class="glide mt-4" data-aos="fade-up">
                         <div class="glide__track glide_mobil_slide" data-glide-el="track" style="margin-bottom: -70px !important;">
                             <ul class="glide__slides">
                                 @forelse($ads as $ad)
-                                <li class="glide__slide" style="text-align: center ;">
-                                    <img src="{{image($ad->image)}}" alt="" style="height: 200px; width: 200px; object-fit: cover;border-radius: 5px"></li>
+                                    <li class="glide__slide" style="text-align: center ;">
+                                        <img src="{{image($ad->image)}}" alt="" style="height: 200px; width: 200px; object-fit: cover;border-radius: 5px"></li>
                                 @empty
                                 @endforelse
                             </ul>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

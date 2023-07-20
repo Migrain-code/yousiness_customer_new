@@ -7,6 +7,7 @@ use App\Http\Requests\CustomerCreateRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\PasswordResetRequest;
 use App\Http\Resources\Customer;
+use App\Models\Device;
 use App\Models\SmsConfirmation;
 use App\Services\Sms;
 use Illuminate\Http\Request;

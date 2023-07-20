@@ -18,6 +18,11 @@ class Customer extends Authenticatable
     {
         return $this->hasMany(Appointment::class, 'customer_id', 'id')->where('status','<>' ,1)->where('status','<>' ,0)->latest();
     }
+
+    public function devices()
+    {
+        return $this->hasMany(Device::class, 'customer_id', 'id');
+    }
     public function favorites()
     {
         return $this->hasMany(CustomerFavorite::class, 'customer_id', 'id');
