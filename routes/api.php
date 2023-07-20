@@ -24,7 +24,7 @@ use App\Http\Controllers\Api\AppointmentController;
 */
 
 Route::get('/push/notify', function (){
-    $deviceToken = 'fk7CZPOATVKmSj4PaJniS5:APA91bGAo6JxmBWQUwEMdJTVEqy-w2ytK-LdkBhDYw3CiqPa_OPlQvXhJsfncXBvrVteQs5bNSWT-dNY0fA3r4PE4BnQtRcjhCtZqmrBA3nhsUpbYVXRhL7YinMRdJ8PeX9jOkDesiqy';
+    $deviceToken = 'dKpqLHWDQoOL_YDbZBZZlW:APA91bGya1X_6agXpyP8GD7QobR6gIbeiuUqxRzAsrDdwHeS10Kid7DPO1gXLEBV9RXYWmw-SehpTEWcnNB8GnwN1odYelWGrJzImZvVZkEkJzPHdTNLbX9IWQqmC8MqLr5iPzj7iagR';
     $title = 'Bildirim Başlığı Deneme';
     $body = 'Bildirim İçeriği Deneme';
     $notification = new \App\Services\Notification();
