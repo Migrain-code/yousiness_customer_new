@@ -370,4 +370,32 @@ class CustomerController extends Controller
             return  "Hatalı Format";
         }
     }
+    /**
+     * POST api/customer/update/notify
+     *
+     * Bu müşterinin bildirim ayarını güncelleyecek endpoint
+     * <br> Gerekli alanlar
+     * <ul>
+     * <li> token </li>
+     * <li> notify </li>
+     *</ul>
+
+     * @header Bearer {token}
+     *@group Customer (Update)
+     *
+     */
+    public function updateNotify(Request $request)
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $user->is_notify = boolval($request->notify);
+            if ($user->save()){
+                return response()->json([
+                    'status' => "success",
+                    'message'=> "Bildirim Ayarlarınız Güncellendi"
+                ]);
+            }
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
 }
