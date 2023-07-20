@@ -29,7 +29,7 @@ Route::get('/push/notify', function (){
     $body = 'Bildirim İçeriği Deneme';
     $notification = new \App\Services\Notification();
     $response = $notification->sendPushNotification($deviceToken, $title, $body);
-    dd($response);
+
     if ($response == true){
         return response()->json([
             'status' => "success",
