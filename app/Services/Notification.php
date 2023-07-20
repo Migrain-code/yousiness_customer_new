@@ -45,16 +45,9 @@ class Notification{
         $statusCode = $response->getStatusCode();
         $result = $response->getBody();
         if ($statusCode){
-            return response()->json([
-                'code' => $statusCode,
-               'status' => "success",
-               'message' => "Bildirim Gönderildi"
-            ]);
+            return true;
         } else{
-            return response()->json([
-                'status' => "danger",
-                'message' => "Bir Hata Sebebiyle Bildirim Gönderilemedi"
-            ]);
+            return false;
         }
         // İşlemlerinizi gerçekleştirin
     }
