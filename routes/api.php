@@ -23,24 +23,7 @@ use App\Http\Controllers\Api\AppointmentController;
 |
 */
 
-Route::get('/push/notify', function (){
-    $deviceToken = 'dKpqLHWDQoOL_YDbZBZZlW:APA91bGya1X_6agXpyP8GD7QobR6gIbeiuUqxRzAsrDdwHeS10Kid7DPO1gXLEBV9RXYWmw-SehpTEWcnNB8GnwN1odYelWGrJzImZvVZkEkJzPHdTNLbX9IWQqmC8MqLr5iPzj7iagR';
-    $title = 'Bildirim Başlığı Deneme';
-    $body = 'Bildirim İçeriği Deneme';
-    $notification = new \App\Services\Notification();
-    $response = $notification->sendPushNotification($deviceToken, $title, $body);
 
-    if ($response == true){
-        return response()->json([
-            'status' => "success",
-            'message' => "Bildirim Gönderildi"
-        ]);
-    }
-    return response()->json([
-        'status' => "danger",
-        'message' => "Bildirim gönderilemedi"
-    ]);
-});
 Route::prefix('auth')->group(function (){
     Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:10,1');
     Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:10,1');

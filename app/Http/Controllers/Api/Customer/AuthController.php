@@ -31,6 +31,7 @@ class AuthController extends Controller
             $device = new Device();
             $device->customer_id = $user->id;
             $device->token = $deviceToken;
+            $device->type = 1;
             $device->save();
         }
     }
@@ -55,6 +56,13 @@ class AuthController extends Controller
                 $deviceToken = $request->device_token;
                 $this->saveDevice($user, $deviceToken);
             }
+
+            $deviceToken = $user->device->token;
+            $title = 'Merhaba '. $user->name;
+            $body = 'HizliRandevuya Tekrar Giriş Yaptın';
+            $notification = new \App\Services\Notification();
+            $response = $notification->sendPushNotification($deviceToken, $title, $body);
+
             return response()->json([
                 'access_token' => $token,
                 'customer' => Customer::make($user)
