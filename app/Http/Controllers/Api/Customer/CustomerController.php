@@ -50,7 +50,6 @@ class CustomerController extends Controller
     {
         $user = Auth::guard('api')->user();
         if ($user) {
-            dd($user);
             return response()->json(new Customer($user));
         }
         return response()->json(['error' => 'Unauthorized'], 401);
