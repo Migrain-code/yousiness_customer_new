@@ -21,20 +21,7 @@ use Illuminate\Validation\ValidationException;
  */
 class AuthController extends Controller
 {
-    function saveDevice($user, $deviceToken){
-        $device = Device::where('customer_id', $user->id)->first();
-        if ($device){
-            $device->token = $deviceToken;
-            $device->save();
-        }
-        else{
-            $device = new Device();
-            $device->customer_id = $user->id;
-            $device->token = $deviceToken;
-            $device->type = 1;
-            $device->save();
-        }
-    }
+
     /**
      *
      * @header Accept application/json
@@ -185,6 +172,21 @@ class AuthController extends Controller
                 'message' => "Yeni şifreniz sms olarak gönderildi. Gelen şifreyi girerek sistemi kullanmaya devam edebilirsiniz",
             ]);
 
+        }
+    }
+
+    function saveDevice($user, $deviceToken){
+        $device = Device::where('customer_id', $user->id)->first();
+        if ($device){
+            $device->token = $deviceToken;
+            $device->save();
+        }
+        else{
+            $device = new Device();
+            $device->customer_id = $user->id;
+            $device->token = $deviceToken;
+            $device->type = 1;
+            $device->save();
         }
     }
 }

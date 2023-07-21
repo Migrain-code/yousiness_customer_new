@@ -1,12 +1,12 @@
-name: Ads
+name: Blog
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/ads/list
+    uri: api/blog/list
     metadata:
-      groupName: Ads
+      groupName: Blog
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -25,7 +25,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"ads":[{"image":"http:\/\/127.0.0.1:8001\/storage\/adds_image\/qMTHZF9KSRJpAQxhdKEbeKlIsEovceXjOqSMfRIR.jpg","link":"Consequuntur quidem"},{"image":"http:\/\/127.0.0.1:8001\/storage\/adds_image\/2tXw5OdWyTPdnDBOlXYGd91NBB8Z7uLWCbVgP4bH.jpg","link":"https:\/\/emojixox.io\/"},{"image":"http:\/\/127.0.0.1:8001\/storage\/adds_image\/PyWkD3WRHBadOySkz2EUMmFCCMKqTcfSulz6LmQW.jpg","link":"asdsadasd"}]}'
+        content: '{"blogs":[{"id":8,"title":"Rem rem aut assumend","image":"http:\/\/127.0.0.1:8001\/storage\/blog_images\/0WjyPETNcu4AeYA8fLjbDDnUJAFwsosrUC4EtWez.jpg","content":"The History Of Web Design\r\nWhile you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\r\nBring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.!\r\n&nbsp;\r\nThe History Of Web Design 1\r\nWhile you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\r\nBring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.! asdasd","created_at":"14.03.2023"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -34,6 +34,43 @@ endpoints:
           access-control-allow-origin: '*'
         description: null
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/blog/get
+    metadata:
+      groupName: Blog
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      blog_id:
+        name: blog_id
+        description: ''
+        required: true
+        example: 13
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      blog_id: 13
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
