@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "8d520b79-9bf9-4c68-a814-273ddd230f60",
+        "_postman_id": "24e3bbca-cc1e-40c0-93d9-eacc0c0195e3",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -58,7 +58,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "50"
+                                    "value": "49"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":16}"
+                            "raw": "{\"activity_id\":13}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -171,7 +171,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "49"
+                                    "value": "48"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -362,7 +362,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"consectetur\",\"password\":\"U},\\\"9a\\\/,,Yr\"}"
+                            "raw": "{\"phone\":\"ut\",\"password\":\"[yP&tSy\"}"
                         },
                         "description": "",
                         "auth": {
@@ -393,7 +393,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"expedita\",\"phone\":\"architecto\"}"
+                            "raw": "{\"name\":\"ut\",\"phone\":\"repellendus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -424,7 +424,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"totam\"}"
+                            "raw": "{\"phone\":\"est\"}"
                         },
                         "description": "",
                         "auth": {
@@ -455,7 +455,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"quasi\"}"
+                            "raw": "{\"code\":\"voluptatibus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -509,7 +509,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "48"
+                                    "value": "47"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -544,7 +544,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":20}"
+                            "raw": "{\"blog_id\":15}"
                         },
                         "description": "",
                         "auth": {
@@ -598,7 +598,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "51"
+                                    "value": "50"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -633,7 +633,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":17}"
+                            "raw": "{\"city_id\":3}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -985,6 +985,62 @@
                     ]
                 },
                 {
+                    "name": "GET api\/customer\/notify\/list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/notify\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/notify\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Bearer",
+                                "value": "{token}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Bu m\u00fc\u015fterinin bildirim listesini verecek",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "53"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Unauthorized\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "POST api\/customer\/appointment\/get",
                     "request": {
                         "url": {
@@ -1055,7 +1111,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "53"
+                                    "value": "52"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1111,7 +1167,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "52"
+                                    "value": "51"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1184,7 +1240,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"R\\\",^`1w$ZU-e9VV&bzh\"}"
+                            "raw": "{\"password\":\"KUG\\\\(jv.aiI5R.]qE\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -1294,7 +1350,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "46"
+                                    "value": "45"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1370,7 +1426,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "44"
+                                    "value": "43"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1452,7 +1508,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "45"
+                                    "value": "44"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1480,18 +1536,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "earum",
+                                    "value": "dolore",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "distinctio",
+                                    "value": "facilis",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=earum&city_id=distinctio"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=dolore&city_id=facilis"
                         },
                         "method": "POST",
                         "header": [
@@ -1517,18 +1573,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "et",
+                                    "value": "in",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "natus",
+                                    "value": "ab",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=et&city_id=natus"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=in&city_id=ab"
                         },
                         "method": "POST",
                         "header": [
@@ -1621,7 +1677,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "47"
+                                    "value": "46"
                                 },
                                 {
                                     "key": "access-control-allow-origin",

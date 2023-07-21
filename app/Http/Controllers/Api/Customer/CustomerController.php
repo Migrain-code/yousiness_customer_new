@@ -10,6 +10,7 @@ use App\Http\Resources\AppointmentResource;
 use App\Http\Resources\BusinessResource;
 use App\Http\Resources\Customer;
 use App\Http\Resources\CustomerCommentResource;
+use App\Http\Resources\CustomerNotificationMobileResource;
 use App\Http\Resources\DealerList;
 use App\Http\Resources\FavoriteResource;
 use App\Http\Resources\PacketResource;
@@ -158,6 +159,25 @@ class CustomerController extends Controller
             $appintments = $user->appointments;
             return response()->json([
                 'appointments' => AppointmentResource::collection($appintments)
+            ]);
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+    /**
+     * GET api/customer/notify/list
+     *
+     * Bu müşterinin bildirim listesini verecek
+     * @header Bearer {token}
+     *
+     *
+     */
+    public function getNotifyList()
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $notifications = $user->notifications;
+            return response()->json([
+                'appointments' => CustomerNotificationMobileResource::collection($notifications)
             ]);
         }
         return response()->json(['error' => 'Unauthorized'], 401);

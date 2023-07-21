@@ -32,7 +32,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '50'
+          x-ratelimit-remaining: '49'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -72,11 +72,11 @@ endpoints:
         name: activity_id
         description: ''
         required: true
-        example: 16
+        example: 13
         type: integer
         custom: []
     cleanBodyParameters:
-      activity_id: 16
+      activity_id: 13
     fileParameters: []
     responses: []
     responseFields: []

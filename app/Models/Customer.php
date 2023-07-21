@@ -23,6 +23,11 @@ class Customer extends Authenticatable
     {
         return $this->hasOne(Device::class, 'customer_id', 'id');
     }
+
+    public function notifications()
+    {
+        return $this->hasMany(CustomerNotificationMobile::class, 'customer_id', 'id');
+    }
     public function favorites()
     {
         return $this->hasMany(CustomerFavorite::class, 'customer_id', 'id');

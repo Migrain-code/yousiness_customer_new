@@ -68,11 +68,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'R",^`1w$ZU-e9VV&bzh'
+        example: 'KUG\(jv.aiI5R.]qE'
         type: string
         custom: []
     cleanBodyParameters:
-      password: 'R",^`1w$ZU-e9VV&bzh'
+      password: 'KUG\(jv.aiI5R.]qE'
     fileParameters: []
     responses: []
     responseFields: []
