@@ -177,7 +177,7 @@ class CustomerController extends Controller
         if ($user) {
             $notifications = $user->notifications;
             return response()->json([
-                'appointments' => CustomerNotificationMobileResource::collection($notifications)
+                'notifications' => CustomerNotificationMobileResource::collection($notifications)
             ]);
         }
         return response()->json(['error' => 'Unauthorized'], 401);
