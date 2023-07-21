@@ -4,6 +4,52 @@ endpoints:
   -
     httpMethods:
       - POST
+    uri: api/auth/login
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Accept: application/json
+      Content-Type: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      phone:
+        name: phone
+        description: 'The phone number of the user.'
+        required: true
+        example: consectetur
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'The password of the user.'
+        required: true
+        example: 'U},"9a/,,Yr'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      phone: consectetur
+      password: 'U},"9a/,,Yr'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
     uri: api/auth/register
     metadata:
       groupName: Authentication
@@ -25,19 +71,19 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: iusto
+        example: expedita
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: placeat
+        example: architecto
         type: string
         custom: []
     cleanBodyParameters:
-      name: iusto
-      phone: placeat
+      name: expedita
+      phone: architecto
     fileParameters: []
     responses: []
     responseFields: []
@@ -70,11 +116,11 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: vel
+        example: totam
         type: string
         custom: []
     cleanBodyParameters:
-      phone: vel
+      phone: totam
     fileParameters: []
     responses: []
     responseFields: []
@@ -107,11 +153,11 @@ endpoints:
         name: code
         description: 'The phone number of the user.'
         required: true
-        example: repudiandae
+        example: quasi
         type: string
         custom: []
     cleanBodyParameters:
-      code: repudiandae
+      code: quasi
     fileParameters: []
     responses: []
     responseFields: []

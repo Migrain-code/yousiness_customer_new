@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "e31466bd-ca8f-41e6-8460-fa7138f92446",
+        "_postman_id": "8d520b79-9bf9-4c68-a814-273ddd230f60",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -93,7 +93,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"activity_id\":11}"
+                            "raw": "{\"activity_id\":16}"
                         },
                         "description": "<ul>\n<li>Etkinliklerin g\u00f6nderilen id ye g\u00f6re verisini d\u00f6nd\u00fcr\u00fcr.  <\/li>\n<li>Ekinlikteki personel say\u0131s\u0131n\u0131, detaylar\u0131n\u0131 <\/li>\n<li>Sponsor say\u0131s\u0131n\u0131 ve detaylar\u0131n\u0131 d\u00f6nd\u00fcr\u00fcr <\/li>\n<li> G\u00f6ndermeniz Gereken Tek Veri activity_id <\/li>\n<\/ul>",
                         "auth": {
@@ -341,6 +341,37 @@
             "description": "",
             "item": [
                 {
+                    "name": "POST api\/auth\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phone\":\"consectetur\",\"password\":\"U},\\\"9a\\\/,,Yr\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "POST api\/auth\/register",
                     "request": {
                         "url": {
@@ -362,7 +393,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"iusto\",\"phone\":\"placeat\"}"
+                            "raw": "{\"name\":\"expedita\",\"phone\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -393,7 +424,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"vel\"}"
+                            "raw": "{\"phone\":\"totam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -424,7 +455,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"repudiandae\"}"
+                            "raw": "{\"code\":\"quasi\"}"
                         },
                         "description": "",
                         "auth": {
@@ -513,7 +544,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"blog_id\":13}"
+                            "raw": "{\"blog_id\":20}"
                         },
                         "description": "",
                         "auth": {
@@ -602,7 +633,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"city_id\":4}"
+                            "raw": "{\"city_id\":17}"
                         },
                         "description": "City id g\u00f6nderilen \u015fehrin bilgilerini ve il\u00e7e verisini d\u00f6nd\u00fcr\u00fcr.",
                         "auth": {
@@ -1153,7 +1184,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"`mt\\\"k#M\\\/&^\\\"!cIp.(;\"}"
+                            "raw": "{\"password\":\"R\\\",^`1w$ZU-e9VV&bzh\"}"
                         },
                         "description": "Bu m\u00fc\u015fterinin \u015fifre bilgilerini g\u00fcncelleyecek endpoint\n<br> Gerekli alanlar\n<ul>\n<li> password <\/li>\n<li> password_confirmation <\/li>\n<\/ul>",
                         "auth": {
@@ -1449,18 +1480,18 @@
                             "query": [
                                 {
                                     "key": "service_id",
-                                    "value": "eum",
+                                    "value": "earum",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "aut",
+                                    "value": "distinctio",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=eum&city_id=aut"
+                            "raw": "{{baseUrl}}\/api\/search\/service?service_id=earum&city_id=distinctio"
                         },
                         "method": "POST",
                         "header": [
@@ -1486,18 +1517,18 @@
                             "query": [
                                 {
                                     "key": "category_id",
-                                    "value": "minus",
+                                    "value": "et",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "city_id",
-                                    "value": "a",
+                                    "value": "natus",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=minus&city_id=a"
+                            "raw": "{{baseUrl}}\/api\/search\/business\/type?category_id=et&city_id=natus"
                         },
                         "method": "POST",
                         "header": [
@@ -1536,7 +1567,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sapiente\"}"
+                            "raw": "{\"name\":\"id\"}"
                         },
                         "description": "",
                         "auth": {

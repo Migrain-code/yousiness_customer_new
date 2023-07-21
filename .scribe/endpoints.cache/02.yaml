@@ -68,11 +68,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '`mt"k#M/&^"!cIp.(;'
+        example: 'R",^`1w$ZU-e9VV&bzh'
         type: string
         custom: []
     cleanBodyParameters:
-      password: '`mt"k#M/&^"!cIp.(;'
+      password: 'R",^`1w$ZU-e9VV&bzh'
     fileParameters: []
     responses: []
     responseFields: []

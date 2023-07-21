@@ -27,7 +27,7 @@ class AuthController extends Controller
      * @header Accept application/json
      * @bodyParam phone string required The phone number of the user.
      * @bodyParam password string required The password of the user.
-     * @bodyParam device_token
+     *
      *
      */
     public function login(LoginRequest $request)
