@@ -41,11 +41,8 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
+            \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \Illuminate\Routing\Middleware\ThrottleRequests::class => [
-                'limit' => 60,
-                'expires' => 1, // 1 minute
-            ],
         ],
     ];
 
