@@ -19,8 +19,10 @@ class ActivityResource extends JsonResource
            'title' => $this->title,
            'description' => $this->description,
            'image' => image($this->image),
-           'start_time' => $this->start_date->format('d.m.Y H:i'),
-           'end_time' => $this->stop_date->format('d.m.Y H:i'),
+           'start_time' => $this->start_date->format('d.m.Y'),
+           'clock' => $this->start_date->format('H:i'). " - " .$this->stop_date->format('H:i'),
+           'hotel' => $this->hotel,
+           'city' => City::make($this->citys)
         ];
     }
 }

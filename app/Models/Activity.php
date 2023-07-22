@@ -18,4 +18,9 @@ class Activity extends Model
     {
         return $this->hasMany(ActivitySponsor::class, 'activity_id', 'id')->latest();
     }
+
+    public function citys()
+    {
+        return $this->hasOne(City::class, 'id', 'city');
+    }
 }
