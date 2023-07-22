@@ -21,6 +21,7 @@ class ActivityDetailResource extends JsonResource
             'image' => image($this->image),
             'end_time' => $this->stop_date->format('d.m.Y'),
             'start_time' => $this->start_date->format('d.m.Y'),
+            'phone' => $this->phone,
             'clock' => $this->start_date->format('H:i'). " - " .$this->stop_date->format('H:i'),
             'hotel' => $this->hotel,
             'city' => City::make($this->citys),
