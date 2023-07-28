@@ -22,6 +22,7 @@ class Notification{
 
     public function sendPushNotification($deviceToken, $title, $body)
     {
+        dd($deviceToken);
         $url = "https://fcm.googleapis.com/fcm/send";
         $headers = [
             'Authorization' => 'key=' . $this->firebaseApiKey,
