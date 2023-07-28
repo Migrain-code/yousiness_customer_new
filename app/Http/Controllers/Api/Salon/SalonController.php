@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api\Salon;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AdsResource;
 use App\Http\Resources\BusinessCategoryResource;
 use App\Http\Resources\BusinessDetailResource;
 use App\Http\Resources\BusinessResource;
+use App\Models\Ads;
 use App\Models\Business;
 use App\Models\BusinessCategory;
 use App\Models\ServiceCategory;
@@ -69,8 +71,10 @@ class SalonController extends Controller
     public function popular()
     {
         $businesses = Business::orderByAppointmentCount()->take(10)->get();
+        $ads = Ads::first();
         return response()->json([
-           'salons' => BusinessResource::collection($businesses)
+           'salons' => BusinessResource::collection($businesses),
+           'ads' => AdsResource::make($ads)
         ]);
     }
     /**
