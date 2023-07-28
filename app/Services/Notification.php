@@ -37,12 +37,12 @@ class Notification{
                 'body' => $body,
             ],
         ];
-        dd($headers);
+
         $response = $this->client->post($url, [
             'headers' => $headers,
             'json' => $data,
         ]);
-
+        dd($response);
         $statusCode = $response->getStatusCode();
         $result = $response->getBody();
         if ($statusCode){
