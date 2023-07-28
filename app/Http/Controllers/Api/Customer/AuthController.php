@@ -47,7 +47,7 @@ class AuthController extends Controller
                 $body = 'HizliRandevuya Tekrar Giriş Yaptın';
                 $notification = new \App\Services\Notification();
                 $response = $notification->sendPushNotification($deviceToken, $title, $body);
-                dd($response);
+
             }
 
             return response()->json([

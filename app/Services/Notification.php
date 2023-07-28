@@ -42,7 +42,7 @@ class Notification{
             'headers' => $headers,
             'json' => $data,
         ]);
-        dd($response);
+
         $statusCode = $response->getStatusCode();
         $result = $response->getBody();
         if ($statusCode){
