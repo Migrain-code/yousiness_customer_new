@@ -13,6 +13,7 @@ use App\Models\BusinessService;
 use App\Models\Customer;
 use App\Models\Personel;
 use App\Services\Sms;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -322,11 +323,11 @@ class AppointmentController extends Controller
 
             $currentDateTime = $startDateTime->copy();
             while ($currentDateTime <= $endDateTime) {
-                // İşletmenin çalışma saatlerindeki o andaki tarih ve saat
+                // İşletmenin çalışma saatlerindeki o anki tarih ve saat
                 $currentWorkingHour = Carbon::create($currentDateTime->year, $currentDateTime->month, $currentDateTime->day, $business->start_working_hour);
 
-                // Eğer o anki tarih ve saat, şu anki tarihten büyük veya eşitse, disableds dizisine ekle
-                if ($currentWorkingHour->isSameDay($now) && $currentWorkingHour >= $now) {
+                // Eğer o anki tarih ve saat, şu anki tarihten büyük veya eşitse, ve işletmenin çalışma saatlerinin başlamışsa, disableds dizisine ekle
+                if ($currentDateTime->isSameDay($now) && $currentWorkingHour->isPast() && $currentDateTime >= $currentWorkingHour) {
                     $disableds[] = $currentDateTime->format('d.m.Y H:i');
                 }
 
