@@ -189,7 +189,7 @@ class AppointmentController extends Controller
         foreach ($filledTime as $time) {
             $disabledDays[] = $time;
         }
-        dd($disabledDays);
+
         $clocks = [];
         $loop = 0;
         for ($i = \Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range)) {
@@ -333,7 +333,7 @@ class AppointmentController extends Controller
                 $currentDateTime->addMinutes($business->appoinment_range);
             }
         }
-
+        dd($disableds);
         return $disableds;
     }
 }
