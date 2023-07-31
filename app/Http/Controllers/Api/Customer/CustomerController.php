@@ -202,6 +202,37 @@ class CustomerController extends Controller
         return response()->json(['error' => 'Unauthorized'], 401);
     }
     /**
+     * POST api/customer//appointment/comment/add
+     *
+     * Bu müşterinin randevu yorumunu gönderecek
+     * Gönderilecek veriler business_id, rating, content, appointment_id
+     * @header Bearer {token}
+     *
+     *
+     */
+    public function addAppointmentComment(Request $request)
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $businessComment = new BusinessComment();
+            $businessComment->business_id = $request->input('business_id');
+            $businessComment->customer_id = $user->id;
+            $businessComment->point = $request->input('rating');
+            $businessComment->content = $request->input('content');
+            if ($businessComment->save()) {
+                Appointment::find($request->input('appointment_id'))->update([
+                    'comment_status' => 1,
+                ]);
+                return response()->json([
+                    'status' => "success",
+                    'message' => "Yorumunuz Başarılı Bir Şekilde İletildi"
+                ]);
+            }
+
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+    /**
      * GET api/customer/appointment/upcoming/list
      *
      * Bu müşterinin yaklaşan randevu listesini verecek
