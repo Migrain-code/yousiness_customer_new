@@ -201,6 +201,13 @@ class AppointmentController extends Controller
                     'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
                     'durum' => false,
                 ];
+            } else{
+                $clock = [
+                    'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
+                    'saat' => $i->format('H:i'),
+                    'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
+                    'durum' => in_array($getDate->format('d.m.Y ') . $i->format('H:i'), $disabledDays) ? false : true,
+                ];
             }
 
             $clocks[] = $clock;
