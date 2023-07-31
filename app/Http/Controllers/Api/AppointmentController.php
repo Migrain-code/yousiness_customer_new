@@ -314,13 +314,22 @@ class AppointmentController extends Controller
     public function findTimes($business)
     {
         $disableds = [];
+        $now = Carbon::now(); // Şu anki tarih ve saat
+
         foreach ($business->appointments()->whereNotIn('status', [8])->get() as $appointment) {
             $startDateTime = Carbon::parse($appointment->start_time);
             $endDateTime = Carbon::parse($appointment->end_time);
 
             $currentDateTime = $startDateTime->copy();
             while ($currentDateTime <= $endDateTime) {
-                $disableds[] = $currentDateTime->format('d.m.Y H:i');
+                // İşletmenin çalışma saatlerindeki o andaki tarih ve saat
+                $currentWorkingHour = Carbon::create($currentDateTime->year, $currentDateTime->month, $currentDateTime->day, $business->start_working_hour);
+
+                // Eğer o anki tarih ve saat, şu anki tarihten büyük veya eşitse, disableds dizisine ekle
+                if ($currentWorkingHour->isSameDay($now) && $currentWorkingHour >= $now) {
+                    $disableds[] = $currentDateTime->format('d.m.Y H:i');
+                }
+
                 $currentDateTime->addMinutes($business->appoinment_range);
             }
         }
