@@ -323,12 +323,7 @@ class AppointmentController extends Controller
 
             $currentDateTime = $startDateTime->copy();
             while ($currentDateTime <= $endDateTime) {
-
-                // Eğer o anki tarih ve saat, şu anki tarihten büyük veya eşitse, ve işletmenin çalışma saatlerinin başlamışsa, disableds dizisine ekle
-                if ($currentDateTime->isSameDay($now)) {
-                    $disableds[] = $currentDateTime->format('d.m.Y H:i');
-                }
-
+                $disableds[] = $currentDateTime->format('d.m.Y H:i');
                 $currentDateTime->addMinutes($business->appoinment_range);
             }
         }
