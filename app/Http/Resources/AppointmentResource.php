@@ -19,6 +19,7 @@ class AppointmentResource extends JsonResource
           'business' => new BusinessResource($this->business),
           'date' => $this->start_time,
           'status' => $this->status("text"),
+          'comment_status' => $this->comment_status,
         ];
     }
 }
