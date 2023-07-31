@@ -202,7 +202,7 @@ class CustomerController extends Controller
         return response()->json(['error' => 'Unauthorized'], 401);
     }
     /**
-     * POST api/customer//appointment/comment/add
+     * POST api/customer/appointment/comment/add
      *
      * Bu müşterinin randevu yorumunu gönderecek
      * Gönderilecek veriler business_id, rating, content, appointment_id
