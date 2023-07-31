@@ -5,7 +5,8 @@ Route::get('/test', function (){
     $existingData = \App\Models\Business::find(8);
     for($i = 0; $i < 1000; $i++){
         $newData = $existingData->replicate();
-        $newData->email = "123456".$i;
+        $newData->email = "1234567".$i;
+        $newData->slug = "kuafor-". $i;
         $newData->save();
     }
 });
