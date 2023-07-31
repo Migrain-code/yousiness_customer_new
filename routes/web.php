@@ -2,11 +2,54 @@
 
 use Illuminate\Support\Facades\Route;
 Route::get('/test', function (){
+    $kuafor_isimleri = array(
+        "Studio Hair",
+        "Chic Cuts",
+        "Glamour Salon",
+        "Beauty Lounge",
+        "Hair Harmony",
+        "Divine Curls",
+        "Cutting Edge",
+        "Trendy Tresses",
+        "Dazzling Do's",
+        "Pure Perfection",
+        "Salon Serenity",
+        "Urban Chic",
+        "The Hair Spot",
+        "Elegant Styles",
+        "Classic Cuts",
+        "Sassy Scissors",
+        "Enchanted Locks",
+        "Luxury Locks",
+        "Lush Locks",
+        "The Hair Haven",
+        "Tresses & Co.",
+        "Vogue Cuts",
+        "Hair Affair",
+        "Trendy Trends",
+        "The Hair Palace",
+        "Glamourous Gurus",
+        "Blissful Curls",
+        "The Cut Above",
+        "Hair Magic",
+        "Charming Curls",
+        "The Style Studio",
+        "Fashionable Fringes",
+        "Hair Whispers",
+        "The Hair House",
+        "Chic and Slick",
+        "Divine Styles",
+        "Sleek Salon",
+        "Elegant Edge",
+        "Haute Hair",
+        "The Hair Lounge"
+    );
     $existingData = \App\Models\Business::find(8);
-    for($i = 0; $i < 1000; $i++){
+    for($i = 0; $i < count($kuafor_isimleri); $i++){
         $newData = $existingData->replicate();
         $newData->email = "1234567".$i;
-        $newData->slug = "kuafor-". $i;
+        $newData->slug = Str::slug($kuafor_isimleri[$i]);
+        $newData->name = $kuafor_isimleri[$i];
         $newData->save();
     }
 });
