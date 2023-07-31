@@ -325,7 +325,7 @@ class AppointmentController extends Controller
             while ($currentDateTime <= $endDateTime) {
                 // İşletmenin çalışma saatlerindeki o anki tarih ve saat
                 $currentWorkingHour = Carbon::create($currentDateTime->year, $currentDateTime->month, $currentDateTime->day, $business->start_working_hour);
-                dd($currentDateTime->isSameDay($now) && $currentWorkingHour->isPast() && $currentDateTime >= $currentWorkingHour);
+                dd($currentDateTime->isSameDay($now) && $currentWorkingHour->isPast());
                 // Eğer o anki tarih ve saat, şu anki tarihten büyük veya eşitse, ve işletmenin çalışma saatlerinin başlamışsa, disableds dizisine ekle
                 if ($currentDateTime->isSameDay($now) && $currentWorkingHour->isPast() && $currentDateTime >= $currentWorkingHour) {
                     $disableds[] = $currentDateTime->format('d.m.Y H:i');
