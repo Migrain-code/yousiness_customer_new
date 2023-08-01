@@ -53,6 +53,7 @@ Route::prefix('appointment')->group(function (){
     Route::post('/clock/get', [AppointmentController::class, 'getClock']);
     Route::post('/create', [AppointmentController::class, 'create']);
     Route::post('/verify/phone', [AppointmentController::class, 'verifyPhone']);
+    Route::post('/verify/code', [AppointmentController::class, 'verifyCode']);
     Route::post('/cancel', [AppointmentController::class, 'cancel']);
 });
 Route::prefix('city')->group(function (){

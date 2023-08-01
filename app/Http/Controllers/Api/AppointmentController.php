@@ -284,6 +284,7 @@ class AppointmentController extends Controller
         }
         $appointment->start_time = Carbon::parse($request->input('appointment_date'))->format('d.m.Y H:i');
         $appointment->end_time = Carbon::parse($request->input('appointment_date'))->addMinute($sumTime)->format('d.m.Y H:i');
+        $appointment->is_verify_phone = 1;
         $appointment->save();
         return response()->json([
             'status' => 'success',
@@ -354,6 +355,39 @@ class AppointmentController extends Controller
             return response()->json([
                 'status' => "danger",
                 'message' => "Bir Hata Sebebi İle Doğrulama Kodu Gönderilemedi"
+            ]);
+        }
+    }
+    /**
+     * POST /api/appointment/verify/code
+     *
+     * Bu saatleri döndürecek
+     * <ul>
+     * <li>gönderilecek olan =>  code </li>
+     *</ul>
+     * @group Appointment
+     *
+     *
+     *
+     */
+    public function verifyCode(Request $request)
+    {
+        $code = SmsConfirmation::where("code", $request->code)->first();
+        if ($code) {
+            if ($code->expire_at < now()) {
+                return response()->json([
+                    'status' => "warning",
+                    'message' => "Doğrulama Kodunun Süresi Dolmuş."
+                ]);
+            }
+            return response()->json([
+                'status' => "success",
+                'message' => "Telefon Numaranız doğrulandı."
+            ]);
+        } else {
+            return response()->json([
+                'status' => "danger",
+                'message' => "Doğrulama Kodu Hatalı."
             ]);
         }
     }
