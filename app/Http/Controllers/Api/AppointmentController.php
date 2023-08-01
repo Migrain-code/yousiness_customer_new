@@ -336,7 +336,7 @@ class AppointmentController extends Controller
     public function verifyPhone(Request $request)
     {
         if ($request){
-            $generateCode = rand(1000000, 9999999);
+            $generateCode = rand(100000, 999999);
             $smsConfirmation = new SmsConfirmation();
             $smsConfirmation->action = "APPOINTMENT-VERIFY";
             $smsConfirmation->phone = clearPhone($request->phone);
