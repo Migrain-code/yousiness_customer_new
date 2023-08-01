@@ -12,6 +12,7 @@ use App\Models\Business;
 use App\Models\BusinessService;
 use App\Models\Customer;
 use App\Models\Personel;
+use App\Models\SmsConfirmation;
 use App\Services\Sms;
 use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
@@ -255,6 +256,7 @@ class AppointmentController extends Controller
             $customer->password = Hash::make('123456');
             $customer->save();
             $appointment->customer_id = $customer->id;
+
         }
 
         if ($business->approve_type == 1) {
@@ -319,7 +321,42 @@ class AppointmentController extends Controller
         }
 
     }
+    /**
+     * POST /api/appointment/verify/phone
+     *
+     * Bu saatleri döndürecek
+     * <ul>
+     * <li>gönderilecek olan =>  phone </li>
+     *</ul>
+     * @group Appointment
+     *
+     *
+     *
+     */
+    public function verifyPhone(Request $request)
+    {
+        if ($request){
+            $generateCode = rand(1000000, 9999999);
+            $smsConfirmation = new SmsConfirmation();
+            $smsConfirmation->action = "APPOINTMENT-VERIFY";
+            $smsConfirmation->phone = clearPhone($request->phone);
+            $smsConfirmation->code = $generateCode;
+            $smsConfirmation->save();
 
+            Sms::send(clearPhone($request->phone), config('settings.site_title') . "Sisteminden randevu almak için, telefon numarası doğrulama kodunuz " . $generateCode);
+
+            return response()->json([
+                'status' => "success",
+                'message' => "Telefon Numaranıza Doğrulama Kodu Gönderildi."
+            ]);
+        }
+        else{
+            return response()->json([
+                'status' => "danger",
+                'message' => "Bir Hata Sebebi İle Doğrulama Kodu Gönderilemedi"
+            ]);
+        }
+    }
     public function findTimes($business)
     {
         $disableds = [];

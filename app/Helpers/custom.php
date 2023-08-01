@@ -16,10 +16,10 @@ function image($path){
 function clearPhone($phoneNumber){
     $phoneNumber = str_replace([' ', '(', ')', '-'], '', $phoneNumber);
     if (strlen($phoneNumber) === 10) {
-        $formattedPhoneNumber = $phoneNumber;
+        return $formattedPhoneNumber = $phoneNumber;
     } elseif (strlen($phoneNumber) === 11) {
-        $formattedPhoneNumber = substr($phoneNumber, 1);
+        return $formattedPhoneNumber = substr($phoneNumber, 1);
     } else {
-
+        return $phoneNumber;
     }
 }
