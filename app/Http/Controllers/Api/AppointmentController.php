@@ -340,6 +340,7 @@ class AppointmentController extends Controller
             $generateCode = rand(100000, 999999);
             $smsConfirmation = new SmsConfirmation();
             $smsConfirmation->action = "APPOINTMENT-VERIFY";
+            $smsConfirmation->expire_at = now()->addMinute(3);
             $smsConfirmation->phone = clearPhone($request->phone);
             $smsConfirmation->code = $generateCode;
             $smsConfirmation->save();
