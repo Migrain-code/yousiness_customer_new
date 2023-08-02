@@ -23,13 +23,13 @@ class SearchController extends Controller
     public function searchService(Request $request)
     {
             $businesses = Business::query()
-                ->when($request->filled('city_id'), function ($q) use ($request) {
-                    $q->where('city', $request->city_id);
+                ->where('city', $request->city_id)
+                ->where('district', $request->district_id)
+                ->when($request->filled('service_id'), function ($q) use ($request) {
+                    $q->whereHas('services', function ($query) use ($request) {
+                        $query->where('category', $request->input('service_id'));
+                    });
                 })
-                ->when($request->filled('district_id'), function ($q) use ($request) {
-                    $q->where('district', $request->distric_id);
-                })
-
                 ->get();
             if ($businesses->count() > 0){
                 return response()->json([
