@@ -36,61 +36,60 @@ class HomeController extends Controller
 
     public function index()
     {
-        $ads=Ads::latest()->get();
+        $ads = Ads::latest()->get();
 
-        $blogs= Blog::where('status', 1)->latest()->take(3)->get();
-        $businesses=Business::all();
-        $activities=Activity::where('status', 1)->latest()->take(4)->get();
-        $featuredServices=ServiceSubCategory::whereNotNull('featured')->orderBy('featured', 'asc')->get();
-        $featuredCategories =FeaturedCategorie::where('status', 1)->get();
+        $blogs = Blog::where('status', 1)->latest()->take(3)->get();
+        $businesses = Business::all();
+        $activities = Activity::where('status', 1)->latest()->take(4)->get();
+        $featuredServices = ServiceSubCategory::whereNotNull('featured')->orderBy('featured', 'asc')->get();
+        $featuredCategories = FeaturedCategorie::where('status', 1)->get();
 
-        return view('welcome', compact( 'featuredCategories','blogs', 'businesses','ads', 'activities', 'featuredServices', 'featuredCategories'));
+        return view('welcome', compact('featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
     }
+
     public function pageDetail($slug)
     {
-        $page=Page::where('slug', $slug)->firstOrFail();
+        $page = Page::where('slug', $slug)->firstOrFail();
         return view('page.detail', compact('page'));
     }
 
     public function personelControl(Request $request)
     {
-        $personel=Personel::where('email', $request->phone)->first();
-        if ($personel){
-            if (Hash::check($request->password, $personel->password)){
-                if($personel->activities()->where('activity_id', $request->activity_id)->first()){
+        $personel = Personel::where('email', $request->phone)->first();
+        if ($personel) {
+            if (Hash::check($request->password, $personel->password)) {
+                if ($personel->activities()->where('activity_id', $request->activity_id)->first()) {
                     return response()->json([
-                        'status'=>"error",
-                        'message'=>"Bu etkinliğe zaten katıldınız",
+                        'status' => "error",
+                        'message' => "Bu etkinliğe zaten katıldınız",
                     ]);
-                }
-                else{
-                    $activityPersonel=new ActivityBusiness();
-                    $activityPersonel->activity_id=$request->activity_id;
-                    $activityPersonel->personel_id=$personel->id;
-                    $activityPersonel->status=1;
-                    if ($activityPersonel->save()){
+                } else {
+                    $activityPersonel = new ActivityBusiness();
+                    $activityPersonel->activity_id = $request->activity_id;
+                    $activityPersonel->personel_id = $personel->id;
+                    $activityPersonel->status = 1;
+                    if ($activityPersonel->save()) {
                         return response()->json([
-                            'status'=>"success",
-                            'message'=>"Etkinliğe Katılımınız Onaylandı. Aşağıdaki Katılımcı Listesinden Görebilirsiniz",
+                            'status' => "success",
+                            'message' => "Etkinliğe Katılımınız Onaylandı. Aşağıdaki Katılımcı Listesinden Görebilirsiniz",
                         ]);
                     }
                 }
 
-            }
-            else{
+            } else {
                 return response()->json([
-                    'status'=>"error",
-                    'message'=>"Kullanıcı Bilgisi Doğrulanamadı",
+                    'status' => "error",
+                    'message' => "Kullanıcı Bilgisi Doğrulanamadı",
                 ]);
             }
-        }
-        else{
+        } else {
             return response()->json([
-                'status'=>"error",
-                'message'=>"Girdiğiniz telefon numarası sistemde kayıtlı değil",
+                'status' => "error",
+                'message' => "Girdiğiniz telefon numarası sistemde kayıtlı değil",
             ]);
         }
     }
+
     public function contact()
     {
         return view('contact');
@@ -99,163 +98,173 @@ class HomeController extends Controller
     public function contactStore(Request $request)
     {
         $request->validate([
-            'name'=>"required",
-            'email'=>"required",
-            'subject'=>"required",
-            'content'=>"required",
+            'name' => "required",
+            'email' => "required",
+            'subject' => "required",
+            'content' => "required",
         ], [], [
-            'name'=>"Ad Soyad",
-            'email'=>"E-posta",
-            'subject'=>"Konu",
-            'content'=>"İçerik",
+            'name' => "Ad Soyad",
+            'email' => "E-posta",
+            'subject' => "Konu",
+            'content' => "İçerik",
         ]);
-        $contact=new CustomerContact();
-        $contact->name=$request->input('name');
-        $contact->email=$request->input('email');
-        $contact->subject=$request->input('subject');
-        $contact->content=$request->input('content');
-        if ($contact->save()){
+        $contact = new CustomerContact();
+        $contact->name = $request->input('name');
+        $contact->email = $request->input('email');
+        $contact->subject = $request->input('subject');
+        $contact->content = $request->input('content');
+        if ($contact->save()) {
             return back()->with('response', [
-               'status'=>"success",
-               'message'=>"İletişim mesajınız gönderildi"
+                'status' => "success",
+                'message' => "İletişim mesajınız gönderildi"
             ]);
         }
     }
+
     public function liveSearch(Request $request)
     {
 
         $searchTerm = $request->input('search');
-        $businesses = Business::where('name', 'LIKE', '%'.$searchTerm.'%')->get();
+        $businesses = Business::where('name', 'LIKE', '%' . $searchTerm . '%')->get();
 
         return view('live-search-results', compact('businesses'));
 
     }
+
     public function allService()
     {
-        $serviceAll=ServiceCategory::all();
+        $serviceAll = ServiceCategory::all();
         return view('service.index', compact('serviceAll'));
     }
 
     public function serviceDetail($slug, Request $request)
     {
-        if(count($request->all()) == 0){
-            $service=ServiceCategory::where('slug', $slug)->firstOrFail();/*hizmet kategorisini bul*/
-            $businesses=$service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
-                ->select('business_id')
+        if (count($request->all()) == 0) {
+            $service = ServiceCategory::where('slug', $slug)->firstOrFail();/*hizmet kategorisini bul*/
+            $businesses = $service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
+            ->select('business_id')
+                ->groupBy('business_id')
+                ->paginate(setting('speed_pagination_number'));
+        } else {
+            $service = ServiceSubCategory::where('slug', $request->input('alt-kategori'))->firstOrFail();/*hizmet kategorisini bul*/
+            $businesses = $service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
+            ->select('business_id')
                 ->groupBy('business_id')
                 ->paginate(setting('speed_pagination_number'));
         }
-        else{
-            $service=ServiceSubCategory::where('slug', $request->input('alt-kategori'))->firstOrFail();/*hizmet kategorisini bul*/
-            $businesses=$service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
-                ->select('business_id')
-                ->groupBy('business_id')
-                ->paginate(setting('speed_pagination_number'));
-        }
-        $favoriteIds=[];
-        if (auth('customer')->check()){
-            foreach (auth('customer')->user()->favorites as $favorite){
-                $favoriteIds[]= $favorite->business_id;
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
             }
         }
         return view('service.detail', compact('businesses', 'service', 'favoriteIds'));
     }
+
     public function activities()
     {
-        $activities=Activity::latest()->paginate(setting('speed_pagination_number'));
+        $activities = Activity::latest()->paginate(setting('speed_pagination_number'));
         return view('activity.index', compact('activities'));
     }
+
     public function activityDetail($slug)
     {
-        $activity=Activity::where('slug', $slug)->firstOrFail();
+        $activity = Activity::where('slug', $slug)->firstOrFail();
 
-        $heads=$this->headers($activity->description);
-        $activities=Activity::latest()->take(4)->get();
+        $heads = $this->headers($activity->description);
+        $activities = Activity::latest()->take(4)->get();
         return view('activity.detail', compact('activity', 'heads', 'activities'));
     }
+
     public function about()
     {
-        $sponsors=Sponsor::latest()->get();
-        $comments=Comment::where('status', 1)->latest()->get();
+        $sponsors = Sponsor::latest()->get();
+        $comments = Comment::where('status', 1)->latest()->get();
         return view('about.index', compact('sponsors', 'comments'));
     }
 
     public function faq()
     {
-        $faqs= Faq::all();
+        $faqs = Faq::all();
         return view('faq.index', compact('faqs'));
     }
+
     public function businessCategory($slug)
     {
-        $businessCategory=BusinessCategory::where('slug', $slug)->firstOrFail();
-        $businesses=$businessCategory->businesses()->paginate(setting('speed_pagination_number'));
-        $favoriteIds=[];
-        if (auth('customer')->check()){
-            foreach (auth('customer')->user()->favorites as $favorite){
-                $favoriteIds[]= $favorite->business_id;
+        $businessCategory = BusinessCategory::where('slug', $slug)->firstOrFail();
+        $businesses = $businessCategory->businesses()->paginate(setting('speed_pagination_number'));
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
             }
         }
 
         return view('business.category', compact('businesses', 'favoriteIds'));
     }
+
     public function getInfo(Request $request)
     {
         $request->validate([
-            'fullname'=>"required|min:3",
-            'business_name'=>"required|min:3",
-            'phone'=>"required|min:11"
+            'fullname' => "required|min:3",
+            'business_name' => "required|min:3",
+            'phone' => "required|min:11"
         ], [], [
-            'fullname'=>"Ad soyad",
-            'business_name'=>"İşletme Adı",
-            'phone'=>"Telefon"
+            'fullname' => "Ad soyad",
+            'business_name' => "İşletme Adı",
+            'phone' => "Telefon"
         ]);
-        $businessInfo=new BusinessInfo();
-        $businessInfo->fullname=$request->input('fullname');
-        $businessInfo->business_name=$request->input('business_name');
-        $businessInfo->phone=$request->input('phone');
-        if ($businessInfo->save()){
+        $businessInfo = new BusinessInfo();
+        $businessInfo->fullname = $request->input('fullname');
+        $businessInfo->business_name = $request->input('business_name');
+        $businessInfo->phone = $request->input('phone');
+        if ($businessInfo->save()) {
             return to_route('business')->with('response', [
-                'status'=>"success",
-                'message'=>"Talebiniz Gönderildi Size en kısa zamanda arayacağız"
+                'status' => "success",
+                'message' => "Talebiniz Gönderildi Size en kısa zamanda arayacağız"
             ]);
         }
     }
+
     public function page($slug)
     {
-        $page=Page::where('slug', $slug)->first();
+        $page = Page::where('slug', $slug)->first();
         return view('front.page', compact('page'));
     }
+
     public function category($slug)
     {
-        $category=Category::where('slug', $slug)->first();
-        $businesses= Business::where('category_id', $category->id)->get();
+        $category = Category::where('slug', $slug)->first();
+        $businesses = Business::where('category_id', $category->id)->get();
 
         return view('front.category', compact('businesses'));
     }
+
     public function allBusiness()
     {
-        $businesses=Business::where('status', 2)->orderBy('order_number')->paginate(setting('speed_pagination_number'));
+        $businesses = Business::where('status', 2)->orderBy('order_number')->paginate(setting('speed_pagination_number'));
         return view('business.index', compact('businesses'));
     }
 
     public function businessDetail($slug)
     {
-        $business=Business::where('slug', $slug)->firstOrFail();
-        $dayList=DayList::all();
-        $womanServices=$business->services()->where('type',1)->get();
-        $manServices=$business->services()->where('type',2)->get();
-        $womanServiceCategories=$womanServices->groupBy('category');
-        $manServiceCategories=$manServices->groupBy('category');
-        $manCategories=[];
-        $womanCategories=[];
-        foreach ($manServiceCategories as $key=>$value){
-             $manCategories[]=ServiceCategory::find($key);
+        $business = Business::where('slug', $slug)->firstOrFail();
+        $dayList = DayList::all();
+        $womanServices = $business->services()->where('type', 1)->get();
+        $manServices = $business->services()->where('type', 2)->get();
+        $womanServiceCategories = $womanServices->groupBy('category');
+        $manServiceCategories = $manServices->groupBy('category');
+        $manCategories = [];
+        $womanCategories = [];
+        foreach ($manServiceCategories as $key => $value) {
+            $manCategories[] = ServiceCategory::find($key);
         }
-        foreach ($womanServiceCategories as $key=>$value){
-            $womanCategories[]=ServiceCategory::find($key);
+        foreach ($womanServiceCategories as $key => $value) {
+            $womanCategories[] = ServiceCategory::find($key);
         }
         return view('business.detail', compact('business', 'dayList', 'manServiceCategories', 'womanServiceCategories', 'womanCategories', 'manCategories'));
     }
+
     public function login()
     {
         return view('customer.auth.login');
@@ -264,23 +273,25 @@ class HomeController extends Controller
 
     public function blogs()
     {
-        $blogs= Blog::where('status', 1)->paginate(setting('speed_pagination_number'));
+        $blogs = Blog::where('status', 1)->paginate(setting('speed_pagination_number'));
         return view('blog.index', compact('blogs'));
     }
+
     public function headers($html)
     {
-        $heads=[];
+        $heads = [];
         preg_match_all('/<h4.*?>(.*?)<\/h4>/', $html, $matches);
         foreach ($matches[1] as $match) {
-            $heads[]=$match;
+            $heads[] = $match;
         }
         return $heads;
     }
+
     public function blogDetail($slug)
     {
-        $blog=Blog::where('slug', $slug)->firstOrFail();
-        $heads=$this->headers($blog->description);
-        $blogs=Blog::latest()->take(4)->get();
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        $heads = $this->headers($blog->description);
+        $blogs = Blog::latest()->take(4)->get();
         $comments = $blog->comments()->paginate(setting('speed_pagination_number'));
 
         return view('blog.detail', compact('blog', 'heads', 'blogs', 'comments'));
@@ -288,12 +299,12 @@ class HomeController extends Controller
 
     public function blogCommentStore(Request $request)
     {
-        $blogComment= new BlogComment();
+        $blogComment = new BlogComment();
         $blogComment->blog_id = $request->input('blog_id');
         $blogComment->customer_id = auth('customer')->id();
         $blogComment->comment = $request->input('comment');
         $blogComment->ip = $request->ip();
-        if ($blogComment->save()){
+        if ($blogComment->save()) {
             return back()->with('response', [
                 'status' => "success",
                 'message' => "Yorumunuz Gönderildi. İncelendikten Sonra Yayına Alınacak"
@@ -301,70 +312,75 @@ class HomeController extends Controller
         }
 
     }
-    public function detail($slug){
-        $business=Business::where('slug', $slug)->first();
+
+    public function detail($slug)
+    {
+        $business = Business::where('slug', $slug)->first();
 
         return view('front.business_detail', compact('business'));
     }
+
     public function typeSearch(Request $request)
     {
         //$request->dd();
-        if ($request->city == null){
-            $businesses=Business::where('category_id', $request->type)->get();
-        }
-        else{
-            $businesses=Business::where('category_id', $request->type)->where('city', $request->city)->get();
+        if ($request->city == null) {
+            $businesses = Business::where('category_id', $request->type)->get();
+        } else {
+            $businesses = Business::where('category_id', $request->type)->where('city', $request->city)->get();
         }
 
         return view('front.type_search', compact('businesses'));
     }
+
     /*
      * Service Post Function
      * */
     public function serviceSearch(Request $request)
     {
         $request->validate([
-           'service_id'=>"required_without:city_id",
-           'city_id'=>"required_without:service_id",
+            'service_id' => "required_without:city_id",
+            'city_id' => "required_without:service_id",
         ], [], [
-            'service_id'=>"Hizmet Seçimi",
-            'city_id'=>"Şehir Seçimi"
+            'service_id' => "Hizmet Seçimi",
+            'city_id' => "Şehir Seçimi"
         ]);
         $service_id = $request->input('service_id');
         $city_id = $request->input('city_id');
 
         if ($service_id && $city_id) {
-            $service=ServiceCategory::where('id', $service_id)->firstOrFail();
-            $city=City::where('id',$city_id)->first();
+            $service = ServiceCategory::where('id', $service_id)->firstOrFail();
+            $city = City::where('id', $city_id)->first();
             return to_route('serviceAllGet', [$city->slug, $service->slug]);
-        }
-        else {
+        } else {
             if ($service_id) {
-                $service=ServiceCategory::where('id', $service_id)->firstOrFail();
+                $service = ServiceCategory::where('id', $service_id)->firstOrFail();
                 return to_route('serviceGet', $service->slug);
             }
             if ($city_id) {
-                $city=City::where('id',$city_id)->first();
+                $city = City::where('id', $city_id)->first();
                 return to_route('serviceCityGet', $city->slug);
             }
         }
     }
+
     /*
       * Service Get $city, $service Function
     * */
     public function serviceAllGet($city, $service)
     {
-        $service=ServiceCategory::where('slug', $service)->first();
-        $city=City::where('slug', $city)->first();
+
+        $service = ServiceCategory::where('slug', $service)->first();
+        $city = City::where('slug', $city)->first();
+        dd($service);
         $businesses = Business::where('city', $city->id)
             ->whereHas('services', function ($query) use ($service) {
                 $query->where('category', $service->id);
             })
             ->paginate(setting('speed_pagination_number'));
-        $favoriteIds=[];
-        if (auth('customer')->check()){
-            foreach (auth('customer')->user()->favorites as $favorite){
-                $favoriteIds[]= $favorite->business_id;
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
             }
         }
         return view('service.search', compact('businesses', 'service', 'favoriteIds'));
@@ -379,40 +395,42 @@ class HomeController extends Controller
                 $query->where('category', $service->id)->where('sub_category', $subCategory->id);
             })
             ->paginate(setting('speed_pagination_number'));
-        $favoriteIds=[];
-        if (auth('customer')->check()){
-            foreach (auth('customer')->user()->favorites as $favorite){
-                $favoriteIds[]= $favorite->business_id;
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
             }
         }
         return view('service.search', compact('businesses', 'service', 'favoriteIds'));
     }
+
     /*
        * Service Get $city Function
      *
      * */
     public function serviceCityGet($city)
     {
-        $city=City::where('slug', $city)->first();
+        $city = City::where('slug', $city)->first();
         $businesses = Business::where('city', $city->id)->paginate(setting('speed_pagination_number'));
-        $favoriteIds=[];
-        if (auth('customer')->check()){
-            foreach (auth('customer')->user()->favorites as $favorite){
-                $favoriteIds[]= $favorite->business_id;
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
             }
         }
         return view('service.search', compact('businesses', 'city', 'favoriteIds'));
     }
+
     /*
        * Service Get $service Function
      *
      * */
     public function serviceGet($service)
     {
-        $service=ServiceCategory::where('slug', $service)->first();
+        $service = ServiceCategory::where('slug', $service)->first();
         $businesses = Business::whereHas('services', function ($query) use ($service) {
-                $query->where('category', $service->id);
-            })
+            $query->where('category', $service->id);
+        })
             ->paginate(setting('speed_pagination_number'));
         return view('service.search', compact('businesses', 'service'));
 
@@ -422,27 +440,26 @@ class HomeController extends Controller
     {
 
         $request->validate([
-            'category_id'=>"required_without:city_id",
-            'city_id'=>"required_without:category_id",
+            'category_id' => "required_without:city_id",
+            'city_id' => "required_without:category_id",
         ], [], [
-            'category_id'=>"Salon Türü Seçimi",
-            'city_id'=>"Şehir Seçimi"
+            'category_id' => "Salon Türü Seçimi",
+            'city_id' => "Şehir Seçimi"
         ]);
         $category_id = $request->input('category_id');
         $city_id = $request->input('city_id');
 
         if ($category_id && $city_id) {
-            $service=BusinessCategory::where('id', $category_id)->firstOrFail();
-            $city=City::where('id',$city_id)->first();
+            $service = BusinessCategory::where('id', $category_id)->firstOrFail();
+            $city = City::where('id', $city_id)->first();
             return to_route('categoryAllGet', [$city->slug, $service->slug]);
-        }
-        else {
+        } else {
             if ($category_id) {
-                $service=BusinessCategory::where('id', $category_id)->firstOrFail();
+                $service = BusinessCategory::where('id', $category_id)->firstOrFail();
                 return to_route('categoryGet', $service->slug);
             }
             if ($city_id) {
-                $city=City::where('id',$city_id)->first();
+                $city = City::where('id', $city_id)->first();
                 return to_route('categoryCityGet', $city->slug);
             }
         }
@@ -450,14 +467,14 @@ class HomeController extends Controller
 
     public function categoryAllGet($city, $category)
     {
-        $category=BusinessCategory::where('slug', $category)->first();
-        $city=City::where('slug', $city)->first();
+        $category = BusinessCategory::where('slug', $category)->first();
+        $city = City::where('slug', $city)->first();
         $businesses = Business::where('category_id', $category->id)->paginate(setting('speed_pagination_number'));
 
-        $favoriteIds=[];
-        if (auth('customer')->check()){
-            foreach (auth('customer')->user()->favorites as $favorite){
-                $favoriteIds[]= $favorite->business_id;
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
             }
         }
 
@@ -468,35 +485,38 @@ class HomeController extends Controller
     {
 
     }
+
     public function categoryCityGet($city)
     {
-        $city=City::where('slug', $city)->first();
-        $service=null;
+        $city = City::where('slug', $city)->first();
+        $service = null;
         $businesses = Business::where('city', $city->id)->paginate(setting('speed_pagination_number'));
-        $favoriteIds=[];
-        if (auth('customer')->check()){
-            foreach (auth('customer')->user()->favorites as $favorite){
-                $favoriteIds[]= $favorite->business_id;
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
             }
         }
         return view('service.search', compact('businesses', 'service', 'city', 'favoriteIds'));
     }
+
     public function categoryGet($category)
     {
-        $category=BusinessCategory::where('slug', $category)->first();
+        $category = BusinessCategory::where('slug', $category)->first();
         $businesses = Business::where('category_id', $category->id)->paginate(setting('speed_pagination_number'));
-        $favoriteIds=[];
-        if (auth('customer')->check()){
-            foreach (auth('customer')->user()->favorites as $favorite){
-                $favoriteIds[]= $favorite->business_id;
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
             }
         }
         return view('service.search', compact('businesses', 'category', 'favoriteIds'));
 
     }
+
     public function businessSearch(Request $request)
     {
-        $business=Business::find($request->business_id);
+        $business = Business::find($request->business_id);
         return to_route('detail', $business->slug);
     }
 

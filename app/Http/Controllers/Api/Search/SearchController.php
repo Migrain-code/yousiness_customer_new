@@ -14,7 +14,7 @@ class SearchController extends Controller
      * POST api/search/service
      *
      * Burada hizmet türüne veya şehir verisine göre işletmelerin verisi döndürülür.
-     * <b>Not:</b> city_id ve service_id ikisinden sadece biri de gönderilebilir.
+     * <b>Not:</b> city_id, district_id ve service_id ikisinden sadece biri de gönderilebilir.
      *
      * @group Search
      * @queryParam service_id
@@ -25,6 +25,9 @@ class SearchController extends Controller
             $businesses = Business::query()
                 ->when($request->filled('city_id'), function ($q) use ($request) {
                     $q->where('city', $request->city_id);
+                })
+                ->when($request->filled('city_id'), function ($q) use ($request) {
+                    $q->where('district', $request->distric_id);
                 })
                 ->when($request->filled('service_id'), function ($q) use ($request) {
                     $q->whereHas('services', function ($query) use ($request) {
