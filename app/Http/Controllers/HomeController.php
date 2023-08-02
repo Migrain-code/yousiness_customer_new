@@ -371,7 +371,7 @@ class HomeController extends Controller
 
         $service = ServiceCategory::where('slug', $service)->first();
         $city = City::where('slug', $city)->first();
-        dd($service);
+
         $businesses = Business::where('city', $city->id)
             ->whereHas('services', function ($query) use ($service) {
                 $query->where('category', $service->id);
