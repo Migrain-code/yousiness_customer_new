@@ -37,7 +37,7 @@ class SearchController extends Controller
                 ]);
             }
             return response()->json([
-                'status' => "error",
+                'status' => "danger",
                 'message' => "Aradığınız Hizmet Türünde Hizmet Veren İşletme Kaydı Bulunamadı"
             ]);
     }
