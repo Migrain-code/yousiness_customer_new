@@ -584,5 +584,43 @@
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(function (){
+           getLocation();
+        });
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                // Tarayıcı konum API'si desteklenmiyor.
+                alert("Tarayıcınız konum servisini desteklemiyor.");
+            }
+        }
 
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            console.log('lat =' + latitude);
+            console.log('long =' + longitude);
+
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("Konum izni reddedildi.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Konum bilgisi mevcut değil.");
+                    break;
+                case error.TIMEOUT:
+                    alert("İstek zaman aşımına uğradı.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("Bilinmeyen bir hata oluştu.");
+                    break;
+            }
+        }
+    </script>
 @endsection
