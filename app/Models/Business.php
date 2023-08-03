@@ -13,6 +13,10 @@ class Business extends Authenticatable
     use HasFactory;
 
     protected $guarded = ['business'];
+    protected $casts = [
+        'slider' => 'object',
+    ];
+
     const STATUS_LIST=[
         0 =>[
             'text'=>"Kurulum Tamamlanmadı",

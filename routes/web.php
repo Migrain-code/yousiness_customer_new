@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 Route::get('/test', function (){
-    $kuafor_isimleri = array(
+    /*$kuafor_isimleri = array(
         "Studio Hair",
         "Chic Cuts",
         "Glamour Salon",
@@ -51,7 +51,8 @@ Route::get('/test', function (){
         $newData->slug = Str::slug($kuafor_isimleri[$i]);
         $newData->name = $kuafor_isimleri[$i];
         $newData->save();
-    }
+    }*/
+
 });
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
     Route::get('/', 'index')->name('welcome');
