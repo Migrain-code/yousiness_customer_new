@@ -102,12 +102,17 @@ class SearchController extends Controller
         $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
         $lng = $request->input('long'); // Kullanıcıdan alınan longitude
 
-        $distance = 100; // Yakınlık yarıçapı (örneğin, 10 kilometre)
+        $distance = 100; // Yakınlık yarıçapı (örneğin, 100 kilometre)
 
         $businesses = Business::select('businesses.*')
             ->when((!empty($lat) && !empty($lng)), function ($q) use ($lat, $lng, $distance) {
                 $q->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
                     ->havingRaw("distance < ?", [$distance]);
+            })
+            ->when($request->filled('service_id'), function ($q) use ($request) {
+                $q->whereHas('services', function ($query) use ($request) {
+                    $query->where('category', $request->input('service_id'));
+                });
             })
             ->orderBy('distance', 'asc')
             ->get();
