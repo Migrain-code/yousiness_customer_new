@@ -102,7 +102,7 @@ class SearchController extends Controller
         $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
         $lng = $request->input('long'); // Kullanıcıdan alınan longitude
 
-        $distance = 10; // Yakınlık yarıçapı (örneğin, 10 kilometre)
+        $distance = 100; // Yakınlık yarıçapı (örneğin, 10 kilometre)
 
         $businesses = Business::query()
             ->when((!empty($lat) && !empty($lng)), function ($q) use ($lat, $lng, $distance) {
