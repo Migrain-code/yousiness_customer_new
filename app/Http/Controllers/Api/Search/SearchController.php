@@ -104,8 +104,7 @@ class SearchController extends Controller
 
         $distance = 100; // Yakınlık yarıçapı (örneğin, 10 kilometre)
 
-        $businesses = Business::query()
-            ->select('businesses*')
+        $businesses = Business::select('businesses.*')
             ->when((!empty($lat) && !empty($lng)), function ($q) use ($lat, $lng, $distance) {
                 $q->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
                     ->havingRaw("distance < ?", [$distance]);
