@@ -111,7 +111,9 @@ class SearchController extends Controller
             })
             ->orderBy('distance', 'asc')
             ->get();
-            dd($businesses);
+        foreach ($businesses as $business){
+            dd($business);
+        }
         if ($businesses->count() > 0){
             return response()->json([
                 'businesses' => BusinessResource::collection($businesses)
