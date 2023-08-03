@@ -109,10 +109,9 @@ class SearchController extends Controller
                 $q->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
                     ->havingRaw("distance < ?", [$distance]);
             })
+            ->orderBy('distance', 'asc')
             ->get();
-        foreach ($businesses as $business){
-            dd($business);
-        }
+
         if ($businesses->count() > 0){
             return response()->json([
                 'businesses' => BusinessResource::collection($businesses)
