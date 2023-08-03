@@ -7,6 +7,7 @@ use App\Http\Resources\BusinessResource;
 use App\Models\Business;
 use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
@@ -93,6 +94,32 @@ class SearchController extends Controller
         return response()->json([
             'status' => "error",
             'message' => "İşletme Bulunamadı"
+        ]);
+    }
+
+    public function nearMe(Request $request)
+    {
+        $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
+        $lng = $request->input('long'); // Kullanıcıdan alınan longitude
+
+        $distance = 10; // Yakınlık yarıçapı (örneğin, 10 kilometre)
+
+        $businesses = Business::query()
+            ->when((!empty($lat) && !empty($lng)), function ($q) use ($lat, $lng, $distance) {
+                $q->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
+                    ->havingRaw("distance < ?", [$distance]);
+            })
+            ->orderBy('distance', 'asc')
+            ->get();
+            dd($businesses);
+        if ($businesses->count() > 0){
+            return response()->json([
+                'businesses' => BusinessResource::collection($businesses)
+            ]);
+        }
+        return response()->json([
+            'status' => "danger",
+            'message' => "Aradığınız Hizmet Türünde Hizmet Veren İşletme Kaydı Bulunamadı"
         ]);
     }
 }
