@@ -156,8 +156,8 @@ class AppointmentController extends Controller
         foreach ($remainingDate as $date) {
             $dates[] = [
                 'date' => $date->translatedFormat('d'),
-                'day' => $date->translatedFormat('D'),
-                'text' => $date->translatedFormat('F d D'),
+                'day' => $date->translatedFormat('l'),
+                'text' => $date->translatedFormat('d F l'),
                 'value' => $date,
             ];
         }
