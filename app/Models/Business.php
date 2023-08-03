@@ -63,6 +63,11 @@ class Business extends Authenticatable
         return $this->hasMany(Personel::class, 'business_id', 'id');
     }
 
+    public function sliders()
+    {
+        return $this->hasMany(BusinessSlider::class, 'business_id', 'id');
+    }
+
     public function service()
     {
         return $this->hasOne(BusinessService::class, 'business_id', 'id');
