@@ -96,7 +96,11 @@ class SearchController extends Controller
             'message' => "İşletme Bulunamadı"
         ]);
     }
-
+    /**
+     *
+     * @group Search
+     *
+     */
     public function nearMe(Request $request)
     {
         $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
