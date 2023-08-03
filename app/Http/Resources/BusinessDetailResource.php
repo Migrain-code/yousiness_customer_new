@@ -21,7 +21,7 @@ class BusinessDetailResource extends JsonResource
             'wallpaper' => image($this->wallpaper),
             'city' => new City($this->cities),
             'district' => new District($this->districts),
-            'sliders' => $this->slider,
+            'sliders' => json_encode($this->slider),
             'start_time' => $this->start_time,
             'category' => $this->category->name,
             'about' => $this->about,
