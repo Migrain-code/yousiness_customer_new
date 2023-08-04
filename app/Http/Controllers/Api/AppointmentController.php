@@ -285,6 +285,7 @@ class AppointmentController extends Controller
         $appointment->start_time = Carbon::parse($request->input('appointment_date'))->format('d.m.Y H:i');
         $appointment->end_time = Carbon::parse($request->input('appointment_date'))->addMinute($sumTime)->format('d.m.Y H:i');
         $appointment->is_verify_phone = 1;
+        $appointment->note = $request->note;
         $appointment->save();
         return response()->json([
             'status' => 'success',
