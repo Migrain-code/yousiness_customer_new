@@ -156,7 +156,7 @@ class AppointmentController extends Controller
         foreach ($remainingDate as $date) {
             $dates[] = [
                 'date' => $date->translatedFormat('d'),
-                'day' => $date->translatedFormat('l'),
+                'day' => Carbon::now() == $date ? "Bugün" : $date->translatedFormat('l'),
                 'text' => $date->translatedFormat('d F l'),
                 'value' => $date,
             ];
@@ -202,7 +202,7 @@ class AppointmentController extends Controller
                 ];
             } else{
                 $clock = [
-                    'id' => $getDate->format('d_m_Y_' . $i->format('H_i')) ." asd",
+                    'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
                     'saat' => $i->format('H:i'),
                     'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
                     'durum' => in_array($getDate->format('d.m.Y ') . $i->format('H:i'), $disabledDays) ? false : true,
