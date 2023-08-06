@@ -139,6 +139,7 @@ class AppointmentController extends Controller
     {
         $personels = [];
         $getData = $request->personelIds;
+
         foreach ($getData as $personel_id) {
             $personels[] = Personel::find($personel_id);
         }
