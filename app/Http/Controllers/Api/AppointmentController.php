@@ -138,7 +138,7 @@ class AppointmentController extends Controller
     public function getDate(Request $request)
     {
         $personels = [];
-        $getData = $request->personelIds;
+        $getData = json_decode($request->personelIds);
         foreach ($getData as $personel_id) {
             $personels[] = Personel::find($personel_id);
         }
@@ -154,6 +154,7 @@ class AppointmentController extends Controller
         }
 
         foreach ($remainingDate as $date) {
+            dd(Carbon::now() == $date ? "Bugün" : $date->translatedFormat('l'));
             $dates[] = [
                 'date' => $date->translatedFormat('d'),
                 'day' => Carbon::now() == $date ? "Bugün" : $date->translatedFormat('l'),
