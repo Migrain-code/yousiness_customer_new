@@ -160,7 +160,7 @@ class AppointmentController extends Controller
                 $dates[] = [
                     'date' => $date->translatedFormat('d'),
                     'day' => "Bugün" ,
-                    'text' => $date->translatedFormat('d F l'),
+                    'text' => "Bugün",
                     'value' => $date,
                 ];
             }
@@ -168,7 +168,7 @@ class AppointmentController extends Controller
                 $dates[] = [
                     'date' => $date->translatedFormat('d'),
                     'day' => "Yarın",
-                    'text' => $date->translatedFormat('d F l'),
+                    'text' => "Yarın",
                     'value' => $date,
                 ];
             }
