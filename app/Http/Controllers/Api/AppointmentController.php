@@ -138,7 +138,7 @@ class AppointmentController extends Controller
     public function getDate(Request $request)
     {
         $personels = [];
-        $getData = $request->personelIds;
+        $getData = json_decode($request->personelIds);
         foreach ($getData as $personel_id) {
             $personels[] = Personel::find($personel_id);
         }
@@ -154,13 +154,32 @@ class AppointmentController extends Controller
         }
 
         foreach ($remainingDate as $date) {
-            dd(Carbon::now() == $date ? "Bugün" : $date->translatedFormat('l'));
-            $dates[] = [
-                'date' => $date->translatedFormat('d'),
-                'day' => Carbon::now() == $date ? "Bugün" : $date->translatedFormat('l'),
-                'text' => $date->translatedFormat('d F l'),
-                'value' => $date,
-            ];
+
+            if ($date->format('d.m.Y') == Carbon::now()->format('d.m.Y')){
+                $dates[] = [
+                    'date' => $date->translatedFormat('d'),
+                    'day' => "Bugün" ,
+                    'text' => $date->translatedFormat('d F l'),
+                    'value' => $date,
+                ];
+            }
+            if ($date->addDays(1)->format('d.m.Y') == Carbon::now()->addDays(1)->format('d.m.Y')){
+                $dates[] = [
+                    'date' => $date->translatedFormat('d'),
+                    'day' => "Yarın",
+                    'text' => $date->translatedFormat('d F l'),
+                    'value' => $date,
+                ];
+            }
+            else{
+                $dates[] = [
+                    'date' => $date->translatedFormat('d'),
+                    'day' => $date->translatedFormat('l'),
+                    'text' => $date->translatedFormat('d F l'),
+                    'value' => $date,
+                ];
+            }
+
         }
 
         return response()->json([
