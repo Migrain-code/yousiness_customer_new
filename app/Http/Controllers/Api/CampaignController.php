@@ -26,7 +26,11 @@ class CampaignController extends Controller
             'campaigns' => CampaignListResource::collection($campaigns),
         ]);
     }
-
+    /**
+     * @group Campaigns
+     *
+     *
+     * */
     public function verify(Request $request)
     {
         $campaign = Campaign::where('code', $request->code)->first();
