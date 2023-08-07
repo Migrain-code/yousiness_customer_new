@@ -112,6 +112,12 @@
                                                                                 <li class="tocify-item level-2" data-unique="appointment-POSTapi-appointment-create">
                                 <a href="#appointment-POSTapi-appointment-create">POST /api/appointment/create</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="appointment-POSTapi-appointment-verify-phone">
+                                <a href="#appointment-POSTapi-appointment-verify-phone">POST /api/appointment/verify/phone</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="appointment-POSTapi-appointment-verify-code">
+                                <a href="#appointment-POSTapi-appointment-verify-code">POST /api/appointment/verify/code</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="appointment-POSTapi-appointment-cancel">
                                 <a href="#appointment-POSTapi-appointment-cancel">POST /api/appointment/cancel</a>
                             </li>
@@ -146,6 +152,16 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="blog-POSTapi-blog-get">
                                 <a href="#blog-POSTapi-blog-get">POST api/blog/get</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-campaigns" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="campaigns">
+                    <a href="#campaigns">Campaigns</a>
+                </li>
+                                    <ul id="tocify-subheader-campaigns" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="campaigns-GETapi-campaign-list">
+                                <a href="#campaigns-GETapi-campaign-list">GET api/campaign/list</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -190,6 +206,9 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="customer-lists-POSTapi-customer-appointment-get">
                                 <a href="#customer-lists-POSTapi-customer-appointment-get">POST api/customer/appointment/get</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="customer-lists-POSTapi-customer-appointment-comment-add">
+                                <a href="#customer-lists-POSTapi-customer-appointment-comment-add">POST api/customer/appointment/comment/add</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="customer-lists-GETapi-customer-appointment-upcoming-list">
                                 <a href="#customer-lists-GETapi-customer-appointment-upcoming-list">GET api/customer/appointment/upcoming/list</a>
@@ -255,6 +274,9 @@
                                                     <li class="tocify-item level-2" data-unique="search-POSTapi-search-service">
                                 <a href="#search-POSTapi-search-service">POST api/search/service</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="search-POSTapi-search-near-me">
+                                <a href="#search-POSTapi-search-near-me">POST api/search/near/me</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="search-POSTapi-search-business-type">
                                 <a href="#search-POSTapi-search-business-type">POST api/search/business/type</a>
                             </li>
@@ -282,7 +304,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 21, 2023</li>
+        <li>Last updated: August 7, 2023</li>
     </ul>
 </div>
 
@@ -341,8 +363,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 49
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -353,8 +373,14 @@ access-control-allow-origin: *
             &quot;title&quot;: &quot;Etkinlik 2&quot;,
             &quot;description&quot;: &quot;&lt;p&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;&quot;,
             &quot;image&quot;: &quot;http://127.0.0.1:8001/storage/activity_images/9EShJVkDl8i73zdODQNmwpOmFaYfk5AK1jQacPT9.jpg&quot;,
-            &quot;start_time&quot;: &quot;11.03.2002 16:03&quot;,
-            &quot;end_time&quot;: &quot;21.11.1989 04:43&quot;
+            &quot;start_time&quot;: &quot;11.03.2002&quot;,
+            &quot;clock&quot;: &quot;16:03 - 04:43&quot;,
+            &quot;hotel&quot;: &quot;Atat&uuml;rk K&uuml;lt&uuml;r Meekrezi Beyloğlu İstanbul&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            }
         }
     ]
 }</code>
@@ -429,7 +455,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/activity/get" \
     --header "Content-Type: application/json" \
     --data "{
-    \"activity_id\": 13
+    \"activity_id\": 9
 }"
 </code></pre></div>
 
@@ -445,7 +471,7 @@ const headers = {
 };
 
 let body = {
-    "activity_id": 13
+    "activity_id": 9
 };
 
 fetch(url, {
@@ -523,10 +549,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="activity_id"                data-endpoint="POSTapi-activity-get"
-               value="13"
+               value="9"
                data-component="body">
     <br>
-<p>Example: <code>13</code></p>
+<p>Example: <code>9</code></p>
         </div>
         </form>
 
@@ -650,23 +676,24 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 48
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;ads&quot;: [
         {
-            &quot;image&quot;: &quot;http://127.0.0.1:8001/storage/adds_image/qMTHZF9KSRJpAQxhdKEbeKlIsEovceXjOqSMfRIR.jpg&quot;,
+            &quot;title&quot;: null,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/adds_image/qMTHZF9KSRJpAQxhdKEbeKlIsEovceXjOqSMfRIR.jpg&quot;,
             &quot;link&quot;: &quot;Consequuntur quidem&quot;
         },
         {
-            &quot;image&quot;: &quot;http://127.0.0.1:8001/storage/adds_image/2tXw5OdWyTPdnDBOlXYGd91NBB8Z7uLWCbVgP4bH.jpg&quot;,
+            &quot;title&quot;: null,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/adds_image/2tXw5OdWyTPdnDBOlXYGd91NBB8Z7uLWCbVgP4bH.jpg&quot;,
             &quot;link&quot;: &quot;https://emojixox.io/&quot;
         },
         {
-            &quot;image&quot;: &quot;http://127.0.0.1:8001/storage/adds_image/PyWkD3WRHBadOySkz2EUMmFCCMKqTcfSulz6LmQW.jpg&quot;,
+            &quot;title&quot;: null,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/adds_image/PyWkD3WRHBadOySkz2EUMmFCCMKqTcfSulz6LmQW.jpg&quot;,
             &quot;link&quot;: &quot;asdsadasd&quot;
         }
     ]
@@ -1127,6 +1154,166 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                     </form>
 
+                    <h2 id="appointment-POSTapi-appointment-verify-phone">POST /api/appointment/verify/phone</h2>
+
+<p>
+</p>
+
+<p>Bu saatleri döndürecek</p>
+<ul>
+<li>gönderilecek olan =>  phone </li>
+</ul>
+
+<span id="example-requests-POSTapi-appointment-verify-phone">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/appointment/verify/phone"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/appointment/verify/phone"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-appointment-verify-phone">
+</span>
+<span id="execution-results-POSTapi-appointment-verify-phone" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-appointment-verify-phone"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-appointment-verify-phone"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-appointment-verify-phone" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-appointment-verify-phone">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-appointment-verify-phone" data-method="POST"
+      data-path="api/appointment/verify/phone"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-appointment-verify-phone', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-appointment-verify-phone"
+                    onclick="tryItOut('POSTapi-appointment-verify-phone');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-appointment-verify-phone"
+                    onclick="cancelTryOut('POSTapi-appointment-verify-phone');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-appointment-verify-phone"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/appointment/verify/phone</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="appointment-POSTapi-appointment-verify-code">POST /api/appointment/verify/code</h2>
+
+<p>
+</p>
+
+<p>Bu saatleri döndürecek</p>
+<ul>
+<li>gönderilecek olan =>  code </li>
+</ul>
+
+<span id="example-requests-POSTapi-appointment-verify-code">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/appointment/verify/code"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/appointment/verify/code"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-appointment-verify-code">
+</span>
+<span id="execution-results-POSTapi-appointment-verify-code" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-appointment-verify-code"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-appointment-verify-code"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-appointment-verify-code" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-appointment-verify-code">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-appointment-verify-code" data-method="POST"
+      data-path="api/appointment/verify/code"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-appointment-verify-code', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-appointment-verify-code"
+                    onclick="tryItOut('POSTapi-appointment-verify-code');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-appointment-verify-code"
+                    onclick="cancelTryOut('POSTapi-appointment-verify-code');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-appointment-verify-code"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/appointment/verify/code</code></b>
+        </p>
+                    </form>
+
                     <h2 id="appointment-POSTapi-appointment-cancel">POST /api/appointment/cancel</h2>
 
 <p>
@@ -1228,8 +1415,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
     --data "{
-    \"phone\": \"ut\",
-    \"password\": \"[yP&amp;tSy\"
+    \"phone\": \"unde\",
+    \"password\": \"H;?`prW\"
 }"
 </code></pre></div>
 
@@ -1245,8 +1432,8 @@ const headers = {
 };
 
 let body = {
-    "phone": "ut",
-    "password": "[yP&amp;tSy"
+    "phone": "unde",
+    "password": "H;?`prW"
 };
 
 fetch(url, {
@@ -1335,10 +1522,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="phone"                data-endpoint="POSTapi-auth-login"
-               value="ut"
+               value="unde"
                data-component="body">
     <br>
-<p>The phone number of the user. Example: <code>ut</code></p>
+<p>The phone number of the user. Example: <code>unde</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1346,10 +1533,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-auth-login"
-               value="[yP&tSy"
+               value="H;?`prW"
                data-component="body">
     <br>
-<p>The password of the user. Example: <code>[yP&amp;tSy</code></p>
+<p>The password of the user. Example: <code>H;?</code>prW`</p>
         </div>
         </form>
 
@@ -1369,8 +1556,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/auth/register" \
     --header "Content-Type: application/json" \
     --data "{
-    \"name\": \"ut\",
-    \"phone\": \"repellendus\"
+    \"name\": \"id\",
+    \"phone\": \"unde\"
 }"
 </code></pre></div>
 
@@ -1386,8 +1573,8 @@ const headers = {
 };
 
 let body = {
-    "name": "ut",
-    "phone": "repellendus"
+    "name": "id",
+    "phone": "unde"
 };
 
 fetch(url, {
@@ -1465,10 +1652,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-auth-register"
-               value="ut"
+               value="id"
                data-component="body">
     <br>
-<p>The phone number of the user. Example: <code>ut</code></p>
+<p>The phone number of the user. Example: <code>id</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -1476,10 +1663,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="phone"                data-endpoint="POSTapi-auth-register"
-               value="repellendus"
+               value="unde"
                data-component="body">
     <br>
-<p>The password of the user. Example: <code>repellendus</code></p>
+<p>The password of the user. Example: <code>unde</code></p>
         </div>
         </form>
 
@@ -1499,7 +1686,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/auth/password-reset" \
     --header "Content-Type: application/json" \
     --data "{
-    \"phone\": \"est\"
+    \"phone\": \"non\"
 }"
 </code></pre></div>
 
@@ -1515,7 +1702,7 @@ const headers = {
 };
 
 let body = {
-    "phone": "est"
+    "phone": "non"
 };
 
 fetch(url, {
@@ -1593,10 +1780,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="phone"                data-endpoint="POSTapi-auth-password-reset"
-               value="est"
+               value="non"
                data-component="body">
     <br>
-<p>The phone number of the user. Example: <code>est</code></p>
+<p>The phone number of the user. Example: <code>non</code></p>
         </div>
         </form>
 
@@ -1616,7 +1803,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/auth/verify/code" \
     --header "Content-Type: application/json" \
     --data "{
-    \"code\": \"voluptatibus\"
+    \"code\": \"commodi\"
 }"
 </code></pre></div>
 
@@ -1632,7 +1819,7 @@ const headers = {
 };
 
 let body = {
-    "code": "voluptatibus"
+    "code": "commodi"
 };
 
 fetch(url, {
@@ -1710,10 +1897,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="POSTapi-auth-verify-code"
-               value="voluptatibus"
+               value="commodi"
                data-component="body">
     <br>
-<p>The phone number of the user. Example: <code>voluptatibus</code></p>
+<p>The phone number of the user. Example: <code>commodi</code></p>
         </div>
         </form>
 
@@ -1758,8 +1945,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 47
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1840,7 +2025,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/blog/get" \
     --header "Content-Type: application/json" \
     --data "{
-    \"blog_id\": 15
+    \"blog_id\": 5
 }"
 </code></pre></div>
 
@@ -1856,7 +2041,7 @@ const headers = {
 };
 
 let body = {
-    "blog_id": 15
+    "blog_id": 5
 };
 
 fetch(url, {
@@ -1934,12 +2119,134 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="blog_id"                data-endpoint="POSTapi-blog-get"
-               value="15"
+               value="5"
                data-component="body">
     <br>
-<p>Example: <code>15</code></p>
+<p>Example: <code>5</code></p>
         </div>
         </form>
+
+                <h1 id="campaigns">Campaigns</h1>
+
+    
+
+                                <h2 id="campaigns-GETapi-campaign-list">GET api/campaign/list</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-campaign-list">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/campaign/list"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/campaign/list"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-campaign-list">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;campaigns&quot;: [
+        {
+            &quot;business&quot;: {
+                &quot;id&quot;: 8,
+                &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+                &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+                &quot;city&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;slug&quot;: &quot;adana&quot;,
+                    &quot;name&quot;: &quot;ADANA&quot;
+                },
+                &quot;district&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;ALADAĞ&quot;
+                },
+                &quot;start_time&quot;: &quot;09:30&quot;,
+                &quot;point&quot;: 3
+            },
+            &quot;title&quot;: &quot;Kampanya Test&quot;,
+            &quot;description&quot;: &quot;Kampanya test a&ccedil;ıklama&quot;,
+            &quot;code&quot;: &quot;mert1215&quot;,
+            &quot;discount&quot;: 4,
+            &quot;start_time&quot;: &quot;07.08.2023 12:21&quot;,
+            &quot;end_time&quot;: &quot;09.08.2023 15:20&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-campaign-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-campaign-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-campaign-list"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-campaign-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-campaign-list">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-campaign-list" data-method="GET"
+      data-path="api/campaign/list"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-campaign-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-campaign-list"
+                    onclick="tryItOut('GETapi-campaign-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-campaign-list"
+                    onclick="cancelTryOut('GETapi-campaign-list');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-campaign-list"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/campaign/list</code></b>
+        </p>
+                    </form>
 
                 <h1 id="city">City</h1>
 
@@ -1982,8 +2289,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 50
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -2462,7 +2767,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/city/get" \
     --header "Content-Type: application/json" \
     --data "{
-    \"city_id\": 3
+    \"city_id\": 8
 }"
 </code></pre></div>
 
@@ -2478,7 +2783,7 @@ const headers = {
 };
 
 let body = {
-    "city_id": 3
+    "city_id": 8
 };
 
 fetch(url, {
@@ -2556,10 +2861,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="city_id"                data-endpoint="POSTapi-city-get"
-               value="3"
+               value="8"
                data-component="body">
     <br>
-<p>Example: <code>3</code></p>
+<p>Example: <code>8</code></p>
         </div>
         </form>
 
@@ -2617,8 +2922,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -2731,8 +3034,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -2845,8 +3146,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -2959,8 +3258,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -3073,8 +3370,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -3187,8 +3482,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -3301,8 +3594,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -3467,6 +3758,103 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="customer-lists-POSTapi-customer-appointment-comment-add">POST api/customer/appointment/comment/add</h2>
+
+<p>
+</p>
+
+<p>Bu müşterinin randevu yorumunu gönderecek
+Gönderilecek veriler business_id, rating, content, appointment_id</p>
+
+<span id="example-requests-POSTapi-customer-appointment-comment-add">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/customer/appointment/comment/add" \
+    --header "Bearer: {token}"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/customer/appointment/comment/add"
+);
+
+const headers = {
+    "Bearer": "{token}",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-customer-appointment-comment-add">
+</span>
+<span id="execution-results-POSTapi-customer-appointment-comment-add" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-customer-appointment-comment-add"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-customer-appointment-comment-add"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-customer-appointment-comment-add" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-customer-appointment-comment-add">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-customer-appointment-comment-add" data-method="POST"
+      data-path="api/customer/appointment/comment/add"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-customer-appointment-comment-add', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-customer-appointment-comment-add"
+                    onclick="tryItOut('POSTapi-customer-appointment-comment-add');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-customer-appointment-comment-add"
+                    onclick="cancelTryOut('POSTapi-customer-appointment-comment-add');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-customer-appointment-comment-add"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/customer/appointment/comment/add</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Bearer"                data-endpoint="POSTapi-customer-appointment-comment-add"
+               value="{token}"
+               data-component="header">
+    <br>
+<p>Example: <code>{token}</code></p>
+            </div>
+                        </form>
+
                     <h2 id="customer-lists-GETapi-customer-appointment-upcoming-list">GET api/customer/appointment/upcoming/list</h2>
 
 <p>
@@ -3511,8 +3899,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -3625,8 +4011,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 51
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -3821,7 +4205,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: {token}" \
     --header "Content-Type: application/json" \
     --data "{
-    \"password\": \"KUG\\\\(jv.aiI5R.]qE\"
+    \"password\": \"WXefs(\"
 }"
 </code></pre></div>
 
@@ -3838,7 +4222,7 @@ const headers = {
 };
 
 let body = {
-    "password": "KUG\\(jv.aiI5R.]qE"
+    "password": "WXefs("
 };
 
 fetch(url, {
@@ -3927,10 +4311,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-customer-update-password"
-               value="KUG\(jv.aiI5R.]qE"
+               value="WXefs("
                data-component="body">
     <br>
-<p>Example: <code>KUG\(jv.aiI5R.]qE</code></p>
+<p>Example: <code>WXefs(</code></p>
         </div>
         </form>
 
@@ -4177,8 +4561,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 45
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -4198,7 +4580,7 @@ access-control-allow-origin: *
                 &quot;name&quot;: &quot;ALADAĞ&quot;
             },
             &quot;start_time&quot;: &quot;09:30&quot;,
-            &quot;point&quot;: 4
+            &quot;point&quot;: 3
         },
         {
             &quot;id&quot;: 9,
@@ -20398,8 +20780,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 43
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -20419,7 +20799,7 @@ access-control-allow-origin: *
                 &quot;name&quot;: &quot;ALADAĞ&quot;
             },
             &quot;start_time&quot;: &quot;09:30&quot;,
-            &quot;point&quot;: 4
+            &quot;point&quot;: 3
         },
         {
             &quot;id&quot;: 9,
@@ -20438,7 +20818,7 @@ access-control-allow-origin: *
             &quot;point&quot;: 0
         },
         {
-            &quot;id&quot;: 55,
+            &quot;id&quot;: 77,
             &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
             &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
             &quot;city&quot;: {
@@ -20454,7 +20834,7 @@ access-control-allow-origin: *
             &quot;point&quot;: 0
         },
         {
-            &quot;id&quot;: 47,
+            &quot;id&quot;: 85,
             &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
             &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
             &quot;city&quot;: {
@@ -20470,7 +20850,7 @@ access-control-allow-origin: *
             &quot;point&quot;: 0
         },
         {
-            &quot;id&quot;: 87,
+            &quot;id&quot;: 37,
             &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
             &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
             &quot;city&quot;: {
@@ -20486,39 +20866,7 @@ access-control-allow-origin: *
             &quot;point&quot;: 0
         },
         {
-            &quot;id&quot;: 39,
-            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
-            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
-            &quot;city&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;adana&quot;,
-                &quot;name&quot;: &quot;ADANA&quot;
-            },
-            &quot;district&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;ALADAĞ&quot;
-            },
-            &quot;start_time&quot;: &quot;09:30&quot;,
-            &quot;point&quot;: 0
-        },
-        {
-            &quot;id&quot;: 71,
-            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
-            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
-            &quot;city&quot;: {
-                &quot;id&quot;: 1,
-                &quot;slug&quot;: &quot;adana&quot;,
-                &quot;name&quot;: &quot;ADANA&quot;
-            },
-            &quot;district&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;ALADAĞ&quot;
-            },
-            &quot;start_time&quot;: &quot;09:30&quot;,
-            &quot;point&quot;: 0
-        },
-        {
-            &quot;id&quot;: 31,
+            &quot;id&quot;: 29,
             &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
             &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
             &quot;city&quot;: {
@@ -20550,7 +20898,39 @@ access-control-allow-origin: *
             &quot;point&quot;: 0
         },
         {
-            &quot;id&quot;: 63,
+            &quot;id&quot;: 61,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 53,
+            &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
+            &quot;city&quot;: {
+                &quot;id&quot;: 1,
+                &quot;slug&quot;: &quot;adana&quot;,
+                &quot;name&quot;: &quot;ADANA&quot;
+            },
+            &quot;district&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;ALADAĞ&quot;
+            },
+            &quot;start_time&quot;: &quot;09:30&quot;,
+            &quot;point&quot;: 0
+        },
+        {
+            &quot;id&quot;: 45,
             &quot;name&quot;: &quot;Muhammet T&uuml;rkmen&quot;,
             &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/business_logo/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg&quot;,
             &quot;city&quot;: {
@@ -20565,7 +20945,12 @@ access-control-allow-origin: *
             &quot;start_time&quot;: &quot;09:30&quot;,
             &quot;point&quot;: 0
         }
-    ]
+    ],
+    &quot;ads&quot;: {
+        &quot;title&quot;: &quot;In aliquam quod ulla&quot;,
+        &quot;logo&quot;: &quot;http://127.0.0.1:8001/storage/adds_image/qMTHZF9KSRJpAQxhdKEbeKlIsEovceXjOqSMfRIR.jpg&quot;,
+        &quot;link&quot;: &quot;Consequuntur quidem&quot;
+    }
 }</code>
  </pre>
     </span>
@@ -20735,8 +21120,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 44
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -20844,7 +21227,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </p>
 
 <p>Burada hizmet türüne veya şehir verisine göre işletmelerin verisi döndürülür.
-<b>Not:</b> city_id ve service_id ikisinden sadece biri de gönderilebilir.</p>
+<b>Not:</b> city_id, district_id ve service_id ikisinden sadece biri de gönderilebilir.</p>
 
 <span id="example-requests-POSTapi-search-service">
 <blockquote>Example request:</blockquote>
@@ -20852,7 +21235,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/search/service?service_id=dolore&amp;city_id=facilis"</code></pre></div>
+    "http://127.0.0.1:8000/api/search/service?service_id=architecto&amp;city_id=beatae"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -20861,8 +21244,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "service_id": "dolore",
-    "city_id": "facilis",
+    "service_id": "architecto",
+    "city_id": "beatae",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -20928,10 +21311,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="service_id"                data-endpoint="POSTapi-search-service"
-               value="dolore"
+               value="architecto"
                data-component="query">
     <br>
-<p>Example: <code>dolore</code></p>
+<p>Example: <code>architecto</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -20939,12 +21322,89 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-search-service"
-               value="facilis"
+               value="beatae"
                data-component="query">
     <br>
-<p>Example: <code>facilis</code></p>
+<p>Example: <code>beatae</code></p>
             </div>
                 </form>
+
+                    <h2 id="search-POSTapi-search-near-me">POST api/search/near/me</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-search-near-me">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/search/near/me"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/search/near/me"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-search-near-me">
+</span>
+<span id="execution-results-POSTapi-search-near-me" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-search-near-me"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-search-near-me"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-search-near-me" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-search-near-me">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-search-near-me" data-method="POST"
+      data-path="api/search/near/me"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-search-near-me', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-search-near-me"
+                    onclick="tryItOut('POSTapi-search-near-me');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-search-near-me"
+                    onclick="cancelTryOut('POSTapi-search-near-me');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-search-near-me"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/search/near/me</code></b>
+        </p>
+                    </form>
 
                     <h2 id="search-POSTapi-search-business-type">POST api/search/business/type</h2>
 
@@ -20960,7 +21420,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/search/business/type?category_id=in&amp;city_id=ab"</code></pre></div>
+    "http://127.0.0.1:8000/api/search/business/type?category_id=soluta&amp;city_id=voluptas"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -20969,8 +21429,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "category_id": "in",
-    "city_id": "ab",
+    "category_id": "soluta",
+    "city_id": "voluptas",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -21036,10 +21496,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="category_id"                data-endpoint="POSTapi-search-business-type"
-               value="in"
+               value="soluta"
                data-component="query">
     <br>
-<p>Example: <code>in</code></p>
+<p>Example: <code>soluta</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -21047,10 +21507,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-search-business-type"
-               value="ab"
+               value="voluptas"
                data-component="query">
     <br>
-<p>Example: <code>ab</code></p>
+<p>Example: <code>voluptas</code></p>
             </div>
                 </form>
 
@@ -21070,7 +21530,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/search/business/name" \
     --header "Content-Type: application/json" \
     --data "{
-    \"name\": \"id\"
+    \"name\": \"officia\"
 }"
 </code></pre></div>
 
@@ -21086,7 +21546,7 @@ const headers = {
 };
 
 let body = {
-    "name": "id"
+    "name": "officia"
 };
 
 fetch(url, {
@@ -21164,10 +21624,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-search-business-name"
-               value="id"
+               value="officia"
                data-component="body">
     <br>
-<p>Example: <code>id</code></p>
+<p>Example: <code>officia</code></p>
         </div>
         </form>
 
@@ -21212,8 +21672,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 46
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 

@@ -68,11 +68,11 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'KUG\(jv.aiI5R.]qE'
+        example: WXefs(
         type: string
         custom: []
     cleanBodyParameters:
-      password: 'KUG\(jv.aiI5R.]qE'
+      password: WXefs(
     fileParameters: []
     responses: []
     responseFields: []

@@ -12,6 +12,7 @@ use \App\Http\Controllers\Api\Salon\SalonController;
 use App\Http\Controllers\Api\Search\SearchController;
 use \App\Http\Controllers\Api\AdsController;
 use App\Http\Controllers\Api\AppointmentController;
+use \App\Http\Controllers\Api\CampaignController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -68,6 +69,9 @@ Route::prefix('activity')->group(function (){
 });
 Route::prefix('ads')->group(function (){
    Route::get('list', [AdsController::class, 'list']);
+});
+Route::prefix('campaign')->group(function (){
+    Route::get('list', [CampaignController::class, 'list']);
 });
 Route::prefix('blog')->group(function (){
     Route::get('list', [BlogController::class, 'index']);

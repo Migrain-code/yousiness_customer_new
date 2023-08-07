@@ -25,12 +25,10 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"ads":[{"image":"http:\/\/127.0.0.1:8001\/storage\/adds_image\/qMTHZF9KSRJpAQxhdKEbeKlIsEovceXjOqSMfRIR.jpg","link":"Consequuntur quidem"},{"image":"http:\/\/127.0.0.1:8001\/storage\/adds_image\/2tXw5OdWyTPdnDBOlXYGd91NBB8Z7uLWCbVgP4bH.jpg","link":"https:\/\/emojixox.io\/"},{"image":"http:\/\/127.0.0.1:8001\/storage\/adds_image\/PyWkD3WRHBadOySkz2EUMmFCCMKqTcfSulz6LmQW.jpg","link":"asdsadasd"}]}'
+        content: '{"ads":[{"title":null,"logo":"http:\/\/127.0.0.1:8001\/storage\/adds_image\/qMTHZF9KSRJpAQxhdKEbeKlIsEovceXjOqSMfRIR.jpg","link":"Consequuntur quidem"},{"title":null,"logo":"http:\/\/127.0.0.1:8001\/storage\/adds_image\/2tXw5OdWyTPdnDBOlXYGd91NBB8Z7uLWCbVgP4bH.jpg","link":"https:\/\/emojixox.io\/"},{"title":null,"logo":"http:\/\/127.0.0.1:8001\/storage\/adds_image\/PyWkD3WRHBadOySkz2EUMmFCCMKqTcfSulz6LmQW.jpg","link":"asdsadasd"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '48'
           access-control-allow-origin: '*'
         description: null
         custom: []

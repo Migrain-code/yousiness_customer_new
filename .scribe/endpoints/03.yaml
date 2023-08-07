@@ -166,6 +166,70 @@ endpoints:
   -
     httpMethods:
       - POST
+    uri: api/appointment/verify/phone
+    metadata:
+      groupName: Appointment
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST /api/appointment/verify/phone'
+      description: |-
+        Bu saatleri döndürecek
+        <ul>
+        <li>gönderilecek olan =>  phone </li>
+        </ul>
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/appointment/verify/code
+    metadata:
+      groupName: Appointment
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST /api/appointment/verify/code'
+      description: |-
+        Bu saatleri döndürecek
+        <ul>
+        <li>gönderilecek olan =>  code </li>
+        </ul>
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
     uri: api/appointment/cancel
     metadata:
       groupName: Appointment

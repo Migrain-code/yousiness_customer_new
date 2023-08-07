@@ -26,19 +26,19 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: ut
+        example: unde
         type: string
         custom: []
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: '[yP&tSy'
+        example: 'H;?`prW'
         type: string
         custom: []
     cleanBodyParameters:
-      phone: ut
-      password: '[yP&tSy'
+      phone: unde
+      password: 'H;?`prW'
     fileParameters: []
     responses: []
     responseFields: []
@@ -71,19 +71,19 @@ endpoints:
         name: name
         description: 'The phone number of the user.'
         required: true
-        example: ut
+        example: id
         type: string
         custom: []
       phone:
         name: phone
         description: 'The password of the user.'
         required: true
-        example: repellendus
+        example: unde
         type: string
         custom: []
     cleanBodyParameters:
-      name: ut
-      phone: repellendus
+      name: id
+      phone: unde
     fileParameters: []
     responses: []
     responseFields: []
@@ -116,11 +116,11 @@ endpoints:
         name: phone
         description: 'The phone number of the user.'
         required: true
-        example: est
+        example: non
         type: string
         custom: []
     cleanBodyParameters:
-      phone: est
+      phone: non
     fileParameters: []
     responses: []
     responseFields: []
@@ -153,11 +153,11 @@ endpoints:
         name: code
         description: 'The phone number of the user.'
         required: true
-        example: voluptatibus
+        example: commodi
         type: string
         custom: []
     cleanBodyParameters:
-      code: voluptatibus
+      code: commodi
     fileParameters: []
     responses: []
     responseFields: []

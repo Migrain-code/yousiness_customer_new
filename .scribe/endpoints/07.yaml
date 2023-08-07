@@ -1,12 +1,12 @@
-name: Blog
+name: Campaigns
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/blog/list
+    uri: api/campaign/list
     metadata:
-      groupName: Blog
+      groupName: Campaigns
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -25,52 +25,13 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"blogs":[{"id":8,"title":"Rem rem aut assumend","image":"http:\/\/127.0.0.1:8001\/storage\/blog_images\/0WjyPETNcu4AeYA8fLjbDDnUJAFwsosrUC4EtWez.jpg","content":"The History Of Web Design\r\nWhile you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\r\nBring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.!\r\n&nbsp;\r\nThe History Of Web Design 1\r\nWhile you want your sales team to be spending most of their time prospecting and selling, making sure they have the time and space to keep the CRM up to date is critical. Remember to factor in time for these tasks when setting goals and benchmarks for them. Provide sales support where you can to ensure your sales team is spending.\r\nBring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved.! asdasd","created_at":"14.03.2023"}]}'
+        content: '{"campaigns":[{"business":{"id":8,"name":"Muhammet T\u00fcrkmen","logo":"http:\/\/127.0.0.1:8001\/storage\/business_logo\/AvtdG1hmUjpI81BO44SgCCSE2AvQG5ku2ilDEpDl.jpg","city":{"id":1,"slug":"adana","name":"ADANA"},"district":{"id":1,"name":"ALADA\u011e"},"start_time":"09:30","point":3},"title":"Kampanya Test","description":"Kampanya test a\u00e7\u0131klama","code":"mert1215","discount":4,"start_time":"07.08.2023 12:21","end_time":"09.08.2023 15:20"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '47'
           access-control-allow-origin: '*'
         description: null
         custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/blog/get
-    metadata:
-      groupName: Blog
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      blog_id:
-        name: blog_id
-        description: ''
-        required: true
-        example: 15
-        type: integer
-        custom: []
-    cleanBodyParameters:
-      blog_id: 15
-    fileParameters: []
-    responses: []
     responseFields: []
     auth: []
     controller: null
