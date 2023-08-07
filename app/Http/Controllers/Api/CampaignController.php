@@ -51,6 +51,7 @@ class CampaignController extends Controller
                     return response()->json([
                         'status' => "success",
                         'id' => $campaignCustomer->id,
+                        'campaign_id' => $campaign->id,
                         'discount' => $campaign->discount,
                         'message' => $campaign->code . " Kupon Kodu Uygulandı",
                     ]);

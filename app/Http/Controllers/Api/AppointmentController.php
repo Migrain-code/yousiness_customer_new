@@ -330,6 +330,7 @@ class AppointmentController extends Controller
         $appointment->end_time = Carbon::parse($request->input('appointment_date'))->addMinute($sumTime)->format('d.m.Y H:i');
         $appointment->is_verify_phone = 1;
         $appointment->note = $request->note;
+        $appointment->campaign_id = $request->campaign_id;
         $appointment->save();
         return response()->json([
             'status' => 'success',
