@@ -79,7 +79,7 @@ class CampaignController extends Controller
 
             $campaignCustomer->delete();
             return response()->json([
-                'status' => "success",
+                'status' => "warning",
                 'message' => "Kupon Kodu Kaldırıldı"
             ]);
 
