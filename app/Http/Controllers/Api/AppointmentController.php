@@ -107,6 +107,7 @@ class AppointmentController extends Controller
     public function personalGet(Request $request)
     {
         $getData = $request->serviceIds;
+
         $ap_services = [];
         foreach ($getData as $id) {
 
@@ -314,12 +315,12 @@ class AppointmentController extends Controller
         $clock = Carbon::parse($request->input('appointment_date'));
         $sumTime = 0;
 
-        foreach ($request->services as $service) {
+        foreach ($request->personels as $personel) {
             $appointmentService = new AppointmentServices();
             $appointmentService->appointment_id = $appointment->id;
-            $appointmentService->personel_id = $request->personels[$loop];
-            $appointmentService->service_id = $service;
-            $findService = BusinessService::find($service);
+            $appointmentService->personel_id = $personel;
+            $appointmentService->service_id = $request->services[$loop];
+            $findService = BusinessService::find($request->services[$loop]);
             $appointmentService->start_time = $clock->format('d.m.Y H:i');
             $appointmentService->end_time = $clock->addMinute($findService->time)->format('d.m.Y H:i');
             $sumTime += $findService->time;
