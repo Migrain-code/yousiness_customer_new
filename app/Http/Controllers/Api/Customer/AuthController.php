@@ -94,15 +94,9 @@ class AuthController extends Controller
             $smsConfirmation->save();
 
             $phone = str_replace(array('(', ')', '-', ' '), '', $request->input('phone'));
+
             Sms::send($phone, config('settings.site_title') . "Sistemine kayıt için, telefon numarası doğrulama kodunuz " . $generateCode);
 
-            \App\Models\Customer::create([
-                'name' => $request->input('name'),
-                'email' => $request->input('phone'),
-                'phone' => $request->input('phone'),
-                'status' => 1,
-                'password' => Hash::make(Str::random(8)),
-            ]);
             return response()->json([
                 'status' => "success",
                 'message' => "Kayıt Oluşturuldu.Lütfen Telefon Numaranızı Doğrulayınız"
@@ -125,19 +119,36 @@ class AuthController extends Controller
                     'message' => "Doğrulama Kodunun Süresi Dolmuş."
                 ]);
             }
-            $user = \App\Models\Customer::where('email', $code->phone)->first();
-            $generatePassword = rand(100000, 999999);
-            $user->password = Hash::make($generatePassword);
-            $user->password_status = 1;
-            $user->verify_phone = 1;
-            $user->save();
+            else{
+                if ($code->phone == $request->phone){
+                    $generatePassword = rand(100000, 999999);
 
-            $phone = str_replace(array('(', ')', '-', ' '), '', $user->email);
-            Sms::send($phone, config('settings.site_title') . "Sistemine giriş için şifreniz " . $generatePassword);
-            return response()->json([
-                'status' => "success",
-                'message' => "Telefon Numaranız doğrulandı. Sisteme giriş için şifreniz gönderildi."
-            ]);
+                    \App\Models\Customer::create([
+                        'name' => $request->input('name'),
+                        'email' => $request->input('phone'),
+                        'phone' => $request->input('phone'),
+                        'status' => 1,
+                        'password' => Hash::make($generatePassword),
+                    ]);
+
+                    $phone = clearPhone($request->input('phone'));
+
+                    Sms::send($phone, config('settings.site_title') . "Sistemine giriş için şifreniz " . $generatePassword);
+
+                    return response()->json([
+                        'status' => "success",
+                        'message' => "Telefon Numaranız doğrulandı. Sisteme giriş için şifreniz gönderildi."
+                    ]);
+                }
+                else{
+                    return response()->json([
+                        'status' => "success",
+                        'message' => "Kod Doğrulanamadı."
+                    ]);
+                }
+            }
+
+
         } else {
             return response()->json([
                 'status' => "danger",
