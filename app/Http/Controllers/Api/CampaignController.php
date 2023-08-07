@@ -40,7 +40,7 @@ class CampaignController extends Controller
             $customer = $campaign->customers->where('customer_id', $request->customer_id)->where('status', 1)->first();
             if ($customer) {
                 return response()->json([
-                    'status' => "success",
+                    'status' => "warning",
                     'message' => "Bu kupon kodunu zaten kullandınız"
                 ]);
             } else {
