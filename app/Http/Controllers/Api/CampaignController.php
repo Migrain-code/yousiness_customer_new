@@ -26,6 +26,7 @@ class CampaignController extends Controller
             'campaigns' => CampaignListResource::collection($campaigns),
         ]);
     }
+
     /**
      * @group Campaigns
      *
@@ -36,8 +37,8 @@ class CampaignController extends Controller
         $campaign = Campaign::where('code', $request->code)->first();
 
         if ($campaign) {
-            $customer = $campaign->customers->where('customer_id', $request->customer_id)->where('status',1)->first();
-            if ($customer){
+            $customer = $campaign->customers->where('customer_id', $request->customer_id)->where('status', 1)->first();
+            if ($customer) {
                 return response()->json([
                     'status' => "success",
                     'message' => "Bu kupon kodunu zaten kullandınız"
@@ -46,9 +47,10 @@ class CampaignController extends Controller
                 $campaignCustomer = new CampaignCustomer();
                 $campaignCustomer->campaign_id = $campaign->id;
                 $campaignCustomer->customer_id = $request->customer_id;
-                if ($campaignCustomer->save()){
+                if ($campaignCustomer->save()) {
                     return response()->json([
                         'status' => "success",
+                        'id' => $campaignCustomer->id,
                         'discount' => $campaign->discount,
                         'message' => $campaign->code . " Kupon Kodu Uygulandı",
                     ]);
@@ -60,6 +62,31 @@ class CampaignController extends Controller
             return response()->json([
                 'status' => "danger",
                 'message' => "Kupon Kodu Geçersiz"
+            ]);
+        }
+    }
+
+    /**
+     * @group Campaigns
+     *
+     *
+     * */
+
+    public function cancel(Request $request)
+    {
+        $campaignCustomer = CampaignCustomer::find($request->campaign_id);
+        if ($campaignCustomer) {
+
+            $campaignCustomer->delete();
+            return response()->json([
+                'status' => "success",
+                'message' => "Kupon Kodu Kaldırıldı"
+            ]);
+
+        } else {
+            return response()->json([
+                'status' => "danger",
+                'message' => "Kupon Koduna Kullanımına Ait Kayıt Bulunamadı"
             ]);
         }
     }
