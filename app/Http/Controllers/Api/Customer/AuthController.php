@@ -79,7 +79,7 @@ class AuthController extends Controller
     public function register(CustomerCreateRequest $request)
     {
 
-        if ($this->existPhone($request->phone)) {
+        if ($this->existPhone(clearPhone($request->phone))) {
             return response()->json([
                 'status' => "warning",
                 'message' => "Bu telefon numarası ile kayıtlı kullanıcı bulunmakta."
