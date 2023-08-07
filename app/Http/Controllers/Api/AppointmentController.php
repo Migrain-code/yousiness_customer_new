@@ -149,6 +149,7 @@ class AppointmentController extends Controller
 
         for ($i = 0; $i < $remainingDays; $i++) {
             $days = Carbon::now()->addDays($i);
+
             if ($days < Carbon::now()->endOfMonth()) {
                 $remainingDate[] = $days;
             }
@@ -217,23 +218,42 @@ class AppointmentController extends Controller
         $clocks = [];
         $loop = 0;
         for ($i = \Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range)) {
-            if (Carbon::parse($getDate->format('d.m.Y ') . $i->format('H:i')) < Carbon::now()){
+            if (Carbon::parse($getDate->format('d.m.Y '))->dayOfWeek == $business->off_day){
                 $clock = [
                     'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
-                    'saat' => $i->format('H:i'),
+                    'saat' => 'İşletme bu tarihte hizmet vermemektedir',
                     'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
                     'durum' => false,
                 ];
-            } else{
-                $clock = [
-                    'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
-                    'saat' => $i->format('H:i'),
-                    'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
-                    'durum' => in_array($getDate->format('d.m.Y ') . $i->format('H:i'), $disabledDays) ? false : true,
-                ];
+                if ($loop == 0){
+                    $clocks[] = $clock;
+                }
+
+                    $loop++;
+
+            }
+            else{
+                if (Carbon::parse($getDate->format('d.m.Y ') . $i->format('H:i')) < Carbon::now()){
+                    $clock = [
+                        'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
+                        'saat' => $i->format('H:i'),
+                        'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
+                        'durum' => false,
+                    ];
+                    $clocks[] = $clock;
+                } else {
+                    $clock = [
+                        'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
+                        'saat' => $i->format('H:i'),
+                        'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
+                        'durum' => in_array($getDate->format('d.m.Y ') . $i->format('H:i'), $disabledDays) ? false : true,
+                    ];
+                    $clocks[] = $clock;
+                }
             }
 
-            $clocks[] = $clock;
+
+
         }
 
         return response()->json([
