@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CampaignListResource;
 use App\Models\Campaign;
+use App\Models\CampaignCustomer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -24,5 +25,38 @@ class CampaignController extends Controller
         return response()->json([
             'campaigns' => CampaignListResource::collection($campaigns),
         ]);
+    }
+
+    public function verify(Request $request)
+    {
+        $campaign = Campaign::where('code', $request->code)->first();
+
+        if ($campaign) {
+            $customer = $campaign->customers->where('customer_id', $request->customer_id)->where('status',1)->first();
+            if ($customer){
+                return response()->json([
+                    'status' => "success",
+                    'message' => "Bu kupon kodunu zaten kullandınız"
+                ]);
+            } else {
+                $campaignCustomer = new CampaignCustomer();
+                $campaignCustomer->campaign_id = $campaign->id;
+                $campaignCustomer->customer_id = $request->customer_id;
+                if ($campaignCustomer->save()){
+                    return response()->json([
+                        'status' => "success",
+                        'discount' => $campaign->discount,
+                        'message' => $campaign->code . " Kupon Kodu Uygulandı",
+                    ]);
+                }
+
+            }
+
+        } else {
+            return response()->json([
+                'status' => "danger",
+                'message' => "Kupon Kodu Geçersiz"
+            ]);
+        }
     }
 }

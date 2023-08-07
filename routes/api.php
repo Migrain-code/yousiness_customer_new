@@ -72,6 +72,7 @@ Route::prefix('ads')->group(function (){
 });
 Route::prefix('campaign')->group(function (){
     Route::get('list', [CampaignController::class, 'list']);
+    Route::post('verify', [CampaignController::class, 'verify']);
 });
 Route::prefix('blog')->group(function (){
     Route::get('list', [BlogController::class, 'index']);
