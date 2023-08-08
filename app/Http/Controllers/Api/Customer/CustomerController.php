@@ -306,6 +306,7 @@ class CustomerController extends Controller
             $user->email = $request->input('phone');
             $user->birthday = $request->input('birthday');
             $user->city_id = $request->input('city_id');
+            $user->gender = $request->input('gender');
             $user->district_id = $request->input('district_id');
             if ($user->save()) {
                 return response()->json([
