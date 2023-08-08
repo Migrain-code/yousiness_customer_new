@@ -11,6 +11,7 @@ use App\Models\AppointmentServices;
 use App\Models\Business;
 use App\Models\BusinessService;
 use App\Models\Customer;
+use App\Models\CustomerNotificationMobile;
 use App\Models\Personel;
 use App\Models\SmsConfirmation;
 use App\Services\Sms;
@@ -362,13 +363,16 @@ class AppointmentController extends Controller
             $title = 'Randevunuz İptal Edildi';
             $body = $appointment->business->name . " işletmesine " . $appointment->start_time . " - " . $appointment->end_time . " arasında randevunuz iptal edildi";
 
-            $notification = new \App\Services\Notification();
-            $response = $notification->sendPushNotification($appointment->customer->device->token, $title, $body);
-
-            return response()->json([
-                'status' => 'success',
-                'message' => "Randevu İptal Edildi"
-            ]);
+            $notification =new CustomerNotificationMobile();
+            $notification->customer_id = $appointment->customer->id;
+            $notification->title = $title;
+            $notification->content = $body;
+            if ($notification->save()){
+                return response()->json([
+                    'status' => 'success',
+                    'message' => $body
+                ]);
+            }
         } else {
             return response()->json([
                 'status' => 'warning',
