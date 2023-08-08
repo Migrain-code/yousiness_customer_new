@@ -18,7 +18,7 @@ class CustomerNotificationMobileResource extends JsonResource
             "id" => $this->id,
             "title" => $this->title,
             "context" => $this->content,
-            "image" => storage($this->image)
+            "image" => storage($this->image),
         ];
     }
 }
