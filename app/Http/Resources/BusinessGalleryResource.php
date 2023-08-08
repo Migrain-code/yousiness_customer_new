@@ -15,6 +15,7 @@ class BusinessGalleryResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'image' => image($this->way),
         ];
     }
