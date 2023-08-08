@@ -25,6 +25,7 @@ class Customer extends JsonResource
            'gender' => $this->gender,
            'image' => storage($this->image),
            'birthday' => Carbon::parse($this->birthday)->format('d.m.Y'),
+           'gender' => $this->gender,
            'created_at'=> $this->created_at->format('d.m.Y')
         ];
     }
