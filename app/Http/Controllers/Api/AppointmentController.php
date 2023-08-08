@@ -353,10 +353,18 @@ class AppointmentController extends Controller
      */
     public function cancel(Request $request)
     {
+
         $appointment = Appointment::find($request->appointment_id);
         if ($appointment) {
             $appointment->status = 8;
             $appointment->save();
+
+            $title = 'Randevunuz İptal Edildi';
+            $body = $appointment->business->name . " işletmesine " . $appointment->start_time . " - " . $appointment->end_time . " arasında randevunuz iptal edildi";
+
+            $notification = new \App\Services\Notification();
+            $response = $notification->sendPushNotification($appointment->customer->device->token, $title, $body);
+
             return response()->json([
                 'status' => 'success',
                 'message' => "Randevu İptal Edildi"
