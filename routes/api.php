@@ -82,6 +82,7 @@ Route::prefix('blog')->group(function (){
 
 Route::prefix('services')->group(function (){
     Route::get('list' ,[ServiceController::class, 'index']);
+    Route::get('all' ,[ServiceController::class, 'all']);
 });
 
 Route::prefix('salons')->group(function (){

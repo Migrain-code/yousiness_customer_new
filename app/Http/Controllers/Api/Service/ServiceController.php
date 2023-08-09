@@ -20,4 +20,27 @@ class ServiceController extends Controller
            'services' => ServiceCategoryResource::collection($services),
         ]);
     }
+    /**
+     * @group Services
+     *
+     */
+    public function all()
+    {
+        $services = ServiceCategory::all();
+
+        $womanServices = [];
+        $manServices =[];
+        foreach ($services as $service){
+            if ($service->type_id == 1){
+                $womanServices[] = ServiceCategoryResource::make($service);
+            }
+            else{
+                $manServices[] = ServiceCategoryResource::make($service);
+            }
+        }
+        return response()->json([
+           'woman'=> $womanServices,
+           'man' => $manServices
+        ]);
+    }
 }
