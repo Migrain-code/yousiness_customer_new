@@ -18,6 +18,7 @@ use App\Http\Resources\ProductSaleResource;
 use App\Models\Appointment;
 use App\Models\Business;
 use App\Models\BusinessComment;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
@@ -449,5 +450,20 @@ class CustomerController extends Controller
             }
         }
         return response()->json(['error' => 'Unauthorized'], 401);
+    }
+
+    public function settings()
+    {
+        $settings = [];
+        foreach (Setting::all() as $item) {
+            $settings[$item->name] = $item->value;
+        }
+
+        return response()->json([
+            'settings' => [
+                'title' => $settings["speed_mobile_title"],
+                'description' => $settings["speed_mobile_description"]
+            ]
+        ]);
     }
 }
