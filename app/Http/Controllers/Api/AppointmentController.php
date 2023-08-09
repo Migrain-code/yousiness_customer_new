@@ -333,11 +333,22 @@ class AppointmentController extends Controller
         $appointment->is_verify_phone = 1;
         $appointment->note = $request->note;
         $appointment->campaign_id = $request->campaign_id;
-        $appointment->save();
-        return response()->json([
-            'status' => 'success',
-            'message' => $business->name . " işletmesine " . $appointment->start_time . " - " . $appointment->end_time . " arasında randevu alındı",
-        ]);
+
+        if ($appointment->save()){
+            $title = 'Randevunuz Oluşturuldu';
+            $body = $appointment->business->name . " işletmesine " . $appointment->start_time . " - " . $appointment->end_time . " arasında randevunuz iptal edildi";
+
+            $notification =new CustomerNotificationMobile();
+            $notification->customer_id = $appointment->customer->id;
+            $notification->title = $title;
+            $notification->content = $body;
+            if ($notification->save()) {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => $business->name . " işletmesine " . $appointment->start_time . " - " . $appointment->end_time . " arasında randevu alındı",
+                ]);
+            }
+        }
     }
 
     /**
