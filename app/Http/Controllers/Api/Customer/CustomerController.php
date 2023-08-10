@@ -481,7 +481,8 @@ class CustomerController extends Controller
                 'playStore' => $settings["speed_mobile_play_store_link"],
                 'appStore' => $settings["speed_mobile_app_store_link"],
                 'kvkkAciklama' => $gizlilik->description,
-                'kosullaraciklama' => $kosullaraciklama->description,
+                'kosullarAciklama' => $kosullaraciklama->description,
+                'paylasmetin' => $settings["speed_mobile_share_description"]." ". env('APP_URL'),
             ]
         ]);
     }
