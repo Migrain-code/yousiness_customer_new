@@ -474,8 +474,12 @@ class CustomerController extends Controller
     {
         $user = Auth::guard('api')->user();
         if ($user) {
-            $user->is_notify = boolval($request->notify);
-            if ($user->save()){
+            $permission = $user->permissions;
+
+            $permission->is_sms = boolval($request->is_sms);
+            $permission->is_email = boolval($request->is_email);
+            $permission->is_notification = boolval($request->is_notification);
+            if ($permission->save()){
                 return response()->json([
                     'status' => "success",
                     'message'=> "Bildirim Ayarlarınız Güncellendi"

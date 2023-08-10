@@ -42,12 +42,13 @@ Route::prefix('customer')->group(function (){
     Route::post('/appointment/get', [CustomerController::class, 'getAppointmentDetail']);
     Route::post('/appointment/comment/add', [CustomerController::class, 'addAppointmentComment']);
     Route::get('/appointment/upcoming/list', [CustomerController::class, 'getAppointmentUpcomingList']);
+    Route::get('delete', [CustomerController::class, 'destroy']);
     Route::get('/comment/list', [CustomerController::class, 'getCommentList']);
     Route::post('update/profile', [CustomerController::class, 'updateProfile']);
     Route::post('update/password', [CustomerController::class, 'updatePassword']);
     Route::post('update/image', [CustomerController::class, 'updateImage']);
     Route::post('update/notify', [CustomerController::class, 'updateNotify']);
-    Route::get('delete', [CustomerController::class, 'destroy']);
+
 });
 Route::prefix('appointment')->group(function (){
     Route::post('/business/get', [AppointmentController::class, 'businessGet']);
