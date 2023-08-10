@@ -7,6 +7,7 @@ use App\Http\Requests\CustomerCreateRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\PasswordResetRequest;
 use App\Http\Resources\Customer;
+use App\Models\CustomerNotificationPermission;
 use App\Models\Device;
 use App\Models\SmsConfirmation;
 use App\Services\Sms;
@@ -123,14 +124,14 @@ class AuthController extends Controller
                 if ($code->phone == $request->phone){
                     $generatePassword = rand(100000, 999999);
 
-                    \App\Models\Customer::create([
+                    $customer = \App\Models\Customer::create([
                         'name' => $request->input('name'),
                         'email' => $request->input('phone'),
                         'phone' => $request->input('phone'),
                         'status' => 1,
                         'password' => Hash::make($generatePassword),
                     ]);
-
+                    $this->addPermission($customer->id);
                     $phone = clearPhone($request->input('phone'));
 
                     Sms::send($phone, config('settings.site_title') . "Sistemine giriş için şifreniz " . $generatePassword);
@@ -201,4 +202,12 @@ class AuthController extends Controller
             $device->save();
         }
     }
+
+    function addPermission($id){
+        $customerPermission = new CustomerNotificationPermission();
+        $customerPermission->customer_id = $id;
+        $customerPermission->save();
+        return true;
+    }
+
 }

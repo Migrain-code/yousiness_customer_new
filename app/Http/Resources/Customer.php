@@ -17,7 +17,6 @@ class Customer extends JsonResource
     {
         return [
            'id' => $this->id,
-           'isNotify' => $this->is_notify == 1 ? true : false,
            'name'=> $this->name,
            'phone' => $this->email,
            'city' => City::make($this->city),

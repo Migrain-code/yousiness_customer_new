@@ -38,6 +38,7 @@ Route::prefix('customer')->group(function (){
     Route::get('/packet/list', [CustomerController::class, 'getPacketList']);
     Route::get('/appointment/list', [CustomerController::class, 'getAppointmentList']);
     Route::get('/notify/list', [CustomerController::class, 'getNotifyList']);
+    Route::get('/notify/permission/list', [CustomerController::class, 'getNotifyPermissionList']);
     Route::post('/appointment/get', [CustomerController::class, 'getAppointmentDetail']);
     Route::post('/appointment/comment/add', [CustomerController::class, 'addAppointmentComment']);
     Route::get('/appointment/upcoming/list', [CustomerController::class, 'getAppointmentUpcomingList']);

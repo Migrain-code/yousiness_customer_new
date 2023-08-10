@@ -11,6 +11,7 @@ use App\Http\Resources\BusinessResource;
 use App\Http\Resources\Customer;
 use App\Http\Resources\CustomerCommentResource;
 use App\Http\Resources\CustomerNotificationMobileResource;
+use App\Http\Resources\CustomerNotificationPermissionsResource;
 use App\Http\Resources\DealerList;
 use App\Http\Resources\FavoriteResource;
 use App\Http\Resources\PacketResource;
@@ -180,6 +181,27 @@ class CustomerController extends Controller
             $notifications = $user->notifications;
             return response()->json([
                 'notifications' => CustomerNotificationMobileResource::collection($notifications)
+            ]);
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+    /**
+     * GET api/customer/notify/permission/list
+     *
+     * Bu müşterinin bildirim izin listesini verecek
+     * @header Bearer {token}
+     *
+     *
+     */
+    public function getNotifyPermissionList()
+    {
+        $user = Auth::guard('api')->user();
+
+        if ($user) {
+             $permissions = $user->permissions;
+
+            return response()->json([
+                'permissions' => CustomerNotificationPermissionsResource::make($permissions)
             ]);
         }
         return response()->json(['error' => 'Unauthorized'], 401);
