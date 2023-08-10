@@ -463,6 +463,27 @@ class CustomerController extends Controller
         return response()->json(['error' => 'Unauthorized'], 401);
     }
 
+    /**
+     * GET api/customer/delete
+     *
+     * Bu müşterinin hesabını silecek
+     * @header Bearer {token}
+     *
+     *
+     */
+    public function destroy()
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $user->delete();
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Hesabınız Başarılı Bir Şekilde Silindi',
+            ]);
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+
     public function settings()
     {
         $settings = [];
