@@ -301,8 +301,9 @@ class CustomerController extends Controller
     public function updateProfile(Request $request)
     {
         $user = Auth::guard('api')->user();
+
         if ($user) {
-            //$request->dd();
+
             $user->name = $request->input('name');
             $user->phone = $request->input('phone');
             $user->email = $request->input('phone');
@@ -310,6 +311,15 @@ class CustomerController extends Controller
             $user->city_id = $request->input('city_id');
             $user->gender = $request->input('gender');
             $user->district_id = $request->input('district_id');
+            if ($user->gender == 1 and  $user->image == "default/user.png"){
+                $user->image = "default/woman.png";
+            }
+            else{
+                if ($user->gender == 2 and  $user->image == "default/woman.png"){
+                    $user->image = "default/user.png";
+                }
+            }
+
             if ($user->save()) {
                 return response()->json([
                     'status' => "success",
