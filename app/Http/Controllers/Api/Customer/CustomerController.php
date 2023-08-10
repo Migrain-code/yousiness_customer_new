@@ -18,6 +18,7 @@ use App\Http\Resources\ProductSaleResource;
 use App\Models\Appointment;
 use App\Models\Business;
 use App\Models\BusinessComment;
+use App\Models\Page;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -459,10 +460,16 @@ class CustomerController extends Controller
             $settings[$item->name] = $item->value;
         }
 
+
+        $gizlilik = Page::where('slug', 'gizlilik-kosullari')->select('description')->first();
+        $kosullaraciklama = Page::where('slug', 'sartlar-ve-kosullar')->select('description')->first();
+
         return response()->json([
             'settings' => [
                 'title' => $settings["speed_mobile_title"],
-                'description' => $settings["speed_mobile_description"]
+                'description' => $settings["speed_mobile_description"],
+                'kvkkAciklama' => $gizlilik->description,
+                'kosullaraciklama' => $kosullaraciklama->description,
             ]
         ]);
     }
