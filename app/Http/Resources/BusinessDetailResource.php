@@ -35,6 +35,7 @@ class BusinessDetailResource extends JsonResource
             'gallery' => BusinessGalleryResource::collection($this->gallery),
             'services' => BusinessServiceResource::collection($this->services),
             'closed_day' =>Carbon::now()->startOfWeek()->addDays($this->off_day - 1)->dayName,
+            'instagram' => "https://www.instagram.com/",
             'point' => $this->points(),
         ];
     }
