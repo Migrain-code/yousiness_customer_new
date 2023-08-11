@@ -19,6 +19,7 @@ class ActivityDetailResource extends JsonResource
             'title' => $this->title,
             'description' => $this->description,
             'image' => image($this->image),
+            'video' => $this->embed,
             'end_time' => $this->stop_date->format('d.m.Y'),
             'start_time' => $this->start_date->format('d.m.Y'),
             'phone' => $this->phone,
