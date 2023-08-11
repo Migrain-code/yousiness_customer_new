@@ -63,6 +63,12 @@
                             <span>Yorumlarım</span>
                         </a>
                     </li>
+                    <li @if(request()->routeIs('customer.campaign.index')) class="active" @endif>
+                        <a href="{{route('customer.campaign.index')}}">
+                            <i class="fas fa-comment"></i>
+                            <span>Kampanyalarım</span>
+                        </a>
+                    </li>
                     <li @if(request()->routeIs('customer.profile.edit')) class="active" @endif>
                         <a href="{{route('customer.profile.edit')}}">
                             <i class="fas fa-user-cog"></i>

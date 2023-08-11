@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class CampaignCustomer extends Model
 {
     use HasFactory;
+
+    public function campaign()
+    {
+        return $this->hasOne(Campaign::class, 'id', 'campaign_id');
+    }
 }

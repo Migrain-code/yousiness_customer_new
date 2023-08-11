@@ -127,10 +127,12 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
         Route::post('/add/favorite', [\App\Http\Controllers\Customer\HomeController::class, 'addFavorite'])->name('favorite.add');
         Route::post('/remove/favorite', [\App\Http\Controllers\Customer\HomeController::class, 'removeFavorite'])->name('favorite.remove');
         Route::get('/paketlerim', [\App\Http\Controllers\Customer\HomeController::class, 'packets'])->name('packet.index');
+        Route::get('/kampanyalarim', [\App\Http\Controllers\Customer\HomeController::class, 'campaigns'])->name('campaign.index');
         Route::get('/paket/{id}/detay', [\App\Http\Controllers\Customer\HomeController::class, 'packetDetail'])->name('packet.detail');
         Route::get('/gecmis-randevularım', [\App\Http\Controllers\Customer\HomeController::class, 'appointments'])->name('appointment.index');
         Route::get('/randevu/{id}/detay', [\App\Http\Controllers\Customer\HomeController::class, 'appointmentDetail'])->name('appointment.detail');
         Route::post('/appointment/comment/store', [\App\Http\Controllers\Customer\HomeController::class, 'addComment'])->name('appointment.comment.store');
+        Route::post('/campaign/detail', [\App\Http\Controllers\Customer\HomeController::class, 'campaignDetail'])->name('campaign.detail');
         Route::controller(\App\Http\Controllers\Customer\ProfileController::class)->prefix('profile')->as('profile.')->group(function () {
             Route::get('/hesap-ayarlari', 'edit')->name('edit');
             Route::get('/sifre-degistir', 'editPassword')->name('password.edit');

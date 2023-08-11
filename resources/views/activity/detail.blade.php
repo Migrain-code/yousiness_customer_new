@@ -97,7 +97,7 @@
                                         <li data-bs-toggle="tooltip" title="Katılımcı"><i class="fas fa-users"></i>{{$activity->personels->count()}}</li>
                                         <li data-bs-toggle="tooltip" title="Sponsor"><i class="fas fa-handshake"></i>{{$activity->sponsors->count()}}</li>
                                         <li>
-                                            <a class="btn-fifteen pulse-button" target="_blank" href="#account_modal" data-bs-toggle="modal" style="background-color: #ff8a00;color: white;padding: 8px;border-radius: 5px;text-decoration: underline;">Etkinliğe Katıl</a>
+                                            <a class="btn-fifteen pulse-button" href="#account_modal" data-bs-toggle="modal" style="background-color: #ff8a00;color: white;padding: 8px;border-radius: 5px;text-decoration: underline;">Etkinliğe Katıl</a>
                                         </li>
                                     </ul>
                                 </div>

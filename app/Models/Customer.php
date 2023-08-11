@@ -24,6 +24,10 @@ class Customer extends Authenticatable
         return $this->hasOne(Device::class, 'customer_id', 'id');
     }
 
+    public function campaigns()
+    {
+        return $this->hasMany(CampaignCustomer::class, 'customer_id', 'id');
+    }
     public function notifications()
     {
         return $this->hasMany(CustomerNotificationMobile::class, 'customer_id', 'id');

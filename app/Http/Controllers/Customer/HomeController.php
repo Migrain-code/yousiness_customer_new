@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Appointment;
 use App\Models\Business;
 use App\Models\BusinessComment;
+use App\Models\Campaign;
 use App\Models\CustomerFavorite;
 use App\Models\District;
 use App\Models\PackageSale;
@@ -109,6 +110,19 @@ class HomeController extends Controller
         return view('customer.packet.index', compact('packets', 'packageTypes'));
     }
 
+    public function campaigns()
+    {
+        $customer = auth('customer')->user();
+        $campaigns = $customer->campaigns()->paginate(setting('speed_pagination_number'));
+        //dd($campaigns);
+        return view('customer.campaign.index', compact('campaigns'));
+    }
+
+    public function campaignDetail(Request $request)
+    {
+        $campaign = Campaign::where('id',$request->id)->with('business')->get();
+        return $campaign;
+    }
     public function packetDetail($id)
     {
         $packageTypes = [
