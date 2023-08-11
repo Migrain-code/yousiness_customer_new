@@ -479,6 +479,7 @@ class CustomerController extends Controller
             $permission->is_sms = boolval($request->is_sms);
             $permission->is_email = boolval($request->is_email);
             $permission->is_notification = boolval($request->is_notification);
+            $permission->is_phone = boolval($request->is_phone);
             if ($permission->save()){
                 return response()->json([
                     'status' => "success",

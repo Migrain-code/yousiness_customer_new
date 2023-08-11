@@ -17,6 +17,7 @@ class CustomerNotificationPermissionsResource extends JsonResource
         return [
            'is_sms' => $this->is_sms == 1 ? true : false,
            'is_email' => $this->is_email == 1 ? true : false,
+           'is_phone' => $this->is_phone == 1 ? true : false,
            'is_notification' => $this->is_notification == 1 ? true : false,
         ];
     }
