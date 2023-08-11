@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Carbon;
 
 class BusinessDetailResource extends JsonResource
 {
@@ -22,6 +23,7 @@ class BusinessDetailResource extends JsonResource
             'city' => new City($this->cities),
             'district' => new District($this->districts),
             'start_time' => $this->start_time,
+            'end_time' => $this->end_time,
             'category' => $this->category->name,
             'about' => $this->about,
             'phone' => $this->phone,
@@ -32,6 +34,7 @@ class BusinessDetailResource extends JsonResource
             'personals' => PersonelResource::collection($this->personel),
             'gallery' => BusinessGalleryResource::collection($this->gallery),
             'services' => BusinessServiceResource::collection($this->services),
+            'closed_day' =>Carbon::now()->startOfWeek()->addDays($this->off_day - 1)->dayName,
             'point' => $this->points(),
         ];
     }

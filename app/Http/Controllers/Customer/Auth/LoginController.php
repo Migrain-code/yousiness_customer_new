@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Customer\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -41,13 +44,28 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        if (session('phone')){
-            dd(session('phone'));
-        }
         return view('customer.auth.login');
     }
+
     public function guard()
     {
         return Auth::guard('customer');
+    }
+
+    public function login(Request $request)
+    {
+        $email = $request->input('email');
+
+        $user = Customer::where('email', clearPhone($email))->first();
+
+        if ($user && Hash::check($request->input('password'), $user->password)) {
+            Auth::loginUsingId($user->id);
+            return to_route('customer.home');
+        } else {
+            return to_route('customer.login')->with('response', [
+                'status' => "danger",
+                'message' => "Telefon Numarası veya Şifre Hatalı"
+            ]);
+        }
     }
 }
