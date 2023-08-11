@@ -28,6 +28,7 @@ class ActivityDetailResource extends JsonResource
             'city' => City::make($this->citys),
             'personals' => ActivityPersonelsResource::collection($this->personels),
             'sponsors' => $this->sponsors,
+            'sliders' => ActivitySliderResource::collection($this->sliders),
             'personalCount'=> $this->personels->count(),
             'sponsorCount' => $this->sponsors->count(),
         ];
