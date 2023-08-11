@@ -24,6 +24,11 @@ class Activity extends Model
         return $this->hasMany(ActivitySlider::class, 'activity_id', 'id')->latest();
     }
 
+    public function images()
+    {
+        return $this->hasMany(ActivityImages::class, 'activity_id', 'id')->latest();
+    }
+
     public function citys()
     {
         return $this->hasOne(City::class, 'id', 'city');

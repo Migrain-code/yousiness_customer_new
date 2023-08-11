@@ -29,6 +29,7 @@ class ActivityDetailResource extends JsonResource
             'personals' => ActivityPersonelsResource::collection($this->personels),
             'sponsors' => $this->sponsors,
             'sliders' => ActivitySliderResource::collection($this->sliders),
+            'images' => ActivityImagesResource::collection($this->images),
             'personalCount'=> $this->personels->count(),
             'sponsorCount' => $this->sponsors->count(),
         ];
