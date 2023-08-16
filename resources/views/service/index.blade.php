@@ -40,7 +40,7 @@
                         <div class="specialist-card-five">
                            <img src="{{image($service->cover_image)}}" style="width: 100%;height: 100px;border-radius: 5px">
                             <div class="mt-2">
-                                {{$service->name}}
+                                <a href="{{route('service.detail', $service->slug)}}">{{$service->name}}</a>
                             </div>
                         </div>
                     </div>
@@ -64,15 +64,10 @@
             <div class="row">
                 @forelse($manServices as $service)
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
-                        <div class="specialist-card-five d-flex hvr-bounce-to-right">
-                            <div class="specialist-img-five">
-                                <img src="{{image($service->image)}}" alt="" class="img-fluid">
-                            </div>
-                            <div class="specialist-info">
+                        <div class="specialist-card-five">
+                            <img src="{{image($service->cover_image)}}" style="width: 100%;height: 100px;border-radius: 5px">
+                            <div class="mt-2">
                                 <a href="{{route('service.detail', $service->slug)}}">{{$service->name}}</a>
-                            </div>
-                            <div class="specialist-nav-five ms-auto">
-                                <a href="{{route('service.detail', $service->slug)}}"><i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
