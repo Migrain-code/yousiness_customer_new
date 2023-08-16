@@ -39,6 +39,9 @@
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five">
                            <img src="{{image($service->cover_image)}}" style="width: 100%;height: 100px;border-radius: 5px">
+                            <div class="mt-2">
+                                {{$service->name}}
+                            </div>
                         </div>
                     </div>
                 @empty
