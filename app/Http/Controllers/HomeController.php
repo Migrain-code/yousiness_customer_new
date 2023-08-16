@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ServiceCategoryResource;
 use App\Jobs\SendBirthdaySms;
 use App\Models\Activity;
 use App\Models\ActivityBusiness;
@@ -47,6 +48,22 @@ class HomeController extends Controller
         return view('welcome', compact('featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
     }
 
+    public function allServices()
+    {
+        $services = ServiceCategory::all();
+
+        $womanServices = [];
+        $manServices =[];
+        foreach ($services as $service){
+            if ($service->type_id == 1){
+                $womanServices[] = ServiceCategoryResource::make($service);
+            }
+            else{
+                $manServices[] = ServiceCategoryResource::make($service);
+            }
+        }
+        //return view('');
+    }
     public function pageDetail($slug)
     {
         $page = Page::where('slug', $slug)->firstOrFail();
@@ -133,8 +150,19 @@ class HomeController extends Controller
 
     public function allService()
     {
-        $serviceAll = ServiceCategory::all();
-        return view('service.index', compact('serviceAll'));
+        $services = ServiceCategory::all();
+
+        $womanServices = [];
+        $manServices =[];
+        foreach ($services as $service){
+            if ($service->type_id == 1){
+                $womanServices[] = ServiceCategoryResource::make($service);
+            }
+            else{
+                $manServices[] = ServiceCategoryResource::make($service);
+            }
+        }
+        return view('service.index', compact('womanServices', 'manServices'));
     }
 
     public function serviceDetail($slug, Request $request)

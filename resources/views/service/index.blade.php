@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Salonlar")
-@section('meta_description',"Salonlar")
+@section('title', "Tüm Hizmetler")
+@section('meta_description',"Tüm Hizmetler")
 @section('styles')
 
 @endsection
@@ -15,7 +15,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Hizmetler</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{$serviceAll->count()}} Sonuç Bulundu</h2>
+                    <h2 class="breadcrumb-title">{{count($womanServices) + count($manServices)}} Sonuç Bulundu</h2>
                 </div>
 
             </div>
@@ -30,12 +30,36 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Tüm Hizmetler</h2>
+                        <h2 class="title-five">Kadın</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                @forelse($services as $service)
+                @forelse($womanServices as $service)
+                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+                        <div class="specialist-card-five">
+                           <img src="{{image($service->cover_image)}}" style="width: 100%;height: 100px;border-radius: 5px">
+                        </div>
+                    </div>
+                @empty
+                @endforelse
+
+            </div>
+        </div>
+    </section>
+    <!-- /Browse Section Five -->
+    <!-- Browse Section Five -->
+    <section class="browse-section-five" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                        <h2 class="title-five">Erkek</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @forelse($manServices as $service)
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
@@ -56,7 +80,6 @@
         </div>
     </section>
     <!-- /Browse Section Five -->
-
 @endsection
 @section('scripts')
 
