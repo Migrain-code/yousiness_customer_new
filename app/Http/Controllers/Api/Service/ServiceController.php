@@ -43,4 +43,39 @@ class ServiceController extends Controller
            'man' => $manServices
         ]);
     }
+    /**
+     * @group Services
+     *
+     */
+    public function subCategory(Request $request)
+    {
+        $service = ServiceCategory::where('id', $request->category_id)->first();
+        $newServices = ServiceCategory::where('slug', $service->slug)->get();
+        $womanServices=[];
+        $manServices=[];
+        foreach ($newServices as $nService){
+            if ($nService->type_id == 1){
+                foreach ($nService->subCategories as $subService){
+                    $womanServices [] = [
+                       'id' => $subService->id,
+                       'name' => $subService->name
+                    ];
+                }
+            }
+            else{
+                foreach ($nService->subCategories as $subService){
+                    $manServices [] = [
+                        'id' => $subService->id,
+                        'name' => $subService->name
+                    ];
+                }
+            }
+        }
+
+        return response()->json([
+           'womanSubServices' => $womanServices,
+           'manSubServices' => $manServices,
+        ]);
+
+    }
 }
