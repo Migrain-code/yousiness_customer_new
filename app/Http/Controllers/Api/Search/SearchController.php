@@ -23,19 +23,25 @@ class SearchController extends Controller
     */
     public function searchService(Request $request)
     {
-            $businesses = Business::query()
-                ->where('city', $request->city_id)
-                ->where('district', $request->district_id)
-                ->when($request->filled('service_id'), function ($q) use ($request) {
-                    $q->whereHas('services', function ($query) use ($request) {
+        $businesses = Business::query()
+            ->where('city', $request->city_id)
+            ->where('district', $request->district_id)
+            ->when($request->filled('service_id') || $request->filled('sub_category_id'), function ($q) use ($request) {
+                $q->whereHas('services', function ($query) use ($request) {
+                    if ($request->filled('service_id')) {
                         $query->where('category', $request->input('service_id'));
-                    });
-                })
-                ->when($request->filled('category_id'), function ($q) use ($request) {
-                    $q->where('category_id', $request->category_id);
-                })
-                ->get();
-            if ($businesses->count() > 0){
+                    }
+                    if ($request->filled('sub_category_id')) {
+                        $query->where('sub_category', $request->input('sub_category_id'));
+                    }
+                });
+            })
+            ->when($request->filled('category_id'), function ($q) use ($request) {
+                $q->where('category_id', $request->category_id);
+            })
+            ->get();
+
+        if ($businesses->count() > 0){
                 return response()->json([
                     'businesses' => BusinessResource::collection($businesses)
                 ]);
