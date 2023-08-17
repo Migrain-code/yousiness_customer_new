@@ -59,6 +59,9 @@ class SearchController extends Controller
             ->when($request->filled('city_id'), function ($q) use ($request) {
                 $q->where('city', $request->city_id);
             })
+            ->when($request->filled('district_id'), function ($q) use ($request) {
+                $q->where('district', $request->district_id);
+            })
             ->when($request->filled('category_id'), function ($q) use ($request) {
                 $q->where('category_id', $request->category_id);
             })
