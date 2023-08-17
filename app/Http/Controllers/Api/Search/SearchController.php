@@ -31,6 +31,9 @@ class SearchController extends Controller
                         $query->where('category', $request->input('service_id'));
                     });
                 })
+                ->when($request->filled('category_id'), function ($q) use ($request) {
+                    $q->where('category_id', $request->category_id);
+                })
                 ->get();
             if ($businesses->count() > 0){
                 return response()->json([
