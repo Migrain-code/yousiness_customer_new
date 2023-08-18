@@ -2,9 +2,8 @@
 @section('title', 'Anasayfa')
 @section('meta_description', config('settings.meta_description'))
 @section('styles')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.css" integrity="sha512-ShLuspGzRsTiMlQ2Rg0e+atjy/gVQr3oYKnKmQkHQ6sxcnDAEOtOaPz2rRmeygV2CtnwUawDyHkGgH4zUbP3Hw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.css" integrity="sha512-EDXaYrpumQKF+Ic8nuEsgJWBwMOhgwWvNINclFu91nx5VR4MeZ5xlUvyRaYQJTMImwbXSeDjtZMtTs8EB65Z0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .ts-dropdown [data-selectable] .highlight {
             background: rgb(129 129 129);
@@ -149,13 +148,14 @@
                                 </div>
                             </div>
                             <div class="text-center mt-3">
-                                <p style="margin-top: 50px">{{main('speed_main_page_description')}}</p>
+                                <p>{{main('speed_main_page_description')}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row adds_mobil" style="margin-top: 145px;">
+                {{--
+                    <div class="row adds_mobil" style="margin-top: 145px;">
                     <div class="glide mt-4" data-aos="fade-up">
                         <div class="glide__track glide_mobil_slide" data-glide-el="track" style="margin-bottom: -70px !important;">
                             <ul class="glide__slides">
@@ -168,6 +168,7 @@
                         </div>
                     </div>
                 </div>
+                --}}
 
             </div>
         </div>
@@ -176,9 +177,30 @@
     <!-- Looking Section Five -->
     @if(setting('speed_main_page_section_1') == 1)
         <section class="looking-section-five">
+            <div class="row justify-content-center aos" data-aos="fade-up">
+                <div class="col-md-9">
+                    <!-- Slider -->
+                    <div class="specialities-slider slider">
+                        @forelse($ads as $ad)
+                            <!-- Slider Item -->
+                            <div class="speicality-item text-center">
+                                <div class="speicality-img">
+                                    <a href="{{$ad->link}}">
+                                        <img src="{{image($ad->image)}}" class="img-fluid" alt="Speciality" style="border-radius: 10px">	<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- /Slider Item -->
+                        @empty
+                        @endforelse
+
+                    </div>
+                    <!-- /Slider -->
+                </div>
+            </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 mt-3">
                         <div class="section-header section-header-five text-center aos" data-aos="fade-up">
                             <h2 class="title-five">{{main('speed_section_1_main_title')}}</h2>
                         </div>
@@ -509,20 +531,9 @@
         @endif
     @endif
 @endsection
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        effect: "cards",
-        grabCursor: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-</script>
+
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
         $(document).ready(function() {
@@ -536,23 +547,6 @@
                     language: 'tr'
                 });
             });
-
-            const options = {
-                type : "careousel",
-                perView : 5,
-                autoplay: "1500",
-                hoverpause: true,
-                breakpoints: {
-                    1024: {
-                        perView: 3
-                    },
-                    600: {
-                        perView: 1
-                    }
-                }
-            };
-
-            new Glide('.glide', options).mount()
 
         });
         // Arama kutusunu seçin
@@ -623,4 +617,5 @@
             }
         }
     </script>
+
 @endsection

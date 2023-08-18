@@ -4160,7 +4160,7 @@ html.menu-opened body {
 	margin-top: 10px;
 }
 .specialities-slider .slick-dots {
-    margin-top: 44px;
+    margin-top: 20px;
     position: unset;
 }
 .speicality-img {
@@ -27961,7 +27961,7 @@ ul {
 		height: 120px;
 	}
 	.speicality-img img {
-		width: 50px;
+		width: 100%;
 	}
 	.clinic-booking a.apt-btn {
 		width: 100%;
