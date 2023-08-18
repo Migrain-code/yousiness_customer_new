@@ -41,7 +41,7 @@
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .tab-titles.active {
-	background-color: #ff8a00;
+	background-color: #d59c4bcc;
 	color: #fff;
 
 
@@ -127,7 +127,7 @@
 .appointment-button {
   align-items: center;
   background-clip: padding-box;
-  background-color: #fa6400;
+  background-color: #d59c4bcc;
   border: 1px solid transparent;
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
@@ -156,8 +156,8 @@
 .appointment-button:hover,
 .appointment-button:focus {
 	color: white;
-  background-color: #fb8332;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  	background-color: #d59c4bcc;
+  	box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
 .appointment-button:hover {
@@ -338,11 +338,11 @@ ul {
 	padding: 6px 12px;
 }
 .btn-day:hover {
-	background-color: #fa6400;
+	background-color: #d59c4bcc;
 	color: #fff;
 }
 .btn-day.active {
-	background-color: #fa6400;
+	background-color: #d59c4bcc;
 	color: #fff;
 	border: 2px solid black;
 }
@@ -358,11 +358,11 @@ ul {
 	padding: 6px 12px;
 }
 .btn-clock:hover {
-	background-color: #fa6400;
+	background-color: #d59c4bcc;
 	color: #fff;
 }
 .btn-clock.active {
-	background-color: #fa6400;
+	background-color: #d59c4bcc;
 	color: #fff;
 	border: 2px solid black;
 }

@@ -6,7 +6,7 @@
                 <div class="navbar-header">
 
                     <a href="/" class="navbar-brand logo">
-                        <img src="{{image(setting('speed_logo_white'))}}" class="img-fluid" alt="Logo">
+                        <img src="{{image(setting('speed_logo_white'))}}" class="img-fluid" style="max-width: 250px" alt="Logo">
                     </a>
                     <a id="mobile_btn" href="javascript:void(0);" style="float: right">	<span class="bar-icon">
 									<span></span>
@@ -32,8 +32,8 @@
                         @endif
                         <li class="active"><a  href="/">İşletmeler</a></li>
                       </div>
-                        <li class="active">	<a href="/">Anasayfa</a></li>
-                        <li class="has-submenu"><a href="{{route('business.all')}}">Salonlar <i class="fas fa-chevron-down"></i></a>
+                        <li class="active">	<a href="/">Startseite</a></li>
+                        <li class="has-submenu"><a href="{{route('business.all')}}">Hallen <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 @foreach($categories as $category)
                                     <li>
@@ -42,7 +42,7 @@
                                @endforeach
                             </ul>
                         </li>
-                        <li class="has-submenu"><a href="{{route('service.all')}}">Hizmetler <i class="fas fa-chevron-down"></i></a>
+                        <li class="has-submenu"><a href="{{route('service.all')}}">Dienstleistungen <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 @foreach($services as $service)
                                     <li>
@@ -51,10 +51,9 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li class=""><a href="{{route('about')}}">Hakkımızda</a></li>
-                        <li class=""><a href="{{route('faq')}}">Destek</a></li>
-                        <li class=""><a href="{{route('blog.index')}}">Bloglar</a></li>
-                        <li class=""><a href="{{route('contact')}}">İletişim</a></li>
+                        <li class=""><a href="{{route('about')}}">über uns</a></li>
+                        <li class=""><a href="{{route('faq')}}">Unterstützung</a></li>
+                        <li class=""><a href="{{route('contact')}}">Kommunikation</a></li>
                     </ul>
                 </div>
 
@@ -66,11 +65,11 @@
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link btn-five" href="{{route('customer.login')}}">Giriş Yap</a>
+                            <a class="nav-link btn-five" href="{{route('customer.login')}}">Anmeldung</a>
                         </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link btn-five-light" href="{{image('')}}" target="_blank">İşletmeler</a>
+                        <a class="nav-link btn-five-light" href="{{image('')}}" target="_blank">Unternehmen</a>
                     </li>
                   </div>
                 </ul>

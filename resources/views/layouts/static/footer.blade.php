@@ -7,7 +7,7 @@
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <img src="{{image(setting('speed_logo_dark'))}}" alt="logo">
+                            <img src="{{image(setting('speed_logo_dark'))}}" style="max-width: 250px" alt="logo">
                         </div>
                         <div class="footer-about-content">
                             <p>{{setting('footer_about')}}</p>
@@ -28,7 +28,7 @@
                 <div class="col-lg-3 col-md-6">
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-contact">
-                        <h2 class="footer-title">İletişime Geç</h2>
+                        <h2 class="footer-title">Kommunikation</h2>
                         <div class="footer-contact-info">
                             <div class="footer-address"><span><i class="feather-map-pin"></i></span>
                                 <p>{{setting('speed_contact_address')}}</p>
@@ -49,14 +49,14 @@
                         <h2 class="footer-title">Müşteriler İçin</h2>
                         <ul>
 
-                            <li><a href="{{route('customer.login')}}">Giriş Yap</a>
+                            <li><a href="{{route('customer.login')}}">Anmeldung</a>
                             </li>
                             <li><a href="{{route('customer.register')}}">Kayıt Ol</a>
                             </li>
                             <li><a href="{{route('faq')}}">S.S.S</a>
                             </li>
                             <li>
-                                <a href="{{env('REMOTE_URL')}}">İşletmeler İçin</a>
+                                <a href="{{env('REMOTE_URL')}}">Unternehmen</a>
                             </li>
 
                         </ul>

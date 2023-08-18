@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Paket Satın Alımlarım")
-@section('meta_description', "Paket Alımlarım")
+@section('title', "Yorumlarım")
+@section('meta_description', "Yorumlarım")
 @section('styles')
     <style>
         @media (max-width: 768px) {
@@ -64,7 +64,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Paketlerim</h2>
+                    <h2 class="breadcrumb-title">Yorumlarım</h2>
                 </div>
 
             </div>
@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Satın Aldığınız Paketler</h3>
+                                        <<h3>Yaptığım Yorumlar</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">

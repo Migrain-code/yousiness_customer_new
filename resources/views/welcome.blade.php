@@ -55,9 +55,9 @@
                             <div class="search-box-five">
                                 <div class="col-md-12 p-0">
                                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
-                                        <li class="nav-item"><a class="nav-link active" href="#solid-rounded-tab1" data-bs-toggle="tab">Hizmet</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#solid-rounded-tab2" data-bs-toggle="tab">Salon Türü</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#solid-rounded-tab3" data-bs-toggle="tab">Salon Adı</a></li>
+                                        <li class="nav-item"><a class="nav-link active" href="#solid-rounded-tab1" data-bs-toggle="tab">Service</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#solid-rounded-tab2" data-bs-toggle="tab">Hallentyp</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#solid-rounded-tab3" data-bs-toggle="tab">Hallenname</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane show active" id="solid-rounded-tab1">
@@ -67,8 +67,8 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-service" class="js-example-basic-single" placeholder="Hizmet Seçiniz" style="" name="service_id">
-                                                            <option value="">Hizmet Seçiniz</option>
+                                                        <select id="select-service" class="js-example-basic-single" placeholder="Wählen Sie Dienst" style="" name="service_id">
+                                                            <option value="">Wählen Sie Dienst</option>
                                                             @forelse($services as $service)
                                                                 <option value="{{$service->id}}">{{$service->name}}</option>
                                                             @empty
@@ -80,8 +80,8 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
-                                                        <select class="js-example-basic-single" placeholder="Şehir Seçiniz" name="city_id">
-                                                            <option value="">Şehir Seçiniz</option>
+                                                        <select class="js-example-basic-single" placeholder="Stadt wählen" name="city_id">
+                                                            <option value="">Stadt wählen</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name}}</option>
                                                             @empty
@@ -91,7 +91,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="search-btn-five">
-                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i> Arama Yap</button>
+                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Forderung</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -101,8 +101,8 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-salon-type" class="js-example-basic-single" placeholder="Salon Türü Seçiniz" style="" name="category_id">
-                                                            <option value="">Salon Türü Seçiniz</option>
+                                                        <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Hallentyp" style="" name="category_id">
+                                                            <option value="">Wählen Sie Hallentyp</option>
                                                             @forelse($categories as $category)
                                                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                                             @empty
@@ -114,8 +114,8 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
-                                                        <select class="js-example-basic-single" placeholder="Şehir Seçiniz" id="select-city-2" name="city_id">
-                                                            <option value="">Şehir Seçiniz</option>
+                                                        <select class="js-example-basic-single" placeholder="Stadt wählen" id="select-city-2" name="city_id">
+                                                            <option value="">Stadt wählen</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name}}</option>
                                                             @empty
@@ -125,7 +125,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="search-btn-five">
-                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Arama Yap</button>
+                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Forderung</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -140,7 +140,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="search-btn-five">
-                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Göster</button>
+                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Forderung</button>
                                                 </div>
                                             </form>
                                         </div>

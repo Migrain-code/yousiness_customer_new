@@ -148,7 +148,7 @@
                                             </span>
                                         </div>
                                         <p class="doc-location mt-1"><i class="fas fa-map-marker-alt"></i> {{$business->business->cities->name. ", ". $business->business->districts->name}}</p>
-                                        <div class="alert alert-success py-1 mt-1">Hizli Randvuya Özel %10 İndirim </div>
+                                        <div class="alert alert-success py-1 mt-1">{{setting('speed_site_title')}} %10 İndirim </div>
 
                                         <div class="single-comment mt-1">
                                             asdasdasldhas
