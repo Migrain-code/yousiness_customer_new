@@ -16,7 +16,7 @@
 @section('content')
     <style>
         .tab-content{
-            background: #ff8a00;
+            background: #d59c4b;
             padding: 10px;
             border-radius: 0px 5px 5px 5px;
         }
