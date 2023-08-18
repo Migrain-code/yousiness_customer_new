@@ -46,14 +46,14 @@
                 <div class="col-lg-3 col-md-6">
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-menu">
-                        <h2 class="footer-title">Müşteriler İçin</h2>
+                        <h2 class="footer-title">Für Kunden</h2>
                         <ul>
 
                             <li><a href="{{route('customer.login')}}">Anmeldung</a>
                             </li>
-                            <li><a href="{{route('customer.register')}}">Kayıt Ol</a>
+                            <li><a href="{{route('customer.register')}}">Registrieren</a>
                             </li>
-                            <li><a href="{{route('faq')}}">S.S.S</a>
+                            <li><a href="{{route('faq')}}">Häufig gestellte Fragen</a>
                             </li>
                             <li>
                                 <a href="{{env('REMOTE_URL')}}">Unternehmen</a>
@@ -66,7 +66,7 @@
                 <div class="col-lg-3 col-md-6">
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-menu">
-                        <h2 class="footer-title">Önerilen Linkler</h2>
+                        <h2 class="footer-title">Empfohlene Links</h2>
                         <ul>
                             @forelse($recommendedLinks as $link)
                                  <li>
