@@ -147,7 +147,7 @@
 
                                 </div>
                             </div>
-                            <div class="text-center mt-3">
+                            <div class="text-center mt-3 header-description">
                                 <p>{{main('speed_main_page_description')}}</p>
                             </div>
                         </div>

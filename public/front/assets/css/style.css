@@ -2789,10 +2789,11 @@ button.bg-danger:hover {
 	margin-top: -7px;
 }
 .bar-icon {
-	display: inline-block;
+	display: block;
 	position: relative;
 	width: 31px;
-	left: 139px;
+	/* left: 139px; */
+	right: -33px;
 }
 .bar-icon span {
     background-color: #b5976d;
@@ -18107,6 +18108,15 @@ body.home-five {
 	.nav-bg-five .black-font > li > a {
 		font-size: 15px;
 	}
+	#mobile_btn{
+		position: absolute;
+		display: block;
+		right: 0;
+	}
+	.bar-icon{
+		left: 248px;
+	}
+
 }
 @media  (min-width: 835px) {
 		.main-menu-wrapper >ul .main-nav-sec{
@@ -22754,6 +22764,9 @@ ul {
 	white-space: nowrap;
 	margin-left: auto;
 }
+.logo img{
+	max-width: 250px;
+}
 @media screen and (max-width: 769px) {
 	.profil__menu ul {
 		padding-left: 0;
@@ -23159,11 +23172,6 @@ ul {
 	.mobil_hizmet_setting_buton {
 		margin-left: 25px !important;
 	}
-	.glide_mobil_slide {
-		margin-bottom: -75px !important;
-	}
-
-
 }
 @media (max-width: 835px) {
 	.bar-icon {
@@ -23384,6 +23392,9 @@ ul {
 	.glide_mobil_slide {
 		margin-bottom: -35px !important;
 	}
+	.logo img{
+		max-width: 170px;
+	}
 }
 @media (max-width: 769px) {
 	.header-nav {
@@ -23393,6 +23404,9 @@ ul {
 		width: 250px !important;
 		width: 200px !important;
 		left: 18px !important;
+	}
+	.logo img{
+		max-width: 170px;
 	}
 	.bar-icon {
 		 left: 506px;
@@ -23450,7 +23464,7 @@ ul {
 }
 @media (max-width: 601px) {
 	.bar-icon {
-		left: 338px;
+		left: 249px;
 	}
 	.card-header > form > .filter-widget  {
 		margin-left: 245px !important;
@@ -24192,7 +24206,33 @@ ul {
 		display: inline-flex;
 	}
 	#mobile_btn {
-		display: inline-block;
+		position: absolute;
+		display: block;
+		right: 0;
+	}
+	.header-description{
+		display: none;
+	}
+	.btn-five-light {
+		font-size: 15px;
+		font-weight: 600;
+		color: #808889;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 5px 20px;
+		text-align: center;
+		background: #fff;
+		border: 1px solid #808889;
+		box-shadow: inset 0 0 0 #808889;
+		border-radius: 5px;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+		-o-transition: all 0.5s;
+		transition: all 0.5s;
+		position: relative;
+		margin-right: 15px;
 	}
 	.section-search {
 		min-height: 330px;
@@ -27354,11 +27394,9 @@ ul {
 		width: 100%;
 	}
 	#mobile_btn {
-		right: 0;
-		margin-right: 0;
-		padding: 0 15px;
 		position: absolute;
-		z-index: 99;
+		display: block;
+		right: 0;
 	}
 	.navbar-brand.logo {
 		position: absolute;
