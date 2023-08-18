@@ -116,7 +116,8 @@
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <!-- Business Widget -->
                          @forelse($businesses as $business)
-                            <div class="row widget-container bg-white position-relative @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer">
+                             @if($business->business)
+                                <div class="row widget-container bg-white position-relative @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer">
                                 @if(auth('customer')->check())
                                     <a href="javascript:void(0)" data-toggle="tooltip" data-toggle="popover" title="Favorilere Ekle"  class="@if(in_array($business->business->id, $favoriteIds)) fav-btn-active @else fav-btn @endif addFav" b_id="{{$business->business->id}}">
                                         <i class="far fa-bookmark"></i>
@@ -157,10 +158,10 @@
                                 </div>
                                 <div class="col-lg-2 col-sm-12 widget-footer">
 
-                                        <div>
-                                            <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->business->services->min("price")}} TL</span>
-                                            'den başlayan
-                                        </div>
+                                    <div>
+                                        <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->business->services->min("price")}} TL</span>
+                                        'den başlayan
+                                    </div>
                                     @if($business->business->approve_type==0)
                                         <p class="doc-speciality">
                                             <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Anında Onay</span>
@@ -168,6 +169,8 @@
                                     @endif
                                 </div>
                             </div>
+
+                             @endif
                          @empty
                             <div class="alert alert-danger text-center aos" data-aos="fade-down">
                                 Aradığınız türde hizmet veren işletme kaydı bulunamadı.
