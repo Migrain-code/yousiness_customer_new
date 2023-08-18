@@ -11,7 +11,7 @@
                         <div class="row align-items-center justify-content-center">
                             <div class="col-md-12 col-lg-6 login-right">
                                 <div class="text-center my-2">
-                                    <img src="{{image(setting('speed_logo_white'))}}">
+                                    <img src="{{image(setting('speed_logo_white'))}}" style="max-width: 250px">
                                 </div>
                                 <div class="login-header text-center">
                                     <h2>Numara Doğrulama</h2>
