@@ -47,7 +47,7 @@ class AuthController extends Controller
                 $title = 'Merhaba '. $user->name;
                 $body = 'HizliRandevuya Tekrar Giriş Yaptın';
                 $notification = new \App\Services\Notification();
-               // $response = $notification->sendPushNotification($deviceToken, $title, $body);
+                $response = $notification->sendPushNotification($deviceToken, $title, $body);
 
             }
 
