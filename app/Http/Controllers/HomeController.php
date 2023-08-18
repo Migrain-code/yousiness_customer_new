@@ -186,6 +186,7 @@ class HomeController extends Controller
                 $favoriteIds[] = $favorite->business_id;
             }
         }
+
         return view('service.detail', compact('businesses', 'service', 'favoriteIds'));
     }
 

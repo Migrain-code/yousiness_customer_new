@@ -117,7 +117,7 @@
                     <!-- Business Widget -->
                          @forelse($businesses as $business)
                              @if($business->business)
-                                <div class="row widget-container bg-white position-relative @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer">
+                            <div class="row widget-container bg-white position-relative @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer">
                                 @if(auth('customer')->check())
                                     <a href="javascript:void(0)" data-toggle="tooltip" data-toggle="popover" title="Favorilere Ekle"  class="@if(in_array($business->business->id, $favoriteIds)) fav-btn-active @else fav-btn @endif addFav" b_id="{{$business->business->id}}">
                                         <i class="far fa-bookmark"></i>
@@ -170,7 +170,7 @@
                                 </div>
                             </div>
 
-                             @endif
+                        @endif
                          @empty
                             <div class="alert alert-danger text-center aos" data-aos="fade-down">
                                 Aradığınız türde hizmet veren işletme kaydı bulunamadı.
