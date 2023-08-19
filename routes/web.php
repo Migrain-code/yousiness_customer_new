@@ -4,8492 +4,20604 @@ use Illuminate\Support\Facades\Route;
 Route::get('/test', function (){
     $jsonArray = '[
     {
-        "name": "Eisenstadt",
-        "code": "7000"
+        "code": "1000",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Rust",
-        "code": "7071"
+        "code": "1003",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Breitenbrunn am Neusiedler See",
-        "code": "7091"
+        "code": "1004",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Donnerskirchen",
-        "code": "7082"
+        "code": "1005",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Großhöflein",
-        "code": "7051"
+        "code": "1006",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Hornstein",
-        "code": "7053"
+        "code": "1007",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Klingenbach",
-        "code": "7013"
+        "code": "1008",
+        "name": "Jouxtens-Mézery",
+        "": ""
     },
     {
-        "name": "Leithaprodersdorf",
-        "code": "2443"
+        "code": "1008",
+        "name": "Prilly",
+        "": ""
     },
     {
-        "name": "Mörbisch am See",
-        "code": "7072"
+        "code": "1009",
+        "name": "Pully",
+        "": ""
     },
     {
-        "name": "Müllendorf",
-        "code": "7052"
+        "code": "1010",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Neufeld an der Leitha",
-        "code": "2491"
+        "code": "1011",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Oggau am Neusiedler See",
-        "code": "7063"
+        "code": "1012",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Oslip",
-        "code": "7064"
+        "code": "1015",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Purbach am Neusiedler See",
-        "code": "7083"
+        "code": "1018",
+        "name": "Lausanne",
+        "": ""
     },
     {
-        "name": "Sankt Margarethen im Burgenland",
-        "code": "7062"
+        "code": "1020",
+        "name": "Renens VD",
+        "": ""
     },
     {
-        "name": "Schützen am Gebirge",
-        "code": "7081"
+        "code": "1022",
+        "name": "Chavannes-près-Renens",
+        "": ""
     },
     {
-        "name": "Siegendorf",
-        "code": "7011"
+        "code": "1023",
+        "name": "Crissier",
+        "": ""
     },
     {
-        "name": "Steinbrunn",
-        "code": "7035"
+        "code": "1024",
+        "name": "Ecublens VD",
+        "": ""
     },
     {
-        "name": "Trausdorf an der Wulka",
-        "code": "7061"
+        "code": "1025",
+        "name": "St-Sulpice VD",
+        "": ""
     },
     {
-        "name": "Wimpassing an der Leitha",
-        "code": "2485"
+        "code": "1026",
+        "name": "Denges",
+        "": ""
     },
     {
-        "name": "Wulkaprodersdorf",
-        "code": "7041"
+        "code": "1026",
+        "name": "Echandens",
+        "": ""
     },
     {
-        "name": "Loretto",
-        "code": "2443"
+        "code": "1027",
+        "name": "Lonay",
+        "": ""
     },
     {
-        "name": "Stotzing",
-        "code": "2443"
+        "code": "1028",
+        "name": "Préverenges",
+        "": ""
     },
     {
-        "name": "Zillingtal",
-        "code": "7034"
+        "code": "1029",
+        "name": "Villars-Ste-Croix",
+        "": ""
     },
     {
-        "name": "Zagersdorf",
-        "code": "7012"
+        "code": "1030",
+        "name": "Bussigny-près-Lausanne",
+        "": ""
     },
     {
-        "name": "Bocksdorf",
-        "code": "7551"
+        "code": "1031",
+        "name": "Mex VD",
+        "": ""
     },
     {
-        "name": "Burgauberg-Neudauberg",
-        "code": "8291"
+        "code": "1032",
+        "name": "Romanel-sur-Lausanne",
+        "": ""
     },
     {
-        "name": "Eberau",
-        "code": "7521"
+        "code": "1033",
+        "name": "Cheseaux-sur-Lausanne",
+        "": ""
     },
     {
-        "name": "Gerersdorf-Sulz",
-        "code": "7542"
+        "code": "1034",
+        "name": "Boussens",
+        "": ""
     },
     {
-        "name": "Güssing",
-        "code": "7540"
+        "code": "1035",
+        "name": "Bournens",
+        "": ""
     },
     {
-        "name": "Güttenbach",
-        "code": "7536"
+        "code": "1036",
+        "name": "Sullens",
+        "": ""
     },
     {
-        "name": "Heiligenbrunn",
-        "code": "7522"
+        "code": "1037",
+        "name": "Etagnières",
+        "": ""
     },
     {
-        "name": "Kukmirn",
-        "code": "7543"
+        "code": "1038",
+        "name": "Bercher",
+        "": ""
     },
     {
-        "name": "Neuberg im Burgenland",
-        "code": "7537"
+        "code": "1040",
+        "name": "St-Barthélemy VD",
+        "": ""
     },
     {
-        "name": "Neustift bei Güssing",
-        "code": "7540"
+        "code": "1040",
+        "name": "Villars-le-Terroir",
+        "": ""
     },
     {
-        "name": "Olbendorf",
-        "code": "7534"
+        "code": "1040",
+        "name": "Echallens",
+        "": ""
     },
     {
-        "name": "Ollersdorf im Burgenland",
-        "code": "7533"
+        "code": "1041",
+        "name": "Dommartin",
+        "": ""
     },
     {
-        "name": "Sankt Michael im Burgenland",
-        "code": "7535"
+        "code": "1041",
+        "name": "Poliez-Pittet",
+        "": ""
     },
     {
-        "name": "Stegersbach",
-        "code": "7551"
+        "code": "1041",
+        "name": "Bottens",
+        "": ""
     },
     {
-        "name": "Stinatz",
-        "code": "7552"
+        "code": "1041",
+        "name": "Naz",
+        "": ""
     },
     {
-        "name": "Strem",
-        "code": "7522"
+        "code": "1041",
+        "name": "Montaubion-Chardonney",
+        "": ""
     },
     {
-        "name": "Tobaj",
-        "code": "7544"
+        "code": "1041",
+        "name": "Poliez-le-Grand",
+        "": ""
     },
     {
-        "name": "Hackerberg",
-        "code": "8292"
+        "code": "1042",
+        "name": "Bettens",
+        "": ""
     },
     {
-        "name": "Wörterberg",
-        "code": "8293"
+        "code": "1042",
+        "name": "Bioley-Orjulaz",
+        "": ""
     },
     {
-        "name": "Großmürbisch",
-        "code": "7540"
+        "code": "1042",
+        "name": "Assens",
+        "": ""
     },
     {
-        "name": "Inzenhof",
-        "code": "7540"
+        "code": "1043",
+        "name": "Sugnens",
+        "": ""
     },
     {
-        "name": "Kleinmürbisch",
-        "code": "7540"
+        "code": "1044",
+        "name": "Fey",
+        "": ""
     },
     {
-        "name": "Tschanigraben",
-        "code": "7540"
+        "code": "1045",
+        "name": "Ogens",
+        "": ""
     },
     {
-        "name": "Heugraben",
-        "code": "7551"
+        "code": "1046",
+        "name": "Rueyres",
+        "": ""
     },
     {
-        "name": "Rohr im Burgenland",
-        "code": "7551"
+        "code": "1047",
+        "name": "Oppens",
+        "": ""
     },
     {
-        "name": "Bildein",
-        "code": "7521"
+        "code": "1052",
+        "name": "Le Mont-sur-Lausanne",
+        "": ""
     },
     {
-        "name": "Rauchwart",
-        "code": "7535"
+        "code": "1053",
+        "name": "Bretigny-sur-Morrens",
+        "": ""
     },
     {
-        "name": "Moschendorf",
-        "code": "7540"
+        "code": "1053",
+        "name": "Cugy VD",
+        "": ""
     },
     {
-        "name": "Deutsch Kaltenbrunn",
-        "code": "7572"
+        "code": "1054",
+        "name": "Morrens VD",
+        "": ""
     },
     {
-        "name": "Eltendorf",
-        "code": "7562"
+        "code": "1055",
+        "name": "Froideville",
+        "": ""
     },
     {
-        "name": "Jennersdorf",
-        "code": "8380"
+        "code": "1058",
+        "name": "Villars-Tiercelin",
+        "": ""
     },
     {
-        "name": "Minihof-Liebau",
-        "code": "8384"
+        "code": "1059",
+        "name": "Peney-le-Jorat",
+        "": ""
     },
     {
-        "name": "Mogersdorf",
-        "code": "8382"
+        "code": "1061",
+        "name": "Villars-Mendraz",
+        "": ""
     },
     {
-        "name": "Neuhaus am Klausenbach",
-        "code": "8385"
+        "code": "1062",
+        "name": "Sottens",
+        "": ""
     },
     {
-        "name": "Rudersdorf",
-        "code": "7571"
+        "code": "1063",
+        "name": "Peyres-Possens",
+        "": ""
     },
     {
-        "name": "Sankt Martin an der Raab",
-        "code": "8383"
+        "code": "1063",
+        "name": "Boulens",
+        "": ""
     },
     {
-        "name": "Weichselbaum",
-        "code": "8382"
+        "code": "1063",
+        "name": "Chapelle-sur-Moudon",
+        "": ""
     },
     {
-        "name": "Königsdorf",
-        "code": "7563"
+        "code": "1063",
+        "name": "Martherenges",
+        "": ""
     },
     {
-        "name": "Mühlgraben",
-        "code": "8385"
+        "code": "1066",
+        "name": "Epalinges",
+        "": ""
     },
     {
-        "name": "Draßburg",
-        "code": "7021"
+        "code": "1068",
+        "name": "Les Monts-de-Pully",
+        "": ""
     },
     {
-        "name": "Forchtenstein",
-        "code": "7212"
+        "code": "1070",
+        "name": "Puidoux",
+        "": ""
     },
     {
-        "name": "Hirm",
-        "code": "7024"
+        "code": "1071",
+        "name": "Rivaz",
+        "": ""
     },
     {
-        "name": "Marz",
-        "code": "7221"
+        "code": "1071",
+        "name": "St-Saphorin (Lavaux)",
+        "": ""
     },
     {
-        "name": "Mattersburg",
-        "code": "7210"
+        "code": "1071",
+        "name": "Chexbres",
+        "": ""
     },
     {
-        "name": "Neudörfl",
-        "code": "7201"
+        "code": "1072",
+        "name": "Forel (Lavaux)",
+        "": ""
     },
     {
-        "name": "Pöttelsdorf",
-        "code": "7023"
+        "code": "1073",
+        "name": "Mollie-Margot",
+        "": ""
     },
     {
-        "name": "Rohrbach bei Mattersburg",
-        "code": "7222"
+        "code": "1073",
+        "name": "Savigny",
+        "": ""
     },
     {
-        "name": "Bad Sauerbrunn",
-        "code": "7202"
+        "code": "1076",
+        "name": "Ferlens VD",
+        "": ""
     },
     {
-        "name": "Schattendorf",
-        "code": "7022"
+        "code": "1077",
+        "name": "Servion",
+        "": ""
     },
     {
-        "name": "Sieggraben",
-        "code": "7223"
+        "code": "1078",
+        "name": "Essertes",
+        "": ""
     },
     {
-        "name": "Sigleß",
-        "code": "7032"
+        "code": "1080",
+        "name": "Les Cullayes",
+        "": ""
     },
     {
-        "name": "Wiesen",
-        "code": "7203"
+        "code": "1081",
+        "name": "Montpreveyres",
+        "": ""
     },
     {
-        "name": "Antau",
-        "code": "7042"
+        "code": "1082",
+        "name": "Corcelles-le-Jorat",
+        "": ""
     },
     {
-        "name": "Baumgarten",
-        "code": "7021"
+        "code": "1083",
+        "name": "Mézières VD",
+        "": ""
     },
     {
-        "name": "Zemendorf-Stöttera",
-        "code": "7023"
+        "code": "1084",
+        "name": "Carrouge VD",
+        "": ""
     },
     {
-        "name": "Krensdorf",
-        "code": "7031"
+        "code": "1085",
+        "name": "Vulliens",
+        "": ""
     },
     {
-        "name": "Andau",
-        "code": "7163"
+        "code": "1088",
+        "name": "Ropraz",
+        "": ""
     },
     {
-        "name": "Apetlon",
-        "code": "7143"
+        "code": "1090",
+        "name": "La Croix (Lutry)",
+        "": ""
     },
     {
-        "name": "Bruckneudorf",
-        "code": "2460"
+        "code": "1091",
+        "name": "Aran",
+        "": ""
     },
     {
-        "name": "Deutsch Jahrndorf",
-        "code": "2423"
+        "code": "1091",
+        "name": "Chenaux",
+        "": ""
     },
     {
-        "name": "Frauenkirchen",
-        "code": "7132"
+        "code": "1091",
+        "name": "Grandvaux",
+        "": ""
     },
     {
-        "name": "Gattendorf",
-        "code": "2474"
+        "code": "1092",
+        "name": "Belmont-sur-Lausanne",
+        "": ""
     },
     {
-        "name": "Gols",
-        "code": "7122"
+        "code": "1093",
+        "name": "La Conversion",
+        "": ""
     },
     {
-        "name": "Halbturn",
-        "code": "7131"
+        "code": "1094",
+        "name": "Paudex",
+        "": ""
     },
     {
-        "name": "Illmitz",
-        "code": "7142"
+        "code": "1095",
+        "name": "Lutry",
+        "": ""
     },
     {
-        "name": "Jois",
-        "code": "7093"
+        "code": "1096",
+        "name": "Villette (Lavaux)",
+        "": ""
     },
     {
-        "name": "Kittsee",
-        "code": "2421"
+        "code": "1096",
+        "name": "Cully",
+        "": ""
     },
     {
-        "name": "Mönchhof",
-        "code": "7123"
+        "code": "1097",
+        "name": "Riex",
+        "": ""
     },
     {
-        "name": "Neusiedl am See",
-        "code": "7100"
+        "code": "1098",
+        "name": "Epesses",
+        "": ""
     },
     {
-        "name": "Nickelsdorf",
-        "code": "2425"
+        "code": "1110",
+        "name": "Morges",
+        "": ""
     },
     {
-        "name": "Pama",
-        "code": "2422"
+        "code": "1112",
+        "name": "Echichens",
+        "": ""
     },
     {
-        "name": "Pamhagen",
-        "code": "7152"
+        "code": "1113",
+        "name": "St-Saphorin-sur-Morges",
+        "": ""
     },
     {
-        "name": "Parndorf",
-        "code": "7111"
+        "code": "1114",
+        "name": "Colombier VD",
+        "": ""
     },
     {
-        "name": "Podersdorf am See",
-        "code": "7141"
+        "code": "1115",
+        "name": "Vullierens",
+        "": ""
     },
     {
-        "name": "Sankt Andrä am Zicksee",
-        "code": "7161"
+        "code": "1116",
+        "name": "Cottens VD",
+        "": ""
     },
     {
-        "name": "Tadten",
-        "code": "7162"
+        "code": "1117",
+        "name": "Grancy",
+        "": ""
     },
     {
-        "name": "Wallern im Burgenland",
-        "code": "7151"
+        "code": "1121",
+        "name": "Bremblens",
+        "": ""
     },
     {
-        "name": "Weiden am See",
-        "code": "7121"
+        "code": "1122",
+        "name": "Romanel-sur-Morges",
+        "": ""
     },
     {
-        "name": "Winden am See",
-        "code": "7092"
+        "code": "1123",
+        "name": "Aclens",
+        "": ""
     },
     {
-        "name": "Zurndorf",
-        "code": "2424"
+        "code": "1124",
+        "name": "Gollion",
+        "": ""
     },
     {
-        "name": "Neudorf",
-        "code": "2475"
+        "code": "1125",
+        "name": "Monnaz",
+        "": ""
     },
     {
-        "name": "Potzneusiedl",
-        "code": "2473"
+        "code": "1126",
+        "name": "Vaux-sur-Morges",
+        "": ""
     },
     {
-        "name": "Edelstal",
-        "code": "2413"
+        "code": "1127",
+        "name": "Clarmont",
+        "": ""
     },
     {
-        "name": "Deutschkreutz",
-        "code": "7301"
+        "code": "1128",
+        "name": "Reverolle",
+        "": ""
     },
     {
-        "name": "Draßmarkt",
-        "code": "7372"
+        "code": "1131",
+        "name": "Tolochenaz",
+        "": ""
     },
     {
-        "name": "Frankenau-Unterpullendorf",
-        "code": "7361"
+        "code": "1132",
+        "name": "Lully VD",
+        "": ""
     },
     {
-        "name": "Großwarasdorf",
-        "code": "7304"
+        "code": "1134",
+        "name": "Vufflens-le-Château",
+        "": ""
     },
     {
-        "name": "Horitschon",
-        "code": "7312"
+        "code": "1134",
+        "name": "Chigny",
+        "": ""
     },
     {
-        "name": "Kaisersdorf",
-        "code": "7342"
+        "code": "1135",
+        "name": "Denens",
+        "": ""
     },
     {
-        "name": "Kobersdorf",
-        "code": "7332"
+        "code": "1136",
+        "name": "Bussy-Chardonney",
+        "": ""
     },
     {
-        "name": "Lackenbach",
-        "code": "7322"
+        "code": "1141",
+        "name": "Sévery",
+        "": ""
     },
     {
-        "name": "Lockenhaus",
-        "code": "7442"
+        "code": "1142",
+        "name": "Pampigny",
+        "": ""
     },
     {
-        "name": "Lutzmannsburg",
-        "code": "7361"
+        "code": "1143",
+        "name": "Apples",
+        "": ""
     },
     {
-        "name": "Mannersdorf an der Rabnitz",
-        "code": "7444"
+        "code": "1144",
+        "name": "Ballens",
+        "": ""
     },
     {
-        "name": "Markt Sankt Martin",
-        "code": "7341"
+        "code": "1145",
+        "name": "Bière",
+        "": ""
     },
     {
-        "name": "Neckenmarkt",
-        "code": "7311"
+        "code": "1146",
+        "name": "Mollens VD",
+        "": ""
     },
     {
-        "name": "Neutal",
-        "code": "7343"
+        "code": "1147",
+        "name": "Montricher",
+        "": ""
     },
     {
-        "name": "Nikitsch",
-        "code": "7302"
+        "code": "1148",
+        "name": "Cuarnens",
+        "": ""
     },
     {
-        "name": "Oberpullendorf",
-        "code": "7350"
+        "code": "1148",
+        "name": "Moiry VD",
+        "": ""
     },
     {
-        "name": "Pilgersdorf",
-        "code": "7441"
+        "code": "1148",
+        "name": "La Praz",
+        "": ""
     },
     {
-        "name": "Piringsdorf",
-        "code": "7373"
+        "code": "1148",
+        "name": "Mont-la-Ville",
+        "": ""
     },
     {
-        "name": "Raiding",
-        "code": "7321"
+        "code": "1148",
+        "name": "Chavannes-le-Veyron",
+        "": ""
     },
     {
-        "name": "Ritzing",
-        "code": "7323"
+        "code": "1148",
+        "name": "Mauraz",
+        "": ""
     },
     {
-        "name": "Steinberg-Dörfl",
-        "code": "7453"
+        "code": "1148",
+        "name": "Villars-Bozon",
+        "": ""
     },
     {
-        "name": "Stoob",
-        "code": "7344"
+        "code": "1148",
+        "name": "La Coudre",
+        "": ""
     },
     {
-        "name": "Weppersdorf",
-        "code": "7331"
+        "code": "1148",
+        "name": "LIsle",
+        "": ""
     },
     {
-        "name": "Lackendorf",
-        "code": "7321"
+        "code": "1149",
+        "name": "Berolle",
+        "": ""
     },
     {
-        "name": "Unterfrauenhaid",
-        "code": "7321"
+        "code": "1162",
+        "name": "St-Prex",
+        "": ""
     },
     {
-        "name": "Unterrabnitz-Schwendgraben",
-        "code": "7371"
+        "code": "1163",
+        "name": "Etoy",
+        "": ""
     },
     {
-        "name": "Weingraben",
-        "code": "7374"
+        "code": "1164",
+        "name": "Buchillon",
+        "": ""
     },
     {
-        "name": "Oberloisdorf",
-        "code": "7451"
+        "code": "1165",
+        "name": "Allaman",
+        "": ""
     },
     {
-        "name": "Bad Tatzmannsdorf",
-        "code": "7431"
+        "code": "1166",
+        "name": "Perroy",
+        "": ""
     },
     {
-        "name": "Bernstein",
-        "code": "7434"
+        "code": "1167",
+        "name": "Lussy-sur-Morges",
+        "": ""
     },
     {
-        "name": "Deutsch Schützen-Eisenberg",
-        "code": "7474"
+        "code": "1168",
+        "name": "Villars-sous-Yens",
+        "": ""
     },
     {
-        "name": "Grafenschachen",
-        "code": "7423"
+        "code": "1169",
+        "name": "Yens",
+        "": ""
     },
     {
-        "name": "Großpetersdorf",
-        "code": "7503"
+        "code": "1170",
+        "name": "Aubonne",
+        "": ""
     },
     {
-        "name": "Hannersdorf",
-        "code": "7473"
+        "code": "1172",
+        "name": "Bougy-Villars",
+        "": ""
     },
     {
-        "name": "Kemeten",
-        "code": "7531"
+        "code": "1173",
+        "name": "Féchy",
+        "": ""
     },
     {
-        "name": "Kohfidisch",
-        "code": "7512"
+        "code": "1174",
+        "name": "Montherod",
+        "": ""
     },
     {
-        "name": "Litzelsdorf",
-        "code": "7532"
+        "code": "1174",
+        "name": "Pizy",
+        "": ""
     },
     {
-        "name": "Loipersdorf-Kitzladen",
-        "code": "7410"
+        "code": "1175",
+        "name": "Lavigny",
+        "": ""
     },
     {
-        "name": "Mariasdorf",
-        "code": "7433"
+        "code": "1176",
+        "name": "St-Livres",
+        "": ""
     },
     {
-        "name": "Markt Allhau",
-        "code": "7411"
+        "code": "1180",
+        "name": "Tartegnin",
+        "": ""
     },
     {
-        "name": "Markt Neuhodis",
-        "code": "7464"
+        "code": "1180",
+        "name": "Rolle",
+        "": ""
     },
     {
-        "name": "Mischendorf",
-        "code": "7511"
+        "code": "1182",
+        "name": "Gilly",
+        "": ""
     },
     {
-        "name": "Oberdorf im Burgenland",
-        "code": "7501"
+        "code": "1183",
+        "name": "Bursins",
+        "": ""
     },
     {
-        "name": "Oberschützen",
-        "code": "7432"
+        "code": "1184",
+        "name": "Vinzel",
+        "": ""
     },
     {
-        "name": "Oberwart",
-        "code": "7400"
+        "code": "1184",
+        "name": "Luins",
+        "": ""
     },
     {
-        "name": "Pinkafeld",
-        "code": "7423"
+        "code": "1185",
+        "name": "Mont-sur-Rolle",
+        "": ""
     },
     {
-        "name": "Rechnitz",
-        "code": "7471"
+        "code": "1186",
+        "name": "Essertines-sur-Rolle",
+        "": ""
     },
     {
-        "name": "Riedlingsdorf",
-        "code": "7422"
+        "code": "1187",
+        "name": "St-Oyens",
+        "": ""
     },
     {
-        "name": "Rotenturm an der Pinka",
-        "code": "7501"
+        "code": "1188",
+        "name": "Gimel",
+        "": ""
     },
     {
-        "name": "Schachendorf",
-        "code": "7472"
+        "code": "1188",
+        "name": "St-George",
+        "": ""
     },
     {
-        "name": "Stadtschlaining",
-        "code": "7461"
+        "code": "1189",
+        "name": "Saubraz",
+        "": ""
     },
     {
-        "name": "Unterkohlstätten",
-        "code": "7435"
+        "code": "1195",
+        "name": "Dully",
+        "": ""
     },
     {
-        "name": "Unterwart",
-        "code": "7501"
+        "code": "1195",
+        "name": "Bursinel",
+        "": ""
     },
     {
-        "name": "Weiden bei Rechnitz",
-        "code": "7463"
+        "code": "1196",
+        "name": "Gland",
+        "": ""
     },
     {
-        "name": "Wiesfleck",
-        "code": "7423"
+        "code": "1197",
+        "name": "Prangins",
+        "": ""
     },
     {
-        "name": "Wolfau",
-        "code": "7412"
+        "code": "1200",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Neustift an der Lafnitz",
-        "code": "7423"
+        "code": "1201",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Jabing",
-        "code": "7503"
+        "code": "1202",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Badersdorf",
-        "code": "7512"
+        "code": "1203",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Schandorf",
-        "code": "7472"
+        "code": "1204",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Klagenfurt am Wörthersee",
-        "code": "9020"
+        "code": "1205",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Villach",
-        "code": "9500"
+        "code": "1206",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Dellach",
-        "code": "9635"
+        "code": "1207",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Hermagor-Pressegger See",
-        "code": "9620"
+        "code": "1208",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Kirchbach",
-        "code": "9632"
+        "code": "1209",
+        "name": "Genève",
+        "": ""
     },
     {
-        "name": "Kötschach-Mauthen",
-        "code": "9640"
+        "code": "1212",
+        "name": "Grand-Lancy",
+        "": ""
     },
     {
-        "name": "St. Stefan im Gailtal",
-        "code": "9623"
+        "code": "1213",
+        "name": "Petit-Lancy",
+        "": ""
     },
     {
-        "name": "Gitschtal",
-        "code": "9622"
+        "code": "1213",
+        "name": "Onex",
+        "": ""
     },
     {
-        "name": "Lesachtal",
-        "code": "9653"
+        "code": "1214",
+        "name": "Vernier",
+        "": ""
     },
     {
-        "name": "Ebenthal in Kärnten",
-        "code": "9065"
+        "code": "1215",
+        "name": "Genève 15 Aéroport",
+        "": ""
     },
     {
-        "name": "Feistritz im Rosental",
-        "code": "9181"
+        "code": "1216",
+        "name": "Cointrin",
+        "": ""
     },
     {
-        "name": "Ferlach",
-        "code": "9170"
+        "code": "1217",
+        "name": "Meyrin",
+        "": ""
     },
     {
-        "name": "Grafenstein",
-        "code": "9131"
+        "code": "1218",
+        "name": "Le Grand-Saconnex",
+        "": ""
     },
     {
-        "name": "Keutschach am See",
-        "code": "9074"
+        "code": "1219",
+        "name": "Le Lignon",
+        "": ""
     },
     {
-        "name": "Köttmannsdorf",
-        "code": "9071"
+        "code": "1219",
+        "name": "Aïre",
+        "": ""
     },
     {
-        "name": "Krumpendorf am Wörthersee",
-        "code": "9201"
+        "code": "1219",
+        "name": "Châtelaine",
+        "": ""
     },
     {
-        "name": "Ludmannsdorf",
-        "code": "9072"
+        "code": "1220",
+        "name": "Les Avanchets",
+        "": ""
     },
     {
-        "name": "Maria Rain",
-        "code": "9161"
+        "code": "1222",
+        "name": "Vésenaz",
+        "": ""
     },
     {
-        "name": "Maria Saal",
-        "code": "9063"
+        "code": "1223",
+        "name": "Cologny",
+        "": ""
     },
     {
-        "name": "Maria Wörth",
-        "code": "9081"
+        "code": "1224",
+        "name": "Chêne-Bougeries",
+        "": ""
     },
     {
-        "name": "Moosburg",
-        "code": "9062"
+        "code": "1225",
+        "name": "Chêne-Bourg",
+        "": ""
     },
     {
-        "name": "Pörtschach am Wörther See",
-        "code": "9210"
+        "code": "1226",
+        "name": "Thônex",
+        "": ""
     },
     {
-        "name": "Poggersdorf",
-        "code": "9130"
+        "code": "1227",
+        "name": "Les Acacias",
+        "": ""
     },
     {
-        "name": "St. Margareten im Rosental",
-        "code": "9173"
+        "code": "1227",
+        "name": "Carouge GE",
+        "": ""
     },
     {
-        "name": "Schiefling am Wörthersee",
-        "code": "9535"
+        "code": "1228",
+        "name": "Plan-les-Ouates",
+        "": ""
     },
     {
-        "name": "Techelsberg am Wörther See",
-        "code": "9212"
+        "code": "1231",
+        "name": "Conches",
+        "": ""
     },
     {
-        "name": "Zell",
-        "code": "9170"
+        "code": "1232",
+        "name": "Confignon",
+        "": ""
     },
     {
-        "name": "Magdalensberg",
-        "code": "9064"
+        "code": "1233",
+        "name": "Bernex",
+        "": ""
     },
     {
-        "name": "Althofen",
-        "code": "9330"
+        "code": "1234",
+        "name": "Vessy",
+        "": ""
     },
     {
-        "name": "Brückl",
-        "code": "9371"
+        "code": "1236",
+        "name": "Cartigny",
+        "": ""
     },
     {
-        "name": "Deutsch-Griffen",
-        "code": "9572"
+        "code": "1237",
+        "name": "Avully",
+        "": ""
     },
     {
-        "name": "Eberstein",
-        "code": "9372"
+        "code": "1239",
+        "name": "Collex",
+        "": ""
     },
     {
-        "name": "Friesach",
-        "code": "9360"
+        "code": "1241",
+        "name": "Puplinge",
+        "": ""
     },
     {
-        "name": "Glödnitz",
-        "code": "9346"
+        "code": "1242",
+        "name": "Satigny",
+        "": ""
     },
     {
-        "name": "Gurk",
-        "code": "9342"
+        "code": "1243",
+        "name": "Presinge",
+        "": ""
     },
     {
-        "name": "Guttaring",
-        "code": "9334"
+        "code": "1244",
+        "name": "Choulex",
+        "": ""
     },
     {
-        "name": "Hüttenberg",
-        "code": "9375"
+        "code": "1245",
+        "name": "Collonge-Bellerive",
+        "": ""
     },
     {
-        "name": "Kappel am Krappfeld",
-        "code": "9321"
+        "code": "1246",
+        "name": "Corsier GE",
+        "": ""
     },
     {
-        "name": "Klein St. Paul",
-        "code": "9373"
+        "code": "1247",
+        "name": "Anières",
+        "": ""
     },
     {
-        "name": "Liebenfels",
-        "code": "9556"
+        "code": "1248",
+        "name": "Hermance",
+        "": ""
     },
     {
-        "name": "Metnitz",
-        "code": "9363"
+        "code": "1251",
+        "name": "Gy",
+        "": ""
     },
     {
-        "name": "Micheldorf",
-        "code": "9322"
+        "code": "1252",
+        "name": "Meinier",
+        "": ""
     },
     {
-        "name": "Mölbling",
-        "code": "9330"
+        "code": "1253",
+        "name": "Vandoeuvres",
+        "": ""
     },
     {
-        "name": "St. Georgen am Längsee",
-        "code": "9314"
+        "code": "1254",
+        "name": "Jussy",
+        "": ""
     },
     {
-        "name": "St. Veit an der Glan",
-        "code": "9300"
+        "code": "1255",
+        "name": "Veyrier",
+        "": ""
     },
     {
-        "name": "Straßburg",
-        "code": "9341"
+        "code": "1256",
+        "name": "Troinex",
+        "": ""
     },
     {
-        "name": "Weitensfeld im Gurktal",
-        "code": "9344"
+        "code": "1257",
+        "name": "La Croix-de-Rozon",
+        "": ""
     },
     {
-        "name": "Frauenstein",
-        "code": "9311"
+        "code": "1258",
+        "name": "Perly",
+        "": ""
     },
     {
-        "name": "Bad Kleinkirchheim",
-        "code": "9546"
+        "code": "1260",
+        "name": "Nyon",
+        "": ""
     },
     {
-        "name": "Baldramsdorf",
-        "code": "9805"
+        "code": "1261",
+        "name": "Longirod",
+        "": ""
     },
     {
-        "name": "Berg im Drautal",
-        "code": "9771"
+        "code": "1261",
+        "name": "Marchissy",
+        "": ""
     },
     {
-        "name": "Dellach im Drautal",
-        "code": "9772"
+        "code": "1261",
+        "name": "Le Vaud",
+        "": ""
     },
     {
-        "name": "Großkirchheim",
-        "code": "9843"
+        "code": "1262",
+        "name": "Eysins",
+        "": ""
     },
     {
-        "name": "Flattach",
-        "code": "9831"
+        "code": "1263",
+        "name": "Crassier",
+        "": ""
     },
     {
-        "name": "Gmünd in Kärnten",
-        "code": "9853"
+        "code": "1264",
+        "name": "St-Cergue",
+        "": ""
     },
     {
-        "name": "Greifenburg",
-        "code": "9761"
+        "code": "1265",
+        "name": "La Cure",
+        "": ""
     },
     {
-        "name": "Heiligenblut am Großglockner",
-        "code": "9844"
+        "code": "1266",
+        "name": "Duillier",
+        "": ""
     },
     {
-        "name": "Irschen",
-        "code": "9773"
+        "code": "1267",
+        "name": "Vich",
+        "": ""
     },
     {
-        "name": "Kleblach-Lind",
-        "code": "9753"
+        "code": "1267",
+        "name": "Coinsins",
+        "": ""
     },
     {
-        "name": "Lendorf",
-        "code": "9811"
+        "code": "1268",
+        "name": "Burtigny",
+        "": ""
     },
     {
-        "name": "Mallnitz",
-        "code": "9822"
+        "code": "1268",
+        "name": "Begnins",
+        "": ""
     },
     {
-        "name": "Malta",
-        "code": "9854"
+        "code": "1269",
+        "name": "Bassins",
+        "": ""
     },
     {
-        "name": "Millstatt am See",
-        "code": "9872"
+        "code": "1270",
+        "name": "Trélex",
+        "": ""
     },
     {
-        "name": "Mörtschach",
-        "code": "9842"
+        "code": "1271",
+        "name": "Givrins",
+        "": ""
     },
     {
-        "name": "Mühldorf",
-        "code": "9814"
+        "code": "1272",
+        "name": "Genolier",
+        "": ""
     },
     {
-        "name": "Oberdrauburg",
-        "code": "9781"
+        "code": "1273",
+        "name": "Le Muids",
+        "": ""
     },
     {
-        "name": "Obervellach",
-        "code": "9821"
+        "code": "1273",
+        "name": "Arzier",
+        "": ""
     },
     {
-        "name": "Radenthein",
-        "code": "9545"
+        "code": "1274",
+        "name": "Grens",
+        "": ""
     },
     {
-        "name": "Rangersdorf",
-        "code": "9833"
+        "code": "1274",
+        "name": "Signy",
+        "": ""
     },
     {
-        "name": "Rennweg am Katschberg",
-        "code": "9863"
+        "code": "1275",
+        "name": "Chéserex",
+        "": ""
     },
     {
-        "name": "Sachsenburg",
-        "code": "9751"
+        "code": "1276",
+        "name": "Gingins",
+        "": ""
     },
     {
-        "name": "Seeboden am Millstätter See",
-        "code": "9871"
+        "code": "1277",
+        "name": "Arnex-sur-Nyon",
+        "": ""
     },
     {
-        "name": "Spittal an der Drau",
-        "code": "9800"
+        "code": "1277",
+        "name": "Borex",
+        "": ""
     },
     {
-        "name": "Stall",
-        "code": "9832"
+        "code": "1278",
+        "name": "La Rippe",
+        "": ""
     },
     {
-        "name": "Steinfeld",
-        "code": "9754"
+        "code": "1279",
+        "name": "Bogis-Bossey",
+        "": ""
     },
     {
-        "name": "Trebesing",
-        "code": "9852"
+        "code": "1279",
+        "name": "Chavannes-de-Bogis",
+        "": ""
     },
     {
-        "name": "Weißensee",
-        "code": "9762"
+        "code": "1281",
+        "name": "Russin",
+        "": ""
     },
     {
-        "name": "Winklern",
-        "code": "9841"
+        "code": "1283",
+        "name": "Dardagny",
+        "": ""
     },
     {
-        "name": "Krems in Kärnten",
-        "code": "9861"
+        "code": "1283",
+        "name": "La Plaine",
+        "": ""
     },
     {
-        "name": "Lurnfeld",
-        "code": "9813"
+        "code": "1284",
+        "name": "Chancy",
+        "": ""
     },
     {
-        "name": "Reißeck",
-        "code": "9815"
+        "code": "1285",
+        "name": "Athenaz (Avusy)",
+        "": ""
     },
     {
-        "name": "Afritz am See",
-        "code": "9542"
+        "code": "1286",
+        "name": "Soral",
+        "": ""
     },
     {
-        "name": "Arnoldstein",
-        "code": "9601"
+        "code": "1287",
+        "name": "Laconnex",
+        "": ""
     },
     {
-        "name": "Arriach",
-        "code": "9543"
+        "code": "1288",
+        "name": "Aire-la-Ville",
+        "": ""
     },
     {
-        "name": "Bad Bleiberg",
-        "code": "9530"
+        "code": "1290",
+        "name": "Versoix",
+        "": ""
     },
     {
-        "name": "Feistritz an der Gail",
-        "code": "9613"
+        "code": "1290",
+        "name": "Chavannes-des-Bois",
+        "": ""
     },
     {
-        "name": "Feld am See",
-        "code": "9544"
+        "code": "1291",
+        "name": "Commugny",
+        "": ""
     },
     {
-        "name": "Ferndorf",
-        "code": "9702"
+        "code": "1292",
+        "name": "Chambésy",
+        "": ""
     },
     {
-        "name": "Finkenstein am Faaker See",
-        "code": "9584"
+        "code": "1293",
+        "name": "Bellevue",
+        "": ""
     },
     {
-        "name": "Fresach",
-        "code": "9712"
+        "code": "1294",
+        "name": "Genthod",
+        "": ""
     },
     {
-        "name": "Hohenthurn",
-        "code": "9613"
+        "code": "1295",
+        "name": "Mies",
+        "": ""
     },
     {
-        "name": "Nötsch im Gailtal",
-        "code": "9611"
+        "code": "1295",
+        "name": "Tannay",
+        "": ""
     },
     {
-        "name": "Paternion",
-        "code": "9711"
+        "code": "1296",
+        "name": "Coppet",
+        "": ""
     },
     {
-        "name": "Rosegg",
-        "code": "9232"
+        "code": "1297",
+        "name": "Founex",
+        "": ""
     },
     {
-        "name": "St. Jakob im Rosental",
-        "code": "9184"
+        "code": "1298",
+        "name": "Céligny",
+        "": ""
     },
     {
-        "name": "Stockenboi",
-        "code": "9713"
+        "code": "1299",
+        "name": "Crans-près-Céligny",
+        "": ""
     },
     {
-        "name": "Treffen am Ossiacher See",
-        "code": "9521"
+        "code": "1302",
+        "name": "Vufflens-la-Ville",
+        "": ""
     },
     {
-        "name": "Velden am Wörther See",
-        "code": "9220"
+        "code": "1303",
+        "name": "Penthaz",
+        "": ""
     },
     {
-        "name": "Weißenstein",
-        "code": "9721"
+        "code": "1304",
+        "name": "Senarclens",
+        "": ""
     },
     {
-        "name": "Wernberg",
-        "code": "9241"
+        "code": "1304",
+        "name": "Dizy",
+        "": ""
     },
     {
-        "name": "Bleiburg",
-        "code": "9150"
+        "code": "1304",
+        "name": "Allens",
+        "": ""
     },
     {
-        "name": "Diex",
-        "code": "9103"
+        "code": "1304",
+        "name": "Cossonay-Ville",
+        "": ""
     },
     {
-        "name": "Eberndorf",
-        "code": "9141"
+        "code": "1305",
+        "name": "Penthalaz",
+        "": ""
     },
     {
-        "name": "Eisenkappel-Vellach",
-        "code": "9135"
+        "code": "1306",
+        "name": "Daillens",
+        "": ""
     },
     {
-        "name": "Feistritz ob Bleiburg",
-        "code": "9143"
+        "code": "1307",
+        "name": "Lussery-Villars",
+        "": ""
     },
     {
-        "name": "Gallizien",
-        "code": "9132"
+        "code": "1308",
+        "name": "La Chaux (Cossonay)",
+        "": ""
     },
     {
-        "name": "Globasnitz",
-        "code": "9142"
+        "code": "1312",
+        "name": "Eclépens",
+        "": ""
     },
     {
-        "name": "Griffen",
-        "code": "9112"
+        "code": "1313",
+        "name": "Ferreyres",
+        "": ""
     },
     {
-        "name": "Neuhaus",
-        "code": "9155"
+        "code": "1315",
+        "name": "La Sarraz",
+        "": ""
     },
     {
-        "name": "Ruden",
-        "code": "9113"
+        "code": "1316",
+        "name": "Chevilly",
+        "": ""
     },
     {
-        "name": "St. Kanzian am Klopeiner See",
-        "code": "9122"
+        "code": "1317",
+        "name": "Orny",
+        "": ""
     },
     {
-        "name": "Sittersdorf",
-        "code": "9133"
+        "code": "1318",
+        "name": "Pompaples",
+        "": ""
     },
     {
-        "name": "Völkermarkt",
-        "code": "9100"
+        "code": "1321",
+        "name": "Arnex-sur-Orbe",
+        "": ""
     },
     {
-        "name": "Bad St. Leonhard im Lavanttal",
-        "code": "9462"
+        "code": "1322",
+        "name": "Croy",
+        "": ""
     },
     {
-        "name": "Frantschach-St. Gertraud",
-        "code": "9413"
+        "code": "1323",
+        "name": "Romainmôtier",
+        "": ""
     },
     {
-        "name": "Lavamünd",
-        "code": "9473"
+        "code": "1324",
+        "name": "Premier",
+        "": ""
     },
     {
-        "name": "Preitenegg",
-        "code": "9451"
+        "code": "1325",
+        "name": "Vaulion",
+        "": ""
     },
     {
-        "name": "Reichenfels",
-        "code": "9463"
+        "code": "1326",
+        "name": "Juriens",
+        "": ""
     },
     {
-        "name": "St. Andrä",
-        "code": "9433"
+        "code": "1329",
+        "name": "Bretonnières",
+        "": ""
     },
     {
-        "name": "St. Georgen im Lavanttal",
-        "code": "9423"
+        "code": "1337",
+        "name": "Vallorbe",
+        "": ""
     },
     {
-        "name": "St. Paul im Lavanttal",
-        "code": "9470"
+        "code": "1338",
+        "name": "Ballaigues",
+        "": ""
     },
     {
-        "name": "Wolfsberg",
-        "code": "9400"
+        "code": "1341",
+        "name": "Orient",
+        "": ""
     },
     {
-        "name": "Albeck",
-        "code": "9571"
+        "code": "1342",
+        "name": "Le Pont",
+        "": ""
     },
     {
-        "name": "Feldkirchen in Kärnten",
-        "code": "9560"
+        "code": "1343",
+        "name": "Les Charbonnières",
+        "": ""
     },
     {
-        "name": "Glanegg",
-        "code": "9555"
+        "code": "1344",
+        "name": "LAbbaye",
+        "": ""
     },
     {
-        "name": "Gnesau",
-        "code": "9563"
+        "code": "1345",
+        "name": "Le Lieu",
+        "": ""
     },
     {
-        "name": "Himmelberg",
-        "code": "9562"
+        "code": "1346",
+        "name": "Les Bioux",
+        "": ""
     },
     {
-        "name": "Ossiach",
-        "code": "9570"
+        "code": "1347",
+        "name": "Le Solliat",
+        "": ""
     },
     {
-        "name": "Reichenau",
-        "code": "9565"
+        "code": "1347",
+        "name": "Le Sentier",
+        "": ""
     },
     {
-        "name": "St. Urban",
-        "code": "9554"
+        "code": "1348",
+        "name": "Le Brassus",
+        "": ""
     },
     {
-        "name": "Steindorf am Ossiacher See",
-        "code": "9551"
+        "code": "1350",
+        "name": "Orbe",
+        "": ""
     },
     {
-        "name": "Steuerberg",
-        "code": "9560"
+        "code": "1352",
+        "name": "Agiez",
+        "": ""
     },
     {
-        "name": "Krems an der Donau",
-        "code": "3500"
+        "code": "1353",
+        "name": "Bofflens",
+        "": ""
     },
     {
-        "name": "St. Pölten",
-        "code": "3100"
+        "code": "1354",
+        "name": "Montcherand",
+        "": ""
     },
     {
-        "name": "Waidhofen an der Ybbs",
-        "code": "3340"
+        "code": "1355",
+        "name": "Sergey",
+        "": ""
     },
     {
-        "name": "Wiener Neustadt",
-        "code": "2700"
+        "code": "1355",
+        "name": "L Abergement",
+        "": ""
     },
     {
-        "name": "Allhartsberg",
-        "code": "3365"
+        "code": "1356",
+        "name": "Les Clées",
+        "": ""
     },
     {
-        "name": "Amstetten",
-        "code": "3300"
+        "code": "1356",
+        "name": "La Russille",
+        "": ""
     },
     {
-        "name": "Ardagger",
-        "code": "3321"
+        "code": "1357",
+        "name": "Lignerolle",
+        "": ""
     },
     {
-        "name": "Aschbach-Markt",
-        "code": "3361"
+        "code": "1358",
+        "name": "Valeyres-sous-Rances",
+        "": ""
     },
     {
-        "name": "Behamberg",
-        "code": "4441"
+        "code": "1372",
+        "name": "Bavois",
+        "": ""
     },
     {
-        "name": "Biberbach",
-        "code": "3353"
+        "code": "1373",
+        "name": "Chavornay",
+        "": ""
     },
     {
-        "name": "Ennsdorf",
-        "code": "4482"
+        "code": "1374",
+        "name": "Corcelles-sur-Chavornay",
+        "": ""
     },
     {
-        "name": "Ernsthofen",
-        "code": "4432"
+        "code": "1375",
+        "name": "Penthéréaz",
+        "": ""
     },
     {
-        "name": "Ertl",
-        "code": "3355"
+        "code": "1376",
+        "name": "Eclagnens",
+        "": ""
     },
     {
-        "name": "Euratsfeld",
-        "code": "3324"
+        "code": "1376",
+        "name": "Goumoens-le-Jux",
+        "": ""
     },
     {
-        "name": "Ferschnitz",
-        "code": "3325"
+        "code": "1376",
+        "name": "Goumoens-la-Ville",
+        "": ""
     },
     {
-        "name": "Haag",
-        "code": "3350"
+        "code": "1377",
+        "name": "Oulens-sous-Echallens",
+        "": ""
     },
     {
-        "name": "Haidershofen",
-        "code": "4431"
+        "code": "1400",
+        "name": "Yverdon-les-Bains",
+        "": ""
     },
     {
-        "name": "Hollenstein an der Ybbs",
-        "code": "3343"
+        "code": "1400",
+        "name": "Cheseaux-Noréaz",
+        "": ""
     },
     {
-        "name": "Kematen an der Ybbs",
-        "code": "3331"
+        "code": "1404",
+        "name": "Cuarny",
+        "": ""
     },
     {
-        "name": "Neuhofen an der Ybbs",
-        "code": "3364"
+        "code": "1404",
+        "name": "Villars-Epeney",
+        "": ""
     },
     {
-        "name": "Neustadtl an der Donau",
-        "code": "3323"
+        "code": "1405",
+        "name": "Pomy",
+        "": ""
     },
     {
-        "name": "Oed-Oehling",
-        "code": "3362"
+        "code": "1406",
+        "name": "Cronay",
+        "": ""
     },
     {
-        "name": "Opponitz",
-        "code": "3342"
+        "code": "1407",
+        "name": "Bioley-Magnoux",
+        "": ""
     },
     {
-        "name": "St. Georgen am Reith",
-        "code": "3344"
+        "code": "1407",
+        "name": "Gossens",
+        "": ""
     },
     {
-        "name": "St. Georgen am Ybbsfelde",
-        "code": "3304"
+        "code": "1407",
+        "name": "Mézery-près-Donneloye",
+        "": ""
     },
     {
-        "name": "St. Pantaleon-Erla",
-        "code": "4303"
+        "code": "1407",
+        "name": "Donneloye",
+        "": ""
     },
     {
-        "name": "St. Peter in der Au",
-        "code": "3352"
+        "code": "1408",
+        "name": "Prahins",
+        "": ""
     },
     {
-        "name": "St. Valentin",
-        "code": "4300"
+        "code": "1409",
+        "name": "Chanéaz",
+        "": ""
     },
     {
-        "name": "Seitenstetten",
-        "code": "3353"
+        "code": "1410",
+        "name": "Prévondavaux",
+        "": ""
     },
     {
-        "name": "Sonntagberg",
-        "code": "3332"
+        "code": "1410",
+        "name": "St-Cierges",
+        "": ""
     },
     {
-        "name": "Strengberg",
-        "code": "3314"
+        "code": "1410",
+        "name": "Denezy",
+        "": ""
     },
     {
-        "name": "Viehdorf",
-        "code": "3322"
+        "code": "1410",
+        "name": "Correvon",
+        "": ""
     },
     {
-        "name": "Wallsee-Sindelburg",
-        "code": "3313"
+        "code": "1410",
+        "name": "Thierrens",
+        "": ""
     },
     {
-        "name": "Weistrach",
-        "code": "3351"
+        "code": "1412",
+        "name": "Valeyres-sous-Ursins",
+        "": ""
     },
     {
-        "name": "Winklarn",
-        "code": "3300"
+        "code": "1412",
+        "name": "Ursins",
+        "": ""
     },
     {
-        "name": "Wolfsbach",
-        "code": "3354"
+        "code": "1413",
+        "name": "Orzens",
+        "": ""
     },
     {
-        "name": "Ybbsitz",
-        "code": "3341"
+        "code": "1415",
+        "name": "Molondin",
+        "": ""
     },
     {
-        "name": "Zeillern",
-        "code": "3311"
+        "code": "1415",
+        "name": "Démoret",
+        "": ""
     },
     {
-        "name": "Alland",
-        "code": "2534"
+        "code": "1416",
+        "name": "Pailly",
+        "": ""
     },
     {
-        "name": "Altenmarkt an der Triesting",
-        "code": "2571"
+        "code": "1417",
+        "name": "Epautheyres",
+        "": ""
     },
     {
-        "name": "Bad Vöslau",
-        "code": "2540"
+        "code": "1417",
+        "name": "Essertines-sur-Yverdon",
+        "": ""
     },
     {
-        "name": "Baden",
-        "code": "2500"
+        "code": "1418",
+        "name": "Vuarrens",
+        "": ""
     },
     {
-        "name": "Berndorf",
-        "code": "2560"
+        "code": "1420",
+        "name": "Fiez",
+        "": ""
     },
     {
-        "name": "Ebreichsdorf",
-        "code": "2483"
+        "code": "1421",
+        "name": "Fontaines-sur-Grandson",
+        "": ""
     },
     {
-        "name": "Enzesfeld-Lindabrunn",
-        "code": "2551"
+        "code": "1421",
+        "name": "Grandevent",
+        "": ""
     },
     {
-        "name": "Furth an der Triesting",
-        "code": "2564"
+        "code": "1422",
+        "name": "Grandson",
+        "": ""
     },
     {
-        "name": "Günselsdorf",
-        "code": "2525"
+        "code": "1423",
+        "name": "Fontanezier",
+        "": ""
     },
     {
-        "name": "Heiligenkreuz",
-        "code": "2532"
+        "code": "1423",
+        "name": "Romairon",
+        "": ""
     },
     {
-        "name": "Hernstein",
-        "code": "2560"
+        "code": "1423",
+        "name": "Vaugondry",
+        "": ""
     },
     {
-        "name": "Hirtenberg",
-        "code": "2552"
+        "code": "1423",
+        "name": "Villars-Burquin",
+        "": ""
     },
     {
-        "name": "Klausen-Leopoldsdorf",
-        "code": "2533"
+        "code": "1424",
+        "name": "Champagne",
+        "": ""
     },
     {
-        "name": "Kottingbrunn",
-        "code": "2542"
+        "code": "1425",
+        "name": "Onnens VD",
+        "": ""
     },
     {
-        "name": "Leobersdorf",
-        "code": "2544"
+        "code": "1426",
+        "name": "Corcelles-près-Concise",
+        "": ""
     },
     {
-        "name": "Mitterndorf an der Fischa",
-        "code": "2441"
+        "code": "1426",
+        "name": "Concise",
+        "": ""
     },
     {
-        "name": "Oberwaltersdorf",
-        "code": "2522"
+        "code": "1427",
+        "name": "Bonvillars",
+        "": ""
     },
     {
-        "name": "Pfaffstätten",
-        "code": "2511"
+        "code": "1428",
+        "name": "Mutrux",
+        "": ""
     },
     {
-        "name": "Pottendorf",
-        "code": "2486"
+        "code": "1428",
+        "name": "Provence",
+        "": ""
     },
     {
-        "name": "Pottenstein",
-        "code": "2563"
+        "code": "1429",
+        "name": "Giez",
+        "": ""
     },
     {
-        "name": "Reisenberg",
-        "code": "2440"
+        "code": "1430",
+        "name": "Orges",
+        "": ""
     },
     {
-        "name": "Schönau an der Triesting",
-        "code": "2525"
+        "code": "1431",
+        "name": "Vugelles-La Mothe",
+        "": ""
     },
     {
-        "name": "Seibersdorf",
-        "code": "2443"
+        "code": "1431",
+        "name": "Novalles",
+        "": ""
     },
     {
-        "name": "Sooß",
-        "code": "2504"
+        "code": "1432",
+        "name": "Belmont-sur-Yverdon",
+        "": ""
     },
     {
-        "name": "Tattendorf",
-        "code": "2523"
+        "code": "1432",
+        "name": "Gressy",
+        "": ""
     },
     {
-        "name": "Teesdorf",
-        "code": "2524"
+        "code": "1433",
+        "name": "Suchy",
+        "": ""
     },
     {
-        "name": "Traiskirchen",
-        "code": "2514"
+        "code": "1434",
+        "name": "Ependes VD",
+        "": ""
     },
     {
-        "name": "Trumau",
-        "code": "2521"
+        "code": "1435",
+        "name": "Essert-Pittet",
+        "": ""
     },
     {
-        "name": "Weissenbach an der Triesting",
-        "code": "2564"
+        "code": "1436",
+        "name": "Treycovagnes",
+        "": ""
     },
     {
-        "name": "Blumau-Neurißhof",
-        "code": "2602"
+        "code": "1436",
+        "name": "Chamblon",
+        "": ""
     },
     {
-        "name": "Au am Leithaberge",
-        "code": "2451"
+        "code": "1437",
+        "name": "Suscévaz",
+        "": ""
     },
     {
-        "name": "Bad Deutsch-Altenburg",
-        "code": "2405"
+        "code": "1438",
+        "name": "Mathod",
+        "": ""
     },
     {
-        "name": "Berg",
-        "code": "2413"
+        "code": "1439",
+        "name": "Rances",
+        "": ""
     },
     {
-        "name": "Bruck an der Leitha",
-        "code": "2460"
+        "code": "1441",
+        "name": "Valeyres-sous-Montagny",
+        "": ""
     },
     {
-        "name": "Göttlesbrunn-Arbesthal",
-        "code": "2464"
+        "code": "1442",
+        "name": "Montagny-près-Yverdon",
+        "": ""
     },
     {
-        "name": "Götzendorf an der Leitha",
-        "code": "2434"
+        "code": "1443",
+        "name": "Champvent",
+        "": ""
     },
     {
-        "name": "Hainburg a.d. Donau",
-        "code": "2410"
+        "code": "1443",
+        "name": "Essert-sous-Champvent",
+        "": ""
     },
     {
-        "name": "Haslau-Maria Ellend",
-        "code": "2402"
+        "code": "1443",
+        "name": "Villars-sous-Champvent",
+        "": ""
     },
     {
-        "name": "Höflein",
-        "code": "2465"
+        "code": "1445",
+        "name": "Vuiteboeuf",
+        "": ""
     },
     {
-        "name": "Hof am Leithaberge",
-        "code": "2451"
+        "code": "1446",
+        "name": "Baulmes",
+        "": ""
     },
     {
-        "name": "Hundsheim",
-        "code": "2405"
+        "code": "1450",
+        "name": "La Sagne (Ste-Croix)",
+        "": ""
     },
     {
-        "name": "Mannersdorf am Leithagebirge",
-        "code": "2452"
+        "code": "1450",
+        "name": "Le Château-de-Ste-Croix",
+        "": ""
     },
     {
-        "name": "Petronell-Carnuntum",
-        "code": "2404"
+        "code": "1450",
+        "name": "Ste-Croix",
+        "": ""
     },
     {
-        "name": "Prellenkirchen",
-        "code": "2472"
+        "code": "1452",
+        "name": "Les Rasses",
+        "": ""
     },
     {
-        "name": "Rohrau",
-        "code": "2471"
+        "code": "1453",
+        "name": "Mauborget",
+        "": ""
     },
     {
-        "name": "Scharndorf",
-        "code": "2403"
+        "code": "1453",
+        "name": "Bullet",
+        "": ""
     },
     {
-        "name": "Sommerein",
-        "code": "2453"
+        "code": "1454",
+        "name": "La Vraconnaz",
+        "": ""
     },
     {
-        "name": "Trautmannsdorf an der Leitha",
-        "code": "2454"
+        "code": "1454",
+        "name": "L Auberson",
+        "": ""
     },
     {
-        "name": "Wolfsthal",
-        "code": "2412"
+        "code": "1462",
+        "name": "Yvonand",
+        "": ""
     },
     {
-        "name": "Aderklaa",
-        "code": "2232"
+        "code": "1463",
+        "name": "Rovray",
+        "": ""
     },
     {
-        "name": "Andlersdorf",
-        "code": "2301"
+        "code": "1464",
+        "name": "Chêne-Pâquier",
+        "": ""
     },
     {
-        "name": "Angern an der March",
-        "code": "2261"
+        "code": "1464",
+        "name": "Chavannes-le-Chêne",
+        "": ""
     },
     {
-        "name": "Auersthal",
-        "code": "2214"
+        "code": "1468",
+        "name": "Cheyres",
+        "": ""
     },
     {
-        "name": "Bad Pirawarth",
-        "code": "2222"
+        "code": "1470",
+        "name": "Bollion",
+        "": ""
     },
     {
-        "name": "Deutsch-Wagram",
-        "code": "2232"
+        "code": "1470",
+        "name": "Lully FR",
+        "": ""
     },
     {
-        "name": "Drösing",
-        "code": "2265"
+        "code": "1470",
+        "name": "Seiry",
+        "": ""
     },
     {
-        "name": "Dürnkrut",
-        "code": "2263"
+        "code": "1470",
+        "name": "Estavayer-le-Lac",
+        "": ""
     },
     {
-        "name": "Ebenthal",
-        "code": "2251"
+        "code": "1473",
+        "name": "Font",
+        "": ""
     },
     {
-        "name": "Eckartsau",
-        "code": "2305"
+        "code": "1473",
+        "name": "Châtillon FR",
+        "": ""
     },
     {
-        "name": "Engelhartstetten",
-        "code": "2292"
+        "code": "1474",
+        "name": "Châbles FR",
+        "": ""
     },
     {
-        "name": "Gänserndorf",
-        "code": "2230"
+        "code": "1475",
+        "name": "Autavaux",
+        "": ""
     },
     {
-        "name": "Glinzendorf",
-        "code": "2282"
+        "code": "1475",
+        "name": "Forel FR",
+        "": ""
     },
     {
-        "name": "Groß-Enzersdorf",
-        "code": "2301"
+        "code": "1475",
+        "name": "Montbrelloz",
+        "": ""
     },
     {
-        "name": "Großhofen",
-        "code": "2282"
+        "code": "1482",
+        "name": "Cugy FR",
+        "": ""
     },
     {
-        "name": "Groß-Schweinbarth",
-        "code": "2221"
+        "code": "1483",
+        "name": "Frasses",
+        "": ""
     },
     {
-        "name": "Haringsee",
-        "code": "2286"
+        "code": "1483",
+        "name": "Vesin",
+        "": ""
     },
     {
-        "name": "Hauskirchen",
-        "code": "2184"
+        "code": "1483",
+        "name": "Montet (Broye)",
+        "": ""
     },
     {
-        "name": "Hohenau an der March",
-        "code": "2273"
+        "code": "1484",
+        "name": "Aumont",
+        "": ""
     },
     {
-        "name": "Hohenruppersdorf",
-        "code": "2223"
+        "code": "1484",
+        "name": "Granges-de-Vesin",
+        "": ""
     },
     {
-        "name": "Jedenspeigen",
-        "code": "2264"
+        "code": "1485",
+        "name": "Nuvilly",
+        "": ""
     },
     {
-        "name": "Lassee",
-        "code": "2291"
+        "code": "1486",
+        "name": "Vuissens",
+        "": ""
     },
     {
-        "name": "Leopoldsdorf im Marchfelde",
-        "code": "2285"
+        "code": "1489",
+        "name": "Murist",
+        "": ""
     },
     {
-        "name": "Mannsdorf an der Donau",
-        "code": "2304"
+        "code": "1509",
+        "name": "Vucherens",
+        "": ""
     },
     {
-        "name": "Marchegg",
-        "code": "2293"
+        "code": "1510",
+        "name": "Syens",
+        "": ""
     },
     {
-        "name": "Markgrafneusiedl",
-        "code": "2282"
+        "code": "1510",
+        "name": "Moudon",
+        "": ""
     },
     {
-        "name": "Matzen-Raggendorf",
-        "code": "2243"
+        "code": "1512",
+        "name": "Chavannes-sur-Moudon",
+        "": ""
     },
     {
-        "name": "Neusiedl an der Zaya",
-        "code": "2183"
+        "code": "1513",
+        "name": "Hermenches",
+        "": ""
     },
     {
-        "name": "Obersiebenbrunn",
-        "code": "2283"
+        "code": "1513",
+        "name": "Rossenges",
+        "": ""
     },
     {
-        "name": "Orth an der Donau",
-        "code": "2304"
+        "code": "1514",
+        "name": "Bussy-sur-Moudon",
+        "": ""
     },
     {
-        "name": "Palterndorf-Dobermannsdorf",
-        "code": "2181"
+        "code": "1515",
+        "name": "Neyruz-sur-Moudon",
+        "": ""
     },
     {
-        "name": "Parbasdorf",
-        "code": "2232"
+        "code": "1515",
+        "name": "Villars-le-Comte",
+        "": ""
     },
     {
-        "name": "Prottes",
-        "code": "2242"
+        "code": "1521",
+        "name": "Curtilles",
+        "": ""
     },
     {
-        "name": "Raasdorf",
-        "code": "2281"
+        "code": "1522",
+        "name": "Oulens-sur-Lucens",
+        "": ""
     },
     {
-        "name": "Ringelsdorf-Niederabsdorf",
-        "code": "2272"
+        "code": "1522",
+        "name": "Lucens",
+        "": ""
     },
     {
-        "name": "Schönkirchen-Reyersdorf",
-        "code": "2241"
+        "code": "1523",
+        "name": "Granges-près-Marnand",
+        "": ""
     },
     {
-        "name": "Spannberg",
-        "code": "2244"
+        "code": "1524",
+        "name": "Marnand",
+        "": ""
     },
     {
-        "name": "Strasshof an der Nordbahn",
-        "code": "2231"
+        "code": "1525",
+        "name": "Seigneux",
+        "": ""
     },
     {
-        "name": "Sulz im Weinviertel",
-        "code": "2224"
+        "code": "1525",
+        "name": "Henniez",
+        "": ""
     },
     {
-        "name": "Untersiebenbrunn",
-        "code": "2284"
+        "code": "1526",
+        "name": "Forel-sur-Lucens",
+        "": ""
     },
     {
-        "name": "Velm-Götzendorf",
-        "code": "2245"
+        "code": "1526",
+        "name": "Cremin",
+        "": ""
     },
     {
-        "name": "Weikendorf",
-        "code": "2253"
+        "code": "1527",
+        "name": "Villeneuve FR",
+        "": ""
     },
     {
-        "name": "Zistersdorf",
-        "code": "2225"
+        "code": "1528",
+        "name": "Praratoud",
+        "": ""
     },
     {
-        "name": "Weiden an der March",
-        "code": "2295"
+        "code": "1528",
+        "name": "Surpierre",
+        "": ""
     },
     {
-        "name": "Amaliendorf-Aalfang",
-        "code": "3872"
+        "code": "1529",
+        "name": "Cheiry",
+        "": ""
     },
     {
-        "name": "Brand-Nagelberg",
-        "code": "3871"
+        "code": "1530",
+        "name": "Payerne",
+        "": ""
     },
     {
-        "name": "Eggern",
-        "code": "3861"
+        "code": "1532",
+        "name": "Fétigny",
+        "": ""
     },
     {
-        "name": "Eisgarn",
-        "code": "3862"
+        "code": "1533",
+        "name": "Ménières",
+        "": ""
     },
     {
-        "name": "Gmünd",
-        "code": "3950"
+        "code": "1534",
+        "name": "Chapelle (Broye)",
+        "": ""
     },
     {
-        "name": "Großdietmanns",
-        "code": "3950"
+        "code": "1534",
+        "name": "Sassel",
+        "": ""
     },
     {
-        "name": "Bad Großpertholz",
-        "code": "3972"
+        "code": "1535",
+        "name": "Combremont-le-Grand",
+        "": ""
     },
     {
-        "name": "Großschönau",
-        "code": "3922"
+        "code": "1536",
+        "name": "Combremont-le-Petit",
+        "": ""
     },
     {
-        "name": "Moorbad Harbach",
-        "code": "3970"
+        "code": "1537",
+        "name": "Champtauroz",
+        "": ""
     },
     {
-        "name": "Haugschlag",
-        "code": "3874"
+        "code": "1538",
+        "name": "Treytorrens (Payerne)",
+        "": ""
     },
     {
-        "name": "Heidenreichstein",
-        "code": "3860"
+        "code": "1541",
+        "name": "Morens FR",
+        "": ""
     },
     {
-        "name": "Hirschbach",
-        "code": "3942"
+        "code": "1541",
+        "name": "Sévaz",
+        "": ""
     },
     {
-        "name": "Hoheneich",
-        "code": "3945"
+        "code": "1541",
+        "name": "Bussy FR",
+        "": ""
     },
     {
-        "name": "Kirchberg am Walde",
-        "code": "3932"
+        "code": "1542",
+        "name": "Rueyres-les-Prés",
+        "": ""
     },
     {
-        "name": "Litschau",
-        "code": "3874"
+        "code": "1543",
+        "name": "Grandcour",
+        "": ""
     },
     {
-        "name": "Reingers",
-        "code": "3863"
+        "code": "1544",
+        "name": "Gletterens",
+        "": ""
     },
     {
-        "name": "St. Martin",
-        "code": "3971"
+        "code": "1545",
+        "name": "Chevroux",
+        "": ""
     },
     {
-        "name": "Schrems",
-        "code": "3943"
+        "code": "1551",
+        "name": "Vers-chez-Perrin",
+        "": ""
     },
     {
-        "name": "Unserfrau-Altweitra",
-        "code": "3970"
+        "code": "1552",
+        "name": "Trey",
+        "": ""
     },
     {
-        "name": "Waldenstein",
-        "code": "3961"
+        "code": "1553",
+        "name": "Châtonnaye",
+        "": ""
     },
     {
-        "name": "Weitra",
-        "code": "3970"
+        "code": "1554",
+        "name": "Sédeilles",
+        "": ""
     },
     {
-        "name": "Alberndorf im Pulkautal",
-        "code": "2054"
+        "code": "1554",
+        "name": "Rossens VD",
+        "": ""
     },
     {
-        "name": "Göllersdorf",
-        "code": "2013"
+        "code": "1555",
+        "name": "Villarzel",
+        "": ""
     },
     {
-        "name": "Grabern",
-        "code": "2020"
+        "code": "1562",
+        "name": "Corcelles-près-Payerne",
+        "": ""
     },
     {
-        "name": "Guntersdorf",
-        "code": "2042"
+        "code": "1563",
+        "name": "Dompierre FR",
+        "": ""
     },
     {
-        "name": "Hadres",
-        "code": "2061"
+        "code": "1564",
+        "name": "Domdidier",
+        "": ""
     },
     {
-        "name": "Hardegg",
-        "code": "2083"
+        "code": "1565",
+        "name": "Vallon",
+        "": ""
     },
     {
-        "name": "Haugsdorf",
-        "code": "2054"
+        "code": "1565",
+        "name": "Missy",
+        "": ""
     },
     {
-        "name": "Heldenberg",
-        "code": "3704"
+        "code": "1566",
+        "name": "Les Friques",
+        "": ""
     },
     {
-        "name": "Hohenwarth-Mühlbach a.M.",
-        "code": "3472"
+        "code": "1566",
+        "name": "St-Aubin FR",
+        "": ""
     },
     {
-        "name": "Hollabrunn",
-        "code": "2020"
+        "code": "1567",
+        "name": "Delley",
+        "": ""
     },
     {
-        "name": "Mailberg",
-        "code": "2024"
+        "code": "1568",
+        "name": "Portalban",
+        "": ""
     },
     {
-        "name": "Maissau",
-        "code": "3712"
+        "code": "1580",
+        "name": "Oleyres",
+        "": ""
     },
     {
-        "name": "Nappersdorf-Kammersdorf",
-        "code": "2033"
+        "code": "1580",
+        "name": "Avenches",
+        "": ""
     },
     {
-        "name": "Pernersdorf",
-        "code": "2052"
+        "code": "1582",
+        "name": "Donatyre",
+        "": ""
     },
     {
-        "name": "Pulkau",
-        "code": "3741"
+        "code": "1583",
+        "name": "Villarepos",
+        "": ""
     },
     {
-        "name": "Ravelsbach",
-        "code": "3720"
+        "code": "1584",
+        "name": "Villars-le-Grand",
+        "": ""
     },
     {
-        "name": "Retz",
-        "code": "2070"
+        "code": "1585",
+        "name": "Bellerive VD",
+        "": ""
     },
     {
-        "name": "Retzbach",
-        "code": "2074"
+        "code": "1585",
+        "name": "Cotterd",
+        "": ""
     },
     {
-        "name": "Schrattenthal",
-        "code": "2073"
+        "code": "1585",
+        "name": "Salavaux",
+        "": ""
     },
     {
-        "name": "Seefeld-Kadolz",
-        "code": "2062"
+        "code": "1586",
+        "name": "Vallamand",
+        "": ""
     },
     {
-        "name": "Sitzendorf an der Schmida",
-        "code": "3714"
+        "code": "1587",
+        "name": "Montmagny",
+        "": ""
     },
     {
-        "name": "Wullersdorf",
-        "code": "2041"
+        "code": "1587",
+        "name": "Constantine",
+        "": ""
     },
     {
-        "name": "Zellerndorf",
-        "code": "2051"
+        "code": "1588",
+        "name": "Cudrefin",
+        "": ""
     },
     {
-        "name": "Ziersdorf",
-        "code": "3710"
+        "code": "1589",
+        "name": "Chabrey",
+        "": ""
     },
     {
-        "name": "Altenburg",
-        "code": "3591"
+        "code": "1595",
+        "name": "Clavaleyres",
+        "": ""
     },
     {
-        "name": "Brunn an der Wild",
-        "code": "3595"
+        "code": "1595",
+        "name": "Faoug",
+        "": ""
     },
     {
-        "name": "Burgschleinitz-Kühnring",
-        "code": "3730"
+        "code": "1607",
+        "name": "Les Tavernes",
+        "": ""
     },
     {
-        "name": "Drosendorf-Zissersdorf",
-        "code": "2095"
+        "code": "1607",
+        "name": "Les Thioleyres",
+        "": ""
     },
     {
-        "name": "Gars am Kamp",
-        "code": "3571"
+        "code": "1607",
+        "name": "Palézieux-Village",
+        "": ""
     },
     {
-        "name": "Geras",
-        "code": "2093"
+        "code": "1607",
+        "name": "Palézieux",
+        "": ""
     },
     {
-        "name": "Horn",
-        "code": "3580"
+        "code": "1608",
+        "name": "Chapelle (Glâne)",
+        "": ""
     },
     {
-        "name": "Irnfritz-Messern",
-        "code": "3754"
+        "code": "1608",
+        "name": "Bussigny-sur-Oron",
+        "": ""
     },
     {
-        "name": "Japons",
-        "code": "3763"
+        "code": "1608",
+        "name": "Chesalles-sur-Oron",
+        "": ""
     },
     {
-        "name": "Langau",
-        "code": "2091"
+        "code": "1608",
+        "name": "Oron-le-Châtel",
+        "": ""
     },
     {
-        "name": "Meiseldorf",
-        "code": "3744"
+        "code": "1609",
+        "name": "Besencens",
+        "": ""
     },
     {
-        "name": "Pernegg",
-        "code": "3753"
+        "code": "1609",
+        "name": "Fiaugères",
+        "": ""
     },
     {
-        "name": "Röhrenbach",
-        "code": "3592"
+        "code": "1609",
+        "name": "Le Jordil",
+        "": ""
     },
     {
-        "name": "Rosenburg-Mold",
-        "code": "3573"
+        "code": "1609",
+        "name": "St-Martin FR",
+        "": ""
     },
     {
-        "name": "St. Bernhard-Frauenhofen",
-        "code": "3580"
+        "code": "1610",
+        "name": "Châtillens",
+        "": ""
     },
     {
-        "name": "Sigmundsherberg",
-        "code": "3751"
+        "code": "1610",
+        "name": "Vuibroye",
+        "": ""
     },
     {
-        "name": "Weitersfeld",
-        "code": "2084"
+        "code": "1610",
+        "name": "Oron-la-Ville",
+        "": ""
     },
     {
-        "name": "Straning-Grafenberg",
-        "code": "3722"
+        "code": "1611",
+        "name": "Le Crêt-près-Semsales",
+        "": ""
     },
     {
-        "name": "Bisamberg",
-        "code": "2102"
+        "code": "1612",
+        "name": "Ecoteaux",
+        "": ""
     },
     {
-        "name": "Enzersfeld im Weinviertel",
-        "code": "2202"
+        "code": "1613",
+        "name": "Maracon",
+        "": ""
     },
     {
-        "name": "Ernstbrunn",
-        "code": "2115"
+        "code": "1614",
+        "name": "Granges (Veveyse)",
+        "": ""
     },
     {
-        "name": "Großmugl",
-        "code": "2002"
+        "code": "1615",
+        "name": "Bossonnens",
+        "": ""
     },
     {
-        "name": "Großrußbach",
-        "code": "2114"
+        "code": "1616",
+        "name": "Attalens",
+        "": ""
     },
     {
-        "name": "Hagenbrunn",
-        "code": "2102"
+        "code": "1617",
+        "name": "Tatroz",
+        "": ""
     },
     {
-        "name": "Harmannsdorf",
-        "code": "2111"
+        "code": "1617",
+        "name": "Remaufens",
+        "": ""
     },
     {
-        "name": "Hausleiten",
-        "code": "3464"
+        "code": "1618",
+        "name": "Châtel-St-Denis",
+        "": ""
     },
     {
-        "name": "Korneuburg",
-        "code": "2100"
+        "code": "1619",
+        "name": "Les Paccots",
+        "": ""
     },
     {
-        "name": "Langenzersdorf",
-        "code": "2103"
+        "code": "1623",
+        "name": "Semsales",
+        "": ""
     },
     {
-        "name": "Leitzersdorf",
-        "code": "2003"
+        "code": "1624",
+        "name": "La Verrerie",
+        "": ""
     },
     {
-        "name": "Leobendorf",
-        "code": "2100"
+        "code": "1624",
+        "name": "Grattavache",
+        "": ""
     },
     {
-        "name": "Rußbach",
-        "code": "3702"
+        "code": "1624",
+        "name": "Progens",
+        "": ""
     },
     {
-        "name": "Sierndorf",
-        "code": "2011"
+        "code": "1625",
+        "name": "Maules",
+        "": ""
     },
     {
-        "name": "Spillern",
-        "code": "2104"
+        "code": "1625",
+        "name": "Sâles (Gruyère)",
+        "": ""
     },
     {
-        "name": "Stetten",
-        "code": "2100"
+        "code": "1626",
+        "name": "Romanens",
+        "": ""
     },
     {
-        "name": "Stockerau",
-        "code": "2000"
+        "code": "1626",
+        "name": "Treyfayes",
+        "": ""
     },
     {
-        "name": "Niederhollabrunn",
-        "code": "2004"
+        "code": "1626",
+        "name": "Rueyres-Treyfayes",
+        "": ""
     },
     {
-        "name": "Aggsbach",
-        "code": "3641"
+        "code": "1627",
+        "name": "Vaulruz",
+        "": ""
     },
     {
-        "name": "Albrechtsberg an der Großen Krems",
-        "code": "3613"
+        "code": "1628",
+        "name": "Vuadens",
+        "": ""
     },
     {
-        "name": "Bergern im Dunkelsteinerwald",
-        "code": "3512"
+        "code": "1630",
+        "name": "Bulle",
+        "": ""
     },
     {
-        "name": "Dürnstein",
-        "code": "3601"
+        "code": "1632",
+        "name": "Riaz",
+        "": ""
     },
     {
-        "name": "Grafenegg",
-        "code": "3492"
+        "code": "1633",
+        "name": "Vuippens",
+        "": ""
     },
     {
-        "name": "Furth bei Göttweig",
-        "code": "3511"
+        "code": "1633",
+        "name": "Marsens",
+        "": ""
     },
     {
-        "name": "Gedersdorf",
-        "code": "3494"
+        "code": "1634",
+        "name": "La Roche FR",
+        "": ""
     },
     {
-        "name": "Gföhl",
-        "code": "3542"
+        "code": "1635",
+        "name": "La Tour-de-Trême",
+        "": ""
     },
     {
-        "name": "Hadersdorf-Kammern",
-        "code": "3493"
+        "code": "1636",
+        "name": "Broc",
+        "": ""
     },
     {
-        "name": "Jaidhof",
-        "code": "3542"
+        "code": "1637",
+        "name": "Charmey (Gruyère)",
+        "": ""
     },
     {
-        "name": "Krumau am Kamp",
-        "code": "3543"
+        "code": "1638",
+        "name": "Morlon",
+        "": ""
     },
     {
-        "name": "Langenlois",
-        "code": "3550"
+        "code": "1642",
+        "name": "Sorens",
+        "": ""
     },
     {
-        "name": "Lengenfeld",
-        "code": "3552"
+        "code": "1643",
+        "name": "Gumefens",
+        "": ""
     },
     {
-        "name": "Lichtenau im Waldviertel",
-        "code": "3522"
+        "code": "1644",
+        "name": "Avry-devant-Pont",
+        "": ""
     },
     {
-        "name": "Maria Laach am Jauerling",
-        "code": "3643"
+        "code": "1645",
+        "name": "Le Bry",
+        "": ""
     },
     {
-        "name": "Mautern an der Donau",
-        "code": "3512"
+        "code": "1646",
+        "name": "Echarlens",
+        "": ""
     },
     {
-        "name": "Mühldorf",
-        "code": "3622"
+        "code": "1647",
+        "name": "Corbières",
+        "": ""
     },
     {
-        "name": "Paudorf",
-        "code": "3508"
+        "code": "1648",
+        "name": "Hauteville",
+        "": ""
     },
     {
-        "name": "Rastenfeld",
-        "code": "3532"
+        "code": "1649",
+        "name": "Pont-la-Ville",
+        "": ""
     },
     {
-        "name": "Rohrendorf bei Krems",
-        "code": "3495"
+        "code": "1651",
+        "name": "Villarvolard",
+        "": ""
     },
     {
-        "name": "Rossatz-Arnsdorf",
-        "code": "3602"
+        "code": "1652",
+        "name": "Botterens",
+        "": ""
     },
     {
-        "name": "St. Leonhard am Hornerwald",
-        "code": "3572"
+        "code": "1652",
+        "name": "Villarbeney",
+        "": ""
     },
     {
-        "name": "Senftenberg",
-        "code": "3541"
+        "code": "1653",
+        "name": "Châtel-sur-Montsalvens",
+        "": ""
     },
     {
-        "name": "Spitz",
-        "code": "3620"
+        "code": "1653",
+        "name": "Crésuz",
+        "": ""
     },
     {
-        "name": "Straß im Straßertale",
-        "code": "3491"
+        "code": "1654",
+        "name": "Cerniat FR",
+        "": ""
     },
     {
-        "name": "Stratzing",
-        "code": "3552"
+        "code": "1656",
+        "name": "Im Fang",
+        "": ""
     },
     {
-        "name": "Weinzierl am Walde",
-        "code": "3521"
+        "code": "1656",
+        "name": "Jaun",
+        "": ""
     },
     {
-        "name": "Weißenkirchen in der Wachau",
-        "code": "3610"
+        "code": "1657",
+        "name": "Abländschen",
+        "": ""
     },
     {
-        "name": "Schönberg am Kamp",
-        "code": "3562"
+        "code": "1658",
+        "name": "La Tine",
+        "": ""
     },
     {
-        "name": "Droß",
-        "code": "3552"
+        "code": "1658",
+        "name": "Rossinière",
+        "": ""
     },
     {
-        "name": "Annaberg",
-        "code": "3222"
+        "code": "1659",
+        "name": "Flendruz",
+        "": ""
     },
     {
-        "name": "Eschenau",
-        "code": "3153"
+        "code": "1659",
+        "name": "Rougemont",
+        "": ""
     },
     {
-        "name": "Hainfeld",
-        "code": "3170"
+        "code": "1660",
+        "name": "Les Moulins",
+        "": ""
     },
     {
-        "name": "Hohenberg",
-        "code": "3192"
+        "code": "1660",
+        "name": "L Etivaz",
+        "": ""
     },
     {
-        "name": "Kaumberg",
-        "code": "2572"
+        "code": "1660",
+        "name": "Château-d Oex",
+        "": ""
     },
     {
-        "name": "Kleinzell",
-        "code": "3171"
+        "code": "1660",
+        "name": "La Lécherette",
+        "": ""
     },
     {
-        "name": "Lilienfeld",
-        "code": "3180"
+        "code": "1661",
+        "name": "Le Pâquier-Montbarry",
+        "": ""
     },
     {
-        "name": "Mitterbach am Erlaufsee",
-        "code": "3224"
+        "code": "1663",
+        "name": "Moléson-sur-Gruyères",
+        "": ""
     },
     {
-        "name": "Ramsau",
-        "code": "3172"
+        "code": "1663",
+        "name": "Pringy",
+        "": ""
     },
     {
-        "name": "Rohrbach an der Gölsen",
-        "code": "3163"
+        "code": "1663",
+        "name": "Gruyères",
+        "": ""
     },
     {
-        "name": "St. Aegyd am Neuwalde",
-        "code": "3193"
+        "code": "1663",
+        "name": "Epagny",
+        "": ""
     },
     {
-        "name": "St. Veit an der Gölsen",
-        "code": "3161"
+        "code": "1665",
+        "name": "Estavannens",
+        "": ""
     },
     {
-        "name": "Traisen",
-        "code": "3160"
+        "code": "1666",
+        "name": "Villars-sous-Mont",
+        "": ""
     },
     {
-        "name": "Türnitz",
-        "code": "3184"
+        "code": "1666",
+        "name": "Grandvillard",
+        "": ""
     },
     {
-        "name": "Artstetten-Pöbring",
-        "code": "3661"
+        "code": "1667",
+        "name": "Enney",
+        "": ""
     },
     {
-        "name": "Bergland",
-        "code": "3254"
+        "code": "1669",
+        "name": "Neirivue",
+        "": ""
     },
     {
-        "name": "Bischofstetten",
-        "code": "3232"
+        "code": "1669",
+        "name": "Les Sciernes-d Albeuve",
+        "": ""
     },
     {
-        "name": "Blindenmarkt",
-        "code": "3372"
+        "code": "1669",
+        "name": "Montbovon",
+        "": ""
     },
     {
-        "name": "Dorfstetten",
-        "code": "4392"
+        "code": "1669",
+        "name": "Lessoc",
+        "": ""
     },
     {
-        "name": "Dunkelsteinerwald",
-        "code": "3392"
+        "code": "1669",
+        "name": "Albeuve",
+        "": ""
     },
     {
-        "name": "Erlauf",
-        "code": "3253"
+        "code": "1670",
+        "name": "Bionnens",
+        "": ""
     },
     {
-        "name": "Golling an der Erlauf",
-        "code": "3381"
+        "code": "1670",
+        "name": "Esmonts",
+        "": ""
     },
     {
-        "name": "Hofamt Priel",
-        "code": "3681"
+        "code": "1670",
+        "name": "Ursy",
+        "": ""
     },
     {
-        "name": "Hürm",
-        "code": "3383"
+        "code": "1673",
+        "name": "Auboranges",
+        "": ""
     },
     {
-        "name": "Kilb",
-        "code": "3233"
+        "code": "1673",
+        "name": "Ecublens FR",
+        "": ""
     },
     {
-        "name": "Kirnberg an der Mank",
-        "code": "3241"
+        "code": "1673",
+        "name": "Rue",
+        "": ""
     },
     {
-        "name": "Klein-Pöchlarn",
-        "code": "3660"
+        "code": "1673",
+        "name": "Gillarens",
+        "": ""
     },
     {
-        "name": "Krummnußbaum",
-        "code": "3375"
+        "code": "1673",
+        "name": "Promasens",
+        "": ""
     },
     {
-        "name": "Leiben",
-        "code": "3652"
+        "code": "1674",
+        "name": "Vuarmarens",
+        "": ""
     },
     {
-        "name": "Loosdorf",
-        "code": "3382"
+        "code": "1674",
+        "name": "Montet (Glâne)",
+        "": ""
     },
     {
-        "name": "Mank",
-        "code": "3240"
+        "code": "1674",
+        "name": "Morlens",
+        "": ""
     },
     {
-        "name": "Marbach an der Donau",
-        "code": "3671"
+        "code": "1675",
+        "name": "Vauderens",
+        "": ""
     },
     {
-        "name": "Maria Taferl",
-        "code": "3672"
+        "code": "1675",
+        "name": "Blessens",
+        "": ""
     },
     {
-        "name": "Melk",
-        "code": "3390"
+        "code": "1675",
+        "name": "Mossel",
+        "": ""
     },
     {
-        "name": "Münichreith-Laimbach",
-        "code": "3662"
+        "code": "1676",
+        "name": "Chavannes-les-Forts",
+        "": ""
     },
     {
-        "name": "Neumarkt an der Ybbs",
-        "code": "3371"
+        "code": "1677",
+        "name": "Prez-vers-Siviriez",
+        "": ""
     },
     {
-        "name": "Nöchling",
-        "code": "3691"
+        "code": "1678",
+        "name": "Siviriez",
+        "": ""
     },
     {
-        "name": "Persenbeug-Gottsdorf",
-        "code": "3680"
+        "code": "1679",
+        "name": "Villaraboud",
+        "": ""
     },
     {
-        "name": "Petzenkirchen",
-        "code": "3252"
+        "code": "1680",
+        "name": "Berlens",
+        "": ""
     },
     {
-        "name": "Pöchlarn",
-        "code": "3380"
+        "code": "1680",
+        "name": "Romont FR",
+        "": ""
     },
     {
-        "name": "Pöggstall",
-        "code": "3650"
+        "code": "1681",
+        "name": "Billens",
+        "": ""
     },
     {
-        "name": "Raxendorf",
-        "code": "3654"
+        "code": "1681",
+        "name": "Hennens",
+        "": ""
     },
     {
-        "name": "Ruprechtshofen",
-        "code": "3244"
+        "code": "1682",
+        "name": "Villars-Bramard",
+        "": ""
     },
     {
-        "name": "St. Leonhard am Forst",
-        "code": "3243"
+        "code": "1682",
+        "name": "Dompierre VD",
+        "": ""
     },
     {
-        "name": "St. Martin-Karlsbach",
-        "code": "3376"
+        "code": "1682",
+        "name": "Lovatens",
+        "": ""
     },
     {
-        "name": "St. Oswald",
-        "code": "3684"
+        "code": "1682",
+        "name": "Cerniaz VD",
+        "": ""
     },
     {
-        "name": "Schönbühel-Aggsbach",
-        "code": "3642"
+        "code": "1682",
+        "name": "Prévonloup",
+        "": ""
     },
     {
-        "name": "Schollach",
-        "code": "3382"
+        "code": "1683",
+        "name": "Brenles",
+        "": ""
     },
     {
-        "name": "Weiten",
-        "code": "3653"
+        "code": "1683",
+        "name": "Chesalles-sur-Moudon",
+        "": ""
     },
     {
-        "name": "Ybbs an der Donau",
-        "code": "3370"
+        "code": "1683",
+        "name": "Sarzens",
+        "": ""
     },
     {
-        "name": "Zelking-Matzleinsdorf",
-        "code": "3393"
+        "code": "1684",
+        "name": "Mézières FR",
+        "": ""
     },
     {
-        "name": "Texingtal",
-        "code": "3242"
+        "code": "1685",
+        "name": "Villariaz",
+        "": ""
     },
     {
-        "name": "Yspertal",
-        "code": "3683"
+        "code": "1686",
+        "name": "Grangettes-près-Romont",
+        "": ""
     },
     {
-        "name": "Emmersdorf an der Donau",
-        "code": "3644"
+        "code": "1686",
+        "name": "La Neirigue",
+        "": ""
     },
     {
-        "name": "Altlichtenwarth",
-        "code": "2144"
+        "code": "1687",
+        "name": "Estévenens",
+        "": ""
     },
     {
-        "name": "Asparn an der Zaya",
-        "code": "2151"
+        "code": "1687",
+        "name": "La Magne",
+        "": ""
     },
     {
-        "name": "Bernhardsthal",
-        "code": "2275"
+        "code": "1687",
+        "name": "Vuisternens-devant-Romont",
+        "": ""
     },
     {
-        "name": "Bockfließ",
-        "code": "2213"
+        "code": "1688",
+        "name": "Sommentier",
+        "": ""
     },
     {
-        "name": "Drasenhofen",
-        "code": "2165"
+        "code": "1688",
+        "name": "Lieffrens",
+        "": ""
     },
     {
-        "name": "Falkenstein",
-        "code": "2162"
+        "code": "1689",
+        "name": "Le Châtelard-près-Romont",
+        "": ""
     },
     {
-        "name": "Fallbach",
-        "code": "2133"
+        "code": "1690",
+        "name": "Lussy FR",
+        "": ""
     },
     {
-        "name": "Gaubitsch",
-        "code": "2154"
+        "code": "1690",
+        "name": "Villaz-St-Pierre",
+        "": ""
     },
     {
-        "name": "Gaweinstal",
-        "code": "2191"
+        "code": "1691",
+        "name": "Villarimboud",
+        "": ""
     },
     {
-        "name": "Großebersdorf",
-        "code": "2203"
+        "code": "1692",
+        "name": "Massonnens",
+        "": ""
     },
     {
-        "name": "Großengersdorf",
-        "code": "2212"
+        "code": "1694",
+        "name": "Orsonnens",
+        "": ""
     },
     {
-        "name": "Großharras",
-        "code": "2034"
+        "code": "1694",
+        "name": "Chavannes-sous-Orsonnens",
+        "": ""
     },
     {
-        "name": "Großkrut",
-        "code": "2143"
+        "code": "1694",
+        "name": "Villargiroud",
+        "": ""
     },
     {
-        "name": "Hausbrunn",
-        "code": "2145"
+        "code": "1694",
+        "name": "Villarsiviriaux",
+        "": ""
     },
     {
-        "name": "Herrnbaumgarten",
-        "code": "2171"
+        "code": "1695",
+        "name": "Villarlod",
+        "": ""
     },
     {
-        "name": "Hochleithen",
-        "code": "2123"
+        "code": "1695",
+        "name": "Estavayer-le-Gibloux",
+        "": ""
     },
     {
-        "name": "Kreuttal",
-        "code": "2123"
+        "code": "1695",
+        "name": "Rueyres-St-Laurent",
+        "": ""
     },
     {
-        "name": "Kreuzstetten",
-        "code": "2124"
+        "code": "1695",
+        "name": "Villarsel-le-Gibloux",
+        "": ""
     },
     {
-        "name": "Laa an der Thaya",
-        "code": "2136"
+        "code": "1696",
+        "name": "Vuisternens-en-Ogoz",
+        "": ""
     },
     {
-        "name": "Ladendorf",
-        "code": "2126"
+        "code": "1697",
+        "name": "La Joux FR",
+        "": ""
     },
     {
-        "name": "Mistelbach",
-        "code": "2130"
+        "code": "1697",
+        "name": "Les Ecasseys",
+        "": ""
     },
     {
-        "name": "Neudorf bei Staatz",
-        "code": "2135"
+        "code": "1699",
+        "name": "Bouloz",
+        "": ""
     },
     {
-        "name": "Pillichsdorf",
-        "code": "2211"
+        "code": "1699",
+        "name": "Pont (Veveyse)",
+        "": ""
     },
     {
-        "name": "Poysdorf",
-        "code": "2170"
+        "code": "1699",
+        "name": "Porsel",
+        "": ""
     },
     {
-        "name": "Rabensburg",
-        "code": "2274"
+        "code": "1700",
+        "name": "Fribourg",
+        "": ""
     },
     {
-        "name": "Schrattenberg",
-        "code": "2172"
+        "code": "1708",
+        "name": "Fribourg",
+        "": ""
     },
     {
-        "name": "Staatz",
-        "code": "2134"
+        "code": "1712",
+        "name": "Tafers",
+        "": ""
     },
     {
-        "name": "Stronsdorf",
-        "code": "2153"
+        "code": "1713",
+        "name": "St. Antoni",
+        "": ""
     },
     {
-        "name": "Ulrichskirchen-Schleinbach",
-        "code": "2122"
+        "code": "1714",
+        "name": "Heitenried",
+        "": ""
     },
     {
-        "name": "Unterstinkenbrunn",
-        "code": "2154"
+        "code": "1715",
+        "name": "Alterswil FR",
+        "": ""
     },
     {
-        "name": "Wildendürnbach",
-        "code": "2164"
+        "code": "1716",
+        "name": "Oberschrot",
+        "": ""
     },
     {
-        "name": "Wilfersdorf",
-        "code": "2193"
+        "code": "1716",
+        "name": "Schwarzsee",
+        "": ""
     },
     {
-        "name": "Wolkersdorf im Weinviertel",
-        "code": "2120"
+        "code": "1716",
+        "name": "Plaffeien",
+        "": ""
     },
     {
-        "name": "Ottenthal",
-        "code": "2163"
+        "code": "1717",
+        "name": "St. Ursen",
+        "": ""
     },
     {
-        "name": "Achau",
-        "code": "2481"
+        "code": "1718",
+        "name": "Rechthalten",
+        "": ""
     },
     {
-        "name": "Biedermannsdorf",
-        "code": "2362"
+        "code": "1719",
+        "name": "Zumholz",
+        "": ""
     },
     {
-        "name": "Breitenfurt bei Wien",
-        "code": "2384"
+        "code": "1719",
+        "name": "Brünisried",
+        "": ""
     },
     {
-        "name": "Brunn am Gebirge",
-        "code": "2345"
+        "code": "1720",
+        "name": "Chésopelloz",
+        "": ""
     },
     {
-        "name": "Gaaden",
-        "code": "2531"
+        "code": "1720",
+        "name": "Corminboeuf",
+        "": ""
     },
     {
-        "name": "Gießhübl",
-        "code": "2372"
+        "code": "1721",
+        "name": "Cormérod",
+        "": ""
     },
     {
-        "name": "Gumpoldskirchen",
-        "code": "2352"
+        "code": "1721",
+        "name": "Courtion",
+        "": ""
     },
     {
-        "name": "Guntramsdorf",
-        "code": "2353"
+        "code": "1721",
+        "name": "Misery",
+        "": ""
     },
     {
-        "name": "Hennersdorf",
-        "code": "2332"
+        "code": "1722",
+        "name": "Bourguillon",
+        "": ""
     },
     {
-        "name": "Hinterbrühl",
-        "code": "2371"
+        "code": "1723",
+        "name": "Marly",
+        "": ""
     },
     {
-        "name": "Kaltenleutgeben",
-        "code": "2391"
+        "code": "1723",
+        "name": "Pierrafortscha",
+        "": ""
     },
     {
-        "name": "Laab im Walde",
-        "code": "2381"
+        "code": "1723",
+        "name": "Villarsel-sur-Marly",
+        "": ""
     },
     {
-        "name": "Laxenburg",
-        "code": "2361"
+        "code": "1724",
+        "name": "Bonnefontaine",
+        "": ""
     },
     {
-        "name": "Maria Enzersdorf",
-        "code": "2344"
+        "code": "1724",
+        "name": "Essert FR",
+        "": ""
     },
     {
-        "name": "Mödling",
-        "code": "2340"
+        "code": "1724",
+        "name": "Ferpicloz",
+        "": ""
     },
     {
-        "name": "Münchendorf",
-        "code": "2482"
+        "code": "1724",
+        "name": "Montévraz",
+        "": ""
     },
     {
-        "name": "Perchtoldsdorf",
-        "code": "2380"
+        "code": "1724",
+        "name": "Oberried FR",
+        "": ""
     },
     {
-        "name": "Vösendorf",
-        "code": "2331"
+        "code": "1724",
+        "name": "Senèdes",
+        "": ""
     },
     {
-        "name": "Wiener Neudorf",
-        "code": "2351"
+        "code": "1724",
+        "name": "Zénauva",
+        "": ""
     },
     {
-        "name": "Wienerwald",
-        "code": "2392"
+        "code": "1724",
+        "name": "Le Mouret",
+        "": ""
     },
     {
-        "name": "Altendorf",
-        "code": "2632"
+        "code": "1725",
+        "name": "Posieux",
+        "": ""
     },
     {
-        "name": "Aspang-Markt",
-        "code": "2870"
+        "code": "1726",
+        "name": "Farvagny-le-Petit",
+        "": ""
     },
     {
-        "name": "Aspangberg-St. Peter",
-        "code": "2870"
+        "code": "1726",
+        "name": "Grenilles",
+        "": ""
     },
     {
-        "name": "Breitenau",
-        "code": "2624"
+        "code": "1726",
+        "name": "Posat",
+        "": ""
     },
     {
-        "name": "Breitenstein",
-        "code": "2673"
+        "code": "1726",
+        "name": "Farvagny",
+        "": ""
     },
     {
-        "name": "Buchbach",
-        "code": "2630"
+        "code": "1727",
+        "name": "Magnedens",
+        "": ""
     },
     {
-        "name": "Edlitz",
-        "code": "2842"
+        "code": "1727",
+        "name": "Corpataux-Magnedens",
+        "": ""
     },
     {
-        "name": "Enzenreith",
-        "code": "2640"
+        "code": "1728",
+        "name": "Rossens FR",
+        "": ""
     },
     {
-        "name": "Feistritz am Wechsel",
-        "code": "2873"
+        "code": "1730",
+        "name": "Ecuvillens",
+        "": ""
     },
     {
-        "name": "Gloggnitz",
-        "code": "2640"
+        "code": "1731",
+        "name": "Ependes FR",
+        "": ""
     },
     {
-        "name": "Grafenbach-St. Valentin",
-        "code": "2632"
+        "code": "1732",
+        "name": "Arconciel",
+        "": ""
     },
     {
-        "name": "Grimmenstein",
-        "code": "2840"
+        "code": "1733",
+        "name": "Treyvaux",
+        "": ""
     },
     {
-        "name": "Grünbach am Schneeberg",
-        "code": "2733"
+        "code": "1734",
+        "name": "Tentlingen",
+        "": ""
     },
     {
-        "name": "Kirchberg am Wechsel",
-        "code": "2880"
+        "code": "1735",
+        "name": "Giffers",
+        "": ""
     },
     {
-        "name": "Mönichkirchen",
-        "code": "2872"
+        "code": "1736",
+        "name": "St. Silvester",
+        "": ""
     },
     {
-        "name": "Natschbach-Loipersbach",
-        "code": "2620"
+        "code": "1737",
+        "name": "Plasselb",
+        "": ""
     },
     {
-        "name": "Neunkirchen",
-        "code": "2620"
+        "code": "1738",
+        "name": "Sangernboden",
+        "": ""
     },
     {
-        "name": "Otterthal",
-        "code": "2880"
+        "code": "1740",
+        "name": "Neyruz FR",
+        "": ""
     },
     {
-        "name": "Payerbach",
-        "code": "2650"
+        "code": "1741",
+        "name": "Cottens FR",
+        "": ""
     },
     {
-        "name": "Pitten",
-        "code": "2823"
+        "code": "1742",
+        "name": "Autigny",
+        "": ""
     },
     {
-        "name": "Prigglitz",
-        "code": "2640"
+        "code": "1744",
+        "name": "Chénens",
+        "": ""
     },
     {
-        "name": "Puchberg am Schneeberg",
-        "code": "2734"
+        "code": "1745",
+        "name": "Lentigny",
+        "": ""
     },
     {
-        "name": "Raach am Hochgebirge",
-        "code": "2640"
+        "code": "1746",
+        "name": "Prez-vers-Noréaz",
+        "": ""
     },
     {
-        "name": "Reichenau an der Rax",
-        "code": "2651"
+        "code": "1747",
+        "name": "Corserey",
+        "": ""
     },
     {
-        "name": "St. Corona am Wechsel",
-        "code": "2880"
+        "code": "1748",
+        "name": "Torny-le-Grand",
+        "": ""
     },
     {
-        "name": "St. Egyden am Steinfeld",
-        "code": "2731"
+        "code": "1749",
+        "name": "Middes",
+        "": ""
     },
     {
-        "name": "Scheiblingkirchen-Thernberg",
-        "code": "2831"
+        "code": "1752",
+        "name": "Villars-sur-Glâne",
+        "": ""
     },
     {
-        "name": "Schottwien",
-        "code": "2641"
+        "code": "1753",
+        "name": "Matran",
+        "": ""
     },
     {
-        "name": "Schrattenbach",
-        "code": "2733"
+        "code": "1754",
+        "name": "Rosé",
+        "": ""
     },
     {
-        "name": "Schwarzau am Steinfeld",
-        "code": "2625"
+        "code": "1754",
+        "name": "Corjolens",
+        "": ""
     },
     {
-        "name": "Schwarzau im Gebirge",
-        "code": "2662"
+        "code": "1754",
+        "name": "Avry-sur-Matran",
+        "": ""
     },
     {
-        "name": "Seebenstein",
-        "code": "2824"
+        "code": "1754",
+        "name": "Avry-Centre FR",
+        "": ""
     },
     {
-        "name": "Semmering",
-        "code": "2680"
+        "code": "1756",
+        "name": "Onnens FR",
+        "": ""
     },
     {
-        "name": "Ternitz",
-        "code": "2630"
+        "code": "1756",
+        "name": "Lovens",
+        "": ""
     },
     {
-        "name": "Trattenbach",
-        "code": "2881"
+        "code": "1757",
+        "name": "Noréaz",
+        "": ""
     },
     {
-        "name": "Bürg-Vöstenhof",
-        "code": "2630"
+        "code": "1762",
+        "name": "Givisiez",
+        "": ""
     },
     {
-        "name": "Warth",
-        "code": "2831"
+        "code": "1763",
+        "name": "Granges-Paccot",
+        "": ""
     },
     {
-        "name": "Wartmannstetten",
-        "code": "2620"
+        "code": "1772",
+        "name": "Ponthaux",
+        "": ""
     },
     {
-        "name": "Willendorf",
-        "code": "2732"
+        "code": "1772",
+        "name": "Nierlet-les-Bois",
+        "": ""
     },
     {
-        "name": "Wimpassing im Schwarzatale",
-        "code": "2632"
+        "code": "1772",
+        "name": "Grolley",
+        "": ""
     },
     {
-        "name": "Würflach",
-        "code": "2732"
+        "code": "1773",
+        "name": "Léchelles",
+        "": ""
     },
     {
-        "name": "Zöbern",
-        "code": "2871"
+        "code": "1773",
+        "name": "Chandon",
+        "": ""
     },
     {
-        "name": "Höflein an der Hohen Wand",
-        "code": "2732"
+        "code": "1773",
+        "name": "Russy",
+        "": ""
     },
     {
-        "name": "Altlengbach",
-        "code": "3033"
+        "code": "1774",
+        "name": "Montagny-les-Monts",
+        "": ""
     },
     {
-        "name": "Asperhofen",
-        "code": "3041"
+        "code": "1774",
+        "name": "Cousset",
+        "": ""
     },
     {
-        "name": "Böheimkirchen",
-        "code": "3071"
+        "code": "1775",
+        "name": "Mannens",
+        "": ""
     },
     {
-        "name": "Brand-Laaben",
-        "code": "3053"
+        "code": "1775",
+        "name": "Grandsivaz",
+        "": ""
     },
     {
-        "name": "Eichgraben",
-        "code": "3032"
+        "code": "1776",
+        "name": "Montagny-la-Ville",
+        "": ""
     },
     {
-        "name": "Frankenfels",
-        "code": "3213"
+        "code": "1782",
+        "name": "Autafond",
+        "": ""
     },
     {
-        "name": "Gerersdorf",
-        "code": "3385"
+        "code": "1782",
+        "name": "La Corbaz",
+        "": ""
     },
     {
-        "name": "Hofstetten-Grünau",
-        "code": "3202"
+        "code": "1782",
+        "name": "Cormagens",
+        "": ""
     },
     {
-        "name": "Hafnerbach",
-        "code": "3386"
+        "code": "1782",
+        "name": "Lossy",
+        "": ""
     },
     {
-        "name": "Haunoldstein",
-        "code": "3384"
+        "code": "1782",
+        "name": "Formangueires",
+        "": ""
     },
     {
-        "name": "Herzogenburg",
-        "code": "3130"
+        "code": "1782",
+        "name": "Belfaux",
+        "": ""
     },
     {
-        "name": "Inzersdorf-Getzersdorf",
-        "code": "3131"
+        "code": "1783",
+        "name": "Pensier",
+        "": ""
     },
     {
-        "name": "Kapelln",
-        "code": "3141"
+        "code": "1783",
+        "name": "Barberêche",
+        "": ""
     },
     {
-        "name": "Karlstetten",
-        "code": "3121"
+        "code": "1784",
+        "name": "Cournillens",
+        "": ""
     },
     {
-        "name": "Kasten bei Böheimkirchen",
-        "code": "3072"
+        "code": "1784",
+        "name": "Wallenried",
+        "": ""
     },
     {
-        "name": "Kirchberg an der Pielach",
-        "code": "3204"
+        "code": "1784",
+        "name": "Courtepin",
+        "": ""
     },
     {
-        "name": "Kirchstetten",
-        "code": "3062"
+        "code": "1785",
+        "name": "Cressier FR",
+        "": ""
     },
     {
-        "name": "Loich",
-        "code": "3211"
+        "code": "1786",
+        "name": "Sugiez",
+        "": ""
     },
     {
-        "name": "Maria-Anzbach",
-        "code": "3034"
+        "code": "1787",
+        "name": "Môtier (Vully)",
+        "": ""
     },
     {
-        "name": "Markersdorf-Haindorf",
-        "code": "3385"
+        "code": "1787",
+        "name": "Mur (Vully) FR",
+        "": ""
     },
     {
-        "name": "Michelbach",
-        "code": "3074"
+        "code": "1787",
+        "name": "Mur (Vully) VD",
+        "": ""
     },
     {
-        "name": "Neidling",
-        "code": "3110"
+        "code": "1788",
+        "name": "Praz (Vully)",
+        "": ""
     },
     {
-        "name": "Neulengbach",
-        "code": "3040"
+        "code": "1789",
+        "name": "Lugnorre",
+        "": ""
     },
     {
-        "name": "Neustift-Innermanzing",
-        "code": "3052"
+        "code": "1791",
+        "name": "Courtaman",
+        "": ""
     },
     {
-        "name": "Nußdorf ob der Traisen",
-        "code": "3134"
+        "code": "1792",
+        "name": "Guschelmuth",
+        "": ""
     },
     {
-        "name": "Ober-Grafendorf",
-        "code": "3200"
+        "code": "1792",
+        "name": "Cordast",
+        "": ""
     },
     {
-        "name": "Obritzberg-Rust",
-        "code": "3123"
+        "code": "1793",
+        "name": "Jeuss",
+        "": ""
     },
     {
-        "name": "Prinzersdorf",
-        "code": "3385"
+        "code": "1794",
+        "name": "Salvenach",
+        "": ""
     },
     {
-        "name": "Pyhra",
-        "code": "3143"
+        "code": "1795",
+        "name": "Courlevon",
+        "": ""
     },
     {
-        "name": "Rabenstein an der Pielach",
-        "code": "3203"
+        "code": "1796",
+        "name": "Courgevaux",
+        "": ""
     },
     {
-        "name": "St. Margarethen an der Sierning",
-        "code": "3231"
+        "code": "1797",
+        "name": "Münchenwiler",
+        "": ""
     },
     {
-        "name": "Schwarzenbach an der Pielach",
-        "code": "3212"
+        "code": "1800",
+        "name": "Vevey",
+        "": ""
     },
     {
-        "name": "Statzendorf",
-        "code": "3125"
+        "code": "1801",
+        "name": "Le Mont-Pèlerin",
+        "": ""
     },
     {
-        "name": "Stössing",
-        "code": "3073"
+        "code": "1802",
+        "name": "Corseaux",
+        "": ""
     },
     {
-        "name": "Traismauer",
-        "code": "3133"
+        "code": "1803",
+        "name": "Chardonne",
+        "": ""
     },
     {
-        "name": "Weinburg",
-        "code": "3205"
+        "code": "1804",
+        "name": "Corsier-sur-Vevey",
+        "": ""
     },
     {
-        "name": "Perschling",
-        "code": "3142"
+        "code": "1805",
+        "name": "Jongny",
+        "": ""
     },
     {
-        "name": "Wilhelmsburg",
-        "code": "3150"
+        "code": "1806",
+        "name": "St-Légier-La Chiésaz",
+        "": ""
     },
     {
-        "name": "Wölbling",
-        "code": "3124"
+        "code": "1807",
+        "name": "Blonay",
+        "": ""
     },
     {
-        "name": "Gaming",
-        "code": "3292"
+        "code": "1808",
+        "name": "Les Monts-de-Corsier",
+        "": ""
     },
     {
-        "name": "Göstling an der Ybbs",
-        "code": "3345"
+        "code": "1809",
+        "name": "Fenil-sur-Corsier",
+        "": ""
     },
     {
-        "name": "Gresten",
-        "code": "3264"
+        "code": "1814",
+        "name": "La Tour-de-Peilz",
+        "": ""
     },
     {
-        "name": "Gresten-Land",
-        "code": "3264"
+        "code": "1815",
+        "name": "Clarens",
+        "": ""
     },
     {
-        "name": "Lunz am See",
-        "code": "3293"
+        "code": "1816",
+        "name": "Chailly-Montreux",
+        "": ""
     },
     {
-        "name": "Oberndorf an der Melk",
-        "code": "3281"
+        "code": "1817",
+        "name": "Brent",
+        "": ""
     },
     {
-        "name": "Puchenstuben",
-        "code": "3214"
+        "code": "1820",
+        "name": "Montreux",
+        "": ""
     },
     {
-        "name": "Purgstall an der Erlauf",
-        "code": "3251"
+        "code": "1820",
+        "name": "Veytaux",
+        "": ""
     },
     {
-        "name": "Randegg",
-        "code": "3263"
+        "code": "1820",
+        "name": "Territet",
+        "": ""
     },
     {
-        "name": "Reinsberg",
-        "code": "3264"
+        "code": "1822",
+        "name": "Chernex",
+        "": ""
     },
     {
-        "name": "St. Anton an der Jeßnitz",
-        "code": "3283"
+        "code": "1823",
+        "name": "Glion",
+        "": ""
     },
     {
-        "name": "St. Georgen an der Leys",
-        "code": "3282"
+        "code": "1824",
+        "name": "Caux",
+        "": ""
     },
     {
-        "name": "Scheibbs",
-        "code": "3270"
+        "code": "1832",
+        "name": "Villard-sur-Chamby",
+        "": ""
     },
     {
-        "name": "Steinakirchen am Forst",
-        "code": "3261"
+        "code": "1832",
+        "name": "Chamby",
+        "": ""
     },
     {
-        "name": "Wang",
-        "code": "3262"
+        "code": "1833",
+        "name": "Les Avants",
+        "": ""
     },
     {
-        "name": "Wieselburg",
-        "code": "3250"
+        "code": "1844",
+        "name": "Villeneuve VD",
+        "": ""
     },
     {
-        "name": "Wieselburg-Land",
-        "code": "3250"
+        "code": "1845",
+        "name": "Noville",
+        "": ""
     },
     {
-        "name": "Wolfpassing",
-        "code": "3261"
+        "code": "1846",
+        "name": "Chessel",
+        "": ""
     },
     {
-        "name": "Absdorf",
-        "code": "3462"
+        "code": "1847",
+        "name": "Rennaz",
+        "": ""
     },
     {
-        "name": "Atzenbrugg",
-        "code": "3452"
+        "code": "1852",
+        "name": "Roche VD",
+        "": ""
     },
     {
-        "name": "Fels am Wagram",
-        "code": "3481"
+        "code": "1853",
+        "name": "Yvorne",
+        "": ""
     },
     {
-        "name": "Grafenwörth",
-        "code": "3484"
+        "code": "1854",
+        "name": "Leysin",
+        "": ""
     },
     {
-        "name": "Großriedenthal",
-        "code": "3471"
+        "code": "1856",
+        "name": "Corbeyrier",
+        "": ""
     },
     {
-        "name": "Großweikersdorf",
-        "code": "3701"
+        "code": "1860",
+        "name": "Aigle",
+        "": ""
     },
     {
-        "name": "Judenau-Baumgarten",
-        "code": "3441"
+        "code": "1862",
+        "name": "La Comballaz",
+        "": ""
     },
     {
-        "name": "Kirchberg am Wagram",
-        "code": "3470"
+        "code": "1862",
+        "name": "Les Mosses",
+        "": ""
     },
     {
-        "name": "Königsbrunn am Wagram",
-        "code": "3465"
+        "code": "1863",
+        "name": "Le Sépey",
+        "": ""
     },
     {
-        "name": "Königstetten",
-        "code": "3433"
+        "code": "1864",
+        "name": "Vers-L Eglise",
+        "": ""
     },
     {
-        "name": "Langenrohr",
-        "code": "3442"
+        "code": "1865",
+        "name": "Les Diablerets",
+        "": ""
     },
     {
-        "name": "Michelhausen",
-        "code": "3451"
+        "code": "1866",
+        "name": "La Forclaz VD",
+        "": ""
     },
     {
-        "name": "Sieghartskirchen",
-        "code": "3443"
+        "code": "1867",
+        "name": "St-Triphon",
+        "": ""
     },
     {
-        "name": "Sitzenberg-Reidling",
-        "code": "3454"
+        "code": "1867",
+        "name": "Panex",
+        "": ""
     },
     {
-        "name": "Tulbing",
-        "code": "3434"
+        "code": "1867",
+        "name": "Ollon VD",
+        "": ""
     },
     {
-        "name": "Tulln an der Donau",
-        "code": "3430"
+        "code": "1868",
+        "name": "Collombey",
+        "": ""
     },
     {
-        "name": "Würmla",
-        "code": "3042"
+        "code": "1869",
+        "name": "Massongex",
+        "": ""
     },
     {
-        "name": "Zeiselmauer-Wolfpassing",
-        "code": "3424"
+        "code": "1870",
+        "name": "Monthey",
+        "": ""
     },
     {
-        "name": "Zwentendorf an der Donau",
-        "code": "3435"
+        "code": "1871",
+        "name": "Choëx",
+        "": ""
     },
     {
-        "name": "St. Andrä-Wördern",
-        "code": "3423"
+        "code": "1871",
+        "name": "Les Giettes",
+        "": ""
     },
     {
-        "name": "Muckendorf-Wipfing",
-        "code": "3426"
+        "code": "1872",
+        "name": "Troistorrents",
+        "": ""
     },
     {
-        "name": "Dietmanns",
-        "code": "3813"
+        "code": "1873",
+        "name": "Champoussin",
+        "": ""
     },
     {
-        "name": "Dobersberg",
-        "code": "3843"
+        "code": "1873",
+        "name": "Les Crosets",
+        "": ""
     },
     {
-        "name": "Gastern",
-        "code": "3852"
+        "code": "1873",
+        "name": "Val-d Illiez",
+        "": ""
     },
     {
-        "name": "Groß-Siegharts",
-        "code": "3812"
+        "code": "1874",
+        "name": "Champéry",
+        "": ""
     },
     {
-        "name": "Karlstein an der Thaya",
-        "code": "3822"
+        "code": "1875",
+        "name": "Morgins",
+        "": ""
     },
     {
-        "name": "Kautzen",
-        "code": "3851"
+        "code": "1880",
+        "name": "Fenalet-sur-Bex",
+        "": ""
     },
     {
-        "name": "Ludweis-Aigen",
-        "code": "3762"
+        "code": "1880",
+        "name": "Frenières-sur-Bex",
+        "": ""
     },
     {
-        "name": "Pfaffenschlag bei Waidhofen a.d.Thaya",
-        "code": "3834"
+        "code": "1880",
+        "name": "Les Plans-sur-Bex",
+        "": ""
     },
     {
-        "name": "Raabs an der Thaya",
-        "code": "3820"
+        "code": "1880",
+        "name": "Bex",
+        "": ""
     },
     {
-        "name": "Thaya",
-        "code": "3842"
+        "code": "1882",
+        "name": "Les Posses-sur-Bex",
+        "": ""
     },
     {
-        "name": "Vitis",
-        "code": "3902"
+        "code": "1882",
+        "name": "Gryon",
+        "": ""
     },
     {
-        "name": "Waidhofen an der Thaya",
-        "code": "3830"
+        "code": "1884",
+        "name": "Huémoz",
+        "": ""
     },
     {
-        "name": "Waidhofen an der Thaya-Land",
-        "code": "3830"
+        "code": "1884",
+        "name": "Arveyes",
+        "": ""
     },
     {
-        "name": "Waldkirchen an der Thaya",
-        "code": "3844"
+        "code": "1884",
+        "name": "Villars-sur-Ollon",
+        "": ""
     },
     {
-        "name": "Windigsteig",
-        "code": "3841"
+        "code": "1885",
+        "name": "Chesières",
+        "": ""
     },
     {
-        "name": "Bad Fischau-Brunn",
-        "code": "2721"
+        "code": "1890",
+        "name": "Mex VS",
+        "": ""
     },
     {
-        "name": "Bad Schönau",
-        "code": "2853"
+        "code": "1890",
+        "name": "St-Maurice",
+        "": ""
     },
     {
-        "name": "Ebenfurth",
-        "code": "2490"
+        "code": "1891",
+        "name": "Vérossaz",
+        "": ""
     },
     {
-        "name": "Eggendorf",
-        "code": "2492"
+        "code": "1892",
+        "name": "Lavey-les-Bains",
+        "": ""
     },
     {
-        "name": "Bad Erlach",
-        "code": "2822"
+        "code": "1892",
+        "name": "Morcles",
+        "": ""
     },
     {
-        "name": "Felixdorf",
-        "code": "2603"
+        "code": "1892",
+        "name": "Lavey-Village",
+        "": ""
     },
     {
-        "name": "Gutenstein",
-        "code": "2770"
+        "code": "1893",
+        "name": "Muraz (Collombey)",
+        "": ""
     },
     {
-        "name": "Hochneukirchen-Gschaidt",
-        "code": "2852"
+        "code": "1895",
+        "name": "Vionnaz",
+        "": ""
     },
     {
-        "name": "Hochwolkersdorf",
-        "code": "2802"
+        "code": "1896",
+        "name": "Miex",
+        "": ""
     },
     {
-        "name": "Hohe Wand",
-        "code": "2724"
+        "code": "1896",
+        "name": "Vouvry",
+        "": ""
     },
     {
-        "name": "Hollenthon",
-        "code": "2812"
+        "code": "1897",
+        "name": "Les Evouettes",
+        "": ""
     },
     {
-        "name": "Katzelsdorf",
-        "code": "2801"
+        "code": "1897",
+        "name": "Bouveret",
+        "": ""
     },
     {
-        "name": "Kirchschlag in der Buckligen Welt",
-        "code": "2860"
+        "code": "1898",
+        "name": "St-Gingolph",
+        "": ""
     },
     {
-        "name": "Krumbach",
-        "code": "2851"
+        "code": "1899",
+        "name": "Torgon",
+        "": ""
     },
     {
-        "name": "Lanzenkirchen",
-        "code": "2821"
+        "code": "1902",
+        "name": "Evionnaz",
+        "": ""
     },
     {
-        "name": "Lichtenegg",
-        "code": "2813"
+        "code": "1903",
+        "name": "Collonges",
+        "": ""
     },
     {
-        "name": "Lichtenwörth",
-        "code": "2493"
+        "code": "1904",
+        "name": "Vernayaz",
+        "": ""
     },
     {
-        "name": "Markt Piesting",
-        "code": "2753"
+        "code": "1905",
+        "name": "Dorénaz",
+        "": ""
     },
     {
-        "name": "Matzendorf-Hölles",
-        "code": "2751"
+        "code": "1906",
+        "name": "Charrat",
+        "": ""
     },
     {
-        "name": "Miesenbach",
-        "code": "2761"
+        "code": "1907",
+        "name": "Saxon",
+        "": ""
     },
     {
-        "name": "Muggendorf",
-        "code": "2763"
+        "code": "1908",
+        "name": "Riddes",
+        "": ""
     },
     {
-        "name": "Pernitz",
-        "code": "2763"
+        "code": "1911",
+        "name": "Mayens-de-Chamoson",
+        "": ""
     },
     {
-        "name": "Rohr im Gebirge",
-        "code": "2663"
+        "code": "1911",
+        "name": "Ovronnaz",
+        "": ""
     },
     {
-        "name": "Bromberg",
-        "code": "2833"
+        "code": "1912",
+        "name": "Produit (Leytron)",
+        "": ""
     },
     {
-        "name": "Schwarzenbach",
-        "code": "2803"
+        "code": "1912",
+        "name": "Montagnon (Leytron)",
+        "": ""
     },
     {
-        "name": "Sollenau",
-        "code": "2601"
+        "code": "1912",
+        "name": "Dugny (Leytron)",
+        "": ""
     },
     {
-        "name": "Theresienfeld",
-        "code": "2604"
+        "code": "1912",
+        "name": "Leytron",
+        "": ""
     },
     {
-        "name": "Waidmannsfeld",
-        "code": "2763"
+        "code": "1913",
+        "name": "Saillon",
+        "": ""
     },
     {
-        "name": "Waldegg",
-        "code": "2754"
+        "code": "1914",
+        "name": "Auddes-sur-Riddes",
+        "": ""
     },
     {
-        "name": "Walpersbach",
-        "code": "2822"
+        "code": "1914",
+        "name": "Isérables",
+        "": ""
     },
     {
-        "name": "Weikersdorf am Steinfelde",
-        "code": "2722"
+        "code": "1918",
+        "name": "La Tzoumaz",
+        "": ""
     },
     {
-        "name": "Wiesmath",
-        "code": "2811"
+        "code": "1920",
+        "name": "Martigny",
+        "": ""
     },
     {
-        "name": "Winzendorf-Muthmannsdorf",
-        "code": "2722"
+        "code": "1921",
+        "name": "Martigny-Croix",
+        "": ""
     },
     {
-        "name": "Wöllersdorf-Steinabrückl",
-        "code": "2752"
+        "code": "1922",
+        "name": "Les Granges (Salvan)",
+        "": ""
     },
     {
-        "name": "Zillingdorf",
-        "code": "2492"
+        "code": "1922",
+        "name": "Salvan",
+        "": ""
     },
     {
-        "name": "Ebergassing",
-        "code": "2435"
+        "code": "1923",
+        "name": "Le Trétien",
+        "": ""
     },
     {
-        "name": "Fischamend",
-        "code": "2401"
+        "code": "1923",
+        "name": "Les Marécottes",
+        "": ""
     },
     {
-        "name": "Gablitz",
-        "code": "3003"
+        "code": "1925",
+        "name": "Le Châtelard VS",
+        "": ""
     },
     {
-        "name": "Gerasdorf bei Wien",
-        "code": "2201"
+        "code": "1925",
+        "name": "Finhaut",
+        "": ""
     },
     {
-        "name": "Gramatneusiedl",
-        "code": "2440"
+        "code": "1926",
+        "name": "Fully",
+        "": ""
     },
     {
-        "name": "Himberg",
-        "code": "2325"
+        "code": "1927",
+        "name": "Chemin",
+        "": ""
     },
     {
-        "name": "Klein-Neusiedl",
-        "code": "2431"
+        "code": "1928",
+        "name": "Ravoire",
+        "": ""
     },
     {
-        "name": "Klosterneuburg",
-        "code": "3400"
+        "code": "1929",
+        "name": "Trient",
+        "": ""
     },
     {
-        "name": "Lanzendorf",
-        "code": "2326"
+        "code": "1932",
+        "name": "Les Valettes (Bovernier)",
+        "": ""
     },
     {
-        "name": "Leopoldsdorf",
-        "code": "2333"
+        "code": "1932",
+        "name": "Bovernier",
+        "": ""
     },
     {
-        "name": "Maria-Lanzendorf",
-        "code": "2326"
+        "code": "1933",
+        "name": "Vens (Sembrancher)",
+        "": ""
     },
     {
-        "name": "Mauerbach",
-        "code": "3001"
+        "code": "1933",
+        "name": "Chamoille (Sembrancher)",
+        "": ""
     },
     {
-        "name": "Moosbrunn",
-        "code": "2440"
+        "code": "1933",
+        "name": "La Garde (Sembrancher)",
+        "": ""
     },
     {
-        "name": "Pressbaum",
-        "code": "3021"
+        "code": "1933",
+        "name": "Sembrancher",
+        "": ""
     },
     {
-        "name": "Purkersdorf",
-        "code": "3002"
+        "code": "1934",
+        "name": "Bruson",
+        "": ""
     },
     {
-        "name": "Rauchenwarth",
-        "code": "2320"
+        "code": "1934",
+        "name": "Cotterg (Le Châble VS)",
+        "": ""
     },
     {
-        "name": "Schwadorf",
-        "code": "2432"
+        "code": "1934",
+        "name": "Villette (Le Châble VS)",
+        "": ""
     },
     {
-        "name": "Schwechat",
-        "code": "2320"
+        "code": "1934",
+        "name": "Fontenelle (Le Châble VS)",
+        "": ""
     },
     {
-        "name": "Tullnerbach",
-        "code": "3013"
+        "code": "1934",
+        "name": "Montagnier (Le Châble VS)",
+        "": ""
     },
     {
-        "name": "Wolfsgraben",
-        "code": "3012"
+        "code": "1934",
+        "name": "Le Châble VS",
+        "": ""
     },
     {
-        "name": "Zwölfaxing",
-        "code": "2322"
+        "code": "1936",
+        "name": "Verbier",
+        "": ""
     },
     {
-        "name": "Allentsteig",
-        "code": "3804"
+        "code": "1937",
+        "name": "Orsières",
+        "": ""
     },
     {
-        "name": "Arbesbach",
-        "code": "3925"
+        "code": "1938",
+        "name": "Champex-Lac",
+        "": ""
     },
     {
-        "name": "Bärnkopf",
-        "code": "3665"
+        "code": "1941",
+        "name": "Cries (Vollèges)",
+        "": ""
     },
     {
-        "name": "Echsenbach",
-        "code": "3903"
+        "code": "1941",
+        "name": "Vollèges",
+        "": ""
     },
     {
-        "name": "Göpfritz an der Wild",
-        "code": "3800"
+        "code": "1942",
+        "name": "Levron",
+        "": ""
     },
     {
-        "name": "Grafenschlag",
-        "code": "3912"
+        "code": "1943",
+        "name": "Praz-de-Fort",
+        "": ""
     },
     {
-        "name": "Groß Gerungs",
-        "code": "3920"
+        "code": "1944",
+        "name": "La Fouly VS",
+        "": ""
     },
     {
-        "name": "Großgöttfritz",
-        "code": "3913"
+        "code": "1945",
+        "name": "Liddes",
+        "": ""
     },
     {
-        "name": "Gutenbrunn",
-        "code": "3665"
+        "code": "1945",
+        "name": "Fontaine Dessus (Liddes)",
+        "": ""
     },
     {
-        "name": "Kirchschlag",
-        "code": "3631"
+        "code": "1945",
+        "name": "Fontaine Dessous (Liddes)",
+        "": ""
     },
     {
-        "name": "Kottes-Purk",
-        "code": "3623"
+        "code": "1945",
+        "name": "Dranse (Liddes)",
+        "": ""
     },
     {
-        "name": "Langschlag",
-        "code": "3921"
+        "code": "1945",
+        "name": "Chandonne (Liddes)",
+        "": ""
     },
     {
-        "name": "Martinsberg",
-        "code": "3664"
+        "code": "1945",
+        "name": "Rive Haute (Liddes)",
+        "": ""
     },
     {
-        "name": "Ottenschlag",
-        "code": "3631"
+        "code": "1945",
+        "name": "Fornex (Liddes)",
+        "": ""
     },
     {
-        "name": "Altmelon",
-        "code": "3925"
+        "code": "1945",
+        "name": "Les Moulins VS (Liddes)",
+        "": ""
     },
     {
-        "name": "Pölla",
-        "code": "3593"
+        "code": "1945",
+        "name": "Vichères (Liddes)",
+        "": ""
     },
     {
-        "name": "Rappottenstein",
-        "code": "3911"
+        "code": "1945",
+        "name": "Palasuit (Liddes)",
+        "": ""
     },
     {
-        "name": "Sallingberg",
-        "code": "3525"
+        "code": "1945",
+        "name": "Chez Petit (Liddes)",
+        "": ""
     },
     {
-        "name": "Schönbach",
-        "code": "3633"
+        "code": "1945",
+        "name": "Petit Vichères (Liddes)",
+        "": ""
     },
     {
-        "name": "Schwarzenau",
-        "code": "3900"
+        "code": "1946",
+        "name": "Bourg-St-Pierre",
+        "": ""
     },
     {
-        "name": "Schweiggers",
-        "code": "3931"
+        "code": "1947",
+        "name": "Prarreyer (Versegères)",
+        "": ""
     },
     {
-        "name": "Bad Traunstein",
-        "code": "3632"
+        "code": "1947",
+        "name": "Les Places (Versegères)",
+        "": ""
     },
     {
-        "name": "Waldhausen",
-        "code": "3914"
+        "code": "1947",
+        "name": "La Montoz (Versegères)",
+        "": ""
     },
     {
-        "name": "Zwettl-Niederösterreich",
-        "code": "3910"
+        "code": "1947",
+        "name": "Champsec (Versegères)",
+        "": ""
     },
     {
-        "name": "Linz",
-        "code": "4020"
+        "code": "1947",
+        "name": "Le Fregnoley (Versegères)",
+        "": ""
     },
     {
-        "name": "Steyr",
-        "code": "4400"
+        "code": "1947",
+        "name": "Versegères",
+        "": ""
     },
     {
-        "name": "Wels",
-        "code": "4600"
+        "code": "1948",
+        "name": "Lourtier",
+        "": ""
     },
     {
-        "name": "Altheim",
-        "code": "4950"
+        "code": "1948",
+        "name": "Fionnay",
+        "": ""
     },
     {
-        "name": "Aspach",
-        "code": "5252"
+        "code": "1948",
+        "name": "Sarreyer",
+        "": ""
     },
     {
-        "name": "Auerbach",
-        "code": "5224"
+        "code": "1948",
+        "name": "Le Planchamp (Lourtier)",
+        "": ""
     },
     {
-        "name": "Braunau am Inn",
-        "code": "5280"
+        "code": "1948",
+        "name": "Le Morgnes (Lourtier)",
+        "": ""
     },
     {
-        "name": "Burgkirchen",
-        "code": "5274"
+        "code": "1950",
+        "name": "Sion",
+        "": ""
     },
     {
-        "name": "Eggelsberg",
-        "code": "5142"
+        "code": "1955",
+        "name": "St-Pierre-de-Clages",
+        "": ""
     },
     {
-        "name": "Feldkirchen bei Mattighofen",
-        "code": "5143"
+        "code": "1955",
+        "name": "Les Vérines (Chamoson)",
+        "": ""
     },
     {
-        "name": "Franking",
-        "code": "5131"
+        "code": "1955",
+        "name": "Némiaz (Chamoson)",
+        "": ""
     },
     {
-        "name": "Geretsberg",
-        "code": "5132"
+        "code": "1955",
+        "name": "Grugnay (Chamoson)",
+        "": ""
     },
     {
-        "name": "Gilgenberg am Weilhart",
-        "code": "5133"
+        "code": "1955",
+        "name": "Chamoson",
+        "": ""
     },
     {
-        "name": "Haigermoos",
-        "code": "5120"
+        "code": "1957",
+        "name": "Ardon",
+        "": ""
     },
     {
-        "name": "Handenberg",
-        "code": "5144"
+        "code": "1958",
+        "name": "Uvrier",
+        "": ""
     },
     {
-        "name": "Helpfau-Uttendorf",
-        "code": "5261"
+        "code": "1958",
+        "name": "St-Léonard",
+        "": ""
     },
     {
-        "name": "Hochburg-Ach",
-        "code": "5122"
+        "code": "1961",
+        "name": "Vernamiège",
+        "": ""
     },
     {
-        "name": "Höhnhart",
-        "code": "5251"
+        "code": "1962",
+        "name": "Pont-de-la-Morge (Sion)",
+        "": ""
     },
     {
-        "name": "Jeging",
-        "code": "5225"
+        "code": "1963",
+        "name": "Vétroz",
+        "": ""
     },
     {
-        "name": "Kirchberg bei Mattighofen",
-        "code": "5232"
+        "code": "1964",
+        "name": "Conthey",
+        "": ""
     },
     {
-        "name": "Lengau",
-        "code": "5211"
+        "code": "1965",
+        "name": "Chandolin-près-Savièse",
+        "": ""
     },
     {
-        "name": "Lochen am See",
-        "code": "5221"
+        "code": "1965",
+        "name": "Drône VS",
+        "": ""
     },
     {
-        "name": "Maria Schmolln",
-        "code": "5241"
+        "code": "1965",
+        "name": "Roumaz (Savièse)",
+        "": ""
     },
     {
-        "name": "Mattighofen",
-        "code": "5230"
+        "code": "1965",
+        "name": "Granois (Savièse)",
+        "": ""
     },
     {
-        "name": "Mauerkirchen",
-        "code": "5270"
+        "code": "1965",
+        "name": "St-Germain (Savièse)",
+        "": ""
     },
     {
-        "name": "Mining",
-        "code": "4962"
+        "code": "1965",
+        "name": "Ormône (Savièse)",
+        "": ""
     },
     {
-        "name": "Moosbach",
-        "code": "5271"
+        "code": "1965",
+        "name": "Mayens-de-la-Zour (Savièse)",
+        "": ""
     },
     {
-        "name": "Moosdorf",
-        "code": "5141"
+        "code": "1965",
+        "name": "Monteiller-Savièse",
+        "": ""
     },
     {
-        "name": "Munderfing",
-        "code": "5222"
+        "code": "1965",
+        "name": "Savièse",
+        "": ""
     },
     {
-        "name": "Neukirchen an der Enknach",
-        "code": "5145"
+        "code": "1966",
+        "name": "Signèse (Ayent)",
+        "": ""
     },
     {
-        "name": "Ostermiething",
-        "code": "5121"
+        "code": "1966",
+        "name": "Fortunau (Ayent)",
+        "": ""
     },
     {
-        "name": "Palting",
-        "code": "5163"
+        "code": "1966",
+        "name": "Luc (Ayent)",
+        "": ""
     },
     {
-        "name": "Perwang am Grabensee",
-        "code": "5166"
+        "code": "1966",
+        "name": "St-Romain (Ayent)",
+        "": ""
     },
     {
-        "name": "Pfaffstätt",
-        "code": "5223"
+        "code": "1966",
+        "name": "Saxonne (Ayent)",
+        "": ""
     },
     {
-        "name": "Pischelsdorf am Engelbach",
-        "code": "5233"
+        "code": "1966",
+        "name": "Villa (Ayent)",
+        "": ""
     },
     {
-        "name": "Polling im Innkreis",
-        "code": "4951"
+        "code": "1966",
+        "name": "La Place (Ayent)",
+        "": ""
     },
     {
-        "name": "Roßbach",
-        "code": "5273"
+        "code": "1966",
+        "name": "Botyre (Ayent)",
+        "": ""
     },
     {
-        "name": "St. Georgen am Fillmannsbach",
-        "code": "5144"
+        "code": "1966",
+        "name": "Blignoud (Ayent)",
+        "": ""
     },
     {
-        "name": "St. Johann am Walde",
-        "code": "5242"
+        "code": "1966",
+        "name": "Argnoud (Ayent)",
+        "": ""
     },
     {
-        "name": "St. Pantaleon",
-        "code": "5120"
+        "code": "1967",
+        "name": "Bramois",
+        "": ""
     },
     {
-        "name": "St. Peter am Hart",
-        "code": "4963"
+        "code": "1968",
+        "name": "Mase",
+        "": ""
     },
     {
-        "name": "St. Radegund",
-        "code": "5121"
+        "code": "1969",
+        "name": "Liez (St-Martin)",
+        "": ""
     },
     {
-        "name": "St. Veit im Innkreis",
-        "code": "5273"
+        "code": "1969",
+        "name": "Trogne (St-Martin)",
+        "": ""
     },
     {
-        "name": "Schalchen",
-        "code": "5231"
+        "code": "1969",
+        "name": "Suen (St-Martin)",
+        "": ""
     },
     {
-        "name": "Schwand im Innkreis",
-        "code": "5134"
+        "code": "1969",
+        "name": "Eison (St.Martin)",
+        "": ""
     },
     {
-        "name": "Tarsdorf",
-        "code": "5121"
+        "code": "1969",
+        "name": "St-Martin VS",
+        "": ""
     },
     {
-        "name": "Treubach",
-        "code": "5272"
+        "code": "1971",
+        "name": "Champlan (Grimisuat)",
+        "": ""
     },
     {
-        "name": "Überackern",
-        "code": "5122"
+        "code": "1971",
+        "name": "Coméraz (Grimisuat)",
+        "": ""
     },
     {
-        "name": "Weng im Innkreis",
-        "code": "4952"
+        "code": "1971",
+        "name": "Grimisuat",
+        "": ""
     },
     {
-        "name": "Alkoven",
-        "code": "4072"
+        "code": "1972",
+        "name": "Anzère",
+        "": ""
     },
     {
-        "name": "Aschach an der Donau",
-        "code": "4082"
+        "code": "1973",
+        "name": "Nax",
+        "": ""
     },
     {
-        "name": "Eferding",
-        "code": "4070"
+        "code": "1974",
+        "name": "Arbaz",
+        "": ""
     },
     {
-        "name": "Fraham",
-        "code": "4070"
+        "code": "1975",
+        "name": "St-Séverin",
+        "": ""
     },
     {
-        "name": "Haibach ob der Donau",
-        "code": "4083"
+        "code": "1976",
+        "name": "Aven",
+        "": ""
     },
     {
-        "name": "Hartkirchen",
-        "code": "4081"
+        "code": "1976",
+        "name": "Daillon",
+        "": ""
     },
     {
-        "name": "Hinzenbach",
-        "code": "4070"
+        "code": "1976",
+        "name": "Erde",
+        "": ""
     },
     {
-        "name": "Prambachkirchen",
-        "code": "4731"
+        "code": "1977",
+        "name": "Icogne",
+        "": ""
     },
     {
-        "name": "Pupping",
-        "code": "4070"
+        "code": "1978",
+        "name": "Lens",
+        "": ""
     },
     {
-        "name": "St. Marienkirchen an der Polsenz",
-        "code": "4076"
+        "code": "1981",
+        "name": "Vex",
+        "": ""
     },
     {
-        "name": "Scharten",
-        "code": "4612"
+        "code": "1982",
+        "name": "Euseigne",
+        "": ""
     },
     {
-        "name": "Stroheim",
-        "code": "4074"
+        "code": "1983",
+        "name": "Lana (Evolène)",
+        "": ""
     },
     {
-        "name": "Freistadt",
-        "code": "4240"
+        "code": "1983",
+        "name": "Evolène",
+        "": ""
     },
     {
-        "name": "Grünbach",
-        "code": "4264"
+        "code": "1984",
+        "name": "Les Haudères",
+        "": ""
     },
     {
-        "name": "Gutau",
-        "code": "4293"
+        "code": "1985",
+        "name": "La Sage",
+        "": ""
     },
     {
-        "name": "Hagenberg im Mühlkreis",
-        "code": "4232"
+        "code": "1986",
+        "name": "Arolla",
+        "": ""
     },
     {
-        "name": "Hirschbach im Mühlkreis",
-        "code": "4242"
+        "code": "1987",
+        "name": "Mâche",
+        "": ""
     },
     {
-        "name": "Kaltenberg",
-        "code": "4273"
+        "code": "1987",
+        "name": "Hérémence",
+        "": ""
     },
     {
-        "name": "Kefermarkt",
-        "code": "4292"
+        "code": "1988",
+        "name": "Les Collons",
+        "": ""
     },
     {
-        "name": "Königswiesen",
-        "code": "4280"
+        "code": "1988",
+        "name": "Thyon",
+        "": ""
     },
     {
-        "name": "Lasberg",
-        "code": "4291"
+        "code": "1991",
+        "name": "Arvillard (Salins)",
+        "": ""
     },
     {
-        "name": "Leopoldschlag",
-        "code": "4262"
+        "code": "1991",
+        "name": "Pravidondaz (Salins)",
+        "": ""
     },
     {
-        "name": "Liebenau",
-        "code": "4252"
+        "code": "1991",
+        "name": "Turin (Salins)",
+        "": ""
     },
     {
-        "name": "Neumarkt im Mühlkreis",
-        "code": "4212"
+        "code": "1991",
+        "name": "Misériez (Salins)",
+        "": ""
     },
     {
-        "name": "Pierbach",
-        "code": "4282"
+        "code": "1991",
+        "name": "Salins",
+        "": ""
     },
     {
-        "name": "Pregarten",
-        "code": "4230"
+        "code": "1992",
+        "name": "Les Agettes",
+        "": ""
     },
     {
-        "name": "Rainbach im Mühlkreis",
-        "code": "4261"
+        "code": "1992",
+        "name": "Les Mayens-de-Sion",
+        "": ""
     },
     {
-        "name": "Sandl",
-        "code": "4251"
+        "code": "1992",
+        "name": "La Vernaz (Les Agettes)",
+        "": ""
     },
     {
-        "name": "St. Leonhard bei Freistadt",
-        "code": "4294"
+        "code": "1992",
+        "name": "Crête-à-L Oeil(Les Agettes)",
+        "": ""
     },
     {
-        "name": "St. Oswald bei Freistadt",
-        "code": "4271"
+        "code": "1993",
+        "name": "Clèbes (Nendaz)",
+        "": ""
     },
     {
-        "name": "Schönau im Mühlkreis",
-        "code": "4274"
+        "code": "1993",
+        "name": "Veysonnaz",
+        "": ""
     },
     {
-        "name": "Tragwein",
-        "code": "4284"
+        "code": "1994",
+        "name": "Aproz (Nendaz)",
+        "": ""
     },
     {
-        "name": "Unterweißenbach",
-        "code": "4273"
+        "code": "1996",
+        "name": "Fey (Nendaz)",
+        "": ""
     },
     {
-        "name": "Unterweitersdorf",
-        "code": "4210"
+        "code": "1996",
+        "name": "Beuson (Nendaz)",
+        "": ""
     },
     {
-        "name": "Waldburg",
-        "code": "4240"
+        "code": "1996",
+        "name": "Baar (Nendaz)",
+        "": ""
     },
     {
-        "name": "Wartberg ob der Aist",
-        "code": "4224"
+        "code": "1996",
+        "name": "Brignon (Nendaz)",
+        "": ""
     },
     {
-        "name": "Weitersfelden",
-        "code": "4272"
+        "code": "1996",
+        "name": "Bioley-de-Brignon (Nendaz)",
+        "": ""
     },
     {
-        "name": "Windhaag bei Freistadt",
-        "code": "4263"
+        "code": "1996",
+        "name": "Bieudron (Nendaz)",
+        "": ""
     },
     {
-        "name": "Bad Zell",
-        "code": "4283"
+        "code": "1996",
+        "name": "Condémines (Nendaz)",
+        "": ""
     },
     {
-        "name": "Altmünster",
-        "code": "4813"
+        "code": "1996",
+        "name": "Saclentz (Nendaz)",
+        "": ""
     },
     {
-        "name": "Bad Goisern am Hallstättersee",
-        "code": "4822"
+        "code": "1996",
+        "name": "Basse-Nendaz",
+        "": ""
     },
     {
-        "name": "Bad Ischl",
-        "code": "4820"
+        "code": "1997",
+        "name": "Siviez (Nendaz)",
+        "": ""
     },
     {
-        "name": "Ebensee",
-        "code": "4802"
+        "code": "1997",
+        "name": "Haute-Nendaz",
+        "": ""
     },
     {
-        "name": "Gmunden",
-        "code": "4810"
+        "code": "2000",
+        "name": "Neuchâtel",
+        "": ""
     },
     {
-        "name": "Gosau",
-        "code": "4824"
+        "code": "2012",
+        "name": "Auvernier",
+        "": ""
     },
     {
-        "name": "Grünau im Almtal",
-        "code": "4645"
+        "code": "2013",
+        "name": "Colombier NE",
+        "": ""
     },
     {
-        "name": "Gschwandt",
-        "code": "4816"
+        "code": "2014",
+        "name": "Bôle",
+        "": ""
     },
     {
-        "name": "Hallstatt",
-        "code": "4830"
+        "code": "2015",
+        "name": "Areuse",
+        "": ""
     },
     {
-        "name": "Kirchham",
-        "code": "4656"
+        "code": "2016",
+        "name": "Cortaillod",
+        "": ""
     },
     {
-        "name": "Laakirchen",
-        "code": "4663"
+        "code": "2017",
+        "name": "Boudry",
+        "": ""
     },
     {
-        "name": "Obertraun",
-        "code": "4831"
+        "code": "2019",
+        "name": "Chambrelien",
+        "": ""
     },
     {
-        "name": "Ohlsdorf",
-        "code": "4694"
+        "code": "2019",
+        "name": "Rochefort",
+        "": ""
     },
     {
-        "name": "Pinsdorf",
-        "code": "4812"
+        "code": "2022",
+        "name": "Bevaix",
+        "": ""
     },
     {
-        "name": "Roitham",
-        "code": "4661"
+        "code": "2023",
+        "name": "Gorgier",
+        "": ""
     },
     {
-        "name": "St. Konrad",
-        "code": "4817"
+        "code": "2024",
+        "name": "St-Aubin-Sauges",
+        "": ""
     },
     {
-        "name": "St. Wolfgang im Salzkammergut",
-        "code": "5360"
+        "code": "2025",
+        "name": "Chez-le-Bart",
+        "": ""
     },
     {
-        "name": "Traunkirchen",
-        "code": "4801"
+        "code": "2027",
+        "name": "Montalchez",
+        "": ""
     },
     {
-        "name": "Scharnstein",
-        "code": "4644"
+        "code": "2027",
+        "name": "Fresens",
+        "": ""
     },
     {
-        "name": "Vorchdorf",
-        "code": "4655"
+        "code": "2028",
+        "name": "Vaumarcus",
+        "": ""
     },
     {
-        "name": "Aistersheim",
-        "code": "4676"
+        "code": "2034",
+        "name": "Peseux",
+        "": ""
     },
     {
-        "name": "Bad Schallerbach",
-        "code": "4701"
+        "code": "2035",
+        "name": "Corcelles NE",
+        "": ""
     },
     {
-        "name": "Bruck-Waasen",
-        "code": "4722"
+        "code": "2036",
+        "name": "Cormondrèche",
+        "": ""
     },
     {
-        "name": "Eschenau im Hausruckkreis",
-        "code": "4724"
+        "code": "2037",
+        "name": "Montmollin",
+        "": ""
     },
     {
-        "name": "Gallspach",
-        "code": "4713"
+        "code": "2037",
+        "name": "Montezillon",
+        "": ""
     },
     {
-        "name": "Gaspoltshofen",
-        "code": "4673"
+        "code": "2042",
+        "name": "Valangin",
+        "": ""
     },
     {
-        "name": "Geboltskirchen",
-        "code": "4682"
+        "code": "2043",
+        "name": "Boudevilliers",
+        "": ""
     },
     {
-        "name": "Grieskirchen",
-        "code": "4710"
+        "code": "2046",
+        "name": "Fontaines NE",
+        "": ""
     },
     {
-        "name": "Haag am Hausruck",
-        "code": "4680"
+        "code": "2052",
+        "name": "La Vue-des-Alpes",
+        "": ""
     },
     {
-        "name": "Heiligenberg",
-        "code": "4733"
+        "code": "2052",
+        "name": "Fontainemelon",
+        "": ""
     },
     {
-        "name": "Hofkirchen an der Trattnach",
-        "code": "4716"
+        "code": "2053",
+        "name": "Cernier",
+        "": ""
     },
     {
-        "name": "Kallham",
-        "code": "4720"
+        "code": "2054",
+        "name": "Les Vieux-Prés",
+        "": ""
     },
     {
-        "name": "Kematen am Innbach",
-        "code": "4633"
+        "code": "2054",
+        "name": "Chézard-St-Martin",
+        "": ""
     },
     {
-        "name": "Meggenhofen",
-        "code": "4714"
+        "code": "2056",
+        "name": "Dombresson",
+        "": ""
     },
     {
-        "name": "Michaelnbach",
-        "code": "4712"
+        "code": "2057",
+        "name": "Villiers",
+        "": ""
     },
     {
-        "name": "Natternbach",
-        "code": "4723"
+        "code": "2058",
+        "name": "Le Pâquier NE",
+        "": ""
     },
     {
-        "name": "Neukirchen am Walde",
-        "code": "4724"
+        "code": "2063",
+        "name": "Engollon",
+        "": ""
     },
     {
-        "name": "Neumarkt im Hausruckkreis",
-        "code": "4720"
+        "code": "2063",
+        "name": "Fenin",
+        "": ""
     },
     {
-        "name": "Peuerbach",
-        "code": "4722"
+        "code": "2063",
+        "name": "Saules",
+        "": ""
     },
     {
-        "name": "Pötting",
-        "code": "4720"
+        "code": "2063",
+        "name": "Vilars NE",
+        "": ""
     },
     {
-        "name": "Pollham",
-        "code": "4710"
+        "code": "2065",
+        "name": "Savagnier",
+        "": ""
     },
     {
-        "name": "Pram",
-        "code": "4742"
+        "code": "2067",
+        "name": "Chaumont",
+        "": ""
     },
     {
-        "name": "Rottenbach",
-        "code": "4681"
+        "code": "2068",
+        "name": "Hauterive NE",
+        "": ""
     },
     {
-        "name": "St. Agatha",
-        "code": "4084"
+        "code": "2072",
+        "name": "St-Blaise",
+        "": ""
     },
     {
-        "name": "St. Georgen bei Grieskirchen",
-        "code": "4710"
+        "code": "2073",
+        "name": "Enges",
+        "": ""
     },
     {
-        "name": "St. Thomas",
-        "code": "4732"
+        "code": "2074",
+        "name": "Marin-Epagnier",
+        "": ""
     },
     {
-        "name": "Schlüßlberg",
-        "code": "4707"
+        "code": "2075",
+        "name": "Thielle",
+        "": ""
     },
     {
-        "name": "Steegen",
-        "code": "4722"
+        "code": "2075",
+        "name": "Wavre",
+        "": ""
     },
     {
-        "name": "Taufkirchen an der Trattnach",
-        "code": "4715"
+        "code": "2087",
+        "name": "Cornaux NE",
+        "": ""
     },
     {
-        "name": "Tollet",
-        "code": "4710"
+        "code": "2088",
+        "name": "Cressier NE",
+        "": ""
     },
     {
-        "name": "Waizenkirchen",
-        "code": "4730"
+        "code": "2103",
+        "name": "Noiraigue",
+        "": ""
     },
     {
-        "name": "Wallern an der Trattnach",
-        "code": "4702"
+        "code": "2105",
+        "name": "Travers",
+        "": ""
     },
     {
-        "name": "Weibern",
-        "code": "4675"
+        "code": "2108",
+        "name": "Couvet",
+        "": ""
     },
     {
-        "name": "Wendling",
-        "code": "4741"
+        "code": "2112",
+        "name": "Môtiers NE",
+        "": ""
     },
     {
-        "name": "Edlbach",
-        "code": "4580"
+        "code": "2113",
+        "name": "Boveresse",
+        "": ""
     },
     {
-        "name": "Grünburg",
-        "code": "4594"
+        "code": "2114",
+        "name": "Fleurier",
+        "": ""
     },
     {
-        "name": "Hinterstoder",
-        "code": "4573"
+        "code": "2115",
+        "name": "Buttes",
+        "": ""
     },
     {
-        "name": "Inzersdorf im Kremstal",
-        "code": "4565"
+        "code": "2116",
+        "name": "Mont-de-Buttes",
+        "": ""
     },
     {
-        "name": "Kirchdorf an der Krems",
-        "code": "4560"
+        "code": "2117",
+        "name": "La Côte-aux-Fées",
+        "": ""
     },
     {
-        "name": "Klaus an der Pyhrnbahn",
-        "code": "4564"
+        "code": "2123",
+        "name": "St-Sulpice NE",
+        "": ""
     },
     {
-        "name": "Kremsmünster",
-        "code": "4550"
+        "code": "2124",
+        "name": "Les Sagnettes",
+        "": ""
     },
     {
-        "name": "Micheldorf in Oberösterreich",
-        "code": "4563"
+        "code": "2126",
+        "name": "Les Verrières",
+        "": ""
     },
     {
-        "name": "Molln",
-        "code": "4591"
+        "code": "2127",
+        "name": "Les Bayards",
+        "": ""
     },
     {
-        "name": "Nußbach",
-        "code": "4542"
+        "code": "2149",
+        "name": "Champ-du-Moulin",
+        "": ""
     },
     {
-        "name": "Oberschlierbach",
-        "code": "4554"
+        "code": "2149",
+        "name": "Fretereules",
+        "": ""
     },
     {
-        "name": "Pettenbach",
-        "code": "4643"
+        "code": "2149",
+        "name": "Brot-Dessous",
+        "": ""
     },
     {
-        "name": "Ried im Traunkreis",
-        "code": "4551"
+        "code": "2206",
+        "name": "Les Geneveys-sur-Coffrane",
+        "": ""
     },
     {
-        "name": "Rosenau am Hengstpaß",
-        "code": "4581"
+        "code": "2207",
+        "name": "Coffrane",
+        "": ""
     },
     {
-        "name": "Roßleithen",
-        "code": "4575"
+        "code": "2208",
+        "name": "Les Hauts-Geneveys",
+        "": ""
     },
     {
-        "name": "St. Pankraz",
-        "code": "4572"
+        "code": "2300",
+        "name": "La Chaux-de-Fonds",
+        "": ""
     },
     {
-        "name": "Schlierbach",
-        "code": "4553"
+        "code": "2300",
+        "name": "La Cibourg",
+        "": ""
     },
     {
-        "name": "Spital am Pyhrn",
-        "code": "4582"
+        "code": "2314",
+        "name": "La Sagne NE",
+        "": ""
     },
     {
-        "name": "Steinbach am Ziehberg",
-        "code": "4562"
+        "code": "2316",
+        "name": "Petit-Martel",
+        "": ""
     },
     {
-        "name": "Steinbach an der Steyr",
-        "code": "4596"
+        "code": "2316",
+        "name": "Les Ponts-de-Martel",
+        "": ""
     },
     {
-        "name": "Vorderstoder",
-        "code": "4574"
+        "code": "2318",
+        "name": "Brot-Plamboz",
+        "": ""
     },
     {
-        "name": "Wartberg an der Krems",
-        "code": "4552"
+        "code": "2322",
+        "name": "Le Crêt-du-Locle",
+        "": ""
     },
     {
-        "name": "Windischgarsten",
-        "code": "4580"
+        "code": "2325",
+        "name": "Les Planchettes",
+        "": ""
     },
     {
-        "name": "Allhaming",
-        "code": "4511"
+        "code": "2325",
+        "name": "Les Joux-Derrière",
+        "": ""
     },
     {
-        "name": "Ansfelden",
-        "code": "4053"
+        "code": "2333",
+        "name": "La Cibourg",
+        "": ""
     },
     {
-        "name": "Asten",
-        "code": "4481"
+        "code": "2333",
+        "name": "La Ferrière",
+        "": ""
     },
     {
-        "name": "Eggendorf im Traunkreis",
-        "code": "4622"
+        "code": "2336",
+        "name": "Les Bois",
+        "": ""
     },
     {
-        "name": "Enns",
-        "code": "4470"
+        "code": "2338",
+        "name": "Les Emibois",
+        "": ""
     },
     {
-        "name": "Hargelsberg",
-        "code": "4483"
+        "code": "2338",
+        "name": "Muriaux",
+        "": ""
     },
     {
-        "name": "Hörsching",
-        "code": "4063"
+        "code": "2340",
+        "name": "Le Noirmont",
+        "": ""
     },
     {
-        "name": "Hofkirchen im Traunkreis",
-        "code": "4492"
+        "code": "2345",
+        "name": "Le Cerneux-Veusil",
+        "": ""
     },
     {
-        "name": "Kematen an der Krems",
-        "code": "4531"
+        "code": "2345",
+        "name": "La Chaux-des-Breuleux",
+        "": ""
     },
     {
-        "name": "Kirchberg-Thening",
-        "code": "4062"
+        "code": "2345",
+        "name": "Les Breuleux",
+        "": ""
     },
     {
-        "name": "Kronstorf",
-        "code": "4484"
+        "code": "2350",
+        "name": "Saignelégier",
+        "": ""
     },
     {
-        "name": "Leonding",
-        "code": "4060"
+        "code": "2353",
+        "name": "Les Pommerats",
+        "": ""
     },
     {
-        "name": "St. Florian",
-        "code": "4490"
+        "code": "2354",
+        "name": "Goumois",
+        "": ""
     },
     {
-        "name": "Neuhofen an der Krems",
-        "code": "4501"
+        "code": "2360",
+        "name": "Le Bémont",
+        "": ""
     },
     {
-        "name": "Niederneukirchen",
-        "code": "4491"
+        "code": "2362",
+        "name": "Montfavergier",
+        "": ""
     },
     {
-        "name": "Oftering",
-        "code": "4064"
+        "code": "2362",
+        "name": "Montfaucon",
+        "": ""
     },
     {
-        "name": "Pasching",
-        "code": "4061"
+        "code": "2363",
+        "name": "Les Enfers",
+        "": ""
     },
     {
-        "name": "Piberbach",
-        "code": "4533"
+        "code": "2364",
+        "name": "St-Brais",
+        "": ""
     },
     {
-        "name": "Pucking",
-        "code": "4055"
+        "code": "2400",
+        "name": "Le Prévoux",
+        "": ""
     },
     {
-        "name": "St. Marien",
-        "code": "4502"
+        "code": "2400",
+        "name": "Le Locle",
+        "": ""
     },
     {
-        "name": "Traun",
-        "code": "4050"
+        "code": "2405",
+        "name": "La Chaux-du-Milieu",
+        "": ""
     },
     {
-        "name": "Wilhering",
-        "code": "4073"
+        "code": "2406",
+        "name": "Le Brouillet",
+        "": ""
     },
     {
-        "name": "Allerheiligen im Mühlkreis",
-        "code": "4320"
+        "code": "2406",
+        "name": "Les Taillères",
+        "": ""
     },
     {
-        "name": "Arbing",
-        "code": "4341"
+        "code": "2406",
+        "name": "La Châtagne",
+        "": ""
     },
     {
-        "name": "Baumgartenberg",
-        "code": "4342"
+        "code": "2406",
+        "name": "La Brévine",
+        "": ""
     },
     {
-        "name": "Dimbach",
-        "code": "4371"
+        "code": "2414",
+        "name": "Le Cerneux-Péquignot",
+        "": ""
     },
     {
-        "name": "Grein",
-        "code": "4360"
+        "code": "2416",
+        "name": "Les Brenets",
+        "": ""
     },
     {
-        "name": "Katsdorf",
-        "code": "4223"
+        "code": "2500",
+        "name": "Biel/Bienne",
+        "": ""
     },
     {
-        "name": "Klam",
-        "code": "4352"
+        "code": "2502",
+        "name": "Biel/Bienne",
+        "": ""
     },
     {
-        "name": "Bad Kreuzen",
-        "code": "4362"
+        "code": "2503",
+        "name": "Biel/Bienne",
+        "": ""
     },
     {
-        "name": "Langenstein",
-        "code": "4222"
+        "code": "2504",
+        "name": "Biel/Bienne",
+        "": ""
     },
     {
-        "name": "Luftenberg an der Donau",
-        "code": "4225"
+        "code": "2505",
+        "name": "Biel/Bienne",
+        "": ""
     },
     {
-        "name": "Mauthausen",
-        "code": "4310"
+        "code": "2512",
+        "name": "Tüscherz-Alfermée",
+        "": ""
     },
     {
-        "name": "Mitterkirchen im Machland",
-        "code": "4343"
+        "code": "2513",
+        "name": "Twann",
+        "": ""
     },
     {
-        "name": "Münzbach",
-        "code": "4323"
+        "code": "2514",
+        "name": "Ligerz",
+        "": ""
     },
     {
-        "name": "Naarn im Machlande",
-        "code": "4331"
+        "code": "2515",
+        "name": "Prêles",
+        "": ""
     },
     {
-        "name": "Pabneukirchen",
-        "code": "4363"
+        "code": "2516",
+        "name": "Lamboing",
+        "": ""
     },
     {
-        "name": "Perg",
-        "code": "4320"
+        "code": "2517",
+        "name": "Diesse",
+        "": ""
     },
     {
-        "name": "Rechberg",
-        "code": "4324"
+        "code": "2518",
+        "name": "Nods",
+        "": ""
     },
     {
-        "name": "Ried in der Riedmark",
-        "code": "4312"
+        "code": "2520",
+        "name": "La Neuveville",
+        "": ""
     },
     {
-        "name": "St. Georgen am Walde",
-        "code": "4372"
+        "code": "2523",
+        "name": "Lignières",
+        "": ""
     },
     {
-        "name": "St. Georgen an der Gusen",
-        "code": "4222"
+        "code": "2525",
+        "name": "Le Landeron",
+        "": ""
     },
     {
-        "name": "St. Nikola an der Donau",
-        "code": "4381"
+        "code": "2532",
+        "name": "Magglingen/Macolin",
+        "": ""
     },
     {
-        "name": "St. Thomas am Blasenstein",
-        "code": "4364"
+        "code": "2533",
+        "name": "Evilard",
+        "": ""
     },
     {
-        "name": "Saxen",
-        "code": "4351"
+        "code": "2534",
+        "name": "Les Prés-d Orvin",
+        "": ""
     },
     {
-        "name": "Schwertberg",
-        "code": "4311"
+        "code": "2534",
+        "name": "Orvin",
+        "": ""
     },
     {
-        "name": "Waldhausen im Strudengau",
-        "code": "4391"
+        "code": "2535",
+        "name": "Frinvillier",
+        "": ""
     },
     {
-        "name": "Windhaag bei Perg",
-        "code": "4322"
+        "code": "2536",
+        "name": "Plagne",
+        "": ""
     },
     {
-        "name": "Andrichsfurt",
-        "code": "4754"
+        "code": "2537",
+        "name": "Vauffelin",
+        "": ""
     },
     {
-        "name": "Antiesenhofen",
-        "code": "4980"
+        "code": "2538",
+        "name": "Romont BE",
+        "": ""
     },
     {
-        "name": "Aurolzmünster",
-        "code": "4971"
+        "code": "2540",
+        "name": "Grenchen",
+        "": ""
     },
     {
-        "name": "Eberschwang",
-        "code": "4906"
+        "code": "2542",
+        "name": "Pieterlen",
+        "": ""
     },
     {
-        "name": "Eitzing",
-        "code": "4970"
+        "code": "2543",
+        "name": "Lengnau BE",
+        "": ""
     },
     {
-        "name": "Geiersberg",
-        "code": "4922"
+        "code": "2544",
+        "name": "Bettlach",
+        "": ""
     },
     {
-        "name": "Geinberg",
-        "code": "4943"
+        "code": "2545",
+        "name": "Selzach",
+        "": ""
     },
     {
-        "name": "Gurten",
-        "code": "4942"
+        "code": "2552",
+        "name": "Orpund",
+        "": ""
     },
     {
-        "name": "Hohenzell",
-        "code": "4921"
+        "code": "2553",
+        "name": "Safnern",
+        "": ""
     },
     {
-        "name": "Kirchdorf am Inn",
-        "code": "4982"
+        "code": "2554",
+        "name": "Meinisberg",
+        "": ""
     },
     {
-        "name": "Kirchheim im Innkreis",
-        "code": "4932"
+        "code": "2555",
+        "name": "Brügg BE",
+        "": ""
     },
     {
-        "name": "Lambrechten",
-        "code": "4772"
+        "code": "2556",
+        "name": "Scheuren",
+        "": ""
     },
     {
-        "name": "Lohnsburg am Kobernaußerwald",
-        "code": "4923"
+        "code": "2556",
+        "name": "Schwadernau",
+        "": ""
     },
     {
-        "name": "Mehrnbach",
-        "code": "4941"
+        "code": "2557",
+        "name": "Studen BE",
+        "": ""
     },
     {
-        "name": "Mettmach",
-        "code": "4931"
+        "code": "2558",
+        "name": "Aegerten",
+        "": ""
     },
     {
-        "name": "Mörschwang",
-        "code": "4982"
+        "code": "2560",
+        "name": "Nidau",
+        "": ""
     },
     {
-        "name": "Mühlheim am Inn",
-        "code": "4961"
+        "code": "2562",
+        "name": "Port",
+        "": ""
     },
     {
-        "name": "Neuhofen im Innkreis",
-        "code": "4912"
+        "code": "2563",
+        "name": "Ipsach",
+        "": ""
     },
     {
-        "name": "Obernberg am Inn",
-        "code": "4982"
+        "code": "2564",
+        "name": "Bellmund",
+        "": ""
     },
     {
-        "name": "Ort im Innkreis",
-        "code": "4974"
+        "code": "2565",
+        "name": "Jens",
+        "": ""
     },
     {
-        "name": "Pattigham",
-        "code": "4910"
+        "code": "2572",
+        "name": "Mörigen",
+        "": ""
     },
     {
-        "name": "Peterskirchen",
-        "code": "4743"
+        "code": "2572",
+        "name": "Sutz",
+        "": ""
     },
     {
-        "name": "Pramet",
-        "code": "4925"
+        "code": "2575",
+        "name": "Hagneck",
+        "": ""
     },
     {
-        "name": "Reichersberg",
-        "code": "4981"
+        "code": "2575",
+        "name": "Gerolfingen",
+        "": ""
     },
     {
-        "name": "Ried im Innkreis",
-        "code": "4910"
+        "code": "2575",
+        "name": "Täuffelen",
+        "": ""
     },
     {
-        "name": "St. Georgen bei Obernberg am Inn",
-        "code": "4983"
+        "code": "2576",
+        "name": "Lüscherz",
+        "": ""
     },
     {
-        "name": "St. Marienkirchen am Hausruck",
-        "code": "4926"
+        "code": "2577",
+        "name": "Finsterhennen",
+        "": ""
     },
     {
-        "name": "St. Martin im Innkreis",
-        "code": "4973"
+        "code": "2577",
+        "name": "Siselen BE",
+        "": ""
     },
     {
-        "name": "Schildorn",
-        "code": "4920"
+        "code": "2603",
+        "name": "Péry",
+        "": ""
     },
     {
-        "name": "Senftenbach",
-        "code": "4973"
+        "code": "2604",
+        "name": "La Heutte",
+        "": ""
     },
     {
-        "name": "Taiskirchen im Innkreis",
-        "code": "4753"
+        "code": "2605",
+        "name": "Sonceboz-Sombeval",
+        "": ""
     },
     {
-        "name": "Tumeltsham",
-        "code": "4911"
+        "code": "2606",
+        "name": "Corgémont",
+        "": ""
     },
     {
-        "name": "Utzenaich",
-        "code": "4972"
+        "code": "2607",
+        "name": "Cortébert",
+        "": ""
     },
     {
-        "name": "Waldzell",
-        "code": "4924"
+        "code": "2608",
+        "name": "Montagne-de-Courtelary",
+        "": ""
     },
     {
-        "name": "Weilbach",
-        "code": "4984"
+        "code": "2608",
+        "name": "Courtelary",
+        "": ""
     },
     {
-        "name": "Wippenham",
-        "code": "4942"
+        "code": "2610",
+        "name": "Mont-Soleil",
+        "": ""
     },
     {
-        "name": "Afiesl",
-        "code": "4184"
+        "code": "2610",
+        "name": "Mont-Crosin",
+        "": ""
     },
     {
-        "name": "Ahorn",
-        "code": "4184"
+        "code": "2610",
+        "name": "Les Pontins",
+        "": ""
     },
     {
-        "name": "Altenfelden",
-        "code": "4121"
+        "code": "2610",
+        "name": "St-Imier",
+        "": ""
     },
     {
-        "name": "Arnreit",
-        "code": "4122"
+        "code": "2612",
+        "name": "Cormoret",
+        "": ""
     },
     {
-        "name": "Atzesberg",
-        "code": "4152"
+        "code": "2613",
+        "name": "Villeret",
+        "": ""
     },
     {
-        "name": "Auberg",
-        "code": "4171"
+        "code": "2615",
+        "name": "Montagne-de-Sonvilier",
+        "": ""
     },
     {
-        "name": "Haslach an der Mühl",
-        "code": "4170"
+        "code": "2615",
+        "name": "Sonvilier",
+        "": ""
     },
     {
-        "name": "Helfenberg",
-        "code": "4184"
+        "code": "2616",
+        "name": "La Cibourg",
+        "": ""
     },
     {
-        "name": "Hörbich",
-        "code": "4132"
+        "code": "2616",
+        "name": "Renan BE",
+        "": ""
     },
     {
-        "name": "Hofkirchen im Mühlkreis",
-        "code": "4142"
+        "code": "2710",
+        "name": "Tavannes",
+        "": ""
     },
     {
-        "name": "Julbach",
-        "code": "4162"
+        "code": "2712",
+        "name": "Le Fuet",
+        "": ""
     },
     {
-        "name": "Kirchberg ob der Donau",
-        "code": "4131"
+        "code": "2713",
+        "name": "Bellelay",
+        "": ""
     },
     {
-        "name": "Klaffer am Hochficht",
-        "code": "4163"
+        "code": "2714",
+        "name": "Le Prédame",
+        "": ""
     },
     {
-        "name": "Kleinzell im Mühlkreis",
-        "code": "4115"
+        "code": "2714",
+        "name": "Les Genevez JU",
+        "": ""
     },
     {
-        "name": "Kollerschlag",
-        "code": "4154"
+        "code": "2715",
+        "name": "Monible",
+        "": ""
     },
     {
-        "name": "Lembach im Mühlkreis",
-        "code": "4132"
+        "code": "2715",
+        "name": "Châtelat",
+        "": ""
     },
     {
-        "name": "Lichtenau im Mühlkreis",
-        "code": "4170"
+        "code": "2716",
+        "name": "Sornetan",
+        "": ""
     },
     {
-        "name": "Nebelberg",
-        "code": "4155"
+        "code": "2717",
+        "name": "Fornet-Dessous",
+        "": ""
     },
     {
-        "name": "Neufelden",
-        "code": "4120"
+        "code": "2717",
+        "name": "Rebévelier",
+        "": ""
     },
     {
-        "name": "Niederkappel",
-        "code": "4133"
+        "code": "2718",
+        "name": "Fornet-Dessus",
+        "": ""
     },
     {
-        "name": "Niederwaldkirchen",
-        "code": "4174"
+        "code": "2718",
+        "name": "Lajoux JU",
+        "": ""
     },
     {
-        "name": "Oberkappel",
-        "code": "4144"
+        "code": "2720",
+        "name": "La Tanne",
+        "": ""
     },
     {
-        "name": "Oepping",
-        "code": "4151"
+        "code": "2720",
+        "name": "Tramelan",
+        "": ""
     },
     {
-        "name": "Peilstein im Mühlviertel",
-        "code": "4153"
+        "code": "2722",
+        "name": "Les Reussilles",
+        "": ""
     },
     {
-        "name": "Pfarrkirchen im Mühlkreis",
-        "code": "4141"
+        "code": "2723",
+        "name": "Mont-Tramelan",
+        "": ""
     },
     {
-        "name": "Putzleinsdorf",
-        "code": "4134"
+        "code": "2732",
+        "name": "Saicourt",
+        "": ""
     },
     {
-        "name": "Neustift im Mühlkreis",
-        "code": "4143"
+        "code": "2732",
+        "name": "Saules BE",
+        "": ""
     },
     {
-        "name": "St. Johann am Wimberg",
-        "code": "4172"
+        "code": "2732",
+        "name": "Loveresse",
+        "": ""
     },
     {
-        "name": "St. Martin im Mühlkreis",
-        "code": "4113"
+        "code": "2732",
+        "name": "Reconvilier",
+        "": ""
     },
     {
-        "name": "St. Oswald bei Haslach",
-        "code": "4170"
+        "code": "2733",
+        "name": "Pontenet",
+        "": ""
     },
     {
-        "name": "St. Peter am Wimberg",
-        "code": "4171"
+        "code": "2735",
+        "name": "Bévilard",
+        "": ""
     },
     {
-        "name": "St. Stefan am Walde",
-        "code": "4170"
+        "code": "2735",
+        "name": "Champoz",
+        "": ""
     },
     {
-        "name": "St. Ulrich im Mühlkreis",
-        "code": "4116"
+        "code": "2735",
+        "name": "Malleray",
+        "": ""
     },
     {
-        "name": "St. Veit im Mühlkreis",
-        "code": "4173"
+        "code": "2736",
+        "name": "Sorvilier",
+        "": ""
     },
     {
-        "name": "Sarleinsbach",
-        "code": "4152"
+        "code": "2738",
+        "name": "Court",
+        "": ""
     },
     {
-        "name": "Schönegg",
-        "code": "4184"
+        "code": "2740",
+        "name": "Moutier",
+        "": ""
     },
     {
-        "name": "Schwarzenberg am Böhmerwald",
-        "code": "4164"
+        "code": "2742",
+        "name": "Perrefitte",
+        "": ""
     },
     {
-        "name": "Ulrichsberg",
-        "code": "4161"
+        "code": "2743",
+        "name": "Eschert",
+        "": ""
     },
     {
-        "name": "Aigen-Schlägl",
-        "code": "4160"
+        "code": "2744",
+        "name": "Belprahon",
+        "": ""
     },
     {
-        "name": "Rohrbach-Berg",
-        "code": "4150"
+        "code": "2745",
+        "name": "Grandval",
+        "": ""
     },
     {
-        "name": "Altschwendt",
-        "code": "4721"
+        "code": "2746",
+        "name": "Crémines",
+        "": ""
     },
     {
-        "name": "Andorf",
-        "code": "4770"
+        "code": "2747",
+        "name": "Seehof",
+        "": ""
     },
     {
+        "code": "2747",
+        "name": "Corcelles BE",
+        "": ""
+    },
+    {
+        "code": "2748",
+        "name": "Souboz",
+        "": ""
+    },
+    {
+        "code": "2748",
+        "name": "Les Ecorcheresses",
+        "": ""
+    },
+    {
+        "code": "2762",
+        "name": "Roches BE",
+        "": ""
+    },
+    {
+        "code": "2800",
+        "name": "Delémont",
+        "": ""
+    },
+    {
+        "code": "2802",
+        "name": "Develier",
+        "": ""
+    },
+    {
+        "code": "2803",
+        "name": "Bourrignon",
+        "": ""
+    },
+    {
+        "code": "2805",
+        "name": "Soyhières",
+        "": ""
+    },
+    {
+        "code": "2806",
+        "name": "Mettembert",
+        "": ""
+    },
+    {
+        "code": "2807",
+        "name": "Lucelle",
+        "": ""
+    },
+    {
+        "code": "2807",
+        "name": "Pleigne",
+        "": ""
+    },
+    {
+        "code": "2812",
+        "name": "Movelier",
+        "": ""
+    },
+    {
+        "code": "2813",
+        "name": "Ederswiler",
+        "": ""
+    },
+    {
+        "code": "2814",
+        "name": "Roggenburg",
+        "": ""
+    },
+    {
+        "code": "2822",
+        "name": "Courroux",
+        "": ""
+    },
+    {
+        "code": "2823",
+        "name": "Courcelon",
+        "": ""
+    },
+    {
+        "code": "2824",
+        "name": "Vicques",
+        "": ""
+    },
+    {
+        "code": "2825",
+        "name": "Courchapoix",
+        "": ""
+    },
+    {
+        "code": "2826",
+        "name": "Corban",
+        "": ""
+    },
+    {
+        "code": "2827",
+        "name": "Schelten",
+        "": ""
+    },
+    {
+        "code": "2827",
+        "name": "Mervelier",
+        "": ""
+    },
+    {
+        "code": "2828",
+        "name": "Montsevelier",
+        "": ""
+    },
+    {
+        "code": "2829",
+        "name": "Vermes",
+        "": ""
+    },
+    {
+        "code": "2830",
+        "name": "Vellerat",
+        "": ""
+    },
+    {
+        "code": "2830",
+        "name": "Courrendlin",
+        "": ""
+    },
+    {
+        "code": "2832",
+        "name": "Rebeuvelier",
+        "": ""
+    },
+    {
+        "code": "2842",
+        "name": "Rossemaison",
+        "": ""
+    },
+    {
+        "code": "2843",
+        "name": "Châtillon JU",
+        "": ""
+    },
+    {
+        "code": "2852",
+        "name": "Courtételle",
+        "": ""
+    },
+    {
+        "code": "2853",
+        "name": "Courfaivre",
+        "": ""
+    },
+    {
+        "code": "2854",
+        "name": "Bassecourt",
+        "": ""
+    },
+    {
+        "code": "2855",
+        "name": "Glovelier",
+        "": ""
+    },
+    {
+        "code": "2856",
+        "name": "Boécourt",
+        "": ""
+    },
+    {
+        "code": "2857",
+        "name": "Montavon",
+        "": ""
+    },
+    {
+        "code": "2863",
+        "name": "Undervelier",
+        "": ""
+    },
+    {
+        "code": "2864",
+        "name": "Soulce",
+        "": ""
+    },
+    {
+        "code": "2873",
+        "name": "Saulcy",
+        "": ""
+    },
+    {
+        "code": "2874",
+        "name": "Montfavergier",
+        "": ""
+    },
+    {
+        "code": "2874",
+        "name": "St-Brais",
+        "": ""
+    },
+    {
+        "code": "2875",
+        "name": "Les Enfers",
+        "": ""
+    },
+    {
+        "code": "2875",
+        "name": "Montfaucon",
+        "": ""
+    },
+    {
+        "code": "2877",
+        "name": "Le Bémont JU",
+        "": ""
+    },
+    {
+        "code": "2882",
+        "name": "St-Ursanne",
+        "": ""
+    },
+    {
+        "code": "2883",
+        "name": "Montmelon",
+        "": ""
+    },
+    {
+        "code": "2884",
+        "name": "Montenol",
+        "": ""
+    },
+    {
+        "code": "2885",
+        "name": "Epauvillers",
+        "": ""
+    },
+    {
+        "code": "2886",
+        "name": "Epiquerez",
+        "": ""
+    },
+    {
+        "code": "2887",
+        "name": "Soubey",
+        "": ""
+    },
+    {
+        "code": "2888",
+        "name": "Seleute",
+        "": ""
+    },
+    {
+        "code": "2889",
+        "name": "Ocourt",
+        "": ""
+    },
+    {
+        "code": "2900",
+        "name": "Porrentruy",
+        "": ""
+    },
+    {
+        "code": "2902",
+        "name": "Fontenais",
+        "": ""
+    },
+    {
+        "code": "2903",
+        "name": "Villars-sur Fontenais",
+        "": ""
+    },
+    {
+        "code": "2904",
+        "name": "Bressaucourt",
+        "": ""
+    },
+    {
+        "code": "2905",
+        "name": "Courtedoux",
+        "": ""
+    },
+    {
+        "code": "2906",
+        "name": "Chevenez",
+        "": ""
+    },
+    {
+        "code": "2907",
+        "name": "Rocourt",
+        "": ""
+    },
+    {
+        "code": "2908",
+        "name": "Grandfontaine",
+        "": ""
+    },
+    {
+        "code": "2912",
+        "name": "Roche-d Or",
+        "": ""
+    },
+    {
+        "code": "2912",
+        "name": "Réclère",
+        "": ""
+    },
+    {
+        "code": "2914",
+        "name": "Damvant",
+        "": ""
+    },
+    {
+        "code": "2915",
+        "name": "Bure",
+        "": ""
+    },
+    {
+        "code": "2916",
+        "name": "Fahy",
+        "": ""
+    },
+    {
+        "code": "2922",
+        "name": "Courchavon",
+        "": ""
+    },
+    {
+        "code": "2923",
+        "name": "Courtemaîche",
+        "": ""
+    },
+    {
+        "code": "2924",
+        "name": "Montignez",
+        "": ""
+    },
+    {
+        "code": "2925",
+        "name": "Buix",
+        "": ""
+    },
+    {
+        "code": "2926",
+        "name": "Boncourt",
+        "": ""
+    },
+    {
+        "code": "2932",
+        "name": "Coeuve",
+        "": ""
+    },
+    {
+        "code": "2933",
+        "name": "Damphreux",
+        "": ""
+    },
+    {
+        "code": "2933",
+        "name": "Lugnez",
+        "": ""
+    },
+    {
+        "code": "2935",
+        "name": "Beurnevésin",
+        "": ""
+    },
+    {
+        "code": "2942",
+        "name": "Alle",
+        "": ""
+    },
+    {
+        "code": "2943",
+        "name": "Vendlincourt",
+        "": ""
+    },
+    {
+        "code": "2944",
+        "name": "Bonfol",
+        "": ""
+    },
+    {
+        "code": "2946",
+        "name": "Miécourt",
+        "": ""
+    },
+    {
+        "code": "2947",
+        "name": "Charmoille",
+        "": ""
+    },
+    {
+        "code": "2950",
+        "name": "Courtemautruy",
+        "": ""
+    },
+    {
+        "code": "2950",
+        "name": "Courgenay",
+        "": ""
+    },
+    {
+        "code": "2952",
+        "name": "Cornol",
+        "": ""
+    },
+    {
+        "code": "2953",
+        "name": "Fregiécourt",
+        "": ""
+    },
+    {
+        "code": "2953",
+        "name": "Pleujouse",
+        "": ""
+    },
+    {
+        "code": "2954",
+        "name": "Asuel",
+        "": ""
+    },
+    {
+        "code": "3000",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3004",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3005",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3006",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3007",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3008",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3010",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3011",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3012",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3013",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3014",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3015",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3018",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3019",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3020",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3027",
+        "name": "Bern",
+        "": ""
+    },
+    {
+        "code": "3032",
+        "name": "Hinterkappelen",
+        "": ""
+    },
+    {
+        "code": "3033",
+        "name": "Wohlen b. Bern",
+        "": ""
+    },
+    {
+        "code": "3034",
+        "name": "Murzelen",
+        "": ""
+    },
+    {
+        "code": "3035",
+        "name": "Frieswil",
+        "": ""
+    },
+    {
+        "code": "3036",
+        "name": "Detligen",
+        "": ""
+    },
+    {
+        "code": "3037",
+        "name": "Herrenschwanden",
+        "": ""
+    },
+    {
+        "code": "3038",
+        "name": "Kirchlindach",
+        "": ""
+    },
+    {
+        "code": "3042",
+        "name": "Ortschwaben",
+        "": ""
+    },
+    {
+        "code": "3043",
+        "name": "Uettligen",
+        "": ""
+    },
+    {
+        "code": "3044",
+        "name": "Innerberg",
+        "": ""
+    },
+    {
+        "code": "3045",
+        "name": "Meikirch",
+        "": ""
+    },
+    {
+        "code": "3046",
+        "name": "Wahlendorf",
+        "": ""
+    },
+    {
+        "code": "3047",
+        "name": "Bremgarten b. Bern",
+        "": ""
+    },
+    {
+        "code": "3048",
+        "name": "Worblaufen",
+        "": ""
+    },
+    {
+        "code": "3049",
+        "name": "Säriswil",
+        "": ""
+    },
+    {
+        "code": "3052",
+        "name": "Zollikofen",
+        "": ""
+    },
+    {
+        "code": "3053",
+        "name": "Deisswil b. Münchenbuchsee",
+        "": ""
+    },
+    {
+        "code": "3053",
+        "name": "Diemerswil",
+        "": ""
+    },
+    {
+        "code": "3053",
+        "name": "Wiggiswil",
+        "": ""
+    },
+    {
+        "code": "3053",
+        "name": "Lätti",
+        "": ""
+    },
+    {
+        "code": "3053",
+        "name": "Münchenbuchsee",
+        "": ""
+    },
+    {
+        "code": "3054",
+        "name": "Schüpfen",
+        "": ""
+    },
+    {
+        "code": "3063",
+        "name": "Ittigen",
+        "": ""
+    },
+    {
+        "code": "3065",
+        "name": "Bolligen",
+        "": ""
+    },
+    {
+        "code": "3066",
+        "name": "Stettlen",
+        "": ""
+    },
+    {
+        "code": "3067",
+        "name": "Boll",
+        "": ""
+    },
+    {
+        "code": "3068",
+        "name": "Utzigen",
+        "": ""
+    },
+    {
+        "code": "3072",
+        "name": "Ostermundigen",
+        "": ""
+    },
+    {
+        "code": "3073",
+        "name": "Gümligen",
+        "": ""
+    },
+    {
+        "code": "3074",
+        "name": "Muri b. Bern",
+        "": ""
+    },
+    {
+        "code": "3075",
+        "name": "Rüfenacht BE",
+        "": ""
+    },
+    {
+        "code": "3076",
+        "name": "Worb",
+        "": ""
+    },
+    {
+        "code": "3077",
+        "name": "Enggistein",
+        "": ""
+    },
+    {
+        "code": "3078",
+        "name": "Richigen",
+        "": ""
+    },
+    {
+        "code": "3082",
+        "name": "Schlosswil",
+        "": ""
+    },
+    {
+        "code": "3083",
+        "name": "Trimstein",
+        "": ""
+    },
+    {
+        "code": "3084",
+        "name": "Wabern",
+        "": ""
+    },
+    {
+        "code": "3086",
+        "name": "Englisberg",
+        "": ""
+    },
+    {
+        "code": "3086",
+        "name": "Zimmerwald",
+        "": ""
+    },
+    {
+        "code": "3087",
+        "name": "Niedermuhlern",
+        "": ""
+    },
+    {
+        "code": "3088",
+        "name": "Oberbütschel",
+        "": ""
+    },
+    {
+        "code": "3088",
+        "name": "Rüeggisberg",
+        "": ""
+    },
+    {
+        "code": "3089",
+        "name": "Hinterfultigen",
+        "": ""
+    },
+    {
+        "code": "3095",
+        "name": "Spiegel b. Bern",
+        "": ""
+    },
+    {
+        "code": "3096",
+        "name": "Oberbalm",
+        "": ""
+    },
+    {
+        "code": "3097",
+        "name": "Liebefeld",
+        "": ""
+    },
+    {
+        "code": "3098",
+        "name": "Köniz",
+        "": ""
+    },
+    {
+        "code": "3098",
+        "name": "Schliern b. Köniz",
+        "": ""
+    },
+    {
+        "code": "3099",
+        "name": "Rüti b. Riggisberg",
+        "": ""
+    },
+    {
+        "code": "3110",
+        "name": "Münsingen",
+        "": ""
+    },
+    {
+        "code": "3111",
+        "name": "Tägertschi",
+        "": ""
+    },
+    {
+        "code": "3112",
+        "name": "Allmendingen b. Bern",
+        "": ""
+    },
+    {
+        "code": "3113",
+        "name": "Rubigen",
+        "": ""
+    },
+    {
+        "code": "3114",
+        "name": "Wichtrach",
+        "": ""
+    },
+    {
+        "code": "3115",
+        "name": "Gerzensee",
+        "": ""
+    },
+    {
+        "code": "3116",
+        "name": "Mühledorf BE",
+        "": ""
+    },
+    {
+        "code": "3116",
+        "name": "Noflen BE",
+        "": ""
+    },
+    {
+        "code": "3116",
+        "name": "Kirchdorf BE",
+        "": ""
+    },
+    {
+        "code": "3122",
+        "name": "Kehrsatz",
+        "": ""
+    },
+    {
+        "code": "3123",
+        "name": "Belp",
+        "": ""
+    },
+    {
+        "code": "3124",
+        "name": "Belpberg",
+        "": ""
+    },
+    {
+        "code": "3125",
+        "name": "Toffen",
+        "": ""
+    },
+    {
+        "code": "3126",
+        "name": "Gelterfingen",
+        "": ""
+    },
+    {
+        "code": "3126",
+        "name": "Kaufdorf",
+        "": ""
+    },
+    {
+        "code": "3127",
+        "name": "Lohnstorf",
+        "": ""
+    },
+    {
+        "code": "3127",
+        "name": "Mühlethurnen",
+        "": ""
+    },
+    {
+        "code": "3128",
+        "name": "Kirchenthurnen",
+        "": ""
+    },
+    {
+        "code": "3128",
+        "name": "Rümligen",
+        "": ""
+    },
+    {
+        "code": "3132",
+        "name": "Riggisberg",
+        "": ""
+    },
+    {
+        "code": "3144",
+        "name": "Gasel",
+        "": ""
+    },
+    {
+        "code": "3145",
+        "name": "Niederscherli",
+        "": ""
+    },
+    {
+        "code": "3147",
+        "name": "Mittelhäusern",
+        "": ""
+    },
+    {
+        "code": "3148",
+        "name": "Lanzenhäusern",
+        "": ""
+    },
+    {
+        "code": "3150",
+        "name": "Schwarzenburg",
+        "": ""
+    },
+    {
+        "code": "3152",
+        "name": "Mamishaus",
+        "": ""
+    },
+    {
+        "code": "3153",
+        "name": "Rüschegg Gambach",
+        "": ""
+    },
+    {
+        "code": "3154",
+        "name": "Rüschegg Heubach",
+        "": ""
+    },
+    {
+        "code": "3155",
+        "name": "Helgisried-Rohrbach",
+        "": ""
+    },
+    {
+        "code": "3156",
+        "name": "Riffenmatt",
+        "": ""
+    },
+    {
+        "code": "3157",
+        "name": "Milken",
+        "": ""
+    },
+    {
+        "code": "3158",
+        "name": "Guggisberg",
+        "": ""
+    },
+    {
+        "code": "3159",
+        "name": "Riedstätt",
+        "": ""
+    },
+    {
+        "code": "3172",
+        "name": "Niederwangen b. Bern",
+        "": ""
+    },
+    {
+        "code": "3173",
+        "name": "Oberwangen b. Bern",
+        "": ""
+    },
+    {
+        "code": "3174",
+        "name": "Thörishaus",
+        "": ""
+    },
+    {
+        "code": "3175",
+        "name": "Flamatt",
+        "": ""
+    },
+    {
+        "code": "3176",
+        "name": "Neuenegg",
+        "": ""
+    },
+    {
+        "code": "3177",
+        "name": "Laupen BE",
+        "": ""
+    },
+    {
+        "code": "3178",
+        "name": "Bösingen",
+        "": ""
+    },
+    {
+        "code": "3179",
+        "name": "Kriechenwil",
+        "": ""
+    },
+    {
+        "code": "3182",
+        "name": "Ueberstorf",
+        "": ""
+    },
+    {
+        "code": "3183",
+        "name": "Albligen",
+        "": ""
+    },
+    {
+        "code": "3184",
+        "name": "Wünnewil",
+        "": ""
+    },
+    {
+        "code": "3185",
+        "name": "Schmitten FR",
+        "": ""
+    },
+    {
+        "code": "3186",
+        "name": "Düdingen",
+        "": ""
+    },
+    {
+        "code": "3202",
+        "name": "Frauenkappelen",
+        "": ""
+    },
+    {
+        "code": "3203",
+        "name": "Mühleberg",
+        "": ""
+    },
+    {
+        "code": "3204",
+        "name": "Rosshäusern",
+        "": ""
+    },
+    {
+        "code": "3205",
+        "name": "Gümmenen",
+        "": ""
+    },
+    {
+        "code": "3206",
+        "name": "Rizenbach",
+        "": ""
+    },
+    {
+        "code": "3206",
+        "name": "Ferenbalm",
+        "": ""
+    },
+    {
+        "code": "3206",
+        "name": "Biberen",
+        "": ""
+    },
+    {
+        "code": "3206",
+        "name": "Gammen",
+        "": ""
+    },
+    {
+        "code": "3206",
+        "name": "Wallenbuch",
+        "": ""
+    },
+    {
+        "code": "3207",
+        "name": "Wileroltigen",
+        "": ""
+    },
+    {
+        "code": "3207",
+        "name": "Golaten",
+        "": ""
+    },
+    {
+        "code": "3208",
+        "name": "Gurbrü",
+        "": ""
+    },
+    {
+        "code": "3210",
+        "name": "Kerzers",
+        "": ""
+    },
+    {
+        "code": "3212",
+        "name": "Kleingurmels",
+        "": ""
+    },
+    {
+        "code": "3212",
+        "name": "Gurmels",
+        "": ""
+    },
+    {
+        "code": "3213",
+        "name": "Liebistorf",
+        "": ""
+    },
+    {
+        "code": "3213",
+        "name": "Kleinbösingen",
+        "": ""
+    },
+    {
+        "code": "3214",
+        "name": "Ulmiz",
+        "": ""
+    },
+    {
+        "code": "3215",
+        "name": "Gempenach",
+        "": ""
+    },
+    {
+        "code": "3215",
+        "name": "Büchslen",
+        "": ""
+    },
+    {
+        "code": "3215",
+        "name": "Lurtigen",
+        "": ""
+    },
+    {
+        "code": "3216",
+        "name": "Agriswil",
+        "": ""
+    },
+    {
+        "code": "3216",
+        "name": "Ried b. Kerzers",
+        "": ""
+    },
+    {
+        "code": "3225",
+        "name": "Müntschemier",
+        "": ""
+    },
+    {
+        "code": "3226",
+        "name": "Treiten",
+        "": ""
+    },
+    {
+        "code": "3232",
+        "name": "Ins",
+        "": ""
+    },
+    {
+        "code": "3233",
+        "name": "Tschugg",
+        "": ""
+    },
+    {
+        "code": "3234",
+        "name": "Vinelz",
+        "": ""
+    },
+    {
+        "code": "3235",
+        "name": "Erlach",
+        "": ""
+    },
+    {
+        "code": "3236",
+        "name": "Gampelen",
+        "": ""
+    },
+    {
+        "code": "3237",
+        "name": "Brüttelen",
+        "": ""
+    },
+    {
+        "code": "3238",
+        "name": "Gals",
+        "": ""
+    },
+    {
+        "code": "3250",
+        "name": "Lyss",
+        "": ""
+    },
+    {
+        "code": "3251",
+        "name": "Ruppoldsried",
+        "": ""
+    },
+    {
+        "code": "3251",
+        "name": "Wengi b. Büren",
+        "": ""
+    },
+    {
+        "code": "3252",
+        "name": "Worben",
+        "": ""
+    },
+    {
+        "code": "3253",
+        "name": "Schnottwil",
+        "": ""
+    },
+    {
+        "code": "3254",
+        "name": "Balm b. Messen",
+        "": ""
+    },
+    {
+        "code": "3254",
+        "name": "Messen",
+        "": ""
+    },
+    {
+        "code": "3255",
+        "name": "Rapperswil BE",
+        "": ""
+    },
+    {
+        "code": "3256",
+        "name": "Dieterswil",
+        "": ""
+    },
+    {
+        "code": "3256",
+        "name": "Bangerten b. Dieterswil",
+        "": ""
+    },
+    {
+        "code": "3256",
+        "name": "Seewil",
+        "": ""
+    },
+    {
+        "code": "3257",
+        "name": "Ammerzwil BE",
+        "": ""
+    },
+    {
+        "code": "3257",
+        "name": "Grossaffoltern",
+        "": ""
+    },
+    {
+        "code": "3262",
+        "name": "Suberg",
+        "": ""
+    },
+    {
+        "code": "3263",
+        "name": "Büetigen",
+        "": ""
+    },
+    {
+        "code": "3264",
+        "name": "Diessbach b. Büren",
+        "": ""
+    },
+    {
+        "code": "3266",
+        "name": "Wiler b. Seedorf",
+        "": ""
+    },
+    {
+        "code": "3267",
+        "name": "Seedorf BE",
+        "": ""
+    },
+    {
+        "code": "3268",
+        "name": "Lobsigen",
+        "": ""
+    },
+    {
+        "code": "3270",
+        "name": "Aarberg",
+        "": ""
+    },
+    {
+        "code": "3271",
+        "name": "Radelfingen b. Aarberg",
+        "": ""
+    },
+    {
+        "code": "3272",
+        "name": "Epsach",
+        "": ""
+    },
+    {
+        "code": "3272",
+        "name": "Walperswil",
+        "": ""
+    },
+    {
+        "code": "3273",
+        "name": "Kappelen",
+        "": ""
+    },
+    {
+        "code": "3274",
+        "name": "Hermrigen",
+        "": ""
+    },
+    {
+        "code": "3274",
+        "name": "Bühl b. Aarberg",
+        "": ""
+    },
+    {
+        "code": "3274",
+        "name": "Merzligen",
+        "": ""
+    },
+    {
+        "code": "3280",
+        "name": "Meyriez",
+        "": ""
+    },
+    {
+        "code": "3280",
+        "name": "Greng",
+        "": ""
+    },
+    {
+        "code": "3280",
+        "name": "Murten",
+        "": ""
+    },
+    {
+        "code": "3282",
+        "name": "Bargen BE",
+        "": ""
+    },
+    {
+        "code": "3283",
+        "name": "Niederried b. Kallnach",
+        "": ""
+    },
+    {
+        "code": "3283",
+        "name": "Kallnach",
+        "": ""
+    },
+    {
+        "code": "3284",
+        "name": "Fräschels",
+        "": ""
+    },
+    {
+        "code": "3285",
+        "name": "Galmiz",
+        "": ""
+    },
+    {
+        "code": "3286",
+        "name": "Muntelier",
+        "": ""
+    },
+    {
+        "code": "3292",
+        "name": "Busswil b. Büren",
+        "": ""
+    },
+    {
+        "code": "3293",
+        "name": "Dotzigen",
+        "": ""
+    },
+    {
+        "code": "3294",
+        "name": "Meienried",
+        "": ""
+    },
+    {
+        "code": "3294",
+        "name": "Büren an der Aare",
+        "": ""
+    },
+    {
+        "code": "3295",
+        "name": "Rüti b. Büren",
+        "": ""
+    },
+    {
+        "code": "3296",
+        "name": "Arch",
+        "": ""
+    },
+    {
+        "code": "3297",
+        "name": "Leuzigen",
+        "": ""
+    },
+    {
+        "code": "3298",
+        "name": "Oberwil b. Büren",
+        "": ""
+    },
+    {
+        "code": "3302",
+        "name": "Moosseedorf",
+        "": ""
+    },
+    {
+        "code": "3303",
+        "name": "Zuzwil BE",
+        "": ""
+    },
+    {
+        "code": "3303",
+        "name": "Ballmoos",
+        "": ""
+    },
+    {
+        "code": "3303",
+        "name": "Münchringen",
+        "": ""
+    },
+    {
+        "code": "3303",
+        "name": "Jegenstorf",
+        "": ""
+    },
+    {
+        "code": "3305",
+        "name": "Iffwil",
+        "": ""
+    },
+    {
+        "code": "3305",
+        "name": "Scheunen",
+        "": ""
+    },
+    {
+        "code": "3306",
+        "name": "Etzelkofen",
+        "": ""
+    },
+    {
+        "code": "3307",
         "name": "Brunnenthal",
-        "code": "4786"
+        "": ""
     },
     {
-        "name": "Diersbach",
-        "code": "4776"
+        "code": "3308",
+        "name": "Grafenried",
+        "": ""
     },
     {
-        "name": "Dorf an der Pram",
-        "code": "4751"
+        "code": "3309",
+        "name": "Kernenried",
+        "": ""
     },
     {
-        "name": "Eggerding",
-        "code": "4773"
+        "code": "3309",
+        "name": "Zauggenried",
+        "": ""
     },
     {
-        "name": "Engelhartszell",
-        "code": "4090"
+        "code": "3312",
+        "name": "Fraubrunnen",
+        "": ""
     },
     {
-        "name": "Enzenkirchen",
-        "code": "4761"
+        "code": "3313",
+        "name": "Büren zum Hof",
+        "": ""
     },
     {
-        "name": "Esternberg",
-        "code": "4092"
+        "code": "3314",
+        "name": "Schalunen",
+        "": ""
     },
     {
-        "name": "Freinberg",
-        "code": "4785"
+        "code": "3315",
+        "name": "Kräiligen",
+        "": ""
     },
     {
-        "name": "Kopfing im Innkreis",
-        "code": "4794"
+        "code": "3315",
+        "name": "Bätterkinden",
+        "": ""
     },
     {
-        "name": "Mayrhof",
-        "code": "4777"
+        "code": "3317",
+        "name": "Limpach",
+        "": ""
     },
     {
-        "name": "Münzkirchen",
-        "code": "4792"
+        "code": "3317",
+        "name": "Mülchi",
+        "": ""
     },
     {
-        "name": "Raab",
-        "code": "4760"
+        "code": "3322",
+        "name": "Mattstetten",
+        "": ""
     },
     {
-        "name": "Rainbach im Innkreis",
-        "code": "4791"
+        "code": "3322",
+        "name": "Urtenen-Schönbühl",
+        "": ""
     },
     {
-        "name": "Riedau",
-        "code": "4752"
+        "code": "3323",
+        "name": "Bäriswil BE",
+        "": ""
     },
     {
-        "name": "St. Aegidi",
-        "code": "4725"
+        "code": "3324",
+        "name": "Mötschwil",
+        "": ""
     },
     {
-        "name": "St. Florian am Inn",
-        "code": "4782"
+        "code": "3324",
+        "name": "Hindelbank",
+        "": ""
     },
     {
-        "name": "St. Marienkirchen bei Schärding",
-        "code": "4774"
+        "code": "3325",
+        "name": "Hettiswil b. Hindelbank",
+        "": ""
     },
     {
-        "name": "St. Roman",
-        "code": "4793"
+        "code": "3326",
+        "name": "Krauchthal",
+        "": ""
     },
     {
-        "name": "St. Willibald",
-        "code": "4762"
+        "code": "3360",
+        "name": "Herzogenbuchsee",
+        "": ""
     },
     {
-        "name": "Schärding",
-        "code": "4780"
+        "code": "3362",
+        "name": "Niederönz",
+        "": ""
     },
     {
-        "name": "Schardenberg",
-        "code": "4784"
+        "code": "3363",
+        "name": "Oberönz",
+        "": ""
     },
     {
-        "name": "Sigharting",
-        "code": "4771"
+        "code": "3365",
+        "name": "Seeberg",
+        "": ""
     },
     {
-        "name": "Suben",
-        "code": "4975"
+        "code": "3365",
+        "name": "Grasswil",
+        "": ""
     },
     {
-        "name": "Taufkirchen an der Pram",
-        "code": "4775"
+        "code": "3366",
+        "name": "Bettenhausen",
+        "": ""
     },
     {
-        "name": "Vichtenstein",
-        "code": "4091"
+        "code": "3366",
+        "name": "Bollodingen",
+        "": ""
     },
     {
-        "name": "Waldkirchen am Wesen",
-        "code": "4085"
+        "code": "3367",
+        "name": "Ochlenberg",
+        "": ""
     },
     {
-        "name": "Wernstein am Inn",
-        "code": "4783"
+        "code": "3367",
+        "name": "Thörigen",
+        "": ""
     },
     {
-        "name": "Zell an der Pram",
-        "code": "4755"
+        "code": "3368",
+        "name": "Bleienbach",
+        "": ""
     },
     {
-        "name": "Adlwang",
-        "code": "4541"
+        "code": "3372",
+        "name": "Wanzwil",
+        "": ""
     },
     {
-        "name": "Aschach an der Steyr",
-        "code": "4421"
+        "code": "3373",
+        "name": "Heimenhausen",
+        "": ""
     },
     {
-        "name": "Bad Hall",
-        "code": "4540"
+        "code": "3373",
+        "name": "Röthenbach Herzogenbuchsee",
+        "": ""
     },
     {
-        "name": "Dietach",
-        "code": "4407"
+        "code": "3374",
+        "name": "Wangenried",
+        "": ""
     },
     {
-        "name": "Gaflenz",
-        "code": "3334"
+        "code": "3375",
+        "name": "Inkwil",
+        "": ""
     },
     {
-        "name": "Garsten",
-        "code": "4451"
+        "code": "3376",
+        "name": "Graben",
+        "": ""
     },
     {
-        "name": "Großraming",
-        "code": "4463"
+        "code": "3376",
+        "name": "Berken",
+        "": ""
     },
     {
-        "name": "Laussa",
-        "code": "4461"
+        "code": "3377",
+        "name": "Walliswil b. Wangen",
+        "": ""
     },
     {
-        "name": "Losenstein",
-        "code": "4460"
+        "code": "3380",
+        "name": "Walliswil b. Niederbipp",
+        "": ""
     },
     {
-        "name": "Maria Neustift",
-        "code": "4443"
+        "code": "3380",
+        "name": "Wangen an der Aare",
+        "": ""
     },
     {
-        "name": "Pfarrkirchen bei Bad Hall",
-        "code": "4540"
+        "code": "3400",
+        "name": "Burgdorf",
+        "": ""
     },
     {
-        "name": "Reichraming",
-        "code": "4462"
+        "code": "3412",
+        "name": "Heimiswil",
+        "": ""
     },
     {
-        "name": "Rohr im Kremstal",
-        "code": "4532"
+        "code": "3413",
+        "name": "Kaltacker",
+        "": ""
     },
     {
-        "name": "St. Ulrich bei Steyr",
-        "code": "4400"
+        "code": "3414",
+        "name": "Oberburg",
+        "": ""
     },
     {
-        "name": "Schiedlberg",
-        "code": "4521"
+        "code": "3415",
+        "name": "Schafhausen im Emmental",
+        "": ""
     },
     {
-        "name": "Sierning",
-        "code": "4522"
+        "code": "3415",
+        "name": "Rüegsauschachen",
+        "": ""
     },
     {
-        "name": "Ternberg",
-        "code": "4452"
+        "code": "3415",
+        "name": "Hasle b. Burgdorf",
+        "": ""
     },
     {
-        "name": "Waldneukirchen",
-        "code": "4595"
+        "code": "3416",
+        "name": "Affoltern im Emmental",
+        "": ""
     },
     {
-        "name": "Wolfern",
-        "code": "4493"
+        "code": "3417",
+        "name": "Rüegsau",
+        "": ""
     },
     {
-        "name": "Weyer",
-        "code": "3335"
+        "code": "3418",
+        "name": "Rüegsbach",
+        "": ""
     },
     {
-        "name": "Alberndorf in der Riedmark",
-        "code": "4211"
+        "code": "3419",
+        "name": "Biembach im Emmental",
+        "": ""
     },
     {
-        "name": "Altenberg bei Linz",
-        "code": "4203"
+        "code": "3421",
+        "name": "Rüti b. Lyssach",
+        "": ""
     },
     {
-        "name": "Bad Leonfelden",
-        "code": "4190"
+        "code": "3421",
+        "name": "Lyssach",
+        "": ""
     },
     {
-        "name": "Eidenberg",
-        "code": "4201"
+        "code": "3422",
+        "name": "Rüdtligen",
+        "": ""
     },
     {
-        "name": "Engerwitzdorf",
-        "code": "4209"
+        "code": "3422",
+        "name": "Alchenflüh",
+        "": ""
     },
     {
-        "name": "Feldkirchen an der Donau",
-        "code": "4101"
+        "code": "3422",
+        "name": "Kirchberg BE",
+        "": ""
     },
     {
-        "name": "Gallneukirchen",
-        "code": "4210"
+        "code": "3423",
+        "name": "Ersigen",
+        "": ""
     },
     {
-        "name": "Goldwörth",
-        "code": "4102"
+        "code": "3424",
+        "name": "Niederösch",
+        "": ""
     },
     {
-        "name": "Gramastetten",
-        "code": "4201"
+        "code": "3424",
+        "name": "Oberösch",
+        "": ""
     },
     {
-        "name": "Haibach im Mühlkreis",
-        "code": "4204"
+        "code": "3425",
+        "name": "Willadingen",
+        "": ""
     },
     {
-        "name": "Hellmonsödt",
-        "code": "4202"
+        "code": "3425",
+        "name": "Koppigen",
+        "": ""
     },
     {
-        "name": "Herzogsdorf",
-        "code": "4175"
+        "code": "3426",
+        "name": "Aefligen",
+        "": ""
     },
     {
-        "name": "Kirchschlag bei Linz",
-        "code": "4202"
+        "code": "3427",
+        "name": "Utzenstorf",
+        "": ""
     },
     {
-        "name": "Lichtenberg",
-        "code": "4040"
+        "code": "3428",
+        "name": "Wiler b. Utzenstorf",
+        "": ""
     },
     {
-        "name": "Oberneukirchen",
-        "code": "4181"
+        "code": "3429",
+        "name": "Hellsau",
+        "": ""
     },
     {
-        "name": "Ottenschlag im Mühlkreis",
-        "code": "4204"
+        "code": "3429",
+        "name": "Höchstetten",
+        "": ""
     },
     {
-        "name": "Ottensheim",
-        "code": "4100"
+        "code": "3432",
+        "name": "Lützelflüh-Goldbach",
+        "": ""
     },
     {
-        "name": "Puchenau",
-        "code": "4048"
+        "code": "3433",
+        "name": "Schwanden im Emmental",
+        "": ""
     },
     {
-        "name": "Reichenau im Mühlkreis",
-        "code": "4204"
+        "code": "3434",
+        "name": "Obergoldbach",
+        "": ""
     },
     {
-        "name": "Reichenthal",
-        "code": "4193"
+        "code": "3435",
+        "name": "Ramsei",
+        "": ""
     },
     {
-        "name": "St. Gotthard im Mühlkreis",
-        "code": "4112"
+        "code": "3436",
+        "name": "Zollbrück",
+        "": ""
     },
     {
-        "name": "Schenkenfelden",
-        "code": "4192"
+        "code": "3437",
+        "name": "Rüderswil",
+        "": ""
     },
     {
-        "name": "Sonnberg im Mühlkreis",
-        "code": "4180"
+        "code": "3438",
+        "name": "Lauperswil",
+        "": ""
     },
     {
-        "name": "Steyregg",
-        "code": "4221"
+        "code": "3439",
+        "name": "Ranflüh",
+        "": ""
     },
     {
-        "name": "Vorderweißenbach",
-        "code": "4191"
+        "code": "3452",
+        "name": "Grünenmatt",
+        "": ""
     },
     {
-        "name": "Walding",
-        "code": "4111"
+        "code": "3453",
+        "name": "Heimisbach",
+        "": ""
     },
     {
-        "name": "Zwettl an der Rodl",
-        "code": "4180"
+        "code": "3454",
+        "name": "Sumiswald",
+        "": ""
     },
     {
-        "name": "Ampflwang im Hausruckwald",
-        "code": "4843"
+        "code": "3455",
+        "name": "Grünen",
+        "": ""
     },
     {
-        "name": "Attersee am Attersee",
-        "code": "4864"
+        "code": "3456",
+        "name": "Trachselwald",
+        "": ""
     },
     {
-        "name": "Attnang-Puchheim",
-        "code": "4800"
+        "code": "3457",
+        "name": "Wasen im Emmental",
+        "": ""
     },
     {
-        "name": "Atzbach",
-        "code": "4904"
+        "code": "3462",
+        "name": "Weier im Emmental",
+        "": ""
     },
     {
-        "name": "Aurach am Hongar",
-        "code": "4861"
+        "code": "3463",
+        "name": "Häusernmoos im Emmental",
+        "": ""
     },
     {
-        "name": "Berg im Attergau",
-        "code": "4880"
+        "code": "3464",
+        "name": "Schmidigen-Mühleweg",
+        "": ""
     },
     {
-        "name": "Desselbrunn",
-        "code": "4693"
+        "code": "3465",
+        "name": "Dürrenroth",
+        "": ""
     },
     {
-        "name": "Fornach",
-        "code": "4892"
+        "code": "3472",
+        "name": "Rumendingen",
+        "": ""
     },
     {
-        "name": "Frankenburg am Hausruck",
-        "code": "4873"
+        "code": "3472",
+        "name": "Wynigen",
+        "": ""
     },
     {
-        "name": "Frankenmarkt",
-        "code": "4890"
+        "code": "3473",
+        "name": "Alchenstorf",
+        "": ""
     },
     {
-        "name": "Gampern",
-        "code": "4851"
+        "code": "3474",
+        "name": "Rüedisbach",
+        "": ""
     },
     {
-        "name": "Innerschwand am Mondsee",
-        "code": "5310"
+        "code": "3475",
+        "name": "Riedtwil",
+        "": ""
     },
     {
-        "name": "Lenzing",
-        "code": "4860"
+        "code": "3475",
+        "name": "Hermiswil",
+        "": ""
     },
     {
-        "name": "Manning",
-        "code": "4903"
+        "code": "3476",
+        "name": "Oschwand",
+        "": ""
     },
     {
-        "name": "Mondsee",
-        "code": "5310"
+        "code": "3503",
+        "name": "Gysenstein",
+        "": ""
     },
     {
-        "name": "Neukirchen an der Vöckla",
-        "code": "4872"
+        "code": "3504",
+        "name": "Niederhünigen",
+        "": ""
     },
     {
-        "name": "Niederthalheim",
-        "code": "4692"
+        "code": "3504",
+        "name": "Oberhünigen",
+        "": ""
     },
     {
-        "name": "Nußdorf am Attersee",
-        "code": "4865"
+        "code": "3506",
+        "name": "Grosshöchstetten",
+        "": ""
     },
     {
-        "name": "Oberhofen am Irrsee",
-        "code": "4894"
+        "code": "3507",
+        "name": "Biglen",
+        "": ""
     },
     {
-        "name": "Oberndorf bei Schwanenstadt",
-        "code": "4690"
+        "code": "3508",
+        "name": "Arni BE",
+        "": ""
     },
     {
-        "name": "Oberwang",
-        "code": "4882"
+        "code": "3510",
+        "name": "Freimettigen",
+        "": ""
     },
     {
-        "name": "Ottnang am Hausruck",
-        "code": "4901"
+        "code": "3510",
+        "name": "Häutligen",
+        "": ""
     },
     {
-        "name": "Pfaffing",
-        "code": "4870"
+        "code": "3510",
+        "name": "Konolfingen",
+        "": ""
     },
     {
-        "name": "Pilsbach",
-        "code": "4840"
+        "code": "3512",
+        "name": "Walkringen",
+        "": ""
     },
     {
-        "name": "Pitzenberg",
-        "code": "4690"
+        "code": "3513",
+        "name": "Bigenthal",
+        "": ""
     },
     {
-        "name": "Pöndorf",
-        "code": "4891"
+        "code": "3531",
+        "name": "Oberthal",
+        "": ""
     },
     {
-        "name": "Puchkirchen am Trattberg",
-        "code": "4849"
+        "code": "3532",
+        "name": "Mirchel",
+        "": ""
     },
     {
-        "name": "Pühret",
-        "code": "4690"
+        "code": "3532",
+        "name": "Zäziwil",
+        "": ""
     },
     {
-        "name": "Redleiten",
-        "code": "4873"
+        "code": "3533",
+        "name": "Bowil",
+        "": ""
     },
     {
-        "name": "Redlham",
-        "code": "4846"
+        "code": "3534",
+        "name": "Signau",
+        "": ""
     },
     {
-        "name": "Regau",
-        "code": "4844"
+        "code": "3535",
+        "name": "Schüpbach",
+        "": ""
     },
     {
-        "name": "Rüstorf",
-        "code": "4690"
+        "code": "3536",
+        "name": "Aeschau",
+        "": ""
     },
     {
-        "name": "Rutzenham",
-        "code": "4690"
+        "code": "3537",
+        "name": "Eggiwil",
+        "": ""
     },
     {
-        "name": "St. Georgen im Attergau",
-        "code": "4880"
+        "code": "3538",
+        "name": "Röthenbach im Emmental",
+        "": ""
     },
     {
-        "name": "St. Lorenz",
-        "code": "5310"
+        "code": "3543",
+        "name": "Emmenmatt",
+        "": ""
     },
     {
-        "name": "Schlatt",
-        "code": "4690"
+        "code": "3550",
+        "name": "Langnau im Emmental",
+        "": ""
     },
     {
-        "name": "Schörfling am Attersee",
-        "code": "4861"
+        "code": "3551",
+        "name": "Oberfrittenbach",
+        "": ""
     },
     {
-        "name": "Schwanenstadt",
-        "code": "4690"
+        "code": "3552",
+        "name": "Bärau",
+        "": ""
     },
     {
-        "name": "Seewalchen am Attersee",
-        "code": "4863"
+        "code": "3553",
+        "name": "Gohl",
+        "": ""
     },
     {
-        "name": "Steinbach am Attersee",
-        "code": "4853"
+        "code": "3555",
+        "name": "Trubschachen",
+        "": ""
     },
     {
-        "name": "Straß im Attergau",
-        "code": "4881"
+        "code": "3556",
+        "name": "Trub",
+        "": ""
     },
     {
-        "name": "Tiefgraben",
-        "code": "5310"
+        "code": "3557",
+        "name": "Fankhaus (Trub)",
+        "": ""
     },
     {
-        "name": "Timelkam",
-        "code": "4850"
+        "code": "3600",
+        "name": "Thun",
+        "": ""
     },
     {
-        "name": "Ungenach",
-        "code": "4841"
+        "code": "3603",
+        "name": "Thun",
+        "": ""
     },
     {
-        "name": "Unterach am Attersee",
-        "code": "4866"
+        "code": "3604",
+        "name": "Thun",
+        "": ""
     },
     {
-        "name": "Vöcklabruck",
-        "code": "4840"
+        "code": "3608",
+        "name": "Thun",
+        "": ""
     },
     {
-        "name": "Vöcklamarkt",
-        "code": "4870"
+        "code": "3612",
+        "name": "Steffisburg",
+        "": ""
     },
     {
-        "name": "Weißenkirchen im Attergau",
-        "code": "4890"
+        "code": "3613",
+        "name": "Steffisburg",
+        "": ""
     },
     {
-        "name": "Weyregg am Attersee",
-        "code": "4852"
+        "code": "3614",
+        "name": "Unterlangenegg",
+        "": ""
     },
     {
-        "name": "Wolfsegg am Hausruck",
-        "code": "4902"
+        "code": "3615",
+        "name": "Heimenschwand",
+        "": ""
     },
     {
-        "name": "Zell am Moos",
-        "code": "4893"
+        "code": "3616",
+        "name": "Schwarzenegg",
+        "": ""
     },
     {
-        "name": "Zell am Pettenfirst",
-        "code": "4842"
+        "code": "3617",
+        "name": "Fahrni b. Thun",
+        "": ""
     },
     {
-        "name": "Aichkirchen",
-        "code": "4671"
+        "code": "3618",
+        "name": "Süderen",
+        "": ""
     },
     {
-        "name": "Bachmanning",
-        "code": "4672"
+        "code": "3619",
+        "name": "Eriz",
+        "": ""
     },
     {
-        "name": "Bad Wimsbach-Neydharting",
-        "code": "4654"
+        "code": "3619",
+        "name": "Innereriz",
+        "": ""
     },
     {
-        "name": "Buchkirchen",
-        "code": "4611"
+        "code": "3622",
+        "name": "Homberg b. Thun",
+        "": ""
     },
     {
-        "name": "Eberstalzell",
-        "code": "4653"
+        "code": "3623",
+        "name": "Teuffenthal b. Thun",
+        "": ""
     },
     {
-        "name": "Edt bei Lambach",
-        "code": "4650"
+        "code": "3623",
+        "name": "Horrenbach",
+        "": ""
     },
     {
-        "name": "Fischlham",
-        "code": "4652"
+        "code": "3623",
+        "name": "Buchen BE",
+        "": ""
     },
     {
-        "name": "Gunskirchen",
-        "code": "4623"
+        "code": "3624",
+        "name": "Schwendibach",
+        "": ""
     },
     {
-        "name": "Holzhausen",
-        "code": "4615"
+        "code": "3624",
+        "name": "Goldiwil (Thun)",
+        "": ""
     },
     {
-        "name": "Krenglbach",
-        "code": "4631"
+        "code": "3625",
+        "name": "Heiligenschwendi",
+        "": ""
     },
     {
-        "name": "Lambach",
-        "code": "4650"
+        "code": "3626",
+        "name": "Hünibach",
+        "": ""
     },
     {
-        "name": "Marchtrenk",
-        "code": "4614"
+        "code": "3627",
+        "name": "Heimberg",
+        "": ""
     },
     {
-        "name": "Neukirchen bei Lambach",
-        "code": "4671"
+        "code": "3628",
+        "name": "Kienersrüti",
+        "": ""
     },
     {
-        "name": "Offenhausen",
-        "code": "4625"
+        "code": "3628",
+        "name": "Uttigen",
+        "": ""
     },
     {
-        "name": "Pennewang",
-        "code": "4624"
+        "code": "3629",
+        "name": "Oppligen",
+        "": ""
     },
     {
-        "name": "Pichl bei Wels",
-        "code": "4632"
+        "code": "3629",
+        "name": "Jaberg",
+        "": ""
     },
     {
-        "name": "Sattledt",
-        "code": "4642"
+        "code": "3629",
+        "name": "Kiesen",
+        "": ""
     },
     {
-        "name": "Schleißheim",
-        "code": "4600"
+        "code": "3631",
+        "name": "Höfen b. Thun",
+        "": ""
     },
     {
-        "name": "Sipbachzell",
-        "code": "4621"
+        "code": "3632",
+        "name": "Niederstocken",
+        "": ""
     },
     {
-        "name": "Stadl-Paura",
-        "code": "4651"
+        "code": "3632",
+        "name": "Oberstocken",
+        "": ""
     },
     {
-        "name": "Steinerkirchen an der Traun",
-        "code": "4652"
+        "code": "3633",
+        "name": "Amsoldingen",
+        "": ""
     },
     {
+        "code": "3634",
+        "name": "Thierachern",
+        "": ""
+    },
+    {
+        "code": "3635",
+        "name": "Uebeschi",
+        "": ""
+    },
+    {
+        "code": "3636",
+        "name": "Längenbühl",
+        "": ""
+    },
+    {
+        "code": "3636",
+        "name": "Forst b. Längenbühl",
+        "": ""
+    },
+    {
+        "code": "3638",
+        "name": "Pohlern",
+        "": ""
+    },
+    {
+        "code": "3638",
+        "name": "Blumenstein",
+        "": ""
+    },
+    {
+        "code": "3645",
+        "name": "Gwatt (Thun)",
+        "": ""
+    },
+    {
+        "code": "3645",
+        "name": "Zwieselberg",
+        "": ""
+    },
+    {
+        "code": "3646",
+        "name": "Einigen",
+        "": ""
+    },
+    {
+        "code": "3647",
+        "name": "Reutigen",
+        "": ""
+    },
+    {
+        "code": "3652",
+        "name": "Hilterfingen",
+        "": ""
+    },
+    {
+        "code": "3653",
+        "name": "Oberhofen am Thunersee",
+        "": ""
+    },
+    {
+        "code": "3654",
+        "name": "Gunten",
+        "": ""
+    },
+    {
+        "code": "3655",
+        "name": "Sigriswil",
+        "": ""
+    },
+    {
+        "code": "3656",
+        "name": "Tschingel ob Gunten",
+        "": ""
+    },
+    {
+        "code": "3656",
+        "name": "Aeschlen ob Gunten",
+        "": ""
+    },
+    {
+        "code": "3656",
+        "name": "Ringoldswil",
+        "": ""
+    },
+    {
+        "code": "3657",
+        "name": "Schwanden (Sigriswil)",
+        "": ""
+    },
+    {
+        "code": "3658",
+        "name": "Merligen",
+        "": ""
+    },
+    {
+        "code": "3661",
+        "name": "Uetendorf",
+        "": ""
+    },
+    {
+        "code": "3662",
+        "name": "Seftigen",
+        "": ""
+    },
+    {
+        "code": "3663",
+        "name": "Gurzelen",
+        "": ""
+    },
+    {
+        "code": "3664",
+        "name": "Burgistein",
+        "": ""
+    },
+    {
+        "code": "3665",
+        "name": "Wattenwil",
+        "": ""
+    },
+    {
+        "code": "3671",
+        "name": "Herbligen",
+        "": ""
+    },
+    {
+        "code": "3671",
+        "name": "Brenzikofen",
+        "": ""
+    },
+    {
+        "code": "3672",
+        "name": "Aeschlen b. Oberdiessbach",
+        "": ""
+    },
+    {
+        "code": "3672",
+        "name": "Oberdiessbach",
+        "": ""
+    },
+    {
+        "code": "3673",
+        "name": "Linden",
+        "": ""
+    },
+    {
+        "code": "3674",
+        "name": "Bleiken b. Oberdiessbach",
+        "": ""
+    },
+    {
+        "code": "3700",
+        "name": "Spiez",
+        "": ""
+    },
+    {
+        "code": "3702",
+        "name": "Hondrich",
+        "": ""
+    },
+    {
+        "code": "3703",
+        "name": "Aeschiried",
+        "": ""
+    },
+    {
+        "code": "3703",
+        "name": "Aeschi b. Spiez",
+        "": ""
+    },
+    {
+        "code": "3704",
+        "name": "Krattigen",
+        "": ""
+    },
+    {
+        "code": "3705",
+        "name": "Faulensee",
+        "": ""
+    },
+    {
+        "code": "3706",
+        "name": "Leissigen",
+        "": ""
+    },
+    {
+        "code": "3707",
+        "name": "Därligen",
+        "": ""
+    },
+    {
+        "code": "3711",
+        "name": "Emdthal",
+        "": ""
+    },
+    {
+        "code": "3711",
+        "name": "Mülenen",
+        "": ""
+    },
+    {
+        "code": "3713",
+        "name": "Reichenbach im Kandertal",
+        "": ""
+    },
+    {
+        "code": "3714",
+        "name": "Wengi b. Frutigen",
+        "": ""
+    },
+    {
+        "code": "3714",
+        "name": "Frutigen",
+        "": ""
+    },
+    {
+        "code": "3715",
+        "name": "Adelboden",
+        "": ""
+    },
+    {
+        "code": "3716",
+        "name": "Kandergrund",
+        "": ""
+    },
+    {
+        "code": "3717",
+        "name": "Blausee-Mitholz",
+        "": ""
+    },
+    {
+        "code": "3718",
+        "name": "Kandersteg",
+        "": ""
+    },
+    {
+        "code": "3722",
+        "name": "Scharnachtal",
+        "": ""
+    },
+    {
+        "code": "3723",
+        "name": "Kiental",
+        "": ""
+    },
+    {
+        "code": "3724",
+        "name": "Ried (Frutigen)",
+        "": ""
+    },
+    {
+        "code": "3725",
+        "name": "Achseten",
+        "": ""
+    },
+    {
+        "code": "3752",
+        "name": "Wimmis",
+        "": ""
+    },
+    {
+        "code": "3753",
+        "name": "Oey",
+        "": ""
+    },
+    {
+        "code": "3754",
+        "name": "Diemtigen",
+        "": ""
+    },
+    {
+        "code": "3755",
+        "name": "Horboden",
+        "": ""
+    },
+    {
+        "code": "3756",
+        "name": "Zwischenflüh",
+        "": ""
+    },
+    {
+        "code": "3757",
+        "name": "Schwenden im Diemtigtal",
+        "": ""
+    },
+    {
+        "code": "3758",
+        "name": "Latterbach",
+        "": ""
+    },
+    {
+        "code": "3762",
+        "name": "Erlenbach im Simmental",
+        "": ""
+    },
+    {
+        "code": "3763",
+        "name": "Därstetten",
+        "": ""
+    },
+    {
+        "code": "3764",
+        "name": "Weissenburg",
+        "": ""
+    },
+    {
+        "code": "3765",
+        "name": "Oberwil im Simmental",
+        "": ""
+    },
+    {
+        "code": "3766",
+        "name": "Boltigen",
+        "": ""
+    },
+    {
+        "code": "3770",
+        "name": "Zweisimmen",
+        "": ""
+    },
+    {
+        "code": "3771",
+        "name": "Blankenburg",
+        "": ""
+    },
+    {
+        "code": "3772",
+        "name": "St. Stephan",
+        "": ""
+    },
+    {
+        "code": "3773",
+        "name": "Matten (St. Stephan)",
+        "": ""
+    },
+    {
+        "code": "3775",
+        "name": "Lenk im Simmental",
+        "": ""
+    },
+    {
+        "code": "3776",
+        "name": "Oeschseite",
+        "": ""
+    },
+    {
+        "code": "3777",
+        "name": "Saanenmöser",
+        "": ""
+    },
+    {
+        "code": "3778",
+        "name": "Schönried",
+        "": ""
+    },
+    {
+        "code": "3780",
+        "name": "Gstaad",
+        "": ""
+    },
+    {
+        "code": "3781",
+        "name": "Turbach",
+        "": ""
+    },
+    {
+        "code": "3782",
+        "name": "Lauenen b. Gstaad",
+        "": ""
+    },
+    {
+        "code": "3783",
+        "name": "Grund b. Gstaad",
+        "": ""
+    },
+    {
+        "code": "3784",
+        "name": "Feutersoey",
+        "": ""
+    },
+    {
+        "code": "3785",
+        "name": "Gsteig b. Gstaad",
+        "": ""
+    },
+    {
+        "code": "3792",
+        "name": "Saanen",
+        "": ""
+    },
+    {
+        "code": "3800",
+        "name": "Sundlauenen",
+        "": ""
+    },
+    {
+        "code": "3800",
+        "name": "Interlaken",
+        "": ""
+    },
+    {
+        "code": "3800",
+        "name": "Unterseen",
+        "": ""
+    },
+    {
+        "code": "3800",
+        "name": "Matten b. Interlaken",
+        "": ""
+    },
+    {
+        "code": "3801",
+        "name": "Jungfraujoch",
+        "": ""
+    },
+    {
+        "code": "3803",
+        "name": "Beatenberg",
+        "": ""
+    },
+    {
+        "code": "3804",
+        "name": "Habkern",
+        "": ""
+    },
+    {
+        "code": "3805",
+        "name": "Goldswil b. Interlaken",
+        "": ""
+    },
+    {
+        "code": "3806",
+        "name": "Bönigen b. Interlaken",
+        "": ""
+    },
+    {
+        "code": "3807",
+        "name": "Iseltwald",
+        "": ""
+    },
+    {
+        "code": "3812",
+        "name": "Wilderswil",
+        "": ""
+    },
+    {
+        "code": "3813",
+        "name": "Saxeten",
+        "": ""
+    },
+    {
+        "code": "3814",
+        "name": "Gsteigwiler",
+        "": ""
+    },
+    {
+        "code": "3815",
+        "name": "Zweilütschinen",
+        "": ""
+    },
+    {
+        "code": "3815",
+        "name": "Gündlischwand",
+        "": ""
+    },
+    {
+        "code": "3816",
+        "name": "Lütschental",
+        "": ""
+    },
+    {
+        "code": "3816",
+        "name": "Burglauenen",
+        "": ""
+    },
+    {
+        "code": "3818",
+        "name": "Grindelwald",
+        "": ""
+    },
+    {
+        "code": "3822",
+        "name": "Isenfluh",
+        "": ""
+    },
+    {
+        "code": "3822",
+        "name": "Lauterbrunnen",
+        "": ""
+    },
+    {
+        "code": "3823",
+        "name": "Kleine Scheidegg",
+        "": ""
+    },
+    {
+        "code": "3823",
+        "name": "Eigergletscher",
+        "": ""
+    },
+    {
+        "code": "3823",
+        "name": "Wengen",
+        "": ""
+    },
+    {
+        "code": "3824",
+        "name": "Stechelberg",
+        "": ""
+    },
+    {
+        "code": "3825",
+        "name": "Mürren",
+        "": ""
+    },
+    {
+        "code": "3826",
+        "name": "Gimmelwald",
+        "": ""
+    },
+    {
+        "code": "3852",
+        "name": "Ringgenberg BE",
+        "": ""
+    },
+    {
+        "code": "3853",
+        "name": "Niederried b. Interlaken",
+        "": ""
+    },
+    {
+        "code": "3854",
+        "name": "Oberried am Brienzersee",
+        "": ""
+    },
+    {
+        "code": "3855",
+        "name": "Schwanden b. Brienz",
+        "": ""
+    },
+    {
+        "code": "3855",
+        "name": "Brienz BE",
+        "": ""
+    },
+    {
+        "code": "3855",
+        "name": "Axalp",
+        "": ""
+    },
+    {
+        "code": "3856",
+        "name": "Brienzwiler",
+        "": ""
+    },
+    {
+        "code": "3857",
+        "name": "Unterbach BE",
+        "": ""
+    },
+    {
+        "code": "3858",
+        "name": "Hofstetten b. Brienz",
+        "": ""
+    },
+    {
+        "code": "3860",
+        "name": "Rosenlaui",
+        "": ""
+    },
+    {
+        "code": "3860",
+        "name": "Schattenhalb",
+        "": ""
+    },
+    {
+        "code": "3860",
+        "name": "Meiringen",
+        "": ""
+    },
+    {
+        "code": "3860",
+        "name": "Brünig",
+        "": ""
+    },
+    {
+        "code": "3862",
+        "name": "Innertkirchen",
+        "": ""
+    },
+    {
+        "code": "3863",
+        "name": "Gadmen",
+        "": ""
+    },
+    {
+        "code": "3864",
+        "name": "Guttannen",
+        "": ""
+    },
+    {
+        "code": "3900",
+        "name": "Gamsen",
+        "": ""
+    },
+    {
+        "code": "3900",
+        "name": "Brigerbad",
+        "": ""
+    },
+    {
+        "code": "3900",
+        "name": "Brig",
+        "": ""
+    },
+    {
+        "code": "3901",
+        "name": "Rothwald",
+        "": ""
+    },
+    {
+        "code": "3902",
+        "name": "Glis",
+        "": ""
+    },
+    {
+        "code": "3903",
+        "name": "Birgisch",
+        "": ""
+    },
+    {
+        "code": "3903",
+        "name": "Mund",
+        "": ""
+    },
+    {
+        "code": "3904",
+        "name": "Naters",
+        "": ""
+    },
+    {
+        "code": "3905",
+        "name": "Saas-Almagell",
+        "": ""
+    },
+    {
+        "code": "3906",
+        "name": "Saas-Fee",
+        "": ""
+    },
+    {
+        "code": "3907",
+        "name": "Simplon Hospiz",
+        "": ""
+    },
+    {
+        "code": "3907",
+        "name": "Gabi (Simplon)",
+        "": ""
+    },
+    {
+        "code": "3907",
+        "name": "Gondo",
+        "": ""
+    },
+    {
+        "code": "3907",
+        "name": "Simplon Dorf",
+        "": ""
+    },
+    {
+        "code": "3908",
+        "name": "Saas-Balen",
+        "": ""
+    },
+    {
+        "code": "3910",
+        "name": "Saas-Grund",
+        "": ""
+    },
+    {
+        "code": "3911",
+        "name": "Ried-Brig",
+        "": ""
+    },
+    {
+        "code": "3912",
+        "name": "Termen",
+        "": ""
+    },
+    {
+        "code": "3913",
+        "name": "Rosswald",
+        "": ""
+    },
+    {
+        "code": "3914",
+        "name": "Belalp",
+        "": ""
+    },
+    {
+        "code": "3914",
+        "name": "Blatten b. Naters",
+        "": ""
+    },
+    {
+        "code": "3916",
+        "name": "Ferden",
+        "": ""
+    },
+    {
+        "code": "3917",
+        "name": "Goppenstein",
+        "": ""
+    },
+    {
+        "code": "3917",
+        "name": "Kippel",
+        "": ""
+    },
+    {
+        "code": "3918",
+        "name": "Wiler (Lötschen)",
+        "": ""
+    },
+    {
+        "code": "3919",
+        "name": "Blatten (Lötschen)",
+        "": ""
+    },
+    {
+        "code": "3920",
+        "name": "Zermatt",
+        "": ""
+    },
+    {
+        "code": "3922",
+        "name": "Eisten",
+        "": ""
+    },
+    {
+        "code": "3922",
+        "name": "Kalpetran",
+        "": ""
+    },
+    {
+        "code": "3922",
+        "name": "Stalden VS",
+        "": ""
+    },
+    {
+        "code": "3923",
+        "name": "Törbel",
+        "": ""
+    },
+    {
+        "code": "3924",
+        "name": "Gasenried",
+        "": ""
+    },
+    {
+        "code": "3924",
+        "name": "St. Niklaus VS",
+        "": ""
+    },
+    {
+        "code": "3925",
+        "name": "Grächen",
+        "": ""
+    },
+    {
+        "code": "3926",
+        "name": "Embd",
+        "": ""
+    },
+    {
+        "code": "3927",
+        "name": "Herbriggen",
+        "": ""
+    },
+    {
+        "code": "3928",
+        "name": "Randa",
+        "": ""
+    },
+    {
+        "code": "3929",
+        "name": "Täsch",
+        "": ""
+    },
+    {
+        "code": "3930",
+        "name": "Eyholz",
+        "": ""
+    },
+    {
+        "code": "3930",
+        "name": "Visp",
+        "": ""
+    },
+    {
+        "code": "3931",
+        "name": "Lalden",
+        "": ""
+    },
+    {
+        "code": "3932",
+        "name": "Visperterminen",
+        "": ""
+    },
+    {
+        "code": "3933",
+        "name": "Staldenried",
+        "": ""
+    },
+    {
+        "code": "3934",
+        "name": "Zeneggen",
+        "": ""
+    },
+    {
+        "code": "3935",
+        "name": "Bürchen",
+        "": ""
+    },
+    {
+        "code": "3937",
+        "name": "Baltschieder",
+        "": ""
+    },
+    {
+        "code": "3938",
+        "name": "Ausserberg",
+        "": ""
+    },
+    {
+        "code": "3939",
+        "name": "Eggerberg",
+        "": ""
+    },
+    {
+        "code": "3940",
+        "name": "Steg VS",
+        "": ""
+    },
+    {
+        "code": "3942",
+        "name": "Niedergesteln",
+        "": ""
+    },
+    {
+        "code": "3942",
+        "name": "St. German",
+        "": ""
+    },
+    {
+        "code": "3942",
+        "name": "Raron",
+        "": ""
+    },
+    {
+        "code": "3943",
+        "name": "Eischoll",
+        "": ""
+    },
+    {
+        "code": "3944",
+        "name": "Unterbäch VS",
+        "": ""
+    },
+    {
+        "code": "3945",
+        "name": "Gampel",
+        "": ""
+    },
+    {
+        "code": "3945",
+        "name": "Niedergampel",
+        "": ""
+    },
+    {
+        "code": "3946",
+        "name": "Gruben",
+        "": ""
+    },
+    {
+        "code": "3946",
+        "name": "Turtmann",
+        "": ""
+    },
+    {
+        "code": "3947",
+        "name": "Ergisch",
+        "": ""
+    },
+    {
+        "code": "3948",
+        "name": "Unterems",
+        "": ""
+    },
+    {
+        "code": "3948",
+        "name": "Oberems",
+        "": ""
+    },
+    {
+        "code": "3949",
+        "name": "Hohtenn",
+        "": ""
+    },
+    {
+        "code": "3951",
+        "name": "Agarn",
+        "": ""
+    },
+    {
+        "code": "3952",
+        "name": "Susten",
+        "": ""
+    },
+    {
+        "code": "3953",
+        "name": "Inden",
+        "": ""
+    },
+    {
+        "code": "3953",
+        "name": "Varen",
+        "": ""
+    },
+    {
+        "code": "3953",
+        "name": "Leuk Stadt",
+        "": ""
+    },
+    {
+        "code": "3954",
+        "name": "Leukerbad",
+        "": ""
+    },
+    {
+        "code": "3955",
+        "name": "Albinen",
+        "": ""
+    },
+    {
+        "code": "3956",
+        "name": "Guttet-Feschel",
+        "": ""
+    },
+    {
+        "code": "3957",
+        "name": "Bratsch",
+        "": ""
+    },
+    {
+        "code": "3957",
+        "name": "Erschmatt",
+        "": ""
+    },
+    {
+        "code": "3960",
+        "name": "Corin-de-la-Crête",
+        "": ""
+    },
+    {
+        "code": "3960",
+        "name": "Loc",
+        "": ""
+    },
+    {
+        "code": "3960",
+        "name": "Muraz (Sierre)",
+        "": ""
+    },
+    {
+        "code": "3960",
+        "name": "Niouc",
+        "": ""
+    },
+    {
+        "code": "3960",
+        "name": "Sierre",
+        "": ""
+    },
+    {
+        "code": "3961",
+        "name": "Chandolin",
+        "": ""
+    },
+    {
+        "code": "3961",
+        "name": "Ayer",
+        "": ""
+    },
+    {
+        "code": "3961",
+        "name": "St-Jean VS",
+        "": ""
+    },
+    {
+        "code": "3961",
+        "name": "Vissoie",
+        "": ""
+    },
+    {
+        "code": "3961",
+        "name": "St-Luc",
+        "": ""
+    },
+    {
+        "code": "3961",
+        "name": "Zinal",
+        "": ""
+    },
+    {
+        "code": "3961",
+        "name": "Grimentz",
+        "": ""
+    },
+    {
+        "code": "3963",
+        "name": "Montana",
+        "": ""
+    },
+    {
+        "code": "3963",
+        "name": "Crans-Montana",
+        "": ""
+    },
+    {
+        "code": "3963",
+        "name": "Aminona",
+        "": ""
+    },
+    {
+        "code": "3965",
+        "name": "Chippis",
+        "": ""
+    },
+    {
+        "code": "3966",
+        "name": "Réchy",
+        "": ""
+    },
+    {
+        "code": "3966",
+        "name": "Chalais",
+        "": ""
+    },
+    {
+        "code": "3967",
+        "name": "Vercorin",
+        "": ""
+    },
+    {
+        "code": "3968",
+        "name": "Veyras",
+        "": ""
+    },
+    {
+        "code": "3970",
+        "name": "Salgesch",
+        "": ""
+    },
+    {
+        "code": "3971",
+        "name": "Chermignon-d en-Bas",
+        "": ""
+    },
+    {
+        "code": "3971",
+        "name": "Ollon VS",
+        "": ""
+    },
+    {
+        "code": "3971",
+        "name": "Chermignon",
+        "": ""
+    },
+    {
+        "code": "3972",
+        "name": "Miège",
+        "": ""
+    },
+    {
+        "code": "3973",
+        "name": "Venthône",
+        "": ""
+    },
+    {
+        "code": "3974",
+        "name": "Mollens VS",
+        "": ""
+    },
+    {
+        "code": "3975",
+        "name": "Randogne",
+        "": ""
+    },
+    {
+        "code": "3976",
+        "name": "Champzabé",
+        "": ""
+    },
+    {
+        "code": "3976",
+        "name": "Noës",
+        "": ""
+    },
+    {
+        "code": "3977",
+        "name": "Granges VS",
+        "": ""
+    },
+    {
+        "code": "3978",
+        "name": "Flanthey",
+        "": ""
+    },
+    {
+        "code": "3979",
+        "name": "Grône",
+        "": ""
+    },
+    {
+        "code": "3982",
+        "name": "Bitsch",
+        "": ""
+    },
+    {
+        "code": "3983",
+        "name": "Bister",
+        "": ""
+    },
+    {
+        "code": "3983",
+        "name": "Filet",
+        "": ""
+    },
+    {
+        "code": "3983",
+        "name": "Goppisberg",
+        "": ""
+    },
+    {
+        "code": "3983",
+        "name": "Greich",
+        "": ""
+    },
+    {
+        "code": "3983",
+        "name": "Mörel",
+        "": ""
+    },
+    {
+        "code": "3984",
+        "name": "Fieschertal",
+        "": ""
+    },
+    {
+        "code": "3984",
+        "name": "Fiesch",
+        "": ""
+    },
+    {
+        "code": "3985",
+        "name": "Geschinen",
+        "": ""
+    },
+    {
+        "code": "3985",
+        "name": "Münster VS",
+        "": ""
+    },
+    {
+        "code": "3986",
+        "name": "Ried-Mörel",
+        "": ""
+    },
+    {
+        "code": "3987",
+        "name": "Riederalp",
+        "": ""
+    },
+    {
+        "code": "3988",
+        "name": "Obergesteln",
+        "": ""
+    },
+    {
+        "code": "3988",
+        "name": "Ulrichen",
+        "": ""
+    },
+    {
+        "code": "3989",
+        "name": "Niederwald",
+        "": ""
+    },
+    {
+        "code": "3989",
+        "name": "Blitzingen",
+        "": ""
+    },
+    {
+        "code": "3989",
+        "name": "Biel VS",
+        "": ""
+    },
+    {
+        "code": "3989",
+        "name": "Ritzingen",
+        "": ""
+    },
+    {
+        "code": "3989",
+        "name": "Selkingen",
+        "": ""
+    },
+    {
+        "code": "3991",
+        "name": "Betten",
+        "": ""
+    },
+    {
+        "code": "3992",
+        "name": "Bettmeralp",
+        "": ""
+    },
+    {
+        "code": "3993",
+        "name": "Grengiols",
+        "": ""
+    },
+    {
+        "code": "3994",
+        "name": "Lax",
+        "": ""
+    },
+    {
+        "code": "3994",
+        "name": "Martisberg",
+        "": ""
+    },
+    {
+        "code": "3995",
+        "name": "Ausserbinn",
+        "": ""
+    },
+    {
+        "code": "3995",
+        "name": "Mühlebach (Goms)",
+        "": ""
+    },
+    {
+        "code": "3995",
         "name": "Steinhaus",
-        "code": "4641"
+        "": ""
     },
     {
-        "name": "Thalheim bei Wels",
-        "code": "4600"
+        "code": "3995",
+        "name": "Ernen",
+        "": ""
     },
     {
-        "name": "Weißkirchen an der Traun",
-        "code": "4616"
+        "code": "3996",
+        "name": "Binn",
+        "": ""
     },
     {
-        "name": "Salzburg",
-        "code": "5020"
+        "code": "3997",
+        "name": "Bellwald",
+        "": ""
     },
     {
-        "name": "Abtenau",
-        "code": "5441"
+        "code": "3998",
+        "name": "Gluringen",
+        "": ""
     },
     {
-        "name": "Adnet",
-        "code": "5421"
+        "code": "3998",
+        "name": "Reckingen VS",
+        "": ""
     },
     {
-        "name": "Annaberg-Lungötz",
-        "code": "5524"
+        "code": "3999",
+        "name": "Oberwald",
+        "": ""
     },
     {
-        "name": "Golling an der Salzach",
-        "code": "5440"
+        "code": "4000",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Hallein",
-        "code": "5400"
+        "code": "4001",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Krispl",
-        "code": "5425"
+        "code": "4031",
+        "name": "Basel Universitätsspital",
+        "": ""
     },
     {
-        "name": "Kuchl",
-        "code": "5431"
+        "code": "4051",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Oberalm",
-        "code": "5411"
+        "code": "4052",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Puch bei Hallein",
-        "code": "5412"
+        "code": "4053",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Rußbach am Paß Gschütt",
-        "code": "5442"
+        "code": "4054",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Sankt Koloman",
-        "code": "5423"
+        "code": "4055",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Scheffau am Tennengebirge",
-        "code": "5440"
+        "code": "4056",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Bad Vigaun",
-        "code": "5424"
+        "code": "4057",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Anif",
-        "code": "5081"
+        "code": "4058",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Anthering",
-        "code": "5102"
+        "code": "4059",
+        "name": "Basel",
+        "": ""
     },
     {
-        "name": "Bergheim",
-        "code": "5101"
+        "code": "4101",
+        "name": "Bruderholz",
+        "": ""
     },
     {
-        "name": "Berndorf bei Salzburg",
-        "code": "5165"
+        "code": "4102",
+        "name": "Binningen",
+        "": ""
     },
     {
-        "name": "Bürmoos",
-        "code": "5111"
+        "code": "4103",
+        "name": "Bottmingen",
+        "": ""
     },
     {
-        "name": "Dorfbeuern",
-        "code": "5152"
+        "code": "4104",
+        "name": "Oberwil BL",
+        "": ""
     },
     {
-        "name": "Ebenau",
-        "code": "5323"
+        "code": "4105",
+        "name": "Biel-Benken BL",
+        "": ""
     },
     {
-        "name": "Elixhausen",
-        "code": "5161"
+        "code": "4106",
+        "name": "Therwil",
+        "": ""
     },
     {
-        "name": "Elsbethen",
-        "code": "5061"
+        "code": "4107",
+        "name": "Ettingen",
+        "": ""
     },
     {
-        "name": "Eugendorf",
-        "code": "5301"
+        "code": "4108",
+        "name": "Witterswil",
+        "": ""
     },
     {
-        "name": "Faistenau",
-        "code": "5324"
+        "code": "4112",
+        "name": "Bättwil",
+        "": ""
     },
     {
-        "name": "Fuschl am See",
-        "code": "5330"
+        "code": "4112",
+        "name": "Flüh",
+        "": ""
     },
     {
-        "name": "Göming",
-        "code": "5114"
+        "code": "4114",
+        "name": "Hofstetten SO",
+        "": ""
     },
     {
-        "name": "Grödig",
-        "code": "5082"
-    },
-    {
-        "name": "Großgmain",
-        "code": "5084"
-    },
-    {
-        "name": "Hallwang",
-        "code": "5300"
-    },
-    {
-        "name": "Henndorf am Wallersee",
-        "code": "5302"
-    },
-    {
-        "name": "Hintersee",
-        "code": "5324"
-    },
-    {
-        "name": "Hof bei Salzburg",
-        "code": "5322"
-    },
-    {
-        "name": "Köstendorf",
-        "code": "5203"
-    },
-    {
-        "name": "Koppl",
-        "code": "5321"
-    },
-    {
-        "name": "Lamprechtshausen",
-        "code": "5112"
-    },
-    {
-        "name": "Mattsee",
-        "code": "5163"
-    },
-    {
-        "name": "Neumarkt am Wallersee",
-        "code": "5202"
-    },
-    {
-        "name": "Nußdorf am Haunsberg",
-        "code": "5151"
-    },
-    {
-        "name": "Oberndorf bei Salzburg",
-        "code": "5110"
-    },
-    {
-        "name": "Obertrum am See",
-        "code": "5162"
-    },
-    {
-        "name": "Plainfeld",
-        "code": "5325"
-    },
-    {
-        "name": "Sankt Georgen bei Salzburg",
-        "code": "5113"
-    },
-    {
-        "name": "Sankt Gilgen",
-        "code": "5340"
-    },
-    {
-        "name": "Schleedorf",
-        "code": "5205"
-    },
-    {
-        "name": "Seeham",
-        "code": "5164"
-    },
-    {
-        "name": "Straßwalchen",
-        "code": "5204"
-    },
-    {
-        "name": "Strobl",
-        "code": "5350"
-    },
-    {
-        "name": "Thalgau",
-        "code": "5303"
-    },
-    {
-        "name": "Wals-Siezenheim",
-        "code": "5071"
-    },
-    {
-        "name": "Seekirchen am Wallersee",
-        "code": "5201"
-    },
-    {
-        "name": "Altenmarkt im Pongau",
-        "code": "5541"
-    },
-    {
-        "name": "Bad Hofgastein",
-        "code": "5630"
-    },
-    {
-        "name": "Bad Gastein",
-        "code": "5640"
-    },
-    {
-        "name": "Bischofshofen",
-        "code": "5500"
-    },
-    {
-        "name": "Dorfgastein",
-        "code": "5632"
-    },
-    {
-        "name": "Eben im Pongau",
-        "code": "5531"
-    },
-    {
-        "name": "Filzmoos",
-        "code": "5532"
-    },
-    {
-        "name": "Flachau",
-        "code": "5542"
-    },
-    {
-        "name": "Forstau",
-        "code": "5552"
-    },
-    {
-        "name": "Goldegg",
-        "code": "5622"
-    },
-    {
-        "name": "Großarl",
-        "code": "5611"
-    },
-    {
-        "name": "Hüttau",
-        "code": "5511"
-    },
-    {
-        "name": "Hüttschlag",
-        "code": "5612"
-    },
-    {
-        "name": "Kleinarl",
-        "code": "5603"
-    },
-    {
-        "name": "Mühlbach am Hochkönig",
-        "code": "5505"
-    },
-    {
-        "name": "Pfarrwerfen",
-        "code": "5452"
-    },
-    {
-        "name": "Radstadt",
-        "code": "5550"
-    },
-    {
-        "name": "Sankt Johann im Pongau",
-        "code": "5600"
-    },
-    {
-        "name": "Sankt Martin am Tennengebirge",
-        "code": "5522"
-    },
-    {
-        "name": "Sankt Veit im Pongau",
-        "code": "5621"
-    },
-    {
-        "name": "Schwarzach im Pongau",
-        "code": "5620"
-    },
-    {
-        "name": "Untertauern",
-        "code": "5561"
-    },
-    {
-        "name": "Wagrain",
-        "code": "5602"
-    },
-    {
-        "name": "Werfen",
-        "code": "5450"
-    },
-    {
-        "name": "Werfenweng",
-        "code": "5453"
-    },
-    {
-        "name": "Göriach",
-        "code": "5574"
-    },
-    {
-        "name": "Lessach",
-        "code": "5575"
-    },
-    {
-        "name": "Mariapfarr",
-        "code": "5571"
-    },
-    {
-        "name": "Mauterndorf",
-        "code": "5570"
-    },
-    {
-        "name": "Muhr",
-        "code": "5583"
-    },
-    {
-        "name": "Ramingstein",
-        "code": "5591"
-    },
-    {
-        "name": "Sankt Andrä im Lungau",
-        "code": "5572"
-    },
-    {
-        "name": "Sankt Margarethen im Lungau",
-        "code": "5581"
-    },
-    {
-        "name": "Sankt Michael im Lungau",
-        "code": "5582"
-    },
-    {
-        "name": "Tamsweg",
-        "code": "5580"
-    },
-    {
-        "name": "Thomatal",
-        "code": "5592"
-    },
-    {
-        "name": "Tweng",
-        "code": "5563"
-    },
-    {
-        "name": "Unternberg",
-        "code": "5585"
-    },
-    {
-        "name": "Weißpriach",
-        "code": "5573"
-    },
-    {
-        "name": "Zederhaus",
-        "code": "5584"
-    },
-    {
-        "name": "Bramberg am Wildkogel",
-        "code": "5733"
-    },
-    {
-        "name": "Bruck an der Großglocknerstraße",
-        "code": "5671"
-    },
-    {
-        "name": "Dienten am Hochkönig",
-        "code": "5652"
-    },
-    {
-        "name": "Fusch an der Großglocknerstraße",
-        "code": "5672"
-    },
-    {
-        "name": "Hollersbach im Pinzgau",
-        "code": "5731"
-    },
-    {
-        "name": "Kaprun",
-        "code": "5710"
-    },
-    {
-        "name": "Krimml",
-        "code": "5743"
-    },
-    {
-        "name": "Lend",
-        "code": "5651"
-    },
-    {
-        "name": "Leogang",
-        "code": "5771"
-    },
-    {
-        "name": "Lofer",
-        "code": "5090"
-    },
-    {
-        "name": "Maishofen",
-        "code": "5751"
-    },
-    {
-        "name": "Maria Alm am Steinernen Meer",
-        "code": "5761"
-    },
-    {
-        "name": "Mittersill",
-        "code": "5730"
-    },
-    {
-        "name": "Neukirchen am Großvenediger",
-        "code": "5741"
-    },
-    {
-        "name": "Niedernsill",
-        "code": "5722"
-    },
-    {
-        "name": "Piesendorf",
-        "code": "5721"
-    },
-    {
-        "name": "Rauris",
-        "code": "5661"
-    },
-    {
-        "name": "Saalbach-Hinterglemm",
-        "code": "5753"
-    },
-    {
-        "name": "Saalfelden am Steinernen Meer",
-        "code": "5760"
-    },
-    {
-        "name": "Sankt Martin bei Lofer",
-        "code": "5092"
-    },
-    {
-        "name": "Stuhlfelden",
-        "code": "5724"
-    },
-    {
-        "name": "Taxenbach",
-        "code": "5660"
-    },
-    {
-        "name": "Unken",
-        "code": "5091"
-    },
-    {
-        "name": "Uttendorf",
-        "code": "5723"
-    },
-    {
-        "name": "Viehhofen",
-        "code": "5752"
-    },
-    {
-        "name": "Wald im Pinzgau",
-        "code": "5742"
-    },
-    {
-        "name": "Weißbach bei Lofer",
-        "code": "5093"
-    },
-    {
-        "name": "Zell am See",
-        "code": "5700"
-    },
-    {
-        "name": "Graz",
-        "code": "8010"
-    },
-    {
-        "name": "Frauental an der Laßnitz",
-        "code": "8523"
-    },
-    {
-        "name": "Lannach",
-        "code": "8502"
-    },
-    {
-        "name": "Pölfing-Brunn",
-        "code": "8544"
-    },
-    {
-        "name": "Preding",
-        "code": "8504"
-    },
-    {
-        "name": "Sankt Josef (Weststeiermark)",
-        "code": "8503"
-    },
-    {
-        "name": "Sankt Peter im Sulmtal",
-        "code": "8542"
-    },
-    {
-        "name": "Wettmannstätten",
-        "code": "8521"
-    },
-    {
-        "name": "Deutschlandsberg",
-        "code": "8530"
-    },
-    {
-        "name": "Eibiswald",
-        "code": "8552"
-    },
-    {
-        "name": "Groß Sankt Florian",
-        "code": "8522"
-    },
-    {
-        "name": "Sankt Martin im Sulmtal",
-        "code": "8543"
-    },
-    {
-        "name": "Sankt Stefan ob Stainz",
-        "code": "8511"
-    },
-    {
-        "name": "Schwanberg",
-        "code": "8541"
-    },
-    {
-        "name": "Stainz",
-        "code": "8510"
-    },
-    {
-        "name": "Wies",
-        "code": "8551"
-    },
-    {
-        "name": "Feldkirchen bei Graz",
-        "code": "8073"
-    },
-    {
-        "name": "Gössendorf",
-        "code": "8077"
-    },
-    {
-        "name": "Gratkorn",
-        "code": "8101"
-    },
-    {
-        "name": "Hart bei Graz",
-        "code": "8075"
-    },
-    {
-        "name": "Haselsdorf-Tobelbad",
-        "code": "8144"
-    },
-    {
-        "name": "Hausmannstätten",
-        "code": "8071"
-    },
-    {
-        "name": "Kainbach bei Graz",
-        "code": "8010"
-    },
-    {
-        "name": "Kalsdorf bei Graz",
-        "code": "8401"
-    },
-    {
-        "name": "Kumberg",
-        "code": "8062"
-    },
-    {
-        "name": "Laßnitzhöhe",
-        "code": "8301"
-    },
-    {
-        "name": "Lieboch",
-        "code": "8501"
-    },
-    {
-        "name": "Peggau",
-        "code": "8120"
-    },
-    {
-        "name": "Sankt Bartholomä",
-        "code": "8113"
-    },
-    {
-        "name": "Sankt Oswald bei Plankenwarth",
-        "code": "8113"
-    },
-    {
-        "name": "Sankt Radegund bei Graz",
-        "code": "8061"
-    },
-    {
-        "name": "Semriach",
-        "code": "8102"
-    },
-    {
-        "name": "Stattegg",
-        "code": "8046"
-    },
-    {
-        "name": "Stiwoll",
-        "code": "8113"
-    },
-    {
-        "name": "Thal",
-        "code": "8051"
-    },
-    {
-        "name": "Übelbach",
-        "code": "8124"
-    },
-    {
-        "name": "Vasoldsberg",
-        "code": "8076"
-    },
-    {
-        "name": "Weinitzen",
-        "code": "8044"
-    },
-    {
-        "name": "Werndorf",
-        "code": "8402"
-    },
-    {
-        "name": "Wundschuh",
-        "code": "8142"
-    },
-    {
-        "name": "Deutschfeistritz",
-        "code": "8121"
-    },
-    {
-        "name": "Dobl-Zwaring",
-        "code": "8143"
-    },
-    {
-        "name": "Eggersdorf bei Graz",
-        "code": "8063"
-    },
-    {
-        "name": "Fernitz-Mellach",
-        "code": "8072"
-    },
-    {
-        "name": "Frohnleiten",
-        "code": "8130"
-    },
-    {
-        "name": "Gratwein-Straßengel",
-        "code": "8111"
-    },
-    {
-        "name": "Nestelbach bei Graz",
-        "code": "8302"
-    },
-    {
-        "name": "Raaba-Grambach",
-        "code": "8074"
-    },
-    {
-        "name": "Sankt Marein bei Graz",
-        "code": "8323"
-    },
-    {
-        "name": "Seiersberg-Pirka",
-        "code": "8054"
-    },
-    {
-        "name": "Premstätten",
-        "code": "8141"
-    },
-    {
-        "name": "Allerheiligen bei Wildon",
-        "code": "8412"
-    },
-    {
-        "name": "Arnfels",
-        "code": "8454"
-    },
-    {
-        "name": "Empersdorf",
-        "code": "8081"
-    },
-    {
-        "name": "Gabersdorf",
-        "code": "8424"
-    },
-    {
-        "name": "Gralla",
-        "code": "8431"
-    },
-    {
-        "name": "Großklein",
-        "code": "8452"
-    },
-    {
-        "name": "Heimschuh",
-        "code": "8451"
-    },
-    {
-        "name": "Hengsberg",
-        "code": "8411"
-    },
-    {
-        "name": "Kitzeck im Sausal",
-        "code": "8442"
-    },
-    {
-        "name": "Lang",
-        "code": "8403"
-    },
-    {
-        "name": "Lebring-Sankt Margarethen",
-        "code": "8403"
-    },
-    {
-        "name": "Oberhaag",
-        "code": "8455"
-    },
-    {
-        "name": "Ragnitz",
-        "code": "8413"
-    },
-    {
-        "name": "Sankt Andrä-Höch",
-        "code": "8444"
-    },
-    {
-        "name": "Sankt Johann im Saggautal",
-        "code": "8453"
-    },
-    {
-        "name": "Sankt Nikolai im Sausal",
-        "code": "8505"
-    },
-    {
-        "name": "Tillmitsch",
-        "code": "8430"
-    },
-    {
-        "name": "Wagna",
-        "code": "8435"
-    },
-    {
-        "name": "Ehrenhausen an der Weinstraße",
-        "code": "8461"
-    },
-    {
-        "name": "Gamlitz",
-        "code": "8462"
-    },
-    {
-        "name": "Gleinstätten",
-        "code": "8443"
-    },
-    {
-        "name": "Heiligenkreuz am Waasen",
-        "code": "8081"
-    },
-    {
-        "name": "Leibnitz",
-        "code": "8430"
-    },
-    {
-        "name": "Leutschach an der Weinstraße",
-        "code": "8463"
-    },
-    {
-        "name": "Sankt Georgen an der Stiefing",
-        "code": "8413"
-    },
-    {
-        "name": "Sankt Veit in der Südsteiermark",
-        "code": "8423"
-    },
-    {
-        "name": "Schwarzautal",
-        "code": "8421"
-    },
-    {
-        "name": "Straß in Steiermark",
-        "code": "8472"
-    },
-    {
-        "name": "Wildon",
-        "code": "8410"
-    },
-    {
-        "name": "Eisenerz",
-        "code": "8790"
-    },
-    {
-        "name": "Kalwang",
-        "code": "8775"
-    },
-    {
-        "name": "Kammern im Liesingtal",
-        "code": "8773"
-    },
-    {
-        "name": "Kraubath an der Mur",
-        "code": "8714"
-    },
-    {
-        "name": "Leoben",
-        "code": "8700"
-    },
-    {
-        "name": "Mautern in Steiermark",
-        "code": "8774"
-    },
-    {
-        "name": "Niklasdorf",
-        "code": "8712"
-    },
-    {
-        "name": "Proleb",
-        "code": "8712"
-    },
-    {
-        "name": "Radmer",
-        "code": "8795"
-    },
-    {
-        "name": "Sankt Michael in Obersteiermark",
-        "code": "8770"
-    },
-    {
-        "name": "Sankt Peter-Freienstein",
-        "code": "8792"
-    },
-    {
-        "name": "Sankt Stefan ob Leoben",
-        "code": "8713"
-    },
-    {
-        "name": "Traboch",
-        "code": "8772"
-    },
-    {
-        "name": "Vordernberg",
-        "code": "8794"
-    },
-    {
-        "name": "Wald am Schoberpaß",
-        "code": "8781"
-    },
-    {
-        "name": "Trofaiach",
-        "code": "8793"
-    },
-    {
-        "name": "Aigen im Ennstal",
-        "code": "8943"
-    },
-    {
-        "name": "Altaussee",
-        "code": "8992"
-    },
-    {
-        "name": "Altenmarkt bei Sankt Gallen",
-        "code": "8934"
-    },
-    {
-        "name": "Ardning",
-        "code": "8904"
-    },
-    {
-        "name": "Bad Aussee",
-        "code": "8990"
-    },
-    {
-        "name": "Gröbming",
-        "code": "8962"
-    },
-    {
-        "name": "Grundlsee",
-        "code": "8993"
-    },
-    {
-        "name": "Haus",
-        "code": "8967"
-    },
-    {
-        "name": "Lassing",
-        "code": "8903"
-    },
-    {
-        "name": "Ramsau am Dachstein",
-        "code": "8972"
-    },
-    {
-        "name": "Selzthal",
-        "code": "8900"
-    },
-    {
-        "name": "Trieben",
-        "code": "8784"
-    },
-    {
-        "name": "Wildalpen",
-        "code": "8924"
-    },
-    {
-        "name": "Wörschach",
-        "code": "8942"
-    },
-    {
-        "name": "Admont",
-        "code": "8911"
-    },
-    {
-        "name": "Aich",
-        "code": "8966"
-    },
-    {
-        "name": "Bad Mitterndorf",
-        "code": "8983"
-    },
-    {
-        "name": "Gaishorn am See",
-        "code": "8783"
-    },
-    {
-        "name": "Irdning-Donnersbachtal",
-        "code": "8952"
-    },
-    {
-        "name": "Gams bei Hieflau",
-        "code": "8931"
-    },
-    {
-        "name": "Liezen",
-        "code": "8940"
-    },
-    {
-        "name": "Michaelerberg-Pruggern",
-        "code": "8965"
-    },
-    {
-        "name": "Mitterberg-Sankt Martin",
-        "code": "8962"
-    },
-    {
-        "name": "Öblarn",
-        "code": "8960"
-    },
-    {
-        "name": "Rottenmann",
-        "code": "8786"
-    },
-    {
-        "name": "Sankt Gallen",
-        "code": "8933"
-    },
-    {
-        "name": "Schladming",
-        "code": "8970"
-    },
-    {
-        "name": "Sölk",
-        "code": "8961"
-    },
-    {
-        "name": "Stainach-Pürgg",
-        "code": "8950"
-    },
-    {
-        "name": "Mühlen",
-        "code": "8822"
-    },
-    {
-        "name": "Niederwölz",
-        "code": "8831"
-    },
-    {
-        "name": "St. Peter am Kammersberg",
-        "code": "8843"
-    },
-    {
-        "name": "Schöder",
-        "code": "8844"
-    },
-    {
-        "name": "Krakau",
-        "code": "8854"
-    },
-    {
-        "name": "Murau",
-        "code": "8850"
-    },
-    {
-        "name": "Neumarkt in der Steiermark",
-        "code": "8820"
-    },
-    {
-        "name": "Oberwölz",
-        "code": "8832"
-    },
-    {
-        "name": "Ranten",
-        "code": "8853"
-    },
-    {
-        "name": "Sankt Georgen am Kreischberg",
-        "code": "8861"
-    },
-    {
-        "name": "Sankt Lambrecht",
-        "code": "8813"
-    },
-    {
-        "name": "Scheifling",
-        "code": "8811"
-    },
-    {
-        "name": "Stadl-Predlitz",
-        "code": "8862"
-    },
-    {
-        "name": "Teufenbach-Katsch",
-        "code": "8833"
-    },
-    {
-        "name": "Krottendorf-Gaisfeld",
-        "code": "8564"
-    },
-    {
-        "name": "Ligist",
-        "code": "8563"
-    },
-    {
-        "name": "Mooskirchen",
-        "code": "8562"
-    },
-    {
-        "name": "Rosental an der Kainach",
-        "code": "8582"
-    },
-    {
-        "name": "Sankt Martin am Wöllmißberg",
-        "code": "8580"
-    },
-    {
-        "name": "Stallhofen",
-        "code": "8152"
-    },
-    {
-        "name": "Voitsberg",
-        "code": "8570"
-    },
-    {
-        "name": "Bärnbach",
-        "code": "8572"
-    },
-    {
-        "name": "Edelschrott",
-        "code": "8583"
-    },
-    {
-        "name": "Geistthal-Södingberg",
-        "code": "8152"
-    },
-    {
-        "name": "Hirschegg-Pack",
-        "code": "8584"
-    },
-    {
-        "name": "Kainach bei Voitsberg",
-        "code": "8573"
-    },
-    {
-        "name": "Köflach",
-        "code": "8580"
-    },
-    {
-        "name": "Maria Lankowitz",
-        "code": "8591"
-    },
-    {
-        "name": "Söding-Sankt Johann",
-        "code": "8561"
-    },
-    {
-        "name": "Albersdorf-Prebuch",
-        "code": "8200"
-    },
-    {
-        "name": "Fischbach",
-        "code": "8654"
-    },
-    {
-        "name": "Floing",
-        "code": "8183"
-    },
-    {
-        "name": "Gasen",
-        "code": "8616"
-    },
-    {
-        "name": "Markt Hartmannsdorf",
-        "code": "8311"
-    },
-    {
-        "name": "Hofstätten an der Raab",
-        "code": "8200"
-    },
-    {
-        "name": "Ludersdorf-Wilfersdorf",
-        "code": "8200"
-    },
-    {
-        "name": "Miesenbach bei Birkfeld",
-        "code": "8190"
-    },
-    {
-        "name": "Mitterdorf an der Raab",
-        "code": "8181"
-    },
-    {
-        "name": "Mortantsch",
-        "code": "8160"
-    },
-    {
-        "name": "Naas",
-        "code": "8160"
-    },
-    {
-        "name": "Puch bei Weiz",
-        "code": "8182"
-    },
-    {
-        "name": "Ratten",
-        "code": "8673"
-    },
-    {
-        "name": "Rettenegg",
-        "code": "8674"
-    },
-    {
-        "name": "St. Kathrein am Hauenstein",
-        "code": "8672"
-    },
-    {
-        "name": "Sankt Kathrein am Offenegg",
-        "code": "8171"
-    },
-    {
-        "name": "St. Margarethen an der Raab",
-        "code": "8321"
-    },
-    {
-        "name": "Sinabelkirchen",
-        "code": "8261"
-    },
-    {
-        "name": "Strallegg",
-        "code": "8192"
-    },
-    {
-        "name": "Thannhausen",
-        "code": "8160"
-    },
-    {
-        "name": "Anger",
-        "code": "8184"
-    },
-    {
-        "name": "Birkfeld",
-        "code": "8190"
-    },
-    {
-        "name": "Fladnitz an der Teichalm",
-        "code": "8163"
-    },
-    {
-        "name": "Gersdorf an der Feistritz",
-        "code": "8212"
-    },
-    {
-        "name": "Gleisdorf",
-        "code": "8200"
-    },
-    {
-        "name": "Gutenberg-Stenzengreith",
-        "code": "8160"
-    },
-    {
-        "name": "Ilztal",
-        "code": "8211"
-    },
-    {
-        "name": "Passail",
-        "code": "8162"
-    },
-    {
-        "name": "Pischelsdorf am Kulm",
-        "code": "8212"
-    },
-    {
-        "name": "Sankt Ruprecht an der Raab",
-        "code": "8181"
-    },
-    {
-        "name": "Weiz",
-        "code": "8160"
-    },
-    {
-        "name": "Fohnsdorf",
-        "code": "8753"
-    },
-    {
-        "name": "Gaal",
-        "code": "8731"
-    },
-    {
-        "name": "Hohentauern",
-        "code": "8785"
-    },
-    {
-        "name": "Kobenz",
-        "code": "8723"
-    },
-    {
-        "name": "Pusterwald",
-        "code": "8764"
-    },
-    {
-        "name": "Sankt Georgen ob Judenburg",
-        "code": "8756"
-    },
-    {
-        "name": "Sankt Peter ob Judenburg",
-        "code": "8755"
-    },
-    {
-        "name": "Seckau",
-        "code": "8732"
-    },
-    {
-        "name": "Unzmarkt-Frauenburg",
-        "code": "8800"
-    },
-    {
-        "name": "Zeltweg",
-        "code": "8740"
-    },
-    {
-        "name": "Lobmingtal",
-        "code": "8734"
-    },
-    {
-        "name": "Judenburg",
-        "code": "8750"
-    },
-    {
-        "name": "Knittelfeld",
-        "code": "8720"
-    },
-    {
-        "name": "Obdach",
-        "code": "8742"
-    },
-    {
-        "name": "Pöls-Oberkurzheim",
-        "code": "8761"
-    },
-    {
-        "name": "Pölstal",
-        "code": "8763"
-    },
-    {
-        "name": "Sankt Marein-Feistritz",
-        "code": "8733"
-    },
-    {
-        "name": "Sankt Margarethen bei Knittelfeld",
-        "code": "8720"
-    },
-    {
-        "name": "Spielberg",
-        "code": "8724"
-    },
-    {
-        "name": "Weißkirchen in Steiermark",
-        "code": "8741"
-    },
-    {
-        "name": "Breitenau am Hochlantsch",
-        "code": "8614"
-    },
-    {
-        "name": "Krieglach",
-        "code": "8670"
-    },
-    {
-        "name": "Langenwang",
-        "code": "8665"
-    },
-    {
-        "name": "Pernegg an der Mur",
-        "code": "8132"
-    },
-    {
-        "name": "Sankt Lorenzen im Mürztal",
-        "code": "8642"
-    },
-    {
-        "name": "Spital am Semmering",
-        "code": "8684"
-    },
-    {
-        "name": "Stanz im Mürztal",
-        "code": "8653"
-    },
-    {
-        "name": "Turnau",
-        "code": "8625"
-    },
-    {
-        "name": "Aflenz",
-        "code": "8623"
-    },
-    {
-        "name": "Bruck an der Mur",
-        "code": "8600"
-    },
-    {
-        "name": "Kapfenberg",
-        "code": "8605"
-    },
-    {
-        "name": "Kindberg",
-        "code": "8650"
-    },
-    {
-        "name": "Mariazell",
-        "code": "8630"
-    },
-    {
-        "name": "Mürzzuschlag",
-        "code": "8680"
-    },
-    {
-        "name": "Neuberg an der Mürz",
-        "code": "8692"
-    },
-    {
-        "name": "Sankt Barbara im Mürztal",
-        "code": "8662"
-    },
-    {
-        "name": "Sankt Marein im Mürztal",
-        "code": "8641"
-    },
-    {
-        "name": "Thörl",
-        "code": "8621"
-    },
-    {
-        "name": "Tragöß-Sankt Katharein",
-        "code": "8611"
-    },
-    {
-        "name": "Bad Blumau",
-        "code": "8283"
-    },
-    {
-        "name": "Buch-St. Magdalena",
-        "code": "8274"
-    },
-    {
-        "name": "Burgau",
-        "code": "8291"
-    },
-    {
-        "name": "Ebersdorf",
-        "code": "8273"
-    },
-    {
-        "name": "Friedberg",
-        "code": "8240"
-    },
-    {
-        "name": "Greinbach",
-        "code": "8230"
-    },
-    {
-        "name": "Großsteinbach",
-        "code": "8265"
-    },
-    {
-        "name": "Hartberg",
-        "code": "8230"
-    },
-    {
-        "name": "Hartberg Umgebung",
-        "code": "8230"
-    },
-    {
-        "name": "Lafnitz",
-        "code": "8233"
-    },
-    {
-        "name": "Ottendorf an der Rittschein",
-        "code": "8312"
-    },
-    {
-        "name": "Pinggau",
-        "code": "8243"
-    },
-    {
-        "name": "Pöllauberg",
-        "code": "8225"
-    },
-    {
-        "name": "Sankt Jakob im Walde",
-        "code": "8255"
-    },
-    {
-        "name": "Sankt Johann in der Haide",
-        "code": "8295"
-    },
-    {
-        "name": "Sankt Lorenzen am Wechsel",
-        "code": "8242"
-    },
-    {
-        "name": "Schäffern",
-        "code": "8244"
-    },
-    {
-        "name": "Söchau",
-        "code": "8362"
-    },
-    {
-        "name": "Stubenberg",
-        "code": "8223"
-    },
-    {
-        "name": "Wenigzell",
-        "code": "8254"
-    },
-    {
-        "name": "Bad Waltersdorf",
-        "code": "8271"
-    },
-    {
-        "name": "Dechantskirchen",
-        "code": "8241"
-    },
-    {
-        "name": "Feistritztal",
-        "code": "8221"
-    },
-    {
-        "name": "Fürstenfeld",
-        "code": "8280"
-    },
-    {
-        "name": "Grafendorf bei Hartberg",
-        "code": "8232"
-    },
-    {
-        "name": "Großwilfersdorf",
-        "code": "8263"
-    },
-    {
-        "name": "Hartl",
-        "code": "8224"
-    },
-    {
-        "name": "Ilz",
-        "code": "8262"
-    },
-    {
-        "name": "Kaindorf",
-        "code": "8224"
-    },
-    {
-        "name": "Loipersdorf bei Fürstenfeld",
-        "code": "8282"
-    },
-    {
-        "name": "Neudau",
-        "code": "8292"
-    },
-    {
-        "name": "Pöllau",
-        "code": "8225"
-    },
-    {
-        "name": "Rohr bei Hartberg",
-        "code": "8294"
-    },
-    {
-        "name": "Rohrbach an der Lafnitz",
-        "code": "8234"
-    },
-    {
-        "name": "Vorau",
-        "code": "8250"
-    },
-    {
-        "name": "Waldbach-Mönichwald",
-        "code": "8252"
-    },
-    {
-        "name": "Edelsbach bei Feldbach",
-        "code": "8332"
-    },
-    {
-        "name": "Eichkögl",
-        "code": "8322"
-    },
-    {
-        "name": "Halbenrain",
-        "code": "8492"
-    },
-    {
-        "name": "Jagerberg",
-        "code": "8091"
-    },
-    {
-        "name": "Kapfenstein",
-        "code": "8353"
-    },
-    {
-        "name": "Klöch",
-        "code": "8493"
-    },
-    {
-        "name": "Mettersdorf am Saßbach",
-        "code": "8092"
-    },
-    {
-        "name": "Murfeld",
-        "code": "8473"
-    },
-    {
-        "name": "Tieschen",
-        "code": "8355"
-    },
-    {
-        "name": "Unterlamm",
-        "code": "8352"
-    },
-    {
-        "name": "Bad Gleichenberg",
-        "code": "8344"
-    },
-    {
-        "name": "Bad Radkersburg",
-        "code": "8490"
-    },
-    {
-        "name": "Deutsch Goritz",
-        "code": "8483"
-    },
-    {
-        "name": "Fehring",
-        "code": "8350"
-    },
-    {
-        "name": "Feldbach",
-        "code": "8330"
-    },
-    {
-        "name": "Gnas",
-        "code": "8342"
-    },
-    {
-        "name": "Kirchbach-Zerlach",
-        "code": "8082"
-    },
-    {
-        "name": "Kirchberg an der Raab",
-        "code": "8324"
-    },
-    {
-        "name": "Mureck",
-        "code": "8480"
-    },
-    {
-        "name": "Paldau",
-        "code": "8341"
-    },
-    {
-        "name": "Pirching am Traubenberg",
-        "code": "8081"
-    },
-    {
-        "name": "Riegersburg",
-        "code": "8333"
-    },
-    {
-        "name": "Sankt Anna am Aigen",
-        "code": "8354"
-    },
-    {
-        "name": "Sankt Peter am Ottersbach",
-        "code": "8093"
-    },
-    {
-        "name": "Sankt Stefan im Rosental",
-        "code": "8083"
-    },
-    {
-        "name": "Straden",
-        "code": "8345"
-    },
-    {
-        "name": "Innsbruck",
-        "code": "6020"
-    },
-    {
-        "name": "Arzl im Pitztal",
-        "code": "6471"
-    },
-    {
-        "name": "Haiming",
-        "code": "6425"
-    },
-    {
-        "name": "Imst",
-        "code": "6460"
-    },
-    {
-        "name": "Imsterberg",
-        "code": "6492"
-    },
-    {
-        "name": "Jerzens",
-        "code": "6474"
-    },
-    {
-        "name": "Karres",
-        "code": "6462"
-    },
-    {
-        "name": "Karrösten",
-        "code": "6463"
-    },
-    {
-        "name": "Längenfeld",
-        "code": "6444"
-    },
-    {
-        "name": "Mieming",
-        "code": "6414"
-    },
-    {
-        "name": "Mils bei Imst",
-        "code": "6493"
-    },
-    {
-        "name": "Mötz",
-        "code": "6423"
-    },
-    {
-        "name": "Nassereith",
-        "code": "6465"
-    },
-    {
-        "name": "Obsteig",
-        "code": "6416"
-    },
-    {
-        "name": "Oetz",
-        "code": "6433"
-    },
-    {
-        "name": "Rietz",
-        "code": "6421"
-    },
-    {
-        "name": "Roppen",
-        "code": "6426"
-    },
-    {
-        "name": "St. Leonhard im Pitztal",
-        "code": "6481"
-    },
-    {
-        "name": "Sautens",
-        "code": "6432"
-    },
-    {
-        "name": "Silz",
-        "code": "6424"
-    },
-    {
-        "name": "Sölden",
-        "code": "6450"
-    },
-    {
-        "name": "Stams",
-        "code": "6422"
-    },
-    {
-        "name": "Tarrenz",
-        "code": "6464"
-    },
-    {
-        "name": "Umhausen",
-        "code": "6441"
-    },
-    {
-        "name": "Wenns",
-        "code": "6473"
-    },
-    {
-        "name": "Absam",
-        "code": "6067"
-    },
-    {
-        "name": "Aldrans",
-        "code": "6071"
-    },
-    {
-        "name": "Ampass",
-        "code": "6070"
-    },
-    {
-        "name": "Axams",
-        "code": "6094"
-    },
-    {
-        "name": "Baumkirchen",
-        "code": "6121"
-    },
-    {
-        "name": "Birgitz",
-        "code": "6092"
-    },
-    {
-        "name": "Ellbögen",
-        "code": "6083"
-    },
-    {
-        "name": "Flaurling",
-        "code": "6403"
-    },
-    {
-        "name": "Fritzens",
-        "code": "6122"
-    },
-    {
-        "name": "Fulpmes",
-        "code": "6166"
-    },
-    {
-        "name": "Gnadenwald",
-        "code": "6069"
-    },
-    {
-        "name": "Götzens",
-        "code": "6091"
-    },
-    {
-        "name": "Gries am Brenner",
-        "code": "6156"
-    },
-    {
-        "name": "Gries im Sellrain",
-        "code": "6182"
-    },
-    {
-        "name": "Grinzens",
-        "code": "6095"
-    },
-    {
-        "name": "Gschnitz",
-        "code": "6150"
-    },
-    {
-        "name": "Hatting",
-        "code": "6402"
-    },
-    {
-        "name": "Inzing",
-        "code": "6401"
-    },
-    {
-        "name": "Kematen in Tirol",
-        "code": "6175"
-    },
-    {
-        "name": "Kolsass",
-        "code": "6114"
-    },
-    {
-        "name": "Kolsassberg",
-        "code": "6115"
-    },
-    {
-        "name": "Lans",
-        "code": "6072"
-    },
-    {
-        "name": "Leutasch",
-        "code": "6105"
-    },
-    {
-        "name": "Matrei am Brenner",
-        "code": "6143"
-    },
-    {
-        "name": "Mieders",
-        "code": "6142"
-    },
-    {
-        "name": "Mils",
-        "code": "6068"
-    },
-    {
-        "name": "Mühlbachl",
-        "code": "6143"
-    },
-    {
-        "name": "Mutters",
-        "code": "6162"
-    },
-    {
-        "name": "Natters",
-        "code": "6161"
-    },
-    {
-        "name": "Navis",
-        "code": "6145"
-    },
-    {
-        "name": "Neustift im Stubaital",
-        "code": "6167"
-    },
-    {
-        "name": "Oberhofen im Inntal",
-        "code": "6406"
-    },
-    {
-        "name": "Obernberg am Brenner",
-        "code": "6157"
-    },
-    {
-        "name": "Oberperfuss",
-        "code": "6173"
-    },
-    {
-        "name": "Patsch",
-        "code": "6082"
-    },
-    {
-        "name": "Pettnau",
-        "code": "6408"
-    },
-    {
-        "name": "Pfaffenhofen",
-        "code": "6405"
-    },
-    {
-        "name": "Pfons",
-        "code": "6143"
-    },
-    {
-        "name": "Polling in Tirol",
-        "code": "6404"
-    },
-    {
-        "name": "Ranggen",
-        "code": "6179"
-    },
-    {
-        "name": "Reith bei Seefeld",
-        "code": "6103"
-    },
-    {
-        "name": "Rinn",
-        "code": "6074"
-    },
-    {
-        "name": "Rum",
-        "code": "6063"
-    },
-    {
-        "name": "St. Sigmund im Sellrain",
-        "code": "6184"
-    },
-    {
-        "name": "Scharnitz",
-        "code": "6108"
-    },
-    {
-        "name": "Schmirn",
-        "code": "6154"
-    },
-    {
-        "name": "Schönberg im Stubaital",
-        "code": "6141"
-    },
-    {
-        "name": "Seefeld in Tirol",
-        "code": "6100"
-    },
-    {
-        "name": "Sellrain",
-        "code": "6181"
-    },
-    {
-        "name": "Sistrans",
-        "code": "6073"
-    },
-    {
-        "name": "Hall in Tirol",
-        "code": "6060"
-    },
-    {
-        "name": "Steinach am Brenner",
-        "code": "6150"
-    },
-    {
-        "name": "Telfes im Stubai",
-        "code": "6165"
-    },
-    {
-        "name": "Telfs",
-        "code": "6410"
-    },
-    {
-        "name": "Trins",
-        "code": "6152"
-    },
-    {
-        "name": "Tulfes",
-        "code": "6075"
-    },
-    {
-        "name": "Unterperfuss",
-        "code": "6178"
-    },
-    {
-        "name": "Vals",
-        "code": "6154"
-    },
-    {
-        "name": "Völs",
-        "code": "6176"
-    },
-    {
-        "name": "Volders",
-        "code": "6111"
-    },
-    {
-        "name": "Wattenberg",
-        "code": "6113"
-    },
-    {
-        "name": "Wattens",
-        "code": "6112"
-    },
-    {
-        "name": "Wildermieming",
-        "code": "6413"
-    },
-    {
-        "name": "Zirl",
-        "code": "6170"
-    },
-    {
-        "name": "Aurach bei Kitzbühel",
-        "code": "6371"
-    },
-    {
-        "name": "Brixen im Thale",
-        "code": "6364"
-    },
-    {
-        "name": "Fieberbrunn",
-        "code": "6391"
-    },
-    {
-        "name": "Going am Wilden Kaiser",
-        "code": "6353"
-    },
-    {
-        "name": "Hochfilzen",
-        "code": "6395"
-    },
-    {
-        "name": "Hopfgarten im Brixental",
-        "code": "6361"
-    },
-    {
-        "name": "Itter",
-        "code": "6305"
-    },
-    {
-        "name": "Jochberg",
-        "code": "6373"
-    },
-    {
-        "name": "Kirchberg in Tirol",
-        "code": "6365"
-    },
-    {
-        "name": "Kirchdorf in Tirol",
-        "code": "6382"
-    },
-    {
-        "name": "Kitzbühel",
-        "code": "6370"
-    },
-    {
-        "name": "Kössen",
-        "code": "6345"
-    },
-    {
-        "name": "Oberndorf in Tirol",
-        "code": "6372"
-    },
-    {
-        "name": "Reith bei Kitzbühel",
-        "code": "6370"
-    },
-    {
-        "name": "St. Jakob in Haus",
-        "code": "6392"
-    },
-    {
-        "name": "St. Johann in Tirol",
-        "code": "6380"
-    },
-    {
-        "name": "St. Ulrich am Pillersee",
-        "code": "6393"
-    },
-    {
-        "name": "Schwendt",
-        "code": "6385"
-    },
-    {
-        "name": "Waidring",
-        "code": "6384"
-    },
-    {
-        "name": "Westendorf",
-        "code": "6363"
-    },
-    {
-        "name": "Alpbach",
-        "code": "6236"
-    },
-    {
-        "name": "Angath",
-        "code": "6321"
-    },
-    {
-        "name": "Bad Häring",
-        "code": "6323"
-    },
-    {
-        "name": "Brandenberg",
-        "code": "6234"
-    },
-    {
-        "name": "Breitenbach am Inn",
-        "code": "6252"
-    },
-    {
-        "name": "Brixlegg",
-        "code": "6230"
-    },
-    {
-        "name": "Ebbs",
-        "code": "6341"
-    },
-    {
-        "name": "Ellmau",
-        "code": "6352"
-    },
-    {
-        "name": "Erl",
-        "code": "6343"
-    },
-    {
-        "name": "Kirchbichl",
-        "code": "6322"
-    },
-    {
-        "name": "Kramsach",
-        "code": "6233"
-    },
-    {
-        "name": "Kufstein",
-        "code": "6330"
-    },
-    {
-        "name": "Kundl",
-        "code": "6250"
-    },
-    {
-        "name": "Langkampfen",
-        "code": "6336"
-    },
-    {
+        "code": "4115",
         "name": "Mariastein",
-        "code": "6324"
+        "": ""
     },
     {
-        "name": "Münster",
-        "code": "6232"
+        "code": "4116",
+        "name": "Metzerlen",
+        "": ""
     },
     {
-        "name": "Niederndorf",
-        "code": "6342"
+        "code": "4117",
+        "name": "Burg im Leimental",
+        "": ""
     },
     {
-        "name": "Niederndorferberg",
-        "code": "6346"
+        "code": "4118",
+        "name": "Rodersdorf",
+        "": ""
     },
     {
-        "name": "Radfeld",
-        "code": "6241"
+        "code": "4123",
+        "name": "Allschwil",
+        "": ""
     },
     {
-        "name": "Rattenberg",
-        "code": "6240"
+        "code": "4124",
+        "name": "Schönenbuch",
+        "": ""
     },
     {
-        "name": "Reith im Alpbachtal",
-        "code": "6235"
+        "code": "4125",
+        "name": "Riehen",
+        "": ""
     },
     {
-        "name": "Rettenschöss",
-        "code": "6347"
+        "code": "4126",
+        "name": "Bettingen",
+        "": ""
     },
     {
-        "name": "Scheffau am Wilden Kaiser",
-        "code": "6351"
+        "code": "4127",
+        "name": "Birsfelden",
+        "": ""
     },
     {
-        "name": "Schwoich",
-        "code": "6334"
+        "code": "4132",
+        "name": "Muttenz",
+        "": ""
     },
     {
-        "name": "Söll",
-        "code": "6306"
+        "code": "4133",
+        "name": "Pratteln",
+        "": ""
     },
     {
-        "name": "Thiersee",
-        "code": "6335"
+        "code": "4142",
+        "name": "Münchenstein",
+        "": ""
     },
     {
-        "name": "Angerberg",
-        "code": "6320"
+        "code": "4143",
+        "name": "Dornach",
+        "": ""
     },
     {
-        "name": "Walchsee",
-        "code": "6344"
+        "code": "4144",
+        "name": "Arlesheim",
+        "": ""
     },
     {
-        "name": "Wildschönau",
-        "code": "6311"
+        "code": "4145",
+        "name": "Gempen",
+        "": ""
     },
     {
-        "name": "Wörgl",
-        "code": "6300"
+        "code": "4146",
+        "name": "Hochwald",
+        "": ""
     },
     {
-        "name": "Faggen",
-        "code": "6525"
+        "code": "4147",
+        "name": "Aesch BL",
+        "": ""
     },
     {
-        "name": "Fendels",
-        "code": "6528"
+        "code": "4148",
+        "name": "Pfeffingen",
+        "": ""
     },
     {
-        "name": "Fiss",
-        "code": "6533"
+        "code": "4153",
+        "name": "Reinach BL",
+        "": ""
     },
     {
-        "name": "Fließ",
-        "code": "6521"
+        "code": "4202",
+        "name": "Duggingen",
+        "": ""
     },
     {
-        "name": "Flirsch",
-        "code": "6572"
+        "code": "4203",
+        "name": "Grellingen",
+        "": ""
     },
     {
-        "name": "Galtür",
-        "code": "6563"
+        "code": "4204",
+        "name": "Himmelried",
+        "": ""
     },
     {
-        "name": "Grins",
-        "code": "6591"
+        "code": "4206",
+        "name": "Seewen SO",
+        "": ""
     },
     {
-        "name": "Ischgl",
-        "code": "6561"
+        "code": "4207",
+        "name": "Bretzwil",
+        "": ""
     },
     {
-        "name": "Kappl",
-        "code": "6555"
+        "code": "4208",
+        "name": "Nunningen",
+        "": ""
     },
     {
-        "name": "Kaunerberg",
-        "code": "6527"
+        "code": "4222",
+        "name": "Zwingen",
+        "": ""
     },
     {
-        "name": "Kaunertal",
-        "code": "6524"
+        "code": "4223",
+        "name": "Blauen",
+        "": ""
     },
     {
-        "name": "Kauns",
-        "code": "6526"
+        "code": "4224",
+        "name": "Nenzlingen",
+        "": ""
     },
     {
-        "name": "Ladis",
-        "code": "6532"
+        "code": "4225",
+        "name": "Brislach",
+        "": ""
     },
     {
-        "name": "Landeck",
-        "code": "6500"
+        "code": "4226",
+        "name": "Breitenbach",
+        "": ""
     },
     {
-        "name": "Pettneu am Arlberg",
-        "code": "6574"
+        "code": "4227",
+        "name": "Büsserach",
+        "": ""
     },
     {
-        "name": "Pfunds",
-        "code": "6542"
+        "code": "4228",
+        "name": "Erschwil",
+        "": ""
     },
     {
-        "name": "Pians",
-        "code": "6551"
+        "code": "4229",
+        "name": "Beinwil SO",
+        "": ""
     },
     {
-        "name": "Prutz",
-        "code": "6522"
+        "code": "4232",
+        "name": "Fehren",
+        "": ""
     },
     {
-        "name": "Ried im Oberinntal",
-        "code": "6531"
+        "code": "4233",
+        "name": "Meltingen",
+        "": ""
     },
     {
-        "name": "St. Anton am Arlberg",
-        "code": "6580"
+        "code": "4234",
+        "name": "Zullwil",
+        "": ""
     },
     {
-        "name": "Schönwies",
-        "code": "6491"
+        "code": "4242",
+        "name": "Laufen",
+        "": ""
     },
     {
-        "name": "See",
-        "code": "6553"
+        "code": "4243",
+        "name": "Dittingen",
+        "": ""
     },
     {
-        "name": "Serfaus",
-        "code": "6534"
+        "code": "4244",
+        "name": "Röschenz",
+        "": ""
     },
     {
-        "name": "Spiss",
-        "code": "6544"
+        "code": "4245",
+        "name": "Kleinlützel",
+        "": ""
     },
     {
-        "name": "Stanz bei Landeck",
-        "code": "6500"
+        "code": "4246",
+        "name": "Wahlen b. Laufen",
+        "": ""
     },
     {
-        "name": "Strengen",
-        "code": "6571"
+        "code": "4247",
+        "name": "Grindel",
+        "": ""
     },
     {
-        "name": "Tobadill",
-        "code": "6552"
+        "code": "4252",
+        "name": "Bärschwil",
+        "": ""
     },
     {
-        "name": "Tösens",
-        "code": "6541"
+        "code": "4253",
+        "name": "Liesberg",
+        "": ""
     },
     {
-        "name": "Zams",
-        "code": "6511"
+        "code": "4254",
+        "name": "Liesberg Dorf",
+        "": ""
     },
     {
-        "name": "Abfaltersbach",
-        "code": "9913"
+        "code": "4302",
+        "name": "Augst BL",
+        "": ""
     },
     {
-        "name": "Ainet",
-        "code": "9951"
+        "code": "4303",
+        "name": "Kaiseraugst",
+        "": ""
     },
     {
-        "name": "Amlach",
-        "code": "9908"
+        "code": "4304",
+        "name": "Giebenach",
+        "": ""
     },
     {
-        "name": "Anras",
-        "code": "9912"
+        "code": "4305",
+        "name": "Olsberg",
+        "": ""
     },
     {
-        "name": "Assling",
-        "code": "9911"
+        "code": "4310",
+        "name": "Rheinfelden",
+        "": ""
     },
     {
-        "name": "Außervillgraten",
-        "code": "9931"
+        "code": "4312",
+        "name": "Magden",
+        "": ""
     },
     {
-        "name": "Dölsach",
-        "code": "9991"
+        "code": "4313",
+        "name": "Möhlin",
+        "": ""
     },
     {
-        "name": "Gaimberg",
-        "code": "9905"
+        "code": "4314",
+        "name": "Zeiningen",
+        "": ""
     },
     {
-        "name": "Hopfgarten in Defereggen",
-        "code": "9961"
+        "code": "4315",
+        "name": "Zuzgen",
+        "": ""
     },
     {
-        "name": "Innervillgraten",
-        "code": "9932"
+        "code": "4316",
+        "name": "Hellikon",
+        "": ""
     },
     {
-        "name": "Iselsberg-Stronach",
-        "code": "9992"
+        "code": "4317",
+        "name": "Wegenstetten",
+        "": ""
     },
     {
-        "name": "Kals am Großglockner",
-        "code": "9981"
+        "code": "4322",
+        "name": "Mumpf",
+        "": ""
     },
     {
-        "name": "Kartitsch",
-        "code": "9941"
+        "code": "4323",
+        "name": "Wallbach",
+        "": ""
     },
     {
-        "name": "Lavant",
-        "code": "9906"
+        "code": "4324",
+        "name": "Obermumpf",
+        "": ""
     },
     {
-        "name": "Leisach",
-        "code": "9909"
+        "code": "4325",
+        "name": "Schupfart",
+        "": ""
     },
     {
-        "name": "Lienz",
-        "code": "9900"
+        "code": "4332",
+        "name": "Stein AG",
+        "": ""
     },
     {
-        "name": "Matrei in Osttirol",
-        "code": "9971"
+        "code": "4333",
+        "name": "Münchwilen AG",
+        "": ""
     },
     {
-        "name": "Nikolsdorf",
-        "code": "9782"
+        "code": "4334",
+        "name": "Sisseln AG",
+        "": ""
     },
     {
-        "name": "Nußdorf-Debant",
-        "code": "9990"
+        "code": "4402",
+        "name": "Frenkendorf",
+        "": ""
     },
     {
-        "name": "Oberlienz",
-        "code": "9903"
+        "code": "4410",
+        "name": "Liestal",
+        "": ""
     },
     {
-        "name": "Obertilliach",
-        "code": "9942"
+        "code": "4411",
+        "name": "Seltisberg",
+        "": ""
     },
     {
-        "name": "Prägraten am Großvenediger",
-        "code": "9974"
+        "code": "4412",
+        "name": "Nuglar",
+        "": ""
     },
     {
-        "name": "St. Jakob in Defereggen",
-        "code": "9963"
+        "code": "4413",
+        "name": "Büren SO",
+        "": ""
     },
     {
-        "name": "St. Johann im Walde",
-        "code": "9952"
+        "code": "4414",
+        "name": "Füllinsdorf",
+        "": ""
     },
     {
-        "name": "St. Veit in Defereggen",
-        "code": "9962"
+        "code": "4415",
+        "name": "Lausen",
+        "": ""
     },
     {
-        "name": "Schlaiten",
-        "code": "9954"
+        "code": "4416",
+        "name": "Bubendorf",
+        "": ""
     },
     {
-        "name": "Sillian",
-        "code": "9920"
+        "code": "4417",
+        "name": "Ziefen",
+        "": ""
     },
     {
-        "name": "Strassen",
-        "code": "9918"
+        "code": "4418",
+        "name": "Reigoldswil",
+        "": ""
     },
     {
-        "name": "Thurn",
-        "code": "9904"
+        "code": "4419",
+        "name": "Lupsingen",
+        "": ""
     },
     {
-        "name": "Tristach",
-        "code": "9907"
+        "code": "4421",
+        "name": "St. Pantaleon",
+        "": ""
     },
     {
-        "name": "Untertilliach",
-        "code": "9943"
+        "code": "4422",
+        "name": "Arisdorf",
+        "": ""
     },
     {
-        "name": "Virgen",
-        "code": "9972"
+        "code": "4423",
+        "name": "Hersberg",
+        "": ""
     },
     {
-        "name": "Heinfels",
-        "code": "9919"
+        "code": "4424",
+        "name": "Arboldswil",
+        "": ""
     },
     {
-        "name": "Bach",
-        "code": "6653"
+        "code": "4425",
+        "name": "Titterten",
+        "": ""
     },
     {
-        "name": "Berwang",
-        "code": "6622"
+        "code": "4426",
+        "name": "Lauwil",
+        "": ""
     },
     {
-        "name": "Biberwier",
-        "code": "6633"
+        "code": "4431",
+        "name": "Bennwil",
+        "": ""
     },
     {
-        "name": "Bichlbach",
-        "code": "6621"
+        "code": "4432",
+        "name": "Lampenberg",
+        "": ""
     },
     {
-        "name": "Breitenwang",
-        "code": "6600"
+        "code": "4433",
+        "name": "Ramlinsburg",
+        "": ""
     },
     {
-        "name": "Ehenbichl",
-        "code": "6600"
+        "code": "4434",
+        "name": "Hölstein",
+        "": ""
     },
     {
-        "name": "Ehrwald",
-        "code": "6632"
+        "code": "4435",
+        "name": "Niederdorf",
+        "": ""
     },
     {
-        "name": "Elbigenalp",
-        "code": "6652"
+        "code": "4436",
+        "name": "Liedertswil",
+        "": ""
     },
     {
-        "name": "Elmen",
-        "code": "6644"
+        "code": "4436",
+        "name": "Oberdorf BL",
+        "": ""
     },
     {
-        "name": "Forchach",
-        "code": "6670"
+        "code": "4437",
+        "name": "Waldenburg",
+        "": ""
     },
     {
-        "name": "Grän",
-        "code": "6673"
+        "code": "4438",
+        "name": "Langenbruck",
+        "": ""
     },
     {
-        "name": "Gramais",
-        "code": "6650"
+        "code": "4441",
+        "name": "Thürnen",
+        "": ""
     },
     {
-        "name": "Häselgehr",
-        "code": "6651"
+        "code": "4442",
+        "name": "Diepflingen",
+        "": ""
     },
     {
-        "name": "Heiterwang",
-        "code": "6611"
+        "code": "4443",
+        "name": "Wittinsburg",
+        "": ""
     },
     {
-        "name": "Hinterhornbach",
-        "code": "6646"
+        "code": "4444",
+        "name": "Rümlingen",
+        "": ""
     },
     {
-        "name": "Höfen",
-        "code": "6604"
+        "code": "4445",
+        "name": "Häfelfingen",
+        "": ""
     },
     {
-        "name": "Holzgau",
-        "code": "6654"
+        "code": "4446",
+        "name": "Buckten",
+        "": ""
     },
     {
-        "name": "Jungholz",
-        "code": "6691"
+        "code": "4447",
+        "name": "Känerkinden",
+        "": ""
     },
     {
-        "name": "Kaisers",
-        "code": "6655"
+        "code": "4448",
+        "name": "Läufelfingen",
+        "": ""
     },
     {
-        "name": "Lechaschau",
-        "code": "6600"
+        "code": "4450",
+        "name": "Sissach",
+        "": ""
     },
     {
-        "name": "Lermoos",
-        "code": "6631"
+        "code": "4451",
+        "name": "Wintersingen",
+        "": ""
     },
     {
-        "name": "Musau",
-        "code": "6600"
+        "code": "4452",
+        "name": "Itingen",
+        "": ""
     },
     {
-        "name": "Namlos",
-        "code": "6623"
+        "code": "4453",
+        "name": "Nusshof",
+        "": ""
     },
     {
-        "name": "Nesselwängle",
-        "code": "6672"
+        "code": "4455",
+        "name": "Zunzgen",
+        "": ""
     },
     {
-        "name": "Pfafflar",
-        "code": "6647"
+        "code": "4456",
+        "name": "Tenniken",
+        "": ""
     },
     {
-        "name": "Pflach",
-        "code": "6600"
+        "code": "4457",
+        "name": "Diegten",
+        "": ""
     },
     {
-        "name": "Pinswang",
-        "code": "6600"
+        "code": "4458",
+        "name": "Eptingen",
+        "": ""
     },
     {
-        "name": "Reutte",
-        "code": "6600"
+        "code": "4460",
+        "name": "Gelterkinden",
+        "": ""
     },
     {
-        "name": "Schattwald",
-        "code": "6677"
+        "code": "4461",
+        "name": "Böckten",
+        "": ""
     },
     {
-        "name": "Stanzach",
-        "code": "6642"
+        "code": "4462",
+        "name": "Rickenbach BL",
+        "": ""
     },
     {
-        "name": "Steeg",
-        "code": "6655"
+        "code": "4463",
+        "name": "Buus",
+        "": ""
     },
     {
-        "name": "Tannheim",
-        "code": "6675"
+        "code": "4464",
+        "name": "Maisprach",
+        "": ""
     },
     {
-        "name": "Vils",
-        "code": "6682"
+        "code": "4465",
+        "name": "Hemmiken",
+        "": ""
     },
     {
-        "name": "Vorderhornbach",
-        "code": "6645"
+        "code": "4466",
+        "name": "Ormalingen",
+        "": ""
     },
     {
-        "name": "Weißenbach am Lech",
-        "code": "6671"
+        "code": "4467",
+        "name": "Rothenfluh",
+        "": ""
     },
     {
-        "name": "Zöblen",
-        "code": "6677"
+        "code": "4468",
+        "name": "Kienberg",
+        "": ""
     },
     {
-        "name": "Achenkirch",
-        "code": "6215"
+        "code": "4469",
+        "name": "Anwil",
+        "": ""
     },
     {
-        "name": "Aschau im Zillertal",
-        "code": "6274"
+        "code": "4492",
+        "name": "Tecknau",
+        "": ""
     },
     {
-        "name": "Brandberg",
-        "code": "6290"
+        "code": "4493",
+        "name": "Wenslingen",
+        "": ""
     },
     {
-        "name": "Bruck am Ziller",
-        "code": "6260"
+        "code": "4494",
+        "name": "Oltingen",
+        "": ""
     },
     {
-        "name": "Buch in Tirol",
-        "code": "6220"
+        "code": "4495",
+        "name": "Zeglingen",
+        "": ""
     },
     {
-        "name": "Eben am Achensee",
-        "code": "6212"
+        "code": "4496",
+        "name": "Kilchberg BL",
+        "": ""
     },
     {
-        "name": "Finkenberg",
-        "code": "6292"
+        "code": "4497",
+        "name": "Rünenberg",
+        "": ""
     },
     {
-        "name": "Fügen",
-        "code": "6263"
+        "code": "4500",
+        "name": "Solothurn",
+        "": ""
     },
     {
-        "name": "Fügenberg",
-        "code": "6264"
+        "code": "4512",
+        "name": "Bellach",
+        "": ""
     },
     {
-        "name": "Gallzein",
-        "code": "6222"
+        "code": "4513",
+        "name": "Langendorf",
+        "": ""
     },
     {
-        "name": "Gerlos",
-        "code": "6281"
+        "code": "4514",
+        "name": "Lommiswil",
+        "": ""
     },
     {
-        "name": "Gerlosberg",
-        "code": "6280"
+        "code": "4515",
+        "name": "Weissenstein b. Solothurn",
+        "": ""
     },
     {
-        "name": "Hainzenberg",
-        "code": "6278"
+        "code": "4515",
+        "name": "Oberdorf SO",
+        "": ""
     },
     {
-        "name": "Hart im Zillertal",
-        "code": "6265"
+        "code": "4522",
+        "name": "Rüttenen",
+        "": ""
     },
     {
-        "name": "Hippach",
-        "code": "6283"
+        "code": "4523",
+        "name": "Niederwil SO",
+        "": ""
     },
     {
-        "name": "Jenbach",
-        "code": "6200"
+        "code": "4524",
+        "name": "Balmberg",
+        "": ""
     },
     {
-        "name": "Kaltenbach",
-        "code": "6272"
+        "code": "4524",
+        "name": "Oberbalmberg",
+        "": ""
     },
     {
-        "name": "Mayrhofen",
-        "code": "6290"
+        "code": "4524",
+        "name": "Günsberg",
+        "": ""
     },
     {
-        "name": "Pill",
-        "code": "6136"
+        "code": "4525",
+        "name": "Balm b. Günsberg",
+        "": ""
     },
     {
-        "name": "Ramsau im Zillertal",
-        "code": "6284"
+        "code": "4528",
+        "name": "Zuchwil",
+        "": ""
     },
     {
-        "name": "Ried im Zillertal",
-        "code": "6273"
+        "code": "4532",
+        "name": "Feldbrunnen",
+        "": ""
     },
     {
-        "name": "Rohrberg",
-        "code": "6280"
+        "code": "4533",
+        "name": "Riedholz",
+        "": ""
     },
     {
-        "name": "Schlitters",
-        "code": "6262"
+        "code": "4534",
+        "name": "Flumenthal",
+        "": ""
     },
     {
-        "name": "Schwaz",
-        "code": "6130"
+        "code": "4535",
+        "name": "Hubersdorf",
+        "": ""
     },
     {
-        "name": "Schwendau",
-        "code": "6283"
+        "code": "4535",
+        "name": "Kammersrohr",
+        "": ""
     },
     {
+        "code": "4536",
+        "name": "Attiswil",
+        "": ""
+    },
+    {
+        "code": "4537",
+        "name": "Wiedlisbach",
+        "": ""
+    },
+    {
+        "code": "4538",
+        "name": "Oberbipp",
+        "": ""
+    },
+    {
+        "code": "4539",
+        "name": "Rumisberg",
+        "": ""
+    },
+    {
+        "code": "4539",
+        "name": "Farnern",
+        "": ""
+    },
+    {
+        "code": "4542",
+        "name": "Luterbach",
+        "": ""
+    },
+    {
+        "code": "4543",
+        "name": "Deitingen",
+        "": ""
+    },
+    {
+        "code": "4552",
+        "name": "Derendingen",
+        "": ""
+    },
+    {
+        "code": "4553",
+        "name": "Subingen",
+        "": ""
+    },
+    {
+        "code": "4554",
+        "name": "Hüniken",
+        "": ""
+    },
+    {
+        "code": "4554",
+        "name": "Etziken",
+        "": ""
+    },
+    {
+        "code": "4556",
+        "name": "Bolken",
+        "": ""
+    },
+    {
+        "code": "4556",
+        "name": "Burgäschi",
+        "": ""
+    },
+    {
+        "code": "4556",
+        "name": "Steinhof SO",
+        "": ""
+    },
+    {
+        "code": "4556",
+        "name": "Aeschi SO",
+        "": ""
+    },
+    {
+        "code": "4557",
+        "name": "Horriwil",
+        "": ""
+    },
+    {
+        "code": "4558",
+        "name": "Hersiwil",
+        "": ""
+    },
+    {
+        "code": "4558",
+        "name": "Heinrichswil",
+        "": ""
+    },
+    {
+        "code": "4558",
+        "name": "Winistorf",
+        "": ""
+    },
+    {
+        "code": "4562",
+        "name": "Biberist",
+        "": ""
+    },
+    {
+        "code": "4563",
+        "name": "Gerlafingen",
+        "": ""
+    },
+    {
+        "code": "4564",
+        "name": "Zielebach",
+        "": ""
+    },
+    {
+        "code": "4564",
+        "name": "Obergerlafingen",
+        "": ""
+    },
+    {
+        "code": "4565",
+        "name": "Recherswil",
+        "": ""
+    },
+    {
+        "code": "4566",
+        "name": "Halten",
+        "": ""
+    },
+    {
+        "code": "4566",
+        "name": "Oekingen",
+        "": ""
+    },
+    {
+        "code": "4566",
+        "name": "Kriegstetten",
+        "": ""
+    },
+    {
+        "code": "4571",
+        "name": "Ichertswil",
+        "": ""
+    },
+    {
+        "code": "4571",
+        "name": "Lüterkofen",
+        "": ""
+    },
+    {
+        "code": "4573",
+        "name": "Lohn-Ammannsegg",
+        "": ""
+    },
+    {
+        "code": "4574",
+        "name": "Lüsslingen",
+        "": ""
+    },
+    {
+        "code": "4574",
+        "name": "Nennigkofen",
+        "": ""
+    },
+    {
+        "code": "4576",
+        "name": "Tscheppach",
+        "": ""
+    },
+    {
+        "code": "4577",
+        "name": "Hessigkofen",
+        "": ""
+    },
+    {
+        "code": "4578",
+        "name": "Bibern SO",
+        "": ""
+    },
+    {
+        "code": "4579",
+        "name": "Gossliwil",
+        "": ""
+    },
+    {
+        "code": "4581",
+        "name": "Küttigkofen",
+        "": ""
+    },
+    {
+        "code": "4582",
+        "name": "Brügglen",
+        "": ""
+    },
+    {
+        "code": "4583",
+        "name": "Aetigkofen",
+        "": ""
+    },
+    {
+        "code": "4583",
+        "name": "Mühledorf SO",
+        "": ""
+    },
+    {
+        "code": "4584",
+        "name": "Gächliwil",
+        "": ""
+    },
+    {
+        "code": "4584",
+        "name": "Lüterswil",
+        "": ""
+    },
+    {
+        "code": "4585",
+        "name": "Biezwil",
+        "": ""
+    },
+    {
+        "code": "4586",
+        "name": "Kyburg-Buchegg",
+        "": ""
+    },
+    {
+        "code": "4587",
+        "name": "Aetingen",
+        "": ""
+    },
+    {
+        "code": "4588",
+        "name": "Unterramsern",
+        "": ""
+    },
+    {
+        "code": "4588",
+        "name": "Oberramsern",
+        "": ""
+    },
+    {
+        "code": "4588",
+        "name": "Brittern",
+        "": ""
+    },
+    {
+        "code": "4600",
+        "name": "Olten",
+        "": ""
+    },
+    {
+        "code": "4612",
+        "name": "Wangen b. Olten",
+        "": ""
+    },
+    {
+        "code": "4613",
+        "name": "Rickenbach SO",
+        "": ""
+    },
+    {
+        "code": "4614",
+        "name": "Hägendorf",
+        "": ""
+    },
+    {
+        "code": "4615",
+        "name": "Allerheiligenberg",
+        "": ""
+    },
+    {
+        "code": "4616",
+        "name": "Kappel SO",
+        "": ""
+    },
+    {
+        "code": "4617",
+        "name": "Gunzgen",
+        "": ""
+    },
+    {
+        "code": "4618",
+        "name": "Boningen",
+        "": ""
+    },
+    {
+        "code": "4622",
+        "name": "Egerkingen",
+        "": ""
+    },
+    {
+        "code": "4623",
+        "name": "Neuendorf",
+        "": ""
+    },
+    {
+        "code": "4624",
+        "name": "Härkingen",
+        "": ""
+    },
+    {
+        "code": "4625",
+        "name": "Oberbuchsiten",
+        "": ""
+    },
+    {
+        "code": "4626",
+        "name": "Niederbuchsiten",
+        "": ""
+    },
+    {
+        "code": "4628",
+        "name": "Wolfwil",
+        "": ""
+    },
+    {
+        "code": "4629",
+        "name": "Fulenbach",
+        "": ""
+    },
+    {
+        "code": "4632",
+        "name": "Trimbach",
+        "": ""
+    },
+    {
+        "code": "4633",
+        "name": "Hauenstein",
+        "": ""
+    },
+    {
+        "code": "4634",
+        "name": "Wisen SO",
+        "": ""
+    },
+    {
+        "code": "4652",
+        "name": "Winznau",
+        "": ""
+    },
+    {
+        "code": "4653",
+        "name": "Obergösgen",
+        "": ""
+    },
+    {
+        "code": "4654",
+        "name": "Lostorf",
+        "": ""
+    },
+    {
+        "code": "4655",
+        "name": "Rohr b. Olten",
+        "": ""
+    },
+    {
+        "code": "4655",
+        "name": "Stüsslingen",
+        "": ""
+    },
+    {
+        "code": "4656",
+        "name": "Starrkirch-Wil",
+        "": ""
+    },
+    {
+        "code": "4657",
+        "name": "Dulliken",
+        "": ""
+    },
+    {
+        "code": "4658",
+        "name": "Däniken SO",
+        "": ""
+    },
+    {
+        "code": "4663",
+        "name": "Aarburg",
+        "": ""
+    },
+    {
+        "code": "4665",
+        "name": "Oftringen",
+        "": ""
+    },
+    {
+        "code": "4702",
+        "name": "Oensingen",
+        "": ""
+    },
+    {
+        "code": "4703",
+        "name": "Kestenholz",
+        "": ""
+    },
+    {
+        "code": "4704",
+        "name": "Wolfisberg",
+        "": ""
+    },
+    {
+        "code": "4704",
+        "name": "Niederbipp",
+        "": ""
+    },
+    {
+        "code": "4710",
+        "name": "Balsthal",
+        "": ""
+    },
+    {
+        "code": "4712",
+        "name": "Laupersdorf",
+        "": ""
+    },
+    {
+        "code": "4713",
+        "name": "Matzendorf",
+        "": ""
+    },
+    {
+        "code": "4714",
+        "name": "Aedermannsdorf",
+        "": ""
+    },
+    {
+        "code": "4715",
+        "name": "Herbetswil",
+        "": ""
+    },
+    {
+        "code": "4716",
+        "name": "Gänsbrunnen",
+        "": ""
+    },
+    {
+        "code": "4716",
+        "name": "Welschenrohr",
+        "": ""
+    },
+    {
+        "code": "4717",
+        "name": "Mümliswil",
+        "": ""
+    },
+    {
+        "code": "4718",
+        "name": "Holderbank SO",
+        "": ""
+    },
+    {
+        "code": "4719",
+        "name": "Ramiswil",
+        "": ""
+    },
+    {
+        "code": "4800",
+        "name": "Zofingen",
+        "": ""
+    },
+    {
+        "code": "4802",
+        "name": "Strengelbach",
+        "": ""
+    },
+    {
+        "code": "4803",
+        "name": "Vordemwald",
+        "": ""
+    },
+    {
+        "code": "4805",
+        "name": "Brittnau",
+        "": ""
+    },
+    {
+        "code": "4806",
+        "name": "Wikon",
+        "": ""
+    },
+    {
+        "code": "4812",
+        "name": "Mühlethal",
+        "": ""
+    },
+    {
+        "code": "4813",
+        "name": "Uerkheim",
+        "": ""
+    },
+    {
+        "code": "4814",
+        "name": "Bottenwil",
+        "": ""
+    },
+    {
+        "code": "4852",
+        "name": "Rothrist",
+        "": ""
+    },
+    {
+        "code": "4853",
+        "name": "Riken AG",
+        "": ""
+    },
+    {
+        "code": "4853",
+        "name": "Murgenthal",
+        "": ""
+    },
+    {
+        "code": "4856",
+        "name": "Glashütten",
+        "": ""
+    },
+    {
+        "code": "4900",
+        "name": "Langenthal",
+        "": ""
+    },
+    {
+        "code": "4911",
+        "name": "Schwarzhäusern",
+        "": ""
+    },
+    {
+        "code": "4912",
+        "name": "Aarwangen",
+        "": ""
+    },
+    {
+        "code": "4913",
+        "name": "Bannwil",
+        "": ""
+    },
+    {
+        "code": "4914",
+        "name": "Roggwil BE",
+        "": ""
+    },
+    {
+        "code": "4915",
+        "name": "St. Urban",
+        "": ""
+    },
+    {
+        "code": "4916",
+        "name": "Untersteckholz",
+        "": ""
+    },
+    {
+        "code": "4917",
+        "name": "Busswil b. Melchnau",
+        "": ""
+    },
+    {
+        "code": "4917",
+        "name": "Melchnau",
+        "": ""
+    },
+    {
+        "code": "4919",
+        "name": "Reisiswil",
+        "": ""
+    },
+    {
+        "code": "4922",
+        "name": "Thunstetten",
+        "": ""
+    },
+    {
+        "code": "4922",
+        "name": "Bützberg",
+        "": ""
+    },
+    {
+        "code": "4923",
+        "name": "Wynau",
+        "": ""
+    },
+    {
+        "code": "4924",
+        "name": "Obersteckholz",
+        "": ""
+    },
+    {
+        "code": "4932",
+        "name": "Gutenburg",
+        "": ""
+    },
+    {
+        "code": "4932",
+        "name": "Lotzwil",
+        "": ""
+    },
+    {
+        "code": "4933",
+        "name": "Rütschelen",
+        "": ""
+    },
+    {
+        "code": "4934",
+        "name": "Madiswil",
+        "": ""
+    },
+    {
+        "code": "4935",
+        "name": "Leimiswil",
+        "": ""
+    },
+    {
+        "code": "4936",
+        "name": "Kleindietwil",
+        "": ""
+    },
+    {
+        "code": "4937",
+        "name": "Ursenbach",
+        "": ""
+    },
+    {
+        "code": "4938",
+        "name": "Rohrbachgraben",
+        "": ""
+    },
+    {
+        "code": "4938",
+        "name": "Rohrbach",
+        "": ""
+    },
+    {
+        "code": "4942",
+        "name": "Walterswil BE",
+        "": ""
+    },
+    {
+        "code": "4943",
+        "name": "Oeschenbach",
+        "": ""
+    },
+    {
+        "code": "4944",
+        "name": "Auswil",
+        "": ""
+    },
+    {
+        "code": "4950",
+        "name": "Huttwil",
+        "": ""
+    },
+    {
+        "code": "4952",
+        "name": "Eriswil",
+        "": ""
+    },
+    {
+        "code": "4953",
+        "name": "Schwarzenbach (Huttwil)",
+        "": ""
+    },
+    {
+        "code": "4954",
+        "name": "Wyssachen",
+        "": ""
+    },
+    {
+        "code": "4955",
+        "name": "Gondiswil",
+        "": ""
+    },
+    {
+        "code": "5000",
+        "name": "Aarau",
+        "": ""
+    },
+    {
+        "code": "5004",
+        "name": "Aarau",
+        "": ""
+    },
+    {
+        "code": "5012",
+        "name": "Eppenberg",
+        "": ""
+    },
+    {
+        "code": "5012",
+        "name": "Wöschnau",
+        "": ""
+    },
+    {
+        "code": "5012",
+        "name": "Schönenwerd",
+        "": ""
+    },
+    {
+        "code": "5013",
+        "name": "Niedergösgen",
+        "": ""
+    },
+    {
+        "code": "5014",
+        "name": "Gretzenbach",
+        "": ""
+    },
+    {
+        "code": "5015",
+        "name": "Erlinsbach SO",
+        "": ""
+    },
+    {
+        "code": "5017",
+        "name": "Barmelweid",
+        "": ""
+    },
+    {
+        "code": "5018",
+        "name": "Erlinsbach",
+        "": ""
+    },
+    {
+        "code": "5022",
+        "name": "Rombach",
+        "": ""
+    },
+    {
+        "code": "5023",
+        "name": "Biberstein",
+        "": ""
+    },
+    {
+        "code": "5024",
+        "name": "Küttigen",
+        "": ""
+    },
+    {
+        "code": "5025",
+        "name": "Asp",
+        "": ""
+    },
+    {
+        "code": "5026",
+        "name": "Densbüren",
+        "": ""
+    },
+    {
+        "code": "5027",
+        "name": "Herznach",
+        "": ""
+    },
+    {
+        "code": "5028",
+        "name": "Ueken",
+        "": ""
+    },
+    {
+        "code": "5032",
+        "name": "Aarau Rohr",
+        "": ""
+    },
+    {
+        "code": "5033",
+        "name": "Buchs AG",
+        "": ""
+    },
+    {
+        "code": "5034",
+        "name": "Suhr",
+        "": ""
+    },
+    {
+        "code": "5035",
+        "name": "Unterentfelden",
+        "": ""
+    },
+    {
+        "code": "5036",
+        "name": "Oberentfelden",
+        "": ""
+    },
+    {
+        "code": "5037",
+        "name": "Muhen",
+        "": ""
+    },
+    {
+        "code": "5040",
+        "name": "Schöftland",
+        "": ""
+    },
+    {
+        "code": "5042",
+        "name": "Hirschthal",
+        "": ""
+    },
+    {
+        "code": "5043",
+        "name": "Holziken",
+        "": ""
+    },
+    {
+        "code": "5044",
+        "name": "Schlossrued",
+        "": ""
+    },
+    {
+        "code": "5046",
+        "name": "Schmiedrued",
+        "": ""
+    },
+    {
+        "code": "5046",
+        "name": "Walde AG",
+        "": ""
+    },
+    {
+        "code": "5046",
+        "name": "Schmiedrued-Walde",
+        "": ""
+    },
+    {
+        "code": "5053",
+        "name": "Wittwil",
+        "": ""
+    },
+    {
+        "code": "5053",
+        "name": "Staffelbach",
+        "": ""
+    },
+    {
+        "code": "5054",
+        "name": "Kirchleerau",
+        "": ""
+    },
+    {
+        "code": "5054",
+        "name": "Moosleerau",
+        "": ""
+    },
+    {
+        "code": "5056",
+        "name": "Attelwil",
+        "": ""
+    },
+    {
+        "code": "5057",
+        "name": "Reitnau",
+        "": ""
+    },
+    {
+        "code": "5058",
+        "name": "Wiliberg",
+        "": ""
+    },
+    {
+        "code": "5062",
+        "name": "Oberhof",
+        "": ""
+    },
+    {
+        "code": "5063",
+        "name": "Wölflinswil",
+        "": ""
+    },
+    {
+        "code": "5064",
+        "name": "Wittnau",
+        "": ""
+    },
+    {
+        "code": "5070",
+        "name": "Frick",
+        "": ""
+    },
+    {
+        "code": "5072",
+        "name": "Oeschgen",
+        "": ""
+    },
+    {
+        "code": "5073",
+        "name": "Gipf-Oberfrick",
+        "": ""
+    },
+    {
+        "code": "5074",
+        "name": "Eiken",
+        "": ""
+    },
+    {
+        "code": "5075",
+        "name": "Hornussen",
+        "": ""
+    },
+    {
+        "code": "5076",
+        "name": "Bözen",
+        "": ""
+    },
+    {
+        "code": "5077",
+        "name": "Elfingen",
+        "": ""
+    },
+    {
+        "code": "5078",
+        "name": "Effingen",
+        "": ""
+    },
+    {
+        "code": "5079",
+        "name": "Zeihen",
+        "": ""
+    },
+    {
+        "code": "5080",
+        "name": "Laufenburg",
+        "": ""
+    },
+    {
+        "code": "5082",
+        "name": "Kaisten",
+        "": ""
+    },
+    {
+        "code": "5083",
+        "name": "Ittenthal",
+        "": ""
+    },
+    {
+        "code": "5084",
+        "name": "Rheinsulz",
+        "": ""
+    },
+    {
+        "code": "5085",
+        "name": "Sulz AG",
+        "": ""
+    },
+    {
+        "code": "5102",
+        "name": "Rupperswil",
+        "": ""
+    },
+    {
+        "code": "5103",
+        "name": "Wildegg",
+        "": ""
+    },
+    {
+        "code": "5103",
+        "name": "Möriken AG",
+        "": ""
+    },
+    {
+        "code": "5105",
+        "name": "Auenstein",
+        "": ""
+    },
+    {
+        "code": "5106",
+        "name": "Veltheim AG",
+        "": ""
+    },
+    {
+        "code": "5107",
+        "name": "Schinznach Dorf",
+        "": ""
+    },
+    {
+        "code": "5108",
+        "name": "Oberflachs",
+        "": ""
+    },
+    {
+        "code": "5112",
+        "name": "Thalheim AG",
+        "": ""
+    },
+    {
+        "code": "5113",
+        "name": "Holderbank AG",
+        "": ""
+    },
+    {
+        "code": "5116",
+        "name": "Schinznach Bad",
+        "": ""
+    },
+    {
+        "code": "5200",
+        "name": "Brugg AG",
+        "": ""
+    },
+    {
+        "code": "5210",
+        "name": "Windisch",
+        "": ""
+    },
+    {
+        "code": "5212",
+        "name": "Hausen AG",
+        "": ""
+    },
+    {
+        "code": "5213",
+        "name": "Villnachern",
+        "": ""
+    },
+    {
+        "code": "5222",
+        "name": "Umiken",
+        "": ""
+    },
+    {
+        "code": "5223",
+        "name": "Riniken",
+        "": ""
+    },
+    {
+        "code": "5224",
+        "name": "Gallenkirch",
+        "": ""
+    },
+    {
+        "code": "5224",
+        "name": "Linn",
+        "": ""
+    },
+    {
+        "code": "5224",
+        "name": "Unterbözberg",
+        "": ""
+    },
+    {
+        "code": "5225",
+        "name": "Oberbözberg",
+        "": ""
+    },
+    {
+        "code": "5233",
+        "name": "Stilli",
+        "": ""
+    },
+    {
+        "code": "5234",
+        "name": "Villigen",
+        "": ""
+    },
+    {
+        "code": "5235",
+        "name": "Rüfenach AG",
+        "": ""
+    },
+    {
+        "code": "5236",
+        "name": "Remigen",
+        "": ""
+    },
+    {
+        "code": "5237",
+        "name": "Mönthal",
+        "": ""
+    },
+    {
+        "code": "5242",
+        "name": "Birr",
+        "": ""
+    },
+    {
+        "code": "5242",
+        "name": "Lupfig",
+        "": ""
+    },
+    {
+        "code": "5243",
+        "name": "Mülligen",
+        "": ""
+    },
+    {
+        "code": "5244",
+        "name": "Birrhard",
+        "": ""
+    },
+    {
+        "code": "5245",
+        "name": "Habsburg",
+        "": ""
+    },
+    {
+        "code": "5246",
+        "name": "Scherz",
+        "": ""
+    },
+    {
+        "code": "5272",
+        "name": "Gansingen",
+        "": ""
+    },
+    {
+        "code": "5273",
+        "name": "Oberhofen AG",
+        "": ""
+    },
+    {
+        "code": "5274",
+        "name": "Mettau",
+        "": ""
+    },
+    {
+        "code": "5275",
+        "name": "Etzgen",
+        "": ""
+    },
+    {
+        "code": "5276",
+        "name": "Wil AG",
+        "": ""
+    },
+    {
+        "code": "5277",
+        "name": "Hottwil",
+        "": ""
+    },
+    {
+        "code": "5300",
+        "name": "Turgi",
+        "": ""
+    },
+    {
+        "code": "5301",
+        "name": "Siggenthal Station",
+        "": ""
+    },
+    {
+        "code": "5303",
+        "name": "Würenlingen",
+        "": ""
+    },
+    {
+        "code": "5304",
+        "name": "Endingen",
+        "": ""
+    },
+    {
+        "code": "5305",
+        "name": "Unterendingen",
+        "": ""
+    },
+    {
+        "code": "5306",
+        "name": "Tegerfelden",
+        "": ""
+    },
+    {
+        "code": "5312",
+        "name": "Döttingen",
+        "": ""
+    },
+    {
+        "code": "5313",
+        "name": "Klingnau",
+        "": ""
+    },
+    {
+        "code": "5314",
+        "name": "Kleindöttingen",
+        "": ""
+    },
+    {
+        "code": "5315",
+        "name": "Böttstein",
+        "": ""
+    },
+    {
+        "code": "5316",
+        "name": "Felsenau AG",
+        "": ""
+    },
+    {
+        "code": "5316",
+        "name": "Leuggern",
+        "": ""
+    },
+    {
+        "code": "5317",
+        "name": "Hettenschwil",
+        "": ""
+    },
+    {
+        "code": "5318",
+        "name": "Mandach",
+        "": ""
+    },
+    {
+        "code": "5322",
+        "name": "Koblenz",
+        "": ""
+    },
+    {
+        "code": "5323",
+        "name": "Rietheim",
+        "": ""
+    },
+    {
+        "code": "5324",
+        "name": "Full-Reuenthal",
+        "": ""
+    },
+    {
+        "code": "5325",
+        "name": "Leibstadt",
+        "": ""
+    },
+    {
+        "code": "5326",
+        "name": "Schwaderloch",
+        "": ""
+    },
+    {
+        "code": "5330",
+        "name": "Bad Zurzach",
+        "": ""
+    },
+    {
+        "code": "5332",
+        "name": "Rekingen AG",
+        "": ""
+    },
+    {
+        "code": "5333",
+        "name": "Baldingen",
+        "": ""
+    },
+    {
+        "code": "5334",
+        "name": "Böbikon",
+        "": ""
+    },
+    {
+        "code": "5400",
+        "name": "Baden",
+        "": ""
+    },
+    {
+        "code": "5404",
+        "name": "Baden",
+        "": ""
+    },
+    {
+        "code": "5405",
+        "name": "Dättwil AG",
+        "": ""
+    },
+    {
+        "code": "5406",
+        "name": "Rütihof",
+        "": ""
+    },
+    {
+        "code": "5408",
+        "name": "Ennetbaden",
+        "": ""
+    },
+    {
+        "code": "5412",
+        "name": "Gebenstorf",
+        "": ""
+    },
+    {
+        "code": "5413",
+        "name": "Birmenstorf AG",
+        "": ""
+    },
+    {
+        "code": "5415",
+        "name": "Hertenstein AG",
+        "": ""
+    },
+    {
+        "code": "5415",
+        "name": "Rieden AG",
+        "": ""
+    },
+    {
+        "code": "5415",
+        "name": "Nussbaumen AG",
+        "": ""
+    },
+    {
+        "code": "5416",
+        "name": "Kirchdorf AG",
+        "": ""
+    },
+    {
+        "code": "5417",
+        "name": "Untersiggenthal",
+        "": ""
+    },
+    {
+        "code": "5420",
+        "name": "Ehrendingen",
+        "": ""
+    },
+    {
+        "code": "5423",
+        "name": "Freienwil",
+        "": ""
+    },
+    {
+        "code": "5425",
+        "name": "Schneisingen",
+        "": ""
+    },
+    {
+        "code": "5426",
+        "name": "Lengnau AG",
+        "": ""
+    },
+    {
+        "code": "5430",
+        "name": "Wettingen",
+        "": ""
+    },
+    {
+        "code": "5432",
+        "name": "Neuenhof",
+        "": ""
+    },
+    {
+        "code": "5436",
+        "name": "Würenlos",
+        "": ""
+    },
+    {
+        "code": "5442",
+        "name": "Fislisbach",
+        "": ""
+    },
+    {
+        "code": "5443",
+        "name": "Niederrohrdorf",
+        "": ""
+    },
+    {
+        "code": "5444",
+        "name": "Künten",
+        "": ""
+    },
+    {
+        "code": "5445",
+        "name": "Eggenwil",
+        "": ""
+    },
+    {
+        "code": "5452",
+        "name": "Oberrohrdorf",
+        "": ""
+    },
+    {
+        "code": "5453",
+        "name": "Remetschwil",
+        "": ""
+    },
+    {
+        "code": "5454",
+        "name": "Bellikon",
+        "": ""
+    },
+    {
+        "code": "5462",
+        "name": "Siglistorf",
+        "": ""
+    },
+    {
+        "code": "5463",
+        "name": "Wislikofen",
+        "": ""
+    },
+    {
+        "code": "5464",
+        "name": "Rümikon AG",
+        "": ""
+    },
+    {
+        "code": "5465",
+        "name": "Mellikon",
+        "": ""
+    },
+    {
+        "code": "5466",
+        "name": "Kaiserstuhl AG",
+        "": ""
+    },
+    {
+        "code": "5467",
+        "name": "Fisibach",
+        "": ""
+    },
+    {
+        "code": "5502",
+        "name": "Hunzenschwil",
+        "": ""
+    },
+    {
+        "code": "5503",
+        "name": "Schafisheim",
+        "": ""
+    },
+    {
+        "code": "5504",
+        "name": "Othmarsingen",
+        "": ""
+    },
+    {
+        "code": "5505",
+        "name": "Brunegg",
+        "": ""
+    },
+    {
+        "code": "5506",
+        "name": "Mägenwil",
+        "": ""
+    },
+    {
+        "code": "5507",
+        "name": "Mellingen",
+        "": ""
+    },
+    {
+        "code": "5512",
+        "name": "Wohlenschwil",
+        "": ""
+    },
+    {
+        "code": "5522",
+        "name": "Tägerig",
+        "": ""
+    },
+    {
+        "code": "5524",
+        "name": "Nesselnbach",
+        "": ""
+    },
+    {
+        "code": "5524",
+        "name": "Niederwil AG",
+        "": ""
+    },
+    {
+        "code": "5525",
+        "name": "Fischbach-Göslikon",
+        "": ""
+    },
+    {
+        "code": "5600",
+        "name": "Lenzburg",
+        "": ""
+    },
+    {
+        "code": "5600",
+        "name": "Ammerswil AG",
+        "": ""
+    },
+    {
+        "code": "5603",
+        "name": "Staufen",
+        "": ""
+    },
+    {
+        "code": "5604",
+        "name": "Hendschiken",
+        "": ""
+    },
+    {
+        "code": "5605",
+        "name": "Dottikon",
+        "": ""
+    },
+    {
+        "code": "5606",
+        "name": "Dintikon",
+        "": ""
+    },
+    {
+        "code": "5607",
+        "name": "Hägglingen",
+        "": ""
+    },
+    {
+        "code": "5608",
+        "name": "Stetten AG",
+        "": ""
+    },
+    {
+        "code": "5610",
+        "name": "Wohlen AG",
+        "": ""
+    },
+    {
+        "code": "5611",
+        "name": "Anglikon",
+        "": ""
+    },
+    {
+        "code": "5612",
+        "name": "Villmergen",
+        "": ""
+    },
+    {
+        "code": "5613",
+        "name": "Hilfikon",
+        "": ""
+    },
+    {
+        "code": "5614",
+        "name": "Sarmenstorf",
+        "": ""
+    },
+    {
+        "code": "5615",
+        "name": "Fahrwangen",
+        "": ""
+    },
+    {
+        "code": "5616",
+        "name": "Meisterschwanden",
+        "": ""
+    },
+    {
+        "code": "5617",
+        "name": "Tennwil",
+        "": ""
+    },
+    {
+        "code": "5618",
+        "name": "Bettwil",
+        "": ""
+    },
+    {
+        "code": "5619",
+        "name": "Büttikon AG",
+        "": ""
+    },
+    {
+        "code": "5619",
+        "name": "Uezwil",
+        "": ""
+    },
+    {
+        "code": "5620",
+        "name": "Bremgarten AG",
+        "": ""
+    },
+    {
+        "code": "5621",
+        "name": "Zufikon",
+        "": ""
+    },
+    {
+        "code": "5622",
+        "name": "Waltenschwil",
+        "": ""
+    },
+    {
+        "code": "5623",
+        "name": "Boswil",
+        "": ""
+    },
+    {
+        "code": "5624",
+        "name": "Waldhäusern AG",
+        "": ""
+    },
+    {
+        "code": "5624",
+        "name": "Bünzen",
+        "": ""
+    },
+    {
+        "code": "5625",
+        "name": "Kallern",
+        "": ""
+    },
+    {
+        "code": "5626",
+        "name": "Hermetschwil-Staffeln",
+        "": ""
+    },
+    {
+        "code": "5627",
+        "name": "Besenbüren",
+        "": ""
+    },
+    {
+        "code": "5628",
+        "name": "Aristau",
+        "": ""
+    },
+    {
+        "code": "5630",
+        "name": "Muri AG",
+        "": ""
+    },
+    {
+        "code": "5632",
+        "name": "Buttwil",
+        "": ""
+    },
+    {
+        "code": "5634",
+        "name": "Merenschwand",
+        "": ""
+    },
+    {
+        "code": "5636",
+        "name": "Benzenschwil",
+        "": ""
+    },
+    {
+        "code": "5637",
+        "name": "Geltwil",
+        "": ""
+    },
+    {
+        "code": "5637",
+        "name": "Beinwil (Freiamt)",
+        "": ""
+    },
+    {
+        "code": "5642",
+        "name": "Mühlau",
+        "": ""
+    },
+    {
+        "code": "5643",
+        "name": "Alikon",
+        "": ""
+    },
+    {
+        "code": "5643",
+        "name": "Meienberg",
+        "": ""
+    },
+    {
+        "code": "5643",
+        "name": "Sins",
+        "": ""
+    },
+    {
+        "code": "5644",
+        "name": "Auw",
+        "": ""
+    },
+    {
+        "code": "5645",
+        "name": "Aettenschwil",
+        "": ""
+    },
+    {
+        "code": "5645",
+        "name": "Fenkrieden",
+        "": ""
+    },
+    {
+        "code": "5646",
+        "name": "Abtwil AG",
+        "": ""
+    },
+    {
+        "code": "5647",
+        "name": "Oberrüti",
+        "": ""
+    },
+    {
+        "code": "5702",
+        "name": "Niederlenz",
+        "": ""
+    },
+    {
+        "code": "5703",
+        "name": "Seon",
+        "": ""
+    },
+    {
+        "code": "5704",
+        "name": "Egliswil",
+        "": ""
+    },
+    {
+        "code": "5705",
+        "name": "Hallwil",
+        "": ""
+    },
+    {
+        "code": "5706",
+        "name": "Boniswil",
+        "": ""
+    },
+    {
+        "code": "5707",
+        "name": "Seengen",
+        "": ""
+    },
+    {
+        "code": "5708",
+        "name": "Birrwil",
+        "": ""
+    },
+    {
+        "code": "5712",
+        "name": "Beinwil am See",
+        "": ""
+    },
+    {
+        "code": "5722",
+        "name": "Gränichen",
+        "": ""
+    },
+    {
+        "code": "5723",
+        "name": "Teufenthal AG",
+        "": ""
+    },
+    {
+        "code": "5724",
+        "name": "Dürrenäsch",
+        "": ""
+    },
+    {
+        "code": "5725",
+        "name": "Leutwil",
+        "": ""
+    },
+    {
+        "code": "5726",
+        "name": "Unterkulm",
+        "": ""
+    },
+    {
+        "code": "5727",
+        "name": "Oberkulm",
+        "": ""
+    },
+    {
+        "code": "5728",
+        "name": "Gontenschwil",
+        "": ""
+    },
+    {
+        "code": "5732",
+        "name": "Zetzwil",
+        "": ""
+    },
+    {
+        "code": "5733",
+        "name": "Leimbach AG",
+        "": ""
+    },
+    {
+        "code": "5734",
+        "name": "Reinach AG",
+        "": ""
+    },
+    {
+        "code": "5735",
+        "name": "Pfeffikon LU",
+        "": ""
+    },
+    {
+        "code": "5736",
+        "name": "Burg AG",
+        "": ""
+    },
+    {
+        "code": "5737",
+        "name": "Menziken",
+        "": ""
+    },
+    {
+        "code": "5742",
+        "name": "Kölliken",
+        "": ""
+    },
+    {
+        "code": "5745",
+        "name": "Safenwil",
+        "": ""
+    },
+    {
+        "code": "5746",
+        "name": "Walterswil SO",
+        "": ""
+    },
+    {
+        "code": "6000",
+        "name": "Luzern",
+        "": ""
+    },
+    {
+        "code": "6003",
+        "name": "Luzern",
+        "": ""
+    },
+    {
+        "code": "6004",
+        "name": "Luzern",
+        "": ""
+    },
+    {
+        "code": "6005",
+        "name": "Luzern",
+        "": ""
+    },
+    {
+        "code": "6005",
+        "name": "St. Niklausen LU",
+        "": ""
+    },
+    {
+        "code": "6006",
+        "name": "Luzern",
+        "": ""
+    },
+    {
+        "code": "6010",
+        "name": "Kriens",
+        "": ""
+    },
+    {
+        "code": "6010",
+        "name": "Pilatus Kulm",
+        "": ""
+    },
+    {
+        "code": "6012",
+        "name": "Obernau",
+        "": ""
+    },
+    {
+        "code": "6013",
+        "name": "Eigenthal",
+        "": ""
+    },
+    {
+        "code": "6014",
+        "name": "Luzern",
+        "": ""
+    },
+    {
+        "code": "6015",
+        "name": "Luzern",
+        "": ""
+    },
+    {
+        "code": "6016",
+        "name": "Hellbühl",
+        "": ""
+    },
+    {
+        "code": "6017",
+        "name": "Ruswil",
+        "": ""
+    },
+    {
+        "code": "6018",
+        "name": "Buttisholz",
+        "": ""
+    },
+    {
+        "code": "6019",
+        "name": "Sigigen",
+        "": ""
+    },
+    {
+        "code": "6020",
+        "name": "Emmenbrücke",
+        "": ""
+    },
+    {
+        "code": "6022",
+        "name": "Grosswangen",
+        "": ""
+    },
+    {
+        "code": "6023",
+        "name": "Rothenburg",
+        "": ""
+    },
+    {
+        "code": "6024",
+        "name": "Hildisrieden",
+        "": ""
+    },
+    {
+        "code": "6025",
+        "name": "Neudorf",
+        "": ""
+    },
+    {
+        "code": "6026",
+        "name": "Rain",
+        "": ""
+    },
+    {
+        "code": "6027",
+        "name": "Römerswil LU",
+        "": ""
+    },
+    {
+        "code": "6028",
+        "name": "Herlisberg",
+        "": ""
+    },
+    {
+        "code": "6030",
+        "name": "Ebikon",
+        "": ""
+    },
+    {
+        "code": "6032",
+        "name": "Emmen",
+        "": ""
+    },
+    {
+        "code": "6033",
+        "name": "Buchrain",
+        "": ""
+    },
+    {
+        "code": "6034",
+        "name": "Inwil",
+        "": ""
+    },
+    {
+        "code": "6035",
+        "name": "Perlen",
+        "": ""
+    },
+    {
+        "code": "6036",
+        "name": "Dierikon",
+        "": ""
+    },
+    {
+        "code": "6037",
+        "name": "Root",
+        "": ""
+    },
+    {
+        "code": "6038",
+        "name": "Gisikon",
+        "": ""
+    },
+    {
+        "code": "6038",
+        "name": "Honau",
+        "": ""
+    },
+    {
+        "code": "6039",
+        "name": "Root Längenbold",
+        "": ""
+    },
+    {
+        "code": "6042",
+        "name": "Dietwil",
+        "": ""
+    },
+    {
+        "code": "6043",
+        "name": "Adligenswil",
+        "": ""
+    },
+    {
+        "code": "6044",
+        "name": "Udligenswil",
+        "": ""
+    },
+    {
+        "code": "6045",
+        "name": "Meggen",
+        "": ""
+    },
+    {
+        "code": "6047",
+        "name": "Kastanienbaum",
+        "": ""
+    },
+    {
+        "code": "6048",
+        "name": "Horw",
+        "": ""
+    },
+    {
+        "code": "6052",
+        "name": "Hergiswil NW",
+        "": ""
+    },
+    {
+        "code": "6053",
+        "name": "Alpnachstad",
+        "": ""
+    },
+    {
+        "code": "6055",
+        "name": "Alpnach Dorf",
+        "": ""
+    },
+    {
+        "code": "6056",
+        "name": "Kägiswil",
+        "": ""
+    },
+    {
+        "code": "6060",
+        "name": "Sarnen",
+        "": ""
+    },
+    {
+        "code": "6060",
+        "name": "Ramersberg",
+        "": ""
+    },
+    {
+        "code": "6062",
+        "name": "Wilen (Sarnen)",
+        "": ""
+    },
+    {
+        "code": "6063",
+        "name": "Stalden (Sarnen)",
+        "": ""
+    },
+    {
+        "code": "6064",
+        "name": "Kerns",
+        "": ""
+    },
+    {
+        "code": "6066",
+        "name": "St. Niklausen OW",
+        "": ""
+    },
+    {
+        "code": "6067",
+        "name": "Melchtal",
+        "": ""
+    },
+    {
+        "code": "6068",
+        "name": "Melchsee-Frutt",
+        "": ""
+    },
+    {
+        "code": "6072",
+        "name": "Sachseln",
+        "": ""
+    },
+    {
+        "code": "6073",
+        "name": "Flüeli-Ranft",
+        "": ""
+    },
+    {
+        "code": "6074",
+        "name": "Giswil",
+        "": ""
+    },
+    {
+        "code": "6078",
+        "name": "Bürglen OW",
+        "": ""
+    },
+    {
+        "code": "6078",
+        "name": "Lungern",
+        "": ""
+    },
+    {
+        "code": "6083",
+        "name": "Hasliberg Hohfluh",
+        "": ""
+    },
+    {
+        "code": "6084",
+        "name": "Hasliberg Wasserwendi",
+        "": ""
+    },
+    {
+        "code": "6085",
+        "name": "Hasliberg Goldern",
+        "": ""
+    },
+    {
+        "code": "6086",
+        "name": "Hasliberg Reuti",
+        "": ""
+    },
+    {
+        "code": "6102",
+        "name": "Malters",
+        "": ""
+    },
+    {
+        "code": "6103",
+        "name": "Schwarzenberg LU",
+        "": ""
+    },
+    {
+        "code": "6105",
+        "name": "Schachen LU",
+        "": ""
+    },
+    {
+        "code": "6106",
+        "name": "Werthenstein",
+        "": ""
+    },
+    {
+        "code": "6110",
+        "name": "Fontannen b. Wolhusen",
+        "": ""
+    },
+    {
+        "code": "6110",
+        "name": "Wolhusen",
+        "": ""
+    },
+    {
+        "code": "6112",
+        "name": "Doppleschwand",
+        "": ""
+    },
+    {
+        "code": "6113",
+        "name": "Romoos",
+        "": ""
+    },
+    {
+        "code": "6114",
+        "name": "Steinhuserberg",
+        "": ""
+    },
+    {
+        "code": "6122",
+        "name": "Menznau",
+        "": ""
+    },
+    {
+        "code": "6123",
+        "name": "Geiss",
+        "": ""
+    },
+    {
+        "code": "6125",
+        "name": "Menzberg",
+        "": ""
+    },
+    {
+        "code": "6126",
+        "name": "Daiwil",
+        "": ""
+    },
+    {
+        "code": "6130",
+        "name": "Willisau",
+        "": ""
+    },
+    {
+        "code": "6132",
+        "name": "Rohrmatt",
+        "": ""
+    },
+    {
+        "code": "6133",
+        "name": "Hergiswil b. Willisau",
+        "": ""
+    },
+    {
+        "code": "6142",
+        "name": "Gettnau",
+        "": ""
+    },
+    {
+        "code": "6143",
+        "name": "Ohmstal",
+        "": ""
+    },
+    {
+        "code": "6144",
+        "name": "Zell LU",
+        "": ""
+    },
+    {
+        "code": "6145",
+        "name": "Fischbach LU",
+        "": ""
+    },
+    {
+        "code": "6146",
+        "name": "Grossdietwil",
+        "": ""
+    },
+    {
+        "code": "6147",
+        "name": "Altbüron",
+        "": ""
+    },
+    {
+        "code": "6152",
+        "name": "Hüswil",
+        "": ""
+    },
+    {
+        "code": "6153",
+        "name": "Ufhusen",
+        "": ""
+    },
+    {
+        "code": "6154",
+        "name": "Hofstatt",
+        "": ""
+    },
+    {
+        "code": "6156",
+        "name": "Luthern Bad",
+        "": ""
+    },
+    {
+        "code": "6156",
+        "name": "Luthern",
+        "": ""
+    },
+    {
+        "code": "6162",
+        "name": "Rengg",
+        "": ""
+    },
+    {
+        "code": "6162",
+        "name": "Finsterwald b. Entlebuch",
+        "": ""
+    },
+    {
+        "code": "6162",
+        "name": "Entlebuch",
+        "": ""
+    },
+    {
+        "code": "6163",
+        "name": "Ebnet",
+        "": ""
+    },
+    {
+        "code": "6166",
+        "name": "Hasle LU",
+        "": ""
+    },
+    {
+        "code": "6167",
+        "name": "Bramboden",
+        "": ""
+    },
+    {
+        "code": "6170",
+        "name": "Schüpfheim",
+        "": ""
+    },
+    {
+        "code": "6173",
+        "name": "Flühli LU",
+        "": ""
+    },
+    {
+        "code": "6174",
+        "name": "Sörenberg",
+        "": ""
+    },
+    {
+        "code": "6182",
+        "name": "Escholzmatt",
+        "": ""
+    },
+    {
+        "code": "6192",
+        "name": "Wiggen",
+        "": ""
+    },
+    {
+        "code": "6196",
+        "name": "Marbach LU",
+        "": ""
+    },
+    {
+        "code": "6197",
+        "name": "Schangnau",
+        "": ""
+    },
+    {
+        "code": "6203",
+        "name": "Sempach Station",
+        "": ""
+    },
+    {
+        "code": "6204",
+        "name": "Sempach",
+        "": ""
+    },
+    {
+        "code": "6205",
+        "name": "Eich",
+        "": ""
+    },
+    {
+        "code": "6206",
+        "name": "Neuenkirch",
+        "": ""
+    },
+    {
+        "code": "6207",
+        "name": "Nottwil",
+        "": ""
+    },
+    {
+        "code": "6208",
+        "name": "Oberkirch LU",
+        "": ""
+    },
+    {
+        "code": "6210",
+        "name": "Sursee",
+        "": ""
+    },
+    {
+        "code": "6211",
+        "name": "Buchs LU",
+        "": ""
+    },
+    {
+        "code": "6212",
+        "name": "Kaltbach",
+        "": ""
+    },
+    {
+        "code": "6212",
+        "name": "St. Erhard",
+        "": ""
+    },
+    {
+        "code": "6213",
+        "name": "Knutwil",
+        "": ""
+    },
+    {
+        "code": "6214",
+        "name": "Schenkon",
+        "": ""
+    },
+    {
+        "code": "6215",
+        "name": "Schwarzenbach Beromünster",
+        "": ""
+    },
+    {
+        "code": "6215",
+        "name": "Beromünster",
+        "": ""
+    },
+    {
+        "code": "6216",
+        "name": "Mauensee",
+        "": ""
+    },
+    {
+        "code": "6217",
+        "name": "Kottwil",
+        "": ""
+    },
+    {
+        "code": "6218",
+        "name": "Ettiswil",
+        "": ""
+    },
+    {
+        "code": "6221",
+        "name": "Rickenbach LU",
+        "": ""
+    },
+    {
+        "code": "6222",
+        "name": "Gunzwil",
+        "": ""
+    },
+    {
+        "code": "6231",
+        "name": "Schlierbach",
+        "": ""
+    },
+    {
+        "code": "6232",
+        "name": "Geuensee",
+        "": ""
+    },
+    {
+        "code": "6233",
+        "name": "Büron",
+        "": ""
+    },
+    {
+        "code": "6234",
+        "name": "Kulmerau",
+        "": ""
+    },
+    {
+        "code": "6234",
+        "name": "Triengen",
+        "": ""
+    },
+    {
+        "code": "6235",
+        "name": "Winikon",
+        "": ""
+    },
+    {
+        "code": "6236",
+        "name": "Wilihof",
+        "": ""
+    },
+    {
+        "code": "6242",
+        "name": "Wauwil",
+        "": ""
+    },
+    {
+        "code": "6243",
+        "name": "Egolzwil",
+        "": ""
+    },
+    {
+        "code": "6244",
+        "name": "Nebikon",
+        "": ""
+    },
+    {
+        "code": "6245",
+        "name": "Ebersecken",
+        "": ""
+    },
+    {
+        "code": "6246",
+        "name": "Altishofen",
+        "": ""
+    },
+    {
+        "code": "6247",
+        "name": "Schötz",
+        "": ""
+    },
+    {
+        "code": "6248",
+        "name": "Alberswil",
+        "": ""
+    },
+    {
+        "code": "6252",
+        "name": "Dagmersellen",
+        "": ""
+    },
+    {
+        "code": "6253",
+        "name": "Uffikon",
+        "": ""
+    },
+    {
+        "code": "6260",
+        "name": "Reidermoos",
+        "": ""
+    },
+    {
+        "code": "6260",
+        "name": "Hintermoos",
+        "": ""
+    },
+    {
+        "code": "6260",
+        "name": "Mehlsecken",
+        "": ""
+    },
+    {
+        "code": "6260",
+        "name": "Reiden",
+        "": ""
+    },
+    {
+        "code": "6262",
+        "name": "Langnau b. Reiden",
+        "": ""
+    },
+    {
+        "code": "6263",
+        "name": "Richenthal",
+        "": ""
+    },
+    {
+        "code": "6264",
+        "name": "Pfaffnau",
+        "": ""
+    },
+    {
+        "code": "6265",
+        "name": "Roggliswil",
+        "": ""
+    },
+    {
+        "code": "6274",
+        "name": "Eschenbach LU",
+        "": ""
+    },
+    {
+        "code": "6275",
+        "name": "Ballwil",
+        "": ""
+    },
+    {
+        "code": "6276",
+        "name": "Hohenrain",
+        "": ""
+    },
+    {
+        "code": "6277",
+        "name": "Kleinwangen",
+        "": ""
+    },
+    {
+        "code": "6277",
+        "name": "Lieli LU",
+        "": ""
+    },
+    {
+        "code": "6280",
+        "name": "Hochdorf",
+        "": ""
+    },
+    {
+        "code": "6280",
+        "name": "Urswil",
+        "": ""
+    },
+    {
+        "code": "6283",
+        "name": "Baldegg",
+        "": ""
+    },
+    {
+        "code": "6284",
+        "name": "Sulz LU",
+        "": ""
+    },
+    {
+        "code": "6284",
+        "name": "Gelfingen",
+        "": ""
+    },
+    {
+        "code": "6285",
+        "name": "Retschwil",
+        "": ""
+    },
+    {
+        "code": "6285",
+        "name": "Hitzkirch",
+        "": ""
+    },
+    {
+        "code": "6286",
+        "name": "Altwis",
+        "": ""
+    },
+    {
+        "code": "6287",
+        "name": "Aesch LU",
+        "": ""
+    },
+    {
+        "code": "6288",
+        "name": "Schongau",
+        "": ""
+    },
+    {
+        "code": "6289",
+        "name": "Müswangen",
+        "": ""
+    },
+    {
+        "code": "6289",
+        "name": "Hämikon",
+        "": ""
+    },
+    {
+        "code": "6294",
+        "name": "Ermensee",
+        "": ""
+    },
+    {
+        "code": "6295",
+        "name": "Mosen",
+        "": ""
+    },
+    {
+        "code": "6300",
+        "name": "Zug",
+        "": ""
+    },
+    {
+        "code": "6300",
+        "name": "Zugerberg",
+        "": ""
+    },
+    {
+        "code": "6312",
+        "name": "Steinhausen",
+        "": ""
+    },
+    {
+        "code": "6313",
+        "name": "Edlibach",
+        "": ""
+    },
+    {
+        "code": "6313",
+        "name": "Finstersee",
+        "": ""
+    },
+    {
+        "code": "6313",
+        "name": "Menzingen",
+        "": ""
+    },
+    {
+        "code": "6314",
+        "name": "Neuägeri",
+        "": ""
+    },
+    {
+        "code": "6314",
+        "name": "Unterägeri",
+        "": ""
+    },
+    {
+        "code": "6315",
+        "name": "Morgarten",
+        "": ""
+    },
+    {
+        "code": "6315",
+        "name": "Alosen",
+        "": ""
+    },
+    {
+        "code": "6315",
+        "name": "Oberägeri",
+        "": ""
+    },
+    {
+        "code": "6317",
+        "name": "Oberwil b. Zug",
+        "": ""
+    },
+    {
+        "code": "6318",
+        "name": "Walchwil",
+        "": ""
+    },
+    {
+        "code": "6319",
+        "name": "Allenwinden",
+        "": ""
+    },
+    {
+        "code": "6330",
+        "name": "Cham",
+        "": ""
+    },
+    {
+        "code": "6331",
+        "name": "Hünenberg",
+        "": ""
+    },
+    {
+        "code": "6332",
+        "name": "Hagendorn",
+        "": ""
+    },
+    {
+        "code": "6333",
+        "name": "Hünenberg See",
+        "": ""
+    },
+    {
+        "code": "6340",
+        "name": "Baar",
+        "": ""
+    },
+    {
+        "code": "6340",
+        "name": "Sihlbrugg",
+        "": ""
+    },
+    {
+        "code": "6343",
+        "name": "Buonas",
+        "": ""
+    },
+    {
+        "code": "6343",
+        "name": "Risch",
+        "": ""
+    },
+    {
+        "code": "6343",
+        "name": "Holzhäusern ZG",
+        "": ""
+    },
+    {
+        "code": "6343",
+        "name": "Rotkreuz",
+        "": ""
+    },
+    {
+        "code": "6344",
+        "name": "Meierskappel",
+        "": ""
+    },
+    {
+        "code": "6345",
+        "name": "Neuheim",
+        "": ""
+    },
+    {
+        "code": "6353",
+        "name": "Weggis",
+        "": ""
+    },
+    {
+        "code": "6354",
+        "name": "Vitznau",
+        "": ""
+    },
+    {
+        "code": "6356",
+        "name": "Rigi Kaltbad",
+        "": ""
+    },
+    {
+        "code": "6362",
+        "name": "Stansstad",
+        "": ""
+    },
+    {
+        "code": "6363",
+        "name": "Obbürgen",
+        "": ""
+    },
+    {
+        "code": "6363",
+        "name": "Bürgenstock",
+        "": ""
+    },
+    {
+        "code": "6363",
+        "name": "Fürigen",
+        "": ""
+    },
+    {
+        "code": "6365",
+        "name": "Kehrsiten",
+        "": ""
+    },
+    {
+        "code": "6370",
         "name": "Stans",
-        "code": "6135"
+        "": ""
     },
     {
-        "name": "Steinberg am Rofan",
-        "code": "6215"
+        "code": "6370",
+        "name": "Oberdorf NW",
+        "": ""
     },
     {
-        "name": "Strass im Zillertal",
-        "code": "6261"
+        "code": "6372",
+        "name": "Ennetmoos",
+        "": ""
     },
     {
-        "name": "Stumm",
-        "code": "6275"
+        "code": "6373",
+        "name": "Ennetbürgen",
+        "": ""
     },
     {
-        "name": "Stummerberg",
-        "code": "6275"
+        "code": "6374",
+        "name": "Buochs",
+        "": ""
     },
     {
-        "name": "Terfens",
-        "code": "6123"
+        "code": "6375",
+        "name": "Beckenried",
+        "": ""
     },
     {
-        "name": "Tux",
-        "code": "6293"
+        "code": "6376",
+        "name": "Emmetten",
+        "": ""
     },
     {
-        "name": "Uderns",
-        "code": "6271"
+        "code": "6377",
+        "name": "Seelisberg",
+        "": ""
     },
     {
-        "name": "Vomp",
-        "code": "6134"
+        "code": "6382",
+        "name": "Büren NW",
+        "": ""
     },
     {
-        "name": "Weer",
-        "code": "6116"
+        "code": "6383",
+        "name": "Niederrickenbach",
+        "": ""
     },
     {
-        "name": "Weerberg",
-        "code": "6133"
+        "code": "6383",
+        "name": "Wiesenberg",
+        "": ""
     },
     {
-        "name": "Wiesing",
-        "code": "6210"
+        "code": "6383",
+        "name": "Wirzweli",
+        "": ""
     },
     {
-        "name": "Zell am Ziller",
-        "code": "6280"
+        "code": "6383",
+        "name": "Dallenwil",
+        "": ""
     },
     {
-        "name": "Zellberg",
-        "code": "6277"
+        "code": "6386",
+        "name": "Wolfenschiessen",
+        "": ""
     },
     {
-        "name": "Bartholomäberg",
-        "code": "6781"
+        "code": "6387",
+        "name": "Oberrickenbach",
+        "": ""
     },
     {
-        "name": "Blons",
-        "code": "6723"
+        "code": "6388",
+        "name": "Grafenort",
+        "": ""
     },
     {
-        "name": "Bludenz",
-        "code": "6700"
+        "code": "6390",
+        "name": "Engelberg",
+        "": ""
     },
     {
-        "name": "Bludesch",
-        "code": "6719"
+        "code": "6402",
+        "name": "Merlischachen",
+        "": ""
     },
     {
-        "name": "Brand",
-        "code": "6708"
+        "code": "6403",
+        "name": "Küssnacht am Rigi",
+        "": ""
     },
     {
-        "name": "Bürs",
-        "code": "6706"
+        "code": "6404",
+        "name": "Greppen",
+        "": ""
     },
     {
-        "name": "Bürserberg",
-        "code": "6707"
+        "code": "6405",
+        "name": "Immensee",
+        "": ""
     },
     {
-        "name": "Dalaas",
-        "code": "6752"
+        "code": "6410",
+        "name": "Rigi Klösterli",
+        "": ""
     },
     {
-        "name": "Fontanella",
-        "code": "6733"
+        "code": "6410",
+        "name": "Rigi Staffel",
+        "": ""
     },
     {
-        "name": "Gaschurn",
-        "code": "6793"
+        "code": "6410",
+        "name": "Rigi Kulm",
+        "": ""
     },
     {
-        "name": "Innerbraz",
-        "code": "6751"
+        "code": "6410",
+        "name": "Rigi Scheidegg",
+        "": ""
     },
     {
-        "name": "Klösterle",
-        "code": "6754"
+        "code": "6410",
+        "name": "Goldau",
+        "": ""
     },
     {
-        "name": "Lech",
-        "code": "6764"
+        "code": "6414",
+        "name": "Oberarth",
+        "": ""
     },
     {
-        "name": "Lorüns",
-        "code": "6700"
+        "code": "6415",
+        "name": "Arth",
+        "": ""
     },
     {
-        "name": "Ludesch",
-        "code": "6713"
+        "code": "6416",
+        "name": "Steinerberg",
+        "": ""
     },
     {
-        "name": "Nenzing",
-        "code": "6710"
+        "code": "6417",
+        "name": "Sattel",
+        "": ""
     },
     {
-        "name": "Nüziders",
-        "code": "6714"
+        "code": "6418",
+        "name": "Rothenthurm",
+        "": ""
     },
     {
-        "name": "Raggal",
-        "code": "6741"
+        "code": "6422",
+        "name": "Steinen",
+        "": ""
     },
     {
-        "name": "St. Anton im Montafon",
-        "code": "6771"
+        "code": "6423",
+        "name": "Seewen SZ",
+        "": ""
     },
     {
-        "name": "St. Gallenkirch",
-        "code": "6791"
+        "code": "6424",
+        "name": "Lauerz",
+        "": ""
     },
     {
-        "name": "St. Gerold",
-        "code": "6722"
+        "code": "6430",
+        "name": "Schwyz",
+        "": ""
     },
     {
-        "name": "Schruns",
-        "code": "6780"
+        "code": "6432",
+        "name": "Rickenbach b. Schwyz",
+        "": ""
     },
     {
-        "name": "Silbertal",
-        "code": "6782"
+        "code": "6433",
+        "name": "Stoos SZ",
+        "": ""
     },
     {
-        "name": "Sonntag",
-        "code": "6731"
+        "code": "6434",
+        "name": "Illgau",
+        "": ""
     },
     {
-        "name": "Stallehr",
-        "code": "6700"
+        "code": "6436",
+        "name": "Ried (Muotathal)",
+        "": ""
     },
     {
-        "name": "Thüringen",
-        "code": "6712"
+        "code": "6436",
+        "name": "Bisisthal",
+        "": ""
     },
     {
-        "name": "Thüringerberg",
-        "code": "6721"
+        "code": "6436",
+        "name": "Muotathal",
+        "": ""
     },
     {
-        "name": "Tschagguns",
-        "code": "6774"
+        "code": "6438",
+        "name": "Ibach",
+        "": ""
     },
     {
-        "name": "Vandans",
-        "code": "6773"
+        "code": "6440",
+        "name": "Brunnen",
+        "": ""
     },
     {
-        "name": "Alberschwende",
-        "code": "6861"
+        "code": "6441",
+        "name": "Rütli",
+        "": ""
     },
     {
-        "name": "Andelsbuch",
-        "code": "6866"
+        "code": "6442",
+        "name": "Gersau",
+        "": ""
     },
     {
-        "name": "Au",
-        "code": "6883"
+        "code": "6443",
+        "name": "Morschach",
+        "": ""
     },
     {
-        "name": "Bezau",
-        "code": "6870"
+        "code": "6452",
+        "name": "Riemenstalden",
+        "": ""
     },
     {
-        "name": "Bildstein",
-        "code": "6858"
+        "code": "6452",
+        "name": "Sisikon",
+        "": ""
     },
     {
-        "name": "Bizau",
-        "code": "6874"
+        "code": "6454",
+        "name": "Flüelen",
+        "": ""
     },
     {
-        "name": "Bregenz",
-        "code": "6900"
+        "code": "6460",
+        "name": "Altdorf UR",
+        "": ""
     },
     {
-        "name": "Buch",
-        "code": "6960"
+        "code": "6461",
+        "name": "Isenthal",
+        "": ""
     },
     {
-        "name": "Damüls",
-        "code": "6884"
+        "code": "6462",
+        "name": "Seedorf UR",
+        "": ""
     },
     {
-        "name": "Doren",
-        "code": "6933"
+        "code": "6463",
+        "name": "Bürglen UR",
+        "": ""
     },
     {
-        "name": "Egg",
-        "code": "6863"
+        "code": "6464",
+        "name": "Spiringen",
+        "": ""
     },
     {
-        "name": "Eichenberg",
-        "code": "6911"
+        "code": "6465",
+        "name": "Unterschächen",
+        "": ""
     },
     {
-        "name": "Fußach",
-        "code": "6972"
+        "code": "6466",
+        "name": "Bauen",
+        "": ""
     },
     {
-        "name": "Gaißau",
-        "code": "6974"
+        "code": "6467",
+        "name": "Schattdorf",
+        "": ""
     },
     {
-        "name": "Hard",
-        "code": "6971"
+        "code": "6468",
+        "name": "Attinghausen",
+        "": ""
     },
     {
-        "name": "Hittisau",
-        "code": "6952"
+        "code": "6469",
+        "name": "Haldi b. Schattdorf",
+        "": ""
     },
     {
-        "name": "Höchst",
-        "code": "6973"
+        "code": "6472",
+        "name": "Erstfeld",
+        "": ""
     },
     {
-        "name": "Hörbranz",
-        "code": "6912"
+        "code": "6473",
+        "name": "Silenen",
+        "": ""
     },
     {
-        "name": "Hohenweiler",
-        "code": "6914"
+        "code": "6474",
+        "name": "Amsteg",
+        "": ""
     },
     {
-        "name": "Kennelbach",
-        "code": "6921"
+        "code": "6475",
+        "name": "Bristen",
+        "": ""
     },
     {
-        "name": "Krumbach",
-        "code": "6942"
+        "code": "6476",
+        "name": "Intschi",
+        "": ""
     },
     {
-        "name": "Langen bei Bregenz",
-        "code": "6932"
+        "code": "6482",
+        "name": "Gurtnellen",
+        "": ""
     },
     {
-        "name": "Langenegg",
-        "code": "6941"
+        "code": "6484",
+        "name": "Wassen UR",
+        "": ""
     },
     {
-        "name": "Lauterach",
-        "code": "6923"
+        "code": "6485",
+        "name": "Meien",
+        "": ""
     },
     {
-        "name": "Lingenau",
-        "code": "6951"
+        "code": "6487",
+        "name": "Göschenen",
+        "": ""
     },
     {
-        "name": "Lochau",
-        "code": "6911"
+        "code": "6490",
+        "name": "Andermatt",
+        "": ""
     },
     {
-        "name": "Mellau",
-        "code": "6881"
+        "code": "6491",
+        "name": "Realp",
+        "": ""
     },
     {
-        "name": "Mittelberg",
-        "code": "6991"
+        "code": "6493",
+        "name": "Hospental",
+        "": ""
     },
     {
-        "name": "Möggers",
-        "code": "6900"
+        "code": "6500",
+        "name": "Bellinzona",
+        "": ""
     },
     {
-        "name": "Reuthe",
-        "code": "6870"
+        "code": "6503",
+        "name": "Bellinzona",
+        "": ""
     },
     {
-        "name": "Riefensberg",
-        "code": "6943"
+        "code": "6512",
+        "name": "Giubiasco",
+        "": ""
     },
     {
-        "name": "Schnepfau",
-        "code": "6882"
+        "code": "6513",
+        "name": "Monte Carasso",
+        "": ""
     },
     {
-        "name": "Schoppernau",
-        "code": "6886"
+        "code": "6514",
+        "name": "Sementina",
+        "": ""
     },
     {
-        "name": "Schröcken",
-        "code": "6888"
+        "code": "6515",
+        "name": "Gudo",
+        "": ""
     },
     {
-        "name": "Schwarzach",
-        "code": "6858"
+        "code": "6516",
+        "name": "Cugnasco",
+        "": ""
     },
     {
-        "name": "Schwarzenberg",
-        "code": "6867"
+        "code": "6517",
+        "name": "Arbedo",
+        "": ""
     },
     {
-        "name": "Sibratsgfäll",
-        "code": "6952"
+        "code": "6518",
+        "name": "Gorduno",
+        "": ""
     },
     {
-        "name": "Sulzberg",
-        "code": "6934"
+        "code": "6523",
+        "name": "Preonzo",
+        "": ""
     },
     {
+        "code": "6524",
+        "name": "Moleno",
+        "": ""
+    },
+    {
+        "code": "6525",
+        "name": "Gnosca",
+        "": ""
+    },
+    {
+        "code": "6526",
+        "name": "Prosito",
+        "": ""
+    },
+    {
+        "code": "6527",
+        "name": "Lodrino",
+        "": ""
+    },
+    {
+        "code": "6528",
+        "name": "Camorino",
+        "": ""
+    },
+    {
+        "code": "6532",
+        "name": "Castione",
+        "": ""
+    },
+    {
+        "code": "6533",
+        "name": "Lumino",
+        "": ""
+    },
+    {
+        "code": "6534",
+        "name": "S. Vittore",
+        "": ""
+    },
+    {
+        "code": "6535",
+        "name": "Roveredo GR",
+        "": ""
+    },
+    {
+        "code": "6537",
+        "name": "Grono",
+        "": ""
+    },
+    {
+        "code": "6538",
+        "name": "Verdabbio",
+        "": ""
+    },
+    {
+        "code": "6540",
+        "name": "Castaneda",
+        "": ""
+    },
+    {
+        "code": "6541",
+        "name": "Sta. Maria in Calanca",
+        "": ""
+    },
+    {
+        "code": "6542",
+        "name": "Buseno",
+        "": ""
+    },
+    {
+        "code": "6543",
+        "name": "Arvigo",
+        "": ""
+    },
+    {
+        "code": "6544",
+        "name": "Braggio",
+        "": ""
+    },
+    {
+        "code": "6545",
+        "name": "Selma",
+        "": ""
+    },
+    {
+        "code": "6546",
+        "name": "Cauco",
+        "": ""
+    },
+    {
+        "code": "6547",
+        "name": "Augio",
+        "": ""
+    },
+    {
+        "code": "6548",
+        "name": "Rossa",
+        "": ""
+    },
+    {
+        "code": "6549",
+        "name": "Laura",
+        "": ""
+    },
+    {
+        "code": "6556",
+        "name": "Leggia",
+        "": ""
+    },
+    {
+        "code": "6557",
+        "name": "Cama",
+        "": ""
+    },
+    {
+        "code": "6558",
+        "name": "Lostallo",
+        "": ""
+    },
+    {
+        "code": "6562",
+        "name": "Soazza",
+        "": ""
+    },
+    {
+        "code": "6563",
+        "name": "Mesocco",
+        "": ""
+    },
+    {
+        "code": "6565",
+        "name": "S. Bernardino",
+        "": ""
+    },
+    {
+        "code": "6571",
+        "name": "Indemini",
+        "": ""
+    },
+    {
+        "code": "6572",
+        "name": "Quartino",
+        "": ""
+    },
+    {
+        "code": "6573",
+        "name": "Magadino",
+        "": ""
+    },
+    {
+        "code": "6574",
+        "name": "Vira (Gambarogno)",
+        "": ""
+    },
+    {
+        "code": "6575",
+        "name": "Vairano",
+        "": ""
+    },
+    {
+        "code": "6575",
+        "name": "S. Nazzaro",
+        "": ""
+    },
+    {
+        "code": "6576",
+        "name": "Gerra (Gambarogno)",
+        "": ""
+    },
+    {
+        "code": "6577",
+        "name": "Ranzo",
+        "": ""
+    },
+    {
+        "code": "6578",
+        "name": "Caviano",
+        "": ""
+    },
+    {
+        "code": "6579",
+        "name": "Piazzogna",
+        "": ""
+    },
+    {
+        "code": "6582",
+        "name": "Pianezzo",
+        "": ""
+    },
+    {
+        "code": "6583",
+        "name": "S. Antonio (Val Morobbia)",
+        "": ""
+    },
+    {
+        "code": "6584",
+        "name": "Carena",
+        "": ""
+    },
+    {
+        "code": "6592",
+        "name": "S. Antonino",
+        "": ""
+    },
+    {
+        "code": "6593",
+        "name": "Cadenazzo",
+        "": ""
+    },
+    {
+        "code": "6594",
+        "name": "Contone",
+        "": ""
+    },
+    {
+        "code": "6595",
+        "name": "Riazzino",
+        "": ""
+    },
+    {
+        "code": "6596",
+        "name": "Gordola",
+        "": ""
+    },
+    {
+        "code": "6597",
+        "name": "Agarone",
+        "": ""
+    },
+    {
+        "code": "6598",
+        "name": "Tenero",
+        "": ""
+    },
+    {
+        "code": "6599",
+        "name": "Robasacco",
+        "": ""
+    },
+    {
+        "code": "6600",
+        "name": "Locarno",
+        "": ""
+    },
+    {
+        "code": "6600",
+        "name": "Muralto",
+        "": ""
+    },
+    {
+        "code": "6600",
+        "name": "Solduno",
+        "": ""
+    },
+    {
+        "code": "6605",
+        "name": "Monte Brè sopra Locarno",
+        "": ""
+    },
+    {
+        "code": "6605",
+        "name": "Locarno",
+        "": ""
+    },
+    {
+        "code": "6611",
+        "name": "Mosogno",
+        "": ""
+    },
+    {
+        "code": "6611",
+        "name": "Gresso",
+        "": ""
+    },
+    {
+        "code": "6611",
+        "name": "Crana",
+        "": ""
+    },
+    {
+        "code": "6612",
+        "name": "Ascona",
+        "": ""
+    },
+    {
+        "code": "6613",
+        "name": "Porto Ronco",
+        "": ""
+    },
+    {
+        "code": "6614",
+        "name": "Isole di Brissago",
+        "": ""
+    },
+    {
+        "code": "6614",
+        "name": "Brissago",
+        "": ""
+    },
+    {
+        "code": "6616",
+        "name": "Losone",
+        "": ""
+    },
+    {
+        "code": "6618",
+        "name": "Arcegno",
+        "": ""
+    },
+    {
+        "code": "6622",
+        "name": "Ronco sopra Ascona",
+        "": ""
+    },
+    {
+        "code": "6631",
+        "name": "Corippo",
+        "": ""
+    },
+    {
+        "code": "6632",
+        "name": "Vogorno",
+        "": ""
+    },
+    {
+        "code": "6633",
+        "name": "Lavertezzo",
+        "": ""
+    },
+    {
+        "code": "6634",
+        "name": "Brione (Verzasca)",
+        "": ""
+    },
+    {
+        "code": "6635",
+        "name": "Gerra (Verzasca)",
+        "": ""
+    },
+    {
+        "code": "6636",
+        "name": "Frasco",
+        "": ""
+    },
+    {
+        "code": "6637",
+        "name": "Sonogno",
+        "": ""
+    },
+    {
+        "code": "6644",
+        "name": "Orselina",
+        "": ""
+    },
+    {
+        "code": "6645",
+        "name": "Brione sopra Minusio",
+        "": ""
+    },
+    {
+        "code": "6646",
+        "name": "Contra",
+        "": ""
+    },
+    {
+        "code": "6647",
+        "name": "Mergoscia",
+        "": ""
+    },
+    {
+        "code": "6648",
+        "name": "Minusio",
+        "": ""
+    },
+    {
+        "code": "6652",
+        "name": "Tegna",
+        "": ""
+    },
+    {
+        "code": "6653",
+        "name": "Verscio",
+        "": ""
+    },
+    {
+        "code": "6654",
+        "name": "Cavigliano",
+        "": ""
+    },
+    {
+        "code": "6655",
+        "name": "Verdasio",
+        "": ""
+    },
+    {
+        "code": "6655",
+        "name": "Rasa",
+        "": ""
+    },
+    {
+        "code": "6655",
+        "name": "Intragna",
+        "": ""
+    },
+    {
+        "code": "6656",
+        "name": "Golino",
+        "": ""
+    },
+    {
+        "code": "6657",
+        "name": "Palagnedra",
+        "": ""
+    },
+    {
+        "code": "6658",
+        "name": "Borgnone",
+        "": ""
+    },
+    {
+        "code": "6659",
+        "name": "Moneto",
+        "": ""
+    },
+    {
+        "code": "6659",
+        "name": "Camedo",
+        "": ""
+    },
+    {
+        "code": "6661",
+        "name": "Auressio",
+        "": ""
+    },
+    {
+        "code": "6661",
+        "name": "Berzona",
+        "": ""
+    },
+    {
+        "code": "6661",
+        "name": "Loco",
+        "": ""
+    },
+    {
+        "code": "6662",
+        "name": "Russo",
+        "": ""
+    },
+    {
+        "code": "6663",
+        "name": "Comologno",
+        "": ""
+    },
+    {
+        "code": "6663",
+        "name": "Spruga",
+        "": ""
+    },
+    {
+        "code": "6664",
+        "name": "Vergeletto",
+        "": ""
+    },
+    {
+        "code": "6670",
+        "name": "Avegno",
+        "": ""
+    },
+    {
+        "code": "6672",
+        "name": "Gordevio",
+        "": ""
+    },
+    {
+        "code": "6673",
+        "name": "Maggia",
+        "": ""
+    },
+    {
+        "code": "6674",
+        "name": "Riveo",
+        "": ""
+    },
+    {
+        "code": "6674",
+        "name": "Someo",
+        "": ""
+    },
+    {
+        "code": "6675",
+        "name": "Cevio",
+        "": ""
+    },
+    {
+        "code": "6676",
+        "name": "Bignasco",
+        "": ""
+    },
+    {
+        "code": "6677",
+        "name": "Moghegno",
+        "": ""
+    },
+    {
+        "code": "6677",
+        "name": "Aurigeno",
+        "": ""
+    },
+    {
+        "code": "6678",
+        "name": "Coglio",
+        "": ""
+    },
+    {
+        "code": "6678",
+        "name": "Lodano",
+        "": ""
+    },
+    {
+        "code": "6678",
+        "name": "Giumaglio",
+        "": ""
+    },
+    {
+        "code": "6682",
+        "name": "Linescio",
+        "": ""
+    },
+    {
+        "code": "6683",
+        "name": "Cerentino",
+        "": ""
+    },
+    {
+        "code": "6683",
+        "name": "Niva (Vallemaggia)",
+        "": ""
+    },
+    {
+        "code": "6684",
+        "name": "Campo (Vallemaggia)",
+        "": ""
+    },
+    {
+        "code": "6684",
+        "name": "Cimalmotto",
+        "": ""
+    },
+    {
+        "code": "6685",
+        "name": "Bosco/Gurin",
+        "": ""
+    },
+    {
+        "code": "6690",
+        "name": "Cavergno",
+        "": ""
+    },
+    {
+        "code": "6690",
+        "name": "S. Carlo (Val Bavona)",
+        "": ""
+    },
+    {
+        "code": "6692",
+        "name": "Brontallo",
+        "": ""
+    },
+    {
+        "code": "6692",
+        "name": "Menzonio",
+        "": ""
+    },
+    {
+        "code": "6693",
+        "name": "Broglio",
+        "": ""
+    },
+    {
+        "code": "6694",
+        "name": "Prato-Sornico",
+        "": ""
+    },
+    {
+        "code": "6695",
+        "name": "Peccia",
+        "": ""
+    },
+    {
+        "code": "6695",
+        "name": "Piano di Peccia",
+        "": ""
+    },
+    {
+        "code": "6696",
+        "name": "Fusio",
+        "": ""
+    },
+    {
+        "code": "6702",
+        "name": "Claro",
+        "": ""
+    },
+    {
+        "code": "6703",
+        "name": "Osogna",
+        "": ""
+    },
+    {
+        "code": "6705",
+        "name": "Cresciano",
+        "": ""
+    },
+    {
+        "code": "6707",
+        "name": "Iragna",
+        "": ""
+    },
+    {
+        "code": "6710",
+        "name": "Biasca",
+        "": ""
+    },
+    {
+        "code": "6710",
+        "name": "Biasca Stazione",
+        "": ""
+    },
+    {
+        "code": "6713",
+        "name": "Malvaglia",
+        "": ""
+    },
+    {
+        "code": "6714",
+        "name": "Semione",
+        "": ""
+    },
+    {
+        "code": "6715",
+        "name": "Dongio",
+        "": ""
+    },
+    {
+        "code": "6716",
+        "name": "Leontica",
+        "": ""
+    },
+    {
+        "code": "6716",
+        "name": "Lottigna",
+        "": ""
+    },
+    {
+        "code": "6716",
+        "name": "Acquarossa",
+        "": ""
+    },
+    {
+        "code": "6717",
+        "name": "Dangio-Torre",
+        "": ""
+    },
+    {
+        "code": "6717",
+        "name": "Torre",
+        "": ""
+    },
+    {
+        "code": "6718",
+        "name": "Camperio",
+        "": ""
+    },
+    {
+        "code": "6718",
+        "name": "Olivone",
+        "": ""
+    },
+    {
+        "code": "6719",
+        "name": "Aquila",
+        "": ""
+    },
+    {
+        "code": "6720",
+        "name": "Campo (Blenio)",
+        "": ""
+    },
+    {
+        "code": "6720",
+        "name": "Ghirone",
+        "": ""
+    },
+    {
+        "code": "6721",
+        "name": "Ludiano",
+        "": ""
+    },
+    {
+        "code": "6721",
+        "name": "Motto (Blenio)",
+        "": ""
+    },
+    {
+        "code": "6722",
+        "name": "Corzoneso",
+        "": ""
+    },
+    {
+        "code": "6723",
+        "name": "Prugiasco",
+        "": ""
+    },
+    {
+        "code": "6723",
+        "name": "Castro",
+        "": ""
+    },
+    {
+        "code": "6723",
+        "name": "Marolta",
+        "": ""
+    },
+    {
+        "code": "6724",
+        "name": "Ponto Valentino",
+        "": ""
+    },
+    {
+        "code": "6724",
+        "name": "Largario",
+        "": ""
+    },
+    {
+        "code": "6742",
+        "name": "Pollegio",
+        "": ""
+    },
+    {
+        "code": "6743",
+        "name": "Bodio TI",
+        "": ""
+    },
+    {
+        "code": "6744",
+        "name": "Personico",
+        "": ""
+    },
+    {
+        "code": "6745",
+        "name": "Giornico",
+        "": ""
+    },
+    {
+        "code": "6746",
+        "name": "Calonico",
+        "": ""
+    },
+    {
+        "code": "6746",
+        "name": "Nivo",
+        "": ""
+    },
+    {
+        "code": "6746",
+        "name": "Lavorgo",
+        "": ""
+    },
+    {
+        "code": "6747",
+        "name": "Chironico",
+        "": ""
+    },
+    {
+        "code": "6748",
+        "name": "Anzonico",
+        "": ""
+    },
+    {
+        "code": "6749",
+        "name": "Sobrio",
+        "": ""
+    },
+    {
+        "code": "6749",
+        "name": "Cavagnago",
+        "": ""
+    },
+    {
+        "code": "6760",
+        "name": "Molare",
+        "": ""
+    },
+    {
+        "code": "6760",
+        "name": "Calpiogna",
+        "": ""
+    },
+    {
+        "code": "6760",
+        "name": "Carì",
+        "": ""
+    },
+    {
+        "code": "6760",
+        "name": "Rossura",
+        "": ""
+    },
+    {
+        "code": "6760",
+        "name": "Faido",
+        "": ""
+    },
+    {
+        "code": "6760",
+        "name": "Campello",
+        "": ""
+    },
+    {
+        "code": "6763",
+        "name": "Mairengo",
+        "": ""
+    },
+    {
+        "code": "6763",
+        "name": "Osco",
+        "": ""
+    },
+    {
+        "code": "6764",
+        "name": "Chiggiogna",
+        "": ""
+    },
+    {
+        "code": "6772",
+        "name": "Rodi-Fiesso",
+        "": ""
+    },
+    {
+        "code": "6773",
+        "name": "Prato (Leventina)",
+        "": ""
+    },
+    {
+        "code": "6774",
+        "name": "Dalpe",
+        "": ""
+    },
+    {
+        "code": "6775",
+        "name": "Ambrì",
+        "": ""
+    },
+    {
+        "code": "6776",
+        "name": "Piotta",
+        "": ""
+    },
+    {
+        "code": "6777",
+        "name": "Quinto",
+        "": ""
+    },
+    {
+        "code": "6777",
+        "name": "Varenzo",
+        "": ""
+    },
+    {
+        "code": "6780",
+        "name": "Madrano",
+        "": ""
+    },
+    {
+        "code": "6780",
+        "name": "Airolo",
+        "": ""
+    },
+    {
+        "code": "6781",
+        "name": "Villa Bedretto",
+        "": ""
+    },
+    {
+        "code": "6781",
+        "name": "Bedretto",
+        "": ""
+    },
+    {
+        "code": "6802",
+        "name": "Rivera",
+        "": ""
+    },
+    {
+        "code": "6803",
+        "name": "Camignolo",
+        "": ""
+    },
+    {
+        "code": "6804",
+        "name": "Bironico",
+        "": ""
+    },
+    {
+        "code": "6805",
+        "name": "Mezzovico",
+        "": ""
+    },
+    {
+        "code": "6806",
+        "name": "Sigirino",
+        "": ""
+    },
+    {
+        "code": "6807",
+        "name": "Taverne",
+        "": ""
+    },
+    {
+        "code": "6808",
+        "name": "Torricella",
+        "": ""
+    },
+    {
+        "code": "6809",
+        "name": "Medeglia",
+        "": ""
+    },
+    {
+        "code": "6810",
+        "name": "Isone",
+        "": ""
+    },
+    {
+        "code": "6814",
+        "name": "Lamone",
+        "": ""
+    },
+    {
+        "code": "6814",
+        "name": "Cadempino",
+        "": ""
+    },
+    {
+        "code": "6815",
+        "name": "Melide",
+        "": ""
+    },
+    {
+        "code": "6816",
+        "name": "Bissone",
+        "": ""
+    },
+    {
+        "code": "6817",
+        "name": "Maroggia",
+        "": ""
+    },
+    {
+        "code": "6818",
+        "name": "Melano",
+        "": ""
+    },
+    {
+        "code": "6821",
+        "name": "Rovio",
+        "": ""
+    },
+    {
+        "code": "6822",
+        "name": "Arogno",
+        "": ""
+    },
+    {
+        "code": "6823",
+        "name": "Pugerna",
+        "": ""
+    },
+    {
+        "code": "6825",
+        "name": "Capolago",
+        "": ""
+    },
+    {
+        "code": "6826",
+        "name": "Riva San Vitale",
+        "": ""
+    },
+    {
+        "code": "6827",
+        "name": "Brusino Arsizio",
+        "": ""
+    },
+    {
+        "code": "6828",
+        "name": "Balerna",
+        "": ""
+    },
+    {
+        "code": "6830",
+        "name": "Chiasso",
+        "": ""
+    },
+    {
+        "code": "6832",
+        "name": "Seseglio",
+        "": ""
+    },
+    {
+        "code": "6832",
+        "name": "Pedrinate",
+        "": ""
+    },
+    {
+        "code": "6833",
+        "name": "Vacallo",
+        "": ""
+    },
+    {
+        "code": "6834",
+        "name": "Morbio Inferiore",
+        "": ""
+    },
+    {
+        "code": "6835",
+        "name": "Morbio Superiore",
+        "": ""
+    },
+    {
+        "code": "6837",
+        "name": "Bruzella",
+        "": ""
+    },
+    {
+        "code": "6837",
+        "name": "Caneggio",
+        "": ""
+    },
+    {
+        "code": "6838",
+        "name": "Cabbio",
+        "": ""
+    },
+    {
+        "code": "6838",
+        "name": "Scudellate",
+        "": ""
+    },
+    {
+        "code": "6838",
+        "name": "Muggio",
+        "": ""
+    },
+    {
+        "code": "6839",
+        "name": "Sagno",
+        "": ""
+    },
+    {
+        "code": "6850",
+        "name": "Mendrisio",
+        "": ""
+    },
+    {
+        "code": "6852",
+        "name": "Genestrerio",
+        "": ""
+    },
+    {
+        "code": "6853",
+        "name": "Ligornetto",
+        "": ""
+    },
+    {
+        "code": "6854",
+        "name": "S. Pietro",
+        "": ""
+    },
+    {
+        "code": "6855",
+        "name": "Stabio",
+        "": ""
+    },
+    {
+        "code": "6862",
+        "name": "Rancate",
+        "": ""
+    },
+    {
+        "code": "6863",
+        "name": "Besazio",
+        "": ""
+    },
+    {
+        "code": "6864",
+        "name": "Arzo",
+        "": ""
+    },
+    {
+        "code": "6865",
+        "name": "Tremona",
+        "": ""
+    },
+    {
+        "code": "6866",
+        "name": "Meride",
+        "": ""
+    },
+    {
+        "code": "6867",
+        "name": "Serpiano",
+        "": ""
+    },
+    {
+        "code": "6872",
+        "name": "Salorino",
+        "": ""
+    },
+    {
+        "code": "6872",
+        "name": "Somazzo",
+        "": ""
+    },
+    {
+        "code": "6873",
+        "name": "Corteglia",
+        "": ""
+    },
+    {
+        "code": "6874",
+        "name": "Castel San Pietro",
+        "": ""
+    },
+    {
+        "code": "6875",
+        "name": "Casima",
+        "": ""
+    },
+    {
+        "code": "6875",
+        "name": "Monte",
+        "": ""
+    },
+    {
+        "code": "6877",
+        "name": "Coldrerio",
+        "": ""
+    },
+    {
+        "code": "6883",
+        "name": "Novazzano",
+        "": ""
+    },
+    {
+        "code": "6900",
+        "name": "Lugano",
+        "": ""
+    },
+    {
+        "code": "6900",
+        "name": "Massagno",
+        "": ""
+    },
+    {
+        "code": "6900",
+        "name": "Paradiso",
+        "": ""
+    },
+    {
+        "code": "6911",
+        "name": "Campione d Italia",
+        "": ""
+    },
+    {
+        "code": "6912",
+        "name": "Pazzallo",
+        "": ""
+    },
+    {
+        "code": "6913",
+        "name": "Carabbia",
+        "": ""
+    },
+    {
+        "code": "6914",
+        "name": "Carona",
+        "": ""
+    },
+    {
+        "code": "6915",
+        "name": "Pambio-Noranco",
+        "": ""
+    },
+    {
+        "code": "6916",
+        "name": "Grancia",
+        "": ""
+    },
+    {
+        "code": "6917",
+        "name": "Barbengo",
+        "": ""
+    },
+    {
+        "code": "6918",
+        "name": "Figino",
+        "": ""
+    },
+    {
+        "code": "6919",
+        "name": "Carabietta",
+        "": ""
+    },
+    {
+        "code": "6921",
+        "name": "Vico Morcote",
+        "": ""
+    },
+    {
+        "code": "6922",
+        "name": "Morcote",
+        "": ""
+    },
+    {
+        "code": "6924",
+        "name": "Sorengo",
+        "": ""
+    },
+    {
+        "code": "6925",
+        "name": "Gentilino",
+        "": ""
+    },
+    {
+        "code": "6926",
+        "name": "Montagnola",
+        "": ""
+    },
+    {
+        "code": "6927",
+        "name": "Agra",
+        "": ""
+    },
+    {
+        "code": "6928",
+        "name": "Manno",
+        "": ""
+    },
+    {
+        "code": "6929",
+        "name": "Gravesano",
+        "": ""
+    },
+    {
+        "code": "6930",
+        "name": "Bedano",
+        "": ""
+    },
+    {
+        "code": "6932",
+        "name": "Breganzona",
+        "": ""
+    },
+    {
+        "code": "6933",
+        "name": "Muzzano",
+        "": ""
+    },
+    {
+        "code": "6934",
+        "name": "Bioggio",
+        "": ""
+    },
+    {
+        "code": "6935",
+        "name": "Bosco Luganese",
+        "": ""
+    },
+    {
+        "code": "6936",
+        "name": "Cademario",
+        "": ""
+    },
+    {
+        "code": "6937",
+        "name": "Breno",
+        "": ""
+    },
+    {
+        "code": "6938",
+        "name": "Vezio",
+        "": ""
+    },
+    {
+        "code": "6938",
+        "name": "Fescoggia",
+        "": ""
+    },
+    {
+        "code": "6939",
+        "name": "Arosio",
+        "": ""
+    },
+    {
+        "code": "6939",
+        "name": "Mugena",
+        "": ""
+    },
+    {
+        "code": "6942",
+        "name": "Savosa",
+        "": ""
+    },
+    {
+        "code": "6943",
+        "name": "Vezia",
+        "": ""
+    },
+    {
+        "code": "6944",
+        "name": "Cureglia",
+        "": ""
+    },
+    {
+        "code": "6945",
+        "name": "Origlio",
+        "": ""
+    },
+    {
+        "code": "6946",
+        "name": "Ponte Capriasca",
+        "": ""
+    },
+    {
+        "code": "6947",
+        "name": "Vaglio",
+        "": ""
+    },
+    {
+        "code": "6948",
+        "name": "Porza",
+        "": ""
+    },
+    {
+        "code": "6949",
+        "name": "Comano",
+        "": ""
+    },
+    {
+        "code": "6950",
+        "name": "Tesserete",
+        "": ""
+    },
+    {
+        "code": "6951",
+        "name": "Insone",
+        "": ""
+    },
+    {
+        "code": "6951",
+        "name": "Odogno",
+        "": ""
+    },
+    {
+        "code": "6951",
+        "name": "Colla",
+        "": ""
+    },
+    {
+        "code": "6951",
+        "name": "Bogno",
+        "": ""
+    },
+    {
+        "code": "6951",
+        "name": "Cozzo",
+        "": ""
+    },
+    {
+        "code": "6951",
+        "name": "Signôra",
+        "": ""
+    },
+    {
+        "code": "6951",
+        "name": "Scareglia",
+        "": ""
+    },
+    {
+        "code": "6952",
+        "name": "Canobbio",
+        "": ""
+    },
+    {
+        "code": "6953",
+        "name": "Lugaggia",
+        "": ""
+    },
+    {
+        "code": "6954",
+        "name": "Sala Capriasca",
+        "": ""
+    },
+    {
+        "code": "6954",
+        "name": "Bigorio",
+        "": ""
+    },
+    {
+        "code": "6955",
+        "name": "Cagiallo",
+        "": ""
+    },
+    {
+        "code": "6955",
+        "name": "Oggio",
+        "": ""
+    },
+    {
+        "code": "6956",
+        "name": "Lopagno",
+        "": ""
+    },
+    {
+        "code": "6957",
+        "name": "Roveredo TI",
+        "": ""
+    },
+    {
+        "code": "6958",
+        "name": "Bidogno",
+        "": ""
+    },
+    {
+        "code": "6958",
+        "name": "Corticiasca",
+        "": ""
+    },
+    {
+        "code": "6959",
+        "name": "Cimadera",
+        "": ""
+    },
+    {
+        "code": "6959",
+        "name": "Certara",
+        "": ""
+    },
+    {
+        "code": "6959",
+        "name": "Curtina",
+        "": ""
+    },
+    {
+        "code": "6959",
+        "name": "Piandera Paese",
+        "": ""
+    },
+    {
+        "code": "6959",
+        "name": "Maglio di Colla",
+        "": ""
+    },
+    {
+        "code": "6962",
+        "name": "Viganello",
+        "": ""
+    },
+    {
+        "code": "6963",
+        "name": "Cureggia",
+        "": ""
+    },
+    {
+        "code": "6963",
+        "name": "Pregassona",
+        "": ""
+    },
+    {
+        "code": "6964",
+        "name": "Davesco-Soragno",
+        "": ""
+    },
+    {
+        "code": "6965",
+        "name": "Cadro",
+        "": ""
+    },
+    {
+        "code": "6966",
+        "name": "Villa Luganese",
+        "": ""
+    },
+    {
+        "code": "6967",
+        "name": "Dino",
+        "": ""
+    },
+    {
+        "code": "6968",
+        "name": "Sonvico",
+        "": ""
+    },
+    {
+        "code": "6974",
+        "name": "Aldesago",
+        "": ""
+    },
+    {
+        "code": "6976",
+        "name": "Castagnola",
+        "": ""
+    },
+    {
+        "code": "6977",
+        "name": "Ruvigliana",
+        "": ""
+    },
+    {
+        "code": "6978",
+        "name": "Gandria",
+        "": ""
+    },
+    {
+        "code": "6979",
+        "name": "Brè sopra Lugano",
+        "": ""
+    },
+    {
+        "code": "6980",
+        "name": "Castelrotto",
+        "": ""
+    },
+    {
+        "code": "6981",
+        "name": "Bedigliora",
+        "": ""
+    },
+    {
+        "code": "6981",
+        "name": "Biogno-Beride",
+        "": ""
+    },
+    {
+        "code": "6981",
+        "name": "Bombinasco",
+        "": ""
+    },
+    {
+        "code": "6981",
+        "name": "Banco",
+        "": ""
+    },
+    {
+        "code": "6982",
+        "name": "Agno",
+        "": ""
+    },
+    {
+        "code": "6983",
+        "name": "Magliaso",
+        "": ""
+    },
+    {
+        "code": "6984",
+        "name": "Pura",
+        "": ""
+    },
+    {
+        "code": "6986",
+        "name": "Miglieglia",
+        "": ""
+    },
+    {
+        "code": "6986",
+        "name": "Curio",
+        "": ""
+    },
+    {
+        "code": "6986",
+        "name": "Novaggio",
+        "": ""
+    },
+    {
+        "code": "6987",
+        "name": "Caslano",
+        "": ""
+    },
+    {
+        "code": "6988",
+        "name": "Ponte Tresa",
+        "": ""
+    },
+    {
+        "code": "6989",
+        "name": "Purasca",
+        "": ""
+    },
+    {
+        "code": "6990",
+        "name": "Cassina d Agno",
+        "": ""
+    },
+    {
+        "code": "6991",
+        "name": "Neggio",
+        "": ""
+    },
+    {
+        "code": "6992",
+        "name": "Cimo",
+        "": ""
+    },
+    {
+        "code": "6992",
+        "name": "Vernate",
+        "": ""
+    },
+    {
+        "code": "6993",
+        "name": "Iseo",
+        "": ""
+    },
+    {
+        "code": "6994",
+        "name": "Aranno",
+        "": ""
+    },
+    {
+        "code": "6995",
+        "name": "Madonna del Piano",
+        "": ""
+    },
+    {
+        "code": "6995",
+        "name": "Molinazzo di Monteggio",
+        "": ""
+    },
+    {
+        "code": "6996",
+        "name": "Ponte Cremenaga",
+        "": ""
+    },
+    {
+        "code": "6997",
+        "name": "Sessa",
+        "": ""
+    },
+    {
+        "code": "6998",
+        "name": "Termine",
+        "": ""
+    },
+    {
+        "code": "6999",
+        "name": "Astano",
+        "": ""
+    },
+    {
+        "code": "7000",
+        "name": "Chur",
+        "": ""
+    },
+    {
+        "code": "7012",
+        "name": "Felsberg",
+        "": ""
+    },
+    {
+        "code": "7013",
+        "name": "Domat/Ems",
+        "": ""
+    },
+    {
+        "code": "7014",
+        "name": "Trin",
+        "": ""
+    },
+    {
+        "code": "7015",
+        "name": "Tamins",
+        "": ""
+    },
+    {
+        "code": "7016",
+        "name": "Trin Mulin",
+        "": ""
+    },
+    {
+        "code": "7017",
+        "name": "Flims Dorf",
+        "": ""
+    },
+    {
+        "code": "7018",
+        "name": "Flims Waldhaus",
+        "": ""
+    },
+    {
+        "code": "7019",
+        "name": "Fidaz",
+        "": ""
+    },
+    {
+        "code": "7023",
+        "name": "Haldenstein",
+        "": ""
+    },
+    {
+        "code": "7026",
+        "name": "Maladers",
+        "": ""
+    },
+    {
+        "code": "7027",
+        "name": "Lüen",
+        "": ""
+    },
+    {
+        "code": "7027",
+        "name": "Castiel",
+        "": ""
+    },
+    {
+        "code": "7027",
+        "name": "Calfreisen",
+        "": ""
+    },
+    {
+        "code": "7028",
+        "name": "Pagig",
+        "": ""
+    },
+    {
+        "code": "7028",
+        "name": "St. Peter",
+        "": ""
+    },
+    {
+        "code": "7029",
+        "name": "Peist",
+        "": ""
+    },
+    {
+        "code": "7031",
+        "name": "Laax GR",
+        "": ""
+    },
+    {
+        "code": "7032",
+        "name": "Laax GR 2",
+        "": ""
+    },
+    {
+        "code": "7050",
+        "name": "Arosa",
+        "": ""
+    },
+    {
+        "code": "7056",
+        "name": "Molinis",
+        "": ""
+    },
+    {
+        "code": "7057",
+        "name": "Langwies",
+        "": ""
+    },
+    {
+        "code": "7058",
+        "name": "Litzirüti",
+        "": ""
+    },
+    {
+        "code": "7062",
+        "name": "Passugg-Araschgen",
+        "": ""
+    },
+    {
+        "code": "7063",
+        "name": "Praden",
+        "": ""
+    },
+    {
+        "code": "7064",
+        "name": "Tschiertschen",
+        "": ""
+    },
+    {
+        "code": "7074",
+        "name": "Malix",
+        "": ""
+    },
+    {
+        "code": "7075",
+        "name": "Churwalden",
+        "": ""
+    },
+    {
+        "code": "7076",
+        "name": "Parpan",
+        "": ""
+    },
+    {
+        "code": "7077",
+        "name": "Valbella",
+        "": ""
+    },
+    {
+        "code": "7078",
+        "name": "Lenzerheide/Lai",
+        "": ""
+    },
+    {
+        "code": "7082",
+        "name": "Vaz/Obervaz",
+        "": ""
+    },
+    {
+        "code": "7083",
+        "name": "Lantsch/Lenz",
+        "": ""
+    },
+    {
+        "code": "7084",
+        "name": "Brienz/Brinzauls GR",
+        "": ""
+    },
+    {
+        "code": "7104",
+        "name": "Arezen",
+        "": ""
+    },
+    {
+        "code": "7104",
+        "name": "Versam",
+        "": ""
+    },
+    {
+        "code": "7106",
+        "name": "Tenna",
+        "": ""
+    },
+    {
+        "code": "7107",
+        "name": "Safien Platz",
+        "": ""
+    },
+    {
+        "code": "7109",
+        "name": "Thalkirch",
+        "": ""
+    },
+    {
+        "code": "7110",
+        "name": "Peiden",
+        "": ""
+    },
+    {
+        "code": "7111",
+        "name": "Pitasch",
+        "": ""
+    },
+    {
+        "code": "7112",
+        "name": "Duvin",
+        "": ""
+    },
+    {
+        "code": "7113",
+        "name": "Camuns",
+        "": ""
+    },
+    {
+        "code": "7114",
+        "name": "Uors (Lumnezia)",
+        "": ""
+    },
+    {
+        "code": "7115",
+        "name": "Surcasti",
+        "": ""
+    },
+    {
+        "code": "7116",
+        "name": "Tersnaus",
+        "": ""
+    },
+    {
+        "code": "7116",
+        "name": "St. Martin (Lugnez)",
+        "": ""
+    },
+    {
+        "code": "7122",
+        "name": "Valendas",
+        "": ""
+    },
+    {
+        "code": "7122",
+        "name": "Carrera",
+        "": ""
+    },
+    {
+        "code": "7126",
+        "name": "Castrisch",
+        "": ""
+    },
+    {
+        "code": "7127",
+        "name": "Sevgein",
+        "": ""
+    },
+    {
+        "code": "7128",
+        "name": "Riein",
+        "": ""
+    },
+    {
+        "code": "7130",
+        "name": "Schnaus",
+        "": ""
+    },
+    {
+        "code": "7130",
+        "name": "Ilanz",
+        "": ""
+    },
+    {
+        "code": "7132",
+        "name": "Vals",
+        "": ""
+    },
+    {
+        "code": "7133",
+        "name": "Obersaxen Affeier",
+        "": ""
+    },
+    {
+        "code": "7134",
+        "name": "Obersaxen Meierhof",
+        "": ""
+    },
+    {
+        "code": "7135",
+        "name": "Obersaxen Giraniga",
+        "": ""
+    },
+    {
+        "code": "7136",
+        "name": "Obersaxen Friggahüs",
+        "": ""
+    },
+    {
+        "code": "7137",
+        "name": "Flond",
+        "": ""
+    },
+    {
+        "code": "7138",
+        "name": "Surcuolm",
+        "": ""
+    },
+    {
+        "code": "7141",
+        "name": "Luven",
+        "": ""
+    },
+    {
+        "code": "7142",
+        "name": "Cumbel",
+        "": ""
+    },
+    {
+        "code": "7143",
+        "name": "Morissen",
+        "": ""
+    },
+    {
+        "code": "7144",
+        "name": "Vella",
+        "": ""
+    },
+    {
+        "code": "7145",
+        "name": "Degen",
+        "": ""
+    },
+    {
+        "code": "7146",
+        "name": "Vattiz",
+        "": ""
+    },
+    {
+        "code": "7147",
+        "name": "Vignogn",
+        "": ""
+    },
+    {
+        "code": "7148",
+        "name": "Surin",
+        "": ""
+    },
+    {
+        "code": "7148",
+        "name": "Lumbrein",
+        "": ""
+    },
+    {
+        "code": "7149",
+        "name": "Vrin",
+        "": ""
+    },
+    {
+        "code": "7151",
+        "name": "Schluein",
+        "": ""
+    },
+    {
+        "code": "7152",
+        "name": "Sagogn",
+        "": ""
+    },
+    {
+        "code": "7153",
+        "name": "Falera",
+        "": ""
+    },
+    {
+        "code": "7154",
+        "name": "Ruschein",
+        "": ""
+    },
+    {
+        "code": "7155",
+        "name": "Ladir",
+        "": ""
+    },
+    {
+        "code": "7156",
+        "name": "Pigniu",
+        "": ""
+    },
+    {
+        "code": "7156",
+        "name": "Rueun",
+        "": ""
+    },
+    {
+        "code": "7157",
+        "name": "Siat",
+        "": ""
+    },
+    {
+        "code": "7158",
+        "name": "Waltensburg/Vuorz",
+        "": ""
+    },
+    {
+        "code": "7159",
+        "name": "Andiast",
+        "": ""
+    },
+    {
+        "code": "7162",
+        "name": "Tavanasa",
+        "": ""
+    },
+    {
+        "code": "7163",
+        "name": "Danis",
+        "": ""
+    },
+    {
+        "code": "7164",
+        "name": "Dardin",
+        "": ""
+    },
+    {
+        "code": "7165",
+        "name": "Breil/Brigels",
+        "": ""
+    },
+    {
+        "code": "7166",
+        "name": "Trun",
+        "": ""
+    },
+    {
+        "code": "7167",
+        "name": "Zignau",
+        "": ""
+    },
+    {
+        "code": "7168",
+        "name": "Schlans",
+        "": ""
+    },
+    {
+        "code": "7172",
+        "name": "Rabius",
+        "": ""
+    },
+    {
+        "code": "7173",
+        "name": "Surrein",
+        "": ""
+    },
+    {
+        "code": "7174",
+        "name": "S. Benedetg",
+        "": ""
+    },
+    {
+        "code": "7175",
+        "name": "Sumvitg",
+        "": ""
+    },
+    {
+        "code": "7176",
+        "name": "Cumpadials",
+        "": ""
+    },
+    {
+        "code": "7180",
+        "name": "Disentis/Mustér",
+        "": ""
+    },
+    {
+        "code": "7182",
+        "name": "Cavardiras",
+        "": ""
+    },
+    {
+        "code": "7183",
+        "name": "Mompé Medel",
+        "": ""
+    },
+    {
+        "code": "7184",
+        "name": "Curaglia",
+        "": ""
+    },
+    {
+        "code": "7185",
+        "name": "Platta",
+        "": ""
+    },
+    {
+        "code": "7186",
+        "name": "Segnas",
+        "": ""
+    },
+    {
+        "code": "7187",
+        "name": "Camischolas",
+        "": ""
+    },
+    {
+        "code": "7188",
+        "name": "Sedrun",
+        "": ""
+    },
+    {
+        "code": "7189",
+        "name": "Rueras",
+        "": ""
+    },
+    {
+        "code": "7201",
+        "name": "Untervaz Bahnhof",
+        "": ""
+    },
+    {
+        "code": "7202",
+        "name": "Says",
+        "": ""
+    },
+    {
+        "code": "7203",
+        "name": "Trimmis",
+        "": ""
+    },
+    {
+        "code": "7204",
+        "name": "Untervaz",
+        "": ""
+    },
+    {
+        "code": "7205",
+        "name": "Zizers",
+        "": ""
+    },
+    {
+        "code": "7206",
+        "name": "Igis",
+        "": ""
+    },
+    {
+        "code": "7208",
+        "name": "Malans GR",
+        "": ""
+    },
+    {
+        "code": "7212",
+        "name": "Seewis Dorf",
+        "": ""
+    },
+    {
+        "code": "7213",
+        "name": "Valzeina",
+        "": ""
+    },
+    {
+        "code": "7214",
+        "name": "Seewis-Pardisla",
+        "": ""
+    },
+    {
+        "code": "7214",
+        "name": "Seewis-Schmitten",
+        "": ""
+    },
+    {
+        "code": "7214",
+        "name": "Grüsch",
+        "": ""
+    },
+    {
+        "code": "7215",
+        "name": "Fanas",
+        "": ""
+    },
+    {
+        "code": "7220",
+        "name": "Schiers",
+        "": ""
+    },
+    {
+        "code": "7222",
+        "name": "Mittellunden",
+        "": ""
+    },
+    {
+        "code": "7223",
+        "name": "Buchen im Prättigau",
+        "": ""
+    },
+    {
+        "code": "7224",
+        "name": "Putz",
+        "": ""
+    },
+    {
+        "code": "7226",
+        "name": "Stels",
+        "": ""
+    },
+    {
+        "code": "7226",
+        "name": "Fajauna",
+        "": ""
+    },
+    {
+        "code": "7228",
+        "name": "Schuders",
+        "": ""
+    },
+    {
+        "code": "7228",
+        "name": "Pusserein",
+        "": ""
+    },
+    {
+        "code": "7231",
+        "name": "Pragg-Jenaz",
+        "": ""
+    },
+    {
+        "code": "7232",
+        "name": "Furna",
+        "": ""
+    },
+    {
+        "code": "7233",
+        "name": "Jenaz",
+        "": ""
+    },
+    {
+        "code": "7235",
+        "name": "Fideris",
+        "": ""
+    },
+    {
+        "code": "7240",
+        "name": "Küblis",
+        "": ""
+    },
+    {
+        "code": "7241",
+        "name": "Conters im Prättigau",
+        "": ""
+    },
+    {
+        "code": "7242",
+        "name": "Luzein",
+        "": ""
+    },
+    {
+        "code": "7243",
+        "name": "Pany",
+        "": ""
+    },
+    {
+        "code": "7244",
+        "name": "Gadenstätt",
+        "": ""
+    },
+    {
+        "code": "7245",
+        "name": "Ascharina",
+        "": ""
+    },
+    {
+        "code": "7246",
+        "name": "St. Antönien",
+        "": ""
+    },
+    {
+        "code": "7247",
+        "name": "Saas im Prättigau",
+        "": ""
+    },
+    {
+        "code": "7249",
+        "name": "Serneus",
+        "": ""
+    },
+    {
+        "code": "7250",
+        "name": "Klosters",
+        "": ""
+    },
+    {
+        "code": "7252",
+        "name": "Klosters Dorf",
+        "": ""
+    },
+    {
+        "code": "7260",
+        "name": "Davos Dorf",
+        "": ""
+    },
+    {
+        "code": "7265",
+        "name": "Davos Wolfgang",
+        "": ""
+    },
+    {
+        "code": "7270",
+        "name": "Davos Platz",
+        "": ""
+    },
+    {
+        "code": "7272",
+        "name": "Davos Clavadel",
+        "": ""
+    },
+    {
+        "code": "7276",
+        "name": "Davos Frauenkirch",
+        "": ""
+    },
+    {
+        "code": "7277",
+        "name": "Davos Glaris",
+        "": ""
+    },
+    {
+        "code": "7278",
+        "name": "Davos Monstein",
+        "": ""
+    },
+    {
+        "code": "7302",
+        "name": "Landquart",
+        "": ""
+    },
+    {
+        "code": "7303",
+        "name": "Mastrils",
+        "": ""
+    },
+    {
+        "code": "7304",
+        "name": "Maienfeld",
+        "": ""
+    },
+    {
+        "code": "7306",
+        "name": "Fläsch",
+        "": ""
+    },
+    {
+        "code": "7307",
+        "name": "Jenins",
+        "": ""
+    },
+    {
+        "code": "7310",
+        "name": "Bad Ragaz",
+        "": ""
+    },
+    {
+        "code": "7312",
+        "name": "Pfäfers",
+        "": ""
+    },
+    {
+        "code": "7313",
+        "name": "St. Margrethenberg",
+        "": ""
+    },
+    {
+        "code": "7314",
+        "name": "Vadura",
+        "": ""
+    },
+    {
+        "code": "7315",
+        "name": "Vättis",
+        "": ""
+    },
+    {
+        "code": "7317",
+        "name": "Vasön",
+        "": ""
+    },
+    {
+        "code": "7317",
+        "name": "Valens",
+        "": ""
+    },
+    {
+        "code": "7320",
+        "name": "Sargans",
+        "": ""
+    },
+    {
+        "code": "7323",
+        "name": "Wangs",
+        "": ""
+    },
+    {
+        "code": "7324",
+        "name": "Vilters",
+        "": ""
+    },
+    {
+        "code": "7325",
+        "name": "Schwendi im Weisstannental",
+        "": ""
+    },
+    {
+        "code": "7326",
+        "name": "Weisstannen",
+        "": ""
+    },
+    {
+        "code": "7402",
+        "name": "Bonaduz",
+        "": ""
+    },
+    {
+        "code": "7403",
+        "name": "Rhäzüns",
+        "": ""
+    },
+    {
+        "code": "7404",
+        "name": "Feldis/Veulden",
+        "": ""
+    },
+    {
+        "code": "7405",
+        "name": "Rothenbrunnen",
+        "": ""
+    },
+    {
+        "code": "7407",
+        "name": "Trans",
+        "": ""
+    },
+    {
+        "code": "7408",
+        "name": "Realta",
+        "": ""
+    },
+    {
+        "code": "7408",
+        "name": "Cazis",
+        "": ""
+    },
+    {
+        "code": "7411",
+        "name": "Sils im Domleschg",
+        "": ""
+    },
+    {
+        "code": "7412",
+        "name": "Scharans",
+        "": ""
+    },
+    {
+        "code": "7413",
+        "name": "Fürstenaubruck",
+        "": ""
+    },
+    {
+        "code": "7414",
+        "name": "Fürstenau",
+        "": ""
+    },
+    {
+        "code": "7415",
+        "name": "Pratval",
+        "": ""
+    },
+    {
+        "code": "7415",
+        "name": "Rodels",
+        "": ""
+    },
+    {
+        "code": "7416",
+        "name": "Almens",
+        "": ""
+    },
+    {
+        "code": "7417",
+        "name": "Paspels",
+        "": ""
+    },
+    {
+        "code": "7418",
+        "name": "Tumegl/Tomils",
+        "": ""
+    },
+    {
+        "code": "7419",
+        "name": "Scheid",
+        "": ""
+    },
+    {
+        "code": "7421",
+        "name": "Summaprada",
+        "": ""
+    },
+    {
+        "code": "7422",
+        "name": "Tartar",
+        "": ""
+    },
+    {
+        "code": "7423",
+        "name": "Sarn",
+        "": ""
+    },
+    {
+        "code": "7423",
+        "name": "Portein",
+        "": ""
+    },
+    {
+        "code": "7424",
+        "name": "Präz",
+        "": ""
+    },
+    {
+        "code": "7424",
+        "name": "Dalin",
+        "": ""
+    },
+    {
+        "code": "7425",
+        "name": "Masein",
+        "": ""
+    },
+    {
+        "code": "7426",
+        "name": "Flerden",
+        "": ""
+    },
+    {
+        "code": "7427",
+        "name": "Urmein",
+        "": ""
+    },
+    {
+        "code": "7428",
+        "name": "Tschappina",
+        "": ""
+    },
+    {
+        "code": "7428",
+        "name": "Glaspass",
+        "": ""
+    },
+    {
+        "code": "7430",
+        "name": "Rongellen",
+        "": ""
+    },
+    {
+        "code": "7430",
+        "name": "Thusis",
+        "": ""
+    },
+    {
+        "code": "7431",
+        "name": "Mutten",
+        "": ""
+    },
+    {
+        "code": "7431",
+        "name": "Obermutten",
+        "": ""
+    },
+    {
+        "code": "7432",
+        "name": "Zillis",
+        "": ""
+    },
+    {
+        "code": "7433",
+        "name": "Farden",
+        "": ""
+    },
+    {
+        "code": "7433",
+        "name": "Wergenstein",
+        "": ""
+    },
+    {
+        "code": "7433",
+        "name": "Lohn GR",
+        "": ""
+    },
+    {
+        "code": "7433",
+        "name": "Donat",
+        "": ""
+    },
+    {
+        "code": "7433",
+        "name": "Mathon",
+        "": ""
+    },
+    {
+        "code": "7434",
+        "name": "Sufers",
+        "": ""
+    },
+    {
+        "code": "7435",
+        "name": "Splügen",
+        "": ""
+    },
+    {
+        "code": "7436",
+        "name": "Medels im Rheinwald",
+        "": ""
+    },
+    {
+        "code": "7437",
+        "name": "Nufenen",
+        "": ""
+    },
+    {
+        "code": "7438",
+        "name": "Hinterrhein",
+        "": ""
+    },
+    {
+        "code": "7440",
+        "name": "Andeer",
+        "": ""
+    },
+    {
+        "code": "7442",
+        "name": "Clugin",
+        "": ""
+    },
+    {
+        "code": "7443",
+        "name": "Pignia",
+        "": ""
+    },
+    {
+        "code": "7444",
+        "name": "Ausserferrera",
+        "": ""
+    },
+    {
+        "code": "7445",
+        "name": "Innerferrera",
+        "": ""
+    },
+    {
+        "code": "7446",
+        "name": "Campsut-Cröt",
+        "": ""
+    },
+    {
+        "code": "7447",
+        "name": "Cresta (Avers)",
+        "": ""
+    },
+    {
+        "code": "7447",
+        "name": "Am Bach (Avers)",
+        "": ""
+    },
+    {
+        "code": "7448",
+        "name": "Juf",
+        "": ""
+    },
+    {
+        "code": "7450",
+        "name": "Tiefencastel",
+        "": ""
+    },
+    {
+        "code": "7451",
+        "name": "Alvaschein",
+        "": ""
+    },
+    {
+        "code": "7452",
+        "name": "Cunter",
+        "": ""
+    },
+    {
+        "code": "7453",
+        "name": "Tinizong",
+        "": ""
+    },
+    {
+        "code": "7454",
+        "name": "Rona",
+        "": ""
+    },
+    {
+        "code": "7455",
+        "name": "Mulegns",
+        "": ""
+    },
+    {
+        "code": "7456",
+        "name": "Sur",
+        "": ""
+    },
+    {
+        "code": "7456",
+        "name": "Marmorera",
+        "": ""
+    },
+    {
+        "code": "7457",
+        "name": "Bivio",
+        "": ""
+    },
+    {
+        "code": "7458",
+        "name": "Mon",
+        "": ""
+    },
+    {
+        "code": "7459",
+        "name": "Stierva",
+        "": ""
+    },
+    {
+        "code": "7460",
+        "name": "Savognin",
+        "": ""
+    },
+    {
+        "code": "7462",
+        "name": "Salouf",
+        "": ""
+    },
+    {
+        "code": "7463",
+        "name": "Riom",
+        "": ""
+    },
+    {
+        "code": "7464",
+        "name": "Parsonz",
+        "": ""
+    },
+    {
+        "code": "7472",
+        "name": "Surava",
+        "": ""
+    },
+    {
+        "code": "7473",
+        "name": "Alvaneu Bad",
+        "": ""
+    },
+    {
+        "code": "7477",
+        "name": "Filisur",
+        "": ""
+    },
+    {
+        "code": "7482",
+        "name": "Stugl/Stuls",
+        "": ""
+    },
+    {
+        "code": "7482",
+        "name": "Preda",
+        "": ""
+    },
+    {
+        "code": "7482",
+        "name": "Bergün/Bravuogn",
+        "": ""
+    },
+    {
+        "code": "7484",
+        "name": "Latsch",
+        "": ""
+    },
+    {
+        "code": "7492",
+        "name": "Alvaneu Dorf",
+        "": ""
+    },
+    {
+        "code": "7493",
+        "name": "Schmitten (Albula)",
+        "": ""
+    },
+    {
+        "code": "7494",
+        "name": "Wiesen GR",
+        "": ""
+    },
+    {
+        "code": "7500",
+        "name": "St. Moritz",
+        "": ""
+    },
+    {
+        "code": "7502",
+        "name": "Bever",
+        "": ""
+    },
+    {
+        "code": "7503",
+        "name": "Samedan",
+        "": ""
+    },
+    {
+        "code": "7504",
+        "name": "Pontresina",
+        "": ""
+    },
+    {
+        "code": "7505",
+        "name": "Celerina/Schlarigna",
+        "": ""
+    },
+    {
+        "code": "7512",
+        "name": "Champfèr",
+        "": ""
+    },
+    {
+        "code": "7513",
+        "name": "Silvaplana-Surlej",
+        "": ""
+    },
+    {
+        "code": "7513",
+        "name": "Silvaplana",
+        "": ""
+    },
+    {
+        "code": "7514",
+        "name": "Fex",
+        "": ""
+    },
+    {
+        "code": "7514",
+        "name": "Sils/Segl Maria",
+        "": ""
+    },
+    {
+        "code": "7515",
+        "name": "Sils/Segl Baselgia",
+        "": ""
+    },
+    {
+        "code": "7516",
+        "name": "Maloja",
+        "": ""
+    },
+    {
+        "code": "7517",
+        "name": "Plaun da Lej",
+        "": ""
+    },
+    {
+        "code": "7522",
+        "name": "La Punt-Chamues-ch",
+        "": ""
+    },
+    {
+        "code": "7523",
+        "name": "Madulain",
+        "": ""
+    },
+    {
+        "code": "7524",
+        "name": "Zuoz",
+        "": ""
+    },
+    {
+        "code": "7525",
+        "name": "S-chanf",
+        "": ""
+    },
+    {
+        "code": "7526",
+        "name": "Cinuos-chel",
+        "": ""
+    },
+    {
+        "code": "7527",
+        "name": "Brail",
+        "": ""
+    },
+    {
+        "code": "7530",
+        "name": "Zernez",
+        "": ""
+    },
+    {
+        "code": "7532",
+        "name": "Tschierv",
+        "": ""
+    },
+    {
+        "code": "7533",
+        "name": "Fuldera",
+        "": ""
+    },
+    {
+        "code": "7534",
+        "name": "Lü",
+        "": ""
+    },
+    {
+        "code": "7535",
+        "name": "Valchava",
+        "": ""
+    },
+    {
+        "code": "7536",
+        "name": "Sta. Maria Val Müstair",
+        "": ""
+    },
+    {
+        "code": "7537",
+        "name": "Müstair",
+        "": ""
+    },
+    {
+        "code": "7542",
+        "name": "Susch",
+        "": ""
+    },
+    {
+        "code": "7543",
+        "name": "Lavin",
+        "": ""
+    },
+    {
+        "code": "7545",
+        "name": "Guarda",
+        "": ""
+    },
+    {
+        "code": "7546",
+        "name": "Ardez",
+        "": ""
+    },
+    {
+        "code": "7550",
+        "name": "Scuol",
+        "": ""
+    },
+    {
+        "code": "7551",
+        "name": "Ftan",
+        "": ""
+    },
+    {
+        "code": "7552",
+        "name": "Vulpera",
+        "": ""
+    },
+    {
+        "code": "7553",
+        "name": "Tarasp",
+        "": ""
+    },
+    {
+        "code": "7554",
+        "name": "Crusch",
+        "": ""
+    },
+    {
+        "code": "7554",
+        "name": "Sent",
+        "": ""
+    },
+    {
+        "code": "7556",
+        "name": "Ramosch",
+        "": ""
+    },
+    {
+        "code": "7557",
+        "name": "Vnà",
+        "": ""
+    },
+    {
+        "code": "7558",
+        "name": "Strada",
+        "": ""
+    },
+    {
+        "code": "7559",
+        "name": "Tschlin",
+        "": ""
+    },
+    {
+        "code": "7560",
+        "name": "Martina",
+        "": ""
+    },
+    {
+        "code": "7562",
+        "name": "Samnaun-Compatsch",
+        "": ""
+    },
+    {
+        "code": "7563",
+        "name": "Samnaun Dorf",
+        "": ""
+    },
+    {
+        "code": "7602",
+        "name": "Casaccia",
+        "": ""
+    },
+    {
+        "code": "7603",
+        "name": "Vicosoprano",
+        "": ""
+    },
+    {
+        "code": "7604",
+        "name": "Borgonovo",
+        "": ""
+    },
+    {
+        "code": "7605",
+        "name": "Stampa",
+        "": ""
+    },
+    {
+        "code": "7606",
+        "name": "Promontogno",
+        "": ""
+    },
+    {
+        "code": "7608",
+        "name": "Castasegna",
+        "": ""
+    },
+    {
+        "code": "7610",
+        "name": "Soglio",
+        "": ""
+    },
+    {
+        "code": "7710",
+        "name": "Ospizio Bernina",
+        "": ""
+    },
+    {
+        "code": "7710",
+        "name": "Alp Grüm",
+        "": ""
+    },
+    {
+        "code": "7741",
+        "name": "S. Carlo (Poschiavo)",
+        "": ""
+    },
+    {
+        "code": "7742",
+        "name": "Sfazù",
+        "": ""
+    },
+    {
+        "code": "7742",
+        "name": "La Rösa",
+        "": ""
+    },
+    {
+        "code": "7742",
+        "name": "Poschiavo",
+        "": ""
+    },
+    {
+        "code": "7743",
+        "name": "Miralago",
+        "": ""
+    },
+    {
+        "code": "7743",
+        "name": "Brusio",
+        "": ""
+    },
+    {
+        "code": "7744",
+        "name": "Campocologno",
+        "": ""
+    },
+    {
+        "code": "7745",
+        "name": "Li Curt",
+        "": ""
+    },
+    {
+        "code": "7746",
+        "name": "Le Prese",
+        "": ""
+    },
+    {
+        "code": "7747",
+        "name": "Viano",
+        "": ""
+    },
+    {
+        "code": "7748",
+        "name": "Campascio",
+        "": ""
+    },
+    {
+        "code": "8000",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8001",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8002",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8003",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8004",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8005",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8006",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8008",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8032",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8037",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8038",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8041",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8044",
+        "name": "Gockhausen",
+        "": ""
+    },
+    {
+        "code": "8044",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8045",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8046",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8047",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8048",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8049",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8050",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8051",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8052",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8053",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8055",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8057",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8063",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8064",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8099",
+        "name": "Zürich",
+        "": ""
+    },
+    {
+        "code": "8102",
+        "name": "Oberengstringen",
+        "": ""
+    },
+    {
+        "code": "8103",
+        "name": "Unterengstringen",
+        "": ""
+    },
+    {
+        "code": "8104",
+        "name": "Weiningen ZH",
+        "": ""
+    },
+    {
+        "code": "8105",
+        "name": "Regensdorf",
+        "": ""
+    },
+    {
+        "code": "8105",
+        "name": "Watt",
+        "": ""
+    },
+    {
+        "code": "8106",
+        "name": "Adlikon b. Regensdorf",
+        "": ""
+    },
+    {
+        "code": "8107",
+        "name": "Buchs ZH",
+        "": ""
+    },
+    {
+        "code": "8108",
+        "name": "Dällikon",
+        "": ""
+    },
+    {
+        "code": "8109",
+        "name": "Kloster Fahr",
+        "": ""
+    },
+    {
+        "code": "8112",
+        "name": "Otelfingen",
+        "": ""
+    },
+    {
+        "code": "8113",
+        "name": "Boppelsen",
+        "": ""
+    },
+    {
+        "code": "8114",
+        "name": "Dänikon ZH",
+        "": ""
+    },
+    {
+        "code": "8115",
+        "name": "Hüttikon",
+        "": ""
+    },
+    {
+        "code": "8117",
+        "name": "Fällanden",
+        "": ""
+    },
+    {
+        "code": "8118",
+        "name": "Pfaffhausen",
+        "": ""
+    },
+    {
+        "code": "8121",
+        "name": "Benglen",
+        "": ""
+    },
+    {
+        "code": "8122",
+        "name": "Binz",
+        "": ""
+    },
+    {
+        "code": "8123",
+        "name": "Ebmatingen",
+        "": ""
+    },
+    {
+        "code": "8124",
+        "name": "Maur",
+        "": ""
+    },
+    {
+        "code": "8125",
+        "name": "Zollikerberg",
+        "": ""
+    },
+    {
+        "code": "8126",
+        "name": "Zumikon",
+        "": ""
+    },
+    {
+        "code": "8127",
+        "name": "Forch",
+        "": ""
+    },
+    {
+        "code": "8132",
+        "name": "Hinteregg",
+        "": ""
+    },
+    {
+        "code": "8132",
+        "name": "Egg b. Zürich",
+        "": ""
+    },
+    {
+        "code": "8133",
+        "name": "Esslingen",
+        "": ""
+    },
+    {
+        "code": "8134",
+        "name": "Adliswil",
+        "": ""
+    },
+    {
+        "code": "8135",
+        "name": "Sihlbrugg Station",
+        "": ""
+    },
+    {
+        "code": "8135",
+        "name": "Sihlwald",
+        "": ""
+    },
+    {
+        "code": "8135",
+        "name": "Langnau am Albis",
+        "": ""
+    },
+    {
+        "code": "8136",
+        "name": "Gattikon",
+        "": ""
+    },
+    {
+        "code": "8142",
+        "name": "Uitikon Waldegg",
+        "": ""
+    },
+    {
+        "code": "8143",
+        "name": "Uetliberg",
+        "": ""
+    },
+    {
+        "code": "8143",
+        "name": "Stallikon",
+        "": ""
+    },
+    {
+        "code": "8152",
+        "name": "Glattpark (Opfikon)",
+        "": ""
+    },
+    {
+        "code": "8152",
+        "name": "Glattbrugg",
+        "": ""
+    },
+    {
+        "code": "8152",
+        "name": "Opfikon",
+        "": ""
+    },
+    {
+        "code": "8153",
+        "name": "Rümlang",
+        "": ""
+    },
+    {
+        "code": "8154",
+        "name": "Oberglatt ZH",
+        "": ""
+    },
+    {
+        "code": "8155",
+        "name": "Niederhasli",
+        "": ""
+    },
+    {
+        "code": "8156",
+        "name": "Oberhasli",
+        "": ""
+    },
+    {
+        "code": "8157",
+        "name": "Dielsdorf",
+        "": ""
+    },
+    {
+        "code": "8158",
+        "name": "Regensberg",
+        "": ""
+    },
+    {
+        "code": "8162",
+        "name": "Steinmaur",
+        "": ""
+    },
+    {
+        "code": "8164",
+        "name": "Bachs",
+        "": ""
+    },
+    {
+        "code": "8165",
+        "name": "Oberweningen",
+        "": ""
+    },
+    {
+        "code": "8165",
+        "name": "Schleinikon",
+        "": ""
+    },
+    {
+        "code": "8165",
+        "name": "Schöfflisdorf",
+        "": ""
+    },
+    {
+        "code": "8166",
+        "name": "Niederweningen",
+        "": ""
+    },
+    {
+        "code": "8172",
+        "name": "Niederglatt ZH",
+        "": ""
+    },
+    {
+        "code": "8173",
+        "name": "Neerach",
+        "": ""
+    },
+    {
+        "code": "8174",
+        "name": "Stadel b. Niederglatt",
+        "": ""
+    },
+    {
+        "code": "8175",
+        "name": "Windlach",
+        "": ""
+    },
+    {
+        "code": "8180",
+        "name": "Bülach",
+        "": ""
+    },
+    {
+        "code": "8181",
+        "name": "Höri",
+        "": ""
+    },
+    {
+        "code": "8182",
+        "name": "Hochfelden",
+        "": ""
+    },
+    {
+        "code": "8184",
+        "name": "Bachenbülach",
+        "": ""
+    },
+    {
+        "code": "8185",
+        "name": "Winkel",
+        "": ""
+    },
+    {
+        "code": "8187",
+        "name": "Weiach",
+        "": ""
+    },
+    {
+        "code": "8192",
+        "name": "Zweidlen",
+        "": ""
+    },
+    {
+        "code": "8192",
+        "name": "Glattfelden",
+        "": ""
+    },
+    {
+        "code": "8193",
+        "name": "Eglisau",
+        "": ""
+    },
+    {
+        "code": "8194",
+        "name": "Hüntwangen",
+        "": ""
+    },
+    {
+        "code": "8195",
+        "name": "Wasterkingen",
+        "": ""
+    },
+    {
+        "code": "8196",
+        "name": "Wil ZH",
+        "": ""
+    },
+    {
+        "code": "8197",
+        "name": "Rafz",
+        "": ""
+    },
+    {
+        "code": "8200",
+        "name": "Schaffhausen",
+        "": ""
+    },
+    {
+        "code": "8203",
+        "name": "Schaffhausen",
+        "": ""
+    },
+    {
+        "code": "8207",
+        "name": "Schaffhausen",
+        "": ""
+    },
+    {
+        "code": "8208",
+        "name": "Schaffhausen",
+        "": ""
+    },
+    {
+        "code": "8212",
+        "name": "Neuhausen am Rheinfall",
+        "": ""
+    },
+    {
+        "code": "8212",
+        "name": "Nohl",
+        "": ""
+    },
+    {
+        "code": "8213",
+        "name": "Neunkirch",
+        "": ""
+    },
+    {
+        "code": "8214",
+        "name": "Gächlingen",
+        "": ""
+    },
+    {
+        "code": "8215",
+        "name": "Hallau",
+        "": ""
+    },
+    {
+        "code": "8216",
+        "name": "Oberhallau",
+        "": ""
+    },
+    {
+        "code": "8217",
+        "name": "Wilchingen",
+        "": ""
+    },
+    {
+        "code": "8218",
+        "name": "Osterfingen",
+        "": ""
+    },
+    {
+        "code": "8219",
+        "name": "Trasadingen",
+        "": ""
+    },
+    {
+        "code": "8222",
+        "name": "Beringen",
+        "": ""
+    },
+    {
+        "code": "8223",
+        "name": "Guntmadingen",
+        "": ""
+    },
+    {
+        "code": "8224",
+        "name": "Löhningen",
+        "": ""
+    },
+    {
+        "code": "8225",
+        "name": "Siblingen",
+        "": ""
+    },
+    {
+        "code": "8226",
+        "name": "Schleitheim",
+        "": ""
+    },
+    {
+        "code": "8228",
+        "name": "Beggingen",
+        "": ""
+    },
+    {
+        "code": "8231",
+        "name": "Hemmental",
+        "": ""
+    },
+    {
+        "code": "8232",
+        "name": "Merishausen",
+        "": ""
+    },
+    {
+        "code": "8233",
+        "name": "Bargen SH",
+        "": ""
+    },
+    {
+        "code": "8234",
+        "name": "Stetten SH",
+        "": ""
+    },
+    {
+        "code": "8235",
+        "name": "Lohn SH",
+        "": ""
+    },
+    {
+        "code": "8236",
+        "name": "Opfertshofen SH",
+        "": ""
+    },
+    {
+        "code": "8236",
+        "name": "Büttenhardt",
+        "": ""
+    },
+    {
+        "code": "8238",
+        "name": "Büsingen",
+        "": ""
+    },
+    {
+        "code": "8239",
+        "name": "Dörflingen",
+        "": ""
+    },
+    {
+        "code": "8240",
+        "name": "Thayngen",
+        "": ""
+    },
+    {
+        "code": "8241",
+        "name": "Barzheim",
+        "": ""
+    },
+    {
+        "code": "8242",
+        "name": "Hofen SH",
+        "": ""
+    },
+    {
+        "code": "8242",
+        "name": "Bibern SH",
+        "": ""
+    },
+    {
+        "code": "8243",
+        "name": "Altdorf SH",
+        "": ""
+    },
+    {
+        "code": "8245",
+        "name": "Feuerthalen",
+        "": ""
+    },
+    {
+        "code": "8246",
+        "name": "Langwiesen",
+        "": ""
+    },
+    {
+        "code": "8247",
+        "name": "Flurlingen",
+        "": ""
+    },
+    {
+        "code": "8248",
+        "name": "Uhwiesen",
+        "": ""
+    },
+    {
+        "code": "8252",
+        "name": "Schlatt TG",
+        "": ""
+    },
+    {
+        "code": "8253",
+        "name": "Willisdorf",
+        "": ""
+    },
+    {
+        "code": "8253",
+        "name": "Diessenhofen",
+        "": ""
+    },
+    {
+        "code": "8254",
+        "name": "Basadingen",
+        "": ""
+    },
+    {
+        "code": "8255",
+        "name": "Schlattingen",
+        "": ""
+    },
+    {
+        "code": "8259",
+        "name": "Kaltenbach",
+        "": ""
+    },
+    {
+        "code": "8259",
+        "name": "Etzwilen",
+        "": ""
+    },
+    {
+        "code": "8259",
+        "name": "Wagenhausen",
+        "": ""
+    },
+    {
+        "code": "8259",
+        "name": "Rheinklingen",
+        "": ""
+    },
+    {
+        "code": "8260",
+        "name": "Stein am Rhein",
+        "": ""
+    },
+    {
+        "code": "8261",
+        "name": "Hemishofen",
+        "": ""
+    },
+    {
+        "code": "8262",
+        "name": "Ramsen",
+        "": ""
+    },
+    {
+        "code": "8263",
+        "name": "Buch SH",
+        "": ""
+    },
+    {
+        "code": "8264",
+        "name": "Eschenz",
+        "": ""
+    },
+    {
+        "code": "8265",
+        "name": "Mammern",
+        "": ""
+    },
+    {
+        "code": "8266",
+        "name": "Steckborn",
+        "": ""
+    },
+    {
+        "code": "8267",
+        "name": "Berlingen",
+        "": ""
+    },
+    {
+        "code": "8268",
+        "name": "Salenstein",
+        "": ""
+    },
+    {
+        "code": "8268",
+        "name": "Mannenbach-Salenstein",
+        "": ""
+    },
+    {
+        "code": "8269",
+        "name": "Fruthwilen",
+        "": ""
+    },
+    {
+        "code": "8272",
+        "name": "Ermatingen",
+        "": ""
+    },
+    {
+        "code": "8273",
+        "name": "Triboltingen",
+        "": ""
+    },
+    {
+        "code": "8274",
+        "name": "Gottlieben",
+        "": ""
+    },
+    {
+        "code": "8274",
+        "name": "Tägerwilen",
+        "": ""
+    },
+    {
+        "code": "8280",
+        "name": "Kreuzlingen",
+        "": ""
+    },
+    {
+        "code": "8302",
+        "name": "Kloten",
+        "": ""
+    },
+    {
+        "code": "8303",
+        "name": "Bassersdorf",
+        "": ""
+    },
+    {
+        "code": "8304",
+        "name": "Wallisellen",
+        "": ""
+    },
+    {
+        "code": "8305",
+        "name": "Dietlikon",
+        "": ""
+    },
+    {
+        "code": "8306",
+        "name": "Brüttisellen",
+        "": ""
+    },
+    {
+        "code": "8307",
+        "name": "Ottikon b. Kemptthal",
+        "": ""
+    },
+    {
+        "code": "8307",
+        "name": "Effretikon",
+        "": ""
+    },
+    {
+        "code": "8308",
+        "name": "Agasul",
+        "": ""
+    },
+    {
+        "code": "8308",
+        "name": "Illnau",
+        "": ""
+    },
+    {
+        "code": "8309",
+        "name": "Nürensdorf",
+        "": ""
+    },
+    {
+        "code": "8310",
+        "name": "Kemptthal",
+        "": ""
+    },
+    {
+        "code": "8310",
+        "name": "Grafstal",
+        "": ""
+    },
+    {
+        "code": "8311",
+        "name": "Brütten",
+        "": ""
+    },
+    {
+        "code": "8312",
+        "name": "Winterberg ZH",
+        "": ""
+    },
+    {
+        "code": "8314",
+        "name": "Kyburg",
+        "": ""
+    },
+    {
+        "code": "8315",
+        "name": "Lindau",
+        "": ""
+    },
+    {
+        "code": "8317",
+        "name": "Tagelswangen",
+        "": ""
+    },
+    {
+        "code": "8320",
+        "name": "Fehraltorf",
+        "": ""
+    },
+    {
+        "code": "8322",
+        "name": "Madetswil",
+        "": ""
+    },
+    {
+        "code": "8330",
+        "name": "Hermatswil",
+        "": ""
+    },
+    {
+        "code": "8330",
+        "name": "Pfäffikon ZH",
+        "": ""
+    },
+    {
+        "code": "8331",
+        "name": "Auslikon",
+        "": ""
+    },
+    {
+        "code": "8332",
+        "name": "Russikon",
+        "": ""
+    },
+    {
+        "code": "8335",
+        "name": "Hittnau",
+        "": ""
+    },
+    {
+        "code": "8340",
+        "name": "Hinwil",
+        "": ""
+    },
+    {
+        "code": "8342",
+        "name": "Wernetshausen",
+        "": ""
+    },
+    {
+        "code": "8344",
+        "name": "Bäretswil",
+        "": ""
+    },
+    {
+        "code": "8345",
+        "name": "Adetswil",
+        "": ""
+    },
+    {
+        "code": "8352",
+        "name": "Ricketwil (Winterthur)",
+        "": ""
+    },
+    {
+        "code": "8352",
+        "name": "Elsau",
+        "": ""
+    },
+    {
+        "code": "8353",
+        "name": "Elgg",
+        "": ""
+    },
+    {
+        "code": "8354",
+        "name": "Hofstetten ZH",
+        "": ""
+    },
+    {
+        "code": "8355",
+        "name": "Aadorf",
+        "": ""
+    },
+    {
+        "code": "8356",
+        "name": "Ettenhausen TG",
+        "": ""
+    },
+    {
+        "code": "8357",
+        "name": "Guntershausen b. Aadorf",
+        "": ""
+    },
+    {
+        "code": "8360",
+        "name": "Wallenwil",
+        "": ""
+    },
+    {
+        "code": "8360",
+        "name": "Eschlikon TG",
+        "": ""
+    },
+    {
+        "code": "8362",
+        "name": "Balterswil",
+        "": ""
+    },
+    {
+        "code": "8363",
+        "name": "Bichelsee",
+        "": ""
+    },
+    {
+        "code": "8370",
+        "name": "Busswil TG",
+        "": ""
+    },
+    {
+        "code": "8370",
+        "name": "Sirnach",
+        "": ""
+    },
+    {
+        "code": "8372",
+        "name": "Wiezikon b. Sirnach",
+        "": ""
+    },
+    {
+        "code": "8374",
+        "name": "Oberwangen TG",
+        "": ""
+    },
+    {
+        "code": "8374",
+        "name": "Dussnang",
+        "": ""
+    },
+    {
+        "code": "8376",
+        "name": "Fischingen",
+        "": ""
+    },
+    {
+        "code": "8376",
+        "name": "Au TG",
+        "": ""
+    },
+    {
+        "code": "8400",
+        "name": "Winterthur",
+        "": ""
+    },
+    {
+        "code": "8404",
+        "name": "Reutlingen (Winterthur)",
+        "": ""
+    },
+    {
+        "code": "8404",
+        "name": "Stadel (Winterthur)",
+        "": ""
+    },
+    {
+        "code": "8404",
+        "name": "Winterthur",
+        "": ""
+    },
+    {
+        "code": "8405",
+        "name": "Winterthur",
+        "": ""
+    },
+    {
+        "code": "8406",
+        "name": "Winterthur",
+        "": ""
+    },
+    {
+        "code": "8408",
+        "name": "Winterthur",
+        "": ""
+    },
+    {
+        "code": "8409",
+        "name": "Winterthur",
+        "": ""
+    },
+    {
+        "code": "8412",
+        "name": "Aesch (Neftenbach)",
+        "": ""
+    },
+    {
+        "code": "8412",
+        "name": "Riet (Neftenbach)",
+        "": ""
+    },
+    {
+        "code": "8412",
+        "name": "Hünikon (Neftenbach)",
+        "": ""
+    },
+    {
+        "code": "8413",
+        "name": "Neftenbach",
+        "": ""
+    },
+    {
+        "code": "8414",
+        "name": "Buch am Irchel",
+        "": ""
+    },
+    {
+        "code": "8415",
+        "name": "Berg am Irchel",
+        "": ""
+    },
+    {
+        "code": "8415",
+        "name": "Gräslikon",
+        "": ""
+    },
+    {
+        "code": "8416",
+        "name": "Flaach",
+        "": ""
+    },
+    {
+        "code": "8418",
+        "name": "Schlatt b. Winterthur",
+        "": ""
+    },
+    {
+        "code": "8421",
+        "name": "Dättlikon",
+        "": ""
+    },
+    {
+        "code": "8422",
+        "name": "Pfungen",
+        "": ""
+    },
+    {
+        "code": "8424",
+        "name": "Embrach",
+        "": ""
+    },
+    {
+        "code": "8425",
+        "name": "Oberembrach",
+        "": ""
+    },
+    {
+        "code": "8426",
+        "name": "Lufingen",
+        "": ""
+    },
+    {
+        "code": "8427",
+        "name": "Freienstein",
+        "": ""
+    },
+    {
+        "code": "8427",
+        "name": "Rorbas",
+        "": ""
+    },
+    {
+        "code": "8428",
+        "name": "Teufen ZH",
+        "": ""
+    },
+    {
+        "code": "8442",
+        "name": "Hettlingen",
+        "": ""
+    },
+    {
+        "code": "8444",
+        "name": "Henggart",
+        "": ""
+    },
+    {
+        "code": "8447",
+        "name": "Dachsen",
+        "": ""
+    },
+    {
+        "code": "8450",
+        "name": "Andelfingen",
+        "": ""
+    },
+    {
+        "code": "8451",
+        "name": "Kleinandelfingen",
+        "": ""
+    },
+    {
+        "code": "8452",
+        "name": "Adlikon b. Andelfingen",
+        "": ""
+    },
+    {
+        "code": "8453",
+        "name": "Alten",
+        "": ""
+    },
+    {
+        "code": "8454",
+        "name": "Buchberg",
+        "": ""
+    },
+    {
+        "code": "8455",
+        "name": "Rüdlingen",
+        "": ""
+    },
+    {
+        "code": "8457",
+        "name": "Humlikon",
+        "": ""
+    },
+    {
+        "code": "8458",
+        "name": "Dorf",
+        "": ""
+    },
+    {
+        "code": "8459",
+        "name": "Volken",
+        "": ""
+    },
+    {
+        "code": "8460",
+        "name": "Marthalen",
+        "": ""
+    },
+    {
+        "code": "8461",
+        "name": "Oerlingen",
+        "": ""
+    },
+    {
+        "code": "8462",
+        "name": "Rheinau",
+        "": ""
+    },
+    {
+        "code": "8463",
+        "name": "Benken ZH",
+        "": ""
+    },
+    {
+        "code": "8464",
+        "name": "Ellikon am Rhein",
+        "": ""
+    },
+    {
+        "code": "8465",
+        "name": "Rudolfingen",
+        "": ""
+    },
+    {
+        "code": "8465",
+        "name": "Wildensbuch",
+        "": ""
+    },
+    {
+        "code": "8466",
+        "name": "Trüllikon",
+        "": ""
+    },
+    {
+        "code": "8467",
+        "name": "Truttikon",
+        "": ""
+    },
+    {
+        "code": "8468",
+        "name": "Waltalingen",
+        "": ""
+    },
+    {
+        "code": "8468",
+        "name": "Guntalingen",
+        "": ""
+    },
+    {
+        "code": "8471",
+        "name": "Rutschwil (Dägerlen)",
+        "": ""
+    },
+    {
+        "code": "8471",
+        "name": "Dägerlen",
+        "": ""
+    },
+    {
+        "code": "8471",
+        "name": "Oberwil (Dägerlen)",
+        "": ""
+    },
+    {
+        "code": "8471",
+        "name": "Berg (Dägerlen)",
+        "": ""
+    },
+    {
+        "code": "8471",
+        "name": "Bänk (Dägerlen)",
+        "": ""
+    },
+    {
+        "code": "8472",
+        "name": "Seuzach",
+        "": ""
+    },
+    {
+        "code": "8474",
+        "name": "Dinhard",
+        "": ""
+    },
+    {
+        "code": "8475",
+        "name": "Ossingen",
+        "": ""
+    },
+    {
+        "code": "8476",
+        "name": "Unterstammheim",
+        "": ""
+    },
+    {
+        "code": "8477",
+        "name": "Oberstammheim",
+        "": ""
+    },
+    {
+        "code": "8478",
+        "name": "Thalheim an der Thur",
+        "": ""
+    },
+    {
+        "code": "8479",
+        "name": "Altikon",
+        "": ""
+    },
+    {
+        "code": "8482",
+        "name": "Sennhof (Winterthur)",
+        "": ""
+    },
+    {
+        "code": "8483",
+        "name": "Kollbrunn",
+        "": ""
+    },
+    {
+        "code": "8484",
+        "name": "Neschwil",
+        "": ""
+    },
+    {
+        "code": "8484",
+        "name": "Theilingen",
+        "": ""
+    },
+    {
+        "code": "8484",
+        "name": "Weisslingen",
+        "": ""
+    },
+    {
+        "code": "8486",
+        "name": "Rikon im Tösstal",
+        "": ""
+    },
+    {
+        "code": "8487",
+        "name": "Rämismühle",
+        "": ""
+    },
+    {
+        "code": "8487",
+        "name": "Zell ZH",
+        "": ""
+    },
+    {
+        "code": "8488",
+        "name": "Turbenthal",
+        "": ""
+    },
+    {
+        "code": "8489",
+        "name": "Wildberg",
+        "": ""
+    },
+    {
+        "code": "8492",
+        "name": "Wila",
+        "": ""
+    },
+    {
+        "code": "8493",
+        "name": "Saland",
+        "": ""
+    },
+    {
+        "code": "8494",
+        "name": "Bauma",
+        "": ""
+    },
+    {
+        "code": "8495",
+        "name": "Schmidrüti",
+        "": ""
+    },
+    {
+        "code": "8496",
+        "name": "Steg im Tösstal",
+        "": ""
+    },
+    {
+        "code": "8497",
+        "name": "Fischenthal",
+        "": ""
+    },
+    {
+        "code": "8498",
+        "name": "Gibswil-Ried",
+        "": ""
+    },
+    {
+        "code": "8499",
+        "name": "Sternenberg",
+        "": ""
+    },
+    {
+        "code": "8500",
+        "name": "Frauenfeld",
+        "": ""
+    },
+    {
+        "code": "8500",
+        "name": "Gerlikon",
+        "": ""
+    },
+    {
+        "code": "8505",
+        "name": "Dettighofen",
+        "": ""
+    },
+    {
+        "code": "8505",
+        "name": "Pfyn",
+        "": ""
+    },
+    {
+        "code": "8506",
+        "name": "Lanzenneunforn",
+        "": ""
+    },
+    {
+        "code": "8507",
+        "name": "Hörhausen",
+        "": ""
+    },
+    {
+        "code": "8508",
+        "name": "Homburg",
+        "": ""
+    },
+    {
+        "code": "8512",
+        "name": "Lustdorf",
+        "": ""
+    },
+    {
+        "code": "8512",
+        "name": "Wetzikon TG",
+        "": ""
+    },
+    {
+        "code": "8512",
+        "name": "Thundorf",
+        "": ""
+    },
+    {
+        "code": "8514",
+        "name": "Amlikon-Bissegg",
+        "": ""
+    },
+    {
+        "code": "8522",
+        "name": "Häuslenen",
+        "": ""
+    },
+    {
+        "code": "8522",
+        "name": "Aawangen",
+        "": ""
+    },
+    {
+        "code": "8523",
+        "name": "Hagenbuch ZH",
+        "": ""
+    },
+    {
+        "code": "8524",
+        "name": "Buch b. Frauenfeld",
+        "": ""
+    },
+    {
+        "code": "8524",
+        "name": "Uesslingen",
+        "": ""
+    },
+    {
+        "code": "8525",
+        "name": "Niederneunforn",
+        "": ""
+    },
+    {
+        "code": "8525",
+        "name": "Wilen b. Neunforn",
+        "": ""
+    },
+    {
+        "code": "8526",
+        "name": "Oberneunforn",
+        "": ""
+    },
+    {
+        "code": "8532",
+        "name": "Weiningen TG",
+        "": ""
+    },
+    {
+        "code": "8532",
         "name": "Warth",
-        "code": "6767"
+        "": ""
     },
     {
-        "name": "Wolfurt",
-        "code": "6922"
+        "code": "8535",
+        "name": "Herdern",
+        "": ""
     },
     {
-        "name": "Dornbirn",
-        "code": "6850"
+        "code": "8536",
+        "name": "Hüttwilen",
+        "": ""
     },
     {
-        "name": "Hohenems",
-        "code": "6845"
+        "code": "8537",
+        "name": "Nussbaumen TG",
+        "": ""
     },
     {
-        "name": "Lustenau",
-        "code": "6890"
+        "code": "8537",
+        "name": "Uerschhausen",
+        "": ""
     },
     {
-        "name": "Altach",
-        "code": "6844"
+        "code": "8542",
+        "name": "Wiesendangen",
+        "": ""
     },
     {
-        "name": "Düns",
-        "code": "6822"
+        "code": "8543",
+        "name": "Bertschikon",
+        "": ""
     },
     {
-        "name": "Dünserberg",
-        "code": "6822"
+        "code": "8543",
+        "name": "Gundetswil",
+        "": ""
     },
     {
-        "name": "Feldkirch",
-        "code": "6800"
+        "code": "8543",
+        "name": "Kefikon ZH",
+        "": ""
     },
     {
-        "name": "Frastanz",
-        "code": "6820"
+        "code": "8544",
+        "name": "Attikon",
+        "": ""
     },
     {
-        "name": "Fraxern",
-        "code": "6833"
+        "code": "8545",
+        "name": "Rickenbach ZH",
+        "": ""
     },
     {
-        "name": "Göfis",
-        "code": "6811"
+        "code": "8545",
+        "name": "Rickenbach Sulz",
+        "": ""
     },
     {
-        "name": "Götzis",
-        "code": "6840"
+        "code": "8546",
+        "name": "Kefikon TG",
+        "": ""
     },
     {
-        "name": "Klaus",
-        "code": "6833"
+        "code": "8546",
+        "name": "Islikon",
+        "": ""
     },
     {
-        "name": "Koblach",
-        "code": "6842"
+        "code": "8546",
+        "name": "Menzengrüt",
+        "": ""
     },
     {
-        "name": "Laterns",
-        "code": "6830"
+        "code": "8547",
+        "name": "Gachnang",
+        "": ""
     },
     {
-        "name": "Mäder",
-        "code": "6841"
+        "code": "8548",
+        "name": "Ellikon an der Thur",
+        "": ""
     },
     {
-        "name": "Meiningen",
-        "code": "6812"
+        "code": "8552",
+        "name": "Felben-Wellhausen",
+        "": ""
     },
     {
-        "name": "Rankweil",
-        "code": "6830"
+        "code": "8553",
+        "name": "Eschikofen",
+        "": ""
     },
     {
-        "name": "Röns",
-        "code": "6822"
+        "code": "8553",
+        "name": "Harenwilen",
+        "": ""
     },
     {
-        "name": "Röthis",
-        "code": "6832"
+        "code": "8553",
+        "name": "Mettendorf TG",
+        "": ""
     },
     {
-        "name": "Satteins",
-        "code": "6822"
+        "code": "8553",
+        "name": "Hüttlingen",
+        "": ""
     },
     {
-        "name": "Schlins",
-        "code": "6824"
+        "code": "8554",
+        "name": "Müllheim-Wigoltingen",
+        "": ""
     },
     {
-        "name": "Schnifis",
-        "code": "6822"
+        "code": "8554",
+        "name": "Bonau",
+        "": ""
     },
     {
-        "name": "Sulz",
-        "code": "6832"
+        "code": "8555",
+        "name": "Müllheim Dorf",
+        "": ""
     },
     {
-        "name": "Übersaxen",
-        "code": "6834"
+        "code": "8556",
+        "name": "Engwang",
+        "": ""
     },
     {
-        "name": "Viktorsberg",
-        "code": "6836"
+        "code": "8556",
+        "name": "Illhart",
+        "": ""
     },
     {
-        "name": "Weiler",
-        "code": "6833"
+        "code": "8556",
+        "name": "Lamperswil TG",
+        "": ""
     },
     {
-        "name": "Zwischenwasser",
-        "code": "6835"
+        "code": "8556",
+        "name": "Wigoltingen",
+        "": ""
     },
     {
-        "name": "Wien-Innere Stadt",
-        "code": "1010"
+        "code": "8558",
+        "name": "Raperswilen",
+        "": ""
     },
     {
-        "name": "Wien-Leopoldstadt",
-        "code": "1020"
+        "code": "8560",
+        "name": "Märstetten",
+        "": ""
     },
     {
-        "name": "Wien-Landstraße",
-        "code": "1030"
+        "code": "8561",
+        "name": "Ottoberg",
+        "": ""
     },
     {
-        "name": "Wien-Wieden",
-        "code": "1040"
+        "code": "8564",
+        "name": "Lipperswil",
+        "": ""
     },
     {
-        "name": "Wien-Margareten",
-        "code": "1050"
+        "code": "8564",
+        "name": "Engwilen",
+        "": ""
     },
     {
-        "name": "Wien-Mariahilf",
-        "code": "1060"
+        "code": "8564",
+        "name": "Wäldi",
+        "": ""
     },
     {
-        "name": "Wien-Neubau",
-        "code": "1070"
+        "code": "8564",
+        "name": "Sonterswil",
+        "": ""
     },
     {
-        "name": "Wien-Josefstadt",
-        "code": "1080"
+        "code": "8564",
+        "name": "Wagerswil",
+        "": ""
     },
     {
-        "name": "Wien-Alsergrund",
-        "code": "1090"
+        "code": "8564",
+        "name": "Hattenhausen",
+        "": ""
     },
     {
-        "name": "Wien-Favoriten",
-        "code": "1100"
+        "code": "8564",
+        "name": "Gunterswilen",
+        "": ""
     },
     {
-        "name": "Wien-Simmering",
-        "code": "1110"
+        "code": "8564",
+        "name": "Hefenhausen",
+        "": ""
     },
     {
-        "name": "Wien-Meidling",
-        "code": "1120"
+        "code": "8565",
+        "name": "Hugelshofen",
+        "": ""
     },
     {
-        "name": "Wien-Hietzing",
-        "code": "1130"
+        "code": "8566",
+        "name": "Dotnacht",
+        "": ""
     },
     {
-        "name": "Wien-Penzing",
-        "code": "1140"
+        "code": "8566",
+        "name": "Neuwilen",
+        "": ""
     },
     {
-        "name": "Wien-Rudolfsheim-Fünfhaus",
-        "code": "1150"
+        "code": "8566",
+        "name": "Ellighausen",
+        "": ""
     },
     {
-        "name": "Wien-Ottakring",
-        "code": "1160"
+        "code": "8566",
+        "name": "Lippoldswilen",
+        "": ""
     },
     {
-        "name": "Wien-Hernals",
-        "code": "1170"
+        "code": "8570",
+        "name": "Weinfelden",
+        "": ""
     },
     {
-        "name": "Wien-Währing",
-        "code": "1180"
+        "code": "8572",
+        "name": "Andhausen",
+        "": ""
     },
     {
-        "name": "Wien-Döbling",
-        "code": "1190"
+        "code": "8572",
+        "name": "Graltshausen",
+        "": ""
     },
     {
-        "name": "Wien-Brigittenau",
-        "code": "1200"
+        "code": "8572",
+        "name": "Guntershausen b. Berg",
+        "": ""
     },
     {
-        "name": "Wien-Floridsdorf",
-        "code": "1210"
+        "code": "8572",
+        "name": "Berg TG",
+        "": ""
     },
     {
-        "name": "Wien-Donaustadt",
-        "code": "1220"
+        "code": "8573",
+        "name": "Alterswilen",
+        "": ""
     },
     {
-        "name": "Wien-Liesing",
-        "code": "1230"
+        "code": "8573",
+        "name": "Altishausen",
+        "": ""
     },
     {
-        "name": "Heiligenkreuz im Lafnitztal",
-        "code": "7561"
+        "code": "8573",
+        "name": "Siegershausen",
+        "": ""
     },
     {
-        "name": "Loipersbach im Burgenland",
-        "code": "7020"
+        "code": "8574",
+        "name": "Illighausen",
+        "": ""
     },
     {
-        "name": "Pöttsching",
-        "code": "7033"
+        "code": "8574",
+        "name": "Lengwil-Oberhofen",
+        "": ""
     },
     {
-        "name": "Enzersdorf an der Fischa",
-        "code": "2431"
+        "code": "8575",
+        "name": "Istighofen",
+        "": ""
     },
     {
-        "name": "Eggenburg",
-        "code": "3730"
+        "code": "8575",
+        "name": "Bürglen TG",
+        "": ""
     },
     {
-        "name": "Röschitz",
-        "code": "3743"
+        "code": "8576",
+        "name": "Mauren TG",
+        "": ""
     },
     {
-        "name": "Stetteldorf am Wagram",
-        "code": "3463"
+        "code": "8577",
+        "name": "Toos",
+        "": ""
     },
     {
-        "name": "Gnadendorf",
-        "code": "2152"
+        "code": "8577",
+        "name": "Schönholzerswilen",
+        "": ""
     },
     {
-        "name": "Niederleis",
-        "code": "2116"
+        "code": "8580",
+        "name": "Sommeri",
+        "": ""
     },
     {
-        "name": "Thomasberg",
-        "code": "2842"
+        "code": "8580",
+        "name": "Hagenwil b. Amriswil",
+        "": ""
     },
     {
-        "name": "Hitzendorf",
-        "code": "8151"
+        "code": "8580",
+        "name": "Hefenhofen",
+        "": ""
     },
     {
-        "name": "Thaur",
-        "code": "6065"
+        "code": "8580",
+        "name": "Amriswil",
+        "": ""
     },
     {
-        "name": "Nauders",
-        "code": "6543"
+        "code": "8581",
+        "name": "Schocherswil",
+        "": ""
     },
     {
-        "name": "Wängle",
-        "code": "6610"
+        "code": "8582",
+        "name": "Dozwil",
+        "": ""
+    },
+    {
+        "code": "8583",
+        "name": "Götighofen",
+        "": ""
+    },
+    {
+        "code": "8583",
+        "name": "Donzhausen",
+        "": ""
+    },
+    {
+        "code": "8583",
+        "name": "Sulgen",
+        "": ""
+    },
+    {
+        "code": "8584",
+        "name": "Leimbach TG",
+        "": ""
+    },
+    {
+        "code": "8584",
+        "name": "Opfershofen TG",
+        "": ""
+    },
+    {
+        "code": "8585",
+        "name": "Happerswil",
+        "": ""
+    },
+    {
+        "code": "8585",
+        "name": "Eggethof",
+        "": ""
+    },
+    {
+        "code": "8585",
+        "name": "Zuben",
+        "": ""
+    },
+    {
+        "code": "8585",
+        "name": "Schönenbaumgarten",
+        "": ""
+    },
+    {
+        "code": "8585",
+        "name": "Herrenhof",
+        "": ""
+    },
+    {
+        "code": "8585",
+        "name": "Birwinken",
+        "": ""
+    },
+    {
+        "code": "8585",
+        "name": "Klarsreuti",
+        "": ""
+    },
+    {
+        "code": "8585",
+        "name": "Mattwil",
+        "": ""
+    },
+    {
+        "code": "8585",
+        "name": "Langrickenbach",
+        "": ""
+    },
+    {
+        "code": "8586",
+        "name": "Andwil TG",
+        "": ""
+    },
+    {
+        "code": "8586",
+        "name": "Kümmertshausen",
+        "": ""
+    },
+    {
+        "code": "8586",
+        "name": "Riedt b. Erlen",
+        "": ""
+    },
+    {
+        "code": "8586",
+        "name": "Buchackern",
+        "": ""
+    },
+    {
+        "code": "8586",
+        "name": "Engishofen",
+        "": ""
+    },
+    {
+        "code": "8586",
+        "name": "Ennetaach",
+        "": ""
+    },
+    {
+        "code": "8586",
+        "name": "Buch b. Kümmertshausen",
+        "": ""
+    },
+    {
+        "code": "8586",
+        "name": "Erlen",
+        "": ""
+    },
+    {
+        "code": "8587",
+        "name": "Oberaach",
+        "": ""
+    },
+    {
+        "code": "8588",
+        "name": "Zihlschlacht",
+        "": ""
+    },
+    {
+        "code": "8589",
+        "name": "Sitterdorf",
+        "": ""
+    },
+    {
+        "code": "8590",
+        "name": "Romanshorn",
+        "": ""
+    },
+    {
+        "code": "8592",
+        "name": "Uttwil",
+        "": ""
+    },
+    {
+        "code": "8593",
+        "name": "Kesswil",
+        "": ""
+    },
+    {
+        "code": "8594",
+        "name": "Güttingen",
+        "": ""
+    },
+    {
+        "code": "8595",
+        "name": "Altnau",
+        "": ""
+    },
+    {
+        "code": "8596",
+        "name": "Münsterlingen",
+        "": ""
+    },
+    {
+        "code": "8596",
+        "name": "Scherzingen",
+        "": ""
+    },
+    {
+        "code": "8597",
+        "name": "Landschlacht",
+        "": ""
+    },
+    {
+        "code": "8598",
+        "name": "Bottighofen",
+        "": ""
+    },
+    {
+        "code": "8599",
+        "name": "Salmsach",
+        "": ""
+    },
+    {
+        "code": "8600",
+        "name": "Dübendorf",
+        "": ""
+    },
+    {
+        "code": "8602",
+        "name": "Wangen b. Dübendorf",
+        "": ""
+    },
+    {
+        "code": "8603",
+        "name": "Schwerzenbach",
+        "": ""
+    },
+    {
+        "code": "8604",
+        "name": "Volketswil",
+        "": ""
+    },
+    {
+        "code": "8605",
+        "name": "Gutenswil",
+        "": ""
+    },
+    {
+        "code": "8606",
+        "name": "Nänikon",
+        "": ""
+    },
+    {
+        "code": "8606",
+        "name": "Greifensee",
+        "": ""
+    },
+    {
+        "code": "8607",
+        "name": "Aathal-Seegräben",
+        "": ""
+    },
+    {
+        "code": "8608",
+        "name": "Bubikon",
+        "": ""
+    },
+    {
+        "code": "8610",
+        "name": "Uster",
+        "": ""
+    },
+    {
+        "code": "8614",
+        "name": "Sulzbach",
+        "": ""
+    },
+    {
+        "code": "8614",
+        "name": "Bertschikon (Gossau ZH)",
+        "": ""
+    },
+    {
+        "code": "8615",
+        "name": "Wermatswil",
+        "": ""
+    },
+    {
+        "code": "8615",
+        "name": "Freudwil",
+        "": ""
+    },
+    {
+        "code": "8616",
+        "name": "Riedikon",
+        "": ""
+    },
+    {
+        "code": "8617",
+        "name": "Mönchaltorf",
+        "": ""
+    },
+    {
+        "code": "8618",
+        "name": "Oetwil am See",
+        "": ""
+    },
+    {
+        "code": "8620",
+        "name": "Wetzikon ZH",
+        "": ""
+    },
+    {
+        "code": "8623",
+        "name": "Wetzikon ZH",
+        "": ""
+    },
+    {
+        "code": "8624",
+        "name": "Grüt (Gossau ZH)",
+        "": ""
+    },
+    {
+        "code": "8625",
+        "name": "Gossau ZH",
+        "": ""
+    },
+    {
+        "code": "8626",
+        "name": "Ottikon (Gossau ZH)",
+        "": ""
+    },
+    {
+        "code": "8627",
+        "name": "Grüningen",
+        "": ""
+    },
+    {
+        "code": "8630",
+        "name": "Rüti ZH",
+        "": ""
+    },
+    {
+        "code": "8632",
+        "name": "Tann",
+        "": ""
+    },
+    {
+        "code": "8633",
+        "name": "Wolfhausen",
+        "": ""
+    },
+    {
+        "code": "8634",
+        "name": "Hombrechtikon",
+        "": ""
+    },
+    {
+        "code": "8635",
+        "name": "Dürnten",
+        "": ""
+    },
+    {
+        "code": "8636",
+        "name": "Wald ZH",
+        "": ""
+    },
+    {
+        "code": "8637",
+        "name": "Laupen ZH",
+        "": ""
+    },
+    {
+        "code": "8638",
+        "name": "Goldingen",
+        "": ""
+    },
+    {
+        "code": "8639",
+        "name": "Faltigberg",
+        "": ""
+    },
+    {
+        "code": "8640",
+        "name": "Rapperswil SG",
+        "": ""
+    },
+    {
+        "code": "8640",
+        "name": "Hurden",
+        "": ""
+    },
+    {
+        "code": "8645",
+        "name": "Jona",
+        "": ""
+    },
+    {
+        "code": "8646",
+        "name": "Wagen",
+        "": ""
+    },
+    {
+        "code": "8700",
+        "name": "Küsnacht ZH",
+        "": ""
+    },
+    {
+        "code": "8702",
+        "name": "Zollikon",
+        "": ""
+    },
+    {
+        "code": "8703",
+        "name": "Erlenbach ZH",
+        "": ""
+    },
+    {
+        "code": "8704",
+        "name": "Herrliberg",
+        "": ""
+    },
+    {
+        "code": "8706",
+        "name": "Meilen",
+        "": ""
+    },
+    {
+        "code": "8707",
+        "name": "Uetikon am See",
+        "": ""
+    },
+    {
+        "code": "8708",
+        "name": "Männedorf",
+        "": ""
+    },
+    {
+        "code": "8712",
+        "name": "Stäfa",
+        "": ""
+    },
+    {
+        "code": "8713",
+        "name": "Uerikon",
+        "": ""
+    },
+    {
+        "code": "8714",
+        "name": "Feldbach",
+        "": ""
+    },
+    {
+        "code": "8715",
+        "name": "Bollingen",
+        "": ""
+    },
+    {
+        "code": "8716",
+        "name": "Schmerikon",
+        "": ""
+    },
+    {
+        "code": "8717",
+        "name": "Benken SG",
+        "": ""
+    },
+    {
+        "code": "8718",
+        "name": "Schänis",
+        "": ""
+    },
+    {
+        "code": "8722",
+        "name": "Kaltbrunn",
+        "": ""
+    },
+    {
+        "code": "8723",
+        "name": "Rufi",
+        "": ""
+    },
+    {
+        "code": "8725",
+        "name": "Gebertingen",
+        "": ""
+    },
+    {
+        "code": "8725",
+        "name": "Ernetschwil",
+        "": ""
+    },
+    {
+        "code": "8726",
+        "name": "Ricken SG",
+        "": ""
+    },
+    {
+        "code": "8727",
+        "name": "Walde SG",
+        "": ""
+    },
+    {
+        "code": "8730",
+        "name": "Uznach",
+        "": ""
+    },
+    {
+        "code": "8732",
+        "name": "Neuhaus SG",
+        "": ""
+    },
+    {
+        "code": "8733",
+        "name": "Eschenbach SG",
+        "": ""
+    },
+    {
+        "code": "8734",
+        "name": "Ermenswil",
+        "": ""
+    },
+    {
+        "code": "8735",
+        "name": "Rüeterswil",
+        "": ""
+    },
+    {
+        "code": "8735",
+        "name": "St. Gallenkappel",
+        "": ""
+    },
+    {
+        "code": "8737",
+        "name": "Gommiswald",
+        "": ""
+    },
+    {
+        "code": "8738",
+        "name": "Uetliburg SG",
+        "": ""
+    },
+    {
+        "code": "8739",
+        "name": "Rieden SG",
+        "": ""
+    },
+    {
+        "code": "8750",
+        "name": "Klöntal",
+        "": ""
+    },
+    {
+        "code": "8750",
+        "name": "Glarus",
+        "": ""
+    },
+    {
+        "code": "8750",
+        "name": "Riedern",
+        "": ""
+    },
+    {
+        "code": "8751",
+        "name": "Urnerboden",
+        "": ""
+    },
+    {
+        "code": "8752",
+        "name": "Näfels",
+        "": ""
+    },
+    {
+        "code": "8753",
+        "name": "Mollis",
+        "": ""
+    },
+    {
+        "code": "8754",
+        "name": "Netstal",
+        "": ""
+    },
+    {
+        "code": "8755",
+        "name": "Ennenda",
+        "": ""
+    },
+    {
+        "code": "8756",
+        "name": "Mitlödi",
+        "": ""
+    },
+    {
+        "code": "8757",
+        "name": "Filzbach",
+        "": ""
+    },
+    {
+        "code": "8758",
+        "name": "Obstalden",
+        "": ""
+    },
+    {
+        "code": "8762",
+        "name": "Schwändi b. Schwanden",
+        "": ""
+    },
+    {
+        "code": "8762",
+        "name": "Sool",
+        "": ""
+    },
+    {
+        "code": "8762",
+        "name": "Schwanden GL",
+        "": ""
+    },
+    {
+        "code": "8765",
+        "name": "Engi",
+        "": ""
+    },
+    {
+        "code": "8766",
+        "name": "Matt",
+        "": ""
+    },
+    {
+        "code": "8767",
+        "name": "Elm",
+        "": ""
+    },
+    {
+        "code": "8772",
+        "name": "Nidfurn",
+        "": ""
+    },
+    {
+        "code": "8773",
+        "name": "Haslen GL",
+        "": ""
+    },
+    {
+        "code": "8774",
+        "name": "Leuggelbach",
+        "": ""
+    },
+    {
+        "code": "8775",
+        "name": "Luchsingen",
+        "": ""
+    },
+    {
+        "code": "8775",
+        "name": "Hätzingen",
+        "": ""
+    },
+    {
+        "code": "8777",
+        "name": "Diesbach GL",
+        "": ""
+    },
+    {
+        "code": "8777",
+        "name": "Betschwanden",
+        "": ""
+    },
+    {
+        "code": "8782",
+        "name": "Rüti GL",
+        "": ""
+    },
+    {
+        "code": "8783",
+        "name": "Linthal",
+        "": ""
+    },
+    {
+        "code": "8784",
+        "name": "Braunwald",
+        "": ""
+    },
+    {
+        "code": "8800",
+        "name": "Thalwil",
+        "": ""
+    },
+    {
+        "code": "8802",
+        "name": "Kilchberg ZH",
+        "": ""
+    },
+    {
+        "code": "8803",
+        "name": "Rüschlikon",
+        "": ""
+    },
+    {
+        "code": "8804",
+        "name": "Au ZH",
+        "": ""
+    },
+    {
+        "code": "8805",
+        "name": "Richterswil",
+        "": ""
+    },
+    {
+        "code": "8806",
+        "name": "Bäch SZ",
+        "": ""
+    },
+    {
+        "code": "8807",
+        "name": "Freienbach",
+        "": ""
+    },
+    {
+        "code": "8808",
+        "name": "Pfäffikon SZ",
+        "": ""
+    },
+    {
+        "code": "8810",
+        "name": "Horgen",
+        "": ""
+    },
+    {
+        "code": "8815",
+        "name": "Horgenberg",
+        "": ""
+    },
+    {
+        "code": "8816",
+        "name": "Hirzel",
+        "": ""
+    },
+    {
+        "code": "8820",
+        "name": "Wädenswil",
+        "": ""
+    },
+    {
+        "code": "8824",
+        "name": "Schönenberg ZH",
+        "": ""
+    },
+    {
+        "code": "8825",
+        "name": "Hütten",
+        "": ""
+    },
+    {
+        "code": "8832",
+        "name": "Wilen b. Wollerau",
+        "": ""
+    },
+    {
+        "code": "8832",
+        "name": "Wollerau",
+        "": ""
+    },
+    {
+        "code": "8833",
+        "name": "Samstagern",
+        "": ""
+    },
+    {
+        "code": "8834",
+        "name": "Schindellegi",
+        "": ""
+    },
+    {
+        "code": "8835",
+        "name": "Feusisberg",
+        "": ""
+    },
+    {
+        "code": "8836",
+        "name": "Bennau",
+        "": ""
+    },
+    {
+        "code": "8840",
+        "name": "Trachslau",
+        "": ""
+    },
+    {
+        "code": "8840",
+        "name": "Einsiedeln",
+        "": ""
+    },
+    {
+        "code": "8841",
+        "name": "Gross",
+        "": ""
+    },
+    {
+        "code": "8842",
+        "name": "Unteriberg",
+        "": ""
+    },
+    {
+        "code": "8843",
+        "name": "Oberiberg",
+        "": ""
+    },
+    {
+        "code": "8844",
+        "name": "Euthal",
+        "": ""
+    },
+    {
+        "code": "8845",
+        "name": "Studen SZ",
+        "": ""
+    },
+    {
+        "code": "8846",
+        "name": "Willerzell",
+        "": ""
+    },
+    {
+        "code": "8847",
+        "name": "Egg SZ",
+        "": ""
+    },
+    {
+        "code": "8849",
+        "name": "Alpthal",
+        "": ""
+    },
+    {
+        "code": "8852",
+        "name": "Altendorf",
+        "": ""
+    },
+    {
+        "code": "8853",
+        "name": "Lachen SZ",
+        "": ""
+    },
+    {
+        "code": "8854",
+        "name": "Siebnen",
+        "": ""
+    },
+    {
+        "code": "8854",
+        "name": "Galgenen",
+        "": ""
+    },
+    {
+        "code": "8855",
+        "name": "Wangen SZ",
+        "": ""
+    },
+    {
+        "code": "8856",
+        "name": "Tuggen",
+        "": ""
+    },
+    {
+        "code": "8857",
+        "name": "Vorderthal",
+        "": ""
+    },
+    {
+        "code": "8858",
+        "name": "Innerthal",
+        "": ""
+    },
+    {
+        "code": "8862",
+        "name": "Schübelbach",
+        "": ""
+    },
+    {
+        "code": "8863",
+        "name": "Buttikon SZ",
+        "": ""
+    },
+    {
+        "code": "8864",
+        "name": "Reichenburg",
+        "": ""
+    },
+    {
+        "code": "8865",
+        "name": "Bilten",
+        "": ""
+    },
+    {
+        "code": "8866",
+        "name": "Ziegelbrücke",
+        "": ""
+    },
+    {
+        "code": "8867",
+        "name": "Niederurnen",
+        "": ""
+    },
+    {
+        "code": "8868",
+        "name": "Oberurnen",
+        "": ""
+    },
+    {
+        "code": "8872",
+        "name": "Weesen",
+        "": ""
+    },
+    {
+        "code": "8873",
+        "name": "Amden",
+        "": ""
+    },
+    {
+        "code": "8874",
+        "name": "Mühlehorn",
+        "": ""
+    },
+    {
+        "code": "8877",
+        "name": "Murg",
+        "": ""
+    },
+    {
+        "code": "8878",
+        "name": "Quinten",
+        "": ""
+    },
+    {
+        "code": "8880",
+        "name": "Walenstadt",
+        "": ""
+    },
+    {
+        "code": "8881",
+        "name": "Knoblisbühl",
+        "": ""
+    },
+    {
+        "code": "8881",
+        "name": "Tscherlach",
+        "": ""
+    },
+    {
+        "code": "8881",
+        "name": "Walenstadtberg",
+        "": ""
+    },
+    {
+        "code": "8882",
+        "name": "Unterterzen",
+        "": ""
+    },
+    {
+        "code": "8883",
+        "name": "Quarten",
+        "": ""
+    },
+    {
+        "code": "8884",
+        "name": "Oberterzen",
+        "": ""
+    },
+    {
+        "code": "8885",
+        "name": "Mols",
+        "": ""
+    },
+    {
+        "code": "8886",
+        "name": "Mädris-Vermol",
+        "": ""
+    },
+    {
+        "code": "8887",
+        "name": "Mels",
+        "": ""
+    },
+    {
+        "code": "8888",
+        "name": "Heiligkreuz (Mels)",
+        "": ""
+    },
+    {
+        "code": "8889",
+        "name": "Plons",
+        "": ""
+    },
+    {
+        "code": "8890",
+        "name": "Flums",
+        "": ""
+    },
+    {
+        "code": "8892",
+        "name": "Berschis",
+        "": ""
+    },
+    {
+        "code": "8893",
+        "name": "Flums Hochwiese",
+        "": ""
+    },
+    {
+        "code": "8894",
+        "name": "Flumserberg Saxli",
+        "": ""
+    },
+    {
+        "code": "8895",
+        "name": "Flumserberg Portels",
+        "": ""
+    },
+    {
+        "code": "8896",
+        "name": "Flumserberg Bergheim",
+        "": ""
+    },
+    {
+        "code": "8897",
+        "name": "Flumserberg Tannenheim",
+        "": ""
+    },
+    {
+        "code": "8898",
+        "name": "Flumserberg Tannenbodenalp",
+        "": ""
+    },
+    {
+        "code": "8902",
+        "name": "Urdorf",
+        "": ""
+    },
+    {
+        "code": "8903",
+        "name": "Birmensdorf ZH",
+        "": ""
+    },
+    {
+        "code": "8904",
+        "name": "Aesch ZH",
+        "": ""
+    },
+    {
+        "code": "8905",
+        "name": "Islisberg",
+        "": ""
+    },
+    {
+        "code": "8905",
+        "name": "Arni AG",
+        "": ""
+    },
+    {
+        "code": "8906",
+        "name": "Bonstetten",
+        "": ""
+    },
+    {
+        "code": "8907",
+        "name": "Wettswil",
+        "": ""
+    },
+    {
+        "code": "8908",
+        "name": "Hedingen",
+        "": ""
+    },
+    {
+        "code": "8909",
+        "name": "Zwillikon",
+        "": ""
+    },
+    {
+        "code": "8910",
+        "name": "Affoltern am Albis",
+        "": ""
+    },
+    {
+        "code": "8911",
+        "name": "Rifferswil",
+        "": ""
+    },
+    {
+        "code": "8912",
+        "name": "Obfelden",
+        "": ""
+    },
+    {
+        "code": "8913",
+        "name": "Ottenbach",
+        "": ""
+    },
+    {
+        "code": "8914",
+        "name": "Aeugstertal",
+        "": ""
+    },
+    {
+        "code": "8914",
+        "name": "Aeugst am Albis",
+        "": ""
+    },
+    {
+        "code": "8915",
+        "name": "Hausen am Albis",
+        "": ""
+    },
+    {
+        "code": "8916",
+        "name": "Jonen",
+        "": ""
+    },
+    {
+        "code": "8917",
+        "name": "Oberlunkhofen",
+        "": ""
+    },
+    {
+        "code": "8918",
+        "name": "Unterlunkhofen",
+        "": ""
+    },
+    {
+        "code": "8919",
+        "name": "Rottenschwil",
+        "": ""
+    },
+    {
+        "code": "8925",
+        "name": "Ebertswil",
+        "": ""
+    },
+    {
+        "code": "8926",
+        "name": "Hauptikon",
+        "": ""
+    },
+    {
+        "code": "8926",
+        "name": "Uerzlikon",
+        "": ""
+    },
+    {
+        "code": "8926",
+        "name": "Kappel am Albis",
+        "": ""
+    },
+    {
+        "code": "8932",
+        "name": "Mettmenstetten",
+        "": ""
+    },
+    {
+        "code": "8933",
+        "name": "Maschwanden",
+        "": ""
+    },
+    {
+        "code": "8934",
+        "name": "Knonau",
+        "": ""
+    },
+    {
+        "code": "8942",
+        "name": "Oberrieden",
+        "": ""
+    },
+    {
+        "code": "8951",
+        "name": "Fahrweid",
+        "": ""
+    },
+    {
+        "code": "8952",
+        "name": "Schlieren",
+        "": ""
+    },
+    {
+        "code": "8953",
+        "name": "Dietikon",
+        "": ""
+    },
+    {
+        "code": "8954",
+        "name": "Geroldswil",
+        "": ""
+    },
+    {
+        "code": "8955",
+        "name": "Oetwil an der Limmat",
+        "": ""
+    },
+    {
+        "code": "8956",
+        "name": "Killwangen",
+        "": ""
+    },
+    {
+        "code": "8957",
+        "name": "Spreitenbach",
+        "": ""
+    },
+    {
+        "code": "8962",
+        "name": "Bergdietikon",
+        "": ""
+    },
+    {
+        "code": "8964",
+        "name": "Rudolfstetten",
+        "": ""
+    },
+    {
+        "code": "8965",
+        "name": "Berikon",
+        "": ""
+    },
+    {
+        "code": "8966",
+        "name": "Oberwil-Lieli",
+        "": ""
+    },
+    {
+        "code": "8967",
+        "name": "Widen",
+        "": ""
+    },
+    {
+        "code": "9000",
+        "name": "St. Gallen",
+        "": ""
+    },
+    {
+        "code": "9007",
+        "name": "St. Gallen",
+        "": ""
+    },
+    {
+        "code": "9008",
+        "name": "St. Gallen",
+        "": ""
+    },
+    {
+        "code": "9010",
+        "name": "St. Gallen",
+        "": ""
+    },
+    {
+        "code": "9011",
+        "name": "St. Gallen",
+        "": ""
+    },
+    {
+        "code": "9012",
+        "name": "St. Gallen",
+        "": ""
+    },
+    {
+        "code": "9014",
+        "name": "St. Gallen",
+        "": ""
+    },
+    {
+        "code": "9015",
+        "name": "St. Gallen",
+        "": ""
+    },
+    {
+        "code": "9016",
+        "name": "St. Gallen",
+        "": ""
+    },
+    {
+        "code": "9030",
+        "name": "Abtwil SG",
+        "": ""
+    },
+    {
+        "code": "9032",
+        "name": "Engelburg",
+        "": ""
+    },
+    {
+        "code": "9033",
+        "name": "Untereggen",
+        "": ""
+    },
+    {
+        "code": "9034",
+        "name": "Eggersriet",
+        "": ""
+    },
+    {
+        "code": "9035",
+        "name": "Grub AR",
+        "": ""
+    },
+    {
+        "code": "9036",
+        "name": "Grub SG",
+        "": ""
+    },
+    {
+        "code": "9037",
+        "name": "Speicherschwendi",
+        "": ""
+    },
+    {
+        "code": "9038",
+        "name": "Rehetobel",
+        "": ""
+    },
+    {
+        "code": "9042",
+        "name": "Speicher",
+        "": ""
+    },
+    {
+        "code": "9043",
+        "name": "Trogen",
+        "": ""
+    },
+    {
+        "code": "9044",
+        "name": "Wald AR",
+        "": ""
+    },
+    {
+        "code": "9050",
+        "name": "Appenzell Eggerstanden",
+        "": ""
+    },
+    {
+        "code": "9050",
+        "name": "Appenzell Enggenhütten",
+        "": ""
+    },
+    {
+        "code": "9050",
+        "name": "Appenzell Meistersrüte",
+        "": ""
+    },
+    {
+        "code": "9050",
+        "name": "Appenzell Steinegg",
+        "": ""
+    },
+    {
+        "code": "9050",
+        "name": "Appenzell Schlatt",
+        "": ""
+    },
+    {
+        "code": "9050",
+        "name": "Appenzell",
+        "": ""
+    },
+    {
+        "code": "9052",
+        "name": "Niederteufen",
+        "": ""
+    },
+    {
+        "code": "9053",
+        "name": "Teufen AR",
+        "": ""
+    },
+    {
+        "code": "9054",
+        "name": "Haslen AI",
+        "": ""
+    },
+    {
+        "code": "9055",
+        "name": "Bühler",
+        "": ""
+    },
+    {
+        "code": "9056",
+        "name": "Gais",
+        "": ""
+    },
+    {
+        "code": "9057",
+        "name": "Schwende",
+        "": ""
+    },
+    {
+        "code": "9057",
+        "name": "Wasserauen",
+        "": ""
+    },
+    {
+        "code": "9057",
+        "name": "Weissbad",
+        "": ""
+    },
+    {
+        "code": "9058",
+        "name": "Brülisau",
+        "": ""
+    },
+    {
+        "code": "9062",
+        "name": "Lustmühle",
+        "": ""
+    },
+    {
+        "code": "9063",
+        "name": "Stein AR",
+        "": ""
+    },
+    {
+        "code": "9064",
+        "name": "Hundwil",
+        "": ""
+    },
+    {
+        "code": "9100",
+        "name": "Herisau",
+        "": ""
+    },
+    {
+        "code": "9103",
+        "name": "Schwellbrunn",
+        "": ""
+    },
+    {
+        "code": "9104",
+        "name": "Waldstatt",
+        "": ""
+    },
+    {
+        "code": "9105",
+        "name": "Schönengrund",
+        "": ""
+    },
+    {
+        "code": "9107",
+        "name": "Urnäsch",
+        "": ""
+    },
+    {
+        "code": "9108",
+        "name": "Gontenbad",
+        "": ""
+    },
+    {
+        "code": "9108",
+        "name": "Jakobsbad",
+        "": ""
+    },
+    {
+        "code": "9108",
+        "name": "Gonten",
+        "": ""
+    },
+    {
+        "code": "9112",
+        "name": "Schachen b. Herisau",
+        "": ""
+    },
+    {
+        "code": "9113",
+        "name": "Degersheim",
+        "": ""
+    },
+    {
+        "code": "9114",
+        "name": "Hoffeld",
+        "": ""
+    },
+    {
+        "code": "9115",
+        "name": "Dicken",
+        "": ""
+    },
+    {
+        "code": "9116",
+        "name": "Wolfertswil",
+        "": ""
+    },
+    {
+        "code": "9122",
+        "name": "Ebersol",
+        "": ""
+    },
+    {
+        "code": "9122",
+        "name": "Mogelsberg",
+        "": ""
+    },
+    {
+        "code": "9123",
+        "name": "Nassen",
+        "": ""
+    },
+    {
+        "code": "9125",
+        "name": "Brunnadern",
+        "": ""
+    },
+    {
+        "code": "9126",
+        "name": "Necker",
+        "": ""
+    },
+    {
+        "code": "9127",
+        "name": "St. Peterzell",
+        "": ""
+    },
+    {
+        "code": "9200",
+        "name": "Gossau SG",
+        "": ""
+    },
+    {
+        "code": "9203",
+        "name": "Niederwil SG",
+        "": ""
+    },
+    {
+        "code": "9204",
+        "name": "Andwil SG",
+        "": ""
+    },
+    {
+        "code": "9205",
+        "name": "Waldkirch",
+        "": ""
+    },
+    {
+        "code": "9212",
+        "name": "Arnegg",
+        "": ""
+    },
+    {
+        "code": "9213",
+        "name": "Hauptwil",
+        "": ""
+    },
+    {
+        "code": "9214",
+        "name": "Kradolf",
+        "": ""
+    },
+    {
+        "code": "9215",
+        "name": "Schönenberg an der Thur",
+        "": ""
+    },
+    {
+        "code": "9215",
+        "name": "Buhwil",
+        "": ""
+    },
+    {
+        "code": "9216",
+        "name": "Heldswil",
+        "": ""
+    },
+    {
+        "code": "9216",
+        "name": "Hohentannen",
+        "": ""
+    },
+    {
+        "code": "9217",
+        "name": "Neukirch an der Thur",
+        "": ""
+    },
+    {
+        "code": "9220",
+        "name": "Bischofszell",
+        "": ""
+    },
+    {
+        "code": "9223",
+        "name": "Schweizersholz",
+        "": ""
+    },
+    {
+        "code": "9223",
+        "name": "Halden",
+        "": ""
+    },
+    {
+        "code": "9225",
+        "name": "Wilen (Gottshaus)",
+        "": ""
+    },
+    {
+        "code": "9225",
+        "name": "St. Pelagiberg",
+        "": ""
+    },
+    {
+        "code": "9230",
+        "name": "Flawil",
+        "": ""
+    },
+    {
+        "code": "9231",
+        "name": "Egg (Flawil)",
+        "": ""
+    },
+    {
+        "code": "9240",
+        "name": "Niederglatt SG",
+        "": ""
+    },
+    {
+        "code": "9240",
+        "name": "Uzwil",
+        "": ""
+    },
+    {
+        "code": "9242",
+        "name": "Oberuzwil",
+        "": ""
+    },
+    {
+        "code": "9243",
+        "name": "Jonschwil",
+        "": ""
+    },
+    {
+        "code": "9244",
+        "name": "Niederuzwil",
+        "": ""
+    },
+    {
+        "code": "9245",
+        "name": "Sonnental",
+        "": ""
+    },
+    {
+        "code": "9245",
+        "name": "Oberbüren",
+        "": ""
+    },
+    {
+        "code": "9246",
+        "name": "Niederbüren",
+        "": ""
+    },
+    {
+        "code": "9247",
+        "name": "Henau",
+        "": ""
+    },
+    {
+        "code": "9248",
+        "name": "Bichwil",
+        "": ""
+    },
+    {
+        "code": "9249",
+        "name": "Oberstetten",
+        "": ""
+    },
+    {
+        "code": "9249",
+        "name": "Niederstetten",
+        "": ""
+    },
+    {
+        "code": "9249",
+        "name": "Algetshausen",
+        "": ""
+    },
+    {
+        "code": "9300",
+        "name": "Wittenbach",
+        "": ""
+    },
+    {
+        "code": "9304",
+        "name": "Bernhardzell",
+        "": ""
+    },
+    {
+        "code": "9305",
+        "name": "Berg SG",
+        "": ""
+    },
+    {
+        "code": "9306",
+        "name": "Freidorf TG",
+        "": ""
+    },
+    {
+        "code": "9308",
+        "name": "Lömmenschwil",
+        "": ""
+    },
+    {
+        "code": "9312",
+        "name": "Häggenschwil",
+        "": ""
+    },
+    {
+        "code": "9313",
+        "name": "Muolen",
+        "": ""
+    },
+    {
+        "code": "9314",
+        "name": "Steinebrunn",
+        "": ""
+    },
+    {
+        "code": "9315",
+        "name": "Winden",
+        "": ""
+    },
+    {
+        "code": "9315",
+        "name": "Neukirch (Egnach)",
+        "": ""
+    },
+    {
+        "code": "9320",
+        "name": "Frasnacht",
+        "": ""
+    },
+    {
+        "code": "9320",
+        "name": "Stachen",
+        "": ""
+    },
+    {
+        "code": "9320",
+        "name": "Arbon",
+        "": ""
+    },
+    {
+        "code": "9322",
+        "name": "Egnach",
+        "": ""
+    },
+    {
+        "code": "9323",
+        "name": "Steinach",
+        "": ""
+    },
+    {
+        "code": "9325",
+        "name": "Roggwil TG",
+        "": ""
+    },
+    {
+        "code": "9326",
+        "name": "Horn",
+        "": ""
+    },
+    {
+        "code": "9327",
+        "name": "Tübach",
+        "": ""
+    },
+    {
+        "code": "9400",
+        "name": "Rorschach",
+        "": ""
+    },
+    {
+        "code": "9402",
+        "name": "Mörschwil",
+        "": ""
+    },
+    {
+        "code": "9403",
+        "name": "Goldach",
+        "": ""
+    },
+    {
+        "code": "9404",
+        "name": "Rorschacherberg",
+        "": ""
+    },
+    {
+        "code": "9405",
+        "name": "Wienacht-Tobel",
+        "": ""
+    },
+    {
+        "code": "9410",
+        "name": "Heiden",
+        "": ""
+    },
+    {
+        "code": "9411",
+        "name": "Reute AR",
+        "": ""
+    },
+    {
+        "code": "9413",
+        "name": "Oberegg",
+        "": ""
+    },
+    {
+        "code": "9414",
+        "name": "Schachen b. Reute",
+        "": ""
+    },
+    {
+        "code": "9422",
+        "name": "Staad SG",
+        "": ""
+    },
+    {
+        "code": "9423",
+        "name": "Altenrhein",
+        "": ""
+    },
+    {
+        "code": "9424",
+        "name": "Rheineck",
+        "": ""
+    },
+    {
+        "code": "9425",
+        "name": "Thal",
+        "": ""
+    },
+    {
+        "code": "9426",
+        "name": "Lutzenberg",
+        "": ""
+    },
+    {
+        "code": "9427",
+        "name": "Zelg (Wolfhalden)",
+        "": ""
+    },
+    {
+        "code": "9427",
+        "name": "Wolfhalden",
+        "": ""
+    },
+    {
+        "code": "9428",
+        "name": "Walzenhausen",
+        "": ""
+    },
+    {
+        "code": "9430",
+        "name": "St. Margrethen SG",
+        "": ""
+    },
+    {
+        "code": "9434",
+        "name": "Au SG",
+        "": ""
+    },
+    {
+        "code": "9435",
+        "name": "Heerbrugg",
+        "": ""
+    },
+    {
+        "code": "9436",
+        "name": "Balgach",
+        "": ""
+    },
+    {
+        "code": "9437",
+        "name": "Marbach SG",
+        "": ""
+    },
+    {
+        "code": "9442",
+        "name": "Büriswilen",
+        "": ""
+    },
+    {
+        "code": "9442",
+        "name": "Berneck",
+        "": ""
+    },
+    {
+        "code": "9443",
+        "name": "Widnau",
+        "": ""
+    },
+    {
+        "code": "9444",
+        "name": "Diepoldsau",
+        "": ""
+    },
+    {
+        "code": "9445",
+        "name": "Rebstein",
+        "": ""
+    },
+    {
+        "code": "9450",
+        "name": "Lüchingen",
+        "": ""
+    },
+    {
+        "code": "9450",
+        "name": "Altstätten SG",
+        "": ""
+    },
+    {
+        "code": "9451",
+        "name": "Kriessern",
+        "": ""
+    },
+    {
+        "code": "9452",
+        "name": "Hinterforst",
+        "": ""
+    },
+    {
+        "code": "9453",
+        "name": "Eichberg",
+        "": ""
+    },
+    {
+        "code": "9462",
+        "name": "Montlingen",
+        "": ""
+    },
+    {
+        "code": "9463",
+        "name": "Oberriet SG",
+        "": ""
+    },
+    {
+        "code": "9464",
+        "name": "Lienz",
+        "": ""
+    },
+    {
+        "code": "9464",
+        "name": "Rüthi (Rheintal)",
+        "": ""
+    },
+    {
+        "code": "9465",
+        "name": "Salez",
+        "": ""
+    },
+    {
+        "code": "9466",
+        "name": "Sennwald",
+        "": ""
+    },
+    {
+        "code": "9467",
+        "name": "Frümsen",
+        "": ""
+    },
+    {
+        "code": "9468",
+        "name": "Sax",
+        "": ""
+    },
+    {
+        "code": "9469",
+        "name": "Haag (Rheintal)",
+        "": ""
+    },
+    {
+        "code": "9470",
+        "name": "Buchs SG",
+        "": ""
+    },
+    {
+        "code": "9470",
+        "name": "Werdenberg",
+        "": ""
+    },
+    {
+        "code": "9472",
+        "name": "Grabserberg",
+        "": ""
+    },
+    {
+        "code": "9472",
+        "name": "Grabs",
+        "": ""
+    },
+    {
+        "code": "9473",
+        "name": "Gams",
+        "": ""
+    },
+    {
+        "code": "9475",
+        "name": "Sevelen",
+        "": ""
+    },
+    {
+        "code": "9476",
+        "name": "Fontnas",
+        "": ""
+    },
+    {
+        "code": "9476",
+        "name": "Weite",
+        "": ""
+    },
+    {
+        "code": "9477",
+        "name": "Trübbach",
+        "": ""
+    },
+    {
+        "code": "9478",
+        "name": "Azmoos",
+        "": ""
+    },
+    {
+        "code": "9479",
+        "name": "Gretschins",
+        "": ""
+    },
+    {
+        "code": "9479",
+        "name": "Malans SG",
+        "": ""
+    },
+    {
+        "code": "9479",
+        "name": "Oberschan",
+        "": ""
+    },
+    {
+        "code": "9485",
+        "name": "Nendeln",
+        "": ""
+    },
+    {
+        "code": "9486",
+        "name": "Schaanwald",
+        "": ""
+    },
+    {
+        "code": "9487",
+        "name": "Gamprin-Bendern",
+        "": ""
+    },
+    {
+        "code": "9488",
+        "name": "Schellenberg",
+        "": ""
+    },
+    {
+        "code": "9490",
+        "name": "Vaduz",
+        "": ""
+    },
+    {
+        "code": "9491",
+        "name": "Ruggell",
+        "": ""
+    },
+    {
+        "code": "9492",
+        "name": "Eschen",
+        "": ""
+    },
+    {
+        "code": "9493",
+        "name": "Mauren FL",
+        "": ""
+    },
+    {
+        "code": "9494",
+        "name": "Schaan",
+        "": ""
+    },
+    {
+        "code": "9495",
+        "name": "Triesen",
+        "": ""
+    },
+    {
+        "code": "9496",
+        "name": "Balzers",
+        "": ""
+    },
+    {
+        "code": "9497",
+        "name": "Triesenberg",
+        "": ""
+    },
+    {
+        "code": "9498",
+        "name": "Planken",
+        "": ""
+    },
+    {
+        "code": "9500",
+        "name": "Wil SG",
+        "": ""
+    },
+    {
+        "code": "9502",
+        "name": "Braunau",
+        "": ""
+    },
+    {
+        "code": "9503",
+        "name": "Stehrenberg",
+        "": ""
+    },
+    {
+        "code": "9503",
+        "name": "Lanterswil",
+        "": ""
+    },
+    {
+        "code": "9504",
+        "name": "Friltschen",
+        "": ""
+    },
+    {
+        "code": "9506",
+        "name": "Lommis",
+        "": ""
+    },
+    {
+        "code": "9507",
+        "name": "Stettfurt",
+        "": ""
+    },
+    {
+        "code": "9508",
+        "name": "Weingarten-Kalthäusern",
+        "": ""
+    },
+    {
+        "code": "9512",
+        "name": "Rossrüti",
+        "": ""
+    },
+    {
+        "code": "9514",
+        "name": "Wuppenau",
+        "": ""
+    },
+    {
+        "code": "9515",
+        "name": "Hosenruck",
+        "": ""
+    },
+    {
+        "code": "9517",
+        "name": "Mettlen",
+        "": ""
+    },
+    {
+        "code": "9523",
+        "name": "Züberwangen",
+        "": ""
+    },
+    {
+        "code": "9524",
+        "name": "Zuzwil SG",
+        "": ""
+    },
+    {
+        "code": "9525",
+        "name": "Lenggenwil",
+        "": ""
+    },
+    {
+        "code": "9526",
+        "name": "Zuckenriet",
+        "": ""
+    },
+    {
+        "code": "9527",
+        "name": "Niederhelfenschwil",
+        "": ""
+    },
+    {
+        "code": "9532",
+        "name": "Rickenbach b. Wil",
+        "": ""
+    },
+    {
+        "code": "9533",
+        "name": "Kirchberg SG",
+        "": ""
+    },
+    {
+        "code": "9534",
+        "name": "Gähwil",
+        "": ""
+    },
+    {
+        "code": "9535",
+        "name": "Wilen b. Wil",
+        "": ""
+    },
+    {
+        "code": "9536",
+        "name": "Schwarzenbach SG",
+        "": ""
+    },
+    {
+        "code": "9542",
+        "name": "Münchwilen TG",
+        "": ""
+    },
+    {
+        "code": "9543",
+        "name": "St. Margarethen TG",
+        "": ""
+    },
+    {
+        "code": "9545",
+        "name": "Wängi",
+        "": ""
+    },
+    {
+        "code": "9546",
+        "name": "Tuttwil",
+        "": ""
+    },
+    {
+        "code": "9547",
+        "name": "Wittenwil",
+        "": ""
+    },
+    {
+        "code": "9548",
+        "name": "Matzingen",
+        "": ""
+    },
+    {
+        "code": "9552",
+        "name": "Bronschhofen",
+        "": ""
+    },
+    {
+        "code": "9553",
+        "name": "Bettwiesen",
+        "": ""
+    },
+    {
+        "code": "9554",
+        "name": "Tägerschen",
+        "": ""
+    },
+    {
+        "code": "9555",
+        "name": "Tobel",
+        "": ""
+    },
+    {
+        "code": "9556",
+        "name": "Zezikon",
+        "": ""
+    },
+    {
+        "code": "9556",
+        "name": "Affeltrangen",
+        "": ""
+    },
+    {
+        "code": "9562",
+        "name": "Buch b. Märwil",
+        "": ""
+    },
+    {
+        "code": "9562",
+        "name": "Märwil",
+        "": ""
+    },
+    {
+        "code": "9565",
+        "name": "Rothenhausen",
+        "": ""
+    },
+    {
+        "code": "9565",
+        "name": "Schmidshof",
+        "": ""
+    },
+    {
+        "code": "9565",
+        "name": "Oppikon",
+        "": ""
+    },
+    {
+        "code": "9565",
+        "name": "Oberbussnang",
+        "": ""
+    },
+    {
+        "code": "9565",
+        "name": "Bussnang",
+        "": ""
+    },
+    {
+        "code": "9573",
+        "name": "Littenheid",
+        "": ""
+    },
+    {
+        "code": "9601",
+        "name": "Lütisburg Station",
+        "": ""
+    },
+    {
+        "code": "9602",
+        "name": "Müselbach",
+        "": ""
+    },
+    {
+        "code": "9602",
+        "name": "Bazenheid",
+        "": ""
+    },
+    {
+        "code": "9604",
+        "name": "Oberrindal",
+        "": ""
+    },
+    {
+        "code": "9604",
+        "name": "Unterrindal",
+        "": ""
+    },
+    {
+        "code": "9604",
+        "name": "Lütisburg",
+        "": ""
+    },
+    {
+        "code": "9606",
+        "name": "Bütschwil",
+        "": ""
+    },
+    {
+        "code": "9607",
+        "name": "Mosnang",
+        "": ""
+    },
+    {
+        "code": "9608",
+        "name": "Ganterschwil",
+        "": ""
+    },
+    {
+        "code": "9612",
+        "name": "Dreien",
+        "": ""
+    },
+    {
+        "code": "9613",
+        "name": "Mühlrüti",
+        "": ""
+    },
+    {
+        "code": "9614",
+        "name": "Libingen",
+        "": ""
+    },
+    {
+        "code": "9615",
+        "name": "Dietfurt",
+        "": ""
+    },
+    {
+        "code": "9620",
+        "name": "Lichtensteig",
+        "": ""
+    },
+    {
+        "code": "9621",
+        "name": "Oberhelfenschwil",
+        "": ""
+    },
+    {
+        "code": "9622",
+        "name": "Krinau",
+        "": ""
+    },
+    {
+        "code": "9630",
+        "name": "Wattwil",
+        "": ""
+    },
+    {
+        "code": "9631",
+        "name": "Ulisbach",
+        "": ""
+    },
+    {
+        "code": "9633",
+        "name": "Bächli (Hemberg)",
+        "": ""
+    },
+    {
+        "code": "9633",
+        "name": "Hemberg",
+        "": ""
+    },
+    {
+        "code": "9642",
+        "name": "Ebnat-Kappel",
+        "": ""
+    },
+    {
+        "code": "9643",
+        "name": "Krummenau",
+        "": ""
+    },
+    {
+        "code": "9650",
+        "name": "Nesslau",
+        "": ""
+    },
+    {
+        "code": "9651",
+        "name": "Ennetbühl",
+        "": ""
+    },
+    {
+        "code": "9652",
+        "name": "Neu St. Johann",
+        "": ""
+    },
+    {
+        "code": "9655",
+        "name": "Stein SG",
+        "": ""
+    },
+    {
+        "code": "9656",
+        "name": "Alt St. Johann",
+        "": ""
+    },
+    {
+        "code": "9657",
+        "name": "Unterwasser",
+        "": ""
+    },
+    {
+        "code": "9658",
+        "name": "Wildhaus",
+        "": ""
     }
 ]';
     $data = json_decode($jsonArray, true);
@@ -8497,7 +20609,7 @@ Route::get('/test', function (){
     foreach ($data as $item) {
         $name = $item['name'];
         $code = $item['code'];
-        $findCity = \App\Models\City::where("post_code", $code)->where('country_id', 3)->first();
+        $findCity = \App\Models\City::where("post_code", $code)->where('country_id', 2)->first();
         if ($findCity){
             $benzerSehirler[] = $name;
         }
@@ -8506,7 +20618,7 @@ Route::get('/test', function (){
             $city->name = $name;
             $city->slug = \Illuminate\Support\Str::slug($name);
             $city->post_code= $code;
-            $city->country_id = 3;
+            $city->country_id = 2;
             $city->save();
         }
     }
