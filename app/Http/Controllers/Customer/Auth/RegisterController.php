@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer\Auth;
 use App\Http\Controllers\Controller;
 use App\Mail\BasicMail;
 use App\Models\Customer;
+use App\Models\CustomerNotificationPermission;
 use App\Models\Email;
 use App\Models\Image;
 use App\Models\ProjectRequest;
@@ -84,6 +85,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         $generateCode=rand(100000, 999999);
         $smsConfirmation = new SmsConfirmation();
         $smsConfirmation->phone = $data['email'];
@@ -94,13 +96,18 @@ class RegisterController extends Controller
         $phone=str_replace(array('(', ')', '-', ' '), '', $data["email"]);
         Sms::send($phone,config('settings.site_title'). "Sistemine kayıt için, telefon numarası doğrulama kodunuz ". $generateCode);
 
-        return Customer::create([
+        $customer = Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['email'],
+            'area_code' => $data['country_code'],
             'status'=>1,
             'password' => Hash::make(Str::random(8)),
         ]);
+        $customerPermission = new CustomerNotificationPermission();
+        $customerPermission->customer_id = $customer->id;
+        $customerPermission->save();
+        return $customer;
     }
     protected function registered(Request $request, $user)
     {

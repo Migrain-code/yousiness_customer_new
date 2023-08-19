@@ -128,13 +128,14 @@ class AuthController extends Controller
                         'name' => $request->input('name'),
                         'email' => $request->input('phone'),
                         'phone' => $request->input('phone'),
+                        'area_code' => $request->input('area_code'),
                         'status' => 1,
                         'password' => Hash::make($generatePassword),
                     ]);
                     $this->addPermission($customer->id);
                     $phone = clearPhone($request->input('phone'));
 
-                    Sms::send($phone, config('settings.site_title') . "Sistemine giriş için şifreniz " . $generatePassword);
+                    Sms::send($phone, config('settings.speed_site_title') . "Sistemine giriş için şifreniz " . $generatePassword);
 
                     return response()->json([
                         'status' => "success",

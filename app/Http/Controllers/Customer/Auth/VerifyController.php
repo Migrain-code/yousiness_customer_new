@@ -73,7 +73,7 @@ class VerifyController extends Controller
             $user->verify_phone=1;
             $user->save();
 
-            Sms::send(clearPhone($user->email),config('settings.site_title'). "Sistemine giriş için şifreniz ".$generatePassword);
+            Sms::send(clearPhone($user->email),config('settings.speed_site_title'). "Sistemine giriş için şifreniz ".$generatePassword);
             return to_route('customer.login')->with('response', [
                 'status'=>"success",
                 'message'=>"Telefon Numaranız doğrulandı. Sisteme giriş için şifreniz gönderildi."
