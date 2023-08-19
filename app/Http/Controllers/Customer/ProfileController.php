@@ -21,6 +21,14 @@ class ProfileController extends Controller
         $customer->city_id = $request->input('city_id');
         $customer->gender = $request->input('gender');
         $customer->district_id = $request->input('district_id');
+        if ($customer->gender == 1 and  $customer->image == "default/user.png"){
+            $customer->image = "default/woman.png";
+        }
+        else{
+            if ($customer->gender == 2 and  $customer->image == "default/woman.png"){
+                $customer->image = "default/user.png";
+            }
+        }
         if ($request->hasFile('profile')) {
             $customer->image = $request->file('profile')->store('customer_profiles');
         }
