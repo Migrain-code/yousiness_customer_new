@@ -28,7 +28,7 @@ class VerifyController extends Controller
     public function phoneVerifyAction(Request $request)
     {
         //$request->dd();
-        $customer=Customer::where('email', $request->phone)->first();
+        $customer=Customer::where('email', clearPhone($request->phone))->first();
         if ($customer){
             $generateCode=rand(100000, 999999);
             $smsConfirmation = new SmsConfirmation();
@@ -37,8 +37,8 @@ class VerifyController extends Controller
             $smsConfirmation->code = $generateCode;
             $smsConfirmation->expire_at = now()->addMinute(3);
             $smsConfirmation->save();
-            $phone=str_replace(array('(', ')', '-', ' '), '', $request->phone);
-            Sms::send($phone,config('settings.site_title'). " Sistemine giriş için, telefon numarası doğrulama kodunuz ". $generateCode);
+
+            Sms::send(clearPhone($request->phone),config('settings.site_title'). " Sistemine giriş için, telefon numarası doğrulama kodunuz ". $generateCode);
             return to_route('customer.verify')->with('response', [
                 'status'=>"success",
                 'message'=>"Doğrulama Kodunuz telefonunuza mesaj olarak gönderildi",
