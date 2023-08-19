@@ -13,6 +13,10 @@ function main($key){
 function image($path){
     return env('REMOTE_URL').'/'.$path;
 }
+function userInfo(){
+    $user = auth('customer')->user();
+    return $user;
+}
 function clearPhone($phoneNumber){
     $phoneNumber = str_replace([' ', '(', ')', '-'], '', $phoneNumber);
     if (strlen($phoneNumber) === 10) {

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class CustomerNotificationPermission extends Model
 {
     use HasFactory;
+    protected $fillable = [
+       'is_notification',
+       'is_email',
+       'is_sms',
+       'is_phone'
+    ];
 }

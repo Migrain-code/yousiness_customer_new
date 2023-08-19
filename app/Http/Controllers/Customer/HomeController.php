@@ -233,4 +233,33 @@ class HomeController extends Controller
             ]);
         }
     }
+
+    public function permissions()
+    {
+        return view('customer.permission.edit');
+    }
+
+    public function permissionUpdate(Request $request)
+    {
+        $permission = userInfo()->permissions;
+        $notification = $request->has('is_notification') ? 1 : 0;
+        $email = $request->has('is_email') ? 1 : 0;
+        $sms = $request->has('is_sms') ? 1 : 0;
+        $phone = $request->has('is_phone') ? 1 : 0;
+
+        // Kullanıcının izinlerini güncelliyoruz
+        $permission->update([
+            'is_notification' => $notification,
+            'is_email' => $email,
+            'is_sms' => $sms,
+            'is_phone' => $phone,
+        ]);
+        $permission->save();
+        return back()->with('response', [
+           'status' => "success",
+           'message' => "Bildirim izinleri güncellendi"
+        ]);
+
+
+    }
 }
