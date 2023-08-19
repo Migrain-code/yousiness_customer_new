@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', "Profilim")
+@section('title', "Hesap Ayarları")
 @section('meta_description', "Kullanıcı Profilim")
 @section('styles')
 
@@ -52,7 +52,7 @@
                                                 <div class="form-group">
                                                     <div class="change-avatar">
                                                         <div class="profile-img">
-                                                            <img src="{{storage(auth('customer')->user()->image)}}" alt="User Image">
+                                                            <img src="{{storage(userInfo()->image)}}" alt="User Image">
                                                         </div>
                                                         <div class="upload-img">
                                                             <div class="change-photo-btn">
@@ -68,7 +68,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Ad Soyad</label>
-                                                        <input type="text" name="name" class="form-control bank_name" value="{{auth('customer')->user()->name}}">
+                                                        <input type="text" name="name" class="form-control bank_name" value="{{userInfo()->name}}">
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>
@@ -77,7 +77,25 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Telefon</label>
-                                                        <input type="text" name="email" class="form-control branch_name phone" value="{{auth('customer')->user()->phone}}">
+                                                        <input type="text" name="email" class="form-control branch_name phone" value="{{userInfo()->phone}}">
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">E-posta</label>
+                                                        <input type="text" name="custom_email" class="form-control branch_name phone" placeholder="{{userInfo()->custom_email ?? "E-posta adresi ekleyin"}}" value="{{userInfo()->custom_email}}">
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Adres</label>
+                                                        <textarea type="text" name="address" class="form-control branch_name phone" placeholder="{{userInfo()->address ?? "adres ekleyin"}}">{{userInfo()->address}}</textarea>
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>
@@ -86,7 +104,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Doğum Günü</label>
-                                                        <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control account_no" value="{{auth('customer')->user()->birthday}}">
+                                                        <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control account_no" value="{{userInfo()->birthday}}">
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>
@@ -98,7 +116,7 @@
                                                         <select name="city_id" class="form-control" style="border: 1px solid black !important;" id="city_select">
                                                             <option value="">İl Seçiniz</option>
                                                             @foreach($cities as $city)
-                                                                <option value="{{$city->id}}" @selected(auth('customer')->user()->city_id==$city->id)>{{$city->name}}</option>
+                                                                <option value="{{$city->id}}" @selected(userInfo()->city_id==$city->id)>{{$city->name}}</option>
                                                             @endforeach
                                                         </select>
                                                         <span class="help-block"></span>
@@ -108,27 +126,32 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">İlçe</label>
-                                                        @if(auth('customer')->user()->city_id)
-                                                            <select name="district_id" class="form-select" style="border: 1px solid black !important;" id="district_select">
-                                                                <option value="">İlçe Seçiniz</option>
-                                                                @foreach(auth('customer')->user()->city->districts as $district)
-                                                                    <option value="{{$district->id}}" @selected(auth('customer')->user()->district_id==$district->id)>{{$district->name}}</option>
-                                                                @endforeach
-                                                            </select>
-                                                        @else
-                                                            <select name="district_id" class="form-select" style="border: 1px solid black !important;" id="district_select">
-                                                                <option value="">İlçe Seçiniz</option>
-                                                            </select>
-                                                        @endif
-                                                        <span class="help-block"></span>
+                                                        <label class="control-label">Cinsiyet</label> <br>
+                                                        <div class="form-check-inline visits me-1">
+                                                            <label class="visit-btns">
+                                                                <input type="radio" name="gender" class="form-check-input active-time" @checked(userInfo()->gender == 1) value="1" required="">
+                                                                <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Cinsiyet Seçimi Zorunludur">
+                                                                    Kadın
+                                                                </span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-check-inline visits me-1">
+                                                            <label class="visit-btns">
+                                                                <input type="radio" name="gender" class="form-check-input active-time" @checked(userInfo()->gender == 2) value="2" required="">
+                                                                <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Cinsiyet Seçimi Zorunludur">
+                                                                   Erkek
+                                                                </span>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                </div>
                                             </div>
+                                            </div>
+
 
                                         </div>
                                         <div class="submit-section">
-                                            <button type="submit" class="btn btn-primary submit-btn">Güncelle</button>
+                                            <button type="submit" class="btn btn-primary submit-btn float-end">Güncelle</button>
                                         </div>
                                     </form>
                                     <!-- /Profile Settings Form -->
@@ -146,8 +169,8 @@
 @endsection
 @section('scripts')
     <script>
-        $(".phone").inputmask({"mask": "(999)-999-9999"});
-        $('#city_select').on('change', function (){
+
+        /*$('#city_select').on('change', function (){
             $('#district_select').empty();
             let city_id=$(this).val();
             $.ajax({
@@ -164,7 +187,7 @@
                     });
                 }
             });
-        });
+        });*/
     </script>
     <script src="/front/assets/js/cutomer-menu.js"></script>
 
