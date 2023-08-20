@@ -25,7 +25,7 @@ class CityController extends Controller
      * */
     public function index()
     {
-        $cities = \App\Models\City::all();
+        $cities = \App\Models\Country::all();
         return response()->json([
            'cities'=> City::collection($cities)
         ]);
@@ -41,12 +41,12 @@ class CityController extends Controller
      **/
     public function get(CityGetRequest $request)
     {
-        $city = \App\Models\City::find($request->input('city_id'));
-        if ($city){
+        $country = \App\Models\Country::find($request->input('city_id'));
+        if ($country){
             return response()->json([
                 'status'=>"success",
-                'city'=>new City($city),
-                'districts' => District::collection($city->districts),
+                'city'=>new City($country),
+                'districts' => District::collection($country->cities),
             ]);
         }
         return response()->json([
