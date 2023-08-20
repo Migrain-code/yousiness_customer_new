@@ -17,4 +17,5 @@
 
 <!-- Main CSS -->
 <link rel="stylesheet" href="/front/assets/css/style.css">
+<link rel="stylesheet" href="/front/assets/css/custom.css">
 @yield('styles')
