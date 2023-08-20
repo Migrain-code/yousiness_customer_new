@@ -98,9 +98,9 @@ class VerifyController extends Controller
         ], [], [
             'email'=>"Telefon Numarası"
         ]);
-        $customer=Customer::whereEmail($request->email)->first();
+        $customer=Customer::whereEmail(clearPhone($request->email))->first();
         if (!$customer){
-            return to_route('business.showForgotView')->with('response', [
+            return to_route('customer.showForgotView')->with('response', [
                'status'=>"error",
                'message'=>"Bu telefon numarası sistemde kayıtlı değil",
             ]);
@@ -108,8 +108,7 @@ class VerifyController extends Controller
         else{
             $generatePassword=rand(100000, 999999);
 
-            $phone=str_replace(array('(', ')', '-', ' '), '', $customer->email);
-            Sms::send($phone,config('settings.site_title'). " Sistemine giriş için yeni şifreniz ".$generatePassword." olarak güncellendi. Panelinize girerek şifrenizi size uygun bir şifre ile değiştirebilirsiniz.");
+            Sms::send(clearPhone($customer->email),config('settings.speed_site_title'). " Sistemine giriş için yeni şifreniz ".$generatePassword." olarak güncellendi. Panelinize girerek şifrenizi size uygun bir şifre ile değiştirebilirsiniz.");
 
             $customer->password=Hash::make($generatePassword);
             $customer->password_status=1;
