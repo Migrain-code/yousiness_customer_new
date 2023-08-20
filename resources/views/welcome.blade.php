@@ -173,6 +173,18 @@
             </div>
         </div>
     </section>
+    
+    <!-- Homepage Ads Banner -->
+    <section class="homepage-first-ads-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    test
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- /Home Five Banner -->
     <!-- Looking Section Five -->
     @if(setting('speed_main_page_section_1') == 1)
