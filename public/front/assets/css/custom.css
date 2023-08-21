@@ -17,6 +17,10 @@
   backdrop-filter: blur(10px);
 }
 
+.home-section-five {
+  padding: 200px 0;
+}
+
 .homepage-first-ads-banner {
   padding: 20px 0 0px;
 }
@@ -30,6 +34,7 @@
 
 .homepage-first-ads-banner .first-ads-banner > img {
   max-width: 970px;
+  width: 100%;
   height: auto;
 }
 
@@ -54,6 +59,16 @@
 @media (max-width: 765px) {
   .bar-icon {
     left: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-first-ads-banner {
+    margin-top: 60px;
+  }
+
+  .home-section-five {
+    margin-top: 30px;
   }
 }
 
