@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Einloggen')
 @section('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
@@ -25,32 +26,32 @@
                                     <img src="{{image(setting('speed_logo_white'))}}" style="max-width: 250px">
                                 </div>
                                 <div class="login-header text-center">
-                                    <h2>Giriş Yap</h2>
+                                    <h2>Einloggen</h2>
                                 </div>
                                 @include('layouts.component.error')
                                 @include('layouts.component.alert')
                                 <form action="{{route('customer.login')}}" method="post">
                                     @csrf
                                     <div class="form-group">
-                                        <label>Telefon</label>
+                                        <label>Rufnummer</label>
                                         <input type="text" id="phone" class="form-control floating phone" name="email">
 
                                     </div>
                                     <div class="form-group">
-                                        <label>Şifre</label>
+                                        <label>Chiffre</label>
                                         <input type="password" class="form-control floating" name="password">
 
                                     </div>
                                     <div class="text-end">
-                                        <a class="forgot-link" href="{{route('customer.showForgotView')}}">Şifremi Unuttum ?</a>
+                                        <a class="forgot-link" href="{{route('customer.showForgotView')}}">Passwort vergessen ?</a>
                                     </div>
-                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Giriş yap</button>
+                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Einloggen</button>
                                     <div class="login-or">
                                         <span class="or-line"></span>
-                                        <span class="span-or">veya</span>
+                                        <span class="span-or">beziehungsweise</span>
                                     </div>
 
-                                    <div class="text-center dont-have">Hesabın Yok mu? <a href="{{route('customer.register')}}">Kayıt Ol</a></div>
+                                    <div class="text-center dont-have">Sie haben noch kein Konto? <a href="{{route('customer.register')}}">Registrieren</a></div>
                                 </form>
                             </div>
                         </div>

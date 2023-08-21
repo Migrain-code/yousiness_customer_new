@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Nummernüberprüfung')
 @section('content')
     <div class="content my-3" style="min-height: 257.275px;">
         <div class="container-fluid">
@@ -14,7 +15,7 @@
                                     <img src="{{image(setting('speed_logo_white'))}}" style="max-width: 250px">
                                 </div>
                                 <div class="login-header text-center">
-                                    <h2>Numara Doğrulama</h2>
+                                    <h2>Nummernüberprüfung</h2>
                                 </div>
                                 @include('layouts.component.error')
                                 @include('layouts.component.alert')
@@ -22,9 +23,9 @@
                                     @csrf
                                     <div class="form-group form-focus">
                                         <input type="text" id="code"  class="form-control floating phone" name="verification_code">
-                                        <label class="focus-label">Doğrulama Kodu</label>
+                                        <label class="focus-label">Bestätigungscode</label>
                                     </div>
-                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Gönder</button>
+                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Schicken</button>
                                 </form>
                             </div>
                         </div>

@@ -170,20 +170,20 @@ class AuthController extends Controller
         if (!$customer) {
             return response()->json([
                 'status' => "error",
-                'message' => "Bu telefon numarası sistemde kayıtlı değil",
+                'message' => "Diese Telefonnummer ist nicht im System registriert",
             ]);
         } else {
             $generatePassword = rand(100000, 999999);
 
             $phone = str_replace(array('(', ')', '-', ' '), '', $customer->email);
-            Sms::send($phone, config('settings.site_title') . " Sistemine giriş için yeni şifreniz " . $generatePassword . " olarak güncellendi. Panelinize girerek şifrenizi size uygun bir şifre ile değiştirebilirsiniz.");
+            Sms::send($phone, config('settings.speed_site_title') . " Ihr neues Passwort für die Anmeldung am System wurde auf ". $generatePassword." aktualisiert. Wenn Sie Ihr Panel betreten, können Sie Ihr Passwort in ein für Sie geeignetes Passwort ändern.");
 
             $customer->password = Hash::make($generatePassword);
             $customer->password_status = 1;
             $customer->save();
             return response()->json([
                 'status' => "success",
-                'message' => "Yeni şifreniz sms olarak gönderildi. Gelen şifreyi girerek sistemi kullanmaya devam edebilirsiniz",
+                'message' => "Ihr neues Passwort wurde als SMS gesendet. Durch Eingabe des eingehenden Passwortes können Sie das System weiterhin nutzen.",
             ]);
 
         }

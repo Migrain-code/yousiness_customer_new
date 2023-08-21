@@ -154,22 +154,6 @@
                     </div>
                 </div>
 
-                {{--
-                    <div class="row adds_mobil" style="margin-top: 145px;">
-                    <div class="glide mt-4" data-aos="fade-up">
-                        <div class="glide__track glide_mobil_slide" data-glide-el="track" style="margin-bottom: -70px !important;">
-                            <ul class="glide__slides">
-                                @forelse($ads as $ad)
-                                    <li class="glide__slide" style="text-align: center ;">
-                                        <img src="{{image($ad->image)}}" alt="" style="height: 200px; width: 200px; object-fit: cover;border-radius: 5px"></li>
-                                @empty
-                                @endforelse
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                --}}
-
             </div>
         </div>
     </section>
@@ -180,7 +164,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="first-ads-banner">
-                    <img src="https://placehold.co/970x90" alt="">
+                    <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px">
                     </div>
                 </div>
             </div>
@@ -191,7 +175,8 @@
     <!-- Looking Section Five -->
     @if(setting('speed_main_page_section_1') == 1)
         <section class="looking-section-five">
-            <div class="row justify-content-center aos" data-aos="fade-up">
+            {{--
+                            <div class="row justify-content-center aos" data-aos="fade-up">
                 <div class="col-md-9">
                     <!-- Slider -->
                     <div class="specialities-slider slider">
@@ -212,6 +197,8 @@
                     <!-- /Slider -->
                 </div>
             </div>
+
+            --}}
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 mt-3">
@@ -362,6 +349,37 @@
             </div>
             <div class="row">
                 @forelse($featuredServices as $subCategory)
+                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+                        <div class="specialist-card-five d-flex hvr-bounce-to-right">
+                            <div class="specialist-img-five">
+
+                                <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid">
+                            </div>
+                            <div class="specialist-info">
+                                <a href="{{route('serviceSubCategoryGet', [$subCategory->category->slug,  $subCategory->slug])}}">{{$subCategory->name}}</a>
+                            </div>
+                            <div class="specialist-nav-five ms-auto">
+                                <a href="{{route('serviceSubCategoryGet', [$subCategory->category->slug, $subCategory->slug])}}"><i class="feather-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                @endforelse
+
+            </div>
+        </div>
+    </section>
+    <section class="browse-section-five" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                        <h2 class="title-five">Yurt Dışı Hizmetler</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @forelse($abroadServices as $subCategory)
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">

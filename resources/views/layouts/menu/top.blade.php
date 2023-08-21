@@ -32,28 +32,30 @@
                         @endif
                         <li class="active"><a  href="/">İşletmeler</a></li>
                       </div>
-                        <li class="active">	<a href="/">Startseite</a></li>
-                        <li class="has-submenu"><a href="{{route('business.all')}}">Hallen <i class="fas fa-chevron-down"></i></a>
-                            <ul class="submenu">
-                                @foreach($categories as $category)
-                                    <li>
-                                        <a href="{{route('business.category', $category->slug)}}">{{$category->name}}</a>
-                                    </li>
-                               @endforeach
-                            </ul>
-                        </li>
-                        <li class="has-submenu"><a href="{{route('service.all')}}">Dienstleistungen <i class="fas fa-chevron-down"></i></a>
-                            <ul class="submenu">
-                                @foreach($services as $service)
-                                    <li>
-                                        <a href="{{route('service.detail', $service->slug)}}">{{$service->name}}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-                        <li class=""><a href="{{route('about')}}">über uns</a></li>
-                        <li class=""><a href="{{route('faq')}}">Unterstützung</a></li>
-                        <li class=""><a href="{{route('contact')}}">Kommunikation</a></li>
+                        @if(!request()->routeIs('welcome'))
+                            <li class="active">	<a href="/">Startseite</a></li>
+                            <li class="has-submenu"><a href="{{route('business.all')}}">Hallen <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    @foreach($categories as $category)
+                                        <li>
+                                            <a href="{{route('business.category', $category->slug)}}">{{$category->name}}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            <li class="has-submenu"><a href="{{route('service.all')}}">Dienstleistungen <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    @foreach($services as $service)
+                                        <li>
+                                            <a href="{{route('service.detail', $service->slug)}}">{{$service->name}}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            <li class=""><a href="{{route('about')}}">über uns</a></li>
+                            <li class=""><a href="{{route('faq')}}">Unterstützung</a></li>
+                            <li class=""><a href="{{route('contact')}}">Kommunikation</a></li>
+                        @endif
                     </ul>
                 </div>
 

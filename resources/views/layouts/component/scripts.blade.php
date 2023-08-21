@@ -33,7 +33,7 @@
     Swal.fire({
         title: '{{session('response.message')}}',
         icon: '{{session('response.status') == "danger" ? "error" : session('response.status')}}',
-        confirmButtonText: "Tamam"
+        confirmButtonText: "OK"
     });
 </script>
 @endif

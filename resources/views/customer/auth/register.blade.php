@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Registrieren')
 @section('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
@@ -22,7 +23,7 @@
                         <div class="row align-items-center justify-content-center">
                             <div class="col-md-12 col-lg-6 login-right">
                                 <div class="login-header text-center">
-                                    <h3>{{setting('speed_site_title')}} Kayıt Ol</h3>
+                                    <h3>{{setting('speed_site_title')}} Registrieren</h3>
                                 </div>
                                 @include('layouts.component.error')
                                 @include('layouts.component.alert')
@@ -31,23 +32,23 @@
                                     <input type="hidden" id="country-code" name="country_code">
                                     <div class="form-group form-focus">
                                         <input type="text" class="form-control floating" name="name">
-                                        <label class="focus-label">Ad Soyad</label>
+                                        <label class="focus-label">Name und Nachname</label>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Telefon</label>
+                                        <label>PhoneRufnummer</label>
                                         <input type="text" id="phone" class="form-control floating phone" name="email">
 
                                     </div>
 
 
-                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Kayıt Ol</button>
+                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Registrieren</button>
                                     <div class="login-or">
                                         <span class="or-line"></span>
-                                        <span class="span-or">veya</span>
+                                        <span class="span-or">beziehungsweise</span>
                                     </div>
 
-                                    <div class="text-center dont-have">Hesabın Var mı? <a href="{{route('customer.login')}}">Giriş yap</a></div>
+                                    <div class="text-center dont-have">Hast du einen Account? <a href="{{route('customer.login')}}">Einloggen</a></div>
                                 </form>
                             </div>
                         </div>

@@ -44,8 +44,9 @@ class HomeController extends Controller
         $activities = Activity::where('status', 1)->latest()->take(4)->get();
         $featuredServices = ServiceSubCategory::whereNotNull('featured')->orderBy('featured', 'asc')->get();
         $featuredCategories = FeaturedCategorie::where('status', 1)->get();
+        $abroadServices = ServiceSubCategory::where('is_abroad', 1)->whereNotNull('featured')->orderBy('featured', 'asc')->get();
 
-        return view('welcome', compact('featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
+        return view('welcome', compact('abroadServices','featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
     }
 
     public function allServices()

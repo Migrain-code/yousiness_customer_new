@@ -1,4 +1,16 @@
 @extends('layouts.master')
+@section('title', 'Passwort vergessen')
+@section('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <style>
+        .iti {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+    </style>
+@endsection
 @section('content')
     <div class="content my-3" style="min-height: 257.275px;">
         <div class="container-fluid">
@@ -14,17 +26,19 @@
                                     <img src="{{image(setting('speed_logo_white'))}}" style="max-width: 250px">
                                 </div>
                                 <div class="login-header text-center">
-                                    <h2>Şifremi Unuttum</h2>
+                                    <h2>Passwort vergessen</h2>
                                 </div>
                                 @include('layouts.component.error')
-                                @include('layouts.component.alert')
+
                                 <form action="{{route('customer.forgotPassword')}}" method="post">
                                     @csrf
-                                    <div class="form-group form-focus">
+                                    <div class="form-group">
+                                        <label>Rufnummer</label>
                                         <input type="text" id="phone" class="form-control floating phone" name="email">
-                                        <label class="focus-label">Telefon</label>
+
                                     </div>
-                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Gönder</button>
+
+                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Schicken</button>
                                 </form>
                             </div>
                         </div>
@@ -44,6 +58,16 @@
 
     <script>
         //$(".phone").inputmask({"mask": "+99 (999)-999-9999"});
-        $(".phone").inputmask({"mask": "(999)-999-9999"});
+        //$(".phone").inputmask({"mask": "(999)-999-9999"});
+        const input = document.querySelector("#phone");
+        const iti = window.intlTelInput(input, {
+            // tercihlerinize göre opsiyonları ayarlayabilirsiniz
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // numara formatlama ve doğrulama için gereklidir
+        });
+
+        // Örnek olarak: Numarayı uluslararası formatta alma
+        function getNumber() {
+            return iti.getNumber();
+        }
     </script>
 @endsection
