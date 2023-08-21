@@ -4,17 +4,15 @@
 }
 
 .nav-bg-five .black-font > li > a {
-  color: #fff;
 }
 
 .header {
-  background: #ffffff54;
+  background: #fff;
   z-index: 500;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  backdrop-filter: blur(10px);
 }
 
 .home-section-five {
