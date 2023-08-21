@@ -17,6 +17,22 @@
   backdrop-filter: blur(10px);
 }
 
+.homepage-first-ads-banner {
+  padding: 20px 0 0px;
+}
+
+.homepage-first-ads-banner .first-ads-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-first-ads-banner .first-ads-banner > img {
+  max-width: 970px;
+  height: auto;
+}
+
 @media (max-width: 720px) {
   .bar-icon {
     left: 400px;

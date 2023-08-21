@@ -179,7 +179,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    test
+                    <div class="first-ads-banner">
+                    <img src="https://placehold.co/970x90" alt="">
+                    </div>
                 </div>
             </div>
         </div>
