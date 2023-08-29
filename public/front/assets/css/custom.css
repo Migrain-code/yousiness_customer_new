@@ -7,7 +7,15 @@
 }
 
 .header {
-  background: #fff;
+  /* background: transparent;
+  backdrop-filter: blur(10px);
+  height: 72px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+  display: block; */
 }
 
 .home-section-five {
@@ -25,6 +33,10 @@
   justify-content: center;
 }
 
+.homepage-first-ads-banner.bottom {
+  margin-bottom: 50px !important;
+}
+
 .homepage-first-ads-banner .first-ads-banner > img {
   max-width: 970px;
   width: 100%;
@@ -37,7 +49,11 @@
 }
 
 .footer-five .policy-menu li a:hover {
-  color: #fff;
+  color: #242424;
+}
+
+.iti {
+  width: 100%;
 }
 
 @media (max-width: 720px) {
@@ -92,12 +108,30 @@
 
 @media (max-width: 514px) {
   .bar-icon {
-    left: 200px;
+    left: 260px;
   }
 }
 
 @media (max-width: 410px) {
   .bar-icon {
     left: 100px;
+  }
+}
+
+@media (max-width: 474px) {
+  .bar-icon {
+    left: 200px;
+  }
+}
+
+@media (max-width: 417px) {
+  .bar-icon {
+    left: 150px;
+  }
+}
+
+@media (max-width: 363px) {
+  .bar-icon {
+    left: 120px;
   }
 }

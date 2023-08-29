@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section('title', 'Nummernüberprüfung')
 @section('content')
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
     <div class="content my-3" style="min-height: 257.275px;">
         <div class="container-fluid">
 
@@ -21,9 +25,10 @@
                                 @include('layouts.component.alert')
                                 <form action="{{route('customer.phone.verify.action')}}" method="post">
                                     @csrf
-                                    <div class="form-group form-focus">
-                                        <input type="text" id="code" class="form-control floating phone" name="phone">
-                                        <label class="focus-label">Rufnummer</label>
+                                    <div class="form-group">
+                                        <label>Rufnummer</label>
+                                        <input type="text" id="phone" class="form-control floating phone" name="phone">
+                                        <!-- <label class="focus-label">Rufnummer</label> -->
                                     </div>
                                     <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Senden Sie den Bestätigungscode</button>
                                 </form>
@@ -41,10 +46,26 @@
 @endsection
 @section('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.60/inputmask/jquery.inputmask.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.60/inputmask/jquery.inputmask.js"></script> -->
+
+    <script>
+        //$(".phone").inputmask({"mask": "+99 (999)-999-9999"});
+        //$(".phone").inputmask({"mask": "(999)-999-9999"});
+        const input = document.querySelector("#phone");
+        const iti = window.intlTelInput(input, {
+            // tercihlerinize göre opsiyonları ayarlayabilirsiniz
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // numara formatlama ve doğrulama için gereklidir
+        });
+
+        // Örnek olarak: Numarayı uluslararası formatta alma
+        function getNumber() {
+            return iti.getNumber();
+        }
+    </script>
 
     <script>
         //$(".phone").inputmask({"mask": "+99 (999)-999-9999"});
         $(".phone").inputmask({"mask": "(999)-999-9999"});
     </script>
 @endsection
+

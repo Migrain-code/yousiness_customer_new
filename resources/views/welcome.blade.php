@@ -437,6 +437,18 @@
 
 
     </section>
+
+    <section class="homepage-first-ads-banner bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="first-ads-banner">
+                    <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- /Browse Section Five -->
     @endif
     @if(setting('speed_main_page_section_5') == 1)
