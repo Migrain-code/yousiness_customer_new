@@ -37,6 +37,7 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('/salon-ara/{category}','categoryGet')->name('categoryGet');
 
     Route::get('/live-search', 'liveSearch')->name('live-search');
+
     Route::get('/iletisim', 'contact')->name('contact');
     Route::post('/iletisim/save', 'contactStore')->name('contact.store');
 

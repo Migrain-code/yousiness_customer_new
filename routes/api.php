@@ -63,6 +63,7 @@ Route::prefix('appointment')->group(function (){
 Route::prefix('city')->group(function (){
    Route::get('list', [CityController::class, 'index']);
    Route::post('get', [CityController::class, 'get']);
+   Route::post('search', [CityController::class, 'search']);
 });
 
 Route::prefix('activity')->group(function (){

@@ -145,7 +145,7 @@ class HomeController extends Controller
         $searchTerm = $request->input('search');
         $businesses = Business::where('name', 'LIKE', '%' . $searchTerm . '%')->get();
 
-        return view('live-search-results', compact('businesses'));
+        return view('search.live-search-results', compact('businesses'));
 
     }
 

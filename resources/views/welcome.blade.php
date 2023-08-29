@@ -10,6 +10,17 @@
             border-radius: 14px;
             padding: 5px;
         }
+        .header {
+             background: transparent;
+            backdrop-filter: blur(10px);
+            height: 72px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 500;
+            display: block;
+        }
     </style>
 @endsection
 @section('content')
@@ -79,7 +90,7 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
-                                                        <select class="js-example-basic-single" placeholder="Stadt wählen" name="city_id">
+                                                        <select class="" placeholder="Stadt wählen" id="city_service" name="city_id">
                                                             <option value="">Stadt wählen</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name}}</option>
@@ -175,30 +186,6 @@
     <!-- Looking Section Five -->
     @if(setting('speed_main_page_section_1') == 1)
         <section class="looking-section-five">
-            {{--
-                            <div class="row justify-content-center aos" data-aos="fade-up">
-                <div class="col-md-9">
-                    <!-- Slider -->
-                    <div class="specialities-slider slider">
-                        @forelse($ads as $ad)
-                            <!-- Slider Item -->
-                            <div class="speicality-item text-center">
-                                <div class="speicality-img">
-                                    <a href="{{$ad->link}}">
-                                        <img src="{{image($ad->image)}}" class="img-fluid" alt="Speciality" style="border-radius: 10px">	<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- /Slider Item -->
-                        @empty
-                        @endforelse
-
-                    </div>
-                    <!-- /Slider -->
-                </div>
-            </div>
-
-            --}}
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 mt-3">
@@ -596,24 +583,18 @@
         // Arama kutusunu seçin
         var search = document.querySelector('#search');
 
-        // Arama kutusuna her karakter girildiğinde AJAX isteği gönderin
         search.addEventListener('input', function() {
 
             if(search.value==""){
                 document.querySelector('#search-result').innerHTML="";
             }
-
-            // AJAX isteği göndermek için bir XMLHttpRequest nesnesi oluşturun
             var xhr = new XMLHttpRequest();
 
-            // AJAX isteği göndermek için kullanacağımız URL'yi belirleyin
             var url = '{{ route('live-search') }}?search=' + encodeURIComponent(search.value);
 
-            // AJAX isteği gönderin
             xhr.open('GET', url);
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.onload = function() {
-                // AJAX isteği başarılı olduysa, live-search bölgesinde sonuçları gösterin
                 if (xhr.status === 200) {
                     document.querySelector('#search-result').innerHTML = xhr.responseText;
                 }
@@ -621,7 +602,37 @@
             xhr.send();
         });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var mySelect = new TomSelect("#city_service", {
+            remoteUrl: '/api/city/search',
+            remoteSearch: true,
+            create: false,
+            highlight: false,
+            load: function(query, callback) {
+                $.ajax({
+                    url: '/api/city/search', // Sunucu tarafındaki arama API'sinin URL'si
+                    method: 'POST',
+                    data: { q: query }, // Arama sorgusu
+                    dataType: 'json', // Beklenen veri tipi
+                    success: function(data) {
+
+                        var results = data.cities.map(function(item) {
+                            console.log('item', item.name);
+                            return {
+                                value: item.id,
+                                text: item.name + "  " + item.post_code,
+                            };
+                        });
+
+                        callback(results);
+                    },
+                    error: function() {
+                        console.error("Arama sırasında bir hata oluştu.");
+                    }
+                });
+            }
+        });
+    </script>
     <script>
         $(function (){
            //getLocation();
