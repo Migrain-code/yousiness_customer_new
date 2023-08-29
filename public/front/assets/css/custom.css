@@ -60,6 +60,30 @@
   max-width: 700px !important;
 }
 
+.clinic-grid-five .clinic-img-five {
+  width: 100%;
+  height: 100%;
+}
+
+.clinic-grid-five .clinic-img-five img {
+  width: 100%;
+  height: 100%;
+}
+
+.clinic-grid-five {
+  padding: 0;
+}
+
+.clinic-grid-five.hvr-bounce-to-bottom:before {
+}
+
+.clinic-grid-five .clinic-grid-info .clinic-five-btn .btn {
+}
+
+.clinic-grid-five:hover .clinic-grid-info p {
+  color: #d59c4b;
+}
+
 .search-box-five form {
   flex-direction: column;
   height: auto !important;
