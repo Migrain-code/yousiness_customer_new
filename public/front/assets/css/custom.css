@@ -56,6 +56,28 @@
   width: 100%;
 }
 
+.search-box-five {
+  max-width: 700px !important;
+}
+
+.search-box-five form {
+  flex-direction: column;
+  height: auto !important;
+}
+
+.search-btn-five {
+  width: 100%;
+}
+
+.search-btn-five .btn {
+  width: 100%;
+}
+
+.search-input-five {
+  width: 100% !important;
+  margin-bottom: 5px !important;
+}
+
 @media (max-width: 720px) {
   .bar-icon {
     left: 400px;
