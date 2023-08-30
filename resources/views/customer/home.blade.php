@@ -37,7 +37,7 @@
                 <div class="col-md-7 col-lg-8 col-xl-9">
 
                     <div class="row">
-                        <div class="col-lg-5 d-flex">
+                        <div class="col-lg-4 d-flex">
                             <div class="card flex-fill">
                                 <div class="card-header">
                                     <div class="row">
@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7 d-flex">
+                        <div class="col-lg-5 d-flex">
                             <div class="card flex-fill">
                                 <div class="card-body">
                                     <div class="row">
@@ -116,10 +116,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-3">
+                            <div class="customer-panel-ads-banner">
+                                <img src="https://placehold.co/300x600" alt="">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-9">
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
