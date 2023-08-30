@@ -21,6 +21,10 @@
             z-index: 500;
             display: block;
         }
+        .ts-dropdown.plugin-optgroup_columns .ts-dropdown-content {
+            display: flex;
+            flex-direction: column;
+        }
     </style>
 @endsection
 @section('content')
@@ -285,7 +289,7 @@
 
     <!-- Clinic Section Five -->
     @if(setting('speed_main_page_section_2') == 1)
-    <section class="clinic-section-five">
+        <section class="clinic-section-five">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
