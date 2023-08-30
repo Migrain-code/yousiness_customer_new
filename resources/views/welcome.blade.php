@@ -199,7 +199,8 @@
                         <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
                             <div class="looking-grid-five looking-grid-blue w-100">
                                 <div class="looking-icon-five">
-                                   <img src="{{image(main('speed_section_1_box_1_image'))}}" style="width: 100px;border-radius: 50%;">
+                                   <!-- <img src="{{image(main('speed_section_1_box_1_image'))}}" style="width: 100px;border-radius: 50%;"> -->
+                                   1
                                 </div>
                                 <div class="looking-info-five">
                                     <a href="#">{{main('speed_section_1_box_1_title')}}</a>
@@ -213,7 +214,8 @@
                         <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
                             <div class="looking-grid-five looking-grid-green w-100">
                                 <div class="looking-icon-five">
-                                    <img src="{{image(main('speed_section_1_box_2_image'))}}" style="width: 100px;border-radius: 50%;">
+                                    <!-- <img src="{{image(main('speed_section_1_box_2_image'))}}" style="width: 100px;border-radius: 50%;"> -->
+                                    2
                                 </div>
                                 <div class="looking-info-five">
                                     <a href="#">{{main('speed_section_1_box_2_title')}}</a>
@@ -227,7 +229,8 @@
                         <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
                             <div class="looking-grid-five looking-grid-orange w-100">
                                 <div class="looking-icon-five">
-                                    <img src="{{image(main('speed_section_1_box_3_image'))}}" style="width: 100px;border-radius: 50%;">
+                                    <!-- <img src="{{image(main('speed_section_1_box_3_image'))}}" style="width: 100px;border-radius: 50%;"> -->
+                                    3
                                 </div>
                                 <div class="looking-info-five">
                                     <a href="#">{{main('speed_section_1_box_3_title')}}</a>
@@ -244,6 +247,41 @@
         </section>
     @endif
     <!-- /Looking Section Five -->
+
+        <!-- Testimonial Section -->
+        <section class="section section-testimonial">
+        <div class="container">
+            <div class="section-header text-center mb-4">
+                <h2>Yorumlar</h2>
+                <!--<p class="sub-title">Müşteri yorumlarımız.</p>-->
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <!-- Slider -->
+                    <div class="testimonial-slider slider">
+
+                        @forelse($comments as $comment)
+                            <!-- Slider Item -->
+                            <div class="testimonial-item text-center">
+                                <div class="testimonial-img">
+                                    <img src="{{image($comment->image)}}" class="img-fluid" style="height: 150px" alt="Speciality">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>{{$comment->description}}</p>
+                                    <p class="user-name">{{$comment->name}}</p>
+
+                                </div>
+                            </div>
+                            <!-- /Slider Item -->
+                        @empty
+                        @endforelse
+                    </div>
+                    <!-- /Slider -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section -->
 
     <!-- Clinic Section Five -->
     @if(setting('speed_main_page_section_2') == 1)
