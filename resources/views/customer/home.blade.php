@@ -91,22 +91,22 @@
                             <div class="card flex-fill">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="account-card bg-success-light">
                                                 <span>₺{{number_format($payments['appointment'], 2)}}</span> Randevu Ödemeleriniz
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="account-card bg-warning-light">
                                                 <span>₺{{number_format($payments['packetPayment'], 2)}}</span> Paket Alım Ödemeleriniz
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="account-card bg-purple-light">
                                                 <span>₺{{number_format($payments['orderTotal'], 2)}}</span> Ürün Alım Ödemeleriniz
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="account-card bg-primary-light">
                                                 <span>₺{{number_format($payments['total'], 2)}}</span> Toplam Harcamanız
                                             </div>
