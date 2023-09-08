@@ -186,6 +186,51 @@
         </div>
     </section>
 
+        <!-- Clinic Section Five -->
+        @if(setting('speed_main_page_section_2') == 1)
+        <section class="clinic-section-five">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                        <h2 class="title-five">Salon Türleri</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                @forelse($categories as $category)
+                    <!--ITEM-->
+                    <div class="col-lg-3 col-md-4 d-flex aos" data-aos="fade-up">
+                        <div class="clinic-grid-five w-100 hvr-bounce-to-bottom">
+                            <div class="clinic-grid-img">
+                                <div class="clinic-img-five">
+                                    <img src="{{asset($category->icon)}}" alt="">
+                                </div>
+                            </div>
+                            <div class="clinic-grid-info">
+                                <p>{{$category->name}}</p>
+                                <div class="clinic-five-btn">
+                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Göster</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ITEM-->
+                @empty
+
+                @endforelse
+
+
+            </div>
+            <!--
+             <div class="clinic-see-btn text-center aos" data-aos="fade-up">
+                <a href="#" class="btn btn-six">Tüm Salon Türlerini Göster</a>
+            </div>
+            --->
+        </div>
+    </section>
+    @endif
+
     <!-- /Home Five Banner -->
     <!-- Looking Section Five -->
     @if(setting('speed_main_page_section_1') == 1)
@@ -252,119 +297,18 @@
     @endif
     <!-- /Looking Section Five -->
 
-        <!-- Testimonial Section -->
-        <section class="section section-testimonial">
+    <section class="homepage-first-ads-banner bottom">
         <div class="container">
-            <div class="section-header text-center mb-4">
-                <h2>Yorumlar</h2>
-                <!--<p class="sub-title">Müşteri yorumlarımız.</p>-->
-            </div>
-            <div class="row justify-content-center">
+            <div class="row">
                 <div class="col-lg-12">
-                    <!-- Slider -->
-                    <div class="testimonial-slider slider">
-
-                        @forelse($comments as $comment)
-                            <!-- Slider Item -->
-                            <div class="testimonial-item text-center">
-                                <div class="testimonial-img">
-                                    <img src="{{image($comment->image)}}" class="img-fluid" style="height: 150px" alt="Speciality">
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>{{$comment->description}}</p>
-                                    <p class="user-name">{{$comment->name}}</p>
-
-                                </div>
-                            </div>
-                            <!-- /Slider Item -->
-                        @empty
-                        @endforelse
-                    </div>
-                    <!-- /Slider -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Testimonial Section -->
-
-    <!-- Clinic Section Five -->
-    @if(setting('speed_main_page_section_2') == 1)
-        <section class="clinic-section-five">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Salon Türleri</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                @forelse($categories as $category)
-                    <!--ITEM-->
-                    <div class="col-lg-3 col-md-4 d-flex aos" data-aos="fade-up">
-                        <div class="clinic-grid-five w-100 hvr-bounce-to-bottom">
-                            <div class="clinic-grid-img">
-                                <div class="clinic-img-five">
-                                    <img src="{{asset($category->icon)}}" alt="">
-                                </div>
-                            </div>
-                            <div class="clinic-grid-info">
-                                <p>{{$category->name}}</p>
-                                <div class="clinic-five-btn">
-                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Göster</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ITEM-->
-                @empty
-
-                @endforelse
-
-
-            </div>
-            <!--
-             <div class="clinic-see-btn text-center aos" data-aos="fade-up">
-                <a href="#" class="btn btn-six">Tüm Salon Türlerini Göster</a>
-            </div>
-            --->
-        </div>
-    </section>
-    @endif
-    <!-- Clinic Section Five -->
-    @if(setting('speed_main_page_section_3') == 1)
-    <!-- Doctor Section Five -->
-    <section class="doctor-section-five" style="background-image: url('{{image('front/main_page_bg.jpg')}}')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                    <div class="doctor-grid-five w-100">
-                        <div class="doctor-details">
-                            <h4>{{main('speed_section_3_box_1_title')}}</h4>
-                            <p>{{main('speed_section_3_box_1_description')}}</p>
-                            <a href="{{env('REMOTE_URL')}}" class="btn">Hadi Başlayalım</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 doctor-img2 aos" data-aos="fade-up">
-                    <div class="doctor-grid-five w-100">
-                        <img src="{{image(main('speed_section_3_main_image'))}}" alt="" class="img-fluid" style="">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                    <div class="doctor-grid-five w-100">
-                        <div class="doctor-details doctor-details-one">
-                            <h4>{{main('speed_section_3_box_2_title')}}</h4>
-                            <p>{{main('speed_section_3_box_2_description')}}</p>
-                            <a href="{{route('customer.register')}}" class="btn">Hadi Keşfedelim</a>
-                        </div>
+                    <div class="first-ads-banner">
+                    <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Doctor Section Five -->
-    @endif
+
     @if(setting('speed_main_page_section_4') == 1)
     <!-- Browse Section Five -->
     <section class="browse-section-five" id="services">
@@ -480,6 +424,7 @@
     </section>
     <!-- /Browse Section Five -->
     @endif
+
     @if(setting('speed_main_page_section_5') == 1)
         @if($activities->count() > 0)
             <!-- Best Section Five -->
@@ -540,6 +485,79 @@
             </section>
             <!-- /Best Section Five -->
         @endif
+
+        <!-- Testimonial Section -->
+        <section class="section section-testimonial">
+        <div class="container">
+            <div class="section-header text-center mb-4">
+                <h2>Kunden-Kommentare</h2>
+                <!--<p class="sub-title">Müşteri yorumlarımız.</p>-->
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <!-- Slider -->
+                    <div class="testimonial-slider slider">
+
+                        @forelse($comments as $comment)
+                            <!-- Slider Item -->
+                            <div class="testimonial-item text-center">
+                                <div class="testimonial-img">
+                                    <img src="{{image($comment->image)}}" class="img-fluid" style="height: 150px" alt="Speciality">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>{{$comment->description}}</p>
+                                    <p class="user-name">{{$comment->name}}</p>
+
+                                </div>
+                            </div>
+                            <!-- /Slider Item -->
+                        @empty
+                        @endforelse
+                    </div>
+                    <!-- /Slider -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section -->
+
+
+    
+    @if(setting('speed_main_page_section_3') == 1)
+    <!-- Doctor Section Five -->
+    <!-- <section class="doctor-section-five" style="background-image: url('{{image('front/main_page_bg.jpg')}}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
+                    <div class="doctor-grid-five w-100">
+                        <div class="doctor-details">
+                            <h4>{{main('speed_section_3_box_1_title')}}</h4>
+                            <p>{{main('speed_section_3_box_1_description')}}</p>
+                            <a href="{{env('REMOTE_URL')}}" class="btn">Hadi Başlayalım</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 doctor-img2 aos" data-aos="fade-up">
+                    <div class="doctor-grid-five w-100">
+                        <img src="{{image(main('speed_section_3_main_image'))}}" alt="" class="img-fluid" style="">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
+                    <div class="doctor-grid-five w-100">
+                        <div class="doctor-details doctor-details-one">
+                            <h4>{{main('speed_section_3_box_2_title')}}</h4>
+                            <p>{{main('speed_section_3_box_2_description')}}</p>
+                            <a href="{{route('customer.register')}}" class="btn">Hadi Keşfedelim</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Doctor Section Five -->
+    @endif
+
+
 
     @endif
     @if(setting('speed_main_page_section_6') == 1)
