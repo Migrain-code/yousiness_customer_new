@@ -236,3 +236,12 @@ section.how-to-area .how-to-items .item p {
 section.how-to-area .how-to-items .item a {
   margin-top: 20px;
 }
+
+.clinic-grid-five .clinic-grid-img {
+  padding: 20px;
+}
+
+.nav-bg-five .logo {
+  background-color: white;
+  border-radius: 10px;
+}
