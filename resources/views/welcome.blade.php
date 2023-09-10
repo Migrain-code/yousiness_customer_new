@@ -297,6 +297,63 @@
     @endif
     <!-- /Looking Section Five -->
 
+    <!-- How To -->
+    <section class="how-to-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                            <h2 class="title-five">Nasıl Kullanılır?</h2>
+                        </div>
+                </div>
+            </div>
+
+            <div class="how-to-items">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="item">
+                            <div class="number">
+                                1
+                            </div>
+                            <div class="hero">Create an account</div>
+                            <div class="image">
+                                <img src="https://salonkee.cloud/data/other/icons/create-account-form.svg" alt="">
+                            </div>
+                            <p>Create your account with a single click (through social login) or register with your email and mobile.</p>
+                            <a href="#" class="btn btn-five">Register Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                    <div class="item">
+                            <div class="number">
+                                2
+                            </div>
+                            <div class="hero">Create an account</div>
+                            <div class="image">
+                                <img src="https://salonkee.cloud/data/other/icons/create-account-form.svg" alt="">
+                            </div>
+                            <p>Create your account with a single click (through social login) or register with your email and mobile.</p>
+                            <a href="#" class="btn btn-five">Register Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                    <div class="item">
+                            <div class="number">
+                                3
+                            </div>
+                            <div class="hero">Create an account</div>
+                            <div class="image">
+                                <img src="https://salonkee.cloud/data/other/icons/create-account-form.svg" alt="">
+                            </div>
+                            <p>Create your account with a single click (through social login) or register with your email and mobile.</p>
+                            <a href="#" class="btn btn-five">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="homepage-first-ads-banner bottom">
         <div class="container">
             <div class="row">

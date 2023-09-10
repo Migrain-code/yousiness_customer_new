@@ -191,3 +191,48 @@
     left: 120px;
   }
 }
+
+section.how-to-area {
+  padding: 80px 0;
+}
+
+section.how-to-area .how-to-items .item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+}
+
+section.how-to-area .how-to-items .item .number {
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #656565;
+  text-shadow: 5px 5px #d59c4b;
+  font-size: 90px;
+}
+
+section.how-to-area .how-to-items .item .hero {
+  font-size: 30px;
+  font-weight: 600;
+  color: #063b6f;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+section.how-to-area .how-to-items .item .image {
+  margin-bottom: 20px;
+}
+
+section.how-to-area .how-to-items .item .image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+section.how-to-area .how-to-items .item p {
+}
+
+section.how-to-area .how-to-items .item a {
+  margin-top: 20px;
+}
