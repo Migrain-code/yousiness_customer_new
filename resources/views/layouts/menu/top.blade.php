@@ -6,7 +6,7 @@
                 <div class="navbar-header">
 
                     <a href="/" class="navbar-brand logo">
-                        <img src="{{image(setting('speed_logo_white'))}}" style="max-width: 180px" class="img-fluid" alt="Logo">
+                        <img src="{{request()->routeIs('welcome') ? image(setting('speed_logo_dark')) : image(setting('speed_logo_white'))}}" style="max-width: 180px" class="img-fluid" alt="Logo">
                     </a>
                     <a id="mobile_btn" href="javascript:void(0);" style="float: right">	<span class="bar-icon">
 									<span></span>
