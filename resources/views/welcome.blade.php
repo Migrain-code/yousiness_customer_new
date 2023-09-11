@@ -234,77 +234,13 @@
     <!-- /Home Five Banner -->
     <!-- Looking Section Five -->
     @if(setting('speed_main_page_section_1') == 1)
-        <section class="looking-section-five">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 mt-3">
-                        <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                            <h2 class="title-five">{{main('speed_section_1_main_title')}}</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="looking-bg-five">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                            <div class="looking-grid-five looking-grid-blue w-100">
-                                <div class="looking-icon-five">
-                                   <!-- <img src="{{image(main('speed_section_1_box_1_image'))}}" style="width: 100px;border-radius: 50%;"> -->
-                                   1
-                                </div>
-                                <div class="looking-info-five">
-                                    <a href="#">{{main('speed_section_1_box_1_title')}}</a>
-                                    <p>{{main('speed_section_1_box_1_description')}}</p>
-                                </div>
-                                <div class="looking-info-btn">
-                                    <a href="javascript:void(0)" class="btn btn-five">Salon Ara <i class="feather-arrow-right ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                            <div class="looking-grid-five looking-grid-green w-100">
-                                <div class="looking-icon-five">
-                                    <!-- <img src="{{image(main('speed_section_1_box_2_image'))}}" style="width: 100px;border-radius: 50%;"> -->
-                                    2
-                                </div>
-                                <div class="looking-info-five">
-                                    <a href="#">{{main('speed_section_1_box_2_title')}}</a>
-                                    <p>{{main('speed_section_1_box_2_description')}}</p>
-                                </div>
-                                <div class="looking-info-btn">
-                                    <a href="#services" class="btn btn-five">Hizmetleri Göster <i class="feather-arrow-right ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                            <div class="looking-grid-five looking-grid-orange w-100">
-                                <div class="looking-icon-five">
-                                    <!-- <img src="{{image(main('speed_section_1_box_3_image'))}}" style="width: 100px;border-radius: 50%;"> -->
-                                    3
-                                </div>
-                                <div class="looking-info-five">
-                                    <a href="#">{{main('speed_section_1_box_3_title')}}</a>
-                                    <p>{{main('speed_section_1_box_3_description')}}</p>
-                                </div>
-                                <div class="looking-info-btn">
-                                    <a href="#services" class="btn btn-five">Puan Kazan <i class="feather-arrow-right ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    @endif
-    <!-- /Looking Section Five -->
-
-    <!-- How To -->
-    <section class="how-to-area">
+        <section class="how-to-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                            <h2 class="title-five">Nasıl Kullanılır?</h2>
-                        </div>
+                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                                <h2 class="title-five">{{main('speed_section_1_main_title')}}</h2>
+                    </div>
                 </div>
             </div>
 
@@ -315,11 +251,11 @@
                             <div class="number">
                                 1
                             </div>
-                            <div class="hero">Create an account</div>
+                            <div class="hero">{{main('speed_section_1_box_1_title')}}</div>
                             <div class="image">
-                                <img src="https://salonkee.cloud/data/other/icons/create-account-form.svg" alt="">
+                                <img src="{{image(main('speed_section_1_box_1_image'))}}" alt="">
                             </div>
-                            <p>Create your account with a single click (through social login) or register with your email and mobile.</p>
+                            <p>{{main('speed_section_1_box_1_description')}}</p>
                             <a href="#" class="btn btn-five">Register Now</a>
                         </div>
                     </div>
@@ -328,11 +264,11 @@
                             <div class="number">
                                 2
                             </div>
-                            <div class="hero">Create an account</div>
+                            <div class="hero">{{main('speed_section_1_box_2_title')}}</div>
                             <div class="image">
-                                <img src="https://salonkee.cloud/data/other/icons/create-account-form.svg" alt="">
+                                <img src="{{image(main('speed_section_1_box_2_image'))}}" alt="">
                             </div>
-                            <p>Create your account with a single click (through social login) or register with your email and mobile.</p>
+                            <p>{{main('speed_section_1_box_2_description')}}</p>
                             <a href="#" class="btn btn-five">Register Now</a>
                         </div>
                     </div>
@@ -341,11 +277,11 @@
                             <div class="number">
                                 3
                             </div>
-                            <div class="hero">Create an account</div>
+                            <div class="hero">{{main('speed_section_1_box_3_title')}}</div>
                             <div class="image">
-                                <img src="https://salonkee.cloud/data/other/icons/create-account-form.svg" alt="">
+                                <img src="{{image(main('speed_section_1_box_3_image'))}}" alt="">
                             </div>
-                            <p>Create your account with a single click (through social login) or register with your email and mobile.</p>
+                            <p>{{main('speed_section_1_box_3_description')}}</p>
                             <a href="#" class="btn btn-five">Register Now</a>
                         </div>
                     </div>
@@ -353,7 +289,7 @@
             </div>
         </div>
     </section>
-
+    @endif
     <section class="homepage-first-ads-banner bottom">
         <div class="container">
             <div class="row">
