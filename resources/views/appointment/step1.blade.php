@@ -46,7 +46,7 @@
             font-size: 20px;
         }
     </style>
-
+    <link rel="stylesheet" href="/front/assets/css/calendar.css">
 
 @endsection
 @section('content')
@@ -110,31 +110,20 @@
                                                     <!-- Schedule Header -->
                                                     <div class="schedule-header">
                                                         @include('layouts.component.error')
-                                                        <!-- Schedule Nav -->
-                                                        <div class="schedule-nav">
-                                                            <div class="col-md-6 text-end aos" data-aos="fade-up">
-                                                                <div class="owl-nav slide-nav-3 text-end nav-control"></div>
+
+                                                        <div class="calendar calendar-first" id="calendar_first">
+                                                            <div class="calendar_header">
+                                                                <button class="switch-month switch-left">
+                                                                    <i class="fa fa-chevron-left"></i>
+                                                                </button>
+                                                                <h2></h2>
+                                                                <button class="switch-month switch-right">
+                                                                    <i class="fa fa-chevron-right"></i>
+                                                                </button>
                                                             </div>
-
-                                                            <ul class="nav nav-tabs nav-justified">
-                                                                <div class="owl-carousel clinic-feature owl-theme aos" data-aos="fade-up">
-                                                                    @forelse($remainingDate as $date)
-                                                                        <div class="item custom-owl">
-                                                                            <li class="nav-item" style="background: aliceblue;border-radius: 15px;">
-                                                                                <a class="nav-link custom-link @if(\Illuminate\Support\Carbon::now()->format('d.m.Y')==$date->format('d.m.Y')) active @else passive @endif" data-bs-toggle="tab" href="#slot_{{$date->format('d_m_Y')}}">
-                                                                                    <b>{{$date->translatedFormat('d F')}}</b>
-                                                                                    <br>
-                                                                                    {{$date->translatedFormat('D')}}
-                                                                                </a>
-                                                                            </li>
-                                                                        </div>
-                                                                    @empty
-                                                                    @endforelse
-                                                                </div>
-                                                            </ul>
+                                                            <div class="calendar_weekdays"></div>
+                                                            <div class="calendar_content"></div>
                                                         </div>
-                                                        <!-- /Schedule Nav -->
-
                                                     </div>
                                                     <!-- /Schedule Header -->
 
@@ -142,32 +131,9 @@
                                                     <form class="tab-content schedule-cont" id="step-3-form" method="post" action="">
                                                         @csrf
                                                         <!-- Sunday Slot -->
-                                                        @forelse($remainingDate as $date)
-                                                            <div id="slot_{{$date->format('d_m_Y')}}" class="tab-pane fade {{\Illuminate\Support\Carbon::now()->format('d.m.Y')==$date->format('d.m.Y') ? "show active" : ""}}">
-                                                                <div class="doc-times">
-                                                                    @for($i=\Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range))
-                                                                        @if(in_array($date->format('d.m.Y '. $i->format('H:i')), $disabledDays) or \Illuminate\Support\Carbon::parse($date->format('d.m.Y '). $i->format('H:i')) < \Illuminate\Support\Carbon::now())
-                                                                            @if(\Illuminate\Support\Carbon::parse($date->format('d.m.Y '). $i->format('H:i')) > \Illuminate\Support\Carbon::now())
-                                                                                    <div class="form-check-inline visits me-1 opened_times">
-                                                                                        <label class="visit-btns">
-                                                                                            <input type="radio" name="appointment_time" disabled class="form-check-input" value="{{$date->format('d.m.Y '. $i->format('H:i'))}}">
-                                                                                            <span class="visit-rsn" data-bs-toggle="tooltip" title="@if(\Illuminate\Support\Carbon::parse($date->format('d.m.Y '). $i->format('H:i')) < \Illuminate\Support\Carbon::now()) Kapalı @else Dolu @endif">{{$i->format('H:i')}}</span>
-                                                                                        </label>
-                                                                                    </div>
-                                                                            @endif
-                                                                        @else
-                                                                            <div class="form-check-inline visits me-1">
-                                                                                <label class="visit-btns">
-                                                                                    <input type="radio" name="appointment_time" class="form-check-input active-time" value="{{$date->format('d.m.Y '. $i->format('H:i'))}}" required>
-                                                                                    <span class="visit-rsn" data-bs-toggle="tooltip" title="Saat Seçimi Zorunludur">{{$i->format('H:i')}}</span>
-                                                                                </label>
-                                                                            </div>
-                                                                        @endif
-                                                                    @endfor
-                                                                </div>
-                                                            </div>
-                                                        @empty
-                                                        @endforelse
+                                                        <div class="doc-times">
+
+                                                        </div>
                                                         <!-- /Sunday Slot -->
 
 
@@ -407,14 +373,7 @@
             $(this).addClass('nav-link active');
         });
     </script>
-    <script>
-        $('.active-time').on('click', function (){
-            let val = $(this).val();
-            $("#appointment_date").val(val);
-            $(".appointment_date").text(val);
-            scrollToElement("step-4");
-        })
-    </script>
+
     <script>
         $('input[name="appointment_time"]').on('change', function() {
             var selected = $('input[name="appointment_time"]:checked');
@@ -442,20 +401,16 @@
         });
     </script>
     <script>
-        $(document).ready(function (){
-            var openedTimesDiv = document.querySelector('.tab-pane');
-            var timeDivs = openedTimesDiv.querySelectorAll('.opened_times');
-            var timeDivCount = timeDivs.length;
-            if (timeDivCount === 0) {
-                var alertDiv = document.createElement('div');
-                alertDiv.className = 'alert alert-danger';
-                alertDiv.textContent = 'Mesai saatleri dışında';
-                openedTimesDiv.appendChild(alertDiv);
-            }
+        $('.active-time').on('click', function (){
+            let val = $(this).val();
 
-        });
+            $("#appointment_date").val(val);
+            $(".appointment_date").text(val);
 
-
+            scrollToElement("step-4");
+        })
     </script>
+    <script src="/front/assets/js/appointment-calendar.js"></script>
+
 @endsection
 

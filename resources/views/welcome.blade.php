@@ -94,7 +94,7 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
-                                                        <select class="" placeholder="Stadt wählen" id="city_service" name="city_id">
+                                                        <select class="" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
                                                             <option value="">Stadt wählen</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name}}</option>

@@ -209,7 +209,9 @@ class AppointmentController extends Controller
      */
     public function getClock(Request $request)
     {
+
         $getDate = Carbon::parse($request->date);
+
         $business = Business::find($request->business_id);
         $disabledDays = [];
         $filledTime = $this->findTimes($business);

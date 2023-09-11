@@ -95,7 +95,6 @@ class AppointmentController extends Controller
 
     public function appointmentCreate(Request $request)
     {
-
         $business = Business::find($request->business_id);
         if (Auth::guard('customer')->check()) {
             $appointment = new Appointment();
