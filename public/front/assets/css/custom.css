@@ -274,3 +274,11 @@ section.how-to-area .how-to-items .item a {
   max-width: 25px;
   height: 25px;
 }
+
+.service-title {
+  background: #d59c4b !important;
+}
+
+.informations svg > path {
+  fill: #d59c4b !important;
+}
