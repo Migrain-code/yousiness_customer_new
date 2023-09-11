@@ -188,7 +188,7 @@
             <div class="row justify-content-center">
                 @forelse($categories as $category)
                     <!--ITEM-->
-                    <div class="col-lg-3 col-md-4 d-flex aos" data-aos="fade-up">
+                    <div class="col-lg-2 col-md-4 d-flex aos" data-aos="fade-up">
                         <div class="clinic-grid-five w-100 hvr-bounce-to-bottom">
                             <div class="clinic-grid-img">
                                 <div class="clinic-img-five">
