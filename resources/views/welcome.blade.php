@@ -193,7 +193,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Salon Türleri</h2>
+                        <h2 class="title-five">Nach Kategorie durchsuchen</h2>
                     </div>
                 </div>
             </div>
@@ -204,7 +204,7 @@
                         <div class="clinic-grid-five w-100 hvr-bounce-to-bottom">
                             <div class="clinic-grid-img">
                                 <div class="clinic-img-five">
-                                    <img src="{{asset($category->icon)}}" alt="">
+                                    <img src="{{image($category->icon)}}" alt="">
                                 </div>
                             </div>
                             <div class="clinic-grid-info">
