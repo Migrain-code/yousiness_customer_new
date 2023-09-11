@@ -46,25 +46,49 @@ class HomeController extends Controller
         $featuredCategories = FeaturedCategorie::where('status', 1)->get();
         $abroadServices = ServiceSubCategory::where('is_abroad', 1)->whereNotNull('featured')->orderBy('featured', 'asc')->get();
         $comments = Comment::where('status', 1)->latest()->get();
-        return view('welcome', compact('comments','abroadServices','featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
+        return view('welcome', compact('comments', 'abroadServices', 'featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
     }
 
+    public function nearMe(Request $request)
+    {
+        $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
+        $lng = $request->input('long'); // Kullanıcıdan alınan longitude
+
+        $distance = 100; // Yakınlık yarıçapı (örneğin, 100 kilometre)
+
+        $businesses = Business::select('businesses.*')
+            ->when((!empty($lat) && !empty($lng)), function ($q) use ($lat, $lng, $distance) {
+                $q->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
+                    ->havingRaw("distance < ?", [$distance]);
+            })
+            ->orderBy('distance', 'asc')
+            ->paginate(setting('speed_pagination_number'));
+        
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
+            }
+        }
+
+        return view('service.search', compact('businesses', 'favoriteIds'));
+    }
     public function allServices()
     {
         $services = ServiceCategory::all();
 
         $womanServices = [];
-        $manServices =[];
-        foreach ($services as $service){
-            if ($service->type_id == 1){
+        $manServices = [];
+        foreach ($services as $service) {
+            if ($service->type_id == 1) {
                 $womanServices[] = ServiceCategoryResource::make($service);
-            }
-            else{
+            } else {
                 $manServices[] = ServiceCategoryResource::make($service);
             }
         }
         //return view('');
     }
+
     public function pageDetail($slug)
     {
         $page = Page::where('slug', $slug)->firstOrFail();
@@ -154,12 +178,11 @@ class HomeController extends Controller
         $services = ServiceCategory::all();
 
         $womanServices = [];
-        $manServices =[];
-        foreach ($services as $service){
-            if ($service->type_id == 1){
+        $manServices = [];
+        foreach ($services as $service) {
+            if ($service->type_id == 1) {
                 $womanServices[] = ServiceCategoryResource::make($service);
-            }
-            else{
+            } else {
                 $manServices[] = ServiceCategoryResource::make($service);
             }
         }
@@ -377,7 +400,7 @@ class HomeController extends Controller
         $service_id = $request->input('service_id');
         $city_id = $request->input('city_id');
 
-        if ($service_id && $city_id) {
+        if ($service_id && $city_id && $city_id != "nach_Standort") {
             $service = ServiceCategory::where('id', $service_id)->firstOrFail();
             $city = City::where('id', $city_id)->first();
             return to_route('serviceAllGet', [$city->slug, $service->slug]);
@@ -386,9 +409,12 @@ class HomeController extends Controller
                 $service = ServiceCategory::where('id', $service_id)->firstOrFail();
                 return to_route('serviceGet', $service->slug);
             }
-            if ($city_id) {
+            if ($city_id != "nach_Standort") {
                 $city = City::where('id', $city_id)->first();
                 return to_route('serviceCityGet', $city->slug);
+            }
+            if($city_id == "nach_Standort"){
+                return to_route('nachStandort', ['lat' => $request->input('lat'), 'long' => $request->input('long')]);
             }
         }
     }

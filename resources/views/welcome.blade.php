@@ -94,6 +94,8 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
+                                                        <input type="hidden" name="lat" id="lat" value="">
+                                                        <input type="hidden" name="long" id="long" value="">
                                                         <select class="" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
                                                             <option value="">Stadt wählen</option>
                                                             <option value="nach_Standort">nach Standort</option>
@@ -544,37 +546,7 @@
 
     
     @if(setting('speed_main_page_section_3') == 1)
-    <!-- Doctor Section Five -->
-    <!-- <section class="doctor-section-five" style="background-image: url('{{image('front/main_page_bg.jpg')}}')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                    <div class="doctor-grid-five w-100">
-                        <div class="doctor-details">
-                            <h4>{{main('speed_section_3_box_1_title')}}</h4>
-                            <p>{{main('speed_section_3_box_1_description')}}</p>
-                            <a href="{{env('REMOTE_URL')}}" class="btn">Hadi Başlayalım</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 doctor-img2 aos" data-aos="fade-up">
-                    <div class="doctor-grid-five w-100">
-                        <img src="{{image(main('speed_section_3_main_image'))}}" alt="" class="img-fluid" style="">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 d-flex aos" data-aos="fade-up">
-                    <div class="doctor-grid-five w-100">
-                        <div class="doctor-details doctor-details-one">
-                            <h4>{{main('speed_section_3_box_2_title')}}</h4>
-                            <p>{{main('speed_section_3_box_2_description')}}</p>
-                            <a href="{{route('customer.register')}}" class="btn">Hadi Keşfedelim</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Doctor Section Five -->
+
     @endif
 
 
@@ -682,6 +654,7 @@
             xhr.send();
         });
     </script>
+
     <script>
         var mySelect = new TomSelect("#city_service", {
             remoteUrl: '/api/city/search',
@@ -712,11 +685,15 @@
                 });
             }
         });
-    </script>
-    <script>
-        $(function (){
-           //getLocation();
+
+        mySelect.on('change', function() {
+            var selectedOption = mySelect.getValue();
+
+            if (selectedOption == "nach_Standort") {
+                getLocation();
+            }
         });
+
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -730,9 +707,8 @@
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
 
-            console.log('lat =' + latitude);
-            console.log('long =' + longitude);
-
+            $('#lat').val(latitude);
+            $('#long').val(longitude);
         }
 
         function showError(error) {

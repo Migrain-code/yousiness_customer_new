@@ -6,6 +6,7 @@ Route::get('/test', function (){
 });
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
     Route::get('/', 'index')->name('welcome');
+    Route::get('/nach/standort', 'nearMe')->name('nachStandort');
     Route::get('/salonlar', 'allBusiness')->name('business.all');
     Route::get('/salon-kategori/{slug}', 'businessCategory')->name('business.category');
     Route::get('/salon/{slug}/detay', 'businessDetail')->name('business.detail');
