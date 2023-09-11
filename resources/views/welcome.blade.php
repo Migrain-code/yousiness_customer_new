@@ -256,7 +256,7 @@
                                 <img src="{{image(main('speed_section_1_box_1_image'))}}" alt="">
                             </div>
                             <p>{{main('speed_section_1_box_1_description')}}</p>
-                            <a href="#" class="btn btn-five">Register Now</a>
+                            <a href="{{main('speed_section_1_box_1_button_link')}}" class="btn btn-five">{{main('speed_section_1_box_1_button_text')}}</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -269,8 +269,9 @@
                                 <img src="{{image(main('speed_section_1_box_2_image'))}}" alt="">
                             </div>
                             <p>{{main('speed_section_1_box_2_description')}}</p>
-                            <a href="#" class="btn btn-five">Register Now</a>
-                        </div>
+                        <a href="{{main('speed_section_1_box_2_button_link')}}" class="btn btn-five">{{main('speed_section_1_box_2_button_text')}}</a>
+
+                    </div>
                     </div>
                     <div class="col-lg-4">
                     <div class="item">
@@ -282,8 +283,9 @@
                                 <img src="{{image(main('speed_section_1_box_3_image'))}}" alt="">
                             </div>
                             <p>{{main('speed_section_1_box_3_description')}}</p>
-                            <a href="#" class="btn btn-five">Register Now</a>
-                        </div>
+                            <a href="{{main('speed_section_1_box_3_button_link')}}" class="btn btn-five">{{main('speed_section_1_box_3_button_text')}}</a>
+
+                    </div>
                     </div>
                 </div>
             </div>
