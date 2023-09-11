@@ -198,7 +198,7 @@
                             <div class="clinic-grid-info">
                                 <p>{{$category->name}}</p>
                                 <div class="clinic-five-btn">
-                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Göster</a>
+                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Zeig</a>
                                 </div>
                             </div>
                         </div>
