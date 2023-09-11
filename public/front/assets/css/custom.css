@@ -255,3 +255,8 @@ section.how-to-area .how-to-items .item a {
 .browse-section-five .col-lg-3 {
   width: 19.666667%;
 }
+
+.browse-section-five .specialist-img-five .img-fluid {
+  max-width: 25px;
+  height: 25px;
+}
