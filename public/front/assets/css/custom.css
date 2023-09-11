@@ -81,8 +81,10 @@
 }
 
 .search-box-five {
-  max-width: 370px !important;
+  max-width: 330px !important;
   background: transparent !important;
+  position: relative;
+  top: 200px;
 }
 
 .clinic-grid-five .clinic-img-five {
