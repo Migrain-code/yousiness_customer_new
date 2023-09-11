@@ -22,6 +22,20 @@
   padding: 200px 0;
 }
 
+.home-section-five .section-search-five .search-box-five .tab-content {
+  background: #ffffff2b;
+  padding: 10px;
+  border-radius: 0px 5px 5px 5px;
+}
+
+.home-section-five
+  .section-search-five
+  .search-box-five
+  .nav-tabs.nav-tabs-solid {
+  background-color: #fafafa33;
+  border: 0;
+}
+
 .homepage-first-ads-banner {
   padding: 20px 0 0px;
 }
