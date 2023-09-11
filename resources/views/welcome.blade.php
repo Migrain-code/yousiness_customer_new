@@ -173,18 +173,6 @@
         </div>
     </section>
     
-    <!-- Homepage Ads Banner -->
-    <section class="homepage-first-ads-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="first-ads-banner">
-                    <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
         <!-- Clinic Section Five -->
         @if(setting('speed_main_page_section_2') == 1)
@@ -292,7 +280,7 @@
         </div>
     </section>
     @endif
-    <section class="homepage-first-ads-banner bottom">
+   <section class="homepage-first-ads-banner bottom">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
