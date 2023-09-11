@@ -239,10 +239,11 @@
                             <div class="number">
                                 1
                             </div>
-                            <div class="hero">{{main('speed_section_1_box_1_title')}}</div>
                             <div class="image">
                                 <img src="{{image(main('speed_section_1_box_1_image'))}}" alt="">
                             </div>
+                            <div class="hero">{{main('speed_section_1_box_1_title')}}</div>
+
                             <p>{{main('speed_section_1_box_1_description')}}</p>
                             <a href="{{main('speed_section_1_box_1_button_link')}}" class="btn btn-five">{{main('speed_section_1_box_1_button_text')}}</a>
                         </div>
@@ -252,10 +253,11 @@
                             <div class="number">
                                 2
                             </div>
-                            <div class="hero">{{main('speed_section_1_box_2_title')}}</div>
                             <div class="image">
                                 <img src="{{image(main('speed_section_1_box_2_image'))}}" alt="">
                             </div>
+                            <div class="hero">{{main('speed_section_1_box_2_title')}}</div>
+
                             <p>{{main('speed_section_1_box_2_description')}}</p>
                         <a href="{{main('speed_section_1_box_2_button_link')}}" class="btn btn-five">{{main('speed_section_1_box_2_button_text')}}</a>
 
@@ -266,10 +268,11 @@
                             <div class="number">
                                 3
                             </div>
-                            <div class="hero">{{main('speed_section_1_box_3_title')}}</div>
                             <div class="image">
                                 <img src="{{image(main('speed_section_1_box_3_image'))}}" alt="">
                             </div>
+                            <div class="hero">{{main('speed_section_1_box_3_title')}}</div>
+  
                             <p>{{main('speed_section_1_box_3_description')}}</p>
                             <a href="{{main('speed_section_1_box_3_button_link')}}" class="btn btn-five">{{main('speed_section_1_box_3_button_text')}}</a>
 
