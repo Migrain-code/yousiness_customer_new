@@ -190,7 +190,7 @@
                                     <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
                                 </div>
                             </div>
-                            <div class="col-lg-7">
+                            <div class="col-lg-9">
                                 <div class="clinic-details p-3" style="margin-left: 10%">
                                     <h4 class="doc-name mt-1"><a href="{{route('business.detail', $business->slug)}}" onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')">{{$business->name}}</a></h4>
                                     <div class="rating mt-1">
@@ -210,14 +210,14 @@
                                             </span>
                                     </div>
                                     <p class="doc-location mt-1"><i class="fas fa-map-marker-alt"></i> {{$business->cities->name. ", ". $business->districts->name}}</p>
-                                    <div class="alert alert-success py-1 mt-1">{{setting('speed_site_title')}} %10 İndirim </div>
+                                   {{--  <div class="alert alert-success py-1 mt-1">{{setting('speed_site_title')}} %10 İndirim </div> --}}
 
                                     <div class="single-comment mt-1">
                                         asdasdasldhas
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-sm-12 widget-footer">
+                            {{-- <div class="col-lg-2 col-sm-12 widget-footer">
 
                                 <div>
                                     <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}} TL</span>
@@ -229,7 +229,7 @@
                                     </p>
                                 @endif
                             </div>
-                        </div>
+                        </div>--}}
                     @empty
                         <div class="alert alert-danger text-center aos" data-aos="fade-down">
                             Aradığınız şehirde hizmet veren işletme kaydı bulunamadı.
