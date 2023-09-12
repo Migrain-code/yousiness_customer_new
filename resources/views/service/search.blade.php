@@ -154,9 +154,9 @@
                                         <input type="hidden" name="lat" value="{{$lat}}">
                                         <input type="hidden" name="long" value="{{$lng}}">
                                         <div class="form-group">
-                                            <label>Yakınlık (km)</label>
+                                            <label>Yakınlık (10 - 100) (<span id="rangeText"></span> )</label>
 
-                                            <input type="range" name="km" class="form-range" id="customRange1" min="10" max="100">
+                                            <input type="range" name="km" class="form-range" id="customRange1" min="10" max="100" value="{{request()->query('km') ? request()->query('km') : 10}}">
                                             {{-- <select class="js-example-basic-single" name="km">
                                                 <option value="">Km Seçiniz</option>
                                                 @for($i=10; $i <= 100; $i += 10)
@@ -321,5 +321,21 @@
                 }
             });
         });
+    </script>
+    <script>
+        // Input elemanını alın
+        var rangeInput = $("#customRange1");
+
+        // Span elementini alın
+        var rangeText = $("#rangeText");
+
+        // Input değeri değiştiğinde bir olay dinleyici ekleyin
+        rangeInput.on("input", function() {
+            // Input değerini span elementinin metni olarak ayarlayın
+            rangeText.text(rangeInput.val());
+        });
+        $(function (){
+            rangeText.text(rangeInput.val());
+        })
     </script>
 @endsection
