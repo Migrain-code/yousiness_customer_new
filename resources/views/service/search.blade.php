@@ -155,12 +155,14 @@
                                         <input type="hidden" name="long" value="{{$lng}}">
                                         <div class="form-group">
                                             <label>Yakınlık (km)</label>
-                                            <select class="js-example-basic-single" name="km">
+
+                                            <input type="range" name="km" class="form-range" id="customRange1" min="10" max="100">
+                                            {{-- <select class="js-example-basic-single" name="km">
                                                 <option value="">Km Seçiniz</option>
                                                 @for($i=10; $i <= 100; $i += 10)
                                                     <option value="{{$i}}" @selected(request()->query('km') == $i)>{{$i}}</option>
                                                 @endfor
-                                            </select>
+                                            </select>--}}
                                         </div>
 
                                         <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
