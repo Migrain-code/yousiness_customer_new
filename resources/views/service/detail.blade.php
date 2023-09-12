@@ -158,10 +158,12 @@
                                 </div>
                                 <div class="col-lg-2 col-sm-12 widget-footer">
 
-                                    <div>
+                                    {{--
+                                        <div>
                                         <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->business->services->min("price")}} TL</span>
                                         'den başlayan
                                     </div>
+                                     --}}
                                     @if($business->business->approve_type==0)
                                         <p class="doc-speciality">
                                             <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Anında Onay</span>

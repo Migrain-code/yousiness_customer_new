@@ -54,6 +54,7 @@ class HomeController extends Controller
 
     public function nearMe(Request $request)
     {
+
         $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
         $lng = $request->input('long'); // Kullanıcıdan alınan longitude
         $km = $request->input('km');
@@ -509,7 +510,7 @@ class HomeController extends Controller
         $category_id = $request->input('category_id');
         $city_id = $request->input('city_id');
 
-        if ($category_id && $city_id) {
+        if ($category_id && $city_id && $city_id != "nach_Standort") {
             $service = BusinessCategory::where('id', $category_id)->firstOrFail();
             $city = City::where('id', $city_id)->first();
             return to_route('categoryAllGet', [$city->slug, $service->slug]);
@@ -518,9 +519,12 @@ class HomeController extends Controller
                 $service = BusinessCategory::where('id', $category_id)->firstOrFail();
                 return to_route('categoryGet', $service->slug);
             }
-            if ($city_id) {
+            if ($city_id && $city_id != "nach_Standort") {
                 $city = City::where('id', $city_id)->first();
                 return to_route('categoryCityGet', $city->slug);
+            }
+            if($city_id == "nach_Standort"){
+                return to_route('nachStandort', ['lat' => $request->input('lat'), 'long' => $request->input('long')]);
             }
         }
     }

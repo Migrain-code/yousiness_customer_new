@@ -94,8 +94,8 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
-                                                        <input type="hidden" name="lat" id="lat" value="">
-                                                        <input type="hidden" name="long" id="long" value="">
+                                                        <input type="hidden" name="lat" id="lat2" value="">
+                                                        <input type="hidden" name="long" id="long2" value="">
                                                         <select class="" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
                                                             <option value="">Stadt wählen</option>
                                                             <option value="nach_Standort">nach Standort</option>
@@ -131,10 +131,13 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
-                                                        <select class="js-example-basic-single" placeholder="Stadt wählen" id="select-city-2" name="city_id">
+                                                        <input type="hidden" name="lat" id="lat" value="">
+                                                        <input type="hidden" name="long" id="long" value="">
+                                                        <select class="" placeholder="Stadt wählen or Plz" id="city_service_2" name="city_id">
                                                             <option value="">Stadt wählen</option>
+
                                                             @forelse($cities as $city)
-                                                                <option value="{{$city->id}}">{{$city->name}}</option>
+                                                                <option value="{{$city->id}}">{{$city->name. ",".$city->post_code}}</option>
                                                             @empty
 
                                                             @endforelse
@@ -667,7 +670,7 @@
                             console.log('item', item.name);
                             return {
                                 value: item.id,
-                                text: item.name + "  " + item.post_code,
+                                text: item.name + "," + item.post_code,
                             };
                         });
 
@@ -679,7 +682,35 @@
                 });
             }
         });
+        var mySelect2 = new TomSelect("#city_service_2", {
+            remoteUrl: '/api/city/search',
+            remoteSearch: true,
+            create: false,
+            highlight: false,
+            load: function(query, callback) {
+                $.ajax({
+                    url: '/api/city/search', // Sunucu tarafındaki arama API'sinin URL'si
+                    method: 'POST',
+                    data: { q: query }, // Arama sorgusu
+                    dataType: 'json', // Beklenen veri tipi
+                    success: function(data) {
 
+                        var results = data.cities.map(function(item) {
+                            console.log('item', item.name);
+                            return {
+                                value: item.id,
+                                text: item.name + "," + item.post_code,
+                            };
+                        });
+
+                        callback(results);
+                    },
+                    error: function() {
+                        console.error("Arama sırasında bir hata oluştu.");
+                    }
+                });
+            }
+        });
         mySelect.on('change', function() {
             var selectedOption = mySelect.getValue();
 
@@ -703,6 +734,7 @@
 
             $('#lat').val(latitude);
             $('#long').val(longitude);
+
         }
 
         function showError(error) {

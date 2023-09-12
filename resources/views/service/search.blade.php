@@ -190,7 +190,7 @@
                                     <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
                                 </div>
                             </div>
-                            <div class="col-lg-9">
+                            <div class="col-lg-7">
                                 <div class="clinic-details p-3" style="margin-left: 10%">
                                     <h4 class="doc-name mt-1"><a href="{{route('business.detail', $business->slug)}}" onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')">{{$business->name}}</a></h4>
                                     <div class="rating mt-1">
@@ -217,19 +217,21 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="col-lg-2 col-sm-12 widget-footer">
+                            <div class="col-lg-2 col-sm-12 widget-footer">
 
-                                <div>
+                                {{--
+                                    <div>
                                     <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}} TL</span>
                                     'den başlayan
                                 </div>
+                                --}}
                                 @if($business->approve_type==0)
                                     <p class="doc-speciality">
                                         <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Anında Onay</span>
                                     </p>
                                 @endif
                             </div>
-                        </div>--}}
+                        </div>
                     @empty
                         <div class="alert alert-danger text-center aos" data-aos="fade-down">
                             Aradığınız şehirde hizmet veren işletme kaydı bulunamadı.
