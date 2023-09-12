@@ -8,6 +8,7 @@ use App\Models\BusinessCategory;
 use App\Models\BusinessInfo;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Country;
 use App\Models\ForBusiness;
 use App\Models\MaingPage;
 use App\Models\Page;
@@ -86,6 +87,9 @@ class AppServiceProvider extends ServiceProvider
             View::share('categories', $categories);
             $recommendedLinks = RecommendedLink::select('title', 'url')->get();
             View::share('recommendedLinks', $recommendedLinks);
+            $countries = Country::all();
+            View::share('countries', $countries);
+
         }
         Paginator::useBootstrapFour();
     }

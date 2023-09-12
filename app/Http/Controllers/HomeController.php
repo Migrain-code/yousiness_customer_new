@@ -17,6 +17,7 @@ use App\Models\BusinessService;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Comment;
+use App\Models\Country;
 use App\Models\CustomerContact;
 use App\Models\CustomerFaq;
 use App\Models\DayList;
@@ -46,15 +47,18 @@ class HomeController extends Controller
         $featuredCategories = FeaturedCategorie::where('status', 1)->get();
         $abroadServices = ServiceSubCategory::where('is_abroad', 1)->whereNotNull('featured')->orderBy('featured', 'asc')->get();
         $comments = Comment::where('status', 1)->latest()->get();
-        return view('welcome', compact('comments', 'abroadServices', 'featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
+        $abroadCities = Country::find(4)->cities;
+
+        return view('welcome', compact('abroadCities','comments', 'abroadServices', 'featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
     }
 
     public function nearMe(Request $request)
     {
         $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
         $lng = $request->input('long'); // Kullanıcıdan alınan longitude
+        $km = $request->input('km');
 
-        $distance = 100; // Yakınlık yarıçapı (örneğin, 100 kilometre)
+        $distance = isset($km) ? intval($km) : 100; // Yakınlık yarıçapı (örneğin, 100 kilometre)
 
         $businesses = Business::select('businesses.*')
             ->when((!empty($lat) && !empty($lng)), function ($q) use ($lat, $lng, $distance) {
@@ -71,7 +75,7 @@ class HomeController extends Controller
             }
         }
 
-        return view('service.search', compact('businesses', 'favoriteIds'));
+        return view('service.search', compact('businesses', 'favoriteIds', 'lat', 'lng'));
     }
     public function allServices()
     {
@@ -439,7 +443,7 @@ class HomeController extends Controller
                 $favoriteIds[] = $favorite->business_id;
             }
         }
-        return view('service.search', compact('businesses', 'service', 'favoriteIds'));
+        return view('service.search', compact('businesses', 'service', 'favoriteIds', 'city'));
     }
 
     public function serviceSubCategoryGet($category, $subCategory)

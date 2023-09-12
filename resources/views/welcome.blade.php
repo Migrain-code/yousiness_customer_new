@@ -372,25 +372,19 @@
                 </div>
             </div>
             <div class="row">
-                {{--
-                    @forelse($abroadServices as $subCategory)
+                    @forelse($abroadCities as $cityA)
                     <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
-                            <div class="specialist-img-five">
-
-                                <img src="{{image($subCategory->icon)}}" alt="" class="img-fluid">
-                            </div>
                             <div class="specialist-info">
-                                <a href="{{route('serviceSubCategoryGet', [$subCategory->category->slug,  $subCategory->slug])}}">{{$subCategory->name}}</a>
+                                <a href="{{route('categoryCityGet', $cityA->slug)}}">{{$cityA->name}}</a>
                             </div>
                             <div class="specialist-nav-five ms-auto">
-                                <a href="{{route('serviceSubCategoryGet', [$subCategory->category->slug, $subCategory->slug])}}"><i class="feather-arrow-right"></i></a>
+                                <a href="{{route('categoryCityGet', $cityA->slug)}}"><i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 @empty
                 @endforelse
-                --}}
 
             </div>
         </div>

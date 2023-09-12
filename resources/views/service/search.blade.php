@@ -113,7 +113,66 @@
         <div class="container-fluid">
 
             <div class="row">
-                @include('service.filter')
+                <div class="col-md-12 col-lg-4 col-xl-3">
+                    <div class="card search-filter">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">Filtrele</h4>
+                        </div>
+                        <div class="card-body">
+                            @if(isset($city))
+                                <form class="" method="post" action="{{route('businessCategorySearch')}}">
+                                    @csrf
+                                    <div class="filter-widget" style="margin-left: 5px !important;">
+                                        <div class="form-group">
+                                            <label>Ülke</label>
+                                            <select class="js-example-basic-single" name="country_id">
+                                                <option value="">Ülke Seçiniz</option>
+                                                @forelse($countries as $country)
+                                                    <option value="{{$country->id}}" @selected($country->id == $city->country_id)>{{$country->name}}</option>
+                                                @empty
+                                                @endforelse
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Şehir Seçiniz</label>
+                                            <select class="js-example-basic-single" name="city_id">
+                                                <option value="">Şehir Seçiniz</option>
+                                                @forelse($city->country->cities as $row)
+                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                @empty
+                                                @endforelse
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                    </div>
+                                </form>
+                            @else
+                                <form class="" method="get" action="">
+
+                                    <div class="filter-widget" style="margin-left: 5px !important;">
+                                        <input type="hidden" name="lat" value="{{$lat}}">
+                                        <input type="hidden" name="long" value="{{$lng}}">
+                                        <div class="form-group">
+                                            <label>Yakınlık (km)</label>
+                                            <select class="js-example-basic-single" name="km">
+                                                <option value="">Km Seçiniz</option>
+                                                @for($i=10; $i <= 100; $i += 10)
+                                                    <option value="{{$i}}" @selected(request()->query('km') == $i)>{{$i}}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
+
+                                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                    </div>
+                                </form>
+                            @endif
+                        </div>
+                    </div>
+                    <!-- /Search Filter -->
+                </div>
+
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <!-- Business Widget -->
                     @forelse($businesses as $business)
@@ -171,7 +230,7 @@
                         </div>
                     @empty
                         <div class="alert alert-danger text-center aos" data-aos="fade-down">
-                            Aradığınız türde hizmet veren işletme kaydı bulunamadı.
+                            Aradığınız şehirde hizmet veren işletme kaydı bulunamadı.
                         </div>
                     @endforelse
 
