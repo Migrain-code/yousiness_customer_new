@@ -2,7 +2,28 @@
 
 use Illuminate\Support\Facades\Route;
 Route::get('/test', function (){
+    $sehirler = array(
+        array("name" => "Istanbul", "post_code" => "34"),
+        array("name" => "Antalya", "post_code" => "07"),
+        array("name" => "Izmir", "post_code" => "35"),
+        array("name" => "Bursa", "post_code" => "16"),
+        array("name" => "Bodrum", "post_code" => "48"),
+        array("name" => "Mugla", "post_code" => "48"),
+        array("name" => "Ankara", "post_code" => "06"),
+        array("name" => "Gaziantep", "post_code" => "27"),
+        array("name" => "Samsun", "post_code" => "55"),
+        array("name" => "Trabzon", "post_code" => "61")
+    );
 
+    foreach ($sehirler as $sehir){
+        $city = new \App\Models\City();
+        $city->country_id = 4;
+        $city->post_code = $sehir["post_code"];
+        $city->slug = \Illuminate\Support\Str::slug($sehir["name"]);
+        $city->name = $sehir["name"];
+        $city->save();
+    }
+    return "kaydedildi";
 });
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
     Route::get('/', 'index')->name('welcome');
