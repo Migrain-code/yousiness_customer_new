@@ -2,7 +2,7 @@
 @section('title', "Hesap Ayarları")
 @section('meta_description', "Kullanıcı Profilim")
 @section('styles')
-
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
 @endsection
 @section('content')
     <div class="breadcrumb-bar">
@@ -113,10 +113,11 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label">İl</label>
-                                                        <select name="city_id" class="form-control" style="border: 1px solid black !important;" id="city_select">
+                                                        <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
                                                             <option value="">İl Seçiniz</option>
+                                                            <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->name}}</option>
                                                             @foreach($cities as $city)
-                                                                <option value="{{$city->id}}" @selected(userInfo()->city_id==$city->id)>{{$city->name}}</option>
+                                                                <option value="{{$city->id}}">{{$city->name}}</option>
                                                             @endforeach
                                                         </select>
                                                         <span class="help-block"></span>
@@ -168,26 +169,38 @@
     </div>
 @endsection
 @section('scripts')
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
 
-        /*$('#city_select').on('change', function (){
-            $('#district_select').empty();
-            let city_id=$(this).val();
-            $.ajax({
-                url: '{{route('customer.getDistrict')}}',
-                type: 'POST',
-                data: {
-                    '_token': '{{csrf_token()}}',
-                    'city_id': city_id
-                },
-                dataType:'json',
-                success:function (data){
-                    $.each(data, function (index, value){
-                        $('#district_select').append('<option value="'+value.id + '">'+ value.name+'</option>');
-                    });
-                }
-            });
-        });*/
+    <script>
+        var mySelect = new TomSelect("#city_select", {
+            remoteUrl: '/api/city/search',
+            remoteSearch: true,
+            create: false,
+            highlight: false,
+            load: function(query, callback) {
+                $.ajax({
+                    url: '/api/city/search', // Sunucu tarafındaki arama API'sinin URL'si
+                    method: 'POST',
+                    data: { q: query }, // Arama sorgusu
+                    dataType: 'json', // Beklenen veri tipi
+                    success: function(data) {
+
+                        var results = data.cities.map(function(item) {
+                            console.log('item', item.name);
+                            return {
+                                value: item.id,
+                                text: item.name + "," + item.post_code,
+                            };
+                        });
+
+                        callback(results);
+                    },
+                    error: function() {
+                        console.error("Arama sırasında bir hata oluştu.");
+                    }
+                });
+            }
+        });
     </script>
     <script src="/front/assets/js/cutomer-menu.js"></script>
 

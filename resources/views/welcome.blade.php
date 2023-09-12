@@ -294,7 +294,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="first-ads-banner">
-                    <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px">
+                        <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px">
                     </div>
                 </div>
             </div>
@@ -435,7 +435,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="first-ads-banner">
-                    <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px">
+                        <img src="{{image($ads->skip(1)->first()->image)}}" alt="970*90" style="max-height: 90px">
                     </div>
                 </div>
             </div>
@@ -506,7 +506,8 @@
         @endif
 
         <!-- Testimonial Section -->
-        <section class="section section-testimonial">
+        @if($comments->count() > 0)
+            <section class="section section-testimonial">
         <div class="container">
             <div class="section-header text-center mb-4">
                 <h2>Kunden-Kommentare</h2>
@@ -538,10 +539,10 @@
             </div>
         </div>
     </section>
+        @endif
+
     <!-- Testimonial Section -->
 
-
-    
     @if(setting('speed_main_page_section_3') == 1)
 
     @endif

@@ -38,7 +38,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $ads = Ads::latest()->get();
+        $ads = Ads::all();
 
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
         $businesses = Business::all();
@@ -46,7 +46,8 @@ class HomeController extends Controller
         $featuredServices = ServiceSubCategory::whereNotNull('featured')->orderBy('featured', 'asc')->get();
         $featuredCategories = FeaturedCategorie::where('status', 1)->get();
         $abroadServices = ServiceSubCategory::where('is_abroad', 1)->whereNotNull('featured')->orderBy('featured', 'asc')->get();
-        $comments = Comment::where('status', 1)->latest()->get();
+        $comments=Comment::where('user_statu', 1)->where('status', 1)->latest()->get();
+
         $abroadCities = Country::find(4)->cities;
 
         return view('welcome', compact('abroadCities','comments', 'abroadServices', 'featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));

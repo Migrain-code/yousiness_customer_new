@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ads;
 use App\Models\Appointment;
 use App\Models\Business;
 use App\Models\BusinessComment;
@@ -19,6 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         $customer = auth('customer')->user();
+        $ads = Ads::all();
         $activeAppointments = Appointment::where('customer_id', $customer->id)
             ->where(function ($query) {
                 $query->where('status', 1)
@@ -54,7 +56,7 @@ class HomeController extends Controller
             $favorites[] = $favorite->business_id;
         }
 
-        return view('customer.home', compact('customer', 'appointments', 'appointmentTotals', 'payments', 'favorites'));
+        return view('customer.home', compact('ads','customer', 'appointments', 'appointmentTotals', 'payments', 'favorites'));
     }
 
     public function appointments()
