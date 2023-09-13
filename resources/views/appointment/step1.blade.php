@@ -410,6 +410,9 @@
             scrollToElement("step-4");
         })
     </script>
+    <script>
+        var appUrl = "{{env('APP_URL')}}";
+    </script>
     <script src="/front/assets/js/appointment-calendar.js"></script>
 
 @endsection

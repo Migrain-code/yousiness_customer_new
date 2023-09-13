@@ -152,7 +152,7 @@
 
         function fetchClock(clickedTime, businessId){
 
-            var apiUrl = "http://127.0.0.1:8000/api/appointment/clock/get";
+            var apiUrl = appUrl + "/api/appointment/clock/get";
 
             var postData = {
                 business_id: businessId,
