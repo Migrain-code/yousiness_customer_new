@@ -120,7 +120,9 @@
                         --}}
                         <div class="col-lg-3">
                             <div class="customer-panel-ads-banner">
-                                <img src="{{image($ads->skip(2)->first()->image)}}" alt="">
+                                <a href="{{$ads->skip(2)->first()->link}}" style="width: 100%;">
+                                    <img src="{{image($ads->skip(2)->first()->image)}}" alt="" style="width: 100%;">
+                                </a>
                             </div>
                         </div>
                     </div>

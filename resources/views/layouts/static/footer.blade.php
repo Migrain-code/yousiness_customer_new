@@ -7,10 +7,10 @@
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <img src="{{image(setting('speed_logo_dark'))}}" style="max-width: 250px" alt="logo">
+                            <img src="{{image(setting('speed_logo_white'))}}" style="max-width: 250px" alt="logo">
                         </div>
                         <div class="footer-about-content">
-                            <p>{{setting('footer_about')}}</p>
+                            <p>{{setting('speed_footer_about')}}</p>
                         </div>
                         <div class="footer-widget footer-menu footer-menu-five">
                             <!-- <ul>
@@ -36,6 +36,8 @@
                             <li><a href="{{route('customer.register')}}">Registrieren</a>
                             </li>
                             <li><a href="{{route('faq')}}">Häufig gestellte Fragen</a>
+                            </li>
+                            <li><a href="{{route('about')}}">über uns</a>
                             </li>
                             <li>
                                 <a href="{{env('REMOTE_URL')}}">Unternehmen</a>

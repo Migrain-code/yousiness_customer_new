@@ -293,7 +293,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="first-ads-banner">
-                        <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px">
+                        <a href="{{$ads->first()->link}}" style="width: 100%;">
+                            <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px;width: 100%">
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -434,7 +437,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="first-ads-banner">
-                        <img src="{{image($ads->skip(1)->first()->image)}}" alt="970*90" style="max-height: 90px">
+                        <a href="{{$ads->skip(1)->first()->link}}" style="width: 100%;">
+                            <img src="{{image($ads->skip(1)->first()->image)}}" alt="970*90" style="max-height: 90px;width: 100%">
+                        </a>
                     </div>
                 </div>
             </div>
