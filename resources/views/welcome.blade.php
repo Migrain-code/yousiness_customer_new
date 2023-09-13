@@ -94,8 +94,8 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
-                                                        <input type="hidden" name="lat" id="lat2" value="">
-                                                        <input type="hidden" name="long" id="long2" value="">
+                                                        <input type="hidden" name="lat" id="lat" value="">
+                                                        <input type="hidden" name="long" id="long" value="">
                                                         <select class="" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
                                                             <option value="">Stadt wählen</option>
                                                             <option value="nach_Standort">nach Standort</option>
@@ -131,8 +131,7 @@
                                                 <div class="search-input-five line-five">
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
-                                                        <input type="hidden" name="lat" id="lat" value="">
-                                                        <input type="hidden" name="long" id="long" value="">
+
                                                         <select class="" placeholder="Stadt wählen or Plz" id="city_service_2" name="city_id">
                                                             <option value="">Stadt wählen</option>
 
@@ -654,6 +653,7 @@
     </script>
 
     <script>
+
         var mySelect = new TomSelect("#city_service", {
             remoteUrl: '/api/city/search',
             remoteSearch: true,
@@ -711,6 +711,9 @@
                     }
                 });
             }
+        });
+        $(function (){
+            getLocation();
         });
         mySelect.on('change', function() {
             var selectedOption = mySelect.getValue();

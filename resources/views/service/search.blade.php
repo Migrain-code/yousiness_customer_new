@@ -151,8 +151,8 @@
                                 <form class="" method="get" action="">
 
                                     <div class="filter-widget" style="margin-left: 5px !important;">
-                                        <input type="hidden" name="lat" value="{{$lat}}">
-                                        <input type="hidden" name="long" value="{{$lng}}">
+                                        <input type="hidden" name="lat" value="{{isset($lat)}}">
+                                        <input type="hidden" name="long" value="{{isset($lng)}}">
                                         <div class="form-group">
                                             <label>Yakınlık (10 - 100) (<span id="rangeText"></span> )</label>
 
