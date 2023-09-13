@@ -412,6 +412,7 @@
     </script>
     <script>
         var appUrl = "{{env('APP_URL')}}";
+        var offDay = "{{$business->off_day}}";
     </script>
     <script src="/front/assets/js/appointment-calendar.js"></script>
 
