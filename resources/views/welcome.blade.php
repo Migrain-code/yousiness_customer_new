@@ -193,7 +193,7 @@
             <div class="row justify-content-center">
                 @forelse($categories as $category)
                     <!--ITEM-->
-                    <div class="col-lg-2 col-md-4 d-flex aos" data-aos="fade-up">
+                    <div class="col-6 col-lg-2 col-md-4 d-flex aos" data-aos="fade-up">
                         <div class="clinic-grid-five w-100 hvr-bounce-to-bottom">
                             <div class="clinic-grid-img">
                                 <div class="clinic-img-five">
@@ -294,7 +294,7 @@
                 <div class="col-lg-12">
                     <div class="first-ads-banner">
                         <a href="{{$ads->first()->link}}" style="width: 100%;">
-                            <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 90px;width: 100%">
+                            <img src="{{image($ads->first()->image)}}" alt="970*90" style="max-height: 180px;width: 100%">
                         </a>
 
                     </div>
@@ -438,7 +438,7 @@
                 <div class="col-lg-12">
                     <div class="first-ads-banner">
                         <a href="{{$ads->skip(1)->first()->link}}" style="width: 100%;">
-                            <img src="{{image($ads->skip(1)->first()->image)}}" alt="970*90" style="max-height: 90px;width: 100%">
+                            <img src="{{image($ads->skip(1)->first()->image)}}" alt="970*90" style="max-height: 180px;width: 100%">
                         </a>
                     </div>
                 </div>

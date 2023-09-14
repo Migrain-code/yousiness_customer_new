@@ -165,6 +165,10 @@
   .home-section-five {
     margin-top: 30px;
   }
+
+  .home-section-five {
+    bottom: 0px;
+  }
 }
 
 @media (max-width: 705px) {
@@ -265,13 +269,13 @@ section.how-to-area .how-to-items .item a {
   border-radius: 10px; */
 }
 
-.clinic-section-five .col-lg-2 {
+/* .clinic-section-five .col-lg-2 {
   width: 19.666667%;
 }
 
 .browse-section-five .col-lg-3 {
   width: 19.666667%;
-}
+} */
 
 .browse-section-five .specialist-img-five .img-fluid {
   max-width: 25px;
