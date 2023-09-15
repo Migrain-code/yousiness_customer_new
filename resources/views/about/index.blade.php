@@ -30,7 +30,7 @@
                 <div class="col-lg-12 col-md-12 aos" data-aos="fade-left" style="background-color: rgba(255,255,255,0.7); padding: 15px;border-radius: 15px">
                     <h3 class="mb-4">{{config('sections.speed_about_main_title')}}</h3>
                     <p>
-                        {{config('sections.speed_about_main_description')}}
+                        {!! config('sections.speed_about_main_description') !!}
                     </p>
                 </div>
                 <div class="col-md-6">

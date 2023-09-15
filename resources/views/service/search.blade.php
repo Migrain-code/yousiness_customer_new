@@ -138,7 +138,7 @@
                                             <select class="js-example-basic-single" name="city_id">
                                                 <option value="">Şehir Seçiniz</option>
                                                 @forelse($city->country->cities as $row)
-                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                    <option value="{{$row->id}}">{{$row->post_code. ",".$row->name}}</option>
                                                 @empty
                                                 @endforelse
                                             </select>
@@ -157,12 +157,7 @@
                                             <label>Yakınlık (10 - 100) (<span id="rangeText"></span> )</label>
 
                                             <input type="range" name="km" class="form-range" id="customRange1" min="10" max="100" value="{{request()->query('km') ? request()->query('km') : 10}}">
-                                            {{-- <select class="js-example-basic-single" name="km">
-                                                <option value="">Km Seçiniz</option>
-                                                @for($i=10; $i <= 100; $i += 10)
-                                                    <option value="{{$i}}" @selected(request()->query('km') == $i)>{{$i}}</option>
-                                                @endfor
-                                            </select>--}}
+
                                         </div>
 
                                         <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
