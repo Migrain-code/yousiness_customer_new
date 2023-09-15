@@ -25,6 +25,7 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('/hizmet/{slug}','serviceDetail')->name('service.detail');
 
     Route::post('/hizmet-ara','serviceSearch')->name('searchService');
+    Route::post('/alt-kategori/hizmet-ara','serviceSubSearch')->name('searchSubService');
     Route::get('/hizmet-ara/{city}/{service}','serviceAllGet')->name('serviceAllGet');
     Route::get('/hizmet-turu-ara/{category}/{service}','serviceSubCategoryGet')->name('serviceSubCategoryGet');
     Route::get('/hizmet-ara/{city}','serviceCityGet')->name('serviceCityGet');

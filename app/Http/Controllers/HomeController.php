@@ -218,6 +218,7 @@ class HomeController extends Controller
             }
         }
 
+
         return view('service.detail', compact('businesses', 'service', 'favoriteIds'));
     }
 
@@ -469,6 +470,27 @@ class HomeController extends Controller
         return view('service.search', compact('businesses', 'service', 'favoriteIds'));
     }
 
+    public function serviceSubSearch(Request $request)
+    {
+        //$request->dd();
+        $service = ServiceCategory::where('id', $request->input('category'))->first();
+
+        $subCategory = ServiceSubCategory::where('id', $request->input('sub_category'))->first();
+
+        $businesses = Business::where('status', 1)
+            ->where('city', $request->input('city_id'))
+            ->whereHas('services', function ($query) use ($service, $subCategory) {
+                $query->where('category', $service->id)->where('sub_category', $subCategory->id);
+            })
+            ->paginate(setting('speed_pagination_number'));
+        $favoriteIds = [];
+        if (auth('customer')->check()) {
+            foreach (auth('customer')->user()->favorites as $favorite) {
+                $favoriteIds[] = $favorite->business_id;
+            }
+        }
+        return view('service.search', compact('businesses', 'service', 'favoriteIds'));
+    }
     /*
        * Service Get $city Function
      *

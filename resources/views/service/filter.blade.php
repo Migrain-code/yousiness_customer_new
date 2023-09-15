@@ -7,19 +7,32 @@
         </div>
         <div class="card-body">
             @if(isset($service) and isset($service->subCategories))
-                <form class="" method="get" action="{{route('service.detail', $service->slug)}}">
+                <form class="" method="post" action="{{route('searchSubService')}}">
+                    @csrf
                     <div class="filter-widget" style="margin-left: 5px !important;">
+                        <input type="hidden" name="category" value="{{$service->id}}">
                         <div class="form-group">
                             <label>Hizmet Seçiniz</label>
-                            <select class="js-example-basic-single" name="alt_kategori">
+                            <select class="js-example-basic-single" name="sub_category">
                                 <option value="">Hizmet Seçiniz</option>
                                 @forelse($service->subCategories as $sub_service)
-                                    <option value="{{$sub_service->slug}}">{{$sub_service->name}}</option>
+                                    <option value="{{$sub_service->id}}">{{$sub_service->name}}</option>
                                 @empty
                                 @endforelse
                             </select>
-                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
                         </div>
+                        <div class="form-group">
+                            <select class="" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
+                                <option value="">Stadt wählen</option>
+                                @forelse($cities as $city)
+                                    <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
+                                @empty
+
+                                @endforelse
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
                     </div>
                 </form>
             @elseif(isset($service))
@@ -40,39 +53,6 @@
                     <button type="submit" class="btn-five w-10 p-2">Arama Yap <span class="fa fa-search"></span></button>
 
                 </form>
-            @endif
-            @if(isset($city))
-                <div class="filter-widget">
-
-                    <div>
-
-                        <select class="js-example-basic-single" name="sub_category">
-                            <option value="">İlçe Seçiniz</option>
-                            @forelse($city->districts as $district)
-                                <option value="{{$district->id}}">{{$district->name}}</option>
-                            @empty
-
-                            @endforelse
-                        </select>
-
-                    </div>
-                </div>
-            @endif
-            @if(isset($category))
-                <div class="filter-widget">
-                    <div>
-
-                        <select class="js-example-basic-single" name="sub_category">
-                            <option value="">İl Seçiniz</option>
-                            @forelse($cities as $city)
-                                <option value="{{$city->id}}">{{$city->name}}</option>
-                            @empty
-
-                            @endforelse
-                        </select>
-
-                    </div>
-                </div>
             @endif
 
         </div>
