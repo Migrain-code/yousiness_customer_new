@@ -169,6 +169,12 @@
   .home-section-five {
     bottom: 0px;
   }
+
+  .search-box-five {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    top: 130px !important;
+  }
 }
 
 @media (max-width: 705px) {
