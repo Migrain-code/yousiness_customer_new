@@ -247,9 +247,13 @@
                             <div class="image">
                                 <img src="{{image(main('speed_section_1_box_1_image'))}}" alt="">
                             </div>
-                            <div class="hero">{{main('speed_section_1_box_1_title')}}</div>
+                            <div class="hero">{{main('speed_section_1_box_1_title')}}
+                                <br><br>
+                            </div>
 
-                            <p>{{main('speed_section_1_box_1_description')}}</p>
+                            <p>{{main('speed_section_1_box_1_description')}}
+                                <br><br>
+                            </p>
                             <a href="{{main('speed_section_1_box_1_button_link')}}" class="btn btn-five">{{main('speed_section_1_box_1_button_text')}}</a>
                         </div>
                     </div>
@@ -278,7 +282,9 @@
                             </div>
                             <div class="hero">{{main('speed_section_1_box_3_title')}}</div>
   
-                            <p>{{main('speed_section_1_box_3_description')}}</p>
+                            <p>{{main('speed_section_1_box_3_description')}}
+                                <br><br><br>
+                            </p>
                             <a href="{{main('speed_section_1_box_3_button_link')}}" class="btn btn-five">{{main('speed_section_1_box_3_button_text')}}</a>
 
                     </div>
