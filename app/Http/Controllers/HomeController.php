@@ -46,11 +46,11 @@ class HomeController extends Controller
         $featuredServices = ServiceSubCategory::whereNotNull('featured')->orderBy('featured', 'asc')->get();
         $featuredCategories = FeaturedCategorie::where('status', 1)->get();
         $abroadServices = ServiceSubCategory::where('is_abroad', 1)->whereNotNull('featured')->orderBy('featured', 'asc')->get();
-        $comments=Comment::where('user_statu', 1)->where('status', 1)->latest()->get();
+        $comments = Comment::where('user_statu', 1)->where('status', 1)->latest()->get();
 
         $abroadCities = Country::find(4)->cities;
 
-        return view('welcome', compact('abroadCities','comments', 'abroadServices', 'featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
+        return view('welcome', compact('abroadCities', 'comments', 'abroadServices', 'featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
     }
 
     public function nearMe(Request $request)
@@ -69,7 +69,7 @@ class HomeController extends Controller
             })
             ->orderBy('distance', 'asc')
             ->paginate(setting('speed_pagination_number'));
-        
+
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {
@@ -79,6 +79,7 @@ class HomeController extends Controller
 
         return view('service.search', compact('businesses', 'favoriteIds', 'lat', 'lng'));
     }
+
     public function allServices()
     {
         $services = ServiceCategory::all();
@@ -251,7 +252,9 @@ class HomeController extends Controller
     public function businessCategory($slug)
     {
         $businessCategory = BusinessCategory::where('slug', $slug)->firstOrFail();
+
         $businesses = $businessCategory->businesses()->paginate(setting('speed_pagination_number'));
+
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {
@@ -419,7 +422,7 @@ class HomeController extends Controller
                 $city = City::where('id', $city_id)->first();
                 return to_route('serviceCityGet', $city->slug);
             }
-            if($city_id == "nach_Standort"){
+            if ($city_id == "nach_Standort") {
                 return to_route('nachStandort', ['lat' => $request->input('lat'), 'long' => $request->input('long')]);
             }
         }
@@ -524,7 +527,7 @@ class HomeController extends Controller
                 $city = City::where('id', $city_id)->first();
                 return to_route('categoryCityGet', $city->slug);
             }
-            if($city_id == "nach_Standort"){
+            if ($city_id == "nach_Standort") {
                 return to_route('nachStandort', ['lat' => $request->input('lat'), 'long' => $request->input('long')]);
             }
         }
@@ -534,7 +537,7 @@ class HomeController extends Controller
     {
         $category = BusinessCategory::where('slug', $category)->first();
         $city = City::where('slug', $city)->first();
-        $businesses = Business::where('category_id', $category->id)->paginate(setting('speed_pagination_number'));
+        $businesses = $category->businesses()->where('city', $city->id)->paginate(setting('speed_pagination_number'));
 
         $favoriteIds = [];
         if (auth('customer')->check()) {
@@ -568,7 +571,8 @@ class HomeController extends Controller
     public function categoryGet($category)
     {
         $category = BusinessCategory::where('slug', $category)->first();
-        $businesses = Business::where('category_id', $category->id)->paginate(setting('speed_pagination_number'));
+        $businesses = $category->businesses()->paginate(setting('speed_pagination_number'));
+
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {

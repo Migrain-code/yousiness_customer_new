@@ -9,8 +9,12 @@ class BusinessCategory extends Model
 {
     use HasFactory;
 
+    public function typeCategories()
+    {
+        return $this->hasMany(BusinessTypeCategory::class, 'category_id', 'id');
+    }
     public function businesses()
     {
-        return $this->hasMany(Business::class, 'category_id', 'id');
+        return $this->belongsToMany(Business::class, 'business_type_categories', 'category_id', 'business_id');
     }
 }

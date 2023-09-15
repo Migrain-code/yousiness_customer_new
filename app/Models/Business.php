@@ -38,9 +38,9 @@ class Business extends Authenticatable
         return $this->hasOne(BussinessPackage::class, 'id', 'package_id');
     }
 
-    public function category()
+    public function categories()
     {
-        return $this->hasOne(BusinessCategory::class, 'id', 'category_id');
+        return $this->belongsToMany(BusinessCategory::class, 'business_type_categories', 'business_id', 'category_id');
     }
     public function type()
     {
