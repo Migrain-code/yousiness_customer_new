@@ -144,4 +144,26 @@ class SearchController extends Controller
             'message' => "Aradığınız Hizmet Türünde Hizmet Veren İşletme Kaydı Bulunamadı"
         ]);
     }
+    /**
+     *
+     * @group Search
+     *
+     */
+    public function searchCity(Request $request)
+    {
+        $businesses = Business::query()
+            ->when($request->filled('city_id'), function ($q) use ($request) {
+                $q->where('city', $request->city_id);
+            })
+            ->get();
+        if ($businesses->count() > 0){
+            return response()->json([
+                'businesses' => BusinessResource::collection($businesses)
+            ]);
+        }
+        return response()->json([
+            'status' => "error",
+            'message' => "Aradığınız Şehirde Hizmet Veren İşletme Kaydı Bulunamadı"
+        ]);
+    }
 }

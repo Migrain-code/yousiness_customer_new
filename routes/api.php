@@ -103,6 +103,7 @@ Route::prefix('salons')->group(function (){
 });
 
 Route::prefix('search')->group(function (){
+   Route::post('city', [SearchController::class, 'searchCity']);
    Route::post('service', [SearchController::class, 'searchService']);
    Route::post('near/me', [SearchController::class, 'nearMe']);
    Route::post('business/type', [SearchController::class, 'searchBusinessType']);
