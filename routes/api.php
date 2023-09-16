@@ -86,6 +86,7 @@ Route::prefix('blog')->group(function (){
 
 Route::prefix('services')->group(function (){
     Route::get('list' ,[ServiceController::class, 'index']);
+    Route::get('abroad', [ServiceController::class, 'abroad']);
     Route::get('all' ,[ServiceController::class, 'all']);
     Route::post('subCategory' ,[ServiceController::class, 'subCategory']);
 });

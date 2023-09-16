@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api\Service;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ServiceCategoryResource;
+use App\Http\Resources\ServiceSubCategoryResource;
 use App\Models\ServiceCategory;
+use App\Models\ServiceSubCategory;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -77,5 +79,16 @@ class ServiceController extends Controller
            'manSubServices' => $manServices,
         ]);
 
+    }
+    /**
+     * @group Services
+     *
+     */
+    public function abroad()
+    {
+        $abroadServices = ServiceSubCategory::where('is_abroad', 1)->whereNotNull('featured')->orderBy('featured', 'asc')->get();
+        return response()->json([
+           'abroad_services'=> ServiceSubCategoryResource::collection($abroadServices),
+        ]);
     }
 }
