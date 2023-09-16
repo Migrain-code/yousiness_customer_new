@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api\Service;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\BusinessResource;
 use App\Http\Resources\ServiceCategoryResource;
 use App\Http\Resources\ServiceSubCategoryResource;
+use App\Models\Business;
 use App\Models\ServiceCategory;
 use App\Models\ServiceSubCategory;
 use Illuminate\Http\Request;
@@ -90,5 +92,33 @@ class ServiceController extends Controller
         return response()->json([
            'abroad_services'=> ServiceSubCategoryResource::collection($abroadServices),
         ]);
+    }
+    /**
+     * @group Services
+     *
+     */
+    public function abroadBusinesses(Request $request)
+    {
+        $subCategory = ServiceSubCategory::find($request->sub_category_id);
+        $businesses = Business::where('status', 1)->where('city', $request->city_id)
+            ->whereHas('services', function ($query) use ($subCategory) {
+                $query->where('sub_category', $subCategory->id);
+            })
+            ->get();
+        if ($businesses->count() > 0){
+            return response()->json([
+                'status' => "success",
+                'message' => "İşletme Kaydı Bulundu",
+                'businesses' => BusinessResource::collection($businesses)
+            ]);
+        }
+        else{
+            return response()->json([
+                'status' => "danger",
+                'message' => "Aradığınız Hizmet Türünde İşletme Kaydı Bulunamadı",
+            ]);
+        }
+
+
     }
 }

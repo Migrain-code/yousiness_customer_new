@@ -89,6 +89,7 @@ Route::prefix('services')->group(function (){
     Route::get('abroad', [ServiceController::class, 'abroad']);
     Route::get('all' ,[ServiceController::class, 'all']);
     Route::post('subCategory' ,[ServiceController::class, 'subCategory']);
+    Route::post('abroadBusinesses' ,[ServiceController::class, 'abroadBusinesses']);
 });
 
 Route::prefix('salons')->group(function (){

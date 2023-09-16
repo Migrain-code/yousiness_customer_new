@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Search;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\BusinessResource;
 use App\Models\Business;
+use App\Models\BusinessCategory;
 use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -37,7 +38,8 @@ class SearchController extends Controller
                 });
             })
             ->when($request->filled('category_id'), function ($q) use ($request) {
-                $q->where('category_id', $request->category_id);
+                $category = BusinessCategory::where('id', $request->category_id)->first();
+                return $q->whereIn('id', $category->businesses->pluck('id'));
             })
             ->get();
 
