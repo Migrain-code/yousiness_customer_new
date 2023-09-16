@@ -25,8 +25,7 @@ class SearchController extends Controller
     public function searchService(Request $request)
     {
         $businesses = Business::query()
-            ->where('city', $request->city_id)
-            ->where('district', $request->district_id)
+            ->where('city', $request->district_id)
             ->when($request->filled('service_id') || $request->filled('sub_category_id'), function ($q) use ($request) {
                 $q->whereHas('services', function ($query) use ($request) {
                     if ($request->filled('service_id')) {
