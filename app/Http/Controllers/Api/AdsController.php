@@ -20,4 +20,11 @@ class AdsController extends Controller
             'ads' => AdsResource::collection($ads)
         ]);
     }
+    public function get()
+    {
+        $ads = Ads::select('image', 'link')->latest()->first();
+        return response()->json([
+            'ads' => AdsResource::make($ads)
+        ]);
+    }
 }

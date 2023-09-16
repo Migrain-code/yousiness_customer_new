@@ -73,6 +73,8 @@ Route::prefix('activity')->group(function (){
 });
 Route::prefix('ads')->group(function (){
    Route::get('list', [AdsController::class, 'list']);
+   Route::get('get', [AdsController::class, 'get']);
+
 });
 Route::prefix('campaign')->group(function (){
     Route::get('list', [CampaignController::class, 'list']);
