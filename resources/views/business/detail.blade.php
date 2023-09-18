@@ -149,7 +149,7 @@
                                                         <div class="d-flex justify-content-between align-items-center w-100">
                                                             <div class="service-name">{{$service->subCategory->name}}</div>
                                                             <div class="appointment">
-                                                                <span class="price">{{--$service->price . "TL" --}}</span>
+                                                                <span class="price">{{$service->price . "TL"}}</span>
                                                                 <a href="{{ route('step1.show', ['business' => $business->slug, 'request' => array('services' => array($service->id))])}}" class="appointment-button ms-4 ">Randevu Al</a>
 
                                                             </div>
