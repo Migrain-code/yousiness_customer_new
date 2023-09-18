@@ -37,7 +37,7 @@
                 <div class="col-md-7 col-lg-8 col-xl-9">
 
                     <div class="row">
-                        <div class="col-lg-9 d-flex">
+                        <div class="col-lg-7 d-flex">
                             <div class="card flex-fill">
                                 <div class="card-header">
                                     <div class="row">
@@ -87,8 +87,8 @@
                                 </div>
                             </div>
                         </div>
-                        {{--
-                            <div class="col-lg-5 d-flex">
+
+                        <div class="col-lg-3 d-flex">
                             <div class="card flex-fill">
                                 <div class="card-body">
                                     <div class="row">
@@ -117,8 +117,8 @@
                                 </div>
                             </div>
                         </div>
-                        --}}
-                        <div class="col-lg-3">
+
+                        <div class="col-lg-2">
                             <div class="customer-panel-ads-banner">
                                 <a href="{{$ads->skip(2)->first()->link}}" style="width: 100%;">
                                     <img src="{{image($ads->skip(2)->first()->image)}}" alt="" style="width: 100%;">
