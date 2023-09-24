@@ -19,7 +19,7 @@ class AppointmentController extends Controller
 {
     public function step1Show($business)
     {
-
+        dd($business);
         $business = Business::where('slug', $business)->firstOrFail();
 
         /*service modal queries */
