@@ -68,7 +68,7 @@
 
                 var clickedDateInfo = getClickedInfo(clicked, calendar);
                 var clickedTime = clickedDateInfo.year + "-" + (clickedDateInfo.month + 1) + "-" + clickedDateInfo.date;
-                fetchClock(clickedTime, 8);
+                fetchClock(clickedTime, businessId);
                 // Understading which element was clicked;
                 // var parentClass = $(this).parent().parent().attr('class');
                 if (firstClick && secondClick) {
