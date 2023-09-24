@@ -468,7 +468,7 @@ class AppointmentController extends Controller
     {
         $disableds = [];
         $now = Carbon::now(); // Şu anki tarih ve saat
-        dd($business->appointments());
+        dd($business->appointments);
         foreach ($business->appointments()->whereNotIn('status', [8])->get() as $appointment) {
             $startDateTime = Carbon::parse($appointment->start_time);
             $endDateTime = Carbon::parse($appointment->end_time);
