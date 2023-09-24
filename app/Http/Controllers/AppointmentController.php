@@ -21,7 +21,7 @@ class AppointmentController extends Controller
     {
 
         $business = Business::where('slug', $business)->firstOrFail();
-        dd($business);
+
         /*service modal queries */
         $womanServices = $business->services()->where('type', 1)->get();
         $manServices = $business->services()->where('type', 2)->get();
@@ -47,7 +47,7 @@ class AppointmentController extends Controller
         $filledTime = [];
         $remainingDays = Carbon::now()->subDays(1)->diffInDays(Carbon::now()->copy()->endOfMonth());
         $disabledDays = [];
-
+        dd($remainingDays);
         if (isset(\request()["request"])) {
             if (isset(\request()["request"]["services"])) {
                 foreach (\request()["request"]["services"] as $service_id) {
