@@ -32,10 +32,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
-
     public function index()
     {
         $ads = Ads::all();
@@ -49,7 +49,6 @@ class HomeController extends Controller
         $comments = Comment::where('user_statu', 1)->where('status', 1)->latest()->get();
 
         $abroadCities = Country::find(4)->cities;
-
         return view('welcome', compact('abroadCities', 'comments', 'abroadServices', 'featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
     }
 

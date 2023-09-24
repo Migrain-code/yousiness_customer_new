@@ -115,7 +115,9 @@
                                                         <label class="control-label">İl</label>
                                                         <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
                                                             <option value="">İl Seçiniz</option>
-                                                            <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->name}}</option>
+                                                            @if(isset(userInfo()->city))
+                                                                <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->name}}</option>
+                                                            @endif
                                                             @foreach($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name}}</option>
                                                             @endforeach
