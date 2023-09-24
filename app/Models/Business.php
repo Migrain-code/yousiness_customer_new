@@ -100,7 +100,7 @@ class Business extends Authenticatable
 
     public function appointments()
     {
-        return $this->hasMany(Appointment::class, 'business_id', 'id');
+        return $this->hasMany(Appointment::class, 'id', 'business_id');
     }
 
     public function cities()
