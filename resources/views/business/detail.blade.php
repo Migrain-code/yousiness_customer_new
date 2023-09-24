@@ -127,8 +127,13 @@
                     <div class="tabs mt-5">
                         <ul>
                             @if($business->type->id == 3)
-                                <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
-                                <li class="tab-titles p-3" onclick="tabsFunction(this)">Kadın</li>
+                                @if($manServiceCategories->count() > $womanServiceCategories->count())
+                                    <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
+                                    <li class="tab-titles p-3" onclick="tabsFunction(this)">Kadın</li>
+                                @else
+                                    <li class="tab-titles  p-3" onclick="tabsFunction(this)">Erkek</li>
+                                    <li class="tab-titles active p-3" onclick="tabsFunction(this)">Kadın</li>
+                                @endif
                             @elseif($business->type->id == 2)
                                 <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
                             @elseif($business->type->id == 1)
