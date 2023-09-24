@@ -132,7 +132,7 @@
                             @elseif($business->type->id == 2)
                                 <li class="tab-titles active p-3" onclick="tabsFunction(this)">Erkek</li>
                             @elseif($business->type->id == 1)
-                                <li class="tab-titles p-3" onclick="tabsFunction(this)">Kadın</li>
+                                <li class="tab-titles p-3 active" onclick="tabsFunction(this)">Kadın</li>
                             @endif
                         </ul>
                         <div class="tab-contents">
@@ -181,7 +181,8 @@
                                                             <div class="service-name">{{$service->subCategory->name}}</div>
                                                             <div class="appointment">
                                                                 <span class="price">{{$service->price}} TL</span>
-                                                                <a href="{{ route('step1.show', ['business' => $business->slug, 'services' => array($service->id)])}}" class="appointment-button ms-4 ">Randevu Al</a>
+                                                                <a href="{{ route('step1.show', ['business' => $business->slug, 'request' => array('services' => array($service->id))])}}" class="appointment-button ms-4 ">Randevu Al</a>
+
                                                             </div>
                                                         </div>
 
