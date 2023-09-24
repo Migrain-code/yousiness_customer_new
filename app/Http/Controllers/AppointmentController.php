@@ -47,7 +47,7 @@ class AppointmentController extends Controller
         $filledTime = [];
         $remainingDays = Carbon::now()->subDays(1)->diffInDays(Carbon::now()->copy()->endOfMonth());
         $disabledDays = [];
-        dd(isset(\request()["request"]));
+
         if (isset(\request()["request"])) {
             if (isset(\request()["request"]["services"])) {
                 foreach (\request()["request"]["services"] as $service_id) {
