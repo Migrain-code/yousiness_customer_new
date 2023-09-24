@@ -119,7 +119,7 @@
                                                                 <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->name}}</option>
                                                             @endif
                                                             @foreach($cities as $city)
-                                                                <option value="{{$city->id}}">{{$city->name}}</option>
+                                                                <option value="{{$city->id}}">{{$city->post_code.",".$city->name}}</option>
                                                             @endforeach
                                                         </select>
                                                         <span class="help-block"></span>
@@ -191,7 +191,7 @@
                             console.log('item', item.name);
                             return {
                                 value: item.id,
-                                text: item.name + "," + item.post_code,
+                                text: item.post_code + "," + item.name
                             };
                         });
 
