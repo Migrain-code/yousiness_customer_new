@@ -118,7 +118,10 @@ class Business extends Authenticatable
     {
         return $this->hasMany(BusinessComment::class, 'business_id', 'id')->where('status', 1)->latest();
     }
-
+    public function businessService()
+    {
+        return $this->hasMany(BusinessService::class, 'business_id', 'id');
+    }
     public function points()
     {
         $businessComments = $this->hasMany(BusinessComment::class, 'business_id', 'id')->where('status', 1);

@@ -197,26 +197,26 @@ class HomeController extends Controller
 
     public function serviceDetail($slug, Request $request)
     {
-        $businesses = [];
         if (count($request->all()) == 0) {
             $service = ServiceCategory::where('slug', $slug)->firstOrFail();/*hizmet kategorisini bul*/
-            $businessSearch = $service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
-            ->select('business_id')
-                ->groupBy('business_id')
+
+            $businesses = Business::whereHas('businessService', function ($query) use ($service) {
+                $query->where('category', $service->id);
+            })->whereNotNull('city')
+                ->has("personel")
                 ->paginate(setting('speed_pagination_number'));
+
         } else {
             $service = ServiceSubCategory::where('slug', $request->input('alt-kategori'))->firstOrFail();/*hizmet kategorisini bul*/
-            $businessSearch = $service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
-            ->select('business_id')
-                ->groupBy('business_id')
-                ->paginate(setting('speed_pagination_number'));
+            $businesses = Business::whereHas('businessService', function ($query) use ($service) {
+                $query->where('category', $service->id)
+                    ->where('status', 1)
+                    ->whereNotNull('city')
+                    ->has("personel");
+            })->paginate(setting('speed_pagination_number'));
+
         }
 
-        foreach ($businessSearch as $business){
-            if ($business->business && $business->business()->has("personel") && $business->business->city != null){
-                $businesses[] = $business->business;
-            }
-        }
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {
