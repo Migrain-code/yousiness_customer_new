@@ -216,8 +216,8 @@
 
 
                                     <div>
-                                    <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}} TL</span>
-                                    'den başlayan
+                                    <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}}</span>
+                                        Ab €
                                 </div>
                                 
                                 @if($business->approve_type==0)
@@ -229,7 +229,7 @@
                         </div>
                     @empty
                         <div class="alert alert-danger text-center aos" data-aos="fade-down">
-                            Aradığınız şehirde hizmet veren işletme kaydı bulunamadı.
+                            Es wurden keine Geschäftsunterlagen gefunden, die die Art der von Ihnen gesuchten Dienstleistung anbieten.
                         </div>
                     @endforelse
 
