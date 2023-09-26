@@ -579,7 +579,7 @@ class HomeController extends Controller
     {
         $city = City::where('slug', $city)->first();
         $service = null;
-        $businesses = Business::whereNotNull('city_id')
+        $businesses = Business::whereNotNull('city')
             ->where('city', $city->id)
             ->paginate(setting('speed_pagination_number'));
 
@@ -595,7 +595,7 @@ class HomeController extends Controller
     public function categoryGet($category)
     {
         $category = BusinessCategory::where('slug', $category)->first();
-        $businesses = $category->businesses()->whereNotNull('city_id')->paginate(setting('speed_pagination_number'));
+        $businesses = $category->businesses()->whereNotNull('city')->paginate(setting('speed_pagination_number'));
 
         $favoriteIds = [];
         if (auth('customer')->check()) {
