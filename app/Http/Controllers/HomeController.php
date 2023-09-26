@@ -579,9 +579,10 @@ class HomeController extends Controller
     {
         $city = City::where('slug', $city)->first();
         $service = null;
-        $businesses = Business::where('city', $city->id)
-            ->whereNotNull('city_id')
+        $businesses = Business::whereNotNull('city_id')
+            ->where('city', $city->id)
             ->paginate(setting('speed_pagination_number'));
+
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {
