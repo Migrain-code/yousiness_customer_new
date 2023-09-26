@@ -595,7 +595,7 @@ class HomeController extends Controller
     public function categoryGet($category)
     {
         $category = BusinessCategory::where('slug', $category)->first();
-        $businesses = $category->businesses()->whereNotNull('city')->paginate(setting('speed_pagination_number'));
+        $businesses = $category->businesses()->whereNotNull('city')->has('personel')->paginate(setting('speed_pagination_number'));
 
         $favoriteIds = [];
         if (auth('customer')->check()) {
