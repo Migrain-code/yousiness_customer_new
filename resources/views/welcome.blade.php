@@ -326,7 +326,7 @@
             </div>
             <div class="row">
                 @forelse($featuredServices as $subCategory)
-                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+                    <div class="col-6 col-custom aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
 
@@ -357,7 +357,7 @@
             </div>
             <div class="row">
                 @forelse($abroadServices as $subCategory)
-                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+                    <div class="col-6 col-custom aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
 
@@ -388,7 +388,7 @@
             </div>
             <div class="row">
                     @forelse($abroadCities as $cityA)
-                    <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+                    <div class="col-6 col-custom aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-info">
                                 <a href="{{route('categoryCityGet', $cityA->slug)}}">{{$cityA->name}}</a>

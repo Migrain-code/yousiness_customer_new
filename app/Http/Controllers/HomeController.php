@@ -453,7 +453,9 @@ class HomeController extends Controller
                 $favoriteIds[] = $favorite->business_id;
             }
         }
-        return view('service.search', compact('businesses', 'service', 'favoriteIds'));
+
+        $abroadCities = City::where('country_id', 4)->get();
+        return view('service.search', compact('businesses', 'service', 'favoriteIds', 'subCategory', 'abroadCities'));
     }
 
     public function serviceSubSearch(Request $request)
@@ -463,9 +465,11 @@ class HomeController extends Controller
         ], [], [
             'sub_category' => "Service"
         ]);
-        $service = ServiceCategory::where('id', $request->input('category'))->first();
+
 
         $subCategory = ServiceSubCategory::where('id', $request->input('sub_category'))->first();
+
+        $service = ServiceCategory::where('id', $subCategory->category_id)->first();
 
         $businesses = Business::where('status', 1)
             ->has('personel')
@@ -481,7 +485,8 @@ class HomeController extends Controller
                 $favoriteIds[] = $favorite->business_id;
             }
         }
-        return view('service.search', compact('businesses', 'service', 'favoriteIds'));
+
+        return view('service.search', compact('businesses', 'service', 'favoriteIds', 'subCategory'));
     }
     /*
        * Service Get $city Function
@@ -575,6 +580,7 @@ class HomeController extends Controller
         $city = City::where('slug', $city)->first();
         $service = null;
         $businesses = Business::whereNotNull('city')
+            ->has('personel')
             ->where('city', $city->id)
             ->paginate(setting('speed_pagination_number'));
 
@@ -584,7 +590,8 @@ class HomeController extends Controller
                 $favoriteIds[] = $favorite->business_id;
             }
         }
-        return view('service.search', compact('businesses', 'service', 'city', 'favoriteIds'));
+        $abroadServices = ServiceSubCategory::where('is_abroad', 1)->get();
+        return view('service.search', compact('businesses', 'service', 'city', 'favoriteIds', 'abroadServices'));
     }
 
     public function categoryGet($category)

@@ -119,35 +119,77 @@
                             <h4 class="card-title mb-0">Filtrele</h4>
                         </div>
                         <div class="card-body">
-                            @if(isset($city))
-                                <form class="" method="post" action="{{route('businessCategorySearch')}}">
-                                    @csrf
-                                    <div class="filter-widget" style="margin-left: 5px !important;">
-                                        <div class="form-group">
-                                            <label>Land</label>
-                                            <select class="js-example-basic-single" name="country_id">
-                                                <option value="">Bitte Land auswählen</option>
-                                                @forelse($countries as $country)
-                                                    <option value="{{$country->id}}" @selected($country->id == $city->country_id)>{{$country->name}}</option>
-                                                @empty
-                                                @endforelse
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Plz/ Stadtname</label>
-                                            <select class="js-example-basic-single" name="city_id">
-                                                <option value="{{$city->id}}" selected>{{$city->post_code. ",".$city->name}}</option>
-                                                @forelse($city->country->cities as $row)
-                                                    <option value="{{$row->id}}">{{$row->post_code. ",".$row->name}}</option>
-                                                @empty
-                                                @endforelse
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
 
-                                    </div>
-                                </form>
-                            @else
+                            @if(isset($city))
+                                @if($city->country_id == 4)
+                                    <form class="" method="post" action="{{route('searchSubService')}}">
+                                        @csrf
+                                        <div class="filter-widget" style="margin-left: 5px !important;">
+                                            <div class="form-group">
+                                                <label>Land</label>
+                                                <select class="js-example-basic-single" name="country_id">
+                                                    <option value="">Bitte Land auswählen</option>
+                                                    @forelse($countries as $country)
+                                                        <option value="{{$country->id}}" @selected($country->id == $city->country_id)>{{$country->name}}</option>
+                                                    @empty
+                                                    @endforelse
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Plz/ Stadtname</label>
+                                                <select class="js-example-basic-single" name="city_id">
+                                                    <option value="{{$city->id}}" selected>{{$city->post_code. ",".$city->name}}</option>
+                                                    @forelse($city->country->cities as $row)
+                                                        <option value="{{$row->id}}">{{$row->post_code. ",".$row->name}}</option>
+                                                    @empty
+                                                    @endforelse
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Service</label>
+                                                <select class="js-example-basic-single" name="sub_category">
+                                                    <option value="">Bitte Service auswählen</option>
+                                                    @forelse($abroadServices as $service)
+                                                        <option value="{{$service->id}}">{{$service->name}}</option>
+                                                    @empty
+                                                    @endforelse
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                        </div>
+                                    </form>
+                                @else
+                                    <form class="" method="post" action="{{route('businessCategorySearch')}}">
+                                        @csrf
+                                        <div class="filter-widget" style="margin-left: 5px !important;">
+                                            <div class="form-group">
+                                                <label>Land</label>
+                                                <select class="js-example-basic-single" name="country_id">
+                                                    <option value="">Bitte Land auswählen</option>
+                                                    @forelse($countries as $country)
+                                                        <option value="{{$country->id}}" @selected($country->id == $city->country_id)>{{$country->name}}</option>
+                                                    @empty
+                                                    @endforelse
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Plz/ Stadtname</label>
+                                                <select class="js-example-basic-single" name="city_id">
+                                                    <option value="{{$city->id}}" selected>{{$city->post_code. ",".$city->name}}</option>
+                                                    @forelse($city->country->cities as $row)
+                                                        <option value="{{$row->id}}">{{$row->post_code. ",".$row->name}}</option>
+                                                    @empty
+                                                    @endforelse
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                        </div>
+                                    </form>
+                                @endif
+                            @endif
+                            @if(isset($lat))
                                 <form class="" method="get" action="">
 
                                     <div class="filter-widget" style="margin-left: 5px !important;">
@@ -164,6 +206,48 @@
 
                                     </div>
                                 </form>
+                            @endif
+                            @if(request()->routeIs('searchSubService'))
+                                    <form class="" method="post" action="{{route('searchSubService')}}">
+                                        @csrf
+                                        <div class="filter-widget" style="margin-left: 5px !important;">
+                                            <input type="hidden" name="sub_category" value="{{$subCategory->id}}">
+                                            <input type="hidden" name="category" value="{{$subCategory->category_id}}">
+                                            <div class="form-group">
+                                                <select class="js-example-basic-single" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
+                                                    <option value="">Stadt wählen</option>
+                                                    @forelse($cities as $city)
+                                                        <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
+                                                    @empty
+
+                                                    @endforelse
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                        </div>
+                                    </form>
+                            @endif
+                            @if(request()->routeIs('serviceSubCategoryGet'))
+                                  <form class="" method="post" action="{{route('searchSubService')}}">
+                                        @csrf
+                                        <div class="filter-widget" style="margin-left: 5px !important;">
+                                            <input type="hidden" name="sub_category" value="{{$subCategory->id}}">
+                                            <input type="hidden" name="category" value="{{$subCategory->category_id}}">
+                                            <div class="form-group">
+                                                <select class="js-example-basic-single" placeholder="Stadt wählen or Plz" id="city" name="city_id">
+                                                    <option value="">Stadt wählen</option>
+                                                    @forelse($abroadCities as $city)
+                                                        <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
+                                                    @empty
+
+                                                    @endforelse
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                        </div>
+                                    </form>
                             @endif
                         </div>
                     </div>
@@ -253,20 +337,70 @@
 @endsection
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            var selectElements = document.querySelectorAll('.js-example-basic-single');
+    @if(request()->routeIs('searchSubService'))
+        <script>
+            var mySelect = new TomSelect("#city_service", {
+                remoteUrl: '/api/city/search',
+                remoteSearch: true,
+                create: false,
+                highlight: false,
+                load: function(query, callback) {
+                    $.ajax({
+                        url: '/api/city/search', // Sunucu tarafındaki arama API'sinin URL'si
+                        method: 'POST',
+                        data: { q: query }, // Arama sorgusu
+                        dataType: 'json', // Beklenen veri tipi
+                        success: function(data) {
 
-            // Her bir öğeye Tom Select'i uygulayın
-            selectElements.forEach(function (element) {
-                new TomSelect(element, {
-                    autocomplete: false,
-                    maxItems: 1,
-                    language: 'tr'
+                            var results = data.cities.map(function(item) {
+                                console.log('item', item.name);
+                                return {
+                                    value: item.id,
+                                    text: item.post_code + "," + item.name,
+                                };
+                            });
+
+                            callback(results);
+                        },
+                        error: function() {
+                            console.error("Arama sırasında bir hata oluştu.");
+                        }
+                    });
+                }
+            });
+
+        </script>
+        <script>
+            $(document).ready(function() {
+                var selectElements = document.querySelectorAll('.js-example-basic-single');
+
+                // Her bir öğeye Tom Select'i uygulayın
+                selectElements.forEach(function (element) {
+                    new TomSelect(element, {
+                        autocomplete: false,
+                        maxItems: 1,
+                        language: 'tr'
+                    });
                 });
             });
-        });
-    </script>
+        </script>
+    @else
+        <script>
+            $(document).ready(function() {
+                var selectElements = document.querySelectorAll('.js-example-basic-single');
+
+                // Her bir öğeye Tom Select'i uygulayın
+                selectElements.forEach(function (element) {
+                    new TomSelect(element, {
+                        autocomplete: false,
+                        maxItems: 1,
+                        language: 'tr'
+                    });
+                });
+            });
+        </script>
+    @endif
+
     <script>
         function businessDetailLink(url){
             window.location.href= url;
@@ -334,5 +468,7 @@
         $(function (){
             rangeText.text(rangeInput.val());
         })
+    </script>
+    <script>
     </script>
 @endsection
