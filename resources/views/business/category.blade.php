@@ -158,8 +158,8 @@
                             <div class="col-lg-2 col-sm-12 widget-footer">
 
                                 <div>
-                                    <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}} TL</span>
-                                    'den başlayan
+                                    <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}}</span>
+                                    Ab €
                                 </div>
                                 @if($business->approve_type==0)
                                     <p class="doc-speciality">
