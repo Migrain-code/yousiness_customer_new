@@ -253,7 +253,7 @@ class HomeController extends Controller
     {
         $businessCategory = BusinessCategory::where('slug', $slug)->firstOrFail();
 
-        $businesses = $businessCategory->businesses()->whereNotNull('city')->has('personels')->paginate(setting('speed_pagination_number'));
+        $businesses = $businessCategory->businesses()->whereNotNull('city')->has('personel')->paginate(setting('speed_pagination_number'));
 
         $favoriteIds = [];
         if (auth('customer')->check()) {
