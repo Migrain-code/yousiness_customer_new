@@ -444,7 +444,7 @@ class HomeController extends Controller
         $service = ServiceCategory::where('slug', $service)->first();
         $city = City::where('slug', $city)->first();
 
-        $businesses = Business::where('city', $city->id)
+        $businesses = Business::whereNotNull("city")->has('personel')->where('city', $city->id)
             ->whereHas('services', function ($query) use ($service) {
                 $query->where('category', $service->id);
             })
@@ -478,12 +478,18 @@ class HomeController extends Controller
 
     public function serviceSubSearch(Request $request)
     {
-        //$request->dd();
+        $request->validate([
+            'sub_category' => "required"
+        ], [], [
+            'sub_category' => "Service"
+        ]);
         $service = ServiceCategory::where('id', $request->input('category'))->first();
 
         $subCategory = ServiceSubCategory::where('id', $request->input('sub_category'))->first();
 
         $businesses = Business::where('status', 1)
+            ->has('personel')
+            ->whereNotNull('city')
             ->where('city', $request->input('city_id'))
             ->whereHas('services', function ($query) use ($service, $subCategory) {
                 $query->where('category', $service->id)->where('sub_category', $subCategory->id);

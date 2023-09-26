@@ -41,10 +41,10 @@
 
                         <div class="form-group">
                             <label>Hizmet Seçiniz</label>
-                            <select class="js-example-basic-single" name="alt-kategori">
+                            <select class="js-example-basic-single" name="sub_category">
                                 <option value="">Hizmet Seçiniz</option>
                                 @forelse($service->category->subCategories as $sub_service)
-                                    <option value="{{$sub_service->slug}}">{{$sub_service->name}}</option>
+                                    <option value="{{$sub_service->id}}">{{$sub_service->name}}</option>
                                 @empty
                                 @endforelse
                             </select>

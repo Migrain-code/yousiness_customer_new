@@ -174,7 +174,8 @@
                             </div>
                          @empty
                             <div class="alert alert-danger text-center aos" data-aos="fade-down">
-                                Aradığınız türde hizmet veren işletme kaydı bulunamadı.
+                                Es wurden keine Geschäftsunterlagen gefunden, die die Art der von Ihnen gesuchten Dienstleistung anbieten.
+
                             </div>
                          @endforelse
 

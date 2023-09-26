@@ -124,9 +124,9 @@
                                     @csrf
                                     <div class="filter-widget" style="margin-left: 5px !important;">
                                         <div class="form-group">
-                                            <label>Ülke</label>
+                                            <label>Land</label>
                                             <select class="js-example-basic-single" name="country_id">
-                                                <option value="">Ülke Seçiniz</option>
+                                                <option value="">Bitte Land auswählen</option>
                                                 @forelse($countries as $country)
                                                     <option value="{{$country->id}}" @selected($country->id == $city->country_id)>{{$country->name}}</option>
                                                 @empty
@@ -134,9 +134,9 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Şehir Seçiniz</label>
+                                            <label>Plz/ Stadtname</label>
                                             <select class="js-example-basic-single" name="city_id">
-                                                <option value="">Şehir Seçiniz</option>
+                                                <option value="{{$city->id}}" selected>{{$city->post_code. ",".$city->name}}</option>
                                                 @forelse($city->country->cities as $row)
                                                     <option value="{{$row->id}}">{{$row->post_code. ",".$row->name}}</option>
                                                 @empty
