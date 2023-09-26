@@ -197,18 +197,25 @@ class HomeController extends Controller
 
     public function serviceDetail($slug, Request $request)
     {
+        $businesses = [];
         if (count($request->all()) == 0) {
             $service = ServiceCategory::where('slug', $slug)->firstOrFail();/*hizmet kategorisini bul*/
-            $businesses = $service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
+            $businessSearch = $service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
             ->select('business_id')
                 ->groupBy('business_id')
                 ->paginate(setting('speed_pagination_number'));
         } else {
             $service = ServiceSubCategory::where('slug', $request->input('alt-kategori'))->firstOrFail();/*hizmet kategorisini bul*/
-            $businesses = $service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
+            $businessSearch = $service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
             ->select('business_id')
                 ->groupBy('business_id')
                 ->paginate(setting('speed_pagination_number'));
+        }
+
+        foreach ($businessSearch as $business){
+            if ($business->business && $business->business()->has("personel") && $business->business->city != null){
+                $businesses[] = $business->business;
+            }
         }
         $favoriteIds = [];
         if (auth('customer')->check()) {

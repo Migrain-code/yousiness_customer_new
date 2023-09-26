@@ -116,26 +116,25 @@
                 <div class="col-md-12 col-lg-8 col-xl-9">
                     <!-- Business Widget -->
                          @forelse($businesses as $business)
-                             @if($business->business && $business->business()->has("personel") && $business->business->city != null)
                                 <div class="row widget-container bg-white position-relative @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer">
                                 @if(auth('customer')->check())
-                                    <a href="javascript:void(0)" data-toggle="tooltip" data-toggle="popover" title="Favorilere Ekle"  class="@if(in_array($business->business->id, $favoriteIds)) fav-btn-active @else fav-btn @endif addFav" b_id="{{$business->business->id}}">
+                                    <a href="javascript:void(0)" data-toggle="tooltip" data-toggle="popover" title="Favorilere Ekle"  class="@if(in_array($business->id, $favoriteIds)) fav-btn-active @else fav-btn @endif addFav" b_id="{{$business->id}}">
                                         <i class="far fa-bookmark"></i>
                                     </a>
                                 @endif
                                 <div class="col-lg-3 p-0">
                                     <div class="position-relative">
-                                        <img src="{{image($business->business->logo)}}" onclick="businessDetailLink('{{route("business.detail", $business->business->slug)}}')" class="card-img" alt="User Image">
+                                        <img src="{{image($business->logo)}}" onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')" class="card-img" alt="User Image">
                                         <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="clinic-details p-3" style="margin-left: 10%">
-                                        <h4 class="doc-name mt-1"><a onclick="businessDetailLink('{{route("business.detail", $business->business->slug)}}')" href="{{route('business.detail', $business->business->slug)}}">{{$business->business->name}}</a></h4>
+                                        <h4 class="doc-name mt-1"><a onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')" href="{{route('business.detail', $business->slug)}}">{{$business->name}}</a></h4>
                                         <div class="rating mt-1">
-                                            @if($business->business->comments->count() > 0)
+                                            @if($business->comments->count() > 0)
                                                 @for($i=0; $i < 5; $i++ )
-                                                    <i class="fas fa-star @if($i < $business->business->comments->sum('point') / $business->business->comments->count()) filled @endif"></i>
+                                                    <i class="fas fa-star @if($i < $business->comments->sum('point') / $business->comments->count()) filled @endif"></i>
                                                 @endfor
                                             @else
                                                 <i class="fas fa-star"></i>
@@ -145,10 +144,10 @@
                                                 <i class="fas fa-star"></i>
                                             @endif
                                             <span class="d-inline-block average-rating">
-                                                    <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->business->comments->count()}} Yorum
+                                                    <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->comments->count()}} Yorum
                                             </span>
                                         </div>
-                                        <p class="doc-location mt-1"><i class="fas fa-map-marker-alt"></i> {{$business->business->cities->name. ", ". $business->business->cities->country->name}}</p>
+                                        <p class="doc-location mt-1"><i class="fas fa-map-marker-alt"></i> {{$business->cities->name. ", ". $business->cities->country->name}}</p>
                                         {{--
                                             <div class="alert alert-success py-1 mt-1">{{setting('speed_site_title')}} %10 İndirim </div>
 
@@ -162,18 +161,17 @@
 
 
                                         <div>
-                                        <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->business->services->min("price")}} TL</span>
+                                        <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}} TL</span>
                                         'den başlayan
                                     </div>
 
-                                    @if($business->business->approve_type==0)
+                                    @if($business->approve_type==0)
                                         <p class="doc-speciality">
                                             <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Anında Onay</span>
                                         </p>
                                     @endif
                                 </div>
                             </div>
-                             @endif
                          @empty
                             <div class="alert alert-danger text-center aos" data-aos="fade-down">
                                 Aradığınız türde hizmet veren işletme kaydı bulunamadı.
