@@ -42,9 +42,9 @@ class HomeController extends Controller
 
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
         $activities = Activity::where('status', 1)->latest()->take(4)->get();
-        $featuredServices = ServiceSubCategory::whereNotNull('featured')->orderBy('featured', 'asc')->get();
+        $featuredServices = ServiceSubCategory::whereNotNull('featured')->where('is_abroad', 0)->orderBy('featured', 'asc')->get();
         $featuredCategories = FeaturedCategorie::where('status', 1)->get();
-        $abroadServices = ServiceSubCategory::where('is_abroad', 1)->whereNotNull('featured')->orderBy('featured', 'asc')->get();
+        $abroadServices = ServiceSubCategory::where('is_abroad', 1)->get();
         $comments = Comment::where('user_statu', 1)->where('status', 1)->latest()->get();
 
         $abroadCities = Country::find(4)->cities;
