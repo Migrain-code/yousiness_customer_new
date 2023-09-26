@@ -60,7 +60,7 @@ class HomeController extends Controller
 
         $distance = isset($km) ? intval($km) : 100; // Yakınlık yarıçapı (örneğin, 100 kilometre)
 
-        $businesses = Business::select('businesses.*')
+        $businesses = Business::select('businesses.*')->has('personel')
             ->when((!empty($lat) && !empty($lng)), function ($q) use ($lat, $lng, $distance) {
                 $q->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
                     ->havingRaw("distance < ?", [$distance]);
@@ -172,7 +172,7 @@ class HomeController extends Controller
     {
 
         $searchTerm = $request->input('search');
-        $businesses = Business::where('name', 'LIKE', '%' . $searchTerm . '%')->get();
+        $businesses = Business::has('personel')->where('name', 'LIKE', '%' . $searchTerm . '%')->get();
 
         return view('search.live-search-results', compact('businesses'));
 
@@ -208,12 +208,10 @@ class HomeController extends Controller
         } else {
             $service = ServiceSubCategory::where('slug', $request->input('alt-kategori'))->firstOrFail();/*hizmet kategorisini bul*/
             $businesses = Business::whereHas('businessService', function ($query) use ($service) {
-                $query->where('category', $service->id)
-                    ->where('status', 1)
-                    ->whereNotNull('city')
-                    ->has("personel");
-            })->paginate(setting('speed_pagination_number'));
-
+                $query->where('category', $service->id);
+            })->whereNotNull('city')
+                ->has("personel")
+                ->paginate(setting('speed_pagination_number'));
         }
 
         $favoriteIds = [];
@@ -303,14 +301,14 @@ class HomeController extends Controller
     public function category($slug)
     {
         $category = Category::where('slug', $slug)->first();
-        $businesses = Business::where('category_id', $category->id)->get();
+        $businesses = Business::where('category_id', $category->id)->has('personel')->get();
 
         return view('front.category', compact('businesses'));
     }
 
     public function allBusiness()
     {
-        $businesses = Business::where('status', 2)->orderBy('order_number')->paginate(setting('speed_pagination_number'));
+        $businesses = Business::where('status', 2)->has('personel')->orderBy('order_number')->paginate(setting('speed_pagination_number'));
         return view('business.index', compact('businesses'));
     }
 
@@ -381,25 +379,6 @@ class HomeController extends Controller
 
     }
 
-    public function detail($slug)
-    {
-        $business = Business::where('slug', $slug)->first();
-
-        return view('front.business_detail', compact('business'));
-    }
-
-    public function typeSearch(Request $request)
-    {
-        //$request->dd();
-        if ($request->city == null) {
-            $businesses = Business::where('category_id', $request->type)->get();
-        } else {
-            $businesses = Business::where('category_id', $request->type)->where('city', $request->city)->get();
-        }
-
-        return view('front.type_search', compact('businesses'));
-    }
-
     /*
      * Service Post Function
      * */
@@ -465,6 +444,8 @@ class HomeController extends Controller
             ->whereHas('services', function ($query) use ($service, $subCategory) {
                 $query->where('category', $service->id)->where('sub_category', $subCategory->id);
             })
+            ->has('personel')
+            ->whereNotNull('city')
             ->paginate(setting('speed_pagination_number'));
         $favoriteIds = [];
         if (auth('customer')->check()) {
@@ -509,7 +490,7 @@ class HomeController extends Controller
     public function serviceCityGet($city)
     {
         $city = City::where('slug', $city)->first();
-        $businesses = Business::where('city', $city->id)->paginate(setting('speed_pagination_number'));
+        $businesses = Business::where('city', $city->id)->has('personel')->whereNotNull('city')->paginate(setting('speed_pagination_number'));
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {
@@ -529,6 +510,8 @@ class HomeController extends Controller
         $businesses = Business::whereHas('services', function ($query) use ($service) {
             $query->where('category', $service->id);
         })
+            ->has('personel')
+            ->whereNotNull('city')
             ->paginate(setting('speed_pagination_number'));
         return view('service.search', compact('businesses', 'service'));
 
