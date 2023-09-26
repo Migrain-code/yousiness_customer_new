@@ -37,7 +37,7 @@
                 <div class="col-md-7 col-lg-8 col-xl-9">
 
                     <div class="row">
-                        <div class="col-lg-5 d-flex">
+                        <div class="col-lg-9 d-flex">
                             <div class="card flex-fill">
                                 <div class="card-header">
                                     <div class="row">
@@ -88,7 +88,8 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 d-flex">
+                        {{--
+                            <div class="col-lg-4 d-flex">
                             <div class="card flex-fill">
                                 <div class="card-body">
                                     <div class="row">
@@ -117,6 +118,7 @@
                                 </div>
                             </div>
                         </div>
+                        --}}
 
                         <div class="col-lg-3">
                             <div class="customer-panel-ads-banner">

@@ -10,7 +10,21 @@ class ProfileController extends Controller
 {
     public function update(Request $request)
     {
-        //$request->dd();
+        $request->validate([
+            'name'=>"required",
+            'email' => "required",
+            'address' => "required",
+            'custom_email' => "required",
+            'city_id' => "required",
+            'gender' => "required",
+        ], [], [
+            'name'=>"Vorname Familienname",
+            'email' => "Telefonnummer",
+            'address' => "Adresse",
+            'custom_email' => "Email",
+            'city_id' => "Plz/ Stadtname",
+            'gender' => "Geschlecht",
+        ]);
         $customer = auth('customer')->user();
         $customer->name = $request->input('name');
         $customer->phone = $request->input('email');
@@ -20,7 +34,6 @@ class ProfileController extends Controller
         $customer->custom_email = $request->input('custom_email');
         $customer->city_id = $request->input('city_id');
         $customer->gender = $request->input('gender');
-        $customer->district_id = $request->input('district_id');
         if ($customer->gender == 1 and  $customer->image == "default/user.png"){
             $customer->image = "default/woman.png";
         }

@@ -98,8 +98,8 @@ class RegisterController extends Controller
 
         $customer = Customer::create([
             'name' => $data['name'],
-            'email' => $data['email'],
-            'phone' => $data['email'],
+            'email' => clearPhone($data['email']),
+            'phone' => clearPhone($data['email']),
             'area_code' => $data['country_code'],
             'status'=>1,
             'password' => Hash::make(Str::random(8)),

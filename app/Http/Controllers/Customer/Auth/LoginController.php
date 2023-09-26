@@ -64,7 +64,7 @@ class LoginController extends Controller
         } else {
             return to_route('customer.login')->with('response', [
                 'status' => "danger",
-                'message' => "Telefon Numarası veya Şifre Hatalı"
+                'message' => "Telefonnummer oder Passwort sind falsch"
             ]);
         }
     }

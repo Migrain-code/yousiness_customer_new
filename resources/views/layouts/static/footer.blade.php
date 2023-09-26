@@ -7,11 +7,9 @@
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <img src="{{image(setting('speed_logo_white'))}}" style="max-width: 250px" alt="logo">
+                            <img src="{{image(setting('speed_logo_footer'))}}" style="max-width: 250px" alt="logo">
                         </div>
-                        <div class="footer-about-content">
-                            <p>{{setting('speed_footer_about')}}</p>
-                        </div>
+
                         <div class="footer-widget footer-menu footer-menu-five">
                             <!-- <ul>
                                 <li><a href="{{setting('speed_facebook_url')}}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
@@ -28,7 +26,7 @@
                 <div class="col-lg-3 col-md-6">
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-menu">
-                        <h2 class="footer-title">Für Kunden</h2>
+
                         <ul>
 
                             <li><a href="{{route('customer.login')}}">Anmeldung</a>
@@ -40,7 +38,7 @@
                             <li><a href="{{route('about')}}">über uns</a>
                             </li>
                             <li>
-                                <a href="{{env('REMOTE_URL')}}">Unternehmen</a>
+                                <a href="{{env('REMOTE_URL')}}">Geschäftspartner</a>
                             </li>
 
                         </ul>
@@ -50,7 +48,6 @@
                 <div class="col-lg-3 col-md-6">
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-contact">
-                        <h2 class="footer-title">Kommunikation</h2>
                         <div class="footer-contact-info">
                             <div class="footer-address"><span><i class="feather-map-pin"></i></span>
                                 <p>{{setting('speed_contact_address')}}</p>
@@ -69,22 +66,14 @@
                 <div class="col-lg-3 col-md-6">
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-menu">
-                        <h2 class="footer-title">Social Media Links</h2>
-                        <!-- <ul>
-                            @forelse($recommendedLinks as $link)
-                                 <li>
-                                     <a href="{{$link->url}}">{{$link->title}}</a>
-                                </li>
-                            @empty
-                            @endforelse
-
-                        </ul> -->
                         <ul>
                                 <li><a href="{{setting('speed_facebook_url')}}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
                                 </li>
                                 <li><a href="{{setting('speed_twitter_url')}}" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
                                 </li>
                                 <li><a href="{{setting('speed_intagram_url')}}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                                </li>
+                                <li><a href="{{setting('speed_youtube_url')}}" target="_blank"><i class="fab fa-youtube"></i> Youtube</a>
                                 </li>
                             </ul>
                     </div>

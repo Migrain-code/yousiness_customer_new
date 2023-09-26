@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Hesap Ayarları")
-@section('meta_description', "Kullanıcı Profilim")
+@section('title', "Account Einstellungen")
+@section('meta_description', "Mein Benutzerprofil")
 @section('styles')
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
 @endsection
@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Hesap Bilgileri</h2>
+                    <h2 class="breadcrumb-title">Kontoinformation</h2>
                 </div>
 
             </div>
@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Hesap Bilgileri</h3>
+                                        <h3>Kontoinformation</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -56,10 +56,10 @@
                                                         </div>
                                                         <div class="upload-img">
                                                             <div class="change-photo-btn">
-                                                                <span><i class="fa fa-upload"></i> Fotoğraf Yükle</span>
+                                                                <span><i class="fa fa-upload"></i> Foto hochladen</span>
                                                                 <input type="file" class="upload" name="profile">
                                                             </div>
-                                                            <small class="form-text text-muted">İzin verilen JPG, GIF veya PNG.</small>
+                                                            <small class="form-text text-muted">JPG, GIF oder PNG erlaubt.</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -67,7 +67,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Ad Soyad</label>
+                                                        <label class="control-label">Vorname Familienname</label>
                                                         <input type="text" name="name" class="form-control bank_name" value="{{userInfo()->name}}">
                                                         <span class="help-block"></span>
                                                     </div>
@@ -76,7 +76,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Telefon</label>
+                                                        <label class="control-label">Telefonnummer</label>
                                                         <input type="text" name="email" class="form-control branch_name phone" value="{{userInfo()->phone}}">
                                                         <span class="help-block"></span>
                                                     </div>
@@ -85,8 +85,8 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">E-posta</label>
-                                                        <input type="text" name="custom_email" class="form-control branch_name phone" placeholder="{{userInfo()->custom_email ?? "E-posta adresi ekleyin"}}" value="{{userInfo()->custom_email}}">
+                                                        <label class="control-label">Email</label>
+                                                        <input type="text" name="custom_email" class="form-control branch_name phone" placeholder="{{userInfo()->custom_email ?? "Email"}}" value="{{userInfo()->custom_email}}">
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>
@@ -94,8 +94,8 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Adres</label>
-                                                        <textarea type="text" name="address" class="form-control branch_name phone" placeholder="{{userInfo()->address ?? "adres ekleyin"}}">{{userInfo()->address}}</textarea>
+                                                        <label class="control-label">Adresse</label>
+                                                        <textarea type="text" name="address" class="form-control branch_name phone" placeholder="{{userInfo()->address ?? "Adresse"}}">{{userInfo()->address}}</textarea>
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>
@@ -103,7 +103,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Doğum Günü</label>
+                                                        <label class="control-label">Geburtstag</label>
                                                         <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control account_no" value="{{userInfo()->birthday}}">
                                                         <span class="help-block"></span>
                                                     </div>
@@ -112,11 +112,11 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">İl</label>
+                                                        <label class="control-label">Plz/ Stadtname</label>
                                                         <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
-                                                            <option value="">İl Seçiniz</option>
+                                                            <option value="">Plz/ Stadtname</option>
                                                             @if(isset(userInfo()->city))
-                                                                <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->name}}</option>
+                                                                <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->post_code.",".userInfo()->city->name}}</option>
                                                             @endif
                                                             @foreach($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->post_code.",".$city->name}}</option>
@@ -129,12 +129,12 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Cinsiyet</label> <br>
+                                                        <label class="control-label">Geschlecht</label> <br>
                                                         <div class="form-check-inline visits me-1">
                                                             <label class="visit-btns">
                                                                 <input type="radio" name="gender" class="form-check-input active-time" @checked(userInfo()->gender == 1) value="1" required="">
-                                                                <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Cinsiyet Seçimi Zorunludur">
-                                                                    Kadın
+                                                                <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Geschlecht">
+                                                                    Frau
                                                                 </span>
                                                             </label>
                                                         </div>
@@ -143,7 +143,7 @@
                                                             <label class="visit-btns">
                                                                 <input type="radio" name="gender" class="form-check-input active-time" @checked(userInfo()->gender == 2) value="2" required="">
                                                                 <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Cinsiyet Seçimi Zorunludur">
-                                                                   Erkek
+                                                                   Männlich
                                                                 </span>
                                                             </label>
                                                         </div>

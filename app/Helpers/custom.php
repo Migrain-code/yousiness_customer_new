@@ -18,12 +18,7 @@ function userInfo(){
     return $user;
 }
 function clearPhone($phoneNumber){
-    $phoneNumber = str_replace([' ', '(', ')', '-'], '', $phoneNumber);
-    if (strlen($phoneNumber) === 10) {
-        return $formattedPhoneNumber = $phoneNumber;
-    } elseif (strlen($phoneNumber) === 11) {
-        return $formattedPhoneNumber = substr($phoneNumber, 1);
-    } else {
-        return $phoneNumber;
-    }
+
+    $newPhoneNumber = str_replace([' ', '(', ')', '-', '.', ',', '/', '_', '[]'], '', $phoneNumber);
+    return $newPhoneNumber;
 }
