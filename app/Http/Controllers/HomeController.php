@@ -199,7 +199,7 @@ class HomeController extends Controller
     {
         if (count($request->all()) == 0) {
             $service = ServiceCategory::where('slug', $slug)->firstOrFail();/*hizmet kategorisini bul*/
-            $businesses = $service->businessService()->where('status', 1)/*hizmeti veren işletmeleri bul*/
+            $businesses = $service->businessService()->where('status', 1)->whereNotNull('city')->has('personel')/*hizmeti veren işletmeleri bul*/
             ->select('business_id')
                 ->groupBy('business_id')
                 ->paginate(setting('speed_pagination_number'));

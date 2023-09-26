@@ -163,14 +163,15 @@
                                 </div>
                                 @if($business->approve_type==0)
                                     <p class="doc-speciality">
-                                        <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Anında Onay</span>
+                                        <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Sofortige Genehmigung</span>
                                     </p>
                                 @endif
                             </div>
                         </div>
                     @empty
                         <div class="alert alert-danger text-center aos" data-aos="fade-down">
-                            Aradığınız türde hizmet veren işletme kaydı bulunamadı.
+                            Es wurden keine Geschäftsunterlagen gefunden, die die Art der von Ihnen gesuchten Dienstleistung anbieten.
+
                         </div>
                     @endforelse
 
