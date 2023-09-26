@@ -582,7 +582,7 @@ class HomeController extends Controller
         $businesses = Business::whereNotNull('city_id')
             ->where('city', $city->id)
             ->paginate(setting('speed_pagination_number'));
-
+        dd($businesses);
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {
