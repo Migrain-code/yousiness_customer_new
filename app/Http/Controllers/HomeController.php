@@ -41,7 +41,6 @@ class HomeController extends Controller
         $ads = Ads::all();
 
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
-        $businesses = Business::all();
         $activities = Activity::where('status', 1)->latest()->take(4)->get();
         $featuredServices = ServiceSubCategory::whereNotNull('featured')->orderBy('featured', 'asc')->get();
         $featuredCategories = FeaturedCategorie::where('status', 1)->get();
@@ -49,7 +48,7 @@ class HomeController extends Controller
         $comments = Comment::where('user_statu', 1)->where('status', 1)->latest()->get();
 
         $abroadCities = Country::find(4)->cities;
-        return view('welcome', compact('abroadCities', 'comments', 'abroadServices', 'featuredCategories', 'blogs', 'businesses', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
+        return view('welcome', compact('abroadCities', 'comments', 'abroadServices', 'featuredCategories', 'blogs', 'ads', 'activities', 'featuredServices', 'featuredCategories'));
     }
 
     public function nearMe(Request $request)
