@@ -11,16 +11,22 @@ class PackageSale extends Model
     protected $dates=["seller_date"];
     public function customer()
     {
-        return $this->hasOne(Customer::class,'id', 'customer_id');
+        return $this->hasOne(Customer::class,'id', 'customer_id')->withDefault([
+            'name' => 'Müşteri Silinmiş',
+        ]);
     }
     public function personel()
     {
-        return $this->hasOne(Personel::class,'id', 'personel_id');
+        return $this->hasOne(Personel::class,'id', 'personel_id')->withDefault([
+            'name' => 'Personel Silinmiş',
+        ]);
     }
 
     public function business()
     {
-        return $this->hasOne(Business::class,'id', 'business_id');
+        return $this->hasOne(Business::class,'id', 'business_id')->withDefault([
+            'name' => 'İşletme Silinmiş',
+        ]);
     }
     public function service()
     {

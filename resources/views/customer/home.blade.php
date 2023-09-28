@@ -140,52 +140,54 @@
                                 <div class="card-body p-3">
                                     <div class="row">
                                         @forelse($appointments as $appointment)
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="profile-widget">
-                                                    <div class="doc-img">
-                                                        <a href="{{route('business.detail', $appointment->business->slug)}}">
-                                                            <img class="img-fluid" alt="User Image" src="{{image($appointment->business->logo)}}">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="fav-btn addFav" @if(in_array($appointment->business_id, $favorites)) style="background-color: #fb1612;color: white"  @endif b_id="{{$appointment->business_id}}">
-                                                            <i class="far fa-bookmark"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="pro-content">
-                                                        <h3 class="title">
-                                                            <a href="{{route('business.detail', $appointment->business->slug)}}">{{$appointment->business->name}}</a>
-                                                        </h3>
-
-                                                        <div class="my-2">
-                                                               {!! $appointment->status("html") !!}
+                                            @if($appointment->business)
+                                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                                    <div class="profile-widget">
+                                                        <div class="doc-img">
+                                                            <a href="{{route('business.detail', $appointment->business->slug)}}">
+                                                                <img class="img-fluid" alt="User Image" src="{{image($appointment->business->logo)}}">
+                                                            </a>
+                                                            <a href="javascript:void(0)" class="fav-btn addFav" @if(in_array($appointment->business_id, $favorites)) style="background-color: #fb1612;color: white"  @endif b_id="{{$appointment->business_id}}">
+                                                                <i class="far fa-bookmark"></i>
+                                                            </a>
                                                         </div>
-                                                        <ul class="available-info">
-                                                            <li>
-                                                                @if($appointment->business->cities)
-                                                                    <i class="fas fa-map-marker-alt"></i>{{$appointment->business->cities->name .', '.$appointment->business->cities->country->name}}
-                                                                @endif
-                                                            </li>
-                                                            <li>
-                                                                <i class="far fa-clock"></i> {{$appointment->start_time}} Tarihinde
-                                                            </li>
-                                                            {{--
-                                                                <li>
-                                                                <i class="far fa-money-bill-alt"></i>₺{{$appointmentTotals[$loop->index]}}
-                                                            </li>
-                                                            --}}
-                                                        </ul>
-                                                        <div class="row row-sm">
-                                                            <div class="col-6">
-                                                                <a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-warning w-100">Detay</a>
+                                                        <div class="pro-content">
+                                                            <h3 class="title">
+                                                                <a href="{{route('business.detail', $appointment->business->slug)}}">{{$appointment->business->name}}</a>
+                                                            </h3>
+
+                                                            <div class="my-2">
+                                                                {!! $appointment->status("html") !!}
                                                             </div>
-                                                            @if($appointment->status==0)
+                                                            <ul class="available-info">
+                                                                <li>
+                                                                    @if($appointment->business->cities)
+                                                                        <i class="fas fa-map-marker-alt"></i>{{$appointment->business->cities->name .', '.$appointment->business->cities->country->name}}
+                                                                    @endif
+                                                                </li>
+                                                                <li>
+                                                                    <i class="far fa-clock"></i> {{$appointment->start_time}} Tarihinde
+                                                                </li>
+                                                                {{--
+                                                                    <li>
+                                                                    <i class="far fa-money-bill-alt"></i>₺{{$appointmentTotals[$loop->index]}}
+                                                                </li>
+                                                                --}}
+                                                            </ul>
+                                                            <div class="row row-sm">
                                                                 <div class="col-6">
-                                                                    <a href="#" class="btn btn-outline-danger cancelledBtn" ap_id="{{$appointment->id}}">İptal et</a>
+                                                                    <a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-warning w-100">Detay</a>
                                                                 </div>
-                                                            @endif
+                                                                @if($appointment->status==0)
+                                                                    <div class="col-6">
+                                                                        <a href="#" class="btn btn-outline-danger cancelledBtn" ap_id="{{$appointment->id}}">İptal et</a>
+                                                                    </div>
+                                                                @endif
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            @endif
                                         @empty
                                             <div class="alert alert-warning text-center">Randevu Kaydınız Bulunamadı</div>
                                         @endforelse

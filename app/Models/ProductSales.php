@@ -32,7 +32,11 @@ class ProductSales extends Model
 
     public function business()
     {
-        return $this->hasOne(Business::class,'id', 'business_id');
+        return $this->hasOne(Business::class,'id', 'business_id')->withDefault([
+            'name' => 'İşletme Silinmiş',
+            'slug' => 'isletme-silinmis',
+            'city' => 'Bilinmiyor'
+        ]);
     }
     public function product()
     {

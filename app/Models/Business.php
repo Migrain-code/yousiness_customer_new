@@ -105,7 +105,10 @@ class Business extends Authenticatable
 
     public function cities()
     {
-        return $this->hasOne(City::class, 'id', 'city');
+        return $this->hasOne(City::class, 'id', 'city')->withDefault([
+            'name' => 'Belirtilmemiş',
+            'slug' => 'belirtilmemis'
+        ]);
     }
 
     public function districts()

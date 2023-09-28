@@ -45,7 +45,8 @@
                                 <div class="card-body p-3">
                                     <div class="row">
                                         @forelse($favorites as $favorite)
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                            @if($favorite->business)
+                                                <div class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="profile-widget">
                                                     <div class="doc-img">
                                                         <a href="{{route('business.detail', $favorite->business->slug)}}">
@@ -79,7 +80,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            @endif
                                         @empty
                                             <div class="alert alert-warning text-center">Favorileri İşletmeniz Bulunamadı</div>
                                         @endforelse

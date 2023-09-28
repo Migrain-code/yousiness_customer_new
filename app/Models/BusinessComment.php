@@ -11,7 +11,10 @@ class BusinessComment extends Model
 
     public function customer()
     {
-        return $this->hasOne(Customer::class, 'id', 'customer_id');
+        return $this->hasOne(Customer::class, 'id', 'customer_id')->withDefault([
+            'name' => 'Müşteri Silinmiş',
+            'slug' => 'musteri-silinmis',
+        ]);
     }
 
     public function business()

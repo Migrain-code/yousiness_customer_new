@@ -106,8 +106,13 @@
                                                     </thead>
                                                     <tbody>
                                                     @forelse($businessComments as $comment)
+
                                                         <tr>
-                                                            <td data-label="İşletme Adı"><a href="{{route('business.detail', $comment->business->slug)}}">{{$comment->business->name}}</a></td>
+                                                            @if ($comment->business && $comment->business->slug != 'isletme-silinmis')
+                                                                <td data-label="İşletme Adı"><a href="{{ route('business.detail', $comment->business->slug) }}">{{ $comment->business->name }}</a></td>
+                                                            @else
+                                                                <td data-label="İşletme Adı">{{ $comment->business->name }}</td>
+                                                            @endif
                                                             <td data-label="Yorumunuz"># {{$comment->content}}</td>
                                                             <td data-label="Puanınız"> {{$comment->point}} Yıldız</td>
                                                             <td data-label="Tarihi">

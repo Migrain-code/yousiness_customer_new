@@ -112,6 +112,19 @@ class HomeController extends Controller
         return view('customer.packet.index', compact('packets', 'packageTypes'));
     }
 
+    public function packetDetail($id)
+    {
+        $packageTypes = [
+            'Seans',
+            'Dakika'
+        ];
+        $packet = PackageSale::find($id);
+        if ($packet) {
+            return view('customer.packet.detail', compact('packet', 'packageTypes'));
+        }
+        abort(404);
+    }
+
     public function campaigns()
     {
         $customer = auth('customer')->user();
@@ -124,18 +137,6 @@ class HomeController extends Controller
     {
         $campaign = Campaign::where('id',$request->id)->with('business')->get();
         return $campaign;
-    }
-    public function packetDetail($id)
-    {
-        $packageTypes = [
-            'Seans',
-            'Dakika'
-        ];
-        $packet = PackageSale::find($id);
-        if ($packet) {
-            return view('customer.packet.detail', compact('packet', 'packageTypes'));
-        }
-        abort(404);
     }
 
     public function orders()
@@ -175,7 +176,10 @@ class HomeController extends Controller
             ->get();
         $businesses = [];
         foreach ($appointments as $appointment) {
-            $businesses[] = Business::find($appointment->business_id);
+            $business = Business::find($appointment->business_id);
+            if ($business){
+                $businesses[] = $business;
+            }
         }
 
         return view('customer.addicted.index', compact('customer', 'businesses'));
