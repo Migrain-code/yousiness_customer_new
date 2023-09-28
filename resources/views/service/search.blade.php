@@ -155,7 +155,7 @@
                                                     @endforelse
                                                 </select>
                                             </div>
-                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
 
                                         </div>
                                     </form>
@@ -183,7 +183,7 @@
                                                     @endforelse
                                                 </select>
                                             </div>
-                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
 
                                         </div>
                                     </form>
@@ -202,7 +202,7 @@
 
                                         </div>
 
-                                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+                                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
 
                                     </div>
                                 </form>
@@ -223,7 +223,7 @@
                                                     @endforelse
                                                 </select>
                                             </div>
-                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
 
                                         </div>
                                     </form>
@@ -231,9 +231,17 @@
                             @if(request()->routeIs('serviceSubCategoryGet'))
                                   <form class="" method="post" action="{{route('searchSubService')}}">
                                         @csrf
+                                      @if($subCategory->is_abroad == 1)
                                         <div class="filter-widget" style="margin-left: 5px !important;">
                                             <input type="hidden" name="sub_category" value="{{$subCategory->id}}">
                                             <input type="hidden" name="category" value="{{$subCategory->category_id}}">
+                                            <div class="form-group">
+                                                <select class="js-example-basic-single" placeholder="Bitte Land auswählen" id="country" name="country">
+                                                    <option value="">Bitte Land auswählen</option>
+                                                    <option value="{{$abroadCities->first()->country->id}}" selected>{{$abroadCities->first()->country->name}}</option>
+
+                                                </select>
+                                            </div>
                                             <div class="form-group">
                                                 <select class="js-example-basic-single" placeholder="Stadt wählen or Plz" id="city" name="city_id">
                                                     <option value="">Stadt wählen</option>
@@ -244,10 +252,59 @@
                                                     @endforelse
                                                 </select>
                                             </div>
-                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
 
                                         </div>
+                                      @else
+                                         <div class="filter-widget" style="margin-left: 5px !important;">
+                                              <input type="hidden" name="sub_category" value="{{$subCategory->id}}">
+                                              <input type="hidden" name="category" value="{{$subCategory->category_id}}">
+
+                                              <div class="form-group">
+                                                  <select class="js-example-basic-single" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
+                                                      <option value="">Stadt wählen</option>
+                                                      @forelse($cities as $city)
+                                                          <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
+                                                      @empty
+
+                                                      @endforelse
+                                                  </select>
+                                              </div>
+                                              <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                          </div>
+
+                                      @endif
                                     </form>
+                            @endif
+                            @if(request()->routeIs('categoryGet'))
+                                <form class="" method="post" action="{{route('businessCategorySearch')}}">
+                                    @csrf
+                                    <div class="filter-widget" style="margin-left: 5px !important;">
+                                        <div class="form-group">
+                                            <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Hallentyp" style="" name="category_id">
+                                                <option value="">Wählen Sie Hallentyp</option>
+                                                @forelse($categories as $category1)
+                                                    <option value="{{$category1->id}}" @selected($category1->id == $category->id)>{{$category1->name}}</option>
+                                                @empty
+
+                                                @endforelse
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
+                                                <option value="">Stadt wählen</option>
+                                                @forelse($cities as $city)
+                                                    <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
+                                                @empty
+
+                                                @endforelse
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                    </div>
+                                </form>
                             @endif
                         </div>
                     </div>
@@ -303,7 +360,7 @@
                                     <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}}</span>
                                         Ab €
                                 </div>
-                                
+
                                 @if($business->approve_type==0)
                                     <p class="doc-speciality">
                                         <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Sofortige Genehmigung</span>
@@ -337,7 +394,7 @@
 @endsection
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
-    @if(request()->routeIs('searchSubService'))
+    @if(request()->routeIs('searchSubService') || request()->routeIs('categoryGet') || request()->routeIs('serviceSubCategoryGet'))
         <script>
             var mySelect = new TomSelect("#city_service", {
                 remoteUrl: '/api/city/search',

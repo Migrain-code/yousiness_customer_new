@@ -440,6 +440,7 @@ class HomeController extends Controller
     {
         $service = ServiceCategory::where('slug', $category)->first();
         $subCategory = ServiceSubCategory::where('slug', $subCategory)->first();
+
         $businesses = Business::where('status', 1)
             ->whereHas('services', function ($query) use ($service, $subCategory) {
                 $query->where('category', $service->id)->where('sub_category', $subCategory->id);
