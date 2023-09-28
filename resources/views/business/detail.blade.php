@@ -27,7 +27,6 @@
 @endsection
 @section('content')
 
-
     <div class="gallery">
 
         <div class="gallery-background d-flex justify-content-center align-items-center">
@@ -36,20 +35,22 @@
                <div>
                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                        <div class="carousel-indicators">
-                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                           @forelse($business->gallery as $gallery)
+                               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$loop->index}}" @if($loop->first) class="active" @endif aria-current="true" aria-label="Slide {{$loop->index}}"></button>
+                           @empty
+                               <div class="alert alert-warning text-center">İşletmenin Fotoğraf Galerisi Bulunamadı</div>
+                           @endforelse
+
                        </div>
                        <div class="carousel-inner">
-                           <div class="carousel-item active">
-                               <img src="https://via.placeholder.com/500x500" style="height: 100%; object-fit: cover" class="d-block w-100" alt="...">
-                           </div>
-                           <div class="carousel-item">
-                               <img src="https://via.placeholder.com/500x500" style="height: 100%; object-fit: cover" class="d-block w-100" alt="...">
-                           </div>
-                           <div class="carousel-item">
-                               <img src="https://via.placeholder.com/500x500"style="height: 100%; object-fit: cover"  class="d-block w-100" alt="...">
-                           </div>
+                           @forelse($business->gallery as $gallery)
+                               <div class="carousel-item @if($loop->first) active @endif">
+                                   <img src="{{image($gallery->way)}}" style="height: 100%; object-fit: cover" class="d-block w-100" alt="...">
+                               </div>
+                           @empty
+                               <div class="alert alert-warning text-center">İşletmenin Fotoğraf Galerisi Bulunamadı</div>
+                           @endforelse
+
                        </div>
                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -232,7 +233,7 @@
                                 </svg>
                                     <div class="container mt-2 ms-1" >
                                         <div class=" d-flex">
-                                          <p> <h4> <span><i class="fa fa-phone "> <u>0(212)111 44 22</u></i></span></h4>
+                                          <p> <h4> <span><i class="fa fa-phone "> <u>{{$business->phone}}</u></i></span></h4>
                                         </div>
                                     </div>
 
@@ -262,6 +263,7 @@
                             </div>
                             <hr>
                         </div>
+
                         <div>
                             <div class="information-title" data-aos="fade-up">
                                 <h2 data-aos="fade-left" style="margin-bottom: -10px;" >Çalışma Saatleri</h2>
@@ -304,7 +306,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="information-title" data-aos="fade-up">
+                        <div class="information-title" data-aos="fade-up" id="comments">
 
                             <div class="d-flex">
                                 <div class="row">
