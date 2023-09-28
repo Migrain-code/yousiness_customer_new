@@ -59,7 +59,9 @@
                                                         </h3>
                                                         <ul class="available-info">
                                                             <li>
-                                                                <i class="fas fa-map-marker-alt"></i>{{$business->cities->name .', '.$business->districts->name}}
+                                                                @if($business->cities)
+                                                                    <i class="fas fa-map-marker-alt"></i>{{$business->cities->name .', '.$business->cities->country->name}}
+                                                                @endif
                                                             </li>
                                                             <li>
                                                                 <i class="far fa-clock"></i> {{$business->start_time}} Açılış

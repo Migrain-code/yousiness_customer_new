@@ -60,7 +60,9 @@
 
                                                         <ul class="available-info">
                                                             <li>
-                                                                <i class="fas fa-map-marker-alt"></i>{{$favorite->business->cities->name .', '.$favorite->business->districts->name}}
+                                                                @if($favorite->business->cities)
+                                                                    <i class="fas fa-map-marker-alt"></i>{{$favorite->business->cities->name .', '.$favorite->business->cities->country->name}}
+                                                                @endif
                                                             </li>
                                                             <li>
                                                                 <i class="far fa-clock"></i> {{$favorite->business->start_time}} Açılış

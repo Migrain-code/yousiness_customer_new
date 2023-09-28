@@ -49,7 +49,7 @@
                                                 </p>
                                             @endif
                                             <div class="clinic-details">
-                                                <p class="doc-location"><i class="fas fa-map-marker-alt"></i> {{$business->cities->name. ", ". $business->districts->name}}</p>
+                                                <p class="doc-location"><i class="fas fa-map-marker-alt"></i> {{isset($business->cities) ? $business->cities->name. ", ". $business->cities->country->name : ""}}</p>
 
                                             </div>
                                             <div style="margin-bottom: 5px;">

@@ -160,7 +160,9 @@
                                                         </div>
                                                         <ul class="available-info">
                                                             <li>
-                                                                <i class="fas fa-map-marker-alt"></i>{{$appointment->business->cities->name .', '.$appointment->business->districts->name}}
+                                                                @if($appointment->business->cities)
+                                                                    <i class="fas fa-map-marker-alt"></i>{{$appointment->business->cities->name .', '.$appointment->business->cities->country->name}}
+                                                                @endif
                                                             </li>
                                                             <li>
                                                                 <i class="far fa-clock"></i> {{$appointment->start_time}} Tarihinde

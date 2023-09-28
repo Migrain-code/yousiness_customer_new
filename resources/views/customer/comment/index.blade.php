@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <<h3>Yaptığım Yorumlar</h3>
+                                        <h3>Yaptığım Yorumlar</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
