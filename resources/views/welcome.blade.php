@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Anasayfa')
+@section('title', 'Anasayfa 1')
 @section('meta_description', config('settings.meta_description'))
 @section('styles')
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
