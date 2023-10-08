@@ -24,7 +24,7 @@ class BusinessDetailResource extends JsonResource
             'district' => new District($this->districts),
             'start_time' => $this->start_time,
             'end_time' => $this->end_time,
-            'category' => $this->category->name,
+            'category' => $this->categories->first()->name,
             'about' => $this->about,
             'phone' => $this->phone,
             'type' => $this->type_id,
