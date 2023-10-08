@@ -519,8 +519,8 @@ class CustomerController extends Controller
         }
 
 
-        $gizlilik = Page::where('slug', 'gizlilik-kosullari')->select('description')->first();
-        $kosullaraciklama = Page::where('slug', 'sartlar-ve-kosullar')->select('description')->first();
+        $gizlilik = Page::where('slug', 'bedingungen')->select('description')->first();
+        $kosullaraciklama = Page::where('slug', 'Geschäftsbedingungen')->select('description')->first();
 
         return response()->json([
             'settings' => [
