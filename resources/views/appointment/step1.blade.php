@@ -281,7 +281,7 @@
                                                                 </label>
                                                             </div>
                                                             <div class="col-2">
-                                                                <span class="text-success fw-bold">{{$service->price}} TL</span>
+                                                                <span class="text-success fw-bold">{{$service->price}} €</span>
                                                             </div>
                                                         </div>
 
@@ -314,7 +314,7 @@
                                                                 </label>
                                                             </div>
                                                             <div class="col-2">
-                                                                <span class="text-success fw-bold">{{$service->price}} TL</span>
+                                                                <span class="text-success fw-bold">{{$service->price}} €</span>
                                                             </div>
                                                         </div>
 
