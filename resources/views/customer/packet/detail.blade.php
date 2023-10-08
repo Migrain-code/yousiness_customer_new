@@ -103,7 +103,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-lightblue">
-                                                <span>₺{{$packet->total}}</span> Toplam Ödenecek Tutar
+                                                <span>€{{$packet->total}}</span> Toplam Ödenecek Tutar
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -113,7 +113,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-warning-light">
-                                                <span>₺{{$packet->payments->sum('price')}}</span> Paket Ödemesi Yaptınız
+                                                <span>€{{$packet->payments->sum('price')}}</span> Paket Ödemesi Yaptınız
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -123,7 +123,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-primary-light">
-                                                <span>₺{{$packet->total -$packet->payments->sum('price')}}</span> Kalan Ödemeniz
+                                                <span>€{{$packet->total -$packet->payments->sum('price')}}</span> Kalan Ödemeniz
                                             </div>
                                         </div>
 

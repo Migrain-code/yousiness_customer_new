@@ -95,22 +95,22 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="account-card bg-success-light">
-                                                <span>₺{{number_format($payments['appointment'], 2)}}</span> Randevu Ödemeleriniz
+                                                <span>€{{number_format($payments['appointment'], 2)}}</span> Randevu Ödemeleriniz
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="account-card bg-warning-light">
-                                                <span>₺{{number_format($payments['packetPayment'], 2)}}</span> Paket Alım Ödemeleriniz
+                                                <span>€{{number_format($payments['packetPayment'], 2)}}</span> Paket Alım Ödemeleriniz
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="account-card bg-purple-light">
-                                                <span>₺{{number_format($payments['orderTotal'], 2)}}</span> Ürün Alım Ödemeleriniz
+                                                <span>€{{number_format($payments['orderTotal'], 2)}}</span> Ürün Alım Ödemeleriniz
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="account-card bg-primary-light">
-                                                <span>₺{{number_format($payments['total'], 2)}}</span> Toplam Harcamanız
+                                                <span>€{{number_format($payments['total'], 2)}}</span> Toplam Harcamanız
                                             </div>
                                         </div>
 
@@ -170,7 +170,7 @@
                                                                 </li>
                                                                 {{--
                                                                     <li>
-                                                                    <i class="far fa-money-bill-alt"></i>₺{{$appointmentTotals[$loop->index]}}
+                                                                    <i class="far fa-money-bill-alt"></i>€{{$appointmentTotals[$loop->index]}}
                                                                 </li>
                                                                 --}}
                                                             </ul>
