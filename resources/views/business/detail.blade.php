@@ -89,7 +89,7 @@
                 <div class="col-md-5">
                     <div class="d-flex mb-3">
                          <div class="company-logo">
-                           <img style="100px; width: 100px;" src="https://via.placeholder.com/200x200" alt="">
+                           <img style="100px; width: 100px;" src="{{image($business->logo)}}" alt="">
                          </div>
                         <div class="mx-2 company-title d-flex flex-column justify-content-start my-auto">
                             <h3 class="company-name">{{$business->name}}</h3>
