@@ -73,9 +73,9 @@
                             <div class="search-box-five">
                                 <div class="col-md-12 p-0">
                                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
-                                        <li class="nav-item"><a class="nav-link active" href="#solid-rounded-tab1" data-bs-toggle="tab">Service</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#solid-rounded-tab2" data-bs-toggle="tab">Hallentyp</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#solid-rounded-tab3" data-bs-toggle="tab">Hallenname</a></li>
+                                        <li class="nav-item"><a class="nav-link active" href="#solid-rounded-tab1" data-bs-toggle="tab">Dienstleistungen</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#solid-rounded-tab2" data-bs-toggle="tab">Salon Kategorie</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#solid-rounded-tab3" data-bs-toggle="tab">Salonname</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane show active" id="solid-rounded-tab1">
