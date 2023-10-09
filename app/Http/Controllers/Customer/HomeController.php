@@ -83,7 +83,7 @@ class HomeController extends Controller
         ], [], [
             'rating' => "Puan",
             'content' => "Yorum Metni",
-            'terms' => "Şartlar ve Koşullar"
+            'terms' => "Şartlar ve Koşullar1"
         ]);
         $businessComment = new BusinessComment();
         $businessComment->business_id = $request->input('business_id');
