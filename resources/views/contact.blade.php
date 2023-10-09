@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', "İletişim")
+@section('title', "Kommunikation")
 @section('meta_description', config('settings.meta_description'))
 @section('styles')
 
@@ -12,11 +12,11 @@
                 <div class="col-md-12 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">İletişim</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Kommunikation</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">İletişime Geç</h2>
+                    <h2 class="breadcrumb-title">Kontaktiere uns</h2>
                 </div>
             </div>
         </div>
@@ -28,8 +28,8 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
-                    <h3 class="mb-4">İletişim1</h3>
-                    <p>Aklınıza takılan ve dökümanlarda bulamadığınız sorunlar mı var? Aşağıdaki formu doldurun veya iletişim bilgilerinden bize ulaşın.</p>
+                    <h3 class="mb-4">Kommunikation</h3>
+                    <p>Haben Sie Probleme, die Sie in der Dokumentation nicht finden können? Füllen Sie das untenstehende Formular aus oder kontaktieren Sie uns über die Kontaktinformationen.</p>
                 </div>
             </div>
             <div class="row">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="infor-details text-center">
-                            <label>Telefon</label>
+                            <label>Telefonnummer</label>
                             <p>{{setting('speed_contact_phone')}}</p>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="infor-details text-center">
-                            <label>E-posta</label>
+                            <label>Email</label>
                             <p>{{setting('speed_contact_email')}}</p>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="infor-details text-center">
-                            <label>Adres</label>
+                            <label>Adresse</label>
                             <p>{{setting('speed_contact_address')}}</p>
                         </div>
                     </div>
@@ -80,8 +80,8 @@
     <section class="contact-form">
         <div class="container">
             <div class="section-header text-center">
-                <h2>İletişim Formu!</h2>
-                <p class="text-warning">Lütfen Tüm Alanları Doldurun</p>
+                <h2>Kontakt Formular</h2>
+                <p class="text-warning">Bitte alle Felder ausfüllen!</p>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -92,30 +92,30 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Ad Soyad <span>*</span></label>
+                                    <label>Vorname Familienname <span>*</span></label>
                                     <input type="text" class="form-control" name="name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>E-posta Adresi <span>*</span></label>
+                                    <label>E-Mail-Adresse <span>*</span></label>
                                     <input type="text" class="form-control" name="email">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Konu</label>
+                                    <label>Thema</label>
                                     <input type="text" class="form-control" name="subject">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>İçerik <span>*</span></label>
+                                    <label>Nachricht <span>*</span></label>
                                     <textarea class="form-control" name="content"></textarea>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn bg-primary" type="submit">Mesajı Gönder</button>
+                        <button class="btn bg-primary" type="submit">Nachricht senden</button>
                     </form>
                 </div>
             </div>

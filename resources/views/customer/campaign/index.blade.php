@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Kampagnen')
+@section('meta_description', 'Sie können Rabatte auf Termine erhalten, indem Sie die von Unternehmen definierten Kampagnen nutzen.')
 @section('styles')
 
 @endsection
@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Kampanyalar</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Kampagnen</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Kampanyalarım</h2>
+                    <h2 class="breadcrumb-title">Meine Kampagnen</h2>
                 </div>
 
             </div>
@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Tüm Kampanyalar</h3>
+                                        <h3>Alle Kampagnen</h3>
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
@@ -82,7 +82,7 @@
                                             </div>
                                             @endif
                                         @empty
-                                            <div class="alert alert-warning text-center">Kampanya Bulunamadı</div>
+                                            <div class="alert alert-warning text-center">Kampagne nicht gefunden</div>
                                         @endforelse
 
                                     </div>
@@ -108,7 +108,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Kampanya Detayları</h3>
+                    <h3 class="modal-title">Kampagnendetails</h3>
 
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 </div>
@@ -123,19 +123,19 @@
                     </style>
                     <ul>
                         <li>
-                            <b style="color: #24ae91">İşletme Adı:</b> <span id="companyName"></span>
+                            <b style="color: #24ae91">Firmenname:</b> <span id="companyName"></span>
                         </li>
                         <li>
-                            <b style="color: #d28745">Başlangıç Zamanı:</b><span id="startTime"></span>
+                            <b style="color: #d28745">Startzeit:</b><span id="startTime"></span>
                         </li>
                         <li>
-                            <b style="color: #24ae91">Kod:</b><span id="campaignCode"></span>
+                            <b style="color: #24ae91">Kampagnencode:</b><span id="campaignCode"></span>
                         </li>
                         <li>
-                            <b style="color: #c65f6a">İndirim:</b><span id="campaignDiscount"></span>
+                            <b style="color: #c65f6a">Rabatt:</b><span id="campaignDiscount"></span>
                         </li>
                         <li>
-                            <b style="color: #4f6fa3">Açıklama:</b><span id="campaignDescription"></span>
+                            <b style="color: #4f6fa3">Erläuterung:</b><span id="campaignDescription"></span>
                         </li>
                     </ul>
 

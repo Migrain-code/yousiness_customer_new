@@ -1,7 +1,6 @@
 @extends('layouts.master')
-@section('title', 'İzinler')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Benachrichtigungsberechtigungen')
+@section('meta_description', 'Sie müssen Benachrichtigungen, die vom System kommen, je nach Typ zulassen. Sie können diese Berechtigungen auf dieser Seite bearbeiten.')
 @section('styles')
     <style>
         .switch {
@@ -74,11 +73,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Bildirim İzinleri</h2>
+                    <h2 class="breadcrumb-title">Benachrichtigungsberechtigungen</h2>
                 </div>
 
             </div>
@@ -102,7 +101,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Bildirim İzinleri</h3>
+                                        <h3>Benachrichtigungsberechtigungen</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -116,8 +115,8 @@
                                                 <div class="card col-12" style="border-radius: 15px">
                                                     <div class="card-body d-flex align-items-center">
                                                         <div class="col">
-                                                            <h3>Anlık Bildirimler</h3>
-                                                            Uygulama üzerinden anlık bildirimleri alın
+                                                            <h3>Mitteilungen</h3>
+                                                            Erhalten Sie Push-Benachrichtigungen über die App
                                                         </div>
                                                         <div class="col d-flex align-items-center justify-content-end">
                                                             <label class="switch">
@@ -130,8 +129,8 @@
                                                 <div class="card col-12" style="border-radius: 15px">
                                                     <div class="card-body d-flex align-items-center">
                                                         <div class="col">
-                                                            <h3>E-posta</h3>
-                                                            Uygulama üzerinden anlık bildirimleri alın
+                                                            <h3>Email</h3>
+                                                            Wir senden Ihnen eine E-Mail an Ihr E-Mail-Konto
                                                         </div>
                                                         <div class="col d-flex align-items-center justify-content-end">
                                                             <label class="switch">
@@ -144,8 +143,8 @@
                                                 <div class="card col-12" style="border-radius: 15px">
                                                     <div class="card-body d-flex align-items-center">
                                                         <div class="col">
-                                                            <h3>Sms</h3>
-                                                            Uygulama üzerinden anlık bildirimleri alın
+                                                            <h3>SMS</h3>
+                                                            Wir informieren Sie per SMS-Nachricht.
                                                         </div>
                                                         <div class="col d-flex align-items-center justify-content-end">
                                                             <label class="switch">
@@ -158,8 +157,8 @@
                                                 <div class="card col-12" style="border-radius: 15px">
                                                     <div class="card-body d-flex align-items-center">
                                                         <div class="col">
-                                                            <h3>Telefon Görüşmeleri</h3>
-                                                            Uygulama üzerinden anlık bildirimleri alın
+                                                            <h3>Anrufe</h3>
+                                                            Wir werden Sie telefonisch kontaktieren
                                                         </div>
                                                         <div class="col d-flex align-items-center justify-content-end">
                                                             <label class="switch">
@@ -169,7 +168,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary float-end">Bildirim İzinlerini Güncelle</button>
+                                                <button type="submit" class="btn btn-primary float-end">Aktualisieren</button>
                                             </form>
                                             <!-- /Change Password Form -->
 

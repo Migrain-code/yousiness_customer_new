@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Blog İçeriği</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Blog-Inhalte</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Blog detayı</h2>
+                    <h2 class="breadcrumb-title">Blog-Details</h2>
                 </div>
 
             </div>
@@ -43,7 +43,7 @@
                                             </div>
                                         </li>
                                         <li><i class="far fa-calendar"></i>{{$blog->created_at->format('d.m.Y')}}</li>
-                                        <li><i class="far fa-comments"></i>{{$comments->count()}} Yorum</li>
+                                        <li><i class="far fa-comments"></i>{{$comments->count()}} Kommentar</li>
 
                                     </ul>
                                 </div>
@@ -55,7 +55,7 @@
 
                         <div class="card blog-share clearfix" style="border-radius: 18px">
                             <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                                <h4 class="card-title">Paylaş</h4>
+                                <h4 class="card-title">Aktie</h4>
                             </div>
                             <div class="card-body">
                                 <ul class="social-share">
@@ -69,7 +69,7 @@
 
                         <div class="card blog-comments clearfix" style="border-radius: 18px">
                             <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                                <h4 class="card-title">Yorumlar ({{$blog->comments->count()}})</h4>
+                                <h4 class="card-title">Kommentare ({{$blog->comments->count()}})</h4>
                             </div>
                             <div class="card-body pb-0">
                                 <ul class="comments-list">
@@ -89,7 +89,7 @@
                                             </div>
                                         </li>
                                     @empty
-                                        <div class="alert alert-info">İlk Yorumu Yapan Sen Ol!</div>
+                                        <div class="alert alert-info">Sei der erste der kommentiert!</div>
                                     @endforelse
 
                                 </ul>
@@ -104,17 +104,17 @@
                                         @csrf
                                         <div class="form-group">
                                             <label>Yorum Yap</label>
-                                            <textarea class="form-control" name="comment" placeholder="Yorumunuz" rows="5"></textarea>
+                                            <textarea class="form-control" name="comment" placeholder="Dein Kommentar" rows="5"></textarea>
                                             <input type="hidden" name="blog_id" value="{{$blog->id}}">
                                         </div>
                                         <div class="text-center">
                                             <button type="submit" class="btn btn-primary" style="width: 300px">
-                                                Gönder
+                                                Schicken
                                             </button>
                                         </div>
                                     </form>
                                 @else
-                                    <div class="alert alert-warning my-2">Yorum Yapmak İçin <a href="{{route('customer.login')}}"><b>Giriş Yapmanız</b></a> Gerekmektedir!</div>
+                                    <div class="alert alert-warning my-2">Kommentieren <a href="{{route('customer.login')}}"><b>Anmeldung</b></a> Es ist notwendig!</div>
                                 @endif
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                     <!-- Categories -->
                     <div class="card category-widget" style="border-radius: 18px;">
                         <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                            <h4 class="card-title">Konu Başlıkları</h4>
+                            <h4 class="card-title">Themen</h4>
                         </div>
                         <div class="card-body">
                             <ul class="categories">
@@ -142,7 +142,7 @@
                     <!-- Latest Posts -->
                     <div class="card post-widget" style="border-radius: 18px">
                         <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                            <h4 class="card-title">Son Gönderiler</h4>
+                            <h4 class="card-title">Neueste Beiträge</h4>
                         </div>
                         <div class="card-body">
                             <ul class="latest-posts">
@@ -181,8 +181,8 @@
         $('.social-link').on('click', function (){
             navigator.clipboard.writeText($(this).attr('link'));
             Swal.fire(
-                'Link Kopyalandı.!',
-                'Linki ilgili siteye giderek yapıştırın.!',
+                'Link kopiert!',
+                'Gehen Sie zur entsprechenden Website und fügen Sie den Link ein.',
                 'success'
             )
         });

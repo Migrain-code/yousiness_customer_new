@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', 'Bloglar')
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Blogs')
+@section('meta_description', "Alle Blogbeiträge sind hier aufgelistet")
 @section('styles')
 
 @endsection
@@ -11,11 +11,11 @@
             <div class="col-md-8 col-12">
                <nav aria-label="breadcrumb" class="page-breadcrumb">
                   <ol class="breadcrumb">
-                     <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                     <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Blogs</li>
                   </ol>
                </nav>
-               <h2 class="breadcrumb-title">Tüm Blog Yazıları</h2>
+               <h2 class="breadcrumb-title">Alle Blogbeiträge</h2>
             </div>
 
          </div>
@@ -32,7 +32,7 @@
                      <div class="row">
                         <div class="col-md-12">
                            <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                              <h2 class="title-five">Son Yayınlanan Bloglarımız</h2>
+                              <h2 class="title-five">Alle Blogbeiträge</h2>
                            </div>
                         </div>
                      </div>
@@ -64,7 +64,7 @@
                                        <a href="{{route('blog.detail', $blog->slug)}}">{{$blog->title}}</a>
                                     </h3>
                                     <p>{{substr(strip_tags($blog->description), 0, 200)}}</p>
-                                    <a href="{{route('blog.detail', $blog->slug)}}" class="read-news">Haberi Oku</a>
+                                    <a href="{{route('blog.detail', $blog->slug)}}" class="read-news">Sicht</a>
                                  </div>
                               </div>
                            </div>

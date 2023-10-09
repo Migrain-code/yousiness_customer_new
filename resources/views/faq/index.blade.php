@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', 'Sık Sorulan Sorular')
-@section('meta_description', 'Hızlı Randevu Sık Sorulan Sorular')
+@section('title', 'Häufig gestellte Fragen')
+@section('meta_description', 'Häufig gestellte Fragen')
 @section('styles')
  <link rel="stylesheet" href="/front/assets/css/custom-accordion.css">
 @endsection
@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">SSS</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">FAQ</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Sık Sorulan Sorular</h2>
+                    <h2 class="breadcrumb-title">Häufig gestellte Fragen</h2>
                 </div>
 
             </div>
@@ -25,7 +25,7 @@
         <div class="container">
             <div class="accordion" id="accordionExample">
                 <div class="section-header section-header-five text-center aos aos-init aos-animate" data-aos="fade-up">
-                    <h2 class="title-five">Sık Sorulan Sorular </h2>
+                    <h2 class="title-five">Häufig gestellte Fragen </h2>
                 </div>
                 @forelse($faqs as $faq)
                     <div class="accordion-item">

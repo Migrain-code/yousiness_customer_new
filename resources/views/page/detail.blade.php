@@ -11,7 +11,7 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$page->title}}</li>
                         </ol>
                     </nav>

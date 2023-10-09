@@ -20,7 +20,7 @@
             </ul>
         @else
             <ul>
-                <li>Sonuç Bulunamadı</li>
+                <li>Es gab keine Ergebnisse</li>
             </ul>
         @endif
     </div>

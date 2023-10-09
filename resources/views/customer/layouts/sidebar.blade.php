@@ -22,75 +22,75 @@
                     <li @if(request()->routeIs('customer.home')) class="active" @endif>
                         <a href="{{route('customer.home')}}">
                             <i class="fas fa-columns"></i>
-                            <span>Hesabım</span>
+                            <span>Mein Konto</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.favorite.index')) class="active" @endif>
                         <a href="{{route('customer.favorite.index')}}">
                             <i class="fas fa-bookmark"></i>
-                            <span>Favoriler</span>
+                            <span>Favoriten</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.addicted.index')) class="active" @endif>
                         <a href="{{route('customer.addicted.index')}}">
                             <i class="fas fa-users"></i>
-                            <span>Bağlı İşletmeler</span>
+                            <span>Häufig besucht</span>
                         </a>
                     </li>
 
                     <li @if(request()->routeIs('customer.order.index')) class="active" @endif>
                         <a href="{{route('customer.order.index')}}" >
                             <i class="fas fa-list-alt"></i>
-                            <span>Siparişlerim</span>
+                            <span>Meine Bestellungen</span>
                             <small class="unread-msg">{{auth('customer')->user()->orders->count()}}</small>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.packet.index')) class="active" @endif>
                         <a href="{{route('customer.packet.index')}}">
                             <i class="fas fa-clipboard"></i>
-                            <span>Paketler</span>
+                            <span>Pakete</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.appointment.index')) class="active" @endif>
                         <a href="{{route('customer.appointment.index')}}">
                             <i class="fas fa-clock"></i>
-                            <span>Geçmiş Randevular</span>
+                            <span>Vergangene Termine</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.comments')) class="active" @endif>
                         <a href="{{route('customer.comments')}}">
                             <i class="fas fa-comment"></i>
-                            <span>Yorumlarım</span>
+                            <span>Meine Kommentare</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.campaign.index')) class="active" @endif>
                         <a href="{{route('customer.campaign.index')}}">
                             <i class="fas fa-percent"></i>
-                            <span>Kampanyalarım</span>
+                            <span>Meine Kampagnen</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.campaign.index')) class="active" @endif>
                         <a href="{{route('customer.permissions')}}">
                             <i class="fas fa-bell"></i>
-                            <span>İzinler</span>
+                            <span>Berechtigungen</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.profile.edit')) class="active" @endif>
                         <a href="{{route('customer.profile.edit')}}">
                             <i class="fas fa-user-cog"></i>
-                            <span>Ayarlar</span>
+                            <span>Einstellungen</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.profile.password.edit')) class="active" @endif>
                         <a href="{{route('customer.profile.password.edit')}}">
                             <i class="fas fa-lock"></i>
-                            <span>Şifre Değiştir</span>
+                            <span>Kennwort ändern</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" onclick="$('#customer-logout-form').submit()">
                             <i class="fas fa-sign-out-alt"></i>
-                            <span>Güvenli Çıkış</span>
+                            <span>Sicherer Ausgang</span>
                         </a>
                     </li>
                 </ul>

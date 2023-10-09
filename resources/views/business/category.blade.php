@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title',"Salonlar")
-@section('meta_description', "Salonlar")
+@section('title',"Hallen")
+@section('meta_description', "Hallen")
 @section('styles')
     <style>
         .fav-btn{
@@ -95,11 +95,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Salonlar</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Startseite</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{$businesses->count()}} Sonuç Bulundu</h2>
+                    <h2 class="breadcrumb-title">{{$businesses->count()}} Ergebnis gefunden</h2>
                 </div>
 
             </div>
@@ -125,7 +125,7 @@
                             <div class="col-lg-3 p-0">
                                 <div class="position-relative">
                                     <img onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')" src="{{image($business->logo)}}" class="card-img" alt="User Image">
-                                    <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
+                                    <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Hervorgehoben</span>
                                 </div>
                             </div>
                             <div class="col-lg-7">
@@ -152,7 +152,9 @@
                                     {{--<div class="alert alert-success py-1 mt-1">{{setting('speed_site_title')}} Özel %10 İndirim </div>--}}
 
                                     <div class="single-comment mt-1">
-                                        asdasdasldhas
+                                        @if($business->comments->count() > 0)
+                                            {{$business->comments->first()->content}}
+                                        @endif
                                     </div>
                                 </div>
                             </div>

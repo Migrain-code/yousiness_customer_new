@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Termine')
+@section('meta_description', 'Zeigt eine Aufzeichnung aller Ihrer vergangenen Termine an')
 @section('styles')
     <style>
         @media (max-width: 768px) {
@@ -60,11 +60,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Geçmiş Randevular</h2>
+                    <h2 class="breadcrumb-title">Vergangene Termine</h2>
                 </div>
 
             </div>
@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Geçmiş Randevularınızın Listesi</h3>
+                                        <h3>Liste Ihrer vergangenen Termine</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -99,29 +99,29 @@
                                                     <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>Randevu kodu</th>
-                                                        <th>İşletme Adı</th>
-                                                        <th>Tarihi</th>
-                                                        <th>Durumu</th>
-                                                        <th>İşlemler</th>
+                                                        <th>Termincode</th>
+                                                        <th>Firmenname</th>
+                                                        <th>Geschichte</th>
+                                                        <th>Status</th>
+                                                        <th>Transaktionen</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                         @forelse($customer->appointments as $appointment)
                                                             <tr>
                                                                 <td data-label="#">{{$loop->index + 1}}</td>
-                                                                <td data-label="Randevu kodu">#{{$appointment->id}}</td>
-                                                                <td data-label="İşletme Adı">{{$appointment->business->name}}</td>
-                                                                <td data-label="Tarihi">{{$appointment->start_time}}</td>
-                                                                <td data-label="Durumu">{!!$appointment->status('html') !!}</td>
-                                                                <td data-label="İşlemler"><a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-info">Detay</a></td>
+                                                                <td data-label="Termincode">#{{$appointment->id}}</td>
+                                                                <td data-label="Firmenname">{{$appointment->business->name}}</td>
+                                                                <td data-label="Geschichte">{{$appointment->start_time}}</td>
+                                                                <td data-label="Status">{!!$appointment->status('html') !!}</td>
+                                                                <td data-label="Transaktionen"><a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-info">Detail</a></td>
                                                             </tr>
 
                                                         @empty
                                                             <tr>
                                                                 <td colspan="6">
                                                                     <div class="alert alert-warning">
-                                                                        Geçmiş Randevu Kaydınız Bulunamadı
+                                                                        Ihr früherer Termindatensatz konnte nicht gefunden werden
                                                                     </div>
                                                                 </td>
                                                             </tr>

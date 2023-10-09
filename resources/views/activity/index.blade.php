@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Alle Veranstaltungen')
+@section('meta_description', 'Hier wird eine Liste aller Veranstaltungen angezeigt')
 @section('styles')
 
 @endsection
@@ -11,11 +11,11 @@
             <div class="col-md-8 col-12">
                <nav aria-label="breadcrumb" class="page-breadcrumb">
                   <ol class="breadcrumb">
-                     <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                     <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Veranstaltungen</li>
                   </ol>
                </nav>
-               <h2 class="breadcrumb-title">Tüm Etkinlikler</h2>
+               <h2 class="breadcrumb-title">Alle Veranstaltungen</h2>
             </div>
 
          </div>
@@ -58,7 +58,7 @@
                                        <a href="{{route('activity.detail', $activity->slug)}}">{{$activity->title}}</a>
                                     </h3>
                                     <p>{{\Illuminate\Support\Str::limit(strip_tags($activity->description), 100, '...')}}</p>
-                                    <a href="{{route('activity.detail', $activity->slug)}}" class="btn-five" style="max-width: 200px;margin: 0 auto">Etkinlik Detayı</a>
+                                    <a href="{{route('activity.detail', $activity->slug)}}" class="btn-five" style="max-width: 200px;margin: 0 auto">Veranstaltungsdetails</a>
                                  </div>
                               </div>
                            </div>

@@ -17,7 +17,7 @@
         <strong style="font-size: 15px">{{session('response.title')}}!</strong>
             <span style="font-size: 15px; font-weight: 600">{{session('response.message')}}
                 @if(session('response.link'))
-                    <u><strong><a href="{{session('response.link')}}">Tıklayınız</a></strong> </u>
+                    <u><strong><a href="{{session('response.link')}}">klicken Sie hier</a></strong> </u>
                 @endif
             </span>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"><span></span>

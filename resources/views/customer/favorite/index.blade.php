@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Lieblingsunternehmen')
+@section('meta_description', 'Liste der Unternehmen, die Sie zu Ihren Favoriten hinzugefügt haben')
 @section('styles')
 
 @endsection
@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Favori İşletmelerim</h2>
+                    <h2 class="breadcrumb-title">Meine Lieblingsunternehmen</h2>
                 </div>
 
             </div>
@@ -28,7 +28,7 @@
                 <div class="backdrop"></div>
                 <div class="w-100 text-end position-absolute text-white font-w800 customer-menu-buttons" style="right: 5px; top: 50px;font-size: 25px">
                     <input type="checkbox" id="customer-menu-toggle" class="customer-menu-toggle" style="visibility: hidden">
-                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Menü</label>
+                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Speisekarte</label>
                 </div>
                 <!-- Profile Sidebar -->
                 @include('customer.layouts.sidebar')
@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Favori İşletmeler</h3>
+                                        <h3>Lieblingsunternehmen</h3>
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
@@ -71,10 +71,10 @@
                                                         </ul>
                                                         <div class="row row-sm">
                                                             <div class="col-6">
-                                                                <a href="{{route('business.detail', $favorite->business->slug)}}" class="btn btn-outline-warning w-100">Detay</a>
+                                                                <a href="{{route('business.detail', $favorite->business->slug)}}" class="btn btn-outline-warning w-100">Detail</a>
                                                             </div>
                                                             <div class="col-6">
-                                                                <a href="#" class="btn btn-outline-danger w-100 removeFavorite" b_id="{{$favorite->id}}"><i class="fa fa-trash me-1"></i>Sil</a>
+                                                                <a href="#" class="btn btn-outline-danger w-100 removeFavorite" b_id="{{$favorite->id}}"><i class="fa fa-trash me-1"></i>Löschen</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -82,7 +82,7 @@
                                             </div>
                                             @endif
                                         @empty
-                                            <div class="alert alert-warning text-center">Favorileri İşletmeniz Bulunamadı</div>
+                                            <div class="alert alert-warning text-center">Ihr Lieblingsunternehmen wurde nicht gefunden</div>
                                         @endforelse
 
                                     </div>

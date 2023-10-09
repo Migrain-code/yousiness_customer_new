@@ -92,7 +92,7 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-6">
                         <div class="copyright-text">
-                            <p class="mb-0">&copy; {{setting('speed_site_title')}}. Tüm hakları saklıdır.</p>
+                            <p class="mb-0">&copy; {{setting('speed_site_title')}}. Alle Rechte vorbehalten.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6">
@@ -100,10 +100,10 @@
                         <div class="copyright-menu">
                             <ul class="policy-menu">
                                 <li>
-                                    <a href="{{route('page.detail', $globalData['use_pages'][1]->slug)}}">Şartlar ve Koşullar</a>
+                                    <a href="{{route('page.detail', $globalData['use_pages'][1]->slug)}}">Bedingungen</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('page.detail', $globalData['use_pages'][0]->slug)}}">Gizlilik Koşulları</a>
+                                    <a href="{{route('page.detail', $globalData['use_pages'][0]->slug)}}">Geschäftsbedingungen</a>
                                 </li>
                             </ul>
                         </div>

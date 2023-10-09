@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Meine Produktbestellungen')
+@section('meta_description', 'Auf dieser Seite wird eine Liste aller Produkte angezeigt, die Sie bei Unternehmen gekauft haben')
 @section('styles')
     <style>
         @media (max-width: 768px) {
@@ -60,11 +60,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">En çok görüntülediğiniz işletmeler</h2>
+                    <h2 class="breadcrumb-title">Meine Produktbestellungen</h2>
                 </div>
 
             </div>
@@ -77,7 +77,7 @@
                 <div class="backdrop"></div>
                 <div class="w-100 text-end position-absolute text-white font-w800 customer-menu-buttons" style="right: 5px; top: 50px;font-size: 25px">
                     <input type="checkbox" id="customer-menu-toggle" class="customer-menu-toggle" style="visibility: hidden">
-                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Menü</label>
+                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Speisekarte</label>
                 </div>
                 <!-- Profile Sidebar -->
                 @include('customer.layouts.sidebar')
@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Satın Aldığınız Ürünler</h3>
+                                        <h3>Produkte, die Sie gekauft haben</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -99,31 +99,31 @@
                                                     <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>Sipariş kodu</th>
-                                                        <th>İşletme Adı</th>
-                                                        <th class="text-center">Adet</th>
-                                                        <th class="text-center">Fiyat</th>
-                                                        <th>Ödeme Türü</th>
-                                                        <th>Sipariş Tarihi</th>
+                                                        <th>Bestellcode</th>
+                                                        <th>Firmenname</th>
+                                                        <th class="text-center">Stück</th>
+                                                        <th class="text-center">Preis</th>
+                                                        <th>Zahlungsart</th>
+                                                        <th>Auftragsdatum</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                         @forelse($orders as $order)
                                                             <tr>
                                                                 <td data-label="#">{{$loop->index+1}}</td>
-                                                                <td data-label="Sipariş kodu"># {{$order->id}}</td>
-                                                                <td data-label="İşletme Adı">{{$order->business->name}}</td>
-                                                                <td data-label="Adet">{{$order->piece}}</td>
-                                                                <td data-label="Fiyat">{{$order->total}}</td>
-                                                                <td data-label="Ödeme Türü">{{$paymentTypes[$order->payment_type]}}</td>
-                                                                <td data-label="Sipariş Tarihi">{{$order->created_at->translatedFormat('d F y')}} <span class="d-block text-info">{{$order->created_at->translatedFormat('H:i')}}</span>
+                                                                <td data-label="Bestellcode"># {{$order->id}}</td>
+                                                                <td data-label="Firmenname">{{$order->business->name}}</td>
+                                                                <td data-label="Stück">{{$order->piece}}</td>
+                                                                <td data-label="Preis">{{$order->total}}</td>
+                                                                <td data-label="Zahlungsart">{{$paymentTypes[$order->payment_type]}}</td>
+                                                                <td data-label="Auftragsdatum">{{$order->created_at->translatedFormat('d F y')}} <span class="d-block text-info">{{$order->created_at->translatedFormat('H:i')}}</span>
                                                                 </td>
                                                             </tr>
                                                         @empty
                                                             <tr>
                                                                 <td colspan="7">
                                                                     <div class="alert alert-warning">
-                                                                        Sipariş Kaydınız Bulunamadı
+                                                                        Ihr Bestelldatensatz konnte nicht gefunden werden
                                                                     </div>
                                                                 </td>
                                                             </tr>

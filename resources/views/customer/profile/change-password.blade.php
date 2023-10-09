@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Passwortaktualisierung')
+@section('meta_description', 'Sie können Ihr Kontopasswort auf dieser Seite aktualisieren.')
 @section('styles')
 
 @endsection
@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Şifre Değişikliği</h2>
+                    <h2 class="breadcrumb-title">Passwortänderung</h2>
                 </div>
 
             </div>
@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Şifre Değişikliği</h3>
+                                        <h3>Passwortänderung</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -51,15 +51,15 @@
                                             <form method="post" action="{{route('customer.profile.change-password')}}">
                                                 @csrf
                                                 <div class="form-group">
-                                                    <label>Yeni Şifre</label>
+                                                    <label>Neues Kennwort</label>
                                                     <input type="password" name="password" class="form-control">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Yeni Şifre Tekrar</label>
+                                                    <label>Neues Passwort nochmal</label>
                                                     <input type="password" name="password_confirmation" class="form-control">
                                                 </div>
                                                 <div class="submit-section">
-                                                    <button type="submit" class="btn btn-primary submit-btn">Güncelle</button>
+                                                    <button type="submit" class="btn btn-primary submit-btn">Aktualisieren</button>
                                                 </div>
                                             </form>
                                             <!-- /Change Password Form -->

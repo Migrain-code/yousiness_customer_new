@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Paketdetails')
+@section('meta_description', 'Hier werden alle Informationen zu Nutzung, Zahlung und Transaktionsdaten des von Ihnen erworbenen Pakets angezeigt.')
 @section('styles')
 
 @endsection
@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Paket Detayı</h2>
+                    <h2 class="breadcrumb-title">Paketdetails</h2>
                 </div>
 
             </div>
@@ -28,7 +28,7 @@
                 <div class="backdrop"></div>
                 <div class="w-100 text-end position-absolute text-white font-w800 customer-menu-buttons" style="right: 5px; top: 50px;font-size: 25px">
                     <input type="checkbox" id="customer-menu-toggle" class="customer-menu-toggle" style="visibility: hidden">
-                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Menü</label>
+                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Speisekarte</label>
                 </div>
                 <!-- Profile Sidebar -->
                 @include('customer.layouts.sidebar')
@@ -40,7 +40,7 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <h3 class="card-title w-100">Paket Özeti</h3>
+                                            <h3 class="card-title w-100">Paketzusammenfassung</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -49,36 +49,36 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="info-list">
-                                                    <div class="title">Paket Kodu</div>
+                                                    <div class="title">Paketcode</div>
                                                     <div class="text" id="bank_name">#{{$packet->id}}</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="info-list">
-                                                    <div class="title">Alım Tarihi</div>
+                                                    <div class="title">Kaufdatum</div>
                                                     <div class="text" id="branch_name">{{$packet->seller_date->format('d.m.Y H:i')}}</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="info-list">
-                                                    <div class="title">Hizmet Adı</div>
+                                                    <div class="title">Dienstname</div>
                                                     <div class="text" id="account_no">#{{$packet->service->subCategory->name ?? ""}}</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="info-list">
-                                                    <div class="title">Durumu</div>
+                                                    <div class="title">Status</div>
                                                     <div class="text" id="account_name">
                                                         @if($packet->usages->sum('amount') == $packet->amount and $packet->payments->sum('price') == $packet->total)
-                                                            <span class="badge bg-success-light">Tamamlandı</span>
+                                                            <span class="badge bg-success-light">Vollendet</span>
                                                         @else
                                                             @if($packet->usages->sum('amount') != $packet->amount)
-                                                                <span class="badge bg-primary-light">Kullanım Hakkınız Var</span>
+                                                                <span class="badge bg-primary-light">Sie haben das Nutzungsrecht</span>
                                                             @else
                                                                 @if($packet->payments->sum('price') != $packet->total)
-                                                                    <span class="badge bg-warning-light">Ödeme Tamamlanmadı</span>
+                                                                    <span class="badge bg-warning-light">Die Zahlung konnte nicht abgeschlossen werden</span>
                                                                 @else
-                                                                    <span class="badge bg-danger">Ödeme Tamamlandı</span>
+                                                                    <span class="badge bg-danger">Zahlung abgeschlossen</span>
                                                                 @endif
                                                             @endif
 
@@ -98,32 +98,32 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="account-card bg-info-light">
-                                                <span>{{$packet->amount}} {{$packageTypes[$packet->type]}}</span>Hakkınız Var
+                                                <span>{{$packet->amount}} {{$packageTypes[$packet->type]}}</span>Du hast das Recht
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-lightblue">
-                                                <span>€{{$packet->total}}</span> Toplam Ödenecek Tutar
+                                                <span>€{{$packet->total}}</span> Zu zahlender Gesamtbetrag
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-success-light">
-                                                <span>{{$packet->usages->sum('amount')}} {{$packageTypes[$packet->type]}}</span> Paket Kullandınız
+                                                <span>{{$packet->usages->sum('amount')}} {{$packageTypes[$packet->type]}}</span> Sie haben ein Paket verwendet
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-warning-light">
-                                                <span>€{{$packet->payments->sum('price')}}</span> Paket Ödemesi Yaptınız
+                                                <span>€{{$packet->payments->sum('price')}}</span> Sie haben die Zahlung für Ihr Paket vorgenommen
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-purple-light">
-                                                <span>{{$packet->amount - $packet->usages->sum('amount')}}</span> Kalan Kullanım Hakkınız
+                                                <span>{{$packet->amount - $packet->usages->sum('amount')}}</span> Ihre verbleibenden Nutzungsrechte
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-primary-light">
-                                                <span>€{{$packet->total -$packet->payments->sum('price')}}</span> Kalan Ödemeniz
+                                                <span>€{{$packet->total -$packet->payments->sum('price')}}</span> Ihre Restzahlung
                                             </div>
                                         </div>
 
@@ -137,29 +137,29 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Paket Kullanım Detayları</h3>
+                                            <h3>Details zur Paketnutzung</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <table class="table table-hover table-center mb-0">
                                         <thead>
                                         <tr>
-                                            <th>Personel</th>
-                                            <th>Kullanım Tarihi</th>
-                                            <th>Adet</th>
+                                            <th>Arbeiter</th>
+                                            <th>Datum der Nutzung</th>
+                                            <th>Stück</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                          @forelse($packet->usages()->paginate(setting('speed_pagination_number')) as $usage)
                                             <tr>
-                                                <td>{{$usage->personel->name ?? "Silinmiş"}}</td>
+                                                <td>{{$usage->personel->name ?? "gelöscht"}}</td>
                                                 <td>{{$usage->created_at->format('d.m.Y H:i')}}</td>
                                                 <td>{{$usage->amount}}</td>
                                             </tr>
                                          @empty
                                              <tr>
                                                  <td colspan="3">
-                                                     <div class="alert alert-primary text-center">Paket Kullanımınız Bulunamadı</div>
+                                                     <div class="alert alert-primary text-center">Ihre Paketnutzung konnte nicht gefunden werden</div>
                                                  </td>
                                              </tr>
                                          @endforelse
@@ -175,16 +175,16 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Paket Ödeme Detayları</h3>
+                                        <h3>Zahlungsdetails für das Paket</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <table class="table table-hover table-center mb-0">
                                         <thead>
                                         <tr>
-                                            <th>Fiyat</th>
-                                            <th>Adet</th>
-                                            <th>Ödeme Tarihi</th>
+                                            <th>Preis</th>
+                                            <th>Stück</th>
+                                            <th>Zahlungsdatum</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -197,7 +197,7 @@
                                         @empty
                                             <tr>
                                                 <td colspan="3">
-                                                    <div class="alert alert-primary text-center">Paket Ödemeniz Bulunamadı</div>
+                                                    <div class="alert alert-primary text-center">Ihre Paketzahlung wurde nicht gefunden</div>
                                                 </td>
                                             </tr>
                                         @endforelse

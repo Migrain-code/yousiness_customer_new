@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Paket Satın Alımlarım")
-@section('meta_description', "Paket Alımlarım")
+@section('title', "Meine Bundle-Käufe")
+@section('meta_description', "Hier werden alle Servicepaketkäufe angezeigt, die Unternehmen für Sie definieren")
 @section('styles')
     <style>
         @media (max-width: 768px) {
@@ -60,11 +60,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Paketlerim</h2>
+                    <h2 class="breadcrumb-title">Meine Pakete</h2>
                 </div>
 
             </div>
@@ -77,7 +77,7 @@
                 <div class="backdrop"></div>
                 <div class="w-100 text-end position-absolute text-white font-w800 customer-menu-buttons" style="right: 5px; top: 50px;font-size: 25px">
                     <input type="checkbox" id="customer-menu-toggle" class="customer-menu-toggle" style="visibility: hidden">
-                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Menü</label>
+                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Speisekarte</label>
                 </div>
                 <!-- Profile Sidebar -->
                 @include('customer.layouts.sidebar')
@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Satın Aldığınız Paketler</h3>
+                                        <h3>Von Ihnen gekaufte Pakete</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -99,37 +99,37 @@
                                                     <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>Sipariş kodu</th>
-                                                        <th>İşletme Adı</th>
-                                                        <th class="text-center">Kalan adet</th>
-                                                        <th class="text-center">Toplam Ödeme</th>
-                                                        <th>Türü</th>
-                                                        <th>Sipariş Tarihi</th>
-                                                        <th>İşlemler</th>
+                                                        <th>Bestellcode</th>
+                                                        <th>Firmenname</th>
+                                                        <th class="text-center">Die restlichen Stücke</th>
+                                                        <th class="text-center">Die Gesamtzahlung</th>
+                                                        <th>Typ</th>
+                                                        <th>Auftragsdatum</th>
+                                                        <th>Transaktionen</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     @forelse($packets as $packet)
                                                         <tr>
-                                                            <td data-label="Sıra">{{$loop->index+1}}</td>
-                                                            <td data-label="Sipariş kodu"># {{$packet->id}}</td>
-                                                            <td data-label="İşletme Adı">{{$packet->business->name}}</td>
-                                                            <td data-label="Kalan adet">{{$packet->amount}}</td>
-                                                            <td data-label="Toplam Ödeme">{{$packet->total}}</td>
-                                                            <td data-label="Türü">{{$packageTypes[$packet->type]}}</td>
-                                                            <td data-label="Sipariş Tarihi">
+                                                            <td data-label="Zeilennummer">{{$loop->index+1}}</td>
+                                                            <td data-label="Bestellcode"># {{$packet->id}}</td>
+                                                            <td data-label="Firmenname">{{$packet->business->name}}</td>
+                                                            <td data-label="Die restlichen Stücke">{{$packet->amount}}</td>
+                                                            <td data-label="Die Gesamtzahlung">{{$packet->total}}</td>
+                                                            <td data-label="Typ">{{$packageTypes[$packet->type]}}</td>
+                                                            <td data-label="Auftragsdatum">
                                                                 {{$packet->created_at->translatedFormat('d F y')}}
                                                                 <span class="d-block text-info">
                                                                     {{$packet->created_at->translatedFormat('H:i')}}
                                                                 </span>
                                                             </td>
-                                                            <td data-label="İşlemler"><a class="btn-five" href="{{route('customer.packet.detail', $packet->id)}}">Detay</a></td>
+                                                            <td data-label="Transaktionen"><a class="btn-five" href="{{route('customer.packet.detail', $packet->id)}}">Detail</a></td>
                                                         </tr>
                                                     @empty
                                                         <tr>
                                                             <td colspan="8">
                                                                 <div class="alert alert-warning">
-                                                                    Paket Kaydınız Bulunamadı
+                                                                    Ihr Paketdatensatz konnte nicht gefunden werden
                                                                 </div>
                                                             </td>
                                                         </tr>

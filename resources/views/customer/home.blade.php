@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Mein Kontoauszug')
+@section('meta_description', 'Alle allgemeinen Informationen zu Ihrem Konto sind hier aufgeführt')
 @section('styles')
 
 @endsection
@@ -12,11 +12,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Profilim</h2>
+                    <h2 class="breadcrumb-title">Mein Profil</h2>
                 </div>
 
             </div>
@@ -42,7 +42,7 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <h3 class="card-title">Hesap Özeti</h3>
+                                            <h3 class="card-title">Kontoauszug</h3>
                                         </div>
 
                                     </div>
@@ -52,32 +52,32 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="info-list">
-                                                    <div class="title">Ad Soyad</div>
+                                                    <div class="title">Vorname Familienname</div>
                                                     <div class="text" id="bank_name">{{auth('customer')->user()->name}}</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="info-list">
-                                                    <div class="title">Doğum Tarihi</div>
+                                                    <div class="title">Geburtsdatum</div>
                                                     <div class="text" id="branch_name">{{\Illuminate\Support\Carbon::parse(auth('customer')->user()->birthday)->translatedFormat('d F Y')}}</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="info-list">
-                                                    <div class="title">Hesap Kodu</div>
+                                                    <div class="title">Konto Code</div>
                                                     <div class="text" id="account_no">#{{auth('customer')->user()->id}}</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="info-list">
-                                                    <div class="title">Durumu</div>
+                                                    <div class="title">Status</div>
                                                     <div class="text" id="account_name">
                                                         @if(auth('customer')->user()->status == 0)
-                                                            <span class="badge bg-danger">Engellendi</span>
+                                                            <span class="badge bg-danger">verstopft</span>
                                                         @elseif(auth('customer')->user()->status == 2)
-                                                            <span class="badge bg-warning">Uyarı Verildi</span>
+                                                            <span class="badge bg-warning">Warnung gegeben</span>
                                                         @else
-                                                            <span class="badge bg-success">Aktif</span>
+                                                            <span class="badge bg-success">Aktiv</span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -134,7 +134,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Yaklaşan randevular</h3>
+                                        <h3>Kommende Termine</h3>
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
@@ -166,7 +166,7 @@
                                                                     @endif
                                                                 </li>
                                                                 <li>
-                                                                    <i class="far fa-clock"></i> {{$appointment->start_time}} Tarihinde
+                                                                    <i class="far fa-clock"></i> {{$appointment->start_time}} An
                                                                 </li>
                                                                 {{--
                                                                     <li>
@@ -176,11 +176,11 @@
                                                             </ul>
                                                             <div class="row row-sm">
                                                                 <div class="col-6">
-                                                                    <a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-warning w-100">Detay</a>
+                                                                    <a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-warning w-100">Detail</a>
                                                                 </div>
                                                                 @if($appointment->status==0)
                                                                     <div class="col-6">
-                                                                        <a href="#" class="btn btn-outline-danger cancelledBtn" ap_id="{{$appointment->id}}">İptal et</a>
+                                                                        <a href="#" class="btn btn-outline-danger cancelledBtn" ap_id="{{$appointment->id}}">Stornieren</a>
                                                                     </div>
                                                                 @endif
                                                             </div>
@@ -189,7 +189,7 @@
                                                 </div>
                                             @endif
                                         @empty
-                                            <div class="alert alert-warning text-center">Randevu Kaydınız Bulunamadı</div>
+                                            <div class="alert alert-warning text-center">Ihr Termindatensatz konnte nicht gefunden werden</div>
                                         @endforelse
                                     </div>
 
@@ -210,87 +210,6 @@
     </style>
 @endsection
 @section('scripts')
-    <div class="modal fade custom-modal" id="account_modal" role="dialog" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Hesap Bilgisi</h3>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                </div>
-                <div class="modal-body">
-                    <form id="accounts_form" method="post" action="{{route('customer.profile.update')}}">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">Ad Soyad</label>
-                                    <input type="text" name="name" class="form-control bank_name" value="{{auth('customer')->user()->name}}">
-                                    <span class="help-block"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">Telefon</label>
-                                    <input type="text" name="email" class="form-control branch_name phone" value="{{auth('customer')->user()->phone}}">
-                                    <span class="help-block"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">Doğum Günü</label>
-                                    <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control account_no" value="{{auth('customer')->user()->birthday}}">
-                                    <span class="help-block"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">İl</label>
-                                    <select name="city_id" class="form-select" id="city_select">
-                                        <option value="">İl Seçiniz</option>
-                                        @foreach($cities as $city)
-                                            <option value="{{$city->id}}" @selected(auth('customer')->user()->city_id==$city->id)>{{$city->name}}</option>
-                                        @endforeach
-                                    </select>
-                                    <span class="help-block"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">İlçe</label>
-                                        @if(auth('customer')->user()->city_id)
-                                            <select name="district_id" class="form-select" id="district_select">
-                                                <option value="">İlçe Seçiniz</option>
-                                                @foreach(auth('customer')->user()->city->districts as $district)
-                                                    <option value="{{$district->id}}" @selected(auth('customer')->user()->district_id==$district->id)>{{$district->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        @else
-                                            <select name="district_id" class="form-select" id="district_select">
-                                                <option value="">İlçe Seçiniz</option>
-                                            </select>
-                                        @endif
-                                    <span class="help-block"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer text-center">
-                            <button type="submit" id="acc_btn" class="btn btn-primary">Güncelle</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
     <script>
         //$(".phone").inputmask({"mask": "+99 (999)-999-9999"});

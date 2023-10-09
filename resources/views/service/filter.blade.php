@@ -2,7 +2,7 @@
     <!-- Search Filter  <button type="submit" class="btn-five w-100 p-2">Ara</button>-->
     <div class="card search-filter">
         <div class="card-header">
-            <h4 class="card-title mb-0">Filtrele</h4>
+            <h4 class="card-title mb-0">Filter</h4>
 
         </div>
         <div class="card-body">
@@ -12,9 +12,9 @@
                     <div class="filter-widget" style="margin-left: 5px !important;">
                         <input type="hidden" name="category" value="{{$service->id}}">
                         <div class="form-group">
-                            <label>Hizmet Seçiniz</label>
+                            <label>Wählen Sie Dienst.</label>
                             <select class="js-example-basic-single" name="sub_category">
-                                <option value="">Hizmet Seçiniz</option>
+                                <option value="">Wählen Sie Dienst</option>
                                 @forelse($service->subCategories as $sub_service)
                                     <option value="{{$sub_service->id}}">{{$sub_service->name}}</option>
                                 @empty
@@ -31,7 +31,7 @@
                                 @endforelse
                             </select>
                         </div>
-                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Arama Yap <i class="fa fa-search" style="padding-left: 5px"></i></button>
+                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Anruf <i class="fa fa-search" style="padding-left: 5px"></i></button>
 
                     </div>
                 </form>
@@ -40,9 +40,9 @@
                     <div class="filter-widget">
 
                         <div class="form-group">
-                            <label>Hizmet Seçiniz</label>
+                            <label>Wählen Sie Dienst</label>
                             <select class="js-example-basic-single" name="sub_category">
-                                <option value="">Hizmet Seçiniz</option>
+                                <option value="">Wählen Sie Dienst</option>
                                 @forelse($service->category->subCategories as $sub_service)
                                     <option value="{{$sub_service->id}}">{{$sub_service->name}}</option>
                                 @empty
@@ -50,7 +50,7 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn-five w-10 p-2">Arama Yap <span class="fa fa-search"></span></button>
+                    <button type="submit" class="btn-five w-10 p-2">Anruf <span class="fa fa-search"></span></button>
 
                 </form>
             @endif

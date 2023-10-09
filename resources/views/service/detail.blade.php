@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Salonlar")
-@section('meta_description', " Salonlar")
+@section('title', "Hallen")
+@section('meta_description', " Hallen")
 @section('styles')
     <style>
         .fav-btn{
@@ -95,11 +95,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Salonlar</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Hallen</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{count($businesses)}} Sonuç Bulundu</h2>
+                    <h2 class="breadcrumb-title">{{count($businesses)}} Ergebnis gefunden</h2>
                 </div>
 
             </div>
@@ -125,7 +125,7 @@
                                 <div class="col-lg-3 p-0">
                                     <div class="position-relative">
                                         <img src="{{image($business->logo)}}" onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')" class="card-img" alt="User Image">
-                                        <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
+                                        <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Hervorgehoben</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
@@ -144,7 +144,7 @@
                                                 <i class="fas fa-star"></i>
                                             @endif
                                             <span class="d-inline-block average-rating">
-                                                    <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->comments->count()}} Yorum
+                                                    <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->comments->count()}} Kommentar
                                             </span>
                                         </div>
                                         <p class="doc-location mt-1"><i class="fas fa-map-marker-alt"></i> {{$business->cities->name. ", ". $business->cities->country->name}}</p>
@@ -153,7 +153,9 @@
 
                                         --}}
                                         <div class="single-comment mt-1">
-                                            asdasdasldhas
+                                            @if($business->comments->count() > 0)
+                                                {{$business->comments->first()->content}}
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -161,13 +163,13 @@
 
 
                                         <div>
-                                        <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}} TL</span>
-                                        'den başlayan
+                                        <span style="font-size: 25px;color: #ff8a00; font-weight: bold;">{{$business->services->min("price")}}</span>
+                                        Ab €
                                     </div>
 
                                     @if($business->approve_type==0)
                                         <p class="doc-speciality">
-                                            <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Anında Onay</span>
+                                            <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Sofortige Genehmigung</span>
                                         </p>
                                     @endif
                                 </div>
@@ -286,7 +288,7 @@
                         callback(results);
                     },
                     error: function() {
-                        console.error("Arama sırasında bir hata oluştu.");
+                        console.error("Bei der Suche ist ein Fehler aufgetreten.");
                     }
                 });
             }

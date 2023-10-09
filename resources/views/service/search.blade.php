@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Salonlar")
-@section('meta_description', "Salonlar")
+@section('title', "Hallen")
+@section('meta_description', "Hallen")
 @section('styles')
     <style>
         .fav-btn{
@@ -96,11 +96,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Salonlar</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Hallen</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{$businesses->count()}} Sonuç Bulundu</h2>
+                    <h2 class="breadcrumb-title">{{$businesses->count()}} Ergebnis gefunden</h2>
                 </div>
 
             </div>
@@ -116,7 +116,7 @@
                 <div class="col-md-12 col-lg-4 col-xl-3">
                     <div class="card search-filter">
                         <div class="card-header">
-                            <h4 class="card-title mb-0">Filtrele</h4>
+                            <h4 class="card-title mb-0">Filter</h4>
                         </div>
                         <div class="card-body">
 
@@ -316,7 +316,7 @@
                     @forelse($businesses as $business)
                         <div class="row widget-container bg-white position-relative @if(!$loop->first) my-3 @endif align-items-center rounded-3" style="box-shadow: 1px 3px 15px #00000036;cursor: pointer" >
                             @if(auth('customer')->check())
-                                    <a href="javascript:void(0)" data-toggle="tooltip" data-toggle="popover" title="Favorilere Ekle"  class="@if(in_array($business->id, $favoriteIds)) fav-btn-active @else fav-btn @endif addFav" b_id="{{$business->id}}">
+                                    <a href="javascript:void(0)" data-toggle="tooltip" data-toggle="popover" title="Zu den Favoriten hinzufügen"  class="@if(in_array($business->id, $favoriteIds)) fav-btn-active @else fav-btn @endif addFav" b_id="{{$business->id}}">
                                         <i class="far fa-bookmark"></i>
                                     </a>
                             @endif
@@ -349,7 +349,9 @@
                                    {{--  <div class="alert alert-success py-1 mt-1">{{setting('speed_site_title')}} %10 İndirim </div> --}}
 
                                     <div class="single-comment mt-1">
-                                        asdasdasldhas
+                                        @if($business->comments->count() > 0)
+                                            {{$business->comments->first()->content}}
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -420,7 +422,7 @@
                             callback(results);
                         },
                         error: function() {
-                            console.error("Arama sırasında bir hata oluştu.");
+                            console.error("Bei der Suche ist ein Fehler aufgetreten.");
                         }
                     });
                 }

@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Tüm Hizmetler")
-@section('meta_description',"Tüm Hizmetler")
+@section('title', "Alle Dienstleistungen")
+@section('meta_description',"Alle Dienstleistungen")
 @section('styles')
 
 @endsection
@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hizmetler</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Dienstleistungen</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{count($womanServices) + count($manServices)}} Sonuç Bulundu</h2>
+                    <h2 class="breadcrumb-title">{{count($womanServices) + count($manServices)}} Ergebnis gefunden</h2>
                 </div>
 
             </div>
@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Kadın</h2>
+                        <h2 class="title-five">Frau</h2>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Erkek</h2>
+                        <h2 class="title-five">Männlich</h2>
                     </div>
                 </div>
             </div>

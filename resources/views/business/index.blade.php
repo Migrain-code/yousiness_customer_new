@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Salonlar</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Hallen</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{$businesses->count()}} Sonuç Bulundu</h2>
+                    <h2 class="breadcrumb-title">{{$businesses->count()}} Ergebnis gefunden</h2>
                 </div>
 
             </div>
@@ -53,7 +53,7 @@
 
                                             </div>
                                             <div style="margin-bottom: 5px;">
-                                                <span class="text-success" style="font-size: 19px;font-weight: bold"> 5 TL</span>'den başlayan fiyatlar
+                                                <span class="text-success" style="font-size: 19px;font-weight: bold"> 5 €</span>'ab
                                             </div>
                                             <div class="rating">
                                                 @if($business->comments->count() > 0)
@@ -69,7 +69,7 @@
                                                 @endif
 
                                                 <span class="d-inline-block average-rating">
-                                                    <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->comments->count()}} Yorum
+                                                    <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->comments->count()}} Kommentar
                                                 </span>
                                             </div>
 
@@ -83,8 +83,8 @@
 
                                         </div>
                                         <div class="clinic-booking">
-                                            <a class="view-pro-btn" href="{{route('business.detail', $business->slug)}}">Profili Görüntüle</a>
-                                            <a class="apt-btn" href="{{route('business.detail', $business->slug)}}">Randevu Al</a>
+                                            <a class="view-pro-btn" href="{{route('business.detail', $business->slug)}}">Profil anzeigen</a>
+                                            <a class="apt-btn" href="{{route('business.detail', $business->slug)}}">Treffen</a>
                                         </div>
                                     </div>
                                 </div>

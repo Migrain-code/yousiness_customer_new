@@ -60,24 +60,24 @@
                                     <div class="step-1 my-3">
                                         <div class="d-flex align-items-center">
                                             <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">1</span>
-                                            <h2 style="font-size: 22px;">Hizmet Seçimi</h2>
+                                            <h2 style="font-size: 22px;">Serviceauswahl</h2>
                                         </div>
                                         <div>
                                             <div style="color: rgb(168, 159, 159);">
                                                 @forelse($selectedServices as $service)
                                                     {{$service->subCategory->name . "(" . $service->gender->name ." )".", "}}
                                                 @empty
-                                                    <div class="alert alert-waring">Hizmet Seçimi Yapılmadı. <u>Lütfen Hizmet Seçiniz</u></div>
+                                                    <div class="alert alert-waring">Es wurde keine Serviceauswahl getroffen. <u>Bitte wählen Sie Service aus</u></div>
                                                 @endforelse
                                             </div>
-                                            <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg" type="button">Ekle/Çıkar</button>
+                                            <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg" type="button">Hinzufügen/Entfernen</button>
 
                                         </div>
                                     </div>
                                     <div class="step-2 my-3">
                                         <div class="d-flex align-items-center">
                                             <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">2</span>
-                                            <h2 style="font-size: 22px;">Personel Seçimi</h2>
+                                            <h2 style="font-size: 22px;">Personalauswahl</h2>
                                         </div>
                                         <form method="get" action="{{route('step1.store', ['business' => $business->slug])}}">
                                             <input type="hidden" name="step" value="3">
@@ -85,9 +85,9 @@
                                             @foreach($ap_services as $service)
                                                 <input type="hidden" name="services[]" value="{{$service->id}}">
                                                 <div class="form-group">
-                                                    <label><b>{{$service->subCategory->name}}</b> için personel seçiniz</label>
+                                                    <label><b>{{$service->subCategory->name}}</b> Bitte wählen Sie Personal für aus</label>
                                                     <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif required>
-                                                        <option value="">{{$service->subCategory->name}} için personel seçiniz</option>
+                                                        <option value="">{{$service->subCategory->name}} Bitte wählen Sie Personal für aus</option>
                                                         @forelse($service->personels as $service_personel)
                                                             <option value="{{$service_personel->personel->id}}" @selected(in_array($service_personel->personel->id, $selectedPersonelIds))>{{$service_personel->personel->name}}</option>
                                                         @empty
@@ -95,7 +95,7 @@
                                                     </select>
                                                 </div>
                                             @endforeach
-                                            <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" type="submit">Tarih/Saat Seç</button>
+                                            <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" type="submit">Wählen Sie Datum/Uhrzeit</button>
                                         </form>
                                     </div>
 
@@ -104,7 +104,7 @@
 
                                                 <div class="d-flex align-items-center mb-1">
                                                     <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">3</span>
-                                                    <h2 style="font-size: 22px;">Tarih ve Saat Seçimi</h2>
+                                                    <h2 style="font-size: 22px;">Auswahl von Datum und Uhrzeit</h2>
                                                 </div>
                                                 <div class="card schedule-widget mb-0">
                                                     <!-- Schedule Header -->
@@ -149,7 +149,7 @@
                                         <div class="step-5 my-3" id="step-4">
                                         <div class="d-flex align-items-center mb-1">
                                             <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">4</span>
-                                            <h2 style="font-size: 22px;">İletişim Bilgileri</h2>
+                                            <h2 style="font-size: 22px;">Kontaktinformationen</h2>
                                         </div>
                                         <div class="">
                                             <form class="col-lg-12" method="post" id="step-4-form" action="{{route('appointment.create')}}">
@@ -163,24 +163,24 @@
                                                 <input type="hidden" name="business_id" value="{{$business->id}}">
                                                 <input type="hidden" name="appointment_date" id="appointment_date" value="">
                                                 @if(auth('customer')->check())
-                                                    <div class="alert alert-info"> Hesabınıza Giriş Yapmış Olduğunuz İçin Ek bilgi istenmeyecektir</div>
+                                                    <div class="alert alert-info"> Da Sie in Ihrem Konto angemeldet sind, werden Sie nicht nach weiteren Informationen gefragt.</div>
                                                 @else
                                                     <div class="form-group">
-                                                        <label>Adınız</label>
+                                                        <label>Ihr Name</label>
                                                         <input class="form-control" name="name" required="">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Soyadınız</label>
+                                                        <label>Dein Familienname</label>
                                                         <input class="form-control" name="surname" required="">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Telefon Numaranız</label>
+                                                        <label>Deine Telefonnummer</label>
                                                         <input class="form-control" name="phone" id="phone" required="">
                                                     </div>
                                                 @endif
                                                 <div class="contact-buttons d-flex justify-content-between mt-2">
-                                                    <a class="btn btn-danger" href="{{route('business.detail', $business->slug)}}" type="button">İptal Et</a>
-                                                    <button class="btn btn-success" type="submit">Randevu Oluştur</button>
+                                                    <a class="btn btn-danger" href="{{route('business.detail', $business->slug)}}" type="button">Stornieren</a>
+                                                    <button class="btn btn-success" type="submit">Erstellen Sie einen Termin</button>
                                                 </div>
                                             </form>
 
@@ -190,37 +190,37 @@
                                 </div>
                                 <div class="col-md-5 my-3">
                                     <div class="brief-card mx-auto">
-                                        <h2 class="text-center py-2" style="background-color: #565A5C; color: #fff; width: 100%; margin: 0 !important;">Özet</h2>
+                                        <h2 class="text-center py-2" style="background-color: #565A5C; color: #fff; width: 100%; margin: 0 !important;">Zusammenfassung</h2>
                                         <ul>
                                             <li class="d-flex justify-content-between my-2">
-                                                <span style="font-weight: bold;">Salon</span>
+                                                <span style="font-weight: bold;">Wohnzimmer</span>
                                                 <span class="brief-company-name">{{$business->name}}</span>
                                             </li>
                                             <hr>
                                             <li class="d-flex justify-content-between my-2">
-                                                <span style="font-weight: bold;">Hizmetler</span>
+                                                <span style="font-weight: bold;">Dienstleistungen</span>
                                                 <span class="brief-services">
                                                     @forelse($selectedServices as $service)
                                                         {!! $service->subCategory->name . "(" . $service->gender->name ." )"."<br> "!!}
                                                     @empty
-                                                        <div class="alert alert-waring">Hizmet Seçimi Yapılmadı. <u>Lütfen Hizmet Seçiniz</u></div>
+                                                        <div class="alert alert-waring">Es wurde keine Serviceauswahl getroffen. <u>Bitte wählen Sie Service aus</u></div>
                                                     @endforelse
                                                 </span>
                                             </li>
                                             <hr>
                                             <li class="d-flex justify-content-between my-2">
-                                                <span style="font-weight: bold;">Personel</span>
+                                                <span style="font-weight: bold;">Mitarbeiter</span>
                                                 <span class="brief-personel">
                                                     @forelse($personels as $personel)
                                                         {!! $personel->name."<br> "!!}
                                                     @empty
-                                                        <div class="badge badge-danger">Personel Seçimi Yapılmadı. <u>Lütfen Personel Seçiniz</u></div>
+                                                        <div class="badge badge-danger">Personalauswahl nicht getroffen. <u>LBitte wählen Sie Mitarbeiter aus</u></div>
                                                     @endforelse
                                                 </span>
                                             </li>
                                             <hr>
                                             <li class="d-flex justify-content-between my-2">
-                                                <span style="font-weight: bold;">Tarih</span>
+                                                <span style="font-weight: bold;">Geschichte</span>
                                                 <span class="brief-date appointment_date">-</span>
                                             </li>
                                             <hr>
@@ -243,19 +243,19 @@
             <form class="modal-content" id="select-service-form" method="get" action="{{route('step1.store')}}">
                 @csrf
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myLargeModalLabel">Hizmet Ekle/Çıkar</h4>
+                    <h4 class="modal-title" id="myLargeModalLabel">Dienst hinzufügen/entfernen</h4>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close" data-original-title="" title=""></button>
                 </div>
                 <div class="modal-body">
                     <div class="col-lg-12 mt-3">
                         <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified">
                             @if($business->type->id == 3)
-                                <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab1" data-bs-toggle="tab">Kadın</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Erkek</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab1" data-bs-toggle="tab">Frau</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Männlich</a></li>
                             @elseif($business->type->id==2)
-                                <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Erkek</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Männlich</a></li>
                             @elseif($business->type->id==1)
-                                <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab1" data-bs-toggle="tab">Kadın</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab1" data-bs-toggle="tab">Frau</a></li>
 
                             @endif
 
@@ -334,7 +334,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-success">Randevu Al</button>
+                    <button class="btn btn-success">Einen Termin machen</button>
                 </div>
             </form>
         </div>
@@ -392,7 +392,7 @@
                         title: res.title,
                         text: res.message,
                         icon: res.icon,
-                        confirmButtonText: "Tamam"
+                        confirmButtonText: "OK"
                     });
                     selected.prop('checked', false);
                     selected.attr('disabled', 'disabled');

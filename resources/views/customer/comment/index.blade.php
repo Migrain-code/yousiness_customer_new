@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Yorumlarım")
-@section('meta_description', "Yorumlarım")
+@section('title', "Meine Kommentare")
+@section('meta_description', "Alle Ihre Kommentare zu Unternehmen werden hier aufgelistet.")
 @section('styles')
     <style>
         @media (max-width: 768px) {
@@ -60,11 +60,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Yorumlarım</h2>
+                    <h2 class="breadcrumb-title">Meine Kommentare</h2>
                 </div>
 
             </div>
@@ -77,7 +77,7 @@
                 <div class="backdrop"></div>
                 <div class="w-100 text-end position-absolute text-white font-w800 customer-menu-buttons" style="right: 5px; top: 50px;font-size: 25px">
                     <input type="checkbox" id="customer-menu-toggle" class="customer-menu-toggle" style="visibility: hidden">
-                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Menü</label>
+                    <label for="customer-menu-toggle" class="customer-menu-toggle-label"><i class="fas fa-bars" style="padding-right: 5px;"></i>Speisekarte</label>
                 </div>
                 <!-- Profile Sidebar -->
                 @include('customer.layouts.sidebar')
@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Yaptığım Yorumlar</h3>
+                                        <h3>Kommentare, die ich gemacht habe</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -98,10 +98,10 @@
                                                 <table class="table table-hover table-center mb-0">
                                                     <thead>
                                                     <tr>
-                                                        <th>İşletme Adı</th>
-                                                        <th>Yorumunuz</th>
-                                                        <th>Puanınız</th>
-                                                        <th>Tarihi</th>
+                                                        <th>Firmenname</th>
+                                                        <th>Dein Kommentar</th>
+                                                        <th>Ihr Ergebnis</th>
+                                                        <th>Geschichte</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -109,13 +109,13 @@
 
                                                         <tr>
                                                             @if ($comment->business && $comment->business->slug != 'isletme-silinmis')
-                                                                <td data-label="İşletme Adı"><a href="{{ route('business.detail', $comment->business->slug) }}">{{ $comment->business->name }}</a></td>
+                                                                <td data-label="Firmenname"><a href="{{ route('business.detail', $comment->business->slug) }}">{{ $comment->business->name }}</a></td>
                                                             @else
-                                                                <td data-label="İşletme Adı">{{ $comment->business->name }}</td>
+                                                                <td data-label="Firmenname">{{ $comment->business->name }}</td>
                                                             @endif
-                                                            <td data-label="Yorumunuz"># {{$comment->content}}</td>
-                                                            <td data-label="Puanınız"> {{$comment->point}} Yıldız</td>
-                                                            <td data-label="Tarihi">
+                                                            <td data-label="Dein Kommentar"># {{$comment->content}}</td>
+                                                            <td data-label="Ihr Ergebnis"> {{$comment->point}} Yıldız</td>
+                                                            <td data-label="Geschichte">
                                                                 {{$comment->created_at->translatedFormat('d F y')}}
                                                                 <span class="d-block text-info" style="padding-left: 3px">
                                                                     {{$comment->created_at->translatedFormat('H:i:s')}}
@@ -126,7 +126,7 @@
                                                         <tr>
                                                             <td colspan="8">
                                                                 <div class="alert alert-warning">
-                                                                    Yorum Kaydınız Bulunamadı
+                                                                    Ihr Kommentardatensatz wurde nicht gefunden
                                                                 </div>
                                                             </td>
                                                         </tr>

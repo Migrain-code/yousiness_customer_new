@@ -48,11 +48,11 @@
                 <div class="col-md-12 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Etkinlikler</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Veranstaltungen</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Etkinlik Detayı</h2>
+                    <h2 class="breadcrumb-title">Veranstaltungsdetails</h2>
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
                                         <li data-bs-toggle="tooltip" title="Katılımcı"><i class="fas fa-users"></i>{{$activity->personels->count()}}</li>
                                         <li data-bs-toggle="tooltip" title="Sponsor"><i class="fas fa-handshake"></i>{{$activity->sponsors->count()}}</li>
                                         <li>
-                                            <a class="btn-fifteen pulse-button" href="#account_modal" data-bs-toggle="modal" style="background-color: #ff8a00;color: white;padding: 8px;border-radius: 5px;text-decoration: underline;">Etkinliğe Katıl</a>
+                                            <a class="btn-fifteen pulse-button" href="#account_modal" data-bs-toggle="modal" style="background-color: #ff8a00;color: white;padding: 8px;border-radius: 5px;text-decoration: underline;">Teilnehmer</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -109,7 +109,7 @@
 
                         <div class="card blog-share clearfix" style="border-radius: 18px">
                             <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                                <h4 class="card-title">Paylaş</h4>
+                                <h4 class="card-title">Aktie</h4>
                             </div>
                             <div class="card-body">
                                 <ul class="social-share">
@@ -123,7 +123,7 @@
 
                         <div class="card blog-comments clearfix" style="border-radius: 18px">
                             <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                                <h4 class="card-title">Katılımcılar ({{$activity->personels->count()}})</h4>
+                                <h4 class="card-title">Teilnehmer ({{$activity->personels->count()}})</h4>
                             </div>
                             <div class="card-body pb-0">
                                 <div class="row">
@@ -142,7 +142,7 @@
                                         </div>
                                     @empty
                                         <div class="alert alert-warning text-center">
-                                            Katılımcı Bulunamadı
+                                            Kein Teilnehmer gefunden
                                         </div>
                                     @endforelse
 
@@ -152,7 +152,7 @@
 
                         <div class="card new-comment clearfix" style="border-radius: 18px;">
                             <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                                <h4 class="card-title">Sponsorlar</h4>
+                                <h4 class="card-title">Sponsoren</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -170,7 +170,7 @@
                                                                 <a href="{{$sponsor->link}}">
                                                                     <i class="fa fa-check-circle text-success me-2" style="font-size: 35px"></i>
                                                                     @if($sponsor->status==1)
-                                                                        Ana Sponsor
+                                                                        Hauptsponsor
                                                                     @else
                                                                         {{$sponsor->name}}
                                                                     @endif
@@ -198,7 +198,7 @@
                     <!-- Latest Posts -->
                     <div class="card post-widget" style="border-radius: 18px">
                         <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                            <h4 class="card-title">Yeni Eklenen Etkinlikler</h4>
+                            <h4 class="card-title">Neu hinzugefügte Ereignisse</h4>
                         </div>
                         <div class="card-body">
                             <ul class="latest-posts">
@@ -239,18 +239,18 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Personel Bilgileri</h3>
+                    <h3 class="modal-title">Personal Informationen</h3>
 
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body">
-                    <div class="mb-2"><b class="text-warning">Not:</b> Etkinliğe katılabilmek için bilgilerinizi doğrulamanız gerekmektedir</div>
+                    <div class="mb-2"><b class="text-warning">Not:</b> Um an der Veranstaltung teilnehmen zu können, müssen Sie Ihre Daten verifizieren.</div>
                     <form id="accounts_form">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="control-label">Telefon</label>
+                                    <label class="control-label">Telefonnummer</label>
                                     <input type="text" id="phone" class="form-control branch_name phone" value="">
                                     <span class="help-block"></span>
                                 </div>
@@ -259,7 +259,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="control-label">Şifre</label>
+                                    <label class="control-label">Passwort</label>
                                     <input type="password" id="password" class="form-control" autocomplete="false" value="">
 
                                 </div>
@@ -268,7 +268,7 @@
 
 
                         <div class="modal-footer text-center">
-                            <button type="button" id="acc_btn" class="btn btn-five">Bilgilerimi Doğrula</button>
+                            <button type="button" id="acc_btn" class="btn btn-five">Überprüfen Sie meine Informationen</button>
                         </div>
                     </form>
                 </div>
@@ -280,8 +280,8 @@
         $('.social-link').on('click', function (){
             navigator.clipboard.writeText($(this).attr('link'));
             Swal.fire(
-                'Link Kopyalandı.!',
-                'Linki ilgili siteye giderek yapıştırın.!',
+                'Link kopiert.!',
+                'Gehen Sie zur entsprechenden Website und fügen Sie den Link ein.!',
                 'success'
             )
         });

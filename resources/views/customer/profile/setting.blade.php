@@ -154,7 +154,7 @@
 
                                         </div>
                                         <div class="submit-section">
-                                            <button type="submit" class="btn btn-primary submit-btn float-end">Güncelle</button>
+                                            <button type="submit" class="btn btn-primary submit-btn float-end">Aktualisieren</button>
                                         </div>
                                     </form>
                                     <!-- /Profile Settings Form -->
@@ -198,7 +198,7 @@
                         callback(results);
                     },
                     error: function() {
-                        console.error("Arama sırasında bir hata oluştu.");
+                        console.error("Bei der Suche ist ein Fehler aufgetreten.");
                     }
                 });
             }

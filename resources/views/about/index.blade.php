@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Hakkımızda")
-@section('meta_description', config('settings.meta_description'))
+@section('title', "über uns")
+@section('meta_description', strip_tags(config('sections.speed_about_main_description')))
 @section('styles')
 
 @endsection
@@ -12,11 +12,11 @@
                 <div class="col-md-12 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Biz Kimiz</li>
+                            <li class="breadcrumb-item"><a href="/">Heim</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Wer sind wir</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Hakkımızda</h2>
+                    <h2 class="breadcrumb-title">über uns</h2>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
     <section class="section section-featurebox">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Sistemimizde bulunan hizmetler</h2>
+                <h2>In unserem System verfügbare Dienste</h2>
                 <p class="sub-title"></p>
             </div>
             <div class="row justify-content-center">
@@ -108,7 +108,7 @@
     <section class="section section-specialities">
         <div class="container-fluid">
             <div class="section-header text-center">
-                <h2>Sponsorlar</h2>
+                <h2>Sponsoren</h2>
                 <p class="sub-title"></p>
             </div>
             <div class="row justify-content-center">
@@ -147,7 +147,7 @@
     <section class="section section-testimonial">
         <div class="container">
             <div class="section-header text-center mb-4">
-                <h2>Yorumlar</h2>
+                <h2>Kommentare</h2>
                 <!--<p class="sub-title">Müşteri yorumlarımız.</p>-->
             </div>
             <div class="row justify-content-center">

@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('meta_keys', config('settings.meta_keywords'))
-@section('meta_description', config('settings.meta_description'))
+@section('title', 'Ihre meistgesehenen Unternehmen')
+@section('meta_description', 'Es zeigt eine Aufzeichnung aller Unternehmen an, mit denen Sie zuvor Termine oder Transaktionen vereinbart haben.')
 @section('styles')
 
 @endsection
@@ -11,11 +11,11 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Ansayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hesabım</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">En çok görüntülediğiniz işletmeler</h2>
+                    <h2 class="breadcrumb-title">Ihre meistgesehenen Unternehmen</h2>
                 </div>
 
             </div>
@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Bağlı İşletmeler</h3>
+                                        <h3>Ihre meistgesehenen Unternehmen</h3>
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
@@ -64,19 +64,19 @@
                                                                 @endif
                                                             </li>
                                                             <li>
-                                                                <i class="far fa-clock"></i> {{$business->start_time}} Açılış
+                                                                <i class="far fa-clock"></i> {{$business->start_time}} Öffnungszeit
                                                             </li>
                                                         </ul>
                                                         <div class="row row-sm">
                                                             <div class="col-6">
-                                                                <a href="{{route('business.detail', $business->slug)}}" class="btn btn-outline-warning w-100">Detay</a>
+                                                                <a href="{{route('business.detail', $business->slug)}}" class="btn btn-outline-warning w-100">Detail</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         @empty
-                                            <div class="alert alert-warning text-center">Randevu Aldığınız İşletme Kaydı Bulunamadı</div>
+                                            <div class="alert alert-warning text-center">Der Geschäftsdatensatz, für den Sie einen Termin vereinbart haben, wurde nicht gefunden</div>
                                         @endforelse
                                     </div>
 
