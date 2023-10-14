@@ -68,7 +68,7 @@
 
                 var clickedDateInfo = getClickedInfo(clicked, calendar);
                 var clickedTime = clickedDateInfo.year + "-" + (clickedDateInfo.month + 1) + "-" + clickedDateInfo.date;
-                fetchClock(clickedTime, businessId);
+                fetchClock(clickedTime, businessId, personels);
                 // Understading which element was clicked;
                 // var parentClass = $(this).parent().parent().attr('class');
                 if (firstClick && secondClick) {
@@ -150,13 +150,16 @@
 
         }
 
-        function fetchClock(clickedTime, businessId){
+        function fetchClock(clickedTime, businessId, personels){
+            var appointmentInput = document.querySelector('input[name="appointment_date"]');
+            appointmentInput.value= clickedTime;
 
             var apiUrl = appUrl + "/api/appointment/clock/get";
 
             var postData = {
                 business_id: businessId,
-                date: clickedTime
+                date: clickedTime,
+                personals: personels,
             };
 
             fetch(apiUrl, {
@@ -174,47 +177,57 @@
                 })
                 .then(function (data) {
                     // API'den gelen verileri işleyin ve HTML öğelerini oluşturun
-                    var docTimesHtml = "";
+                    var swiperSlides = document.querySelectorAll('.swiper-wrapper .swiper-slide');
 
-                    data.clocks.forEach(function (clock) {
-                        if (clock.durum == false){
-                            var newHtml = `
-                                <div class="form-check-inline visits me-1 opened_times">
+                    swiperSlides.forEach(function(slide) {
+                        slide.remove();
+                    });
+                    var personelTimesDiv = document.getElementById('personelTimes');
+                    personelTimesDiv.innerHTML="";
+                    data.personel_clocks.forEach(function (row) {
+                        var newTimeInput = document.createElement('input');
+                        newTimeInput.type = "hidden";
+                        newTimeInput.checked = "true";
+                        newTimeInput.id =`appointment_time${row.personel.id}`;
+                        newTimeInput.name ="times[]";
+
+                        personelTimesDiv.appendChild(newTimeInput);
+                        var docTimesHtml = "";
+
+                        row.clocks.forEach(function (clock){
+                            if (clock.durum == false){
+                                var newHtml = `
+                                    <div class="form-check-inline visits me-1 opened_times">
+                                      <label class="visit-btns">
+                                        <input type="radio" name="appointment_time${row.personel.id}" disabled class="form-check-input" value="${clock.value}">
+                                        <span class="visit-rsn" data-bs-toggle="tooltip" title="Dolu">${clock.saat}</span>
+                                      </label>
+                                    </div>
+                                  `;
+                                docTimesHtml += newHtml;
+                            }
+                            else {
+                                var newHtml = `
+
+                                <div class="form-check-inline visits me-1">
                                   <label class="visit-btns">
-                                    <input type="radio" name="appointment_time" disabled class="form-check-input" value="${clock.value}">
-                                    <span class="visit-rsn" data-bs-toggle="tooltip" title="Dolu">${clock.saat}</span>
+                                    <input type="radio" name="appointment_time${row.personel.id}" class="form-check-input active-time" value="${clock.value}" required>
+                                    <span class="visit-rsn" data-bs-toggle="tooltip" title="Saat Seçimi Zorunludur">${clock.saat}</span>
                                   </label>
                                 </div>
                               `;
-                            docTimesHtml += newHtml;
-                        }
-                        else {
-                            var newHtml = `
-                            <div class="form-check-inline visits me-1">
-                              <label class="visit-btns">
-                                <input type="radio" name="appointment_time" class="form-check-input active-time" value="${clock.value}" required>
-                                <span class="visit-rsn" data-bs-toggle="tooltip" title="Saat Seçimi Zorunludur">${clock.saat}</span>
-                              </label>
-                            </div>
-                          `;
-                            docTimesHtml += newHtml;
-                        }
+                                docTimesHtml += newHtml;
+                            }
+                        })
 
+                        var newSlide = document.createElement('div');
+                        newSlide.classList.add('swiper-slide');
+                        newSlide.classList.add('doc-times');
+                        newSlide.innerHTML =`<div class="w-100"><h3>${row.personel.name} İçin Saat Seçin</h3></div>` + docTimesHtml;
+
+                        var swiperWrapper = document.querySelector('.swiper-wrapper');
+                        swiperWrapper.appendChild(newSlide);
                     });
-
-                    // docTimesDiv içine oluşturulan HTML öğelerini ekleyin
-                    var docTimesDiv = document.querySelector('.doc-times');
-                    docTimesDiv.innerHTML = docTimesHtml;
-                    var radioButtons = document.querySelectorAll('.active-time');
-                    radioButtons.forEach(function (radioButton) {
-                        radioButton.addEventListener('click', function () {
-
-                            $("#appointment_date").val(radioButton.value);
-                            $(".appointment_date").text(radioButton.value);
-
-                        });
-                    });
-
                 })
                 .catch(function (error) {
                     console.error("API hatası:", error);

@@ -113,7 +113,7 @@ class AppointmentController extends Controller
             $appointment = new Appointment();
             $appointment->business_id = $business->id;
             $customer = new Customer();
-            $customer->name = $request->input('name');
+            $customer->name = $request->input('name'). " ". $request->input('surname');
             $customer->phone = $request->input('phone');
             $customer->email = null;
             $customer->image = "admin/users.svg";
@@ -130,8 +130,8 @@ class AppointmentController extends Controller
         $appointment->save();
 
         $loop = 0;
-        $clock = Carbon::parse($request->input('appointment_date'));
-        $sumTime = 0;
+
+        $appointment->date = Carbon::parse($request->input('appointment_date'));
         //dd($request->all());
         foreach ($request->services as $service) {
             $appointmentService = new AppointmentServices();
@@ -139,14 +139,12 @@ class AppointmentController extends Controller
             $appointmentService->personel_id = $request->personels[$loop];
             $appointmentService->service_id = $service;
             $findService = BusinessService::find($service);
-            $appointmentService->start_time = $clock->format('d.m.Y H:i');
-            $appointmentService->end_time = $clock->addMinute($findService->time)->format('d.m.Y H:i');
-            $sumTime += $findService->time;
+            $appointmentService->start_time = Carbon::parse($request->times[$loop])->format('d.m.Y H:i');
+            $appointmentService->end_time = Carbon::parse($request->times[$loop])->addMinute($findService->time)->format('d.m.Y H:i');
             $appointmentService->save();
             $loop++;
         }
-        $appointment->start_time = Carbon::parse($request->input('appointment_date'))->format('d.m.Y H:i');
-        $appointment->end_time = Carbon::parse($request->input('appointment_date'))->addMinute($sumTime)->format('d.m.Y H:i');
+
         $appointment->save();
         return to_route('appointment.success', $appointment->id);
     }
@@ -182,7 +180,7 @@ class AppointmentController extends Controller
         $business = Business::find($request->business_id);
         $filledTime = $this->findTimes($business);
 
-        if(in_array($request->time,$filledTime)){
+        if (in_array($request->time, $filledTime)) {
             return response()->json([
                 'title' => "Hata",
                 'icon' => "error",

@@ -210,58 +210,67 @@ class AppointmentController extends Controller
     public function getClock(Request $request)
     {
 
+
         $getDate = Carbon::parse($request->date);
 
         $business = Business::find($request->business_id);
-        $disabledDays = [];
-        $filledTime = $this->findTimes($business);
-        foreach ($filledTime as $time) {
-            $disabledDays[] = $time;
+
+        $uniqueArray = array_unique($request->personals);
+
+        $personels = [];
+        foreach ($uniqueArray as $id){
+            $personels[]= Personel::find($id);
         }
 
-        $clocks = [];
-        $loop = 0;
-        for ($i = \Illuminate\Support\Carbon::parse($business->start_time); $i < \Illuminate\Support\Carbon::parse($business->end_time); $i->addMinute($business->appoinment_range)) {
-            if (Carbon::parse($getDate->format('d.m.Y '))->dayOfWeek == $business->off_day){
-                $clock = [
-                    'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
-                    'saat' => 'İşletme bu tarihte hizmet vermemektedir',
-                    'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
-                    'durum' => false,
-                ];
-                if ($loop == 0){
-                    $clocks[] = $clock;
-                }
-
-                    $loop++;
-
-            }
-            else{
-                if (Carbon::parse($getDate->format('d.m.Y ') . $i->format('H:i')) < Carbon::now()){
+        $newClocks=[];
+        foreach ($personels as $personel){
+            $clocks = [];
+            $loop = 0;
+            $disabledDays = [];
+            $disabledDays[] = $this->findTimes($personel);
+            for ($i = \Illuminate\Support\Carbon::parse($personel->start_time); $i < \Illuminate\Support\Carbon::parse($personel->end_time); $i->addMinute($personel->range)) {
+                if (Carbon::parse($getDate->format('d.m.Y '))->dayOfWeek == $business->off_day) {
                     $clock = [
                         'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
-                        'saat' => $i->format('H:i'),
+                        'saat' => 'İşletme bu tarihte hizmet vermemektedir',
                         'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
                         'durum' => false,
                     ];
-                    $clocks[] = $clock;
+                    if ($loop == 0) {
+                        $clocks[] = $clock;
+                    }
+
+                    $loop++;
+
                 } else {
-                    $clock = [
-                        'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
-                        'saat' => $i->format('H:i'),
-                        'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
-                        'durum' => in_array($getDate->format('d.m.Y ') . $i->format('H:i'), $disabledDays) ? false : true,
-                    ];
-                    $clocks[] = $clock;
+                    if (Carbon::parse($getDate->format('d.m.Y ') . $i->format('H:i')) < Carbon::now()) {
+                        $clock = [
+                            'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
+                            'saat' => $i->format('H:i'),
+                            'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
+                            'durum' => false,
+                        ];
+                        $clocks[] = $clock;
+                    } else {
+                        $clock = [
+                            'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
+                            'saat' => $i->format('H:i'),
+                            'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
+                            'durum' => in_array($getDate->format('d.m.Y ') . $i->format('H:i'), $disabledDays) ? false : true,
+                        ];
+                        $clocks[] = $clock;
+                    }
                 }
             }
-
-
+            $newClocks[] = [
+                    'personel' => PersonelResource::make($personel),
+                    'clocks' => $clocks,
+            ];
 
         }
 
         return response()->json([
-            'clocks' => $clocks,
+            'personel_clocks' => $newClocks,
         ]);
 
     }
@@ -464,19 +473,22 @@ class AppointmentController extends Controller
             ]);
         }
     }
-    public function findTimes($business)
+    public function findTimes($personel)
     {
         $disableds = [];
         $now = Carbon::now(); // Şu anki tarih ve saat
+        $appointments = $personel->appointments()->whereNotIn('status', [8])->get();
 
-        foreach ($business->appointments()->whereNotIn('status', [8])->get() as $appointment) {
+        foreach ($appointments as $appointment) {
             $startDateTime = Carbon::parse($appointment->start_time);
             $endDateTime = Carbon::parse($appointment->end_time);
 
             $currentDateTime = $startDateTime->copy();
             while ($currentDateTime <= $endDateTime) {
+
                 $disableds[] = $currentDateTime->format('d.m.Y H:i');
-                $currentDateTime->addMinutes($business->appoinment_range);
+
+                $currentDateTime->addMinutes(intval($personel->range));
             }
         }
 

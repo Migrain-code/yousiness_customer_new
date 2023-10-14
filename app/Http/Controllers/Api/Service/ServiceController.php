@@ -121,4 +121,13 @@ class ServiceController extends Controller
 
 
     }
+
+    public function allSubCategory(Request $request)
+    {
+        $allCategories = ServiceSubCategory::where('name', 'like', '%' . $request->q . '%')->take(50)->get();
+
+        return response()->json([
+           'sub_categories' => ServiceSubCategoryResource::collection($allCategories),
+        ]);
+    }
 }

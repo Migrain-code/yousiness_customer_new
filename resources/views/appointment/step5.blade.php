@@ -35,9 +35,12 @@
                         <div class="card-body">
                             <div class="success-cont">
                                 <i class="fas fa-check"></i>
-                                <h3>Randevu Başarıyla Alındı!!</h3>
-                                <p><strong>{{$business->name}}</strong> işletmesine<br> <strong>{{$appointment->start_time}} - {{$appointment->end_time}} arasında</strong>
-                                    randevu alındı </p>
+                                <h3>Termin erfolgreich vereinbart!!</h3>
+                                Ihr Termin für <strong>{{$business->name}}</strong> <br>
+                                <p>
+                                    Geschäft ist am {{\Illuminate\Support\Carbon::parse($appointment->date)->format('d.m.Y')}} vereinbart
+
+                                </p>
                                 <a href="/" class="btn btn-primary view-inv-btn">Anasayfaya dön</a>
                             </div>
                         </div>

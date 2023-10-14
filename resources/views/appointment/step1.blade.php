@@ -45,9 +45,25 @@
         .ts-dropdown-content{
             font-size: 20px;
         }
+        :root {
+            --swiper-navigation-size: 34px !important;
+            --swiper-theme-color: #d59c4b !important;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
     <link rel="stylesheet" href="/front/assets/css/calendar.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 @endsection
 @section('content')
     <div class="row">
@@ -100,11 +116,11 @@
                                     </div>
 
                                     @if(isset(request()["request"]["step"]))
-                                        <div class="step-3 my-3" id="step_3">
 
+                                        <div class="step-3 my-3" id="step_3">
                                                 <div class="d-flex align-items-center mb-1">
                                                     <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">3</span>
-                                                    <h2 style="font-size: 22px;">Auswahl von Datum und Uhrzeit</h2>
+                                                    <h2 style="font-size: 22px;">Datumsauswahl</h2>
                                                 </div>
                                                 <div class="card schedule-widget mb-0">
                                                     <!-- Schedule Header -->
@@ -129,13 +145,21 @@
 
                                                     <!-- Schedule Content -->
                                                     <form class="tab-content schedule-cont" id="step-3-form" method="post" action="">
+
                                                         @csrf
                                                         <!-- Sunday Slot -->
-                                                        <div class="doc-times">
 
-                                                        </div>
                                                         <!-- /Sunday Slot -->
+                                                        <div class="swiper mySwiper">
+                                                            <div class="swiper-wrapper">
 
+                                                            </div>
+                                                            <!-- Add Pagination -->
+                                                            <div class="swiper-pagination"></div>
+                                                            <!-- Add Navigation -->
+                                                            <div class="swiper-button-next"></div>
+                                                            <div class="swiper-button-prev"></div>
+                                                        </div>
 
                                                     </form>
                                                     <!-- /Schedule Content -->
@@ -160,6 +184,9 @@
                                                 @foreach($selectedPersonelIds as $personel_id)
                                                     <input type="hidden" name="personels[]" value="{{$personel_id}}">
                                                 @endforeach
+                                                <div id="personelTimes">
+
+                                                </div>
                                                 <input type="hidden" name="business_id" value="{{$business->id}}">
                                                 <input type="hidden" name="appointment_date" id="appointment_date" value="">
                                                 @if(auth('customer')->check())
@@ -340,6 +367,20 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var mySwiper = new Swiper('.mySwiper', {
+                slidesPerView: 1, // Sadece bir slide görünür
+                spaceBetween: 10, // Slide'lar arasındaki boşluk
+                loop: false, // Sonsuz döngü
+                navigation: {
+                    nextEl: '.swiper-button-next', // İleri gitme düğmesi
+                    prevEl: '.swiper-button-prev' // Geri gitme düğmesi
+                }
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             var selectElements = document.querySelectorAll('.js-example-basic-single');
@@ -401,12 +442,36 @@
         });
     </script>
     <script>
+        var times = [];
+
+        // Tıklanabilir elementi (örneğin, bir form veya bir belirli bir element) seçin veya document.body'ye ekleyin
+        var container = document.body; // Örneğin, document.body olarak ayarlanabilir
+
+        // Delegasyon kullanarak tıklama olayını yakalayın
+        container.addEventListener('click', function(event) {
+            var target = event.target;
+
+            // Sadece radio butonlarına tepki ver
+            if (target && target.type === 'radio' && target.name.startsWith('appointment_time')) {
+                var name = target.getAttribute('name');
+                var time = target.getAttribute('value');
+                var id = name.replace('appointment_time', '');
+                times.push(id);
+                $('#'+ name).val(time);
+
+            }
+        });
+
         $('.active-time').on('click', function (){
+
             let val = $(this).val();
 
             $("#appointment_date").val(val);
             $(".appointment_date").text(val);
 
+
+
+                console.log('times', times);
             scrollToElement("step-4");
         })
     </script>
@@ -414,6 +479,7 @@
         var appUrl = "{{env('APP_URL')}}";
         var offDay = "{{$business->off_day}}";
         var businessId = "{{$business->id}}";
+       var personels = {!! isset(request()->query()['request']['personels']) ? json_encode(request()->query()['request']['personels']) : "" !!};
     </script>
     <script src="/front/assets/js/appointment-calendar.js"></script>
 

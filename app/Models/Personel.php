@@ -29,4 +29,8 @@ class Personel extends Model
         return $this->hasOne(Business::class, 'id', 'business_id');
 
     }
+    public function appointments()
+    {
+        return $this->hasMany(AppointmentServices::class, 'personel_id', 'id');
+    }
 }

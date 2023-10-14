@@ -14,6 +14,7 @@ use App\Models\MaingPage;
 use App\Models\Page;
 use App\Models\RecommendedLink;
 use App\Models\ServiceCategory;
+use App\Models\ServiceSubCategory;
 use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Carbon;
@@ -89,6 +90,10 @@ class AppServiceProvider extends ServiceProvider
             View::share('recommendedLinks', $recommendedLinks);
             $countries = Country::all();
             View::share('countries', $countries);
+
+            $service_sub_categories=ServiceSubCategory::take(50)->get();
+
+            View::share('service_sub_categories', $service_sub_categories);
 
         }
         Paginator::useBootstrapFour();

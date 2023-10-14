@@ -80,14 +80,14 @@
                                     <div class="tab-content">
                                         <div class="tab-pane show active" id="solid-rounded-tab1">
                                             @include('layouts.component.error')
-                                            <form action="{{route('searchService')}}" method="post">
+                                            <form action="{{route('searchSubService')}}" method="post">
                                                 @csrf
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-service" class="js-example-basic-single" placeholder="Wählen Sie Dienst" style="" name="service_id">
+                                                        <select id="select-service" class="" placeholder="Wählen Sie Dienst" style="" name="sub_category">
                                                             <option value="">Wählen Sie Dienst</option>
-                                                            @forelse($services as $service)
+                                                            @forelse($service_sub_categories as $service)
                                                                 <option value="{{$service->id}}">{{$service->name}}</option>
                                                             @empty
 
@@ -727,8 +727,38 @@
                 });
             }
         });
+
+        var mySelect3 = new TomSelect("#select-service", {
+            remoteUrl: '/api/city/search',
+            remoteSearch: true,
+            create: false,
+            highlight: false,
+            load: function(query, callback) {
+                $.ajax({
+                    url: '/api/services/all-subcategory', // Sunucu tarafındaki arama API'sinin URL'si
+                    method: 'POST',
+                    data: { q: query }, // Arama sorgusu
+                    dataType: 'json', // Beklenen veri tipi
+                    success: function(data) {
+
+                        var results = data.sub_categories.map(function(item) {
+                            console.log('item', item.name);
+                            return {
+                                value: item.id,
+                                text: item.name,
+                            };
+                        });
+
+                        callback(results);
+                    },
+                    error: function() {
+                        console.error("Arama sırasında bir hata oluştu.");
+                    }
+                });
+            }
+        });
         $(function (){
-            getLocation();
+            //getLocation();
         });
         mySelect.on('change', function() {
             var selectedOption = mySelect.getValue();
