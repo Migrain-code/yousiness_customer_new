@@ -115,7 +115,7 @@ class ServiceController extends Controller
         else{
             return response()->json([
                 'status' => "danger",
-                'message' => "Aradığınız Hizmet Türünde İşletme Kaydı Bulunamadı",
+                'message' => "Aradığınız Hizmet Türünde İşletme Kaydı Bulunamadı 1",
             ]);
         }
 
