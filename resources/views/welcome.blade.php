@@ -85,8 +85,8 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-service" class="" placeholder="Wählen Sie Dienst" style="" name="sub_category">
-                                                            <option value="">Wählen Sie Dienst</option>
+                                                        <select id="select-service" class="" placeholder="Suche nach Dienstleistungen" style="" name="sub_category">
+                                                            <option value="">Suche nach Dienstleistungen</option>
                                                             @forelse($service_sub_categories as $service)
                                                                 <option value="{{$service->id}}">{{$service->name}}</option>
                                                             @empty
@@ -100,8 +100,8 @@
                                                     <div class="form-group my-1">
                                                         <input type="hidden" name="lat" id="lat" value="">
                                                         <input type="hidden" name="long" id="long" value="">
-                                                        <select class="" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
-                                                            <option value="">Stadt wählen</option>
+                                                        <select class="" placeholder="PLZ oder Stadt" id="city_service" name="city_id">
+                                                            <option value="">PLZ oder Stadt</option>
                                                             <option value="nach_Standort">nach Standort</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name. ",".$city->post_code}}</option>
@@ -122,8 +122,8 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Hallentyp" style="" name="category_id">
-                                                            <option value="">Wählen Sie Hallentyp</option>
+                                                        <select id="select-salon-type" class="js-example-basic-single" placeholder="Suche nach Salon Kategorien" style="" name="category_id">
+                                                            <option value="">Suche nach Salon Kategorien</option>
                                                             @forelse($categories as $category)
                                                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                                             @empty
@@ -136,8 +136,8 @@
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
 
-                                                        <select class="" placeholder="Stadt wählen or Plz" id="city_service_2" name="city_id">
-                                                            <option value="">Stadt wählen</option>
+                                                        <select class="" placeholder="PLZ oder Stadt" id="city_service_2" name="city_id">
+                                                            <option value="">PLZ oder Stadt</option>
 
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name. ",".$city->post_code}}</option>
@@ -157,7 +157,8 @@
                                                 <div class="search-input-five" style="width: 100%;margin-right: 5px;">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group mb-0">
-                                                        <input type="text" class="form-control" name="business_name" value="" id="search">
+                                                        <input type="text" class="form-control" name="business_name" value="" id="search" placeholder="Suche nach Salonname">
+                                                        
                                                         <div class="" id="search-result">
                                                         </div>
                                                     </div>
@@ -190,7 +191,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Nach Kategorie durchsuchen</h2>
+                        <h2 class="title-five">SALON KATEGORIEN</h2>
                     </div>
                 </div>
             </div>
@@ -207,7 +208,7 @@
                             <div class="clinic-grid-info">
                                 <p>{{$category->name}}</p>
                                 <div class="clinic-five-btn">
-                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Zeig</a>
+                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Anzeigen</a>
                                 </div>
                             </div>
                         </div>
@@ -320,7 +321,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Besondere Dienstleistungen</h2>
+                        <h2 class="title-five">TOP DIENSTLEISTUNGEN</h2>
                     </div>
                 </div>
             </div>
@@ -348,10 +349,17 @@
     </section>
     <section class="browse-section-five" id="services">
         <div class="container">
+        <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                        <h1 class="title-five" style="color: #d59c4b!important;"><b>INTERNATIONAL</b></h2>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Ausländische Dienste</h2>
+                        <h2 class="title-five">DIENSTLEISTUNGEN</h2>
                     </div>
                 </div>
             </div>
@@ -382,7 +390,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Ausländische Städte</h2>
+                        <h2 class="title-five">STANDORTE</h2>
                     </div>
                 </div>
             </div>
@@ -466,7 +474,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">Kommende Veranstaltungen!</h2>
+                                <h2 class="title-five">EVENTS</h2>
                             </div>
                         </div>
                     </div>
@@ -572,7 +580,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">Zuletzt veröffentlichte Blogs</h2>
+                                <h2 class="title-five">BLOGS</h2>
                             </div>
                         </div>
                     </div>
