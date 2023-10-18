@@ -90,6 +90,7 @@ Route::prefix('services')->group(function (){
     Route::get('list' ,[ServiceController::class, 'index']);
     Route::get('abroad', [ServiceController::class, 'abroad']);
     Route::get('all' ,[ServiceController::class, 'all']);
+    Route::post('all-subcategory' ,[ServiceController::class, 'allSubCategory']);
     Route::post('subCategory' ,[ServiceController::class, 'subCategory']);
     Route::post('abroadBusinesses' ,[ServiceController::class, 'abroadBusinesses']);
 });

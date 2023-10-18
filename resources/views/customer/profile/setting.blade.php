@@ -100,15 +100,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Geburtstag</label>
-                                                        <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control account_no" value="{{userInfo()->birthday}}">
-                                                        <span class="help-block"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
@@ -122,6 +114,15 @@
                                                                 <option value="{{$city->id}}">{{$city->post_code.",".$city->name}}</option>
                                                             @endforeach
                                                         </select>
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Geburtstag</label>
+                                                        <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control account_no" value="{{userInfo()->birthday}}">
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>

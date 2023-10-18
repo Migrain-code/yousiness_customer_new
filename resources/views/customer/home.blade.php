@@ -64,7 +64,7 @@
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="info-list">
-                                                    <div class="title">Konto Code</div>
+                                                    <div class="title">Kundennummer</div>
                                                     <div class="text" id="account_no">#{{auth('customer')->user()->id}}</div>
                                                 </div>
                                             </div>

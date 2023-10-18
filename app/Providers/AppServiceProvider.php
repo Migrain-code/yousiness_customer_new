@@ -14,6 +14,7 @@ use App\Models\MaingPage;
 use App\Models\Page;
 use App\Models\RecommendedLink;
 use App\Models\ServiceCategory;
+use App\Models\ServiceSubCategory;
 use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Carbon;
@@ -72,8 +73,8 @@ class AppServiceProvider extends ServiceProvider
             \Config::set('settings', $settings);
             \Config::set('main_pages', $main_pages);
             $globalData = [
-                'use_pages' => Page::whereIn('slug', ['geschaftsbedingungen', 'bedingungen'])->get(),
-                'pages'=>Page::whereNotIn('slug', ['bedingungen', 'bedingungen'])->where('status', 1)->take('5')->get(),
+                'use_pages' => Page::whereIn('slug', ['impressum', 'rechliches'])->get(),
+                'pages'=>Page::whereNotIn('slug', ['impressum', 'rechliches'])->where('status', 1)->take('5')->get(),
                 'infos'=>BusinessInfo::where('status', 0)->get(),
             ];
 
@@ -89,6 +90,10 @@ class AppServiceProvider extends ServiceProvider
             View::share('recommendedLinks', $recommendedLinks);
             $countries = Country::all();
             View::share('countries', $countries);
+
+            $service_sub_categories=ServiceSubCategory::take(50)->get();
+
+            View::share('service_sub_categories', $service_sub_categories);
 
         }
         Paginator::useBootstrapFour();

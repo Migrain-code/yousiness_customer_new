@@ -33,7 +33,7 @@ class HomeController extends Controller
         $appointmentTotal = 0;/*appointment payment*/
         $appointmentTotals = [];
         foreach ($activeAppointments as $appointment) {
-            if (Carbon::parse($appointment->end_time) > Carbon::now()) {
+            if (Carbon::parse($appointment->date) > Carbon::now()) {
                 $appointments[] = $appointment;
                 $total = 0;
                 foreach ($appointment->services as $service) {
