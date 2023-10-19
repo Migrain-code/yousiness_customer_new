@@ -29,7 +29,7 @@
 
                         <ul>
 
-                            <li><a href="{{route('customer.login')}}">Anmeldung</a>
+                            <li><a href="{{route('customer.login')}}">Anmelden</a>
                             </li>
                             <li><a href="{{route('customer.register')}}">Registrieren</a>
                             </li>

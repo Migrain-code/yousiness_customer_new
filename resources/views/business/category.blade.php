@@ -99,7 +99,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Startseite</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{$businesses->count()}} Ergebnis gefunden</h2>
+                    <h2 class="breadcrumb-title">{{$businesses->count()}} Ergebnis</h2>
                 </div>
 
             </div>

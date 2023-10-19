@@ -104,7 +104,7 @@
                                         @csrf
                                         <div class="form-group">
                                             <label>Yorum Yap</label>
-                                            <textarea class="form-control" name="comment" placeholder="Dein Kommentar" rows="5"></textarea>
+                                            <textarea class="form-control" name="comment" placeholder="Meine Kommantare" rows="5"></textarea>
                                             <input type="hidden" name="blog_id" value="{{$blog->id}}">
                                         </div>
                                         <div class="text-center">
@@ -114,7 +114,7 @@
                                         </div>
                                     </form>
                                 @else
-                                    <div class="alert alert-warning my-2">Kommentieren <a href="{{route('customer.login')}}"><b>Anmeldung</b></a> Es ist notwendig!</div>
+                                    <div class="alert alert-warning my-2">Kommentieren <a href="{{route('customer.login')}}"><b>Anmelden</b></a> Es ist notwendig!</div>
                                 @endif
                             </div>
                         </div>

@@ -15,7 +15,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Dienstleistungen</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{count($womanServices) + count($manServices)}} Ergebnis gefunden</h2>
+                    <h2 class="breadcrumb-title">{{count($womanServices) + count($manServices)}} ERGEBNISSE</h2>
                 </div>
 
             </div>
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Männlich</h2>
+                        <h2 class="title-five">Mann</h2>
                     </div>
                 </div>
             </div>

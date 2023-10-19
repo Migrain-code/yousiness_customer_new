@@ -2,7 +2,7 @@
     <!-- Search Filter -->
     <div class="card search-filter">
         <div class="card-header">
-            <h4 class="card-title mb-0">Filter</h4>
+            <h4 class="card-title mb-0">Filtern</h4>
         </div>
         <div class="card-body">
             <div class="filter-widget">
@@ -16,13 +16,13 @@
                 <div>
                     <label class="custom_check">
                         <input type="radio" name="gender_type" value="2">
-                        <span class="checkmark"></span> Männlich
+                        <span class="checkmark"></span>Mann
                     </label>
                 </div>
                 <div>
                     <label class="custom_check">
                         <input type="radio" name="gender_type" value="3">
-                        <span class="checkmark"></span> Beide
+                        <span class="checkmark"></span> Beides
                     </label>
                 </div>
             </div>
@@ -30,9 +30,9 @@
 
                 <div>
                     <div class="form-group">
-                        <label>Stadt</label>
+                        <label>PLZ/Stadt</label>
                         <select id="js-example-basic-single">
-                            <option value="">Stadt wählen</option>
+                            <option value="">Suche nach PLZ</option>
                             @foreach($cities as $city)
                                 <option value="{{$city->id}}">{{$city->name}}</option>
                             @endforeach

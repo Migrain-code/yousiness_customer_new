@@ -18,11 +18,11 @@ class ProfileController extends Controller
             'city_id' => "required",
             'gender' => "required",
         ], [], [
-            'name'=>"Vorname Familienname",
+            'name'=>"Name Nachname",
             'email' => "Telefonnummer",
             'address' => "Adresse",
             'custom_email' => "Email",
-            'city_id' => "Plz/ Stadtname",
+            'city_id' => "Plz/ Stadt",
             'gender' => "Geschlecht",
         ]);
         $customer = auth('customer')->user();

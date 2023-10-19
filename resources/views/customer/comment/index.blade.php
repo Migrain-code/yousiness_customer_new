@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Kommentare, die ich gemacht habe</h3>
+                                        <h3>Meine Kommantare</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -98,10 +98,10 @@
                                                 <table class="table table-hover table-center mb-0">
                                                     <thead>
                                                     <tr>
-                                                        <th>Firmenname</th>
-                                                        <th>Dein Kommentar</th>
-                                                        <th>Ihr Ergebnis</th>
-                                                        <th>Geschichte</th>
+                                                        <th>Salonname</th>
+                                                        <th>Meine Kommantare</th>
+                                                        <th>Bewertung</th>
+                                                        <th>Datum</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -109,13 +109,13 @@
 
                                                         <tr>
                                                             @if ($comment->business && $comment->business->slug != 'isletme-silinmis')
-                                                                <td data-label="Firmenname"><a href="{{ route('business.detail', $comment->business->slug) }}">{{ $comment->business->name }}</a></td>
+                                                                <td data-label="Salonname"><a href="{{ route('business.detail', $comment->business->slug) }}">{{ $comment->business->name }}</a></td>
                                                             @else
-                                                                <td data-label="Firmenname">{{ $comment->business->name }}</td>
+                                                                <td data-label="Salonname">{{ $comment->business->name }}</td>
                                                             @endif
-                                                            <td data-label="Dein Kommentar"># {{$comment->content}}</td>
-                                                            <td data-label="Ihr Ergebnis"> {{$comment->point}} Yıldız</td>
-                                                            <td data-label="Geschichte">
+                                                            <td data-label="Meine Kommantare"># {{$comment->content}}</td>
+                                                            <td data-label="Bewertung"> {{$comment->point}} Yıldız</td>
+                                                            <td data-label="Datum">
                                                                 {{$comment->created_at->translatedFormat('d F y')}}
                                                                 <span class="d-block text-info" style="padding-left: 3px">
                                                                     {{$comment->created_at->translatedFormat('H:i:s')}}
@@ -126,7 +126,7 @@
                                                         <tr>
                                                             <td colspan="8">
                                                                 <div class="alert alert-warning">
-                                                                    Ihr Kommentardatensatz wurde nicht gefunden
+                                                                    Sie haben noch keine Bewertung abegegeben.
                                                                 </div>
                                                             </td>
                                                         </tr>

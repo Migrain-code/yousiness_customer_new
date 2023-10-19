@@ -25,20 +25,22 @@
                                 <div class="text-center my-2">
                                     <img src="{{image(setting('speed_logo_white'))}}" style="max-width: 250px">
                                 </div>
+                                <!--
                                 <div class="login-header text-center">
                                     <h2>Einloggen</h2>
                                 </div>
+                                 -->
                                 @include('layouts.component.error')
                                 @include('layouts.component.alert')
                                 <form action="{{route('customer.login')}}" method="post">
                                     @csrf
                                     <div class="form-group">
-                                        <label>Rufnummer</label>
+                                        <label>Mobilnummer</label>
                                         <input type="text" id="phone" class="form-control floating phone" name="email">
 
                                     </div>
                                     <div class="form-group">
-                                        <label>Chiffre</label>
+                                        <label>Passwort</label>
                                         <input type="password" class="form-control floating" name="password">
 
                                     </div>
@@ -46,11 +48,12 @@
                                         <a class="forgot-link" href="{{route('customer.showForgotView')}}">Passwort vergessen ?</a>
                                     </div>
                                     <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Einloggen</button>
+                                    
                                     <div class="login-or">
                                         <span class="or-line"></span>
-                                        <span class="span-or">beziehungsweise</span>
+                                      <!--  <span class="span-or">beziehungsweise</span>  -->
                                     </div>
-
+                                     
                                     <div class="text-center dont-have">Sie haben noch kein Konto? <a href="{{route('customer.register')}}">Registrieren</a></div>
                                 </form>
                             </div>

@@ -28,13 +28,13 @@
                     <li @if(request()->routeIs('customer.favorite.index')) class="active" @endif>
                         <a href="{{route('customer.favorite.index')}}">
                             <i class="fas fa-bookmark"></i>
-                            <span>Favoriten</span>
+                            <span>Meine Favoriten Salons</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.addicted.index')) class="active" @endif>
                         <a href="{{route('customer.addicted.index')}}">
                             <i class="fas fa-users"></i>
-                            <span>Häufig besucht</span>
+                            <span>Meine Salons</span>
                         </a>
                     </li>
 
@@ -48,13 +48,13 @@
                     <li @if(request()->routeIs('customer.packet.index')) class="active" @endif>
                         <a href="{{route('customer.packet.index')}}">
                             <i class="fas fa-clipboard"></i>
-                            <span>Pakete</span>
+                            <span>Meine Pakete</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.appointment.index')) class="active" @endif>
                         <a href="{{route('customer.appointment.index')}}">
                             <i class="fas fa-clock"></i>
-                            <span>Vergangene Termine</span>
+                            <span>Meine Vergangene Termine</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.comments')) class="active" @endif>
@@ -72,25 +72,25 @@
                     <li @if(request()->routeIs('customer.campaign.index')) class="active" @endif>
                         <a href="{{route('customer.permissions')}}">
                             <i class="fas fa-bell"></i>
-                            <span>Berechtigungen</span>
+                            <span>Benachrichtungen</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.profile.edit')) class="active" @endif>
                         <a href="{{route('customer.profile.edit')}}">
                             <i class="fas fa-user-cog"></i>
-                            <span>Einstellungen</span>
+                            <span>Persöhnliche Daten</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.profile.password.edit')) class="active" @endif>
                         <a href="{{route('customer.profile.password.edit')}}">
                             <i class="fas fa-lock"></i>
-                            <span>Kennwort ändern</span>
+                            <span>Passwort ändern</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" onclick="$('#customer-logout-form').submit()">
                             <i class="fas fa-sign-out-alt"></i>
-                            <span>Sicherer Ausgang</span>
+                            <span>Ausloggen</span>
                         </a>
                     </li>
                 </ul>
