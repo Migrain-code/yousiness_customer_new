@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Liste Ihrer vergangenen Termine</h3>
+                                        <h3>Meine Vergangene Termine</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -100,8 +100,8 @@
                                                     <tr>
                                                         <th>#</th>
                                                         <th>Termincode</th>
-                                                        <th>Firmenname</th>
-                                                        <th>Geschichte</th>
+                                                        <th>Salonname</th>
+                                                        <th>Datum</th>
                                                         <th>Status</th>
                                                         <th>Transaktionen</th>
                                                     </tr>
@@ -111,8 +111,8 @@
                                                             <tr>
                                                                 <td data-label="#">{{$loop->index + 1}}</td>
                                                                 <td data-label="Termincode">#{{$appointment->id}}</td>
-                                                                <td data-label="Firmenname">{{$appointment->business->name}}</td>
-                                                                <td data-label="Geschichte">{{$appointment->start_time}}</td>
+                                                                <td data-label="Salonname">{{$appointment->business->name}}</td>
+                                                                <td data-label="Datum">{{$appointment->start_time}}</td>
                                                                 <td data-label="Status">{!!$appointment->status('html') !!}</td>
                                                                 <td data-label="Transaktionen"><a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-info">Detail</a></td>
                                                             </tr>
@@ -121,8 +121,7 @@
                                                             <tr>
                                                                 <td colspan="6">
                                                                     <div class="alert alert-warning">
-                                                                        Ihr früherer Termindatensatz konnte nicht gefunden werden
-                                                                    </div>
+                                                                    Sie haben noch keine Vergangene Termine                                                                    </div>
                                                                 </td>
                                                             </tr>
                                                         @endforelse

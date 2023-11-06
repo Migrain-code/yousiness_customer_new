@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Ihre meistgesehenen Unternehmen')
+@section('title', 'Meine Salons')
 @section('meta_description', 'Es zeigt eine Aufzeichnung aller Unternehmen an, mit denen Sie zuvor Termine oder Transaktionen vereinbart haben.')
 @section('styles')
 
@@ -15,7 +15,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Ihre meistgesehenen Unternehmen</h2>
+                    <h2 class="breadcrumb-title">Meine Salons</h2>
                 </div>
 
             </div>
@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Ihre meistgesehenen Unternehmen</h3>
+                                        <h3>Meine Salons</h3>
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
@@ -69,7 +69,7 @@
                                                         </ul>
                                                         <div class="row row-sm">
                                                             <div class="col-6">
-                                                                <a href="{{route('business.detail', $business->slug)}}" class="btn btn-outline-warning w-100">Detail</a>
+                                                                <a href="{{route('business.detail', $business->slug)}}" class="btn btn-outline-warning w-100">Details</a>
                                                             </div>
                                                         </div>
                                                     </div>

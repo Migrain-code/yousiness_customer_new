@@ -247,7 +247,7 @@
                                             </li>
                                             <hr>
                                             <li class="d-flex justify-content-between my-2">
-                                                <span style="font-weight: bold;">Geschichte</span>
+                                                <span style="font-weight: bold;">Datum</span>
                                                 <span class="brief-date appointment_date">-</span>
                                             </li>
                                             <hr>
@@ -278,9 +278,9 @@
                         <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified">
                             @if($business->type->id == 3)
                                 <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab1" data-bs-toggle="tab">Frau</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Männlich</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Mann</a></li>
                             @elseif($business->type->id==2)
-                                <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Männlich</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab2" data-bs-toggle="tab">Mann</a></li>
                             @elseif($business->type->id==1)
                                 <li class="nav-item"><a class="nav-link active" href="#solid-rounded-justified-tab1" data-bs-toggle="tab">Frau</a></li>
 

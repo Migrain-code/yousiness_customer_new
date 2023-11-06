@@ -29,13 +29,13 @@
 
                         <ul>
 
-                            <li><a href="{{route('customer.login')}}">Anmeldung</a>
+                            <li><a href="{{route('customer.login')}}">Anmelden</a>
                             </li>
                             <li><a href="{{route('customer.register')}}">Registrieren</a>
                             </li>
-                            <li><a href="{{route('faq')}}">Häufig gestellte Fragen</a>
+                            <li><a href="{{route('faq')}}">FAQ</a>
                             </li>
-                            <li><a href="{{route('about')}}">über uns</a>
+                            <li><a href="{{route('about')}}">Über uns</a>
                             </li>
                             <li>
                                 <a href="{{env('REMOTE_URL')}}">Geschäftspartner</a>
@@ -92,7 +92,7 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-6">
                         <div class="copyright-text">
-                            <p class="mb-0">&copy; {{setting('speed_site_title')}}. Alle Rechte vorbehalten.</p>
+                            <p class="mb-0">&copy; 2023- <?php echo date("Y"); ?> {{setting('speed_site_title')}} | Deutschland</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6">
@@ -100,10 +100,10 @@
                         <div class="copyright-menu">
                             <ul class="policy-menu">
                                 <li>
-                                    <a href="{{route('page.detail', $globalData['use_pages'][1]->slug)}}">Bedingungen</a>
+                                    <a href="{{route('page.detail', $globalData['use_pages'][1]->slug)}}">Rechliches</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('page.detail', $globalData['use_pages'][0]->slug)}}">Geschäftsbedingungen</a>
+                                    <a href="{{route('page.detail', $globalData['use_pages'][0]->slug)}}">Impressum</a>
                                 </li>
                             </ul>
                         </div>

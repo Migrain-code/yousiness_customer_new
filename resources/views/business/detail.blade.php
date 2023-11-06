@@ -129,14 +129,14 @@
                         <ul>
                             @if($business->type->id == 3)
                                 @if($manServiceCategories->count() > $womanServiceCategories->count())
-                                    <li class="tab-titles active p-3" onclick="tabsFunction(this)">Männlich</li>
+                                    <li class="tab-titles active p-3" onclick="tabsFunction(this)">Mann</li>
                                     <li class="tab-titles p-3" onclick="tabsFunction(this)">Frau</li>
                                 @else
-                                    <li class="tab-titles  p-3" onclick="tabsFunction(this)">Männlich</li>
+                                    <li class="tab-titles  p-3" onclick="tabsFunction(this)">Mann</li>
                                     <li class="tab-titles active p-3" onclick="tabsFunction(this)">Frau</li>
                                 @endif
                             @elseif($business->type->id == 2)
-                                <li class="tab-titles active p-3" onclick="tabsFunction(this)">Männlich</li>
+                                <li class="tab-titles active p-3" onclick="tabsFunction(this)">Mann</li>
                             @elseif($business->type->id == 1)
                                 <li class="tab-titles p-3 active" onclick="tabsFunction(this)">Frau</li>
                             @endif

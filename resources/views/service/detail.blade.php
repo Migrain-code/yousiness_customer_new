@@ -99,7 +99,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Hallen</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{count($businesses)}} Ergebnis gefunden</h2>
+                    <h2 class="breadcrumb-title">{{count($businesses)}} ERGEBNISSE</h2>
                 </div>
 
             </div>

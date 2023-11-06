@@ -29,14 +29,14 @@
                             @if(auth('customer')->check())
                                 <li class="active"><a href="{{route('customer.home')}}">Mein Konto mobil</a></li>
                             @else
-                                <li class="active"><a href="{{route('customer.login')}}">Anmeldung</a></li>
+                                <li class="active"><a href="{{route('customer.login')}}">Anmelden</a></li>
                             @endif
                             <li class="active"><a href="/">Geschäftspartner</a></li>
                         </div>
 
                         @if(!request()->routeIs('welcome'))
                             <li class="active"><a href="/">Startseite</a></li>
-                            <li class="has-submenu"><a href="{{route('business.all')}}">Hallen <i
+                            <li class="has-submenu"><a href="{{route('business.all')}}">Salons <i
                                             class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
                                     @foreach($categories as $category)
@@ -58,9 +58,9 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li class=""><a href="{{route('about')}}">über uns</a></li>
-                            <li class=""><a href="{{route('faq')}}">Unterstützung</a></li>
-                            <li class=""><a href="{{route('contact')}}">Kommunikation</a></li>
+                            <li class=""><a href="{{route('about')}}">Über uns</a></li>
+                            <li class=""><a href="{{route('faq')}}">Support</a></li>
+                            <li class=""><a href="{{route('contact')}}">Kontakt</a></li>
                         @endif
                     </ul>
                 </div>
@@ -73,11 +73,11 @@
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link btn-five" href="{{route('customer.login')}}">Anmeldung</a>
+                                <a class="nav-link btn-five" href="{{route('customer.login')}}">Anmelden</a>
                             </li>
                         @endif
                         <li class="nav-item">
-                            <a class="nav-link btn-five-light" href="{{image('')}}" target="_blank">Unternehmen</a>
+                            <a class="nav-link btn-five-light" href="{{image('')}}" target="_blank">Geschäftspartner</a>
                         </li>
                     </div>
                 </ul>

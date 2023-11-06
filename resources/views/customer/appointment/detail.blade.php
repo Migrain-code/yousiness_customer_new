@@ -55,13 +55,13 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="info-list">
-                                                    <div class="title">Geschichte</div>
+                                                    <div class="title">Datum</div>
                                                     <div class="text" id="branch_name">{{$appointment->start_time}}</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="info-list">
-                                                        <div class="title">Firmenname</div>
+                                                        <div class="title">Salonname</div>
                                                     <div class="text" id="account_no"><a target="_blank" href="{{route('business.detail', $appointment->business->slug)}}" class="text-primary">{{$appointment->business->name}}</a></div>
                                                 </div>
                                             </div>
@@ -157,7 +157,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Dein Kommentar</label>
+                                                    <label>Meine Kommantare</label>
                                                     <textarea id="review_desc" maxlength="300" class="form-control" rows="10" name="content" placeholder="Yorumunuzu Bu alana giriniz"></textarea>
 
                                                     <div class="d-flex justify-content-between mt-3"><small class="text-muted">Rest <span id="chars">300</span> Charakter</small></div>

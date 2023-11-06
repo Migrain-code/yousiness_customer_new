@@ -51,11 +51,11 @@
                                             <form method="post" action="{{route('customer.profile.change-password')}}">
                                                 @csrf
                                                 <div class="form-group">
-                                                    <label>Neues Kennwort</label>
+                                                    <label>Neues Passwort</label>
                                                     <input type="password" name="password" class="form-control">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Neues Passwort nochmal</label>
+                                                    <label>Neues Passwort wiederholen</label>
                                                     <input type="password" name="password_confirmation" class="form-control">
                                                 </div>
                                                 <div class="submit-section">

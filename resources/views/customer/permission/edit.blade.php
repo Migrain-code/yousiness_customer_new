@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Benachrichtigungsberechtigungen')
+@section('title', 'Benachrichtigung')
 @section('meta_description', 'Sie müssen Benachrichtigungen, die vom System kommen, je nach Typ zulassen. Sie können diese Berechtigungen auf dieser Seite bearbeiten.')
 @section('styles')
     <style>
@@ -77,7 +77,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Benachrichtigungsberechtigungen</h2>
+                    <h2 class="breadcrumb-title">Benachrichtigung</h2>
                 </div>
 
             </div>
@@ -101,7 +101,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Benachrichtigungsberechtigungen</h3>
+                                        <h3>Benachrichtigung</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">

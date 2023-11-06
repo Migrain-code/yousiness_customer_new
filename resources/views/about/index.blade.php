@@ -12,11 +12,11 @@
                 <div class="col-md-12 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Heim</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Wer sind wir</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Über uns</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">über uns</h2>
+                    <h2 class="breadcrumb-title">Über uns</h2>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
     <section class="section section-featurebox">
         <div class="container">
             <div class="section-header text-center">
-                <h2>In unserem System verfügbare Dienste</h2>
+                <h2>TOP DIENSTLEISTUNGEN</h2>
                 <p class="sub-title"></p>
             </div>
             <div class="row justify-content-center">
@@ -104,7 +104,7 @@
 
     </section>
 
-    <!-- Clinic and Specialities -->
+    <!-- Clinic and Specialities 
     <section class="section section-specialities">
         <div class="container-fluid">
             <div class="section-header text-center">
@@ -113,12 +113,11 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <!-- Slider -->
+                    
                     <div class="specialities-slider slider">
 
                        @forelse($sponsors as $sponsor)
 
-                            <!-- Slider Item -->
                             <a href="{{$sponsor->link}}">
                                 <div class="speicality-item text-center" style="width: 100%; background: aliceblue;display: inline-block;padding: 10px; border-radius: 15px;">
                                     <div class="speicality-img">
@@ -128,21 +127,20 @@
                                     <p>{{$sponsor->name}}</p>
                                 </div>
                             </a>
-                            <!-- /Slider Item -->
 
                         @empty
 
                         @endforelse
 
                     </div>
-                    <!-- /Slider -->
 
                 </div>
             </div>
         </div>
     </section>
-    <!-- Clinic and Specialities -->
 
+    -->
+    
     <!-- Testimonial Section -->
     <section class="section section-testimonial">
         <div class="container">

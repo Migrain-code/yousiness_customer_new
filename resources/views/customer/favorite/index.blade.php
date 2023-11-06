@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Lieblingsunternehmen')
+@section('title', 'Meine Favoriten Salons')
 @section('meta_description', 'Liste der Unternehmen, die Sie zu Ihren Favoriten hinzugefügt haben')
 @section('styles')
 
@@ -15,7 +15,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Meine Lieblingsunternehmen</h2>
+                    <h2 class="breadcrumb-title">Meine Favoriten Salons</h2>
                 </div>
 
             </div>
@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Lieblingsunternehmen</h3>
+                                        <h3>Favoriten</h3>
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
@@ -82,7 +82,7 @@
                                             </div>
                                             @endif
                                         @empty
-                                            <div class="alert alert-warning text-center">Ihr Lieblingsunternehmen wurde nicht gefunden</div>
+                                            <div class="alert alert-warning text-center">Sie haben noch Keine Favoriten hinzugefügt</div>
                                         @endforelse
 
                                     </div>

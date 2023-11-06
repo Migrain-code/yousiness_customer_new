@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', "Account Einstellungen")
+@section('title', "Persöhnliche Daten")
 @section('meta_description', "Mein Benutzerprofil")
 @section('styles')
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
@@ -15,7 +15,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Kontoinformation</h2>
+                    <h2 class="breadcrumb-title">Persöhnliche Daten</h2>
                 </div>
 
             </div>
@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Kontoinformation</h3>
+                                        <h3>Persöhnliche Daten</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -67,7 +67,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Vorname Familienname</label>
+                                                        <label class="control-label">Name Nachname</label>
                                                         <input type="text" name="name" class="form-control bank_name" value="{{userInfo()->name}}">
                                                         <span class="help-block"></span>
                                                     </div>
@@ -76,7 +76,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Telefonnummer</label>
+                                                        <label class="control-label">Mobilnummer</label>
                                                         <input type="text" name="email" class="form-control branch_name phone" value="{{userInfo()->phone}}">
                                                         <span class="help-block"></span>
                                                     </div>
@@ -85,7 +85,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Email</label>
+                                                        <label class="control-label">E-mail</label>
                                                         <input type="text" name="custom_email" class="form-control branch_name phone" placeholder="{{userInfo()->custom_email ?? "Email"}}" value="{{userInfo()->custom_email}}">
                                                         <span class="help-block"></span>
                                                     </div>
@@ -94,34 +94,16 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Adresse</label>
+                                                        <label class="control-label">Anschrift</label>
                                                         <textarea type="text" name="address" class="form-control branch_name phone" placeholder="{{userInfo()->address ?? "Adresse"}}">{{userInfo()->address}}</textarea>
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Plz/ Stadtname</label>
-                                                        <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
-                                                            <option value="">Plz/ Stadtname</option>
-                                                            @if(isset(userInfo()->city))
-                                                                <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->post_code.",".userInfo()->city->name}}</option>
-                                                            @endif
-                                                            @foreach($cities as $city)
-                                                                <option value="{{$city->id}}">{{$city->post_code.",".$city->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        <span class="help-block"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Geburtstag</label>
+                                                        <label class="control-label">Geburtsdatum</label>
                                                         <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control account_no" value="{{userInfo()->birthday}}">
                                                         <span class="help-block"></span>
                                                     </div>
@@ -144,11 +126,28 @@
                                                             <label class="visit-btns">
                                                                 <input type="radio" name="gender" class="form-check-input active-time" @checked(userInfo()->gender == 2) value="2" required="">
                                                                 <span class="visit-rsn" data-bs-toggle="tooltip" title="" data-bs-original-title="Cinsiyet Seçimi Zorunludur">
-                                                                   Männlich
+                                                                  Mann
                                                                 </span>
                                                             </label>
                                                         </div>
                                                     </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Plz/ Stadtname</label>
+                                                        <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
+                                                            <option value="">Plz/ Stadtname</option>
+                                                            @if(isset(userInfo()->city))
+                                                                <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->post_code.",".userInfo()->city->name}}</option>
+                                                            @endif
+                                                            @foreach($cities as $city)
+                                                                <option value="{{$city->id}}">{{$city->post_code.",".$city->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                             </div>
 

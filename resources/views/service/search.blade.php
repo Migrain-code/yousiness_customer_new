@@ -100,7 +100,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Hallen</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">{{$businesses->count()}} Ergebnis gefunden</h2>
+                    <h2 class="breadcrumb-title">{{$businesses->count()}} ERGEBNISSE</h2>
                 </div>
 
             </div>
@@ -116,7 +116,7 @@
                 <div class="col-md-12 col-lg-4 col-xl-3">
                     <div class="card search-filter">
                         <div class="card-header">
-                            <h4 class="card-title mb-0">Filter</h4>
+                            <h4 class="card-title mb-0">Filtern</h4>
                         </div>
                         <div class="card-body">
 
@@ -136,7 +136,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label>Plz/ Stadtname</label>
+                                                <label>PLZ / Stadt</label>
                                                 <select class="js-example-basic-single" name="city_id">
                                                     <option value="{{$city->id}}" selected>{{$city->post_code. ",".$city->name}}</option>
                                                     @forelse($city->country->cities as $row)
@@ -174,7 +174,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label>Plz/ Stadtname</label>
+                                                <label>PLZ / Stadt</label>
                                                 <select class="js-example-basic-single" name="city_id">
                                                     <option value="{{$city->id}}" selected>{{$city->post_code. ",".$city->name}}</option>
                                                     @forelse($city->country->cities as $row)
@@ -214,8 +214,8 @@
                                             <input type="hidden" name="sub_category" value="{{$subCategory->id}}">
                                             <input type="hidden" name="category" value="{{$subCategory->category_id}}">
                                             <div class="form-group">
-                                                <select class="js-example-basic-single" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
-                                                    <option value="">Stadt wählen</option>
+                                                <select class="js-example-basic-single" placeholder="PLZ / Stadt" id="city_service" name="city_id">
+                                                    <option value="">PLZ / Stadt</option>
                                                     @forelse($cities as $city)
                                                         <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
                                                     @empty
@@ -243,8 +243,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <select class="js-example-basic-single" placeholder="Stadt wählen or Plz" id="city" name="city_id">
-                                                    <option value="">Stadt wählen</option>
+                                                <select class="js-example-basic-single" placeholder="PLZ / Stadt" id="city" name="city_id">
+                                                    <option value="">PLZ / Stadt</option>
                                                     @forelse($abroadCities as $city)
                                                         <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
                                                     @empty
@@ -261,8 +261,8 @@
                                               <input type="hidden" name="category" value="{{$subCategory->category_id}}">
 
                                               <div class="form-group">
-                                                  <select class="js-example-basic-single" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
-                                                      <option value="">Stadt wählen</option>
+                                                  <select class="js-example-basic-single" placeholder="PLZ / Stadt" id="city_service" name="city_id">
+                                                      <option value="">PLZ / Stadt</option>
                                                       @forelse($cities as $city)
                                                           <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
                                                       @empty
@@ -292,8 +292,8 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <select placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
-                                                <option value="">Stadt wählen</option>
+                                            <select placeholder="PLZ / Stadt" id="city_service" name="city_id">
+                                                <option value="">PLZ / Stadtn</option>
                                                 @forelse($cities as $city)
                                                     <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
                                                 @empty

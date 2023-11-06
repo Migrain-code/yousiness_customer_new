@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', "Meine Bundle-Käufe")
+@section('title', "Meine Pakete")
 @section('meta_description', "Hier werden alle Servicepaketkäufe angezeigt, die Unternehmen für Sie definieren")
 @section('styles')
     <style>
@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Von Ihnen gekaufte Pakete</h3>
+                                        <h3>Gekauften Pakete</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -100,9 +100,9 @@
                                                     <tr>
                                                         <th>#</th>
                                                         <th>Bestellcode</th>
-                                                        <th>Firmenname</th>
-                                                        <th class="text-center">Die restlichen Stücke</th>
-                                                        <th class="text-center">Die Gesamtzahlung</th>
+                                                        <th>Salonname</th>
+                                                        <th class="text-center">Verbleibende Anzahl</th>
+                                                        <th class="text-center">Gesamtbetrag</th>
                                                         <th>Typ</th>
                                                         <th>Auftragsdatum</th>
                                                         <th>Transaktionen</th>
@@ -113,7 +113,7 @@
                                                         <tr>
                                                             <td data-label="Zeilennummer">{{$loop->index+1}}</td>
                                                             <td data-label="Bestellcode"># {{$packet->id}}</td>
-                                                            <td data-label="Firmenname">{{$packet->business->name}}</td>
+                                                            <td data-label="Salonname">{{$packet->business->name}}</td>
                                                             <td data-label="Die restlichen Stücke">{{$packet->amount}}</td>
                                                             <td data-label="Die Gesamtzahlung">{{$packet->total}}</td>
                                                             <td data-label="Typ">{{$packageTypes[$packet->type]}}</td>

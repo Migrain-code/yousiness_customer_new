@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Mein Kontoauszug')
+@section('title', 'Mein Konto')
 @section('meta_description', 'Alle allgemeinen Informationen zu Ihrem Konto sind hier aufgeführt')
 @section('styles')
 
@@ -42,7 +42,7 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <h3 class="card-title">Kontoauszug</h3>
+                                            <h3 class="card-title">Konto</h3>
                                         </div>
 
                                     </div>
@@ -52,7 +52,7 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="info-list">
-                                                    <div class="title">Vorname Familienname</div>
+                                                    <div class="title">Name Nachname</div>
                                                     <div class="text" id="bank_name">{{auth('customer')->user()->name}}</div>
                                                 </div>
                                             </div>

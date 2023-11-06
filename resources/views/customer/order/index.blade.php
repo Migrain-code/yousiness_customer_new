@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Meine Produktbestellungen')
+@section('title', 'Meine Produkte')
 @section('meta_description', 'Auf dieser Seite wird eine Liste aller Produkte angezeigt, die Sie bei Unternehmen gekauft haben')
 @section('styles')
     <style>
@@ -64,7 +64,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Meine Produktbestellungen</h2>
+                    <h2 class="breadcrumb-title">Meine Produkte</h2>
                 </div>
 
             </div>
@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Produkte, die Sie gekauft haben</h3>
+                                        <h3>Gekaufte Produkte</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -100,7 +100,7 @@
                                                     <tr>
                                                         <th>#</th>
                                                         <th>Bestellcode</th>
-                                                        <th>Firmenname</th>
+                                                        <th>Salonname</th>
                                                         <th class="text-center">Stück</th>
                                                         <th class="text-center">Preis</th>
                                                         <th>Zahlungsart</th>
@@ -112,7 +112,7 @@
                                                             <tr>
                                                                 <td data-label="#">{{$loop->index+1}}</td>
                                                                 <td data-label="Bestellcode"># {{$order->id}}</td>
-                                                                <td data-label="Firmenname">{{$order->business->name}}</td>
+                                                                <td data-label="Salonname">{{$order->business->name}}</td>
                                                                 <td data-label="Stück">{{$order->piece}}</td>
                                                                 <td data-label="Preis">{{$order->total}}</td>
                                                                 <td data-label="Zahlungsart">{{$paymentTypes[$order->payment_type]}}</td>
@@ -123,7 +123,7 @@
                                                             <tr>
                                                                 <td colspan="7">
                                                                     <div class="alert alert-warning">
-                                                                        Ihr Bestelldatensatz konnte nicht gefunden werden
+                                                                        Keine Bestellungen vorhanden
                                                                     </div>
                                                                 </td>
                                                             </tr>

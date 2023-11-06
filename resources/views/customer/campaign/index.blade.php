@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Alle Kampagnen</h3>
+                                        <h3>Keine Kampagnen gefunden</h3>
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
@@ -123,7 +123,7 @@
                     </style>
                     <ul>
                         <li>
-                            <b style="color: #24ae91">Firmenname:</b> <span id="companyName"></span>
+                            <b style="color: #24ae91">Salonname:</b> <span id="companyName"></span>
                         </li>
                         <li>
                             <b style="color: #d28745">Startzeit:</b><span id="startTime"></span>

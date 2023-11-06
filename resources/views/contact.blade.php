@@ -28,8 +28,8 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
-                    <h3 class="mb-4">Kommunikation</h3>
-                    <p>Haben Sie Probleme, die Sie in der Dokumentation nicht finden können? Füllen Sie das untenstehende Formular aus oder kontaktieren Sie uns über die Kontaktinformationen.</p>
+                    <h3 class="mb-4">Wie können wir helfen?</h3>
+                    <p>Ganz gleich, ob Sie eine Frage zu Yousiness oder sonstige Fragen haben, wir helfen ihnen gerne weiter.</p>
                 </div>
             </div>
             <div class="row">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="infor-details text-center">
-                            <label>Telefonnummer</label>
+                            <label>Telefon</label>
                             <p>{{setting('speed_contact_phone')}}</p>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="infor-details text-center">
-                            <label>Email</label>
+                            <label>E-Mail</label>
                             <p>{{setting('speed_contact_email')}}</p>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="infor-details text-center">
-                            <label>Adresse</label>
+                            <label>Anschrift</label>
                             <p>{{setting('speed_contact_address')}}</p>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
     <section class="contact-form">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Kontakt Formular</h2>
+                <h2>Kontaktformular</h2>
                 <p class="text-warning">Bitte alle Felder ausfüllen!</p>
             </div>
             <div class="row">
@@ -92,13 +92,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Vorname Familienname <span>*</span></label>
+                                    <label>Name Nachname <span>*</span></label>
                                     <input type="text" class="form-control" name="name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>E-Mail-Adresse <span>*</span></label>
+                                    <label>E-Mail<span>*</span></label>
                                     <input type="text" class="form-control" name="email">
                                 </div>
                             </div>
@@ -110,12 +110,12 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Nachricht <span>*</span></label>
+                                    <label>Ihre Nachricht<span>*</span></label>
                                     <textarea class="form-control" name="content"></textarea>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn bg-primary" type="submit">Nachricht senden</button>
+                        <button class="btn bg-primary" type="submit">Senden</button>
                     </form>
                 </div>
             </div>

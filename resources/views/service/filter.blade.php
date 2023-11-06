@@ -2,7 +2,7 @@
     <!-- Search Filter  <button type="submit" class="btn-five w-100 p-2">Ara</button>-->
     <div class="card search-filter">
         <div class="card-header">
-            <h4 class="card-title mb-0">Filter</h4>
+            <h4 class="card-title mb-0">Filtern</h4>
 
         </div>
         <div class="card-body">
@@ -22,8 +22,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <select class="" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
-                                <option value="">Stadt wählen</option>
+                            <select class="" placeholder="PLZ / Stadt" id="city_service" name="city_id">
+                                <option value="">PLZ / Stadt</option>
                                 @forelse($cities as $city)
                                     <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
                                 @empty
