@@ -73,8 +73,8 @@ class AppServiceProvider extends ServiceProvider
             \Config::set('settings', $settings);
             \Config::set('main_pages', $main_pages);
             $globalData = [
-                'use_pages' => Page::whereIn('slug', ['impressum', 'rechliches'])->get(),
-                'pages'=>Page::whereNotIn('slug', ['impressum', 'rechliches'])->where('status', 1)->take('5')->get(),
+                'use_pages' => Page::whereIn('id', [1,2])->get(),
+                'pages'=>Page::whereNotIn('id', [1,2])->where('status', 1)->take('5')->get(),
                 'infos'=>BusinessInfo::where('status', 0)->get(),
             ];
 
