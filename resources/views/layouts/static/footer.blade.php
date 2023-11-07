@@ -69,11 +69,33 @@
                         <ul>
                                 <li><a href="{{setting('speed_facebook_url')}}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
                                 </li>
-                                <li><a href="{{setting('speed_twitter_url')}}" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                                <li><a href="{{setting('speed_twitter_url')}}" target="_blank">
+                                        <svg style="margin-left: 9px;" viewBox="0 0 24 24" width="21px" height="21px" aria-hidden="true" class="r-1nao33i r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp">
+                                            <g>
+                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231" fill="white"></path>
+                                            </g>
+                                        </svg>
+                                        Twitter
+                                    </a>
                                 </li>
                                 <li><a href="{{setting('speed_intagram_url')}}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                                 </li>
                                 <li><a href="{{setting('speed_youtube_url')}}" target="_blank"><i class="fab fa-youtube"></i> Youtube</a>
+                                </li>
+                                <li><a href="{{setting('speed_tiktok_url')}}" target="_blank">
+                                        <svg style="margin-left: 9px;" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+                                            <g id="SVGRepo_iconCarrier">
+
+                                                <path d="M20 7.50414C18.5333 7.56942 15.52 6.75998 15.2 3H12.4V13.9666C12.4 17.0999 9.93253 18.4412 8.289 17.2507C6.20169 15.7389 7.60003 12.5958 10.2 12.9874V9.6583C8.20003 9.6583 4 10.4416 4 15.3374C4 21.6041 10.8146 21.4083 12.4 20.5824C14.9798 19.2385 15.6 17.7827 15.6 14.5541C15.6 11.6166 15.6 9.85413 15.6 9.0708C16.2667 9.39719 18.08 10.0891 20 10.2458" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                        </svg>
+                                        Tiktok
+                                    </a>
                                 </li>
                             </ul>
                     </div>
@@ -92,7 +114,7 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-6">
                         <div class="copyright-text">
-                            <p class="mb-0">&copy; 2023- <?php echo date("Y"); ?> {{setting('speed_site_title')}} | Deutschland</p>
+                            <p class="mb-0">&copy; 2023- {{date("Y")}} {{setting('speed_site_title')}} | Deutschland</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6">

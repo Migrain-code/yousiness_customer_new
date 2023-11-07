@@ -85,8 +85,8 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-service" class="" placeholder="Suche nach Dienstleistungen" style="" name="sub_category">
-                                                            <option value="">Suche nach Dienstleistungen</option>
+                                                        <select id="select-service" class="" placeholder="Wählen Sie Dienst" style="" name="sub_category">
+                                                            <option value="">Wählen Sie Dienst</option>
                                                             @forelse($service_sub_categories as $service)
                                                                 <option value="{{$service->id}}">{{$service->name}}</option>
                                                             @empty
@@ -100,8 +100,8 @@
                                                     <div class="form-group my-1">
                                                         <input type="hidden" name="lat" id="lat" value="">
                                                         <input type="hidden" name="long" id="long" value="">
-                                                        <select class="" placeholder="PLZ oder Stadt" id="city_service" name="city_id">
-                                                            <option value="">PLZ oder Stadt</option>
+                                                        <select class="" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
+                                                            <option value="">Stadt wählen</option>
                                                             <option value="nach_Standort">nach Standort</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name. ",".$city->post_code}}</option>
@@ -122,8 +122,8 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-salon-type" class="js-example-basic-single" placeholder="Suche nach Salon Kategorien" style="" name="category_id">
-                                                            <option value="">Suche nach Salon Kategorien</option>
+                                                        <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Hallentyp" style="" name="category_id">
+                                                            <option value="">Wählen Sie Hallentyp</option>
                                                             @forelse($categories as $category)
                                                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                                             @empty
@@ -136,8 +136,8 @@
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
 
-                                                        <select class="" placeholder="PLZ oder Stadt" id="city_service_2" name="city_id">
-                                                            <option value="">PLZ oder Stadt</option>
+                                                        <select class="" placeholder="Stadt wählen or Plz" id="city_service_2" name="city_id">
+                                                            <option value="">Stadt wählen</option>
 
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name. ",".$city->post_code}}</option>
@@ -157,8 +157,7 @@
                                                 <div class="search-input-five" style="width: 100%;margin-right: 5px;">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group mb-0">
-                                                        <input type="text" class="form-control" name="business_name" value="" id="search" placeholder="Suche nach Salonname">
-                                                        
+                                                        <input type="text" class="form-control" name="business_name" value="" id="search">
                                                         <div class="" id="search-result">
                                                         </div>
                                                     </div>
@@ -182,7 +181,7 @@
             </div>
         </div>
     </section>
-    
+
 
         <!-- Clinic Section Five -->
         @if(setting('speed_main_page_section_2') == 1)
@@ -191,7 +190,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">SALON KATEGORIEN</h2>
+                        <h2 class="title-five">Nach Kategorie durchsuchen</h2>
                     </div>
                 </div>
             </div>
@@ -208,7 +207,7 @@
                             <div class="clinic-grid-info">
                                 <p>{{$category->name}}</p>
                                 <div class="clinic-five-btn">
-                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Anzeigen</a>
+                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Zeig</a>
                                 </div>
                             </div>
                         </div>
@@ -286,7 +285,7 @@
                                 <img src="{{image(main('speed_section_1_box_3_image'))}}" alt="">
                             </div>
                             <div class="hero">{{main('speed_section_1_box_3_title')}}</div>
-  
+
                             <p>{{main('speed_section_1_box_3_description')}}
                                 <br><br><br>
                             </p>
@@ -321,7 +320,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">TOP DIENSTLEISTUNGEN</h2>
+                        <h2 class="title-five">Besondere Dienstleistungen</h2>
                     </div>
                 </div>
             </div>
@@ -349,17 +348,10 @@
     </section>
     <section class="browse-section-five" id="services">
         <div class="container">
-        <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h1 class="title-five" style="color: #d59c4b!important;"><b>INTERNATIONAL</b></h2>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">DIENSTLEISTUNGEN</h2>
+                        <h2 class="title-five">Ausländische Dienste</h2>
                     </div>
                 </div>
             </div>
@@ -390,7 +382,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">STANDORTE</h2>
+                        <h2 class="title-five">Ausländische Städte</h2>
                     </div>
                 </div>
             </div>
@@ -418,7 +410,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">{{$fCategory->category->name}}</h2>
+                        <h2 class="title-five">{{$fCategory->category?->name}}</h2>
                     </div>
                 </div>
             </div>
@@ -474,7 +466,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">EVENTS</h2>
+                                <h2 class="title-five">Kommende Veranstaltungen!</h2>
                             </div>
                         </div>
                     </div>
@@ -527,50 +519,6 @@
             <!-- /Best Section Five -->
         @endif
 
-        <!-- Testimonial Section -->
-        @if($comments->count() > 0)
-            <section class="section section-testimonial">
-        <div class="container">
-            <div class="section-header text-center mb-4">
-                <h2>Kunden-Kommentare</h2>
-                <!--<p class="sub-title">Müşteri yorumlarımız.</p>-->
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <!-- Slider -->
-                    <div class="testimonial-slider slider">
-
-                        @forelse($comments as $comment)
-                            <!-- Slider Item -->
-                            <div class="testimonial-item text-center">
-                                <div class="testimonial-img">
-                                    <img src="{{image($comment->image)}}" class="img-fluid" style="height: 150px" alt="Speciality">
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>{{$comment->description}}</p>
-                                    <p class="user-name">{{$comment->name}}</p>
-
-                                </div>
-                            </div>
-                            <!-- /Slider Item -->
-                        @empty
-                        @endforelse
-                    </div>
-                    <!-- /Slider -->
-                </div>
-            </div>
-        </div>
-    </section>
-        @endif
-
-    <!-- Testimonial Section -->
-
-    @if(setting('speed_main_page_section_3') == 1)
-
-    @endif
-
-
-
     @endif
     @if(setting('speed_main_page_section_6') == 1)
         @if($blogs->count() > 0)
@@ -580,7 +528,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">BLOGS</h2>
+                                <h2 class="title-five">Zuletzt veröffentlichte Blogs</h2>
                             </div>
                         </div>
                     </div>
@@ -632,6 +580,40 @@
             </section>
             <!-- /Blog Section Five -->
         @endif
+    @endif
+    @if($comments->count() > 0)
+        <section class="section section-testimonial">
+            <div class="container">
+                <div class="section-header text-center mb-4">
+                    <h2>Kunden-Kommentare</h2>
+                    <!--<p class="sub-title">Müşteri yorumlarımız.</p>-->
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <!-- Slider -->
+                        <div class="testimonial-slider slider">
+
+                            @forelse($comments as $comment)
+                                <!-- Slider Item -->
+                                <div class="testimonial-item text-center">
+                                    <div class="testimonial-img">
+                                        <img src="{{image($comment->image)}}" class="img-fluid" style="height: 150px" alt="Speciality">
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>{{$comment->description}}</p>
+                                        <p class="user-name">{{$comment->name}}</p>
+
+                                    </div>
+                                </div>
+                                <!-- /Slider Item -->
+                            @empty
+                            @endforelse
+                        </div>
+                        <!-- /Slider -->
+                    </div>
+                </div>
+            </div>
+        </section>
     @endif
 @endsection
 
