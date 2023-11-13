@@ -12,23 +12,18 @@
         }
         .header {
              background: transparent;
-            backdrop-filter: blur(10px);
-            height: 72px;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 500;
+            z-index: 9999;
             display: block;
         }
         .ts-dropdown.plugin-optgroup_columns .ts-dropdown-content {
             display: flex;
             flex-direction: column;
         }
-        .col-custom {
-            flex: 0 0 20%;
-            max-width:20%;
-        }
+  
     </style>
 @endsection
 @section('content')
