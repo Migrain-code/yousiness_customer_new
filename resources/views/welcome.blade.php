@@ -476,7 +476,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">Events!</h2>
+                                <h2 class="title-five">EVENTS</h2>
                             </div>
                         </div>
                     </div>
@@ -538,7 +538,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">Blogs</h2>
+                                <h2 class="title-five">BLOGS</h2>
                             </div>
                         </div>
                     </div>

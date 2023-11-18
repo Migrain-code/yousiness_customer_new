@@ -6,9 +6,9 @@
                 <div class="col-lg-3 col-md-6">
                     <!-- Footer Widget -->
                     <div class="footer-widget footer-about">
-                        <div class="footer-logo">
+                        <a href="/" class="footer-logo">
                             <img src="{{image(setting('speed_logo_footer'))}}" style="max-width: 250px" alt="logo">
-                        </div>
+                        </a>
 
                         <div class="footer-widget footer-menu footer-menu-five">
                             <!-- <ul>
