@@ -195,15 +195,15 @@
                                                     <div class="alert alert-info"> Da Sie in Ihrem Konto angemeldet sind, werden Sie nicht nach weiteren Informationen gefragt.</div>
                                                 @else
                                                     <div class="form-group">
-                                                        <label>Ihr Name</label>
+                                                        <label>Name</label>
                                                         <input class="form-control" name="name" required="">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Dein Familienname</label>
+                                                        <label>Nachname</label>
                                                         <input class="form-control" name="surname" required="">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Deine Telefonnummer</label>
+                                                        <label>Mobilnummer</label>
                                                         <input class="form-control" name="phone" id="phone" required="">
                                                     </div>
                                                 @endif
