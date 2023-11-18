@@ -76,7 +76,7 @@
                                     <div class="step-1 my-3">
                                         <div class="d-flex align-items-center">
                                             <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">1</span>
-                                            <h2 style="font-size: 22px;">Serviceauswahl</h2>
+                                            <h2 style="font-size: 22px;">Dienstleistung/en Auswählen</h2>
                                         </div>
                                         <div>
                                             <div style="color: rgb(168, 159, 159);">
@@ -105,7 +105,9 @@
                                                     <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif required>
                                                         <option value="">{{$service->subCategory->name}} Bitte wählen Sie Personal für aus</option>
                                                         @forelse($service->personels as $service_personel)
-                                                            <option value="{{$service_personel->personel->id}}" @selected(in_array($service_personel->personel->id, $selectedPersonelIds))>{{$service_personel->personel->name}}</option>
+                                                            @if($service_personel)
+                                                                <option value="{{$service_personel->personel->id}}" @selected(in_array($service_personel->personel->id, $selectedPersonelIds))>{{$service_personel->personel->name}}</option>
+                                                            @endif
                                                         @empty
                                                         @endforelse
                                                     </select>
@@ -361,7 +363,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-success">Einen Termin machen</button>
+                    <button class="btn btn-success">Terminieren</button>
                 </div>
             </form>
         </div>
