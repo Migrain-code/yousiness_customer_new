@@ -80,8 +80,8 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-service" class="" placeholder="Suche Dienstleistung" style="" name="sub_category">
-                                                            <option value="">Suche Dienstleistung</option>
+                                                        <select id="select-service" class="" placeholder="Suche nach Dienstleistung" style="" name="sub_category">
+                                                            <option value="">Suche nach Dienstleistung</option>
                                                             @forelse($service_sub_categories as $service)
                                                                 <option value="{{$service->id}}">{{$service->name}}</option>
                                                             @empty
