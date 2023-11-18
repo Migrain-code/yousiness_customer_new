@@ -50,13 +50,14 @@
                     <div class="footer-widget footer-contact">
                         <div class="footer-contact-info">
                             <div class="footer-address"><span><i class="feather-map-pin"></i></span>
-                                <p>{{setting('speed_contact_address')}}</p>
+                                <p><a href="https://maps.app.goo.gl/QPGuVsV5GANAaKGs6" target="_blank">{{setting('speed_contact_address')}}</a></p>
                             </div>
                             <p><i class="feather-phone"></i>
-                                {{setting('speed_contact_phone')}}</p>
+                                <a href="tel:{{setting('speed_contact_phone')}}">{{setting('speed_contact_phone')}}</a>
+                            </p>
                             <p class="mb-0">
                                 <i class="feather-mail"></i>
-                                <span>{{setting('speed_contact_email')}}</span>
+                                <span><a href="mailto:{{setting('speed_contact_email')}}">{{setting('speed_contact_email')}}</a></span>
                             </p>
                         </div>
                     </div>
