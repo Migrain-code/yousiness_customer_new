@@ -150,8 +150,9 @@
                                         <div class="tab-pane" id="solid-rounded-tab3">
                                             <form action="#">
                                                 <div class="search-input-five" style="width: 100%;margin-right: 5px;">
-                                                    <img src="https://i.hizliresim.com/nm41k5u.png">
+                                                    <i class="feather-shopping-bag bficon shopping-bag-icon"></i>
                                                     <div class="form-group mb-0">
+
                                                         <input type="text" class="form-control" placeholder="Salonname" name="business_name" value="" id="search">
                                                         <div class="" id="search-result">
                                                         </div>
