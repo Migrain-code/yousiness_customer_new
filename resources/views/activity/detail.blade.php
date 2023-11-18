@@ -26,7 +26,14 @@
             box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4);
             animation: pulse 1s ease-out infinite;
         }
-
+        .blog-grid-five:hover .blog-doctors-profile a {
+            right: 0px;
+            -webkit-transition: 0.7s;
+            -moz-transition: 0.7s;
+            -o-transition: 0.7s;
+            transition: 0.7s;
+            min-width: 200px;
+        }
         @keyframes pulse{
             0% {
                 box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4);
