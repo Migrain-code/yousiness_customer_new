@@ -31,7 +31,7 @@
                                 @endforelse
                             </select>
                         </div>
-                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Anruf <i class="fa fa-search" style="padding-left: 5px"></i></button>
+                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
 
                     </div>
                 </form>
@@ -50,7 +50,7 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn-five w-10 p-2">Anruf <span class="fa fa-search"></span></button>
+                    <button type="submit" class="btn-five w-10 p-2">Suchen <span class="fa fa-search"></span></button>
 
                 </form>
             @endif
