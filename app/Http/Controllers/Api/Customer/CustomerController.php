@@ -374,7 +374,7 @@ class CustomerController extends Controller
             if ($user->save()){
                 return response()->json([
                     'status' => "success",
-                    'message'=> "Şifreniz Başarılı Bir Şekilde Güncellendi"
+                    'message'=> "Kennwort wurde erfolgreich geändert."
                 ]);
             }
         }
@@ -519,8 +519,8 @@ class CustomerController extends Controller
         }
 
 
-        $gizlilik = Page::where('slug', 'bedingungen')->select('description')->first();
-        $kosullaraciklama = Page::where('slug', 'Geschäftsbedingungen')->select('description')->first();
+        $gizlilik = Page::where('id', 1)->select('description')->first();
+        $kosullaraciklama = Page::where('id', 2)->select('description')->first();
 
         return response()->json([
             'settings' => [
