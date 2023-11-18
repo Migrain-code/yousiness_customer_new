@@ -43,12 +43,8 @@
 
 
                                     <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Registrieren</button>
-                                    <div class="login-or">
-                                        <span class="or-line"></span>
-                                        <span class="span-or">beziehungsweise</span>
-                                    </div>
 
-                                    <div class="text-center dont-have">Hast du einen Account? <a href="{{route('customer.login')}}">Einloggen</a></div>
+                                    <div class="text-center dont-have mt-2">Hast du einen Account? <a href="{{route('customer.login')}}">Einloggen</a></div>
                                 </form>
                             </div>
                         </div>
