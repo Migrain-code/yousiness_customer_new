@@ -186,7 +186,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Nach Kategorie durchsuchen</h2>
+                        <h2 class="title-five">SALON KATEGORIEN</h2>
                     </div>
                 </div>
             </div>
@@ -203,7 +203,7 @@
                             <div class="clinic-grid-info">
                                 <p>{{$category->name}}</p>
                                 <div class="clinic-five-btn">
-                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Zeig</a>
+                                    <a href="{{route('categoryGet', $category->slug)}}" class="btn">Anzeigen</a>
                                 </div>
                             </div>
                         </div>
@@ -251,7 +251,7 @@
                                 <br><br>
                             </div>
 
-                            <p>{{main('speed_section_1_box_1_description')}}
+                            <p style="height: 96px;">{{main('speed_section_1_box_1_description')}}
                                 <br><br>
                             </p>
                             <a href="{{main('speed_section_1_box_1_button_link')}}" class="btn btn-five">{{main('speed_section_1_box_1_button_text')}}</a>
