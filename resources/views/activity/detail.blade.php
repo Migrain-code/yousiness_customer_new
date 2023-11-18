@@ -49,10 +49,10 @@
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Startseite</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Veranstaltungen</li>
+                            <li class="breadcrumb-item active" aria-current="page">Events</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Veranstaltungsdetails</h2>
+                    <h2 class="breadcrumb-title">Eventdetails</h2>
                 </div>
             </div>
         </div>
@@ -88,28 +88,37 @@
                                         <li>
                                             <div class="post-author">
                                                 <a href="#">
-                                                    <img src="{{image(setting('speed_favicon'))}}" alt="" class="me-2">
-                                                    <span>Admin</span>
+                                                    <span>{{$activity->hotel}} </span>
                                                 </a>
                                             </div>
                                         </li>
                                         <li><i class="far fa-calendar"></i><span data-bs-toggle="tooltip" title="Başlangıç Tarihi">{{$activity->start_date->format('d.m.Y H:i')}}</span> - <span data-bs-toggle="tooltip" title="Bitiş Tarihi">{{$activity->stop_date->format('d.m.Y H:i')}}</span></li>
                                         <li data-bs-toggle="tooltip" title="Katılımcı"><i class="fas fa-users"></i>{{$activity->personels->count()}}</li>
                                         <li data-bs-toggle="tooltip" title="Sponsor"><i class="fas fa-handshake"></i>{{$activity->sponsors->count()}}</li>
+                                        <li data-bs-toggle="tooltip" title="Sponsor"><i class="fas fa-phone"></i>{{$activity->phone}}</li>
                                         <li>
                                             <a class="btn-fifteen pulse-button" href="#account_modal" data-bs-toggle="modal" style="background-color: #ff8a00;color: white;padding: 8px;border-radius: 5px;text-decoration: underline;">Teilnehmer</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="blog-content">
-                                <p>{!! $activity->description !!}</p>
+
+                        </div>
+                        <div class="card blog-share clearfix" style="border-radius: 18px">
+                            <div class="card-body">
+                                <div class="blog-content">
+                                    <p>{!! $activity->description !!}</p>
+                                </div>
                             </div>
                         </div>
-
+                        <div class="card blog-share clearfix" style="border-radius: 18px">
+                            <div class="card-body">
+                                <iframe width="100%" style="border-radius: 15px" height="400px" src="{{$activity->embed}}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
                         <div class="card blog-share clearfix" style="border-radius: 18px">
                             <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
-                                <h4 class="card-title">Aktie</h4>
+                                <h4 class="card-title">Social Media</h4>
                             </div>
                             <div class="card-body">
                                 <ul class="social-share">
@@ -144,6 +153,30 @@
                                         <div class="alert alert-warning text-center">
                                             Kein Teilnehmer gefunden
                                         </div>
+                                    @endforelse
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card blog-comments clearfix" style="border-radius: 18px">
+                            <div class="card-header" style="border-radius: 18px 18px 0px 0px;">
+                                <h4 class="card-title">Galerie ({{$activity->images->count()}})</h4>
+                            </div>
+                            <div class="card-body pb-0">
+                                <div class="row">
+                                    @forelse($activity->images as $image)
+                                        <div class="col-lg-4 col-md-4 d-flex aos" data-aos="fade-up">
+                                            <div class="clinic-grid-five w-100 hvr-bounce-to-bottom pb-0">
+                                                <div class="clinic-grid-img">
+                                                    <div class="clinic-img-five clinic-img-five1">
+                                                        <img src="{{image($image->image)}}" alt="" style="width: 100%;height: 140px;border-radius: 5px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @empty
+
                                     @endforelse
 
                                 </div>
