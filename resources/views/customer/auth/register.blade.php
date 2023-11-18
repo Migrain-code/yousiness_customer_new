@@ -36,7 +36,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>PhoneRufnummer</label>
+                                        <label>Mobilnummer</label>
                                         <input type="text" id="phone" class="form-control floating phone" name="email">
 
                                     </div>
@@ -44,7 +44,7 @@
 
                                     <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Registrieren</button>
 
-                                    <div class="text-center dont-have mt-2">Hast du einen Account? <a href="{{route('customer.login')}}">Einloggen</a></div>
+                                    <div class="text-center dont-have mt-2">Haben Sie einen Account? <a href="{{route('customer.login')}}">Einloggen</a></div>
                                 </form>
                             </div>
                         </div>
