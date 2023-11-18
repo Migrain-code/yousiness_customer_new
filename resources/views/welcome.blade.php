@@ -95,8 +95,8 @@
                                                     <div class="form-group my-1">
                                                         <input type="hidden" name="lat" id="lat" value="">
                                                         <input type="hidden" name="long" id="long" value="">
-                                                        <select class="" placeholder="Stadt wählen or Plz" id="city_service" name="city_id">
-                                                            <option value="">Stadt wählen</option>
+                                                        <select class="" placeholder="PLZ oder Stadt" id="city_service" name="city_id">
+                                                            <option value="">PLZ oder Stadt</option>
                                                             <option value="nach_Standort">nach Standort</option>
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name. ",".$city->post_code}}</option>
