@@ -93,7 +93,7 @@
                                     <div class="step-2 my-3">
                                         <div class="d-flex align-items-center">
                                             <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">2</span>
-                                            <h2 style="font-size: 22px;">Personalauswahl</h2>
+                                            <h2 style="font-size: 22px;">Mitarbeiter Auswählen</h2>
                                         </div>
                                         <form method="get" action="{{route('step1.store', ['business' => $business->slug])}}">
                                             <input type="hidden" name="step" value="3">
@@ -101,9 +101,9 @@
                                             @foreach($ap_services as $service)
                                                 <input type="hidden" name="services[]" value="{{$service->id}}">
                                                 <div class="form-group">
-                                                    <label><b>{{$service->subCategory->name}}</b> Bitte wählen Sie Personal für aus</label>
+                                                    <label><b>{{$service->subCategory->name}}</b> Wählen</label>
                                                     <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif required>
-                                                        <option value="">{{$service->subCategory->name}} Bitte wählen Sie Personal für aus</option>
+                                                        <option value="">{{$service->subCategory->name}} Mitarbeiter auswählen</option>
                                                         @forelse($service->personels as $service_personel)
                                                             @if($service_personel)
                                                                 <option value="{{$service_personel->personel->id}}" @selected(in_array($service_personel->personel->id, $selectedPersonelIds))>{{$service_personel->personel->name}}</option>
