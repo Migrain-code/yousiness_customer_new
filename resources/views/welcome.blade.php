@@ -80,8 +80,8 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-service" class="" placeholder="Wählen Sie Dienst" style="" name="sub_category">
-                                                            <option value="">Wählen Sie Dienst</option>
+                                                        <select id="select-service" class="" placeholder="Suche Dienstleistung" style="" name="sub_category">
+                                                            <option value="">Suche Dienstleistung</option>
                                                             @forelse($service_sub_categories as $service)
                                                                 <option value="{{$service->id}}">{{$service->name}}</option>
                                                             @empty
@@ -107,7 +107,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="search-btn-five">
-                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Forderung</button>
+                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Suchen</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -117,8 +117,8 @@
                                                 <div class="search-input-five">
                                                     <i class="feather-scissors bficon"></i>
                                                     <div class="form-group my-1">
-                                                        <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Hallentyp" style="" name="category_id">
-                                                            <option value="">Wählen Sie Hallentyp</option>
+                                                        <select id="select-salon-type" class="js-example-basic-single" placeholder="Suche nach Salon Kategorien" style="" name="category_id">
+                                                            <option value="">Suche nach Salon Kategorien</option>
                                                             @forelse($categories as $category)
                                                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                                             @empty
@@ -131,8 +131,8 @@
                                                     <i class="feather-compass bficon compass-icon"></i>
                                                     <div class="form-group my-1">
 
-                                                        <select class="" placeholder="Stadt wählen or Plz" id="city_service_2" name="city_id">
-                                                            <option value="">Stadt wählen</option>
+                                                        <select class="" placeholder="PLZ oder Stadt" id="city_service_2" name="city_id">
+                                                            <option value="">PLZ oder Stadt</option>
 
                                                             @forelse($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name. ",".$city->post_code}}</option>
@@ -143,22 +143,22 @@
                                                     </div>
                                                 </div>
                                                 <div class="search-btn-five">
-                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Forderung</button>
+                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Suchen</button>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="tab-pane" id="solid-rounded-tab3">
                                             <form action="#">
                                                 <div class="search-input-five" style="width: 100%;margin-right: 5px;">
-                                                    <i class="feather-scissors bficon"></i>
+                                                    <img src="https://i.hizliresim.com/nm41k5u.png">
                                                     <div class="form-group mb-0">
-                                                        <input type="text" class="form-control" name="business_name" value="" id="search">
+                                                        <input type="text" class="form-control" placeholder="Salonname" name="business_name" value="" id="search">
                                                         <div class="" id="search-result">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="search-btn-five">
-                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Forderung</button>
+                                                    <button class="btn search_service" type="submit"><i class="fas fa-search me-2"></i>Suchen</button>
                                                 </div>
                                             </form>
                                         </div>
