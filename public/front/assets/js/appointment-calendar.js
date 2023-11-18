@@ -223,7 +223,7 @@
                         var newSlide = document.createElement('div');
                         newSlide.classList.add('swiper-slide');
                         newSlide.classList.add('doc-times');
-                        newSlide.innerHTML =`<div class="w-100"><h3>${row.personel.name} İçin Saat Seçin</h3></div>` + docTimesHtml;
+                        newSlide.innerHTML =`<div class="w-100"><h3>für ${row.personel.name} Zeit auswählen</h3></div>` + docTimesHtml;
 
                         var swiperWrapper = document.querySelector('.swiper-wrapper');
                         swiperWrapper.appendChild(newSlide);
