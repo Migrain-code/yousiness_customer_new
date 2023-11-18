@@ -156,7 +156,7 @@
                                                             <div class="service-name">{{$service->subCategory->name}}</div>
                                                             <div class="appointment">
                                                                 <span class="price">{{$service->price . "€"}}</span>
-                                                                <a href="{{ route('step1.show', ['business' => $business->slug, 'request' => array('services' => array($service->id))])}}" class="appointment-button ms-4 ">Treffen</a>
+                                                                <a href="{{ route('step1.show', ['business' => $business->slug, 'request' => array('services' => array($service->id))])}}" class="appointment-button ms-4 ">Terminieren</a>
 
                                                             </div>
                                                         </div>
@@ -187,7 +187,7 @@
                                                             <div class="service-name">{{$service->subCategory->name}}</div>
                                                             <div class="appointment">
                                                                 <span class="price">{{$service->price}} €</span>
-                                                                <a href="{{ route('step1.show', ['business' => $business->slug, 'request' => array('services' => array($service->id))])}}" class="appointment-button ms-4 ">Treffen</a>
+                                                                <a href="{{ route('step1.show', ['business' => $business->slug, 'request' => array('services' => array($service->id))])}}" class="appointment-button ms-4 ">Terminieren</a>
 
                                                             </div>
                                                         </div>
