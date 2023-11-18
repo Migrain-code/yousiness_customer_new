@@ -112,9 +112,9 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Plz/ Stadtname</label>
+                                                        <label class="control-label">PLZ / Stadt</label>
                                                         <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
-                                                            <option value="">Plz/ Stadtname</option>
+                                                            <option value="">PLZ / Stadt</option>
                                                             @if(isset(userInfo()->city))
                                                                 <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->post_code.",".userInfo()->city->name}}</option>
                                                             @endif
