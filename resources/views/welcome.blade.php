@@ -361,7 +361,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Ausländische Dienste</h2>
+                        <h2 class="title-five">DIENSTLEITUNGEN</h2>
                     </div>
                 </div>
             </div>
@@ -392,7 +392,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">Ausländische Städte</h2>
+                        <h2 class="title-five">STANDORTE</h2>
                     </div>
                 </div>
             </div>
@@ -476,7 +476,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">Kommende Veranstaltungen!</h2>
+                                <h2 class="title-five">Events!</h2>
                             </div>
                         </div>
                     </div>
@@ -510,7 +510,7 @@
                                         <p>
                                             {{\Illuminate\Support\Str::limit(strip_tags($activity->description), 100, '...')}}
                                         </p>
-                                        <a href="{{route('activity.detail', $activity->slug)}}" class="btn-five" style="max-width: 200px;margin: 0 auto"> Detail anzeigen</a>
+                                        <a href="{{route('activity.detail', $activity->slug)}}" class="btn-five" style="max-width: 200px;margin: 0 auto"> Demnächst</a>
 
                                     </div>
                                 </div>
@@ -521,7 +521,7 @@
                     </div>
                     @if($activities->count() >= 4)
                         <div class="doctor-see-btn text-center aos" data-aos="fade-up">
-                            <a href="{{route('activity.index')}}" class="btn btn-six">Alle Veranstaltungen</a>
+                            <a href="{{route('activity.index')}}" class="btn btn-six">Alle Events</a>
                         </div>
                     @endif
                 </div>
@@ -538,7 +538,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                                <h2 class="title-five">Zuletzt veröffentlichte Blogs</h2>
+                                <h2 class="title-five">Blogs</h2>
                             </div>
                         </div>
                     </div>
@@ -570,7 +570,7 @@
                                             <a href="{{route('blog.detail', $blog->slug)}}">{{$blog->title}}</a>
                                         </h3>
                                         <p>{{substr(strip_tags($blog->description), 0, 200)}}</p>
-                                        <a href="{{route('blog.detail', $blog->slug)}}" class="read-news">Lies die Nachrichten</a>
+                                        <a href="{{route('blog.detail', $blog->slug)}}" class="read-news">weiter lesen</a>
                                     </div>
                                 </div>
 
