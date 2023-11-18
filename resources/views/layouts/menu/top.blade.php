@@ -59,7 +59,7 @@
                                 </ul>
                             </li>
                             <li class=""><a href="{{route('about')}}">Über uns</a></li>
-                            <li class=""><a href="{{route('faq')}}">Support</a></li>
+                            <li class=""><a href="{{route('faq')}}">FAQ</a></li>
                             <li class=""><a href="{{route('contact')}}">Kontakt</a></li>
                         @endif
                     </ul>
