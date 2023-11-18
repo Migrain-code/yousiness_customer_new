@@ -209,7 +209,7 @@
                                                 @endif
                                                 <div class="contact-buttons d-flex justify-content-between mt-2">
                                                     <a class="btn btn-danger" href="{{route('business.detail', $business->slug)}}" type="button">Stornieren</a>
-                                                    <button class="btn btn-success" type="submit">Erstellen Sie einen Termin</button>
+                                                    <button class="btn btn-success" type="submit">Termin erstellen</button>
                                                 </div>
                                             </form>
 
