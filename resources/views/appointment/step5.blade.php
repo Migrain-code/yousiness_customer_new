@@ -12,11 +12,11 @@
                 <div class="col-md-12 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Randevu Başarılı</li>
+                            <li class="breadcrumb-item"><a href="/">Startseite</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Termin erfolgreich</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Randevu Oluşturuldu</h2>
+                    <h2 class="breadcrumb-title">Termin erstellt</h2>
                 </div>
             </div>
         </div>
@@ -38,10 +38,10 @@
                                 <h3>Termin erfolgreich vereinbart!!</h3>
                                 Ihr Termin für <strong>{{$business->name}}</strong> <br>
                                 <p>
-                                    Geschäft ist am {{\Illuminate\Support\Carbon::parse($appointment->date)->format('d.m.Y')}} vereinbart
+                                    ist am {{\Illuminate\Support\Carbon::parse($appointment->date)->format('d.m.Y')}} vereinbart
 
                                 </p>
-                                <a href="/" class="btn btn-primary view-inv-btn">Anasayfaya dön</a>
+                                <a href="/" class="btn btn-primary view-inv-btn">Startseite</a>
                             </div>
                         </div>
                     </div>
