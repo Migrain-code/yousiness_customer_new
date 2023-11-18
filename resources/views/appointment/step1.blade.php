@@ -101,7 +101,7 @@
                                             @foreach($ap_services as $service)
                                                 <input type="hidden" name="services[]" value="{{$service->id}}">
                                                 <div class="form-group">
-                                                    <label><b>{{$service->subCategory->name}}</b> Wählen</label>
+                                                    <label><b>{{$service->subCategory->name}}</b> Mitarbeiter Wählen</label>
                                                     <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif required>
                                                         <option value="">{{$service->subCategory->name}} Mitarbeiter auswählen</option>
                                                         @forelse($service->personels as $service_personel)
@@ -122,7 +122,7 @@
                                         <div class="step-3 my-3" id="step_3">
                                                 <div class="d-flex align-items-center mb-1">
                                                     <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">3</span>
-                                                    <h2 style="font-size: 22px;">Datumsauswahl</h2>
+                                                    <h2 style="font-size: 22px;">Datum Auswählen</h2>
                                                 </div>
                                                 <div class="card schedule-widget mb-0">
                                                     <!-- Schedule Header -->

@@ -323,11 +323,11 @@
         //var t=2013;
         //var n=9;
         var r = [];
-        var i = ["Ocak","Şubat","Mart","Nisan","Mayıs",
-            "Haziran","Temmuz","Ağustos","Eylül","Ekim",
-            "Kasım","Aralık"];
-        var daysArray = ["Pazar","Pazartesi","Salı",
-            "Çarşamba","Perşembe","Cuma","Cumartesi"];
+        var i = ["Januar","Februar","März","April","Mai",
+            "Juni","Juli","August","September","Oktober",
+            "November","Dezember"];
+        var daysArray = ["So","Mo","Di",
+            "Mi","Do","Fr","Sa"];
         var o = ["#16a085","#1abc9c","#c0392b","#27ae60",
             "#FF6860","#f39c12","#f1c40f","#e67e22",
             "#2ecc71","#e74c3c","#d35400","#2c3e50"];
