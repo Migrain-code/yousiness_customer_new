@@ -40,7 +40,8 @@
     </section>
 
     <!-- Category Section -->
-    <section class="select-category">
+    {{--
+        <section class="select-category">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 category-col d-flex">
@@ -79,9 +80,11 @@
             </div>
         </div>
     </section>
+    --}}
     <!-- Category Section -->
 
-    <section class="section section-featurebox">
+   {{--
+     <section class="section section-featurebox">
         <div class="container">
             <div class="section-header text-center">
                 <h2>TOP DIENSTLEISTUNGEN</h2>
@@ -103,46 +106,13 @@
         </div>
 
     </section>
+   --}}
 
-    <!-- Clinic and Specialities 
-    <section class="section section-specialities">
-        <div class="container-fluid">
-            <div class="section-header text-center">
-                <h2>Sponsoren</h2>
-                <p class="sub-title"></p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-9">
-                    
-                    <div class="specialities-slider slider">
 
-                       @forelse($sponsors as $sponsor)
-
-                            <a href="{{$sponsor->link}}">
-                                <div class="speicality-item text-center" style="width: 100%; background: aliceblue;display: inline-block;padding: 10px; border-radius: 15px;">
-                                    <div class="speicality-img">
-                                        <img src="{{image($sponsor->image)}}" style="border-radius: 50%;height: 150px" class="img-fluid" alt="Speciality">
-
-                                    </div>
-                                    <p>{{$sponsor->name}}</p>
-                                </div>
-                            </a>
-
-                        @empty
-
-                        @endforelse
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    -->
     
     <!-- Testimonial Section -->
-    <section class="section section-testimonial">
+    {{--
+        <section class="section section-testimonial">
         <div class="container">
             <div class="section-header text-center mb-4">
                 <h2>Kommentare</h2>
@@ -174,6 +144,7 @@
             </div>
         </div>
     </section>
+    --}}
     <!-- Testimonial Section -->
 
 @endsection

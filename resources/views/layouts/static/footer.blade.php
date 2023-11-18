@@ -79,7 +79,7 @@
                                         Twitter
                                     </a>
                                 </li>
-                                <li><a href="{{setting('speed_intagram_url')}}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                                <li><a href="{{setting('speed_instagram_url')}}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                                 </li>
                                 <li><a href="{{setting('speed_youtube_url')}}" target="_blank"><i class="fab fa-youtube"></i> Youtube</a>
                                 </li>
