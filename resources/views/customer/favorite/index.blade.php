@@ -2,7 +2,15 @@
 @section('title', 'Meine Favoriten Salons')
 @section('meta_description', 'Liste der Unternehmen, die Sie zu Ihren Favoriten hinzugefügt haben')
 @section('styles')
-
+    <style>
+        .doc-img {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border-radius: 4px;
+            height: 200px;
+        }
+    </style>
 @endsection
 @section('content')
     <div class="breadcrumb-bar">
