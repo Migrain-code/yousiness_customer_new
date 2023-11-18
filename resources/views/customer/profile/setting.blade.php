@@ -76,6 +76,15 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
+                                                        <label class="control-label">Geburtsdatum</label>
+                                                        <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control account_no" value="{{userInfo()->birthday}}">
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
                                                         <label class="control-label">Mobilnummer</label>
                                                         <input type="text" name="email" class="form-control branch_name phone" value="{{userInfo()->phone}}">
                                                         <span class="help-block"></span>
@@ -103,8 +112,16 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Geburtsdatum</label>
-                                                        <input type="date" name="birthday" max="{{\Illuminate\Support\Carbon::now()->subYears(18)->format('Y-m-d')}}" class="form-control account_no" value="{{userInfo()->birthday}}">
+                                                        <label class="control-label">Plz/ Stadtname</label>
+                                                        <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
+                                                            <option value="">Plz/ Stadtname</option>
+                                                            @if(isset(userInfo()->city))
+                                                                <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->post_code.",".userInfo()->city->name}}</option>
+                                                            @endif
+                                                            @foreach($cities as $city)
+                                                                <option value="{{$city->id}}">{{$city->post_code.",".$city->name}}</option>
+                                                            @endforeach
+                                                        </select>
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>
@@ -131,24 +148,7 @@
                                                             </label>
                                                         </div>
                                                     </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Plz/ Stadtname</label>
-                                                        <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
-                                                            <option value="">Plz/ Stadtname</option>
-                                                            @if(isset(userInfo()->city))
-                                                                <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->post_code.",".userInfo()->city->name}}</option>
-                                                            @endif
-                                                            @foreach($cities as $city)
-                                                                <option value="{{$city->id}}">{{$city->post_code.",".$city->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        <span class="help-block"></span>
-                                                    </div>
                                                 </div>
-                                            </div>
                                             </div>
 
 
