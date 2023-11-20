@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Carbon;
 
 class AppointmentDetailResoruce extends JsonResource
 {
@@ -17,7 +18,7 @@ class AppointmentDetailResoruce extends JsonResource
         return [
             'id' => $this->id,
             'business' => BusinessResource::make($this->business),
-            'date' => $this->start_time,
+            'date' => Carbon::parse($this->sevices->first()->start_time),
             'status' => $this->status("text"),
             'comment_status' => $this->comment_status,
             'services' => AppointmentServiceResource::collection($this->services),
