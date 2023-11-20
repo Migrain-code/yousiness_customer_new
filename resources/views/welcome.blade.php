@@ -598,7 +598,7 @@
                  data-wow-delay=".5s"
                  style="visibility: visible; animation-duration: 0.9s; animation-delay: 0.5s; animation-name: tpfadeLeft;">
                 <div class="tp-sales-section-box pb-20">
-                    <h3 class="tp-section-title-3 pb-15 ">{{main("business_section_1_box_3_title")}}</h3>
+                    <h3 class="tp-section-title-3 pb-15 " style="font-size: 35px;font-family: 'Poppins';">{{main("business_section_1_box_3_title")}}</h3>
                     <p class="tp-title-anim" style="perspective: 300px;">
                     <div style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 285px 14px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
                         {{main("business_section_1_box_3_description")}}
