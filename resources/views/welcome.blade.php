@@ -295,7 +295,7 @@
     </section>
     @endif
     <section class="how-to-area">
-        <div class="container">
+        <div class="container" style="padding: 30px;border-radius: 25px;background: #d59c4b;">
             <iframe width="100%"
                     style="border-radius: 25px"
                     height="600px"
