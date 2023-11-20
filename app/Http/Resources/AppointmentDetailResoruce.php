@@ -18,7 +18,7 @@ class AppointmentDetailResoruce extends JsonResource
         return [
             'id' => $this->id,
             'business' => BusinessResource::make($this->business),
-            'date' => Carbon::parse($this->sevices->first()->start_time),
+            'date' => Carbon::parse($this->services->first()->start_time),
             'status' => $this->status("text"),
             'comment_status' => $this->comment_status,
             'services' => AppointmentServiceResource::collection($this->services),
