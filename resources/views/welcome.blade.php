@@ -294,6 +294,18 @@
         </div>
     </section>
     @endif
+    <section class="how-to-area">
+        <div class="container">
+            <iframe width="100%"
+                    style="border-radius: 25px"
+                    height="600px"
+                    src="{{main('speed_main_page_video')}}"
+                    title="Main Page Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        </div>
+    </section>
    <section class="homepage-first-ads-banner bottom">
         <div class="container">
             <div class="row">
