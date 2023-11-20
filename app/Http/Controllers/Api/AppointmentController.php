@@ -209,14 +209,9 @@ class AppointmentController extends Controller
      */
     public function getClock(Request $request)
     {
-
-
         $getDate = Carbon::parse($request->date);
-
         $business = Business::find($request->business_id);
-
         $uniqueArray = array_unique($request->personals);
-
         $personels = [];
         foreach ($uniqueArray as $id){
             $personels[]= Personel::find($id);
@@ -281,12 +276,12 @@ class AppointmentController extends Controller
      */
     public function create(Request $request)
     {
-        if (count($request->personels) != count($request->services)) {
+        /*if (count($request->personels) != count($request->services)) {
             return response()->json([
                 'status' => "warning",
                 'message' => "Seçilen Hizmet Sayısı Kadar Personel Seçimi Yapılmalı"
             ]);
-        }
+        }*/
         $business = Business::find($request->business_id);
         if (isset($request->customer_id)) {
             $appointment = new Appointment();
@@ -315,7 +310,7 @@ class AppointmentController extends Controller
 
         $loop = 0;
         $clock = Carbon::parse($request->input('appointment_date'));
-        $sumTime = 0;
+        //$sumTime = 0;
 
         foreach ($request->personels as $personel) {
             $appointmentService = new AppointmentServices();
@@ -325,19 +320,18 @@ class AppointmentController extends Controller
             $findService = BusinessService::find($request->services[$loop]);
             $appointmentService->start_time = $clock->format('d.m.Y H:i');
             $appointmentService->end_time = $clock->addMinute($findService->time)->format('d.m.Y H:i');
-            $sumTime += $findService->time;
+            //$sumTime += $findService->time;
             $appointmentService->save();
             $loop++;
         }
-        $appointment->start_time = Carbon::parse($request->input('appointment_date'))->format('d.m.Y H:i');
-        $appointment->end_time = Carbon::parse($request->input('appointment_date'))->addMinute($sumTime)->format('d.m.Y H:i');
+        $appointment->date = Carbon::parse($request->input('appointment_date'))->format('Y-m-d H:i:s');
         $appointment->is_verify_phone = 1;
         $appointment->note = $request->note;
         $appointment->campaign_id = $request->campaign_id;
 
         if ($appointment->save()){
             $title = 'Randevunuz Oluşturuldu';
-            $body = $appointment->business->name . " işletmesine " . $appointment->start_time . " - " . $appointment->end_time . " arasında randevunuz iptal edildi";
+            $body = $appointment->business->name . " işletmesine " . Carbon::parse($request->input('appointment_date'))->format('Y-m-d') . "tarihine randevunuz alındı";
 
             $notification =new CustomerNotificationMobile();
             $notification->customer_id = $appointment->customer->id;
@@ -346,7 +340,7 @@ class AppointmentController extends Controller
             if ($notification->save()) {
                 return response()->json([
                     'status' => 'success',
-                    'message' => $business->name . " işletmesine " . $appointment->start_time . " - " . $appointment->end_time . " arasında randevu alındı",
+                    'message' => $business->name . " işletmesine " . Carbon::parse($request->input('appointment_date'))->format('Y-m-d') . "tarihine randevu alındı",
                 ]);
             }
         }
