@@ -608,11 +608,11 @@
                 <div class="tp-sales-feature">
                     <div class="d-flex justify-content-start">
                         <div class="col-lg-4 col-md-6 col-sm-12 me-4">
-                            <img src="/business/assets/img/cta/apple_store_logo.svg" width="200" height="80"
+                            <img src="/front/apple_store_logo.svg" width="200" height="80"
                                  class="">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                            <img src="/business/assets/img/cta/google_play_logo.svg" width="200" height="80">
+                            <img src="/front/google_play_logo.svg" width="200" height="80">
                         </div>
 
                     </div>
@@ -624,7 +624,7 @@
                  style="visibility: visible; animation-duration: 0.9s; animation-delay: 0.7s; animation-name: tpfadeRight;">
                 <div class="tp-sales-img-wrapper p-relative text-end">
                     <div class="tp-plan-2-img-box p-relative">
-                        <img src="{{asset(main("business_section_1_box_3_image"))}}">
+                        <img src="{{image(main("business_section_1_box_3_image"))}}">
 
                     </div>
                 </div>
