@@ -253,12 +253,16 @@ class HomeController extends Controller
         return view('faq.index', compact('faqs'));
     }
 
-    public function businessCategory($slug)
+    public function businessCategory(Request $request,$slug)
     {
+
         $businessCategory = BusinessCategory::where('slug', $slug)->firstOrFail();
-
-        $businesses = $businessCategory->businesses()->whereNotNull('city')->has('personel')->paginate(setting('speed_pagination_number'));
-
+        if($request->filled("gender_type") and $request->filled('city_id')){
+            $businesses = $businessCategory->businesses()->whereNotNull('city')->where('type_id', $request->gender_type)->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
+        }
+        else{
+            $businesses = $businessCategory->businesses()->whereNotNull('city')->has('personel')->paginate(setting('speed_pagination_number'));
+        }
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {

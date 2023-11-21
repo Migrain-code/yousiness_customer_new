@@ -4,7 +4,7 @@
         <div class="card-header">
             <h4 class="card-title mb-0">Filtern</h4>
         </div>
-        <div class="card-body">
+        <form class="card-body" method="get" action="">
             <div class="filter-widget">
                 <h4>Geschlecht</h4>
                 <div>
@@ -30,20 +30,21 @@
 
                 <div>
                     <div class="form-group">
-                        <label>PLZ/Stadt</label>
-                        <select id="js-example-basic-single">
-                            <option value="">Suche nach PLZ</option>
-                            @foreach($cities as $city)
-                                <option value="{{$city->id}}">{{$city->name}}</option>
-                            @endforeach
+                        <select class="" placeholder="PLZ / Stadt" id="city_service" name="city_id">
+                            <option value="">PLZ / Stadt</option>
+                            @forelse($cities as $city)
+                                <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
+                            @empty
+
+                            @endforelse
                         </select>
                     </div>
                 </div>
             </div>
 
-            <button type="button" class="btn-five w-100 p-2">Suchen</button>
+            <button type="submit" class="btn-five w-100 p-2">Suchen</button>
 
-        </div>
+        </form>
     </div>
     <!-- /Search Filter -->
 </div>

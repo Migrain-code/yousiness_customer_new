@@ -199,13 +199,36 @@
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            new TomSelect("#js-example-basic-single", {
-                autocomplete: false,
-                maxItems: 1,
-                language: 'tr'
-            });
+        var mySelect = new TomSelect("#city_service", {
+            remoteUrl: '/api/city/search',
+            remoteSearch: true,
+            create: false,
+            highlight: false,
+            load: function(query, callback) {
+                $.ajax({
+                    url: '/api/city/search', // Sunucu tarafındaki arama API'sinin URL'si
+                    method: 'POST',
+                    data: { q: query }, // Arama sorgusu
+                    dataType: 'json', // Beklenen veri tipi
+                    success: function(data) {
+
+                        var results = data.cities.map(function(item) {
+                            console.log('item', item.name);
+                            return {
+                                value: item.id,
+                                text: item.post_code + "," + item.name,
+                            };
+                        });
+
+                        callback(results);
+                    },
+                    error: function() {
+                        console.error("Bei der Suche ist ein Fehler aufgetreten.");
+                    }
+                });
+            }
         });
+
     </script>
     <script>
         function businessDetailLink(url){
