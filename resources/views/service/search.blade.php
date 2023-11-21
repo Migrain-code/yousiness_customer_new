@@ -256,6 +256,27 @@
 
                                         </div>
                                       @else
+                                          <div class="filter-widget">
+                                              <h4>Geschlecht</h4>
+                                              <div>
+                                                  <label class="custom_check">
+                                                      <input type="radio" name="gender_type" value="1">
+                                                      <span class="checkmark"></span> Frau
+                                                  </label>
+                                              </div>
+                                              <div>
+                                                  <label class="custom_check">
+                                                      <input type="radio" name="gender_type" value="2">
+                                                      <span class="checkmark"></span>Mann
+                                                  </label>
+                                              </div>
+                                              <div>
+                                                  <label class="custom_check">
+                                                      <input type="radio" name="gender_type" value="3">
+                                                      <span class="checkmark"></span> Beides
+                                                  </label>
+                                              </div>
+                                          </div>
                                          <div class="filter-widget" style="margin-left: 5px !important;">
                                               <input type="hidden" name="sub_category" value="{{$subCategory->id}}">
                                               <input type="hidden" name="category" value="{{$subCategory->category_id}}">

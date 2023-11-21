@@ -452,6 +452,7 @@ class HomeController extends Controller
             ->has('personel')
             ->whereNotNull('city')
             ->paginate(setting('speed_pagination_number'));
+
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {
@@ -471,7 +472,6 @@ class HomeController extends Controller
             'sub_category' => "Service"
         ]);
 
-
         $subCategory = ServiceSubCategory::where('id', $request->input('sub_category'))->first();
 
         $service = ServiceCategory::where('id', $subCategory->category_id)->first();
@@ -482,6 +482,9 @@ class HomeController extends Controller
             ->where('city', $request->input('city_id'))
             ->whereHas('services', function ($query) use ($service, $subCategory) {
                 $query->where('category', $service->id)->where('sub_category', $subCategory->id);
+            })
+            ->when($request->filled('gender_type'), function ($query) use ($request){
+                $query->where('type_id', $request->gender_type);
             })
             ->paginate(setting('speed_pagination_number'));
         $favoriteIds = [];
