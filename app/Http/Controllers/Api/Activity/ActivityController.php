@@ -89,7 +89,7 @@ class ActivityController extends Controller
             } else {
                 return response()->json([
                     'status' => "danger",
-                    'message' => "Kullanıcı Bilgisi Doğrulanamadı 1",
+                    'message' => "Kullanıcı Bilgisi Doğrulanamadı",
                 ]);
             }
         } else {

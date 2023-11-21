@@ -81,9 +81,9 @@ class HomeController extends Controller
             'content' => "required",
             'terms' => "accepted",
         ], [], [
-            'rating' => "Puan",
-            'content' => "Yorum Metni",
-            'terms' => "Şartlar ve Koşullar1"
+            'rating' => "Punkt",
+            'content' => "Kommentartext",
+            'terms' => "Impressum"
         ]);
         $businessComment = new BusinessComment();
         $businessComment->business_id = $request->input('business_id');
@@ -196,10 +196,10 @@ class HomeController extends Controller
         $appointment = Appointment::find($request->id);
         $appointment->status = 8;
         $appointment->save();
-        $appointment->customer->sendSms($appointment->business->name . ' İşletmesine ' . $appointment->start_time . ' tarihindeki randevunuz iptal edildi.');
+        $appointment->customer->sendSms($appointment->business->name . ' İşletmesine ' . $appointment->date . ' tarihindeki randevunuz iptal edildi.');
         return response()->json([
             'status' => "success",
-            'message' => $appointment->start_date . "Tarihindeki Randevunuz Başarılı Bir Şekilde İptal Edildi",
+            'message' => $appointment->date . "Tarihindeki Randevunuz Başarılı Bir Şekilde İptal Edildi",
         ]);
     }
 

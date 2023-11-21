@@ -45,7 +45,7 @@ class AuthController extends Controller
                 $this->saveDevice($user, $deviceToken);
                 $deviceToken = $user->device->token;
                 $title = 'Merhaba '. $user->name;
-                $body = 'HizliRandevuya Tekrar Giriş Yaptın';
+                $body = 'Hoşgeldiniz';
                 $notification = new \App\Services\Notification();
                 //$response = $notification->sendPushNotification($deviceToken, $title, $body);
 

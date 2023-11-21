@@ -38,7 +38,7 @@ class VerifyController extends Controller
             $smsConfirmation->expire_at = now()->addMinute(3);
             $smsConfirmation->save();
 
-            Sms::send(clearPhone($request->phone),config('settings.site_title'). " Sistemine giriş için, telefon numarası doğrulama kodunuz ". $generateCode);
+            Sms::send(clearPhone($request->phone),config('settings.speed_site_title'). " Sistemine giriş için, telefon numarası doğrulama kodunuz ". $generateCode);
             return to_route('customer.verify')->with('response', [
                 'status'=>"success",
                 'message'=>"Doğrulama Kodunuz telefonunuza mesaj olarak gönderildi",

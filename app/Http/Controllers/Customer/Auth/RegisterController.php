@@ -71,9 +71,9 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255', 'unique:customers'],
         ], [], [
-            'name' => 'Ad Soyad',
-            'email' => 'Telefon',
-            'password' => 'Parola',
+            'name' => 'Name Nachname',
+            'email' => 'Mobilnummer',
+            'password' => 'Password',
         ]);
     }
 
@@ -94,7 +94,7 @@ class RegisterController extends Controller
         $smsConfirmation->expire_at = now()->addMinute(3);
         $smsConfirmation->save();
         $phone=str_replace(array('(', ')', '-', ' '), '', $data["email"]);
-        Sms::send($phone,config('settings.site_title'). "Sistemine kayıt için, telefon numarası doğrulama kodunuz ". $generateCode);
+        Sms::send($phone,config('settings.speed_site_title'). "Sistemine kayıt için, telefon numarası doğrulama kodunuz ". $generateCode);
 
         $customer = Customer::create([
             'name' => $data['name'],
