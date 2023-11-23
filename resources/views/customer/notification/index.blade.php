@@ -58,6 +58,7 @@
                                                                         <div class="comment-block">
                                                                             <span class="comment-by">
                                                                                 <span class="blog-author-name">{{$notification->title}}</span>
+                                                                                <p>{{$notification->content}}</p>
                                                                             </span>
                                                                             <p class="blog-date">{{$notification->created_at->format('d.M.Y H:i:s')}}</p>
                                                                         </div>
