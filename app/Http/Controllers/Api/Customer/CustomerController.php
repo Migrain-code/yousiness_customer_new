@@ -249,7 +249,7 @@ class CustomerController extends Controller
                 ]);
                 return response()->json([
                     'status' => "success",
-                    'message' => "Yorumunuz Başarılı Bir Şekilde İletildi"
+                    'message' => "Ihr Kommentar wurde erfolgreich übermittelt."
                 ]);
             }
 
@@ -345,7 +345,7 @@ class CustomerController extends Controller
             if ($user->save()) {
                 return response()->json([
                     'status' => "success",
-                    'message' => "Kullanıcı Bilgileriniz Güncellendi",
+                    'message' => "Ihre Benutzerinformationen wurden erfolgreich aktualisiert.",
                     'user' => new Customer($user),
                 ]);
             }
@@ -413,20 +413,20 @@ class CustomerController extends Controller
                     if ($user->save()){
                         return response()->json([
                             'status' => "success",
-                            'message'=> "Profiliniz Başarılı Bir Şekilde Güncellendi"
+                            'message'=> "Ihr Profil wurde erfolgreich aktualisiert."
                         ]);
                     }
                 }
                 else{
                     return response()->json([
                         'status' => "warning",
-                        'message'=> "Profil Fotoğrafı Seçilmedi"
+                        'message'=> "Es wurde kein Profilfoto ausgewählt."
                     ]);
                 }
             } else {
                 return response()->json([
                    'status' => "warning",
-                   'message' => "Sadece png, jpeg, jpg formatlarına izin veriliyor"
+                   'message' => "Sie können nur Dateien in den Formaten png, jpeg und jpg hochladen. "
                 ]);
             }
 
@@ -453,7 +453,7 @@ class CustomerController extends Controller
             return $path;
         } else {
             // Geçersiz bir resim verisi
-            return  "Hatalı Format";
+            return  "Error";
         }
     }
     /**
@@ -483,7 +483,7 @@ class CustomerController extends Controller
             if ($permission->save()){
                 return response()->json([
                     'status' => "success",
-                    'message'=> "Bildirim Ayarlarınız Güncellendi"
+                    'message'=> "Ihre Benachrichtigungseinstellungen wurden erfolgreich aktualisiert. "
                 ]);
             }
         }
@@ -505,7 +505,7 @@ class CustomerController extends Controller
             $user->delete();
             return response()->json([
                 'status' => 'success',
-                'message' => 'Hesabınız Başarılı Bir Şekilde Silindi',
+                'message' => 'Ihr Konto wurde erfolgreich gelöscht.',
             ]);
         }
         return response()->json(['error' => 'Unauthorized'], 401);
@@ -517,7 +517,6 @@ class CustomerController extends Controller
         foreach (Setting::all() as $item) {
             $settings[$item->name] = $item->value;
         }
-
 
         $gizlilik = Page::where('id', 1)->select('description')->first();
         $kosullaraciklama = Page::where('id', 2)->select('description')->first();

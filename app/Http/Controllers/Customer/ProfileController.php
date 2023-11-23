@@ -48,7 +48,7 @@ class ProfileController extends Controller
         if ($customer->save()) {
             return back()->with('response', [
                 'status' => "success",
-                'message' => "Bilgileriniz Güncellendi"
+                'message' => "Ihre Daten wurden aktualisiert."
             ]);
         }
     }
@@ -69,14 +69,14 @@ class ProfileController extends Controller
         $request->validate([
             'password' => "required|confirmed",
         ], [], [
-            'password' => "Şifre"
+            'password' => "Passwort"
         ]);
         $customer = auth('customer')->user();
         $customer->password = Hash::make($request->password);
         if ($customer->save()) {
             return back()->with('response', [
                 'status' => "success",
-                'message' => "Şifreniz Güncellendi"
+                'message' => "Ihr Passwort wurde aktualisiert"
             ]);
         }
     }

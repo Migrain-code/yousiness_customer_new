@@ -94,8 +94,7 @@ class RegisterController extends Controller
         $smsConfirmation->expire_at = now()->addMinute(3);
         $smsConfirmation->save();
         $phone=str_replace(array('(', ')', '-', ' '), '', $data["email"]);
-        Sms::send($phone,config('settings.speed_site_title'). "Sistemine kayıt için, telefon numarası doğrulama kodunuz ". $generateCode);
-
+        Sms::send($phone, "Für die Registrierung bei ".config('settings.speed_site_title')." ist der Verifizierungscode anzugeben: ". $generateCode);
         $customer = Customer::create([
             'name' => $data['name'],
             'email' => clearPhone($data['email']),

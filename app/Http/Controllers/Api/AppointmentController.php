@@ -87,7 +87,7 @@ class AppointmentController extends Controller
         } else {
             return response()->json([
                 'status' => 'danger',
-                'message' => 'İşletme Kaydı Bulunamadı',
+                'message' => 'Es konnte kein Salon gefunden werden.',
             ]);
         }
     }
@@ -227,7 +227,7 @@ class AppointmentController extends Controller
                 if (Carbon::parse($getDate->format('d.m.Y '))->dayOfWeek == $business->off_day) {
                     $clock = [
                         'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
-                        'saat' => 'İşletme bu tarihte hizmet vermemektedir',
+                        'saat' => 'Der Salon ist an diesem Tag geschlossen.',
                         'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
                         'durum' => false,
                     ];
@@ -330,8 +330,8 @@ class AppointmentController extends Controller
         $appointment->campaign_id = $request->campaign_id;
 
         if ($appointment->save()){
-            $title = 'Randevunuz Oluşturuldu';
-            $body = $appointment->business->name . " işletmesine " . Carbon::parse($request->input('appointment_date'))->format('Y-m-d') . "tarihine randevunuz alındı";
+            $title = 'Ihr Termin wurde erstellt';
+            $body = "Ihr Termin für ".$appointment->business->name." wurde zur den ".Carbon::parse($request->input('appointment_date'))->format('d.m.Y')." erstellt.";
 
             $notification =new CustomerNotificationMobile();
             $notification->customer_id = $appointment->customer->id;
@@ -340,7 +340,7 @@ class AppointmentController extends Controller
             if ($notification->save()) {
                 return response()->json([
                     'status' => 'success',
-                    'message' => $business->name . " işletmesine " . Carbon::parse($request->input('appointment_date'))->format('Y-m-d') . "tarihine randevu alındı",
+                    'message' => $body,
                 ]);
             }
         }
@@ -366,8 +366,8 @@ class AppointmentController extends Controller
             $appointment->status = 8;
             $appointment->save();
 
-            $title = 'Randevunuz İptal Edildi';
-            $body = $appointment->business->name . " işletmesine " . $appointment->start_time . " - " . $appointment->end_time . " arasında randevunuz iptal edildi";
+            $title = 'Ihr Termin wurde abgesagt.';
+            $body = "Ihr Termin für ".$appointment->business->name." wurde zur den ".Carbon::parse($request->input('appointment_date'))->format('d.m.Y')." absagen.";
 
             $notification =new CustomerNotificationMobile();
             $notification->customer_id = $appointment->customer->id;
@@ -382,7 +382,7 @@ class AppointmentController extends Controller
         } else {
             return response()->json([
                 'status' => 'warning',
-                'message' => "Randevu Bulunamadı"
+                'message' => "Es konnte kein Termin gefunden werden."
             ]);
         }
 

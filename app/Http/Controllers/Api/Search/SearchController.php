@@ -49,7 +49,7 @@ class SearchController extends Controller
             }
             return response()->json([
                 'status' => "danger",
-                'message' => "Aradığınız Hizmet Türünde Hizmet Veren İşletme Kaydı Bulunamadı"
+                'message' => "Es konnte kein Salon gefunden werden, der die von Ihnen gesuchte Dienstleistung anbietet."
             ]);
     }
     /**
@@ -83,7 +83,7 @@ class SearchController extends Controller
         }
         return response()->json([
             'status' => "error",
-            'message' => "Aradığınız İşletme Türünde Hizmet Veren İşletme Kaydı Bulunamadı"
+            'message' => "Noch kein Salon für die von Ihnen gesuchte Kategorie gefunden."
         ]);
     }
     /**
@@ -106,7 +106,7 @@ class SearchController extends Controller
         }
         return response()->json([
             'status' => "error",
-            'message' => "İşletme Bulunamadı"
+            'message' => "Salon konnte nicht gefunden werden"
         ]);
     }
     /**
@@ -141,7 +141,7 @@ class SearchController extends Controller
         }
         return response()->json([
             'status' => "danger",
-            'message' => "Aradığınız Hizmet Türünde Hizmet Veren İşletme Kaydı Bulunamadı"
+            'message' => "Es konnte kein Salon für die von Ihnen gesuchte Dienstleistungskategorie gefunden werden."
         ]);
     }
     /**
@@ -163,7 +163,7 @@ class SearchController extends Controller
         }
         return response()->json([
             'status' => "error",
-            'message' => "Aradığınız Şehirde Hizmet Veren İşletme Kaydı Bulunamadı"
+            'message' => "Es konnte kein Salon in der von Ihnen gesuchten Stadt gefundenwerden."
         ]);
     }
 }

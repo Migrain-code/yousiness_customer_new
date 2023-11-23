@@ -41,7 +41,7 @@ class CampaignController extends Controller
             if ($customer) {
                 return response()->json([
                     'status' => "warning",
-                    'message' => "Bu kupon kodunu zaten kullandınız"
+                    'message' => "Sie haben diesen Gutscheincode bereits verwendet. "
                 ]);
             } else {
                 $campaignCustomer = new CampaignCustomer();
@@ -53,7 +53,7 @@ class CampaignController extends Controller
                         'id' => $campaignCustomer->id,
                         'campaign_id' => $campaign->id,
                         'discount' => $campaign->discount,
-                        'message' => $campaign->code . " Kupon Kodu Uygulandı",
+                        'message' => $campaign->code . " Ihr Gutscheincode wurde angewendet. ",
                     ]);
                 }
 
@@ -62,7 +62,7 @@ class CampaignController extends Controller
         } else {
             return response()->json([
                 'status' => "danger",
-                'message' => "Kupon Kodu Geçersiz"
+                'message' => "Ihr Gutscheincode ist ungültig."
             ]);
         }
     }
@@ -81,13 +81,13 @@ class CampaignController extends Controller
             $campaignCustomer->delete();
             return response()->json([
                 'status' => "warning",
-                'message' => "Kupon Kodu Kaldırıldı"
+                'message' => "Ihr Gutscheincode wurde entfernt."
             ]);
 
         } else {
             return response()->json([
                 'status' => "danger",
-                'message' => "Kupon Koduna Kullanımına Ait Kayıt Bulunamadı"
+                'message' => "Ihr Gutscheincode ist ungültig."
             ]);
         }
     }

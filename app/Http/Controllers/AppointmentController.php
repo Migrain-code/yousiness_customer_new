@@ -154,7 +154,7 @@ class AppointmentController extends Controller
         $appointment = Appointment::find($appointment);
         $business = $appointment->business;
         $customer = $appointment->customer;
-        $customer->sendSms($business->name . ' İşletmesine ' . $appointment->start_time . ' - ' . $appointment->end_time . ' arasında randevunuz alındı.');
+        $customer->sendSms("Ihr Termin wurde am ".$appointment->date." für ".$business->name." erfolgreich abgeschlossen.");
         return view('appointment.step5', compact('appointment', 'business'));
     }
 

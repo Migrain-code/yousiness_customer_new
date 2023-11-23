@@ -108,14 +108,14 @@ class ServiceController extends Controller
         if ($businesses->count() > 0){
             return response()->json([
                 'status' => "success",
-                'message' => "İşletme Kaydı Bulundu",
+                'message' => "Es konnte kein Salon gefunden werden.",
                 'businesses' => BusinessResource::collection($businesses)
             ]);
         }
         else{
             return response()->json([
                 'status' => "danger",
-                'message' => "Aradığınız Hizmet Türünde İşletme Kaydı Bulunamadı",
+                'message' => "Es konnte kein Salon für die von Ihnen gesuchte Dienstleistungskategorie gefunden werden",
             ]);
         }
 

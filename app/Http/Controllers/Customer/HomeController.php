@@ -59,6 +59,11 @@ class HomeController extends Controller
         return view('customer.home', compact('ads','customer', 'appointments', 'appointmentTotals', 'payments', 'favorites'));
     }
 
+    public function notifications()
+    {
+        $customer = auth('customer')->user();
+        return view('customer.notification.index', compact('customer'));
+    }
     public function appointments()
     {
         $customer = auth('customer')->user();
@@ -96,7 +101,7 @@ class HomeController extends Controller
             ]);
             return back()->with('response', [
                 'status' => "success",
-                'message' => "Yorumunuz Başarılı Bir Şekilde İletildi"
+                'message' => "Ihre Bewertung wurde erfolgreich gesendet"
             ]);
         }
     }
@@ -106,8 +111,8 @@ class HomeController extends Controller
         $customer = auth('customer')->user();
         $packets = $customer->packets()->paginate(setting('speed_pagination_number'));
         $packageTypes = [
-            'Seans',
-            'Dakika'
+            'Sitzung',
+            'Minute'
         ];
         return view('customer.packet.index', compact('packets', 'packageTypes'));
     }
@@ -115,8 +120,8 @@ class HomeController extends Controller
     public function packetDetail($id)
     {
         $packageTypes = [
-            'Seans',
-            'Dakika'
+            'Sitzung',
+            'Minute'
         ];
         $packet = PackageSale::find($id);
         if ($packet) {
@@ -143,10 +148,10 @@ class HomeController extends Controller
     {
         $customer = auth('customer')->user();
         $paymentTypes = [
-            'Nakit Ödeme',
-            'Banka/Kredi Kartı',
-            'EFT/Havale',
-            'Diğer',
+            'Barzahlung',
+            'Lastschrift / Kreditkarte',
+            'EFT/Geldtransfer',
+            'Andere',
         ];
         $orders = $customer->orders()->paginate(setting('speed_pagination_number'));
 
@@ -196,11 +201,11 @@ class HomeController extends Controller
         $appointment = Appointment::find($request->id);
         $appointment->status = 8;
         $appointment->save();
-        $appointment->customer->sendSms($appointment->business->name . ' İşletmesine ' . $appointment->date . ' tarihindeki randevunuz iptal edildi.');
+        $appointment->customer->sendSms("Ihr Termin am ". $appointment->date ." wurde bei ". $appointment->business->name ." abgesagt.");
         return response()->json([
             'status' => "success",
-            'message' => $appointment->date . "Tarihindeki Randevunuz Başarılı Bir Şekilde İptal Edildi",
-        ]);
+            'message' => "Ihr Termin am ". $appointment->date ." wurde bei ". $appointment->business->name ." abgesagt.",
+            ]);
     }
 
     public function addFavorite(Request $request)
@@ -212,7 +217,7 @@ class HomeController extends Controller
             $existBusiness->delete();
             return response()->json([
                 'status' => "info",
-                'message' => "İşletme Favorilerinizden Çıkarıldı",
+                'message' => "alon wurde aus Ihren Favoriten entfernt. ",
                 'type' => "delete"
             ]);
         } else {
@@ -222,7 +227,7 @@ class HomeController extends Controller
             $favorite->save();
             return response()->json([
                 'status' => "success",
-                'message' => "İşletme Favorilerinize Eklendi",
+                'message' => "alon wurde zu Ihren Favoriten hinzugefügt. ",
                 'type' => "add"
             ]);
         }
@@ -235,7 +240,7 @@ class HomeController extends Controller
         if ($favorite->delete()) {
             return response()->json([
                 'status' => "success",
-                'message' => "İşletme Favorilerinizden Çıkarıldı",
+                'message' => "Salon wurde aus Ihren Favoriten entfernt. ",
             ]);
         }
     }
@@ -263,7 +268,7 @@ class HomeController extends Controller
         $permission->save();
         return back()->with('response', [
            'status' => "success",
-           'message' => "Bildirim izinleri güncellendi"
+           'message' => "Berechtigungserlaubnis für Benachrichtigungen wurde aktualisiert."
         ]);
 
 

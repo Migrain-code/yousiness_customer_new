@@ -28,7 +28,7 @@ class VerifyController extends Controller
     public function phoneVerifyAction(Request $request)
     {
         //$request->dd();
-        $customer=Customer::where('email', clearPhone($request->phone))->first();
+        $customer=Customer::whereEmail(clearPhone($request->email))->first();
         if ($customer){
             $generateCode=rand(100000, 999999);
             $smsConfirmation = new SmsConfirmation();
@@ -37,17 +37,16 @@ class VerifyController extends Controller
             $smsConfirmation->code = $generateCode;
             $smsConfirmation->expire_at = now()->addMinute(3);
             $smsConfirmation->save();
-
-            Sms::send(clearPhone($request->phone),config('settings.speed_site_title'). " Sistemine giriş için, telefon numarası doğrulama kodunuz ". $generateCode);
+            Sms::send(clearPhone($request->phone), "Für die Anmeldung bei ".config('settings.speed_site_title')." lautet Ihr Prüfcode :" . $generateCode);
             return to_route('customer.verify')->with('response', [
                 'status'=>"success",
-                'message'=>"Doğrulama Kodunuz telefonunuza mesaj olarak gönderildi",
+                'message'=>"Ihr Bestätigungscode wurde als Nachricht gesendet",
             ]);
         }
         else{
             return to_route('customer.phone.verify')->with('response', [
                 'status'=>"danger",
-                'message'=>"Telefon Numarası Sistemde Kayıtlı Değil"
+                'message'=>"Mobilnummer nicht im System registriert."
             ]);
         }
     }
@@ -63,7 +62,7 @@ class VerifyController extends Controller
             if ($code->expire_at < now()){
                 return to_route('customer.phone.verify')->with('response', [
                     'status'=>"warning",
-                    'message'=>"Doğrulama Kodunun Süresi Dolmuş."
+                    'message'=>"Verifizierungscode ist nicht mehr gültig."
                 ]);
             }
             $user = Customer::where('email', $code->phone)->first();
@@ -73,16 +72,16 @@ class VerifyController extends Controller
             $user->verify_phone=1;
             $user->save();
 
-            Sms::send(clearPhone($user->email),config('settings.speed_site_title'). "Sistemine giriş için şifreniz ".$generatePassword);
+            Sms::send($user->email, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
             return to_route('customer.login')->with('response', [
                 'status'=>"success",
-                'message'=>"Telefon Numaranız doğrulandı. Sisteme giriş için şifreniz gönderildi."
+                'message'=>"Ihre Mobilnummer Überprüfung war erfolgreich.Für die Anmeldung in das System wurde Ihnen Ihr Passwort zugesendet."
             ]);
         }
         else{
             return to_route('customer.verify')->with('response', [
                 'status'=>"danger",
-                'message'=>"Doğrulama Kodu Hatalı."
+                'message'=>"Verifizierungscode ist fehlerhaft."
             ]);
         }
     }
@@ -96,7 +95,7 @@ class VerifyController extends Controller
         $request->validate([
             'email'=>"required",
         ], [], [
-            'email'=>"Telefon Numarası"
+            'email'=>"Mobile Nummer"
         ]);
         $customer=Customer::whereEmail(clearPhone($request->email))->first();
         if (!$customer){

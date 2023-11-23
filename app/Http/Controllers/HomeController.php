@@ -108,7 +108,7 @@ class HomeController extends Controller
                 if ($personel->activities()->where('activity_id', $request->activity_id)->first()) {
                     return response()->json([
                         'status' => "error",
-                        'message' => "Bu etkinliğe zaten katıldınız",
+                        'message' => "Sie haben bereits an diesem Event teilgenommen.",
                     ]);
                 } else {
                     $activityPersonel = new ActivityBusiness();
@@ -118,7 +118,7 @@ class HomeController extends Controller
                     if ($activityPersonel->save()) {
                         return response()->json([
                             'status' => "success",
-                            'message' => "Etkinliğe Katılımınız Onaylandı. Aşağıdaki Katılımcı Listesinden Görebilirsiniz",
+                            'message' => "Ihre Teilnahme an dem Event wurde bestätigt. Sie können die Liste der Teilnehmer unten sehen.",
                         ]);
                     }
                 }
@@ -126,13 +126,13 @@ class HomeController extends Controller
             } else {
                 return response()->json([
                     'status' => "error",
-                    'message' => "Kullanıcı Bilgisi Doğrulanamadı",
+                    'message' => "Benutzerinformationen stimmen nicht überein. ",
                 ]);
             }
         } else {
             return response()->json([
                 'status' => "error",
-                'message' => "Girdiğiniz telefon numarası sistemde kayıtlı değil",
+                'message' => "Die von Ihnen angegebene Telefonnummer ist nicht im System registriert.",
             ]);
         }
     }
@@ -150,10 +150,10 @@ class HomeController extends Controller
             'subject' => "required",
             'content' => "required",
         ], [], [
-            'name' => "Ad Soyad",
-            'email' => "E-posta",
-            'subject' => "Konu",
-            'content' => "İçerik",
+            'name' => "Name Nachname",
+            'email' => "E-mail",
+            'subject' => "Thema",
+            'content' => "Erläuterung",
         ]);
         $contact = new CustomerContact();
         $contact->name = $request->input('name');
@@ -163,7 +163,7 @@ class HomeController extends Controller
         if ($contact->save()) {
             return back()->with('response', [
                 'status' => "success",
-                'message' => "İletişim mesajınız gönderildi"
+                'message' => "Ihre Nachricht wurde gesendet. "
             ]);
         }
     }
@@ -280,9 +280,9 @@ class HomeController extends Controller
             'business_name' => "required|min:3",
             'phone' => "required|min:11"
         ], [], [
-            'fullname' => "Ad soyad",
-            'business_name' => "İşletme Adı",
-            'phone' => "Telefon"
+            'fullname' => "Name Nachname",
+            'business_name' => "Firmenname",
+            'phone' => "Mobilenummer"
         ]);
         $businessInfo = new BusinessInfo();
         $businessInfo->fullname = $request->input('fullname');
@@ -291,7 +291,7 @@ class HomeController extends Controller
         if ($businessInfo->save()) {
             return to_route('business')->with('response', [
                 'status' => "success",
-                'message' => "Talebiniz Gönderildi Size en kısa zamanda arayacağız"
+                'message' => "Ihre Anfrage wurde versendet. Wir werden uns so schnell wie möglich bei Ihnen melden."
             ]);
         }
     }
@@ -377,7 +377,7 @@ class HomeController extends Controller
         if ($blogComment->save()) {
             return back()->with('response', [
                 'status' => "success",
-                'message' => "Yorumunuz Gönderildi. İncelendikten Sonra Yayına Alınacak"
+                'message' => "Ihr Kommentar wurde abgeschickt und wird nach einer Überprüfung veröffentlicht."
             ]);
         }
 

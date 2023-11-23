@@ -69,10 +69,16 @@
                             <span>Meine Kampagnen</span>
                         </a>
                     </li>
+                    <li @if(request()->routeIs('customer.notifications')) class="active" @endif>
+                        <a href="{{route('customer.notifications')}}">
+                            <i class="fas fa-bell"></i>
+                            <span>Benachrichtigungen</span>
+                        </a>
+                    </li>
                     <li @if(request()->routeIs('customer.campaign.index')) class="active" @endif>
                         <a href="{{route('customer.permissions')}}">
-                            <i class="fas fa-bell"></i>
-                            <span>Benachrichtungen</span>
+                            <i class="fas fa-bell-slash"></i>
+                            <span>Berechtigungen</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.profile.edit')) class="active" @endif>

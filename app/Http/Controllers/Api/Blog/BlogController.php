@@ -36,7 +36,7 @@ class BlogController extends Controller
         }
         return  response()->json([
            'status' => "error",
-           'message'=> "Blog Bulunamadı"
+           'message'=> "Blog konnte nicht gefunden werden. "
         ]);
     }
 }

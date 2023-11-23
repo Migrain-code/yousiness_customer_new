@@ -50,7 +50,7 @@ class ActivityController extends Controller
 
         return response()->json([
             'status' => "error",
-            'message' => "Etkinlik Bulunamadı"
+            'message' => "vent konnte nicht gefunden werden."
         ]);
     }
 
@@ -71,7 +71,7 @@ class ActivityController extends Controller
                 if ($personel->activities()->where('activity_id', $request->activity_id)->first()) {
                     return response()->json([
                         'status' => "warning",
-                        'message' => "Bu etkinliğe zaten katıldınız",
+                        'message' => "Sie haben bereits an diesem Event teilgenommen.",
                     ]);
                 } else {
                     $activityPersonel = new ActivityBusiness();
@@ -81,7 +81,7 @@ class ActivityController extends Controller
                     if ($activityPersonel->save()) {
                         return response()->json([
                             'status' => "success",
-                            'message' => "Etkinliğe Katılımınız Onaylandı. Aşağıdaki Katılımcı Listesinden Görebilirsiniz",
+                            'message' => "Ihre Teilnahme an dem Event wurde bestätigt.Sie können die Liste der Teilnehmer unten sehen. ",
                         ]);
                     }
                 }
@@ -89,13 +89,13 @@ class ActivityController extends Controller
             } else {
                 return response()->json([
                     'status' => "danger",
-                    'message' => "Kullanıcı Bilgisi Doğrulanamadı",
+                    'message' => "Überprüfung der Benutzerinformationen fehlgeschlagen.",
                 ]);
             }
         } else {
             return response()->json([
                 'status' => "warning",
-                'message' => "Girdiğiniz telefon numarası sistemde kayıtlı değil",
+                'message' => "Die von Ihnen eingegebene Mobilnummer ist nicht im System registriert.",
             ]);
         }
     }

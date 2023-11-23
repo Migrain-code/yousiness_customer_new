@@ -58,7 +58,7 @@ class SalonController extends Controller
         else{
             return response()->json([
                 'status' => "danger",
-                'salon' => "İşletme Bulunamadı"
+                'salon' => "Salon konnte nicht gefunden werden."
             ]);
         }
     }
@@ -92,7 +92,7 @@ class SalonController extends Controller
             if ($businesses->count() == 0){
                 return response()->json([
                     'status' => 'warning',
-                    'message' => "Aradığınız Hizmet Türünde İşletme Kaydı Bulunamadı"
+                    'message' => "Noch kein Salon, für die von Ihnen gesuchte Art von Dienstleistung gefunden."
                 ]);
             }
             return response()->json([
@@ -102,7 +102,7 @@ class SalonController extends Controller
         else{
             return response()->json([
                 'status' => 'warning',
-                'message' => "Hizmet Bulunamadı"
+                'message' => "Gewünschte Dienstleistung konnte nicht gefunden werden."
             ]);
         }
     }

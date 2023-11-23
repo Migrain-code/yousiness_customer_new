@@ -52,7 +52,7 @@ class CityController extends Controller
         }
         return response()->json([
            'status' => "error",
-           'message' => "Şehir Bulunamadı"
+           'message' => "Die Stadt konnte nicht gefunden werden."
         ]);
     }
 

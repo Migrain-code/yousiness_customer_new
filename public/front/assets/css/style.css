@@ -11525,8 +11525,8 @@ body .multi-optn {
 	position: absolute;
 }
 .blog-comments .comments-list li img.avatar {
-	height: 58px;
-	width: 58px;
+	height: 50px;
+	width: 50px;
 	border-radius: 58px;
 }
 .blog-comments .comment-btn {

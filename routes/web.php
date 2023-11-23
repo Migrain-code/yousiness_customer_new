@@ -71,6 +71,7 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
     Route::middleware(['auth:customer', 'active'])->group(function () {
         Route::get('/home', [\App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home');
         Route::get('/permissions', [\App\Http\Controllers\Customer\HomeController::class,'permissions'])->name('permissions');
+        Route::get('/notifications', [\App\Http\Controllers\Customer\HomeController::class,'notifications'])->name('notifications');
         Route::get('/yorumlar', [\App\Http\Controllers\Customer\HomeController::class, 'comments'])->name('comments');
         Route::get('/favori-isletmeler', [\App\Http\Controllers\Customer\HomeController::class, 'favorites'])->name('favorite.index');
         Route::get('/islem-yaptigim-isletmeler', [\App\Http\Controllers\Customer\HomeController::class, 'addicted'])->name('addicted.index');

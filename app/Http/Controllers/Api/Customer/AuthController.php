@@ -44,8 +44,8 @@ class AuthController extends Controller
                 $deviceToken = $request->device_token;
                 $this->saveDevice($user, $deviceToken);
                 $deviceToken = $user->device->token;
-                $title = 'Merhaba '. $user->name;
-                $body = 'Hoşgeldiniz';
+                $title = $user->name;
+                $body = 'Herzlich willkommen!';
                 $notification = new \App\Services\Notification();
                 //$response = $notification->sendPushNotification($deviceToken, $title, $body);
 
@@ -57,7 +57,7 @@ class AuthController extends Controller
             ]);
         }
 
-        return response()->json(['status' => 'danger', 'message' => "Telefon Numaranız veya Şifreniz Hatalı"], 401);
+        return response()->json(['status' => 'danger', 'message' => "Ihre Mobilnummer oder Ihr Passwort ist falsch. "], 401);
     }
 
     public function existPhone($phone)
@@ -83,7 +83,7 @@ class AuthController extends Controller
         if ($this->existPhone(clearPhone($request->phone))) {
             return response()->json([
                 'status' => "warning",
-                'message' => "Bu telefon numarası ile kayıtlı kullanıcı bulunmakta."
+                'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
             ]);
         } else {
             $generateCode = rand(100000, 999999);
@@ -95,12 +95,11 @@ class AuthController extends Controller
             $smsConfirmation->save();
 
             $phone = str_replace(array('(', ')', '-', ' '), '', $request->input('phone'));
-
-            Sms::send($phone, config('settings.site_title') . "Sistemine kayıt için, telefon numarası doğrulama kodunuz " . $generateCode);
+            Sms::send($phone, "Für die Registrierung bei ".config('settings.site_title')." lautet Ihr Prüfcode:". $generateCode);
 
             return response()->json([
                 'status' => "success",
-                'message' => "Kayıt Oluşturuldu.Lütfen Telefon Numaranızı Doğrulayınız"
+                'message' => "Wir haben einen Code an Ihre Mobilnummer gesendet. Bitte überprüfen Sie Ihre Mobilnummer. "
             ]);
         }
     }
@@ -117,7 +116,7 @@ class AuthController extends Controller
             if ($code->expire_at < now()) {
                 return response()->json([
                     'status' => "warning",
-                    'message' => "Doğrulama Kodunun Süresi Dolmuş."
+                    'message' => "Verifizierungscode ist nicht mehr gültig."
                 ]);
             }
             else{
@@ -135,17 +134,16 @@ class AuthController extends Controller
                     $this->addPermission($customer->id);
                     $phone = clearPhone($request->input('phone'));
 
-                    Sms::send($phone, config('settings.speed_site_title') . "Sistemine giriş için şifreniz " . $generatePassword);
-
+                    Sms::send($phone, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet:". $generatePassword);
                     return response()->json([
                         'status' => "success",
-                        'message' => "Telefon Numaranız doğrulandı. Sisteme giriş için şifreniz gönderildi."
+                        'message' => "Ihre Mobilnummer wurde verifiziert. Ihr Passwort für die Anmeldung bei Yousiness wurde an Sie gesendet. ."
                     ]);
                 }
                 else{
                     return response()->json([
                         'status' => "success",
-                        'message' => "Kod Doğrulanamadı."
+                        'message' => "Code konnte nicht verifiziert werden."
                     ]);
                 }
             }
@@ -154,7 +152,7 @@ class AuthController extends Controller
         } else {
             return response()->json([
                 'status' => "danger",
-                'message' => "Doğrulama Kodu Hatalı."
+                'message' => "Verifizierungscode ist fehlerhaft. ."
             ]);
         }
     }
