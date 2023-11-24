@@ -38,7 +38,7 @@
                                 <h3>Termin erfolgreich vereinbart!!</h3>
                                 Ihr Termin für <strong>{{$business->name}}</strong> <br>
                                 <p>
-                                    wurde für den {{\Illuminate\Support\Carbon::parse($appointment->services->first()->start_time)->format('d.m.Y')}} vereinbart
+                                    wurde für den {{$appointment->services->first()->start_time}} vereinbart
 
                                 </p>
                                 <a href="/" class="btn btn-primary view-inv-btn">Startseite</a>
