@@ -122,12 +122,11 @@
                         <!-- Copyright Menu -->
                         <div class="copyright-menu">
                             <ul class="policy-menu">
-                                <li>
-                                    <a href="{{route('page.detail', $globalData['use_pages'][1]->slug)}}">Rechliches</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('page.detail', $globalData['use_pages'][0]->slug)}}">Impressum</a>
-                                </li>
+                                @foreach($globalData['use_pages'] as $page)
+                                    <li>
+                                        <a href="{{route('page.detail', $page->slug)}}">{{$page->title}}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <!-- /Copyright Menu -->
