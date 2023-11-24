@@ -105,7 +105,7 @@
                                                     <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif required>
                                                         <option value="">{{$service->subCategory->name}} Mitarbeiter auswählen</option>
                                                         @forelse($service->personels as $service_personel)
-                                                            @if($service_personel)
+                                                            @if($service_personel && $service_personel->personel)
                                                                 <option value="{{$service_personel->personel->id}}" @selected(in_array($service_personel->personel->id, $selectedPersonelIds))>{{$service_personel->personel->name}}</option>
                                                             @endif
                                                         @empty
