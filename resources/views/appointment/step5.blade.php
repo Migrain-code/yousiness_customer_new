@@ -35,7 +35,7 @@
                         <div class="card-body">
                             <div class="success-cont">
                                 <i class="fas fa-check"></i>
-                                <h3>Termin erfolgreich vereinbart!!</h3>
+                                <h3>Termin erfolgreich vereinbart!</h3>
                                 Ihr Termin für <strong>{{$business->name}}</strong> <br>
                                 <p>
                                     wurde für den {{$appointment->services->first()->start_time}} vereinbart
