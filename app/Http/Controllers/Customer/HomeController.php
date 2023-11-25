@@ -217,7 +217,7 @@ class HomeController extends Controller
             $existBusiness->delete();
             return response()->json([
                 'status' => "info",
-                'message' => "alon wurde aus Ihren Favoriten entfernt. ",
+                'message' => "Salon wurde aus Ihren Favoriten entfernt. ",
                 'type' => "delete"
             ]);
         } else {
@@ -227,7 +227,7 @@ class HomeController extends Controller
             $favorite->save();
             return response()->json([
                 'status' => "success",
-                'message' => "alon wurde zu Ihren Favoriten hinzugefügt. ",
+                'message' => "Salon wurde zu Ihren Favoriten hinzugefügt. ",
                 'type' => "add"
             ]);
         }

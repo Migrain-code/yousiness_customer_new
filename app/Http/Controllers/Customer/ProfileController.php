@@ -76,7 +76,7 @@ class ProfileController extends Controller
         if ($customer->save()) {
             return back()->with('response', [
                 'status' => "success",
-                'message' => "Ihr Passwort wurde aktualisiert"
+                'message' => "Ihr Passwort wurde aktualisiert."
             ]);
         }
     }
