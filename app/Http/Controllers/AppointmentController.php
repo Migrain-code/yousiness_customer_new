@@ -153,6 +153,7 @@ class AppointmentController extends Controller
         $notification->title = $appointment->customer->name . "randevu aldı";
         $notification->message = $appointment->customer->name . "saat". $appointment->services->first()->start_time. " tarihine randevu aldı";
         $notification->link = Str::slug($notification->title);
+        $notification->save();
         return to_route('appointment.success', $appointment->id);
     }
 
