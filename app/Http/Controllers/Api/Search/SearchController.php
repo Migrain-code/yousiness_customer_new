@@ -163,7 +163,7 @@ class SearchController extends Controller
         }
         return response()->json([
             'status' => "error",
-            'message' => "Es konnte kein Salon in der von Ihnen gesuchten Stadt gefundenwerden."
+            'message' => "Es konnte kein Salon in der von Ihnen gesuchten Stadt gefundenwerden. (Kooperationsgespräche werden durchgeführt)"
         ]);
     }
 }

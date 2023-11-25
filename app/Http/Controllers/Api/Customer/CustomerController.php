@@ -345,7 +345,7 @@ class CustomerController extends Controller
             if ($user->save()) {
                 return response()->json([
                     'status' => "success",
-                    'message' => "Ihre Benutzerinformationen wurden erfolgreich aktualisiert.",
+                    'message' => "Ihre Benutzerinformationen wurden aktualisiert.",
                     'user' => new Customer($user),
                 ]);
             }
@@ -420,13 +420,14 @@ class CustomerController extends Controller
                 else{
                     return response()->json([
                         'status' => "warning",
-                        'message'=> "Es wurde kein Profilfoto ausgewählt."
+                        'message'=> "Es wurde kein Profil Foto ausgewählt.
+                        "
                     ]);
                 }
             } else {
                 return response()->json([
                    'status' => "warning",
-                   'message' => "Sie können nur Dateien in den Formaten png, jpeg und jpg hochladen. "
+                   'message' => "Nur die png, jpeg und jpg Formate werden akzeptiert."
                 ]);
             }
 
@@ -483,7 +484,7 @@ class CustomerController extends Controller
             if ($permission->save()){
                 return response()->json([
                     'status' => "success",
-                    'message'=> "Ihre Benachrichtigungseinstellungen wurden erfolgreich aktualisiert. "
+                    'message'=> "Ihre Benachrichtigungseinstellungen wurden aktualisiert."
                 ]);
             }
         }

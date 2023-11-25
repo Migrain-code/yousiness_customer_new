@@ -95,7 +95,7 @@ class AuthController extends Controller
             $smsConfirmation->save();
 
             $phone = str_replace(array('(', ')', '-', ' '), '', $request->input('phone'));
-            Sms::send($phone, "Für die Registrierung bei ".config('settings.site_title')." lautet Ihr Prüfcode:". $generateCode);
+            Sms::send($phone, "Für die Registrierung bei ".config('settings.site_title')." ist der Verifizierungscode anzugeben:". $generateCode);
 
             return response()->json([
                 'status' => "success",
@@ -134,7 +134,7 @@ class AuthController extends Controller
                     $this->addPermission($customer->id);
                     $phone = clearPhone($request->input('phone'));
 
-                    Sms::send($phone, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet:". $generatePassword);
+                    Sms::send($phone, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet Ihr Prüfcode:". $generatePassword);
                     return response()->json([
                         'status' => "success",
                         'message' => "Ihre Mobilnummer wurde verifiziert. Ihr Passwort für die Anmeldung bei Yousiness wurde an Sie gesendet. ."

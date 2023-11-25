@@ -37,7 +37,7 @@ class VerifyController extends Controller
             $smsConfirmation->code = $generateCode;
             $smsConfirmation->expire_at = now()->addMinute(3);
             $smsConfirmation->save();
-            Sms::send(clearPhone($request->phone), "Für die Anmeldung bei ".config('settings.speed_site_title')." lautet Ihr Prüfcode :" . $generateCode);
+            Sms::send(clearPhone($request->phone), "Für die Anmeldung bei ".config('settings.speed_site_title')." lautet Ihr Prüfcode:" . $generateCode);
             return to_route('customer.verify')->with('response', [
                 'status'=>"success",
                 'message'=>"Ihr Bestätigungscode wurde als Nachricht gesendet",
@@ -75,7 +75,7 @@ class VerifyController extends Controller
             Sms::send($user->email, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
             return to_route('customer.login')->with('response', [
                 'status'=>"success",
-                'message'=>"Ihre Mobilnummer Überprüfung war erfolgreich.Für die Anmeldung in das System wurde Ihnen Ihr Passwort zugesendet."
+                'message'=>"Ihre Mobilnummer Überprüfung war erfolgreich. Für die Anmeldung in das System wurde Ihnen Ihr Passwort zugesendet."
             ]);
         }
         else{
