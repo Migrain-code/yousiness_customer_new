@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\AppointmentServices;
 use App\Models\Business;
+use App\Models\BusinessNotification;
 use App\Models\BusinessService;
 use App\Models\Customer;
 use App\Models\Personel;
@@ -14,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AppointmentController extends Controller
 {
@@ -146,6 +148,11 @@ class AppointmentController extends Controller
         }
 
         $appointment->save();
+        $notification = new BusinessNotification();
+        $notification->business_id = $business->id;
+        $notification->title = $appointment->customer->name . "randevu aldı";
+        $notification->message = $appointment->customer->name . "saat". $appointment->services->first()->start_time. " tarihine randevu aldı";
+        $notification->link = Str::slug($notification->title);
         return to_route('appointment.success', $appointment->id);
     }
 
