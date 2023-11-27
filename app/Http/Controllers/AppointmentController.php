@@ -108,9 +108,9 @@ class AppointmentController extends Controller
                 'surname' => "required",
                 'phone' => "required",
             ], [], [
-                'name' => 'Ad',
-                'surname' => 'Soyad',
-                'phone' => 'Telefon',
+                'name' => 'Name',
+                'surname' => 'Nach Name',
+                'phone' => 'Mobilenummer',
             ]);
             $appointment = new Appointment();
             $appointment->business_id = $business->id;
