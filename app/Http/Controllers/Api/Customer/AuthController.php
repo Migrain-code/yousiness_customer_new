@@ -57,7 +57,7 @@ class AuthController extends Controller
             ]);
         }
 
-        return response()->json(['status' => 'danger', 'message' => "Ihre Mobilnummer oder Ihr Passwort ist falsch. "], 401);
+        return response()->json(['status' => 'danger', 'message' => "Ihre Mobilnummer oder Ihr Passwort ist falsch."], 401);
     }
 
     public function existPhone($phone)
