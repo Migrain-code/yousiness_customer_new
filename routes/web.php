@@ -7,7 +7,7 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('/', 'index')->name('welcome');
     Route::get('/nach/standort', 'nearMe')->name('nachStandort');
     Route::get('/salonlar', 'allBusiness')->name('business.all');
-    Route::get('/salon-kategori/{slug}', 'businessCategory')->name('business.category');
+        Route::get('/salon-kategori/{slug}', 'businessCategory')->name('business.category');
     Route::get('/salon/{slug}/detay', 'businessDetail')->name('business.detail');
 
     Route::get('sayfa/{slug}', 'pageDetail')->name('page.detail');
@@ -29,12 +29,12 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::post('/alt-kategori/hizmet-ara','serviceSubSearch')->name('searchSubService');
     Route::get('/hizmet-ara/{city}/{service}','serviceAllGet')->name('serviceAllGet');
     Route::get('/hizmet-turu-ara/{category}/{service}','serviceSubCategoryGet')->name('serviceSubCategoryGet');
-    Route::get('/hizmet-ara/{city}','serviceCityGet')->name('serviceCityGet');
-    Route::get('/hizmet/{service}','serviceGet')->name('serviceGet');
+    Route::get('/hizmet-sehire-gore-ara/{city}','serviceCityGet')->name('serviceCityGet');
+    Route::get('/hizmete-gore-ara/{service}','serviceGet')->name('serviceGet');
 
     Route::post('/salon-ara', 'businessCategorySearch')->name('businessCategorySearch');
     Route::get('/salon-ara/{city}/{category}','categoryAllGet')->name('categoryAllGet');
-    Route::get('/sehir-ara/{city}','categoryCityGet')->name('categoryCityGet');
+    Route::get('/sehir-gore-ara/{city}','categoryCityGet')->name('categoryCityGet');
     Route::get('/salon-ara/{category}','categoryGet')->name('categoryGet');
 
     Route::get('/live-search', 'liveSearch')->name('live-search');

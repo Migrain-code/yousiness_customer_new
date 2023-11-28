@@ -261,7 +261,7 @@ class HomeController extends Controller
             if ($request->gender_type == 3){
                 $businesses = $businessCategory->businesses()->whereNotNull('city')->whereIn('type_id', [1,2,3])->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
             } else{
-                $businesses = $businessCategory->businesses()->whereNotNull('city')->where('type_id', $request->gender_type)->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
+                $businesses = $businessCategory->businesses()->whereNotNull('city')->whereIn('type_id', [$request->gender_type, 3])->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
             }
         }
         else{
@@ -321,7 +321,7 @@ class HomeController extends Controller
                 if ($request->gender_type == 3){
                     $q->whereIn('type_id', [1,2,3]);
                 } else{
-                    $q->where('type_id', $request->gender_type);
+                    $q->whereIn('type_id', [$request->gender_type, 3]);
                 }
             })
             ->when($request->filled('city_id'), function ($q) use ($request){
@@ -503,7 +503,7 @@ class HomeController extends Controller
                 if ($request->gender_type == 3){
                     $query->whereIn('type_id', [1,2,3]);
                 } else{
-                    $query->where('type_id', $request->gender_type);
+                    $query->whereIn('type_id', [$request->gender_type, 3]);
                 }
             })
             ->paginate(setting('speed_pagination_number'));
