@@ -521,6 +521,7 @@ class CustomerController extends Controller
 
         $gizlilik = Page::where('id', 2)->select('description')->first();
         $kosullaraciklama = Page::where('id', 3)->select('description')->first();
+        $impressum = Page::where('id', 1)->select('description')->first();
 
         return response()->json([
             'settings' => [
@@ -530,6 +531,7 @@ class CustomerController extends Controller
                 'appStore' => $settings["speed_mobile_app_store_link"],
                 'kvkkAciklama' => $gizlilik->description,
                 'kosullarAciklama' => $kosullaraciklama->description,
+                'impressum' => $impressum->description,
                 'paylasmetin' => $settings["speed_mobile_share_description"]." ". env('APP_URL'),
             ]
         ]);
