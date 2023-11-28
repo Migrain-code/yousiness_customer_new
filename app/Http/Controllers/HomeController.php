@@ -377,7 +377,7 @@ class HomeController extends Controller
         if ($blogComment->save()) {
             return back()->with('response', [
                 'status' => "success",
-                'message' => "Ihr Kommentar wurde abgeschickt und wird nach einer Überprüfung veröffentlicht."
+                'message' => "Ihre Bewertung wurde erfolgreich gesendet."
             ]);
         }
 
@@ -392,8 +392,8 @@ class HomeController extends Controller
             'service_id' => "required_without:city_id",
             'city_id' => "required_without:service_id",
         ], [], [
-            'service_id' => "Hizmet Seçimi",
-            'city_id' => "Şehir Seçimi"
+            'service_id' => "Serviceauswahl",
+            'city_id' => "Stadtauswahl"
         ]);
         $service_id = $request->input('service_id');
         $city_id = $request->input('city_id');
