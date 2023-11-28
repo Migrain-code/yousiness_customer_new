@@ -258,7 +258,11 @@ class HomeController extends Controller
 
         $businessCategory = BusinessCategory::where('slug', $slug)->firstOrFail();
         if($request->filled("gender_type") and $request->filled('city_id')){
-            $businesses = $businessCategory->businesses()->whereNotNull('city')->where('type_id', $request->gender_type)->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
+            if ($request->gender_type == 3){
+                $businesses = $businessCategory->businesses()->whereNotNull('city')->whereIn('type_id', [1,2])->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
+            } else{
+                $businesses = $businessCategory->businesses()->whereNotNull('city')->where('type_id', $request->gender_type)->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
+            }
         }
         else{
             $businesses = $businessCategory->businesses()->whereNotNull('city')->has('personel')->paginate(setting('speed_pagination_number'));
@@ -314,7 +318,11 @@ class HomeController extends Controller
     {
         $businesses = Business::where('status', 1)->has('personel')->has('type')
             ->when($request->filled('gender_type'), function ($q) use ($request){
-                $q->where('type_id', $request->gender_type);
+                if ($request->gender_type == 3){
+                    $q->whereIn('type_id', [1,2]);
+                } else{
+                    $q->where('type_id', $request->gender_type);
+                }
             })
             ->when($request->filled('city_id'), function ($q) use ($request){
                 $q->where('city', $request->city_id);
@@ -492,7 +500,11 @@ class HomeController extends Controller
                 $query->where('category', $service->id)->where('sub_category', $subCategory->id);
             })
             ->when($request->filled('gender_type'), function ($query) use ($request){
-                $query->where('type_id', $request->gender_type);
+                if ($request->gender_type == 3){
+                    $query->whereIn('type_id', [1,2]);
+                } else{
+                    $query->where('type_id', $request->gender_type);
+                }
             })
             ->paginate(setting('speed_pagination_number'));
         $favoriteIds = [];
