@@ -310,9 +310,17 @@ class HomeController extends Controller
         return view('front.category', compact('businesses'));
     }
 
-    public function allBusiness()
+    public function allBusiness(Request $request)
     {
-        $businesses = Business::where('status', 2)->has('personel')->orderBy('order_number')->paginate(setting('speed_pagination_number'));
+        $businesses = Business::where('status', 1)->has('personel')->has('type')
+            ->when($request->filled('gender_type'), function ($q) use ($request){
+                $q->where('type_id', $request->gender_type);
+            })
+            ->when($request->filled('city_id'), function ($q) use ($request){
+                $q->where('city', $request->city_id);
+            })
+            ->orderBy('order_number')
+            ->paginate(setting('speed_pagination_number'));
         return view('business.index', compact('businesses'));
     }
 
