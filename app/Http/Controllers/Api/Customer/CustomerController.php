@@ -519,8 +519,8 @@ class CustomerController extends Controller
             $settings[$item->name] = $item->value;
         }
 
-        $gizlilik = Page::where('id', 1)->select('description')->first();
-        $kosullaraciklama = Page::where('id', 2)->select('description')->first();
+        $gizlilik = Page::where('id', 2)->select('description')->first();
+        $kosullaraciklama = Page::where('id', 3)->select('description')->first();
 
         return response()->json([
             'settings' => [
