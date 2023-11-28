@@ -426,43 +426,6 @@
             </div>
         </div>
     </section>
-    <section class="browse-section-five" id="services">
-        <div class="container">
-            @forelse($featuredCategories as $fCategory)
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">{{$fCategory->category?->name}}</h2>
-                    </div>
-                </div>
-            </div>
-           <div class="row col-lg-12">
-                    <!---Buraya Şehirlerin Döngüsü gelecek---->
-                    @foreach($fCategory->cities as $city)
-                        <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
-                            <div class="specialist-card-five d-flex hvr-bounce-to-right">
-                                <div class="specialist-img-five">
-                                    <img src="/front/map.png" alt="" class="img-fluid">
-                                </div>
-                                <div class="specialist-info">
-                                    <a href="{{route('categoryAllGet', [$city->city->slug, $fCategory->category->slug])}}">{{$city->city->name}} {{$fCategory->category->name}}</a>
-                                </div>
-                                <div class="specialist-nav-five ms-auto">
-                                    <a href="{{route('categoryAllGet', [$city->city->slug, $fCategory->category->slug])}}"><i class="feather-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-           </div>
-            @empty
-            @endforelse
-
-
-
-        </div>
-
-
-    </section>
 
     <section class="homepage-first-ads-banner bottom">
         <div class="container">
@@ -682,6 +645,45 @@
             </div>
         </section>
     @endif
+
+    <section class="browse-section-five" id="services">
+        <div class="container">
+            @forelse($featuredCategories as $fCategory)
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-header section-header-five text-center aos" data-aos="fade-up">
+                            <h2 class="title-five">{{$fCategory->category?->name}}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-lg-12">
+                    <!---Buraya Şehirlerin Döngüsü gelecek---->
+                    @foreach($fCategory->cities as $city)
+                        <div class="col-lg-3 col-md-6 aos" data-aos="fade-up">
+                            <div class="specialist-card-five d-flex hvr-bounce-to-right">
+                                <div class="specialist-img-five">
+                                    <img src="/front/map.png" alt="" class="img-fluid">
+                                </div>
+                                <div class="specialist-info">
+                                    <a href="{{route('categoryAllGet', [$city->city->slug, $fCategory->category->slug])}}">{{$city->city->name}} {{$fCategory->category->name}}</a>
+                                </div>
+                                <div class="specialist-nav-five ms-auto">
+                                    <a href="{{route('categoryAllGet', [$city->city->slug, $fCategory->category->slug])}}"><i class="feather-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @empty
+            @endforelse
+
+
+
+        </div>
+
+
+    </section>
+
 @endsection
 
 @section('scripts')
