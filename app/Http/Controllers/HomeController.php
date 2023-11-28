@@ -259,7 +259,7 @@ class HomeController extends Controller
         $businessCategory = BusinessCategory::where('slug', $slug)->firstOrFail();
         if($request->filled("gender_type") and $request->filled('city_id')){
             if ($request->gender_type == 3){
-                $businesses = $businessCategory->businesses()->whereNotNull('city')->whereIn('type_id', [1,2])->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
+                $businesses = $businessCategory->businesses()->whereNotNull('city')->whereIn('type_id', [1,2,3])->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
             } else{
                 $businesses = $businessCategory->businesses()->whereNotNull('city')->where('type_id', $request->gender_type)->where('city', $request->city_id)->has('personel')->paginate(setting('speed_pagination_number'));
             }
@@ -319,7 +319,7 @@ class HomeController extends Controller
         $businesses = Business::where('status', 1)->has('personel')->has('type')
             ->when($request->filled('gender_type'), function ($q) use ($request){
                 if ($request->gender_type == 3){
-                    $q->whereIn('type_id', [1,2]);
+                    $q->whereIn('type_id', [1,2,3]);
                 } else{
                     $q->where('type_id', $request->gender_type);
                 }
@@ -501,7 +501,7 @@ class HomeController extends Controller
             })
             ->when($request->filled('gender_type'), function ($query) use ($request){
                 if ($request->gender_type == 3){
-                    $query->whereIn('type_id', [1,2]);
+                    $query->whereIn('type_id', [1,2,3]);
                 } else{
                     $query->where('type_id', $request->gender_type);
                 }
