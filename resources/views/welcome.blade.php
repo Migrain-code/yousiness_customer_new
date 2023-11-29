@@ -23,7 +23,13 @@
             display: flex;
             flex-direction: column;
         }
-  
+        @media (min-width: 1360px)
+        {
+            .container, .container-lg, .container-md, .container-sm, .container-xl {
+                max-width:1200px;
+            }
+        }
+
     </style>
 @endsection
 @section('content')

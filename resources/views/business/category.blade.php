@@ -173,8 +173,8 @@
                         </div>
                     @empty
                         <div class="alert alert-danger text-center aos" data-aos="fade-down">
-                            Es wurden keine Geschäftsunterlagen gefunden, die die Art der von Ihnen gesuchten Dienstleistung anbieten.
-
+                            Es konnte kein Salon in der von Ihnen gesuchten Stadt gefundenwerden.
+                            (Kooperationsgespräche werden durchgeführt)
                         </div>
                     @endforelse
 
