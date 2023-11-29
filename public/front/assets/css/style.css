@@ -28230,7 +28230,7 @@ ul {
 }
 @media (min-width: 1360px){
 	.container, .container-lg, .container-md, .container-sm, .container-xl {
-		max-width: 1360px;
+		max-width: 1200px;
 	}
 	.select2-search--dropdown {
 		display: none;
