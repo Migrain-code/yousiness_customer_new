@@ -115,7 +115,7 @@
                             @include('layouts.component.alert')
                         </div>
                     </div>
-                    @if($appointment->status == 7 and $appointment->comment_status == 0)
+                    @if($appointment->status == 4 and $appointment->comment_status == 0)
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
