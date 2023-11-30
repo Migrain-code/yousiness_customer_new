@@ -22,8 +22,8 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('/uberuns','about')->name('about');
     Route::get('/faq','faq')->name('faq');
 
-    Route::get('/tum-hizmetler','allService')->name('service.all');
-    Route::get('/hizmet/{slug}','serviceDetail')->name('service.detail');
+    Route::get('/dienstleistungen','allService')->name('service.all');
+    Route::get('/dienstleistung/{slug}','serviceDetail')->name('service.detail');
 
     Route::post('/hizmet-ara','serviceSearch')->name('searchService');
     Route::post('/alt-kategori/hizmet-ara','serviceSubSearch')->name('searchSubService');
