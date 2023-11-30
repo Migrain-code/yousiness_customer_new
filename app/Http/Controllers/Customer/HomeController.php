@@ -86,7 +86,7 @@ class HomeController extends Controller
             'content' => "required",
             'terms' => "accepted",
         ], [], [
-            'rating' => "Punkt",
+            'rating' => "Punkten",
             'content' => "Kommentartext",
             'terms' => "Impressum"
         ]);
