@@ -393,8 +393,7 @@
                         </div>
                     @empty
                         <div class="alert alert-danger text-center aos" data-aos="fade-down">
-                            Es konnte kein Salon in der von Ihnen gesuchten Stadt gefundenwerden.
-                            (Kooperationsgespräche werden durchgeführt)
+                            Salon konnte nicht gefunden werden
                         </div>
                     @endforelse
 

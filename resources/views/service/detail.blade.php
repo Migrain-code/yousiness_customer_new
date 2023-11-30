@@ -176,8 +176,7 @@
                             </div>
                          @empty
                             <div class="alert alert-danger text-center aos" data-aos="fade-down">
-                                Es konnte kein Salon in der von Ihnen gesuchten Stadt gefundenwerden.
-                                (Kooperationsgespräche werden durchgeführt)
+                                Es konnte kein Salon gefunden werden, der die von Ihnen gesuchte Dienstleistung anbietet. (Kooperationsgespräche werden durchgeführt)
                             </div>
                          @endforelse
 
