@@ -176,7 +176,7 @@
                             </div>
                         @empty
                             <div class="alert alert-danger text-center aos" data-aos="fade-down">
-                                Salon konnte nicht gefunden werden
+                                Salon konnte nicht gefunden werden (Kooperationsgespräche werden durchgeführt)
                             </div>
                         @endforelse
                     @empty

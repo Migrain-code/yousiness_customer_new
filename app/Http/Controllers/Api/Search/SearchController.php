@@ -106,7 +106,7 @@ class SearchController extends Controller
         }
         return response()->json([
             'status' => "error",
-            'message' => "Salon konnte nicht gefunden werden"
+            'message' => "Salon konnte nicht gefunden werden (Kooperationsgespräche werden durchgeführt)"
         ]);
     }
     /**

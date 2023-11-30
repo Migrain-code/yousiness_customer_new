@@ -58,7 +58,7 @@ class SalonController extends Controller
         else{
             return response()->json([
                 'status' => "danger",
-                'salon' => "Salon konnte nicht gefunden werden."
+                'salon' => "Salon konnte nicht gefunden werden. (Kooperationsgespräche werden durchgeführt)"
             ]);
         }
     }
