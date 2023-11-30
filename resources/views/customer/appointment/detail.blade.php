@@ -56,7 +56,7 @@
                                             <div class="col-lg-6">
                                                 <div class="info-list">
                                                     <div class="title">Datum</div>
-                                                    <div class="text" id="branch_name">{{$appointment->date}}</div>
+                                                    <div class="text" id="branch_name">{{\Illuminate\Support\Carbon::parse($appointment->date)->format('d.m.Y')}}</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
