@@ -7,7 +7,7 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('/', 'index')->name('welcome');
     Route::get('/nach/standort', 'nearMe')->name('nachStandort');
     Route::get('/salons', 'allBusiness')->name('business.all');
-        Route::get('/salon-kategorie/{slug}', 'businessCategory')->name('business.category');
+    Route::get('/salon-kategorie/{slug}', 'businessCategory')->name('business.category');
     Route::get('/salon/{slug}/detail', 'businessDetail')->name('business.detail');
 
     Route::get('seite/{slug}', 'pageDetail')->name('page.detail');
@@ -25,14 +25,14 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('/dienstleistungen','allService')->name('service.all');
     Route::get('/dienstleistung/{slug}','serviceDetail')->name('service.detail');
 
-    Route::post('/hizmet-ara','serviceSearch')->name('searchService');
-    Route::post('/alt-kategori/hizmet-ara','serviceSubSearch')->name('searchSubService');
+    Route::post('/dienstleistung-suchen','serviceSearch')->name('searchService');
+    Route::post('/dienstleistung/suchen','serviceSubSearch')->name('searchSubService');
     Route::get('/dienstleistung-suchen/{city}/{service}','serviceAllGet')->name('serviceAllGet');
-    Route::get('/hizmet-turu-ara/{category}/{service}','serviceSubCategoryGet')->name('serviceSubCategoryGet');
+    Route::get('/suche-nach-dienstleistung-typ/{category}/{service}','serviceSubCategoryGet')->name('serviceSubCategoryGet');
     Route::get('/dienstleistung-stadt-suchen/{city}','serviceCityGet')->name('serviceCityGet');
     Route::get('/dienstleistung-suche/{service}','serviceGet')->name('serviceGet');
 
-    Route::post('/salon-ara', 'businessCategorySearch')->name('businessCategorySearch');
+    Route::post('/salon-suche', 'businessCategorySearch')->name('businessCategorySearch');
     Route::get('/salon-suche/{city}/{category}','categoryAllGet')->name('categoryAllGet');
     Route::get('/stadt-suche/{city}','categoryCityGet')->name('categoryCityGet');
     Route::get('/salon-kategorie-suche/{category}','categoryGet')->name('categoryGet');
