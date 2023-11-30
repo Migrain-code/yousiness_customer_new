@@ -24,7 +24,6 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
 
     Route::get('/dienstleistungen','allService')->name('service.all');
     Route::get('/dienstleistung/{slug}','serviceDetail')->name('service.detail');
-
     Route::post('/dienstleistung-suchen','serviceSearch')->name('searchService');
     Route::post('/dienstleistung/suchen','serviceSubSearch')->name('searchSubService');
     Route::get('/dienstleistung-suchen/{city}/{service}','serviceAllGet')->name('serviceAllGet');
