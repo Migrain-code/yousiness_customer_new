@@ -56,7 +56,7 @@
                                             <div class="col-lg-6">
                                                 <div class="info-list">
                                                     <div class="title">Datum</div>
-                                                    <div class="text" id="branch_name">{{$appointment->start_time}}</div>
+                                                    <div class="text" id="branch_name">{{$appointment->date}}</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
