@@ -331,7 +331,7 @@ class AppointmentController extends Controller
 
         if ($appointment->save()){
             $title = 'Ihr Termin wurde erstellt';
-            $body = "Ihr Termin für ".$appointment->business->name." wurde zur den ".Carbon::parse($request->input('appointment_date'))->format('d.m.Y')." erstellt.";
+            $body = "Ihr Termin für ".$appointment->business->name." wurde zur den ".$appointment->services->first()->start_time." erstellt.";
 
             $notification =new CustomerNotificationMobile();
             $notification->customer_id = $appointment->customer->id;
@@ -367,7 +367,7 @@ class AppointmentController extends Controller
             $appointment->save();
 
             $title = 'Ihr Termin wurde abgesagt.';
-            $body = "Ihr Termin für ".$appointment->business->name." wurde zur den ".Carbon::parse($request->input('appointment_date'))->format('d.m.Y')." absagen.";
+            $body = "Ihr Termin für ".$appointment->business->name." wurde zur den ".$appointment->services->first()->start_time." absagen.";
 
             $notification =new CustomerNotificationMobile();
             $notification->customer_id = $appointment->customer->id;

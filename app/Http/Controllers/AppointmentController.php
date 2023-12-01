@@ -162,7 +162,7 @@ class AppointmentController extends Controller
         $appointment = Appointment::find($appointment);
         $business = $appointment->business;
         $customer = $appointment->customer;
-        $customer->sendSms("Ihr Termin wurde am ".$appointment->date." für ".$business->name." erfolgreich abgeschlossen.");
+        $customer->sendSms("Ihr Termin wurde am ".$appointment->services->first()->start_time." für ".$business->name." erfolgreich abgeschlossen.");
         return view('appointment.step5', compact('appointment', 'business'));
     }
 
