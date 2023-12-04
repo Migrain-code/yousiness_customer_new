@@ -605,13 +605,18 @@ class HomeController extends Controller
 
     public function categoryCityGet($city)
     {
+        $cities = City::all();
+        foreach ($cities as $city){
+            $city->slug = Str::slug($city->name."-".$city->post_code);
+            $city->save();
+        }
         $city = City::where('slug', $city)->first();
         $service = null;
         $businesses = Business::whereNotNull('city')
             ->has('personel')
             ->where('city', $city->id)
             ->paginate(setting('speed_pagination_number'));
-        dd($businesses);
+
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {
