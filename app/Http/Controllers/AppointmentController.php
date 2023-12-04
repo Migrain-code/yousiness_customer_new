@@ -8,6 +8,7 @@ use App\Models\Business;
 use App\Models\BusinessNotification;
 use App\Models\BusinessService;
 use App\Models\Customer;
+use App\Models\CustomerNotificationMobile;
 use App\Models\Personel;
 use App\Models\ServiceCategory;
 use App\Services\Sms;
@@ -95,11 +96,6 @@ class AppointmentController extends Controller
             $appointment->business_id = $business->id;
             $appointment->customer_id = Auth::guard('customer')->id();
 
-            if (\auth('customer')->user()->device){
-                dd("var");
-            } else{
-                dd("yok");
-            }
         } else {
             $request->validate([
                 'name' => "required",
@@ -152,6 +148,22 @@ class AppointmentController extends Controller
         $notification->message = $appointment->customer->name . " saat ". $appointment->services->first()->start_time. " tarihine randevu aldı";
         $notification->link = Str::slug($notification->title);
         $notification->save();
+
+        $title = "Ihr Termin wurde erstellt";
+        $body = 'Ihr Termin wurde am '. $appointment->services->first()->start_time .' für '.$business->name.' erfolgreich abgeschlossen.';
+
+        if (auth('customer')->check() && \auth('customer')->user()->device){
+            $deviceToken = \auth('customer')->user()->device->token;
+            $notification = new \App\Services\Notification();
+            $notification->sendPushNotification($deviceToken, $title, $body);
+        } else{
+            $notificationCustomer = new CustomerNotificationMobile();
+            $notificationCustomer->title = $title;
+            $notificationCustomer->content = $body;
+            $notificationCustomer->customer_id = $appointment->customer_id;
+            $notificationCustomer->save();
+        }
+
         return to_route('appointment.success', $appointment->id);
     }
 
