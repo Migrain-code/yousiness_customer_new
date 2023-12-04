@@ -602,7 +602,7 @@ class HomeController extends Controller
     {
         $category = BusinessCategory::where('slug', $category)->first();
         $city = City::where('slug', $city)->first();
-        $cityIds = City::where('name', 'like', '%' . $city->name . '%')->pluck('id');
+        $cityIds = City::where('name', $city->name)->pluck('id');
         dd($cityIds);
         $businesses = $category->businesses()->whereIn('city', $cityIds)->paginate(setting('speed_pagination_number'));
 
