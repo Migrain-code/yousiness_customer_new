@@ -27,8 +27,8 @@ class Appointment extends Model
             'text' => 'Başladı'
         ],
         4 => [
-            'html' => '<span class="badge light badge-success fw-bolder px-2 py-2">Tamamlandı</span>',
-            'text' => 'Tamamlandı'
+            'html' => '<span class="badge light badge-success fw-bolder px-2 py-2">Abgeschlossen</span>',
+            'text' => 'Abgeschlossen'
         ],
         5 => [
             'html' => '<span class="badge light badge-info fw-bolder px-2 py-2">Ödeme Bekleniyor</span>',
