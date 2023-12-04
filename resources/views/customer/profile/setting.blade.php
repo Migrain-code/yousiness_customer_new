@@ -113,7 +113,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         @if(isset(auth('customer')->user()->city))
-                                                            {{dd(auth('customer')->user()->city->id)}}
+                                                            {{dd(auth('customer')->user()->city->post_code.",".userInfo()->city->name)}}
                                                         @endif
                                                         <label class="control-label">PLZ / Stadt</label>
                                                         <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
