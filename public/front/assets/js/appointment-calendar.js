@@ -4,6 +4,7 @@
 
     $( document ).ready(function() {
         var tatilGunleri = [parseInt(offDay)];
+        console.log('tatil günleri', tatilGunleri);
         function c(passed_month, passed_year, calNum) {
             var calendar = calNum == 0 ? calendars.cal1 : calendars.cal2;
             makeWeek(calendar.weekline);
