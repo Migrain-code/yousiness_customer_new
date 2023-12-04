@@ -52,6 +52,11 @@ class Business extends Authenticatable
         return $this->hasMany(BusinessWorkTime::class, 'business_id', 'id')->orderBy('que');
     }
 
+    public function device()
+    {
+        return $this->hasOne(Device::class, 'customer_id', 'id')->where('user_type', 1);
+    }
+
     public function services()
     {
         return $this->hasMany(BusinessService::class, 'business_id', 'id');
