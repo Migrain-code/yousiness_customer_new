@@ -64,17 +64,16 @@
                                                     <div class="pro-content">
                                                         <h3 class="title">
                                                             <a href="{{route('business.detail', $favorite->business->slug)}}">{{$favorite->business->name}}</a>
-                                                            <i class="fas fa-check-circle verified"></i>
                                                         </h3>
 
                                                         <ul class="available-info">
                                                             <li>
                                                                 @if($favorite->business->cities)
-                                                                    <i class="fas fa-map-marker-alt"></i>{{$favorite->business->cities->name .', '.$favorite->business->cities->country->name}}
+                                                                    <i class="fas fa-map-marker-alt"></i>{{$favorite->business->cities->post_code .",".$favorite->business->cities->name .', '.$favorite->business->cities->country->name}}
                                                                 @endif
                                                             </li>
                                                             <li>
-                                                                <i class="far fa-clock"></i> {{$favorite->business->start_time}} Açılış
+                                                                <i class="far fa-clock"></i> {{$favorite->business->start_time}}
                                                             </li>
                                                         </ul>
                                                         <div class="row row-sm">
@@ -82,7 +81,7 @@
                                                                 <a href="{{route('business.detail', $favorite->business->slug)}}" class="btn btn-outline-warning w-100">Detail</a>
                                                             </div>
                                                             <div class="col-6">
-                                                                <a href="#" class="btn btn-outline-danger w-100 removeFavorite" b_id="{{$favorite->id}}"><i class="fa fa-trash me-1"></i>Löschen</a>
+                                                                <a href="#" class="btn btn-outline-danger w-100 removeFavorite" b_id="{{$favorite->id}}">Löschen</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -90,7 +89,7 @@
                                             </div>
                                             @endif
                                         @empty
-                                            <div class="alert alert-warning text-center">Sie haben noch Keine Favoriten hinzugefügt</div>
+                                            <div class="alert alert-warning text-center">Salon konnte nicht gefunden werden.</div>
                                         @endforelse
 
                                     </div>

@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Gekauften Pakete</h3>
+                                        <h3>Meine Pakete</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -129,7 +129,7 @@
                                                         <tr>
                                                             <td colspan="8">
                                                                 <div class="alert alert-warning">
-                                                                    Ihr Paketdatensatz konnte nicht gefunden werden
+                                                                    Sie haben keine erworbene/n PakeVe im System
                                                                 </div>
                                                             </td>
                                                         </tr>

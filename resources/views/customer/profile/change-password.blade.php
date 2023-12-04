@@ -15,7 +15,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Passwortänderung</h2>
+                    <h2 class="breadcrumb-title">Passwort ändern</h2>
                 </div>
 
             </div>
@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Passwortänderung</h3>
+                                        <h3>Passwort ändern</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">

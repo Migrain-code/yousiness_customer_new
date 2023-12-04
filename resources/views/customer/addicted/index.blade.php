@@ -55,16 +55,15 @@
                                                     <div class="pro-content">
                                                         <h3 class="title">
                                                             <a href="{{route('business.detail', $business->slug)}}">{{$business->name}}</a>
-                                                            <i class="fas fa-check-circle verified"></i>
                                                         </h3>
                                                         <ul class="available-info">
                                                             <li>
                                                                 @if($business->cities)
-                                                                    <i class="fas fa-map-marker-alt"></i>{{$business->cities->name .', '.$business->cities->country->name}}
+                                                                    <i class="fas fa-map-marker-alt"></i>{{$favorite->business->cities->post_code .",".$favorite->business->cities->name .', '.$favorite->business->cities->country->name}}
                                                                 @endif
                                                             </li>
                                                             <li>
-                                                                <i class="far fa-clock"></i> {{$business->start_time}} Öffnungszeit
+                                                                <i class="far fa-clock"></i> {{$business->start_time}}
                                                             </li>
                                                         </ul>
                                                         <div class="row row-sm">
@@ -76,7 +75,7 @@
                                                 </div>
                                             </div>
                                         @empty
-                                            <div class="alert alert-warning text-center">Der Geschäftsdatensatz, für den Sie einen Termin vereinbart haben, wurde nicht gefunden</div>
+                                            <div class="alert alert-warning text-center">Salon konnte nicht gefunden werden.</div>
                                         @endforelse
                                     </div>
 

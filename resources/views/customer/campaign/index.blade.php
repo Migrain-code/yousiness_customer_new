@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Keine Kampagnen gefunden</h3>
+                                        <h3>Meine Kampagnen</h3>
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
@@ -82,7 +82,7 @@
                                             </div>
                                             @endif
                                         @empty
-                                            <div class="alert alert-warning text-center">Kampagne nicht gefunden</div>
+                                            <div class="alert alert-warning text-center">Keine Kampagnen vorhanden</div>
                                         @endforelse
 
                                     </div>
