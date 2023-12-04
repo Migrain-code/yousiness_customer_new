@@ -328,35 +328,35 @@
                                 </form>
                             @endif
 
-                                @if(request()->routeIs('featuredCategoryAllGet'))
-                                    <form class="" method="post" action="{{route('businessCategorySearch')}}">
-                                        @csrf
-                                        <div class="filter-widget" style="margin-left: 5px !important;">
-                                            <div class="form-group">
-                                                <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Hallentyp" style="" name="category_id">
-                                                    <option value="">Wählen Sie Hallentyp</option>
-                                                    @forelse($categories as $category1)
-                                                        <option value="{{$category1->id}}" @selected($category1->id == $category->id)>{{$category1->name}}</option>
-                                                    @empty
+                            @if(request()->routeIs('featuredCategoryAllGet'))
+                                <form class="" method="post" action="{{route('businessCategorySearch')}}">
+                                    @csrf
+                                    <div class="filter-widget" style="margin-left: 5px !important;">
+                                        <div class="form-group">
+                                            <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Hallentyp" style="" name="category_id">
+                                                <option value="">Wählen Sie Hallentyp</option>
+                                                @forelse($categories as $category1)
+                                                    <option value="{{$category1->id}}" @selected($category1->id == $category->id)>{{$category1->name}}</option>
+                                                @empty
 
-                                                    @endforelse
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <select placeholder="PLZ / Stadt" id="city_service" name="city_id">
-                                                    <option value="">PLZ / Stadtn</option>
-                                                    @forelse($featuredCities as $cityFeature)
-                                                        <option value="{{$cityFeature->id}}">{{$cityFeature->post_code. ",".$cityFeature->name}}</option>
-                                                    @empty
-
-                                                    @endforelse
-                                                </select>
-                                            </div>
-                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
-
+                                                @endforelse
+                                            </select>
                                         </div>
-                                    </form>
-                                @endif
+                                        <div class="form-group">
+                                            <select placeholder="PLZ / Stadt" id="city_service" name="city_id">
+                                                <option value="">PLZ / Stadtn</option>
+                                                @forelse($featuredCities as $cityFeature)
+                                                    <option value="{{$cityFeature->id}}">{{$cityFeature->post_code. ",".$cityFeature->name}}</option>
+                                                @empty
+
+                                                @endforelse
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                    </div>
+                                </form>
+                            @endif
                         </div>
                     </div>
                     <!-- /Search Filter -->

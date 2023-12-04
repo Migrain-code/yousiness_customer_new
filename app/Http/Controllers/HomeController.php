@@ -614,7 +614,7 @@ class HomeController extends Controller
             }
         }
 
-        return view('service.search', compact('featuredCities','categories','businesses', 'category', 'city', 'favoriteIds'));
+        return view('service.search', compact('featuredCities','categories','businesses', 'category', 'favoriteIds'));
     }
     public function categoryAndSubCategoryGet($category, $subCategory)
     {
