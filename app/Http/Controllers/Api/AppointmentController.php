@@ -211,7 +211,7 @@ class AppointmentController extends Controller
     {
         $getDate = Carbon::parse($request->date);
         $business = Business::find($request->business_id);
-        $uniqueArray = array_unique($request->personals);
+        $uniqueArray = $request->personals;
         $personels = [];
         foreach ($uniqueArray as $id){
             $personels[]= Personel::find($id);
