@@ -102,6 +102,8 @@ class AppointmentController extends Controller
             $appointment = new Appointment();
             $appointment->business_id = $business->id;
             $appointment->customer_id = Auth::guard('customer')->id();
+
+            dd(\auth('customer')->user());
         } else {
             $request->validate([
                 'name' => "required",
