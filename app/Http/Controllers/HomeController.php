@@ -611,7 +611,7 @@ class HomeController extends Controller
             ->has('personel')
             ->where('city', $city->id)
             ->paginate(setting('speed_pagination_number'));
-
+        dd($businesses);
         $favoriteIds = [];
         if (auth('customer')->check()) {
             foreach (auth('customer')->user()->favorites as $favorite) {
