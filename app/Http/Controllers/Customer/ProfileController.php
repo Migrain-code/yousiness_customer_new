@@ -33,7 +33,6 @@ class ProfileController extends Controller
         $customer->address = $request->input('address');
         $customer->custom_email = $request->input('custom_email');
         $customer->city_id = $request->input('city_id');
-        dd($request->input('city_id'). "-" . $customer->city_id);
         $customer->gender = $request->input('gender');
         if ($customer->gender == 1 and  $customer->image == "default/user.png"){
             $customer->image = "default/woman.png";

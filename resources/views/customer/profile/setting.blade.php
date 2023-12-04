@@ -115,8 +115,8 @@
                                                         <label class="control-label">PLZ / Stadt</label>
                                                         <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
                                                             <option value="">PLZ / Stadt</option>
-                                                            @if(isset(userInfo()->city))
-                                                                <option value="{{userInfo()->city->id}}" selected>{{userInfo()->city->post_code.",".userInfo()->city->name}}</option>
+                                                            @if(isset(auth('customer')->user()->city))
+                                                                <option value="{{auth('customer')->user()->city->id}}" selected>{{auth('customer')->user()->city->post_code.",".userInfo()->city->name}}</option>
                                                             @endif
                                                             @foreach($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->post_code.",".$city->name}}</option>
