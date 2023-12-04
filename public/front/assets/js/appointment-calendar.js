@@ -3,8 +3,9 @@
     "use strict";
 
     $( document ).ready(function() {
+        let offDay=1;
         var tatilGunleri = [parseInt(offDay)];
-        console.log('tatil günleri', tatilGunleri);
+
         function c(passed_month, passed_year, calNum) {
             var calendar = calNum == 0 ? calendars.cal1 : calendars.cal2;
             makeWeek(calendar.weekline);
@@ -69,7 +70,7 @@
 
                 var clickedDateInfo = getClickedInfo(clicked, calendar);
                 var clickedTime = clickedDateInfo.year + "-" + (clickedDateInfo.month + 1) + "-" + clickedDateInfo.date;
-                fetchClock(clickedTime, businessId, personels);
+                fetchPersonel(clickedTime, businessId);
                 // Understading which element was clicked;
                 // var parentClass = $(this).parent().parent().attr('class');
                 if (firstClick && secondClick) {
@@ -151,91 +152,12 @@
 
         }
 
-        function fetchClock(clickedTime, businessId, personels){
+        function fetchPersonel(clickedTime, businessId){
             var appointmentInput = document.querySelector('input[name="appointment_date"]');
             appointmentInput.value= clickedTime;
 
-            var apiUrl = appUrl + "/api/appointment/clock/get";
-
-            var postData = {
-                business_id: businessId,
-                date: clickedTime,
-                personals: personels,
-            };
-
-            fetch(apiUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(postData)
-            })
-                .then(function (response) {
-                    if (!response.ok) {
-                        throw new Error("API isteği başarısız!");
-                    }
-                    return response.json();
-                })
-                .then(function (data) {
-                    // API'den gelen verileri işleyin ve HTML öğelerini oluşturun
-                    var swiperSlides = document.querySelectorAll('.swiper-wrapper .swiper-slide');
-
-                    swiperSlides.forEach(function(slide) {
-                        slide.remove();
-                    });
-                    var personelTimesDiv = document.getElementById('personelTimes');
-                    personelTimesDiv.innerHTML="";
-                    data.personel_clocks.forEach(function (row) {
-                        var newTimeInput = document.createElement('input');
-                        newTimeInput.type = "hidden";
-                        newTimeInput.checked = "true";
-                        newTimeInput.id =`appointment_time${row.personel.id}`;
-                        newTimeInput.name ="times[]";
-
-                        personelTimesDiv.appendChild(newTimeInput);
-                        var docTimesHtml = "";
-
-                        row.clocks.forEach(function (clock){
-                            if (clock.durum == false){
-                                var newHtml = `
-                                    <div class="form-check-inline visits me-1 opened_times">
-                                      <label class="visit-btns">
-                                        <input type="radio" name="appointment_time${row.personel.id}" disabled class="form-check-input" value="${clock.value}">
-                                        <span class="visit-rsn" data-bs-toggle="tooltip" title="Dolu">${clock.saat}</span>
-                                      </label>
-                                    </div>
-                                  `;
-                                docTimesHtml += newHtml;
-                            }
-                            else {
-                                var newHtml = `
-
-                                <div class="form-check-inline visits me-1">
-                                  <label class="visit-btns">
-                                    <input type="radio" name="appointment_time${row.personel.id}" class="form-check-input active-time" value="${clock.value}" required>
-                                    <span class="visit-rsn" data-bs-toggle="tooltip" title="Saat Seçimi Zorunludur">${clock.saat}</span>
-                                  </label>
-                                </div>
-                              `;
-                                docTimesHtml += newHtml;
-                            }
-                        })
-
-                        var newSlide = document.createElement('div');
-                        newSlide.classList.add('swiper-slide');
-                        newSlide.classList.add('doc-times');
-                        newSlide.innerHTML =`<div class="w-100"><h3>für ${row.personel.name} Zeit auswählen</h3></div>` + docTimesHtml;
-
-                        var swiperWrapper = document.querySelector('.swiper-wrapper');
-                        swiperWrapper.appendChild(newSlide);
-                    });
-                })
-                .catch(function (error) {
-                    console.error("API hatası:", error);
-                });
-
+            $('#step-date-form').submit();
         }
-
 
 
         function selectDates(selected) {

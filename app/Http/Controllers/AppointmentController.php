@@ -49,45 +49,37 @@ class AppointmentController extends Controller
         $filledTime = [];
         $remainingDays = Carbon::now()->subDays(1)->diffInDays(Carbon::now()->copy()->endOfMonth());
         $disabledDays = [];
-
+        $appointmentDate = "";
         if (isset(\request()["request"])) {
+
             if (isset(\request()["request"]["services"])) {
                 foreach (\request()["request"]["services"] as $service_id) {
                     $selectedServices[] = BusinessService::find($service_id);
                     $serviceIds[] = $service_id;
                     $ap_services[] = BusinessService::find($service_id);
                 }
+                if (isset(request()["request"]["appointment_date"])){
+                    $appointmentDate = request()["request"]["appointment_date"];
+                    if (isset(\request()["request"]["personels"])) {
+
+                        foreach (\request()["request"]["personels"] as $personel_id) {
+                            $selectedPersonelIds [] = $personel_id;
+                        }
+
+                    }
+                }
             } else {
                 return to_route('business.detail', $business->slug);
             }
-            if (isset(\request()["request"]["personels"])) {
-                foreach (\request()["request"]["personels"] as $personel_id) {
-                    $selectedPersonelIds [] = $personel_id;
-                }
-            }
-            if (isset(\request()["request"]["step"])) { /*personel seçilmiş ise*/
 
-                foreach ($selectedPersonelIds as $personel_id) {
-                    $personels[] = Personel::find($personel_id);
-                }
-                for ($i = 0; $i < $remainingDays; $i++) {
-                    $days = Carbon::now()->addDays($i);
-                    if ($days < Carbon::now()->endOfMonth()) {
-                        $remainingDate[] = $days;
-                    }
-                }
-                $filledTime = $this->findTimes($business);
 
-                foreach ($filledTime as $time) {
-                    $disabledDays[] = $time;
-                }
-            }
         } else {
             return to_route('business.detail', $business->slug);
         }
 
         /*end modal queries*/
-        return view('appointment.step1', compact('business', 'personels', 'remainingDate', 'disabledDays', 'selectedPersonelIds', 'manServiceCategories', 'womanServiceCategories', 'womanCategories', 'manCategories', 'selectedServices', 'serviceIds', 'ap_services'));
+
+        return view('appointment.step1', compact('business', 'appointmentDate','personels', 'remainingDate', 'disabledDays', 'selectedPersonelIds', 'manServiceCategories', 'womanServiceCategories', 'womanCategories', 'manCategories', 'selectedServices', 'serviceIds', 'ap_services'));
     }
 
     public function step1Store(Request $request)

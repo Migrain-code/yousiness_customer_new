@@ -9,7 +9,8 @@
             padding: 10px;
         }
         .step-2{
-            background: #d3d3d370;
+            /*background: #d3d3d370;*/
+            background: white;
             border-radius: 15px;
             padding: 10px;
         }
@@ -93,128 +94,157 @@
                                     <div class="step-2 my-3">
                                         <div class="d-flex align-items-center">
                                             <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">2</span>
-                                            <h2 style="font-size: 22px;">Mitarbeiter Auswählen</h2>
+                                            <h2 style="font-size: 22px;">Datum</h2>
                                         </div>
-                                        <form method="get" action="{{route('step1.store', ['business' => $business->slug])}}">
-                                            <input type="hidden" name="step" value="3">
 
-                                            @foreach($ap_services as $service)
-                                                <input type="hidden" name="services[]" value="{{$service->id}}">
-                                                <div class="form-group">
-                                                    <label><b>{{$service->subCategory->name}}</b> Mitarbeiter Wählen</label>
-                                                    <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif required>
-                                                        <option value="">{{$service->subCategory->name}} Mitarbeiter auswählen</option>
-                                                        @forelse($service->personels as $service_personel)
-                                                            @if($service_personel && $service_personel->personel)
-                                                                <option value="{{$service_personel->personel->id}}" @selected(in_array($service_personel->personel->id, $selectedPersonelIds))>{{$service_personel->personel->name}}</option>
-                                                            @endif
-                                                        @empty
-                                                        @endforelse
-                                                    </select>
-                                                </div>
-                                            @endforeach
-                                            <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" type="submit">Wählen Sie Datum/Uhrzeit</button>
-                                        </form>
-                                    </div>
+                                        <div class="card schedule-widget mb-0">
+                                            <!-- Schedule Header -->
+                                            <div class="schedule-header">
+                                                @include('layouts.component.error')
 
-                                    @if(isset(request()["request"]["step"]))
-
-                                        <div class="step-3 my-3" id="step_3">
-                                                <div class="d-flex align-items-center mb-1">
-                                                    <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">3</span>
-                                                    <h2 style="font-size: 22px;">Datum Auswählen</h2>
-                                                </div>
-                                                <div class="card schedule-widget mb-0">
-                                                    <!-- Schedule Header -->
-                                                    <div class="schedule-header">
-                                                        @include('layouts.component.error')
-
-                                                        <div class="calendar calendar-first" id="calendar_first">
-                                                            <div class="calendar_header">
-                                                                <button class="switch-month switch-left">
-                                                                    <i class="fa fa-chevron-left"></i>
-                                                                </button>
-                                                                <h2></h2>
-                                                                <button class="switch-month switch-right">
-                                                                    <i class="fa fa-chevron-right"></i>
-                                                                </button>
-                                                            </div>
-                                                            <div class="calendar_weekdays"></div>
-                                                            <div class="calendar_content"></div>
-                                                        </div>
+                                                <div class="calendar calendar-first" id="calendar_first">
+                                                    <div class="calendar_header">
+                                                        <button class="switch-month switch-left">
+                                                            <i class="fa fa-chevron-left"></i>
+                                                        </button>
+                                                        <h2></h2>
+                                                        <button class="switch-month switch-right">
+                                                            <i class="fa fa-chevron-right"></i>
+                                                        </button>
                                                     </div>
-                                                    <!-- /Schedule Header -->
-
-                                                    <!-- Schedule Content -->
-                                                    <form class="tab-content schedule-cont" id="step-3-form" method="post" action="">
-
-                                                        @csrf
-                                                        <!-- Sunday Slot -->
-
-                                                        <!-- /Sunday Slot -->
-                                                        <div class="swiper mySwiper">
-                                                            <div class="swiper-wrapper">
-
-                                                            </div>
-                                                            <!-- Add Pagination -->
-                                                            <div class="swiper-pagination"></div>
-                                                            <!-- Add Navigation -->
-                                                            <div class="swiper-button-next"></div>
-                                                            <div class="swiper-button-prev"></div>
-                                                        </div>
-
-                                                    </form>
-                                                    <!-- /Schedule Content -->
-
+                                                    <div class="calendar_weekdays"></div>
+                                                    <div class="calendar_content"></div>
                                                 </div>
-
-                                    </div>
-                                    @endif
-
-                                    @if(isset(request()["request"]["step"]))
-                                        <div class="step-5 my-3" id="step-4">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">4</span>
-                                            <h2 style="font-size: 22px;">Kontaktinformationen</h2>
-                                        </div>
-                                        <div class="">
-                                            <form class="col-lg-12" method="post" id="step-4-form" action="{{route('appointment.create')}}">
+                                            </div>
+                                            <form method="get" id="step-date-form" action="{{route('step1.store', ['business' => $business->slug])}}">
                                                 @csrf
+                                                @forelse($selectedServices as $service)
+                                                   <input type="hidden" name="services[]" value="{{$service->id}}">
+                                                @empty
+                                                    <div class="alert alert-waring">Es wurde keine Serviceauswahl getroffen. <u>Bitte wählen Sie Service aus</u></div>
+                                                @endforelse
+                                                <input type="hidden" name="step" value="stepDate">
+                                                <input type="hidden" name="appointment_date" value="">
+                                            </form>
+                                            <!-- /Schedule Header -->
+                                        </div>
+                                    </div>
+                                    @if(isset(request()["request"]["appointment_date"]))
+                                        <div class="step-2 my-3">
+                                            <div class="d-flex align-items-center">
+                                                <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">3</span>
+                                                <h2 style="font-size: 22px;">Mitarbeiter Auswählen</h2>
+                                            </div>
+                                            <form method="get" action="{{route('step1.store', ['business' => $business->slug])}}">
+                                                <input type="hidden" name="step" value="3">
+
                                                 @foreach($ap_services as $service)
                                                     <input type="hidden" name="services[]" value="{{$service->id}}">
-                                                @endforeach
-                                                @foreach($selectedPersonelIds as $personel_id)
-                                                    <input type="hidden" name="personels[]" value="{{$personel_id}}">
-                                                @endforeach
-                                                <div id="personelTimes">
 
-                                                </div>
-                                                <input type="hidden" name="business_id" value="{{$business->id}}">
-                                                <input type="hidden" name="appointment_date" id="appointment_date" value="">
-                                                @if(auth('customer')->check())
-                                                    <div class="alert alert-info"> Da Sie in Ihrem Konto angemeldet sind, werden Sie nicht nach weiteren Informationen gefragt.</div>
-                                                @else
+                                                    @php
+                                                        $requestedDate = \Illuminate\Support\Carbon::parse(request()["request"]["appointment_date"]);
+                                                        $personelIds = $service->personels()->pluck('personel_id');
+                                                        $counter = 0;
+                                                        $personelActive =  \App\Models\Personel::whereIn('id', $personelIds)
+                                                             ->whereHas('times', function ($query) use ($requestedDate) {
+                                                                 $query->where('day_id', $requestedDate->dayOfWeek)
+                                                                     ->where('status', 1); // Status 1 olanları hariç tut
+                                                             })
+                                                             ->get();
+                                                    @endphp
+
+                                                    <input type="hidden" name="appointment_date" value="{{request()["request"]["appointment_date"]}}">
+
                                                     <div class="form-group">
-                                                        <label>Name</label>
-                                                        <input class="form-control" name="name" required="">
+                                                        <label><b>{{$service->subCategory->name}}</b> Mitarbeiter Wählen</label>
+
+                                                        <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif required>
+                                                            <option value="">{{$service->subCategory->name}} Mitarbeiter auswählen</option>
+                                                            @forelse($personelActive as $service_personel)
+                                                                @if($service_personel)
+                                                                    <option value="{{$service_personel->id}}">{{$service_personel->name}}</option>
+                                                                @endif
+                                                            @empty
+                                                            @endforelse
+                                                        </select>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Nachname</label>
-                                                        <input class="form-control" name="surname" required="">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Mobilnummer</label>
-                                                        <input class="form-control" name="phone" id="phone" required="">
-                                                    </div>
-                                                @endif
-                                                <div class="contact-buttons d-flex justify-content-between mt-2">
-                                                    <a class="btn btn-danger" href="{{route('business.detail', $business->slug)}}" type="button">Stornieren</a>
-                                                    <button class="btn btn-success" type="submit">Termin erstellen</button>
-                                                </div>
+                                                    @php($counter++)
+                                                @endforeach
+                                                <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" type="submit">Wählen Sie Uhrzeit</button>
                                             </form>
-
                                         </div>
-                                    </div>
+                                        @if(count($selectedPersonelIds) > 0)
+                                            <div class="step-2 my-3" style="background: #ffffff;">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">4</span>
+                                                    <h2 style="font-size: 22px;">Uhrzeit</h2>
+                                                </div>
+                                                <form class="tab-content schedule-cont" id="step-3-form" method="post" action="">
+
+                                                    @csrf
+                                                    <!-- Sunday Slot -->
+
+                                                    <!-- /Sunday Slot -->
+                                                    <div class="swiper mySwiper">
+                                                        <div class="swiper-wrapper">
+
+                                                        </div>
+                                                        <!-- Add Pagination -->
+                                                        <div class="swiper-pagination"></div>
+                                                        <!-- Add Navigation -->
+                                                        <div class="swiper-button-next"></div>
+                                                        <div class="swiper-button-prev"></div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+
+                                            @if(isset(request()["request"]["step"]))
+                                                <div class="step-5 my-3" id="step-4">
+                                                    <div class="d-flex align-items-center mb-1">
+                                                        <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">4</span>
+                                                        <h2 style="font-size: 22px;">Kontaktinformationen</h2>
+                                                    </div>
+                                                    <div class="">
+                                                        <form class="col-lg-12" method="post" id="step-4-form" action="{{route('appointment.create')}}">
+                                                            @csrf
+                                                            @foreach($ap_services as $service)
+                                                                <input type="hidden" name="services[]" value="{{$service->id}}">
+                                                            @endforeach
+                                                            @foreach($selectedPersonelIds as $personel_id)
+                                                                <input type="hidden" name="personels[]" value="{{$personel_id}}">
+                                                            @endforeach
+                                                            <div id="personelTimes">
+
+                                                            </div>
+                                                            <input type="hidden" name="business_id" value="{{$business->id}}">
+                                                            <input type="hidden" name="appointment_date" id="appointment_date" value="{{request()["request"]["appointment_date"]}}">
+                                                            @if(auth('customer')->check())
+                                                                <div class="alert alert-info"> Da Sie in Ihrem Konto angemeldet sind, werden Sie nicht nach weiteren Informationen gefragt.</div>
+                                                            @else
+                                                                <div class="form-group">
+                                                                    <label>Name</label>
+                                                                    <input class="form-control" name="name" required="">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nachname</label>
+                                                                    <input class="form-control" name="surname" required="">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Mobilnummer</label>
+                                                                    <input class="form-control" name="phone" id="phone" required="">
+                                                                </div>
+                                                            @endif
+                                                            <div class="contact-buttons d-flex justify-content-between mt-2">
+                                                                <a class="btn btn-danger" href="{{route('business.detail', $business->slug)}}" type="button">Stornieren</a>
+                                                                <button class="btn btn-success" type="submit">Termin erstellen</button>
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endif
                                     @endif
                                 </div>
                                 <div class="col-md-5 my-3">
@@ -250,7 +280,11 @@
                                             <hr>
                                             <li class="d-flex justify-content-between my-2">
                                                 <span style="font-weight: bold;">Datum</span>
-                                                <span class="brief-date appointment_date">-</span>
+                                                @if(isset($requestedDate))
+                                                    <span class="brief-date appointment_date">{{$requestedDate->format('d.m.Y')}}</span>
+                                                @else
+                                                    <span class="brief-date appointment_date">-</span>
+                                                @endif
                                             </li>
                                             <hr>
 
@@ -477,13 +511,107 @@
             scrollToElement("step-4");
         })
     </script>
+
     <script>
         var appUrl = "{{env('APP_URL')}}";
         var offDay = "{{$business->off_day}}";
         var businessId = "{{$business->id}}";
-       var personels = {!! isset(request()->query()['request']['personels']) ? json_encode(request()->query()['request']['personels']) : "" !!};
     </script>
-    <script src="/front/assets/js/appointment-calendar.js"></script>
 
+    <script src="/front/assets/js/appointment-calendar.js"></script>
+    @if(count($selectedPersonelIds) > 0)
+        <script>
+            var personels = {!! isset($selectedPersonelIds) ? json_encode($selectedPersonelIds) : "" !!};
+            $(function (){
+                let date = '{{request()["request"]["appointment_date"]}}';
+                fetchClock(date, businessId,personels);
+            });
+
+            function fetchClock(clickedTime, businessId, personels){
+                var appointmentInput = document.querySelector('input[name="appointment_date"]');
+                appointmentInput.value= clickedTime;
+
+                var apiUrl = appUrl + "/api/appointment/clock/get";
+
+                var postData = {
+                    business_id: businessId,
+                    date: clickedTime,
+                    personals: personels,
+                };
+
+                fetch(apiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(postData)
+                })
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error("API isteği başarısız!");
+                        }
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        // API'den gelen verileri işleyin ve HTML öğelerini oluşturun
+                        var swiperSlides = document.querySelectorAll('.swiper-wrapper .swiper-slide');
+
+                        swiperSlides.forEach(function(slide) {
+                            slide.remove();
+                        });
+                        var personelTimesDiv = document.getElementById('personelTimes');
+                        personelTimesDiv.innerHTML="";
+                        data.personel_clocks.forEach(function (row) {
+                            var newTimeInput = document.createElement('input');
+                            newTimeInput.type = "hidden";
+                            newTimeInput.checked = "true";
+                            newTimeInput.id =`appointment_time${row.personel.id}`;
+                            newTimeInput.name ="times[]";
+
+                            personelTimesDiv.appendChild(newTimeInput);
+                            var docTimesHtml = "";
+
+                            row.clocks.forEach(function (clock){
+                                if (clock.durum == false){
+                                    var newHtml = `
+                                    <div class="form-check-inline visits me-1 opened_times">
+                                      <label class="visit-btns">
+                                        <input type="radio" name="appointment_time${row.personel.id}" disabled class="form-check-input" value="${clock.value}">
+                                        <span class="visit-rsn" data-bs-toggle="tooltip" title="Dolu">${clock.saat}</span>
+                                      </label>
+                                    </div>
+                                  `;
+                                    docTimesHtml += newHtml;
+                                }
+                                else {
+                                    var newHtml = `
+
+                                <div class="form-check-inline visits me-1">
+                                  <label class="visit-btns">
+                                    <input type="radio" name="appointment_time${row.personel.id}" class="form-check-input active-time" value="${clock.value}" required>
+                                    <span class="visit-rsn" data-bs-toggle="tooltip" title="Saat Seçimi Zorunludur">${clock.saat}</span>
+                                  </label>
+                                </div>
+                              `;
+                                    docTimesHtml += newHtml;
+                                }
+                            })
+
+                            var newSlide = document.createElement('div');
+                            newSlide.classList.add('swiper-slide');
+                            newSlide.classList.add('doc-times');
+                            newSlide.innerHTML =`<div class="w-100"><h3>für ${row.personel.name} Zeit auswählen</h3></div>` + docTimesHtml;
+
+                            var swiperWrapper = document.querySelector('.swiper-wrapper');
+                            swiperWrapper.appendChild(newSlide);
+                        });
+                    })
+                    .catch(function (error) {
+                        console.error("API hatası:", error);
+                    });
+
+            }
+        </script>
+    @endif
 @endsection
 
