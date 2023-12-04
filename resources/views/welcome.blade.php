@@ -671,10 +671,10 @@
                                     <img src="/front/map.png" alt="" class="img-fluid">
                                 </div>
                                 <div class="specialist-info">
-                                    <a href="{{route('categoryAllGet', [$city->city->slug, $fCategory->category->slug])}}">{{$city->city->name}} {{$fCategory->category->name}}</a>
+                                    <a href="{{route('featuredCategoryAllGet', [$city->city->slug, $fCategory->category->slug])}}">{{$city->city->name}} {{$fCategory->category->name}}</a>
                                 </div>
                                 <div class="specialist-nav-five ms-auto">
-                                    <a href="{{route('categoryAllGet', [$city->city->slug, $fCategory->category->slug])}}"><i class="feather-arrow-right"></i></a>
+                                    <a href="{{route('featuredCategoryAllGet', [$city->city->slug, $fCategory->category->slug])}}"><i class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

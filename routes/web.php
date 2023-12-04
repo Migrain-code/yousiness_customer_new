@@ -33,6 +33,8 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
 
     Route::post('/salon-suche', 'businessCategorySearch')->name('businessCategorySearch');
     Route::get('/salon-suche/{city}/{category}','categoryAllGet')->name('categoryAllGet');
+    Route::get('/empfohlener-salon-suche/{city}/{category}','featuredCategoryAllGet')->name('featuredCategoryAllGet');
+
     Route::get('/stadt-suche/{city}','categoryCityGet')->name('categoryCityGet');
     Route::get('/salon-kategorie-suche/{category}','categoryGet')->name('categoryGet');
 

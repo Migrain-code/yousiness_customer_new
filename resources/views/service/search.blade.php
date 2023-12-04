@@ -246,7 +246,7 @@
                                                 <select class="js-example-basic-single" placeholder="PLZ / Stadt" id="city" name="city_id">
                                                     <option value="">PLZ / Stadt</option>
                                                     @forelse($abroadCities as $city)
-                                                        <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
+                                                        <option value="{{$city->id}}">{{$city->name}}</option>
                                                     @empty
 
                                                     @endforelse
