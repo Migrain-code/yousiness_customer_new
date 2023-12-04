@@ -145,7 +145,7 @@
                                                         $requestedDate = \Illuminate\Support\Carbon::parse(request()["request"]["appointment_date"]);
                                                         $personelIds = $service->personels()->pluck('personel_id');
                                                         $counter = 0;
-                                                        $personelActive =  \App\Models\Personel::whereIn('id', $personelIds)
+                                                        $personelActive =  \App\Models\Personel::has('times')->whereIn('id', $personelIds)
                                                              ->whereHas('times', function ($query) use ($requestedDate) {
                                                                  $query->where('day_id', $requestedDate->dayOfWeek)
                                                                      ->where('status', 1); // Status 1 olanları hariç tut
