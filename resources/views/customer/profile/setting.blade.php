@@ -112,6 +112,9 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
+                                                        @if(isset(auth('customer')->user()->city))
+                                                            {{dd(auth('customer')->user()->city->id)}}
+                                                        @endif
                                                         <label class="control-label">PLZ / Stadt</label>
                                                         <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
                                                             <option value="">PLZ / Stadt</option>
