@@ -255,17 +255,7 @@
                                                 <span style="font-weight: bold;">Wohnzimmer</span>
                                                 <span class="brief-company-name">{{$business->name}}</span>
                                             </li>
-                                            <hr>
-                                            <li class="d-flex justify-content-between my-2">
-                                                <span style="font-weight: bold;">Dienstleistungen</span>
-                                                <span class="brief-services">
-                                                    @forelse($selectedServices as $service)
-                                                        {!! $service->subCategory->name . "(" . $service->gender->name ." )"."<br> "!!}
-                                                    @empty
-                                                        <div class="alert alert-waring">Es wurde keine Serviceauswahl getroffen. <u>Bitte wählen Sie Service aus</u></div>
-                                                    @endforelse
-                                                </span>
-                                            </li>
+
                                             <hr>
                                             <li class="d-flex justify-content-between my-2">
                                                 <span style="font-weight: bold;">Mitarbeiter</span>
