@@ -166,7 +166,7 @@
                                                                     @endif
                                                                 </li>
                                                                 <li>
-                                                                    <i class="far fa-clock"></i> {{$appointment->start_time}} An
+                                                                    <i class="far fa-clock"></i> {{$appointment->services->first()->start_time}} An
                                                                 </li>
                                                                 {{--
                                                                     <li>
