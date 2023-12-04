@@ -11,11 +11,11 @@ class Appointment extends Model
     protected $fillable=['comment_status'];
     const STATUS_LIST=[
         0 => [
-            'html' => '<span class="badge light badge-warning fw-bolder px-2 py-2">Onay Bekliyor</span>',
-            'text' => 'Onay Bekliyor'
+            'html' => '<span class="badge light badge-warning fw-bolder px-2 py-2">Genehmigung ausstehend</span>',
+            'text' => 'Genehmigung ausstehend'
         ],
         1 => [
-            'html' => '<span class="badge light badge-success fw-bolder px-2 py-2">Onaylandı</span>',
+            'html' => '<span class="badge light badge-success fw-bolder px-2 py-2">Genehmigt</span>',
             'text' => 'Onaylandı'
         ],
         2 => [
@@ -43,8 +43,8 @@ class Appointment extends Model
             'text' => 'Ödeme Onaylandı'
         ],
         8 => [
-            'html' => '<span class="badge light badge-danger fw-bolder px-2 py-2">İptal Edildi</span>',
-            'text' => 'İptal Edildi'
+            'html' => '<span class="badge light badge-danger fw-bolder px-2 py-2">Storniert</span>',
+            'text' => 'Storniert'
         ],
 
     ];
