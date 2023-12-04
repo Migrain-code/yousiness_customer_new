@@ -112,14 +112,11 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        @if(isset(auth('customer')->user()->city))
-                                                            {{dd(auth('customer')->user()->city->post_code.",".userInfo()->city->name)}}
-                                                        @endif
                                                         <label class="control-label">PLZ / Stadt</label>
                                                         <select name="city_id" class="" style="border: 1px solid black !important;" id="city_select">
                                                             <option value="">PLZ / Stadt</option>
-                                                            @if(isset(auth('customer')->user()->city))
-                                                                <option value="{{auth('customer')->user()->city->id}}" selected>{{auth('customer')->user()->city->post_code.",".userInfo()->city->name}}</option>
+                                                            @if(isset(auth('customer')->user()->district))
+                                                                <option value="{{auth('customer')->user()->district->id}}" selected>{{auth('customer')->user()->district->post_code.",".userInfo()->district->name}}</option>
                                                             @endif
                                                             @foreach($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->post_code.",".$city->name}}</option>
