@@ -408,7 +408,7 @@ class HomeController extends Controller
             'service_id' => "required_without:city_id",
             'city_id' => "required_without:service_id",
         ], [], [
-            'service_id' => "Serviceauswahl",
+            'service_id' => "Dienstleistung",
             'city_id' => "Stadtauswahl"
         ]);
         $service_id = $request->input('service_id');
@@ -485,7 +485,7 @@ class HomeController extends Controller
         $request->validate([
             'sub_category' => "required"
         ], [], [
-            'sub_category' => "Service"
+            'sub_category' => "Dienstleistung"
         ]);
 
         $subCategory = ServiceSubCategory::where('id', $request->input('sub_category'))->first();
