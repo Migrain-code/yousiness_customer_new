@@ -605,11 +605,7 @@ class HomeController extends Controller
 
     public function categoryCityGet($city)
     {
-        $cities = City::all();
-        foreach ($cities as $city){
-            $city->slug = Str::slug($city->name."-".$city->post_code);
-            $city->save();
-        }
+
         $city = City::where('slug', $city)->first();
         $service = null;
         $businesses = Business::whereNotNull('city')
