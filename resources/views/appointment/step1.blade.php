@@ -273,7 +273,7 @@
                                                     @forelse($personels as $personel)
                                                         {!! $personel->name."<br> "!!}
                                                     @empty
-                                                        <div class="badge badge-danger">Personalauswahl nicht getroffen. <u>LBitte wählen Sie Mitarbeiter aus</u></div>
+                                                        <div class="badge badge-danger">Personalauswahl nicht getroffen. <br><u>LBitte wählen Sie Mitarbeiter aus</u></div>
                                                     @endforelse
                                                 </span>
                                             </li>
