@@ -59,7 +59,7 @@
                                                         <ul class="available-info">
                                                             <li>
                                                                 @if($business->cities)
-                                                                    <i class="fas fa-map-marker-alt"></i>{{$favorite->business->cities->post_code .",".$favorite->business->cities->name .', '.$favorite->business->cities->country->name}}
+                                                                    <i class="fas fa-map-marker-alt"></i>{{$business->cities->post_code .",".$business->cities->name .', '.$business->cities->country->name}}
                                                                 @endif
                                                             </li>
                                                             <li>
