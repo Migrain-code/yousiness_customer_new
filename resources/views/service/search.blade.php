@@ -447,7 +447,7 @@
 @endsection
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
-    @if(request()->routeIs('searchSubService') || request()->routeIs('categoryGet') || request()->routeIs('serviceSubCategoryGet'))
+    @if(request()->routeIs('searchSubService') || request()->routeIs('categoryGet') || request()->routeIs('serviceSubCategoryGet') || request()->routeIs('featuredCategoryAllGet'))
         <script>
             var mySelect = new TomSelect("#city_service", {
                 remoteUrl: '/api/city/search',
