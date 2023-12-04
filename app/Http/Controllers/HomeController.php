@@ -603,7 +603,8 @@ class HomeController extends Controller
         $category = BusinessCategory::where('slug', $category)->first();
         $city = City::where('slug', $city)->first();
         $cityIds = City::where('name', $city->name)->pluck('id');
-
+        $featuredCities = City::where('name', $city->name)->get();
+        $categories = BusinessCategory::all();
         $businesses = $category->businesses()->whereIn('city', $cityIds)->paginate(setting('speed_pagination_number'));
 
         $favoriteIds = [];
@@ -613,7 +614,7 @@ class HomeController extends Controller
             }
         }
 
-        return view('service.search', compact('businesses', 'category', 'city', 'favoriteIds'));
+        return view('service.search', compact('featuredCities','categories','businesses', 'category', 'city', 'favoriteIds'));
     }
     public function categoryAndSubCategoryGet($category, $subCategory)
     {
