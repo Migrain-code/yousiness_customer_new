@@ -223,6 +223,16 @@
                                                     @endforelse
                                                 </select>
                                             </div>
+                                            <div class="form-group">
+                                                <select class="js-example-basic-single" placeholder="PLZ / Stadt" name="sub_category">
+                                                    <option value="">PLZ / Stadt</option>
+                                                    @forelse($subCategory->category->subCategories as $category)
+                                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    @empty
+
+                                                    @endforelse
+                                                </select>
+                                            </div>
                                             <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
 
                                         </div>
