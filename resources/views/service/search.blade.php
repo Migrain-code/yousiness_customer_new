@@ -208,7 +208,7 @@
                                 </form>
                             @endif
                             @if(request()->routeIs('categoryAllGet'))
-                                    <form class="" method="post" action="{{route('searchSubService')}}">
+                                    <form class="" method="post" action="{{route('businessCategorySearch')}}">
                                         @csrf
                                         <div class="filter-widget" style="margin-left: 5px !important;">
                                             <input type="hidden" name="category_id" value="{{$category->id}}">
