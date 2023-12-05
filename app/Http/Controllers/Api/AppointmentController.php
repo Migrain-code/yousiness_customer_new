@@ -238,14 +238,16 @@ class AppointmentController extends Controller
                     $loop++;
 
                 } else {
-                    if ($i->format('H:i') == $personel->food_start){
-                        $clock = [
-                            'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
-                            'saat' => "Food",
-                            'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
-                            'durum' => false,
-                        ];
-                        $clocks[] = $clock;
+                    if ($i->format('H:i') == $personel->food_start) {
+                        for ($j = \Illuminate\Support\Carbon::parse($personel->food_start); $j < \Illuminate\Support\Carbon::parse($personel->food_end); $j->addMinute($personel->range)) {
+                            $clock = [
+                                'id' => $getDate->format('d_m_Y_' . $j->format('H_i')),
+                                'saat' => "Food",
+                                'value' => $getDate->format('d.m.Y ' . $j->format('H:i')),
+                                'durum' => false,
+                            ];
+                            $clocks[] = $clock;
+                        }
                     }
                     else{
                         $clock = [

@@ -156,7 +156,7 @@
                                                     <input type="hidden" name="appointment_date" value="{{request()["request"]["appointment_date"]}}">
 
                                                     <div class="form-group">
-                                                        <label><b>{{$service->subCategory->name}}</b> Mitarbeiter Wählen</label>
+                                                        <label><b>{{$service->subCategory->name.": "}}</b> Mitarbeiter Wählen</label>
 
                                                         <select class="js-example-basic-single" name="personels[]"  @if($loop->last) id="lastSelect" @endif required>
                                                             <option value="">{{$service->subCategory->name}} Mitarbeiter auswählen</option>
