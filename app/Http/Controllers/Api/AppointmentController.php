@@ -241,7 +241,7 @@ class AppointmentController extends Controller
                     if ($i->format('H:i') == $personel->food_start){
                         $clock = [
                             'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
-                            'saat' => $i->format('H:i'),
+                            'saat' => "Food",
                             'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
                             'durum' => false,
                         ];
