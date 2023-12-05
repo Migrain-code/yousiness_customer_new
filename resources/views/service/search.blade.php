@@ -207,6 +207,37 @@
                                     </div>
                                 </form>
                             @endif
+                            @if(request()->routeIs('categoryAllGet'))
+                                    <form class="" method="post" action="{{route('searchSubService')}}">
+                                        @csrf
+                                        <div class="filter-widget" style="margin-left: 5px !important;">
+                                            <input type="hidden" name="sub_category" value="{{$subCategory->id}}">
+                                            <input type="hidden" name="category" value="{{$subCategory->category_id}}">
+                                            <div class="form-group">
+                                                <select class="js-example-basic-single" placeholder="PLZ / Stadt" id="city_service" name="city_id">
+                                                    <option value="">PLZ / Stadt</option>
+                                                    @forelse($cities as $city)
+                                                        <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
+                                                    @empty
+
+                                                    @endforelse
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="js-example-basic-single" placeholder="Suche nach Dienstleistung" name="category_id">
+                                                    <option value="">Suche nach Dienstleistung</option>
+                                                    @forelse($categories as $category)
+                                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    @empty
+
+                                                    @endforelse
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn-five w-10 p-2" style=" bottom: -8px; left: -2px;"> Suchen <i class="fa fa-search" style="padding-left: 5px"></i></button>
+
+                                        </div>
+                                    </form>
+                                @endif
                             @if(request()->routeIs('searchSubService'))
                                     <form class="" method="post" action="{{route('searchSubService')}}">
                                         @csrf
@@ -490,7 +521,7 @@
             });
         </script>
     @endif
-    @if(request()->routeIs('searchSubService') || request()->routeIs('categoryGet') || request()->routeIs('serviceSubCategoryGet') || request()->routeIs('featuredCategoryAllGet'))
+    @if(request()->routeIs('categoryAllGet') || request()->routeIs('searchSubService') || request()->routeIs('categoryGet') || request()->routeIs('serviceSubCategoryGet') || request()->routeIs('featuredCategoryAllGet'))
         <script>
             var mySelect = new TomSelect("#city_service", {
                 remoteUrl: '/api/city/search',
