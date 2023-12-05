@@ -238,6 +238,16 @@ class AppointmentController extends Controller
                     $loop++;
 
                 } else {
+                    if ($i->format('H:i') == $personel->food_start){
+                        $clock = [
+                            'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
+                            'saat' => $i->format('H:i'),
+                            'value' => $getDate->format('d.m.Y ' . $i->format('H:i')),
+                            'durum' => false,
+                        ];
+                        $clocks[] = $clock;
+                    }
+                    else{
                         $clock = [
                             'id' => $getDate->format('d_m_Y_' . $i->format('H_i')),
                             'saat' => $i->format('H:i'),
@@ -245,6 +255,8 @@ class AppointmentController extends Controller
                             'durum' => in_array($getDate->format('d.m.Y ') . $i->format('H:i'), $disabledDays[0]) ? false : true,
                         ];
                         $clocks[] = $clock;
+                    }
+
                 }
             }
             $newClocks[] = [
