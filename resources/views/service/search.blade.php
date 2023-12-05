@@ -120,7 +120,7 @@
                         </div>
                         <div class="card-body">
 
-                            @if(isset($city))
+                            @if(isset($city) && !request()->routeIs('categoryAllGet'))
                                 @if($city->country_id == 4)
                                     <form class="" method="post" action="{{route('searchSubService')}}">
                                         @csrf
