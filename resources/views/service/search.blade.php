@@ -213,7 +213,7 @@
                                         <div class="filter-widget" style="margin-left: 5px !important;">
                                             <input type="hidden" name="category_id" value="{{$category->id}}">
                                             <div class="form-group">
-                                                <select class="js-example-basic-single" placeholder="PLZ / Stadt" id="city_service" name="city_id">
+                                                <select placeholder="PLZ / Stadt" id="city_service" name="city_id">
                                                     <option value="">PLZ / Stadt</option>
                                                     @forelse($cities as $city)
                                                         <option value="{{$city->id}}">{{$city->post_code. ",".$city->name}}</option>
