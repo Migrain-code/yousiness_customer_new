@@ -130,11 +130,11 @@
                         <ul>
                             @if($business->type->id == 3)
                                 @if($manServiceCategories->count() > $womanServiceCategories->count())
-                                    <li class="tab-titles active p-3" onclick="tabsFunction(this)">Mann</li>
-                                    <li class="tab-titles p-3" onclick="tabsFunction(this)">Frau</li>
+                                    <li class="tab-titles active p-3 man" onclick="tabsFunction(this)">Mann</li>
+                                    <li class="tab-titles p-3 woman" onclick="tabsFunction(this)">Frau</li>
                                 @else
-                                    <li class="tab-titles  p-3" onclick="tabsFunction(this)">Mann</li>
-                                    <li class="tab-titles active p-3" onclick="tabsFunction(this)">Frau</li>
+                                    <li class="tab-titles  p-3 man" onclick="tabsFunction(this)">Mann</li>
+                                    <li class="tab-titles active p-3 woman" onclick="tabsFunction(this)">Frau</li>
                                 @endif
                             @elseif($business->type->id == 2)
                                 <li class="tab-titles p-3 active" onclick="tabsFunction(this)">Mann</li>
@@ -209,7 +209,7 @@
 
                                 </div>
                             @else
-                                <div class="tab-content @if($business->type->id == 3 && $womanServiceCategories->count() > $manServiceCategories->count() || $womanServiceCategories->count() == $manServiceCategories->count()) active @endif">
+                                <div class="tab-content woman @if($business->type->id == 3 && $womanServiceCategories->count() > $manServiceCategories->count() || $womanServiceCategories->count() == $manServiceCategories->count()) active @endif">
                                     @forelse($womanServiceCategories as $womanCategories)
                                         <div class="service-card mb-1" onclick="cardChange(this)">
                                             <div class="service-title p-2">
@@ -240,7 +240,7 @@
                                     @endforelse
 
                                 </div>
-                                <div class="tab-content @if($business->type->id == 3 && $manServiceCategories->count() > $womanServiceCategories->count()) active @endif">
+                                <div class="tab-content man @if($business->type->id == 3 && $manServiceCategories->count() > $womanServiceCategories->count()) active @endif">
                                     @forelse($manServiceCategories as $manCategories)
                                         <div class="service-card mb-1" onclick="cardChange(this)">
                                             <div class="service-title p-2">
