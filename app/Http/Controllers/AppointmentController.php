@@ -66,7 +66,9 @@ class AppointmentController extends Controller
                         foreach (\request()["request"]["personels"] as $personel_id) {
                             $selectedPersonelIds [] = $personel_id;
                         }
-
+                        foreach ($selectedPersonelIds as $personel_id) {
+                            $personels[] = Personel::find($personel_id);
+                        }
                     }
                 }
             } else {
