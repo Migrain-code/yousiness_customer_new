@@ -425,7 +425,7 @@
                                 @endif
                         </div>
                         @empty
-                            <div class="alert alert-warning">Es liegen keine Kommentare zum Unternehmen vor.</div>
+                            <div class="alert alert-warning">Es liegen keine Kommentare für Ihr Salon vor.</div>
 
                         @endforelse
                     </div>
