@@ -209,20 +209,20 @@
 
                                 </div>
                             @else
-                                <div class="tab-content woman @if($business->type->id == 3 && $womanServiceCategories->count() > $manServiceCategories->count() || $womanServiceCategories->count() == $manServiceCategories->count()) active @endif">
-                                    @forelse($womanServiceCategories as $womanCategories)
+                                <div class="tab-content man @if($business->type->id == 3 && $manServiceCategories->count() > $womanServiceCategories->count()) active @endif">
+                                    @forelse($manServiceCategories as $manCategories)
                                         <div class="service-card mb-1" onclick="cardChange(this)">
                                             <div class="service-title p-2">
-                                                <span>{{$womanCategories->first()->categorys->name}}</span>
+                                                <span>{{$manCategories->first()->categorys->name}}</span>
                                             </div>
                                             <div class="services">
                                                 <ul class="d-flex flex-column">
-                                                    @forelse($womanCategories as $service)
+                                                    @forelse($manCategories as $service)
                                                         <li class="my-1 ps-1">
                                                             <div class="d-flex justify-content-between align-items-center w-100">
                                                                 <div class="service-name">{{$service->subCategory->name}}</div>
                                                                 <div class="appointment">
-                                                                    <span class="price">{{$service->price}} €</span>
+                                                                    <span class="price">{{$service->price . "€"}}</span>
                                                                     <a href="{{ route('step1.show', ['business' => $business->slug, 'request' => array('services' => array($service->id))])}}" class="appointment-button ms-4 ">Terminieren</a>
 
                                                                 </div>
@@ -240,20 +240,20 @@
                                     @endforelse
 
                                 </div>
-                                <div class="tab-content man @if($business->type->id == 3 && $manServiceCategories->count() > $womanServiceCategories->count()) active @endif">
-                                    @forelse($manServiceCategories as $manCategories)
+                                <div class="tab-content woman @if($business->type->id == 3 && $womanServiceCategories->count() > $manServiceCategories->count() || $womanServiceCategories->count() == $manServiceCategories->count()) active @endif">
+                                    @forelse($womanServiceCategories as $womanCategories)
                                         <div class="service-card mb-1" onclick="cardChange(this)">
                                             <div class="service-title p-2">
-                                                <span>{{$manCategories->first()->categorys->name}}</span>
+                                                <span>{{$womanCategories->first()->categorys->name}}</span>
                                             </div>
                                             <div class="services">
                                                 <ul class="d-flex flex-column">
-                                                    @forelse($manCategories as $service)
+                                                    @forelse($womanCategories as $service)
                                                         <li class="my-1 ps-1">
                                                             <div class="d-flex justify-content-between align-items-center w-100">
                                                                 <div class="service-name">{{$service->subCategory->name}}</div>
                                                                 <div class="appointment">
-                                                                    <span class="price">{{$service->price . "€"}}</span>
+                                                                    <span class="price">{{$service->price}} €</span>
                                                                     <a href="{{ route('step1.show', ['business' => $business->slug, 'request' => array('services' => array($service->id))])}}" class="appointment-button ms-4 ">Terminieren</a>
 
                                                                 </div>
