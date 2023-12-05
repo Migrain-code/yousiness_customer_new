@@ -126,7 +126,7 @@
                          </div>
 
                     <div class="tabs mt-5">
-                        {{dd($manServiceCategories->count() > $womanServiceCategories->count())}}
+
                         <ul>
                             @if($business->type->id == 3)
                                 @if($manServiceCategories->count() > $womanServiceCategories->count())
@@ -174,7 +174,7 @@
                                 @endforelse
 
                             </div>
-                            <div class="tab-content @if($business->type->id == 3 && $manServiceCategories->count() < $womanServiceCategories->count()) active @endif">
+                            <div class="tab-content @if($business->type->id == 3 && $womanServiceCategories->count() > $manServiceCategories->count()) active @endif">
                                 @forelse($womanServiceCategories as $womanCategories)
                                     <div class="service-card mb-1" onclick="cardChange(this)">
                                         <div class="service-title p-2">
