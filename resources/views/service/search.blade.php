@@ -211,8 +211,7 @@
                                     <form class="" method="post" action="{{route('searchSubService')}}">
                                         @csrf
                                         <div class="filter-widget" style="margin-left: 5px !important;">
-                                            <input type="hidden" name="sub_category" value="{{$subCategory->id}}">
-                                            <input type="hidden" name="category" value="{{$subCategory->category_id}}">
+                                            <input type="hidden" name="category_id" value="{{$category->id}}">
                                             <div class="form-group">
                                                 <select class="js-example-basic-single" placeholder="PLZ / Stadt" id="city_service" name="city_id">
                                                     <option value="">PLZ / Stadt</option>
@@ -226,8 +225,8 @@
                                             <div class="form-group">
                                                 <select class="js-example-basic-single" placeholder="Suche nach Dienstleistung" name="category_id">
                                                     <option value="">Suche nach Dienstleistung</option>
-                                                    @forelse($categories as $category)
-                                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    @forelse($categories as $newcategory)
+                                                        <option value="{{$newcategory->id}}" @selected($newcategory->id == $category->id)>{{$newcategory->name}}</option>
                                                     @empty
 
                                                     @endforelse
