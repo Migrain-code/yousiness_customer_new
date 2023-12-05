@@ -209,6 +209,7 @@
 
                                 </div>
                             @else
+                                {{dd($womanServiceCategories->count() ."+". $manServiceCategories->count())}}
                                 <div class="tab-content @if($business->type->id == 3 && $womanServiceCategories->count() > $manServiceCategories->count() || $womanServiceCategories->count() == $manServiceCategories->count()) active @endif">
                                     @forelse($womanServiceCategories as $womanCategories)
                                         <div class="service-card mb-1" onclick="cardChange(this)">
