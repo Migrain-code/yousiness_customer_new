@@ -242,7 +242,7 @@ class AppointmentController extends Controller
                         for ($j = \Illuminate\Support\Carbon::parse($personel->food_start); $j < \Illuminate\Support\Carbon::parse($personel->food_end); $j->addMinute($personel->range)) {
                             $clock = [
                                 'id' => $getDate->format('d_m_Y_' . $j->format('H_i')),
-                                'saat' => "Food",
+                                'saat' => $i->format('H:i'),
                                 'value' => $getDate->format('d.m.Y ' . $j->format('H:i')),
                                 'durum' => false,
                             ];
