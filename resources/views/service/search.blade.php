@@ -224,8 +224,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <select class="js-example-basic-single" placeholder="PLZ / Stadt" name="sub_category">
-                                                    <option value="">PLZ / Stadt</option>
+                                                <select class="js-example-basic-single" placeholder="Suche nach Dienstleistung" id="select-service" name="sub_category">
+                                                    <option value="">Suche nach Dienstleistung</option>
                                                     @forelse($subCategory->category->subCategories as $category)
                                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                                     @empty
@@ -457,6 +457,39 @@
 @endsection
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    @if(request()->routeIs('searchSubService'))
+        <script>
+            var mySelect3 = new TomSelect("#select-service", {
+                remoteUrl: '/api/city/search',
+                remoteSearch: true,
+                create: false,
+                highlight: false,
+                load: function(query, callback) {
+                    $.ajax({
+                        url: '/api/services/all-subcategory', // Sunucu tarafındaki arama API'sinin URL'si
+                        method: 'POST',
+                        data: { q: query }, // Arama sorgusu
+                        dataType: 'json', // Beklenen veri tipi
+                        success: function(data) {
+
+                            var results = data.sub_categories.map(function(item) {
+                                console.log('item', item.name);
+                                return {
+                                    value: item.id,
+                                    text: item.name,
+                                };
+                            });
+
+                            callback(results);
+                        },
+                        error: function() {
+                            console.error("Arama sırasında bir hata oluştu.");
+                        }
+                    });
+                }
+            });
+        </script>
+    @endif
     @if(request()->routeIs('searchSubService') || request()->routeIs('categoryGet') || request()->routeIs('serviceSubCategoryGet') || request()->routeIs('featuredCategoryAllGet'))
         <script>
             var mySelect = new TomSelect("#city_service", {
