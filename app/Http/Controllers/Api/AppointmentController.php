@@ -107,16 +107,25 @@ class AppointmentController extends Controller
 
     public function personalGet(Request $request)
     {
+        $requestedDate = \Illuminate\Support\Carbon::parse($request->input('appointment_date'));
+
         $getData = $request->serviceIds;
 
         $ap_services = [];
         foreach ($getData as $id) {
 
             $service = BusinessService::find($id);
+            $personelIds = $service->personels()->pluck('personel_id');
+            $personelActive =  \App\Models\Personel::has('times')->whereIn('id', $personelIds)
+                ->whereHas('times', function ($query) use ($requestedDate) {
+                    $query->where('day_id', $requestedDate->dayOfWeek)
+                        ->where('status', 1); // Status 1 olanları hariç tut
+                })
+                ->get();
             $ap_services[] = [
                 'id' => $id,
                 'name' => $service->subCategory->name,
-                'personels' => AppointmentPersonelResource::collection($service->personels),
+                'personels' => AppointmentPersonelResource::collection($personelActive),
             ];
 
         }
