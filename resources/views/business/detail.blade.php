@@ -126,6 +126,7 @@
                          </div>
 
                     <div class="tabs mt-5">
+                        {{dd($manServiceCategories->count())}}
                         <ul>
                             @if($business->type->id == 3)
                                 @if($manServiceCategories->count() > $womanServiceCategories->count())
