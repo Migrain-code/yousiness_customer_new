@@ -46,8 +46,8 @@ class AuthController extends Controller
                 $deviceToken = $user->device->token;
                 $title = $user->name;
                 $body = 'Herzlich willkommen!';
-                $notification = new \App\Services\Notification();
-                $response = $notification->sendPushNotification($deviceToken, $title, $body);
+                /*$notification = new \App\Services\Notification();
+                $response = $notification->sendPushNotification($deviceToken, $title, $body);*/
 
             }
 
