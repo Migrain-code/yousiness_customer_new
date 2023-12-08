@@ -133,8 +133,7 @@ class AuthController extends Controller
                     ]);
                     $this->addPermission($customer->id);
                     $phone = clearPhone($request->input('phone'));
-
-                    Sms::send($phone, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet Ihr Prüfcode:". $generatePassword);
+                    Sms::send($phone, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
                     return response()->json([
                         'status' => "success",
                         'message' => "Ihre Mobilnummer wurde verifiziert. Ihr Passwort für die Anmeldung bei Yousiness wurde an Sie gesendet. ."

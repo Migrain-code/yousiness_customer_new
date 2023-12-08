@@ -75,7 +75,7 @@ class VerifyController extends Controller
             Sms::send($user->email, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
             return to_route('customer.login')->with('response', [
                 'status'=>"success",
-                'message'=>"Ihre Mobilnummer Überprüfung war erfolgreich. Für die Anmeldung in das System wurde Ihnen Ihr Passwort zugesendet."
+                'message' => "Ihre Mobilnummer Überprüfung war erfolgreich. Für die Anmeldung in das System wurde Ihnen Ihr Passwort zugesendet."
             ]);
         }
         else{
