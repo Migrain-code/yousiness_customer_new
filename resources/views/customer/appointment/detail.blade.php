@@ -82,7 +82,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Details zum Terminservice</h3>
+                                        <h3>Details zu Ihren Terminen</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">

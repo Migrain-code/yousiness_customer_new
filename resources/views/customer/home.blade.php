@@ -189,7 +189,7 @@
                                                 </div>
                                             @endif
                                         @empty
-                                            <div class="alert alert-warning text-center">Ihr Termindatensatz konnte nicht gefunden werden</div>
+                                            <div class="alert alert-warning text-center">Sie haben keine Termine vereinbart.</div>
                                         @endforelse
                                     </div>
 

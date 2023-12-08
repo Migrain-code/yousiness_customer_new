@@ -116,7 +116,7 @@
                                                     <div class="card-body d-flex align-items-center">
                                                         <div class="col">
                                                             <h3>Mitteilungen</h3>
-                                                            Erhalten Sie Push-Benachrichtigungen über die App
+                                                            Erhalten Sie Push-Benachrichtigungen über die App.
                                                         </div>
                                                         <div class="col d-flex align-items-center justify-content-end">
                                                             <label class="switch">
@@ -130,7 +130,7 @@
                                                     <div class="card-body d-flex align-items-center">
                                                         <div class="col">
                                                             <h3>Email</h3>
-                                                            Wir senden Ihnen eine E-Mail an Ihr E-Mail-Konto
+                                                            Wir senden Ihnen eine E-Mail an Ihr E-Mail-Konto.
                                                         </div>
                                                         <div class="col d-flex align-items-center justify-content-end">
                                                             <label class="switch">
@@ -158,7 +158,7 @@
                                                     <div class="card-body d-flex align-items-center">
                                                         <div class="col">
                                                             <h3>Anrufe</h3>
-                                                            Wir werden Sie telefonisch kontaktieren
+                                                            Wir werden Sie telefonisch kontaktieren.
                                                         </div>
                                                         <div class="col d-flex align-items-center justify-content-end">
                                                             <label class="switch">
@@ -168,7 +168,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary float-end">Aktualisieren</button>
+                                                <button type="submit" class="btn btn-primary float-end">Speichern</button>
                                             </form>
                                             <!-- /Change Password Form -->
 

@@ -59,7 +59,7 @@
                                                     <input type="password" name="password_confirmation" class="form-control">
                                                 </div>
                                                 <div class="submit-section">
-                                                    <button type="submit" class="btn btn-primary submit-btn">Aktualisieren</button>
+                                                    <button type="submit" class="btn btn-primary submit-btn">Speichern</button>
                                                 </div>
                                             </form>
                                             <!-- /Change Password Form -->

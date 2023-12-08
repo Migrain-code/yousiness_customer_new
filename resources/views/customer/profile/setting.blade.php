@@ -95,7 +95,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label">E-mail</label>
-                                                        <input type="text" name="custom_email" class="form-control branch_name phone" placeholder="{{userInfo()->custom_email ?? "Email"}}" value="{{userInfo()->custom_email}}">
+                                                        <input type="text" name="custom_email" class="form-control branch_name phone" placeholder="{{userInfo()->custom_email ?? "E-mail"}}" value="{{userInfo()->custom_email}}">
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>

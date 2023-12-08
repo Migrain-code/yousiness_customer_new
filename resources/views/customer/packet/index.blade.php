@@ -129,7 +129,7 @@
                                                         <tr>
                                                             <td colspan="8">
                                                                 <div class="alert alert-warning">
-                                                                    Sie haben keine erworbene/n PakeVe im System
+                                                                    Sie haben keine erworbene/n Pakete im System.
                                                                 </div>
                                                             </td>
                                                         </tr>
