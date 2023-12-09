@@ -129,6 +129,7 @@ class AuthController extends Controller
                         'phone' => $request->input('phone'),
                         'area_code' => $request->input('area_code'),
                         'status' => 1,
+                        'verify_phone' => 1,
                         'password' => Hash::make($generatePassword),
                     ]);
                     $this->addPermission($customer->id);
