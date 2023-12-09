@@ -76,7 +76,7 @@
                                 <div class="col-md-7">
                                     <div class="step-1 my-3">
                                         <div class="d-flex align-items-center">
-                                            <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">1</span>
+                                            <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #d59c4b; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">1</span>
                                             <h2 style="font-size: 22px;">Dienstleistung/en Auswählen</h2>
                                         </div>
                                         <div>
@@ -87,13 +87,13 @@
                                                     <div class="alert alert-waring">Es wurde keine Serviceauswahl getroffen. <u>Bitte wählen Sie Service aus</u></div>
                                                 @endforelse
                                             </div>
-                                            <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg" type="button">Hinzufügen/Entfernen</button>
+                                            <button class="btn-five-light my-3 fs-6 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg" type="button">Hinzufügen/Entfernen</button>
 
                                         </div>
                                     </div>
                                     <div class="step-2 my-3">
                                         <div class="d-flex align-items-center">
-                                            <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">2</span>
+                                            <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #d59c4b; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">2</span>
                                             <h2 style="font-size: 22px;">Datum</h2>
                                         </div>
 
@@ -132,7 +132,7 @@
                                     @if(isset(request()["request"]["appointment_date"]))
                                         <div class="step-2 my-3">
                                             <div class="d-flex align-items-center">
-                                                <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">3</span>
+                                                <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #d59c4b; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">3</span>
                                                 <h2 style="font-size: 22px;">Mitarbeiter Auswählen</h2>
                                             </div>
                                             <form method="get" action="{{route('step1.store', ['business' => $business->slug])}}">
@@ -170,13 +170,13 @@
                                                     </div>
                                                     @php($counter++)
                                                 @endforeach
-                                                <button class="btn-five-light my-3 fs-5 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" type="submit">Wählen Sie Uhrzeit</button>
+                                                <button class="btn-five-light my-3 fs-6 fw-light p-2" style="background-color: #01af00;color: white;margin-left: auto" type="submit">Wählen Sie Uhrzeit</button>
                                             </form>
                                         </div>
                                         @if(count($selectedPersonelIds) > 0)
                                             <div class="step-2 my-3" style="background: #ffffff;">
                                                 <div class="d-flex align-items-center">
-                                                    <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">4</span>
+                                                    <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #d59c4b; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">4</span>
                                                     <h2 style="font-size: 22px;">Uhrzeit</h2>
                                                 </div>
                                                 <form class="tab-content schedule-cont" id="step-3-form" method="post" action="">
@@ -202,7 +202,7 @@
                                             @if(isset(request()["request"]["step"]))
                                                 <div class="step-5 my-3" id="step-4">
                                                     <div class="d-flex align-items-center mb-1">
-                                                        <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #ff890e; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">4</span>
+                                                        <span class="" style="margin-right: 5px;width: 50px;height: 50px;background-color: #d59c4b; color: white;font-size: 25px;font-weight: bold;border-radius: 50%;text-align: center;padding-top: 6px;">5</span>
                                                         <h2 style="font-size: 22px;">Kontaktinformationen</h2>
                                                     </div>
                                                     <div class="">
@@ -252,7 +252,7 @@
                                         <h2 class="text-center py-2" style="background-color: #565A5C; color: #fff; width: 100%; margin: 0 !important;">Zusammenfassung</h2>
                                         <ul>
                                             <li class="d-flex justify-content-between my-2">
-                                                <span style="font-weight: bold;">Wohnzimmer</span>
+                                                <span style="font-weight: bold;">Salon</span>
                                                 <span class="brief-company-name">{{$business->name}}</span>
                                             </li>
 
@@ -421,6 +421,15 @@
             });
             var elementId = "step_3";
             scrollToElement(elementId);
+
+            var swiperButtonPrev = document.querySelector('.swiper-button-prev');
+            swiperButtonPrev.style.top = '25px';
+            var swiperButtonNext = document.querySelector('.swiper-button-next');
+            swiperButtonNext.style.top = '25px';
+
+            var swiperPersonelName = document.querySelector('.personelName');
+            swiperPersonelName.style.position = 'relative';
+            swiperPersonelName.style.padding = '15px';
         });
         function scrollToElement(elementId) {
             var element = document.getElementById(elementId);
@@ -590,7 +599,7 @@
                             var newSlide = document.createElement('div');
                             newSlide.classList.add('swiper-slide');
                             newSlide.classList.add('doc-times');
-                            newSlide.innerHTML =`<div class="w-100"><h3>für ${row.personel.name} Zeit auswählen</h3></div>` + docTimesHtml;
+                            newSlide.innerHTML =`<div class="w-100 personelName"><h3>für ${row.personel.name} Zeit auswählen</h3></div>` + docTimesHtml;
 
                             var swiperWrapper = document.querySelector('.swiper-wrapper');
                             swiperWrapper.appendChild(newSlide);
