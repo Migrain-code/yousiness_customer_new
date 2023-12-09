@@ -85,7 +85,7 @@
             return iti.getNumber();
         }
 
-        iti.listen('countrychange', function () {
+        input.addEventListener('countrychange', function () {
             updatePlaceholder();
         });
 
