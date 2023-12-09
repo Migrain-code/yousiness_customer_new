@@ -27,8 +27,7 @@ class VerifyController extends Controller
 
     public function phoneVerifyAction(Request $request)
     {
-        $request->dd();
-        $customer=Customer::where('email',clearPhone($request->email))->first();
+        $customer=Customer::where('email',clearPhone($request->phone))->first();
         if ($customer){
             $generateCode=rand(100000, 999999);
             $smsConfirmation = new SmsConfirmation();
