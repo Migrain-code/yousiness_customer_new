@@ -79,7 +79,7 @@
         const iti = window.intlTelInput(input, {
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
             customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
-                console.log('selcted', selectedCountryPlaceholder);
+                updatePlaceholder(selectedCountryPlaceholder);
                 return "e.g. " + selectedCountryPlaceholder;
             },
         });
@@ -93,12 +93,11 @@
             updatePlaceholder();
         });*/
 
-        function updatePlaceholder() {
-            const selectedCountryData = iti.getSelectedCountryData();
-            console.log('format',  iti);
-            const newPlaceholder = selectedCountryData.dialCode;
+        function updatePlaceholder(originalData) {
+            let mask = "";
+            mask = originalData.replace(/[0-9]/g, "9");
 
-            input.placeholder = newPlaceholder;
+            $("#phone").inputmask({"mask": mask});
         }
     </script>
 @endsection
