@@ -427,9 +427,6 @@
             var swiperButtonNext = document.querySelector('.swiper-button-next');
             swiperButtonNext.style.top = '25px';
 
-            var swiperPersonelName = document.querySelector('.personelName');
-            swiperPersonelName.style.position = 'relative';
-            swiperPersonelName.style.padding = '15px';
         });
         function scrollToElement(elementId) {
             var element = document.getElementById(elementId);
@@ -599,7 +596,7 @@
                             var newSlide = document.createElement('div');
                             newSlide.classList.add('swiper-slide');
                             newSlide.classList.add('doc-times');
-                            newSlide.innerHTML =`<div class="w-100 personelName"><h3>für ${row.personel.name} Zeit auswählen</h3></div>` + docTimesHtml;
+                            newSlide.innerHTML =`<div class="w-100 personelName" style="position: relative; padding: 15px"><h3>für ${row.personel.name} Zeit auswählen</h3></div>` + docTimesHtml;
 
                             var swiperWrapper = document.querySelector('.swiper-wrapper');
                             swiperWrapper.appendChild(newSlide);
