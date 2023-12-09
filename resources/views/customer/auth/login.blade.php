@@ -91,7 +91,8 @@
 
         function updatePlaceholder() {
             const selectedCountryData = iti.getSelectedCountryData();
-            const newPlaceholder = '+' + selectedCountryData.dialCode + ' ' + '(___) ___-____';
+            console.log('format',  selectedCountryData.format);
+            const newPlaceholder = selectedCountryData.dialCode;
 
             input.placeholder = newPlaceholder;
         }
