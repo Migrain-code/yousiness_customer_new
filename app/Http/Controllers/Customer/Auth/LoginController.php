@@ -54,9 +54,9 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $email = $request->input('email');
+        $email = clearPhone($request->input('email'));
 
-        $user = Customer::where('email', clearPhone($email))->first();
+        $user = Customer::where('email', $email)->first();
 
         if ($user && Hash::check($request->input('password'), $user->password)) {
             Auth::loginUsingId($user->id);

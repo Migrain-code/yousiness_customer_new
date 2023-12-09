@@ -34,7 +34,7 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $credentials = [
-            'email' => $request->input('phone'),
+            'email' => clearPhone($request->input('phone')),
             'password' => $request->input('password'),
         ];
         if (Auth::guard('customer')->attempt($credentials)) {
