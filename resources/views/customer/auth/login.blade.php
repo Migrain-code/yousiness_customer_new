@@ -105,19 +105,16 @@
             updateMask();
 
             // Event listener for country change
-            iti.promise.then(function () {
-                console.log('iti', iti);
-                console.log('iti input', iti.input);
-                iti.input.addEventListener("countrychange", function () {
-                    const selectedCountryData = iti.getSelectedCountryData();
-                    const placeholder = selectedCountryData.placeholder;
 
-                    $("#phone").inputmask("remove");
-                    updateMask();
+            input.addEventListener("countrychange", function () {
+                const selectedCountryData = iti.getSelectedCountryData();
+                const placeholder = selectedCountryData.placeholder;
 
-                    // Set the new placeholder using setNumber method
-                    iti.setNumber("", placeholder);
-                });
+                $("#phone").inputmask("remove");
+                updateMask();
+
+                // Set the new placeholder using setNumber method
+                iti.setNumber("", placeholder);
             });
         });
     </script>
