@@ -28,16 +28,16 @@ class VerifyController extends Controller
     public function phoneVerifyAction(Request $request)
     {
         //$request->dd();
-        $customer=Customer::whereEmail(clearPhone($request->email))->first();
+        $customer=Customer::where('email',clearPhone($request->email))->first();
         if ($customer){
             $generateCode=rand(100000, 999999);
             $smsConfirmation = new SmsConfirmation();
-            $smsConfirmation->action = "CUSTOMER VERIFY";
+            $smsConfirmation->action = "CUSTOMER-VERIFY";
             $smsConfirmation->phone = $customer->email;
             $smsConfirmation->code = $generateCode;
             $smsConfirmation->expire_at = now()->addMinute(3);
             $smsConfirmation->save();
-            Sms::send(clearPhone($request->phone), "Für die Anmeldung bei ".config('settings.speed_site_title')." lautet Ihr Prüfcode:" . $generateCode);
+            Sms::send(clearPhone($customer->email), "Für die Anmeldung bei ".config('settings.speed_site_title')." lautet Ihr Prüfcode:" . $generateCode);
             return to_route('customer.verify')->with('response', [
                 'status'=>"success",
                 'message'=>"Ihr Bestätigungscode wurde als Nachricht gesendet",
