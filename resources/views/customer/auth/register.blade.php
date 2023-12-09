@@ -42,9 +42,11 @@
                                     </div>
 
 
-                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Registrieren</button>
+                                    <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Registrieren
+                                    </button>
 
-                                    <div class="text-center dont-have mt-2">Haben Sie einen Account? <a href="{{route('customer.login')}}">Einloggen</a></div>
+                                    <div class="text-center dont-have mt-2">Haben Sie einen Account? <a
+                                                href="{{route('customer.login')}}">Einloggen</a></div>
                                 </form>
                             </div>
                         </div>
@@ -63,10 +65,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.60/inputmask/jquery.inputmask.js"></script>
 
     <script>
-        const input = document.querySelector("#phone");
-        const iti = window.intlTelInput(input);
 
-        document.querySelector("#myForm").addEventListener("submit", function(e) {
+        const input = document.querySelector("#phone");
+        const iti = window.intlTelInput(input, {
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+                updatePlaceholder(selectedCountryPlaceholder);
+                return selectedCountryPlaceholder;
+            },
+        });
+
+        // Örnek olarak: Numarayı uluslararası formatta alma
+        function getNumber() {
+            return iti.getNumber();
+        }
+
+        /*input.addEventListener('countrychange', function () {
+        updatePlaceholder();
+    });*/
+
+        function updatePlaceholder(originalData) {
+            let mask = "";
+            mask = originalData.replace(/[0-9]/g, "9");
+            $("#phone").val("");
+            $("#phone").inputmask({"mask": mask});
+        }
+
+
+        document.querySelector("#myForm").addEventListener("submit", function (e) {
             const fullNumber = iti.getNumber();  // Tam numarayı alır (+ ülke kodu ile birlikte)
             const countryCode = iti.getSelectedCountryData().iso2;  // Seçilen ülkenin ISO kodunu alır (örn. "us" veya "gb")
 

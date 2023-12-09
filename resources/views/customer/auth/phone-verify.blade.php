@@ -49,23 +49,31 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.60/inputmask/jquery.inputmask.js"></script> -->
 
     <script>
-        //$(".phone").inputmask({"mask": "+99 (999)-999-9999"});
-        //$(".phone").inputmask({"mask": "(999)-999-9999"});
         const input = document.querySelector("#phone");
         const iti = window.intlTelInput(input, {
-            // tercihlerinize göre opsiyonları ayarlayabilirsiniz
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // numara formatlama ve doğrulama için gereklidir
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+                updatePlaceholder(selectedCountryPlaceholder);
+                return selectedCountryPlaceholder;
+            },
         });
 
         // Örnek olarak: Numarayı uluslararası formatta alma
         function getNumber() {
             return iti.getNumber();
         }
+
+        /*input.addEventListener('countrychange', function () {
+            updatePlaceholder();
+        });*/
+
+        function updatePlaceholder(originalData) {
+            let mask = "";
+            mask = originalData.replace(/[0-9]/g, "9");
+            $("#phone").val("");
+            $("#phone").inputmask({"mask": mask});
+        }
     </script>
 
-    <script>
-        //$(".phone").inputmask({"mask": "+99 (999)-999-9999"});
-        $(".phone").inputmask({"mask": "(999)-999-9999"});
-    </script>
 @endsection
 
