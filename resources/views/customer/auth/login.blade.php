@@ -107,6 +107,7 @@
             // Event listener for country change
             iti.promise.then(function () {
                 iti.telInput.addEventListener("change", function () {
+                    console.log('tel onput', iti.telInput);
                     $("#phone").inputmask("remove");
                     updateMask();
                 });
