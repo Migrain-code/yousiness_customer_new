@@ -96,7 +96,7 @@
         function updatePlaceholder(originalData) {
             let mask = "";
             mask = originalData.replace(/[0-9]/g, "9");
-
+            $("#phone").val("");
             $("#phone").inputmask({"mask": mask});
         }
     </script>
