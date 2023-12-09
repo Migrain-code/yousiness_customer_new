@@ -109,7 +109,7 @@
             input.addEventListener("countrychange", function () {
                 const selectedCountryData = iti.getSelectedCountryData();
                 const placeholder = selectedCountryData.placeholder;
-
+                console.log('phone format', placeholder);
                 $("#phone").inputmask("remove");
                 updateMask();
 
