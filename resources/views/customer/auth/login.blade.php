@@ -74,21 +74,31 @@
 
     <script>
         $(document).ready(function () {
-            const input = document.querySelector("#phone");
+            const input = document.querySelector("#yourPhoneNumberInput");
             const iti = window.intlTelInput(input, {
                 utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
             });
 
             function updateMask() {
                 const selectedCountryData = iti.getSelectedCountryData();
-                const phoneMask = selectedCountryData.format.replace(/[0-9]/g, "9");
 
-                // Inputmask
-                $("#phone").inputmask({
-                    mask: phoneMask,
-                    showMaskOnHover: false,
-                    showMaskOnFocus: false,
-                });
+                if (selectedCountryData && selectedCountryData.format) {
+                    const phoneMask = selectedCountryData.format.replace(/[0-9]/g, "9");
+
+                    // Inputmask
+                    $("#phone").inputmask({
+                        mask: phoneMask,
+                        showMaskOnHover: false,
+                        showMaskOnFocus: false,
+                    });
+                } else {
+                    // Fallback mask or handling when format is not available
+                    $("#phone").inputmask({
+                        mask: "+9 (999) 999-9999",
+                        showMaskOnHover: false,
+                        showMaskOnFocus: false,
+                    });
+                }
             }
 
             // Initial mask
@@ -97,7 +107,7 @@
             // Event listener for country change
             iti.promise.then(function () {
                 iti.listen("countrychange", function () {
-                    $("#phone").inputmask("remove");
+                    $(".phone").inputmask("remove");
                     updateMask();
                 });
             });
