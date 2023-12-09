@@ -106,11 +106,17 @@
 
             // Event listener for country change
             iti.promise.then(function () {
-                console.log('tel onput', iti.telInput);
+                console.log('iti', iti);
+                console.log('iti input', iti.input);
+                iti.input.addEventListener("countrychange", function () {
+                    const selectedCountryData = iti.getSelectedCountryData();
+                    const placeholder = selectedCountryData.placeholder;
 
-                iti.telInput.addEventListener("change", function () {
                     $("#phone").inputmask("remove");
                     updateMask();
+
+                    // Set the new placeholder using setNumber method
+                    iti.setNumber("", placeholder);
                 });
             });
         });
