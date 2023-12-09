@@ -73,49 +73,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.60/inputmask/jquery.inputmask.js"></script>
 
     <script>
-        $(document).ready(function () {
-            const input = document.querySelector("#phone");
-            const iti = window.intlTelInput(input, {
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            });
-
-            function updateMask() {
-                const selectedCountryData = iti.getSelectedCountryData();
-
-                if (selectedCountryData && selectedCountryData.format) {
-                    const phoneMask = selectedCountryData.format.replace(/[0-9]/g, "9");
-
-                    // Inputmask
-                    $("#phone").inputmask({
-                        mask: phoneMask,
-                        showMaskOnHover: false,
-                        showMaskOnFocus: false,
-                    });
-                } else {
-                    // Fallback mask or handling when format is not available
-                    $("#phone").inputmask({
-                        mask: "+9 (999) 999-9999",
-                        showMaskOnHover: false,
-                        showMaskOnFocus: false,
-                    });
-                }
-            }
-
-            // Initial mask
-            updateMask();
-
-            // Event listener for country change
-
-            input.addEventListener("countrychange", function () {
-                const selectedCountryData = iti.getSelectedCountryData();
-                const placeholder = selectedCountryData.placeholder;
-                console.log('phone format', placeholder);
-                $("#phone").inputmask("remove");
-                updateMask();
-
-                // Set the new placeholder using setNumber method
-                iti.setNumber("", placeholder);
-            });
+        //$(".phone").inputmask({"mask": "+99 (999)-999-9999"});
+        //$(".phone").inputmask({"mask": "(999)-999-9999"});
+        const input = document.querySelector("#phone");
+        const iti = window.intlTelInput(input, {
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
         });
+
+        // Örnek olarak: Numarayı uluslararası formatta alma
+        function getNumber() {
+            return iti.getNumber();
+        }
+
+        iti.listen('countrychange', function () {
+            updatePlaceholder();
+        });
+
+        function updatePlaceholder() {
+            const selectedCountryData = iti.getSelectedCountryData();
+            const newPlaceholder = '+' + selectedCountryData.dialCode + ' ' + '(___) ___-____';
+
+            input.placeholder = newPlaceholder;
+        }
     </script>
 @endsection
