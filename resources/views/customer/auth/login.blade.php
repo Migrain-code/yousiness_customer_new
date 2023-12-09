@@ -78,6 +78,10 @@
         const input = document.querySelector("#phone");
         const iti = window.intlTelInput(input, {
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+                console.log('selcted', selectedCountryPlaceholder);
+                return "e.g. " + selectedCountryPlaceholder;
+            },
         });
 
         // Örnek olarak: Numarayı uluslararası formatta alma
