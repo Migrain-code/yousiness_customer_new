@@ -286,7 +286,7 @@ class HomeController extends Controller
         ], [], [
             'fullname' => "Name Nachname",
             'business_name' => "Firmenname",
-            'phone' => "Mobilenummer"
+            'phone' => "Mobilnummer"
         ]);
         $businessInfo = new BusinessInfo();
         $businessInfo->fullname = $request->input('fullname');
