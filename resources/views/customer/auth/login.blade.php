@@ -89,9 +89,9 @@
             return iti.getNumber();
         }
 
-        input.addEventListener('countrychange', function () {
+        /*input.addEventListener('countrychange', function () {
             updatePlaceholder();
-        });
+        });*/
 
         function updatePlaceholder() {
             const selectedCountryData = iti.getSelectedCountryData();
