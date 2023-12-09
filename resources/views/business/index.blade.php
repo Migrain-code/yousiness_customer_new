@@ -126,7 +126,7 @@
                                 @endif
                                 <div class="col-lg-3 p-0">
                                     <div class="position-relative">
-                                        <img src="{{image($business->logo)}}" onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')" class="card-img" alt="User Image">
+                                        <img src="{{image($business->wallpaper)}}" onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')" class="card-img" alt="User Image">
                                         <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Öne Çıkan</span>
                                     </div>
                                 </div>
