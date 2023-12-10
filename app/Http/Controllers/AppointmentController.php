@@ -142,18 +142,33 @@ class AppointmentController extends Controller
             $appointmentService->save();
             $loop++;
         }
+
         $uniqueArray = array_unique($request->personels);
 
         foreach ($uniqueArray as $uniquePersonel) {
+            $totalTimeForPersonel = 0;
+            $startTime = null;
+
             foreach ($request->personels as $key => $personel) {
                 if ($uniquePersonel == $personel) {
                     $appointmentService = new AppointmentServices();
                     $appointmentService->appointment_id = $appointment->id;
                     $appointmentService->personel_id = $personel;
-                    $appointmentService->service_id = $request->services[$key];
-                    $findService = BusinessService::find($request->services[$key]);
-                    $appointmentService->start_time = $request->times[$key];
-                    $appointmentService->end_time = Carbon::parse($request->times[$key])->addMinute($findService->time)->format('d.m.Y H:i');
+                    $serviceId = $request->services[$key];
+                    $findService = BusinessService::find($serviceId);
+                    $appointmentService->service_id = $serviceId;
+
+                    // Başlangıç saati kontrolü
+                    if ($startTime === null) {
+                        $startTime = $request->times[$key];
+                        $appointmentService->start_time = $startTime;
+                    }
+
+                    // İlk seçilen hizmetin süresini toplam süreye ekle
+                    $totalTimeForPersonel += $findService->time;
+
+                    // İlk seçilen hizmetin süresi diğer hizmetlere eklenerek end_time oluşturulur
+                    $appointmentService->end_time = Carbon::parse($startTime)->addMinute($totalTimeForPersonel)->format('d.m.Y H:i');
                     $appointmentService->save();
                 }
             }
