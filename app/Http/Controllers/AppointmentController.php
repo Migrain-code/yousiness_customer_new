@@ -167,7 +167,7 @@ class AppointmentController extends Controller
                         $totalTimeForPersonel += $findService->time;
 
                         // İkinci ve sonraki hizmetlerin başlangıç saatini bir önceki hizmetin bitiş saatine eşitle
-                        $startTime = Carbon::parse($startTime)->addMinute($totalTimeForPersonel)->format('d.m.Y H:i');
+                        $startTime = Carbon::parse($appointmentService->end_time)->format('d.m.Y H:i');
                         $appointmentService->start_time = $startTime;
                     }
 
