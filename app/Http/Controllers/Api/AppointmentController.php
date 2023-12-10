@@ -335,17 +335,21 @@ class AppointmentController extends Controller
         $clock = Carbon::parse($request->input('appointment_date'));
         //$sumTime = 0;
 
-        foreach ($request->personels as $personel) {
-            $appointmentService = new AppointmentServices();
-            $appointmentService->appointment_id = $appointment->id;
-            $appointmentService->personel_id = $personel;
-            $appointmentService->service_id = $request->services[$loop];
-            $findService = BusinessService::find($request->services[$loop]);
-            $appointmentService->start_time = $request->clocks[$loop];
-            $appointmentService->end_time = Carbon::parse($request->clocks[$loop])->addMinute($findService->time)->format('d.m.Y H:i');
-            //$sumTime += $findService->time;
-            $appointmentService->save();
-            $loop++;
+        $uniqueArray = array_unique($request->personels);
+
+        foreach ($uniqueArray as $uniquePersonel) {
+            foreach ($request->personels as $key => $personel) {
+                if ($uniquePersonel == $personel) {
+                    $appointmentService = new AppointmentServices();
+                    $appointmentService->appointment_id = $appointment->id;
+                    $appointmentService->personel_id = $personel;
+                    $appointmentService->service_id = $request->services[$key];
+                    $findService = BusinessService::find($request->services[$key]);
+                    $appointmentService->start_time = $request->clocks[$key];
+                    $appointmentService->end_time = Carbon::parse($request->clocks[$key])->addMinute($findService->time)->format('d.m.Y H:i');
+                    $appointmentService->save();
+                }
+            }
         }
         $appointment->date = Carbon::parse($request->input('appointment_date'))->format('Y-m-d H:i:s');
         $appointment->is_verify_phone = 1;
