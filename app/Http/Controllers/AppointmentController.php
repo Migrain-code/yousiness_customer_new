@@ -131,7 +131,7 @@ class AppointmentController extends Controller
 
         $appointment->date = Carbon::parse($request->input('appointment_date'));
         //dd($request->all());
-        foreach ($request->services as $service) {
+        /*foreach ($request->services as $service) {
             $appointmentService = new AppointmentServices();
             $appointmentService->appointment_id = $appointment->id;
             $appointmentService->personel_id = $request->personels[$loop];
@@ -141,7 +141,7 @@ class AppointmentController extends Controller
             $appointmentService->end_time = Carbon::parse($request->times[$loop])->addMinute($findService->time)->format('d.m.Y H:i');
             $appointmentService->save();
             $loop++;
-        }
+        }*/
 
         $uniqueArray = array_unique($request->personels);
 
