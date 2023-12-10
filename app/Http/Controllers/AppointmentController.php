@@ -155,6 +155,7 @@ class AppointmentController extends Controller
                     $serviceId = $request->services[$key];
                     $findService = BusinessService::find($serviceId);
                     $appointmentService->service_id = $serviceId;
+                    dd($key);
                     $appointmentService->start_time = $request->times[$key];
 
                     // İlk seçilen hizmetin süresini toplam süreye ekle
