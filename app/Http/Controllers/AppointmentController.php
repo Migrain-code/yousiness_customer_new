@@ -131,7 +131,7 @@ class AppointmentController extends Controller
 
         $appointment->date = Carbon::parse($request->input('appointment_date'));
         //dd($request->all());
-        foreach ($request->services as $service) {
+        /*foreach ($request->services as $service) {
             $appointmentService = new AppointmentServices();
             $appointmentService->appointment_id = $appointment->id;
             $appointmentService->personel_id = $request->personels[$loop];
@@ -141,8 +141,23 @@ class AppointmentController extends Controller
             $appointmentService->end_time = Carbon::parse($request->times[$loop])->addMinute($findService->time)->format('d.m.Y H:i');
             $appointmentService->save();
             $loop++;
-        }
+        }*/
+        $uniqueArray = array_unique($request->personels);
 
+        foreach ($uniqueArray as $uniquePersonel) {
+            foreach ($request->personels as $key => $personel) {
+                if ($uniquePersonel == $personel) {
+                    $appointmentService = new AppointmentServices();
+                    $appointmentService->appointment_id = $appointment->id;
+                    $appointmentService->personel_id = $personel;
+                    $appointmentService->service_id = $request->services[$key];
+                    $findService = BusinessService::find($request->services[$key]);
+                    $appointmentService->start_time = Carbon::parse($request->times[$loop])->format('d.m.Y H:i');
+                    $appointmentService->end_time = Carbon::parse($request->times[$loop])->addMinute($findService->time)->format('d.m.Y H:i');
+                    $appointmentService->save();
+                }
+            }
+        }
         $appointment->save();
         $notification = new BusinessNotification();
         $notification->business_id = $business->id;
