@@ -145,9 +145,8 @@ class AppointmentController extends Controller
 
         $uniqueArray = array_unique($request->personels);
 
-        $uniqueArray = array_unique($request->personels);
-
         foreach ($uniqueArray as $uniquePersonel) {
+            $appointmentService = null;
             $totalTimeForPersonel = 0;
             $startTime = null;
 
@@ -160,8 +159,8 @@ class AppointmentController extends Controller
                     $findService = BusinessService::find($serviceId);
                     $appointmentService->service_id = $serviceId;
 
-                    // Başlangıç saati kontrolü
-                    if ($startTime === null) {
+                    if (!$startTime) {
+                        // İlk hizmet için başlangıç
                         $startTime = $request->times[$key];
                         $appointmentService->start_time = $startTime;
                     } else {
@@ -182,6 +181,7 @@ class AppointmentController extends Controller
                 }
             }
         }
+
 
         $appointment->save();
         $notification = new BusinessNotification();
