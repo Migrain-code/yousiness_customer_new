@@ -145,10 +145,13 @@ class AppointmentController extends Controller
 
         $uniqueArray = array_unique($request->personels);
 
+        $uniqueArray = array_unique($request->personels);
+
+        $startTime = null; // Move this line outside the outer loop
+
         foreach ($uniqueArray as $uniquePersonel) {
             $appointmentService = null;
             $totalTimeForPersonel = 0;
-            $startTime = null;
 
             foreach ($request->personels as $key => $personel) {
                 if ($uniquePersonel == $personel) {
@@ -160,28 +163,23 @@ class AppointmentController extends Controller
                     $appointmentService->service_id = $serviceId;
 
                     if (!$startTime) {
-                        // İlk hizmet için başlangıç
+                        // First service: set start_time
                         $startTime = $request->times[$key];
                         $appointmentService->start_time = $startTime;
                     } else {
-                        // İlk seçilen hizmetin süresini toplam süreye ekle
-                        $totalTimeForPersonel += $findService->time;
-
-                        // İkinci ve sonraki hizmetlerin başlangıç saatini bir önceki hizmetin bitiş saatine eşitle
-                        $startTime = Carbon::parse($appointmentService->end_time)->format('d.m.Y H:i');
-                        $appointmentService->start_time = $startTime;
+                        // Subsequent services: set start_time based on previous end_time
+                        $appointmentService->start_time = Carbon::parse($appointmentService->end_time)->format('d.m.Y H:i');
                     }
 
-                    // İlk seçilen hizmetin süresini toplam süreye ekle
+                    // Add service time to total time
                     $totalTimeForPersonel += $findService->time;
 
-                    // İlk seçilen hizmetin süresi diğer hizmetlere eklenerek end_time oluşturulur
-                    $appointmentService->end_time = Carbon::parse($startTime)->addMinutes($totalTimeForPersonel)->format('d.m.Y H:i');
+                    // Calculate end_time based on start_time and total time
+                    $appointmentService->end_time = Carbon::parse($appointmentService->start_time)->addMinutes($totalTimeForPersonel)->format('d.m.Y H:i');
                     $appointmentService->save();
                 }
             }
         }
-
 
         $appointment->save();
         $notification = new BusinessNotification();
