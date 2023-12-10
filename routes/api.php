@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Customer\AuthController;
 use App\Http\Controllers\Api\Customer\CustomerController;
@@ -13,6 +12,7 @@ use App\Http\Controllers\Api\Search\SearchController;
 use \App\Http\Controllers\Api\AdsController;
 use App\Http\Controllers\Api\AppointmentController;
 use \App\Http\Controllers\Api\CampaignController;
+use \App\Http\Controllers\Api\FaqController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -76,6 +76,10 @@ Route::prefix('ads')->group(function (){
    Route::get('get', [AdsController::class, 'get']);
 
 });
+Route::prefix('faq')->group(function (){
+    Route::get('list', [FaqController::class, 'index']);
+});
+
 Route::prefix('campaign')->group(function (){
     Route::get('list', [CampaignController::class, 'list']);
     Route::post('verify', [CampaignController::class, 'verify']);
