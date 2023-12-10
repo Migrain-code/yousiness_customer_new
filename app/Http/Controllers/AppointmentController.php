@@ -143,44 +143,23 @@ class AppointmentController extends Controller
             $loop++;
         }*/
 
-        $uniqueArray = array_unique($request->personels);
-
-        $uniqueArray = array_unique($request->personels);
-
-        $startTime = null; // Move this line outside the outer loop
+        $uniqueArray = array_unique($request->personals);
 
         foreach ($uniqueArray as $uniquePersonel) {
-            $appointmentService = null;
-            $totalTimeForPersonel = 0;
-
+            // Her bir unique personel için tekrar döngü oluştur
             foreach ($request->personels as $key => $personel) {
                 if ($uniquePersonel == $personel) {
                     $appointmentService = new AppointmentServices();
                     $appointmentService->appointment_id = $appointment->id;
                     $appointmentService->personel_id = $personel;
-                    $serviceId = $request->services[$key];
-                    $findService = BusinessService::find($serviceId);
-                    $appointmentService->service_id = $serviceId;
-
-                    if (!$startTime) {
-                        // First service: set start_time
-                        $startTime = $request->times[$key];
-                        $appointmentService->start_time = $startTime;
-                    } else {
-                        // Subsequent services: set start_time based on previous end_time
-                        $appointmentService->start_time = Carbon::parse($appointmentService->end_time)->format('d.m.Y H:i');
-                    }
-
-                    // Add service time to total time
-                    $totalTimeForPersonel += $findService->time;
-
-                    // Calculate end_time based on start_time and total time
-                    $appointmentService->end_time = Carbon::parse($appointmentService->start_time)->addMinutes($totalTimeForPersonel)->format('d.m.Y H:i');
+                    $appointmentService->service_id = $request->services[$key];
+                    $findService = BusinessService::find($request->services[$key]);
+                    $appointmentService->start_time = $request->clocks[$key];
+                    $appointmentService->end_time = Carbon::parse($request->clocks[$key])->addMinute($findService->time)->format('d.m.Y H:i');
                     $appointmentService->save();
                 }
             }
         }
-
         $appointment->save();
         $notification = new BusinessNotification();
         $notification->business_id = $business->id;
