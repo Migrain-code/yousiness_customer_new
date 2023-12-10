@@ -341,8 +341,8 @@ class AppointmentController extends Controller
             $appointmentService->personel_id = $personel;
             $appointmentService->service_id = $request->services[$loop];
             $findService = BusinessService::find($request->services[$loop]);
-            $appointmentService->start_time = $clock->format('d.m.Y H:i');
-            $appointmentService->end_time = $clock->addMinute($findService->time)->format('d.m.Y H:i');
+            $appointmentService->start_time = $request->clocks[$loop];
+            $appointmentService->end_time = Carbon::parse($request->clocks[$loop])->addMinute($findService->time)->format('d.m.Y H:i');
             //$sumTime += $findService->time;
             $appointmentService->save();
             $loop++;
