@@ -143,12 +143,13 @@ class AppointmentController extends Controller
             $loop++;
         }*/
         $uniqueArray = array_unique($request->personels);
-        dd($request->times);
+
         foreach ($uniqueArray as $uniquePersonel) {
             $totalTimeForPersonel = 0;
 
             foreach ($request->personels as $key => $personel) {
                 if ($uniquePersonel == $personel) {
+                    dd($uniquePersonel ." - ". $personel);
                     $appointmentService = new AppointmentServices();
                     $appointmentService->appointment_id = $appointment->id;
                     $appointmentService->personel_id = $personel;
