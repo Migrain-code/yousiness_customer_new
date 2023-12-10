@@ -180,6 +180,7 @@ class AppointmentController extends Controller
                 }
             }
         }
+
         $appointment->save();
         $notification = new BusinessNotification();
         $notification->business_id = $business->id;
