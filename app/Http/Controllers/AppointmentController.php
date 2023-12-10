@@ -143,7 +143,7 @@ class AppointmentController extends Controller
             $loop++;
         }*/
         $uniqueArray = array_unique($request->personels);
-
+        dd($request->times);
         foreach ($uniqueArray as $uniquePersonel) {
             $totalTimeForPersonel = 0;
 
@@ -155,7 +155,7 @@ class AppointmentController extends Controller
                     $serviceId = $request->services[$key];
                     $findService = BusinessService::find($serviceId);
                     $appointmentService->service_id = $serviceId;
-                    dd($request->times[$key]);
+
                     $appointmentService->start_time = $request->times[$key];
 
                     // İlk seçilen hizmetin süresini toplam süreye ekle
