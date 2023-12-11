@@ -62,7 +62,8 @@ class AuthController extends Controller
 
     public function existPhone($phone)
     {
-        $existPhone = \App\Models\Customer::where('email', $phone)->first();
+        $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
+
         if ($existPhone != null) {
             $result = true;
         } else {
