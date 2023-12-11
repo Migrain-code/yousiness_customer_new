@@ -332,25 +332,68 @@ class AppointmentController extends Controller
         $appointment->save();
 
         $loop = 0;
-        $clock = Carbon::parse($request->input('appointment_date'));
-        //$sumTime = 0;
+        $personels = $request->get('personels');
+        $times = $request->get('clocks');
 
-        $uniqueArray = array_unique($request->personels);
+        $newTimes = [];
+        $arrayGroupedPersonel = array_count_values($personels);
+        $looper = 0;
+        $timesLooper = 0;
+        //dd($request->services);
 
-        foreach ($uniqueArray as $uniquePersonel) {
-            foreach ($request->personels as $key => $personel) {
-                if ($uniquePersonel == $personel) {
-                    $appointmentService = new AppointmentServices();
-                    $appointmentService->appointment_id = $appointment->id;
-                    $appointmentService->personel_id = $personel;
-                    $appointmentService->service_id = $request->services[$key];
-                    $findService = BusinessService::find($request->services[$key]);
-                    $appointmentService->start_time = $request->clocks[$key];
-                    $appointmentService->end_time = Carbon::parse($request->clocks[$key])->addMinute($findService->time)->format('d.m.Y H:i');
-                    $appointmentService->save();
+        foreach ($arrayGroupedPersonel as $key => $counter) {
+
+            for ($i = 0; $i < $counter; $i++) {
+                $findService = BusinessService::find($request->services[$looper]);
+
+                if ($i != 0) {
+
+                    $newTime = Carbon::parse($times[$timesLooper])->addMinute($findService->time)->format('d.m.Y H:i');
+                    $newTimes[] = $newTime;
+                    $looper++;
+                } else {
+                    if ($counter != 1) {
+                        $firstTime = Carbon::parse($times[$timesLooper])->format('d.m.Y H:i');
+                        $newTime = Carbon::parse($firstTime)->addMinute($findService->time)->format('d.m.Y H:i');
+
+                        $newTimes[] = $firstTime;
+                        $newTimes[] = $newTime;
+
+                        $i++;
+                        $looper++;
+
+                    } else {
+                        $newTime = Carbon::parse($times[$timesLooper])->format('d.m.Y H:i');
+                        $newTimes[] = $newTime;
+                        $looper++;
+                    }
+
                 }
+
+            }
+            $looper++;
+            if ($timesLooper < count($times)){
+                $timesLooper++;
             }
         }
+
+        $appointment->date = Carbon::parse($request->input('appointment_date'));
+        //dd($request->all());
+        foreach ($request->services as $service) {
+            $appointmentService = new AppointmentServices();
+            $appointmentService->appointment_id = $appointment->id;
+            $appointmentService->personel_id = $request->personels[$loop];
+            $appointmentService->service_id = $service;
+            $findService = BusinessService::find($service);
+
+            $appointmentService->start_time = Carbon::parse($newTimes[$loop])->format('d.m.Y H:i');
+            $appointmentService->end_time = Carbon::parse($newTimes[$loop])->addMinute($findService->time)->format('d.m.Y H:i');
+
+            $appointmentService->save();
+
+            $loop++;
+        }
+
         $appointment->date = Carbon::parse($request->input('appointment_date'))->format('Y-m-d H:i:s');
         $appointment->is_verify_phone = 1;
         $appointment->note = $request->note;
