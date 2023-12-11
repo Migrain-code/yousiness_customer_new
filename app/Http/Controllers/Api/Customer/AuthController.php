@@ -40,7 +40,7 @@ class AuthController extends Controller
         if (Auth::guard('customer')->attempt($credentials)) {
             $user = Auth::user();
             $token = $user->createToken('AuthToken')->accessToken;
-            if ($request->has('device_token')){
+            if ($request->has('device_token') and isset($request->device_token)){
                 $deviceToken = $request->device_token;
                 $this->saveDevice($user, $deviceToken);
                 $deviceToken = $user->device->token;
