@@ -341,39 +341,45 @@ class AppointmentController extends Controller
         $timesLooper = 0;
         //dd($request->services);
 
-        foreach ($arrayGroupedPersonel as $key => $counter) {
+        if (count($personels) != count($times)){
+            foreach ($arrayGroupedPersonel as $key => $counter) {
 
-            for ($i = 0; $i < $counter; $i++) {
-                $findService = BusinessService::find($request->services[$looper]);
+                for ($i = 0; $i < $counter; $i++) {
+                    $findService = BusinessService::find($request->services[$looper]);
 
-                if ($i != 0) {
+                    if ($i != 0) {
 
-                    $newTime = Carbon::parse($times[$timesLooper])->addMinute($findService->time)->format('d.m.Y H:i');
-                    $newTimes[] = $newTime;
-                    $looper++;
-                } else {
-                    if ($counter != 1) {
-                        $firstTime = Carbon::parse($times[$timesLooper])->format('d.m.Y H:i');
-                        $newTime = Carbon::parse($firstTime)->addMinute($findService->time)->format('d.m.Y H:i');
-
-                        $newTimes[] = $firstTime;
+                        $newTime = Carbon::parse($times[$timesLooper])->addMinute($findService->time)->format('d.m.Y H:i');
                         $newTimes[] = $newTime;
-
-                        $i++;
                         $looper++;
-
                     } else {
-                        $newTime = Carbon::parse($times[$timesLooper])->format('d.m.Y H:i');
-                        $newTimes[] = $newTime;
-                        $looper++;
+                        if ($counter != 1) {
+                            $firstTime = Carbon::parse($times[$timesLooper])->format('d.m.Y H:i');
+                            $newTime = Carbon::parse($firstTime)->addMinute($findService->time)->format('d.m.Y H:i');
+
+                            $newTimes[] = $firstTime;
+                            $newTimes[] = $newTime;
+
+                            $i++;
+                            $looper++;
+
+                        } else {
+                            $newTime = Carbon::parse($times[$timesLooper])->format('d.m.Y H:i');
+                            $newTimes[] = $newTime;
+                            $looper++;
+                        }
+
                     }
 
                 }
-
+                $looper++;
+                if ($timesLooper < count($times)){
+                    $timesLooper++;
+                }
             }
-            $looper++;
-            if ($timesLooper < count($times)){
-                $timesLooper++;
+        } else{
+            foreach ($times as $time){
+                $newTimes[] = $time;
             }
         }
 
