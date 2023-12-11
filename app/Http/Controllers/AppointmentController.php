@@ -59,7 +59,7 @@ class AppointmentController extends Controller
                     $serviceIds[] = $service_id;
                     $ap_services[] = BusinessService::find($service_id);
                 }
-                if (isset(request()["request"]["appointment_date"])){
+                if (isset(request()["request"]["appointment_date"])) {
                     $appointmentDate = request()["request"]["appointment_date"];
                     if (isset(\request()["request"]["personels"])) {
 
@@ -82,7 +82,7 @@ class AppointmentController extends Controller
 
         /*end modal queries*/
 
-        return view('appointment.step1', compact('business', 'appointmentDate','personels', 'remainingDate', 'disabledDays', 'selectedPersonelIds', 'manServiceCategories', 'womanServiceCategories', 'womanCategories', 'manCategories', 'selectedServices', 'serviceIds', 'ap_services'));
+        return view('appointment.step1', compact('business', 'appointmentDate', 'personels', 'remainingDate', 'disabledDays', 'selectedPersonelIds', 'manServiceCategories', 'womanServiceCategories', 'womanCategories', 'manCategories', 'selectedServices', 'serviceIds', 'ap_services'));
     }
 
     public function step1Store(Request $request)
@@ -111,7 +111,7 @@ class AppointmentController extends Controller
             $appointment = new Appointment();
             $appointment->business_id = $business->id;
             $customer = new Customer();
-            $customer->name = $request->input('name'). " ". $request->input('surname');
+            $customer->name = $request->input('name') . " " . $request->input('surname');
             $customer->phone = $request->input('phone');
             $customer->email = null;
             $customer->image = "admin/users.svg";
@@ -128,54 +128,83 @@ class AppointmentController extends Controller
         $appointment->save();
 
         $loop = 0;
+        $personels = $request->get('personels');
+        $times = $request->get('times');
+
+        $newTimes = [];
+        $arrayGroupedPersonel = array_count_values($personels);
+        $looper = 0;
+        $timesLooper = 0;
+        //dd($request->services);
+
+        foreach ($arrayGroupedPersonel as $key => $counter) {
+
+            for ($i = 0; $i < $counter; $i++) {
+                $findService = BusinessService::find($request->services[$looper]);
+
+                if ($i != 0) {
+
+                    $newTime = Carbon::parse($times[$timesLooper])->addMinute($findService->time)->format('d.m.Y H:i');
+                    $newTimes[] = $newTime;
+                    $looper++;
+                } else {
+                    if ($counter != 1) {
+                        $firstTime = Carbon::parse($times[$timesLooper])->format('d.m.Y H:i');
+                        $newTime = Carbon::parse($firstTime)->addMinute($findService->time)->format('d.m.Y H:i');
+
+                        $newTimes[] = $firstTime;
+                        $newTimes[] = $newTime;
+
+                        $i++;
+                        $looper++;
+
+                    } else {
+                        $newTime = Carbon::parse($times[$timesLooper])->format('d.m.Y H:i');
+                        $newTimes[] = $newTime;
+                        $looper++;
+                    }
+
+                }
+
+            }
+            $looper++;
+            if ($timesLooper < count($times)){
+                $timesLooper++;
+            }
+        }
 
         $appointment->date = Carbon::parse($request->input('appointment_date'));
         //dd($request->all());
-        /*foreach ($request->services as $service) {
+        foreach ($request->services as $service) {
             $appointmentService = new AppointmentServices();
             $appointmentService->appointment_id = $appointment->id;
             $appointmentService->personel_id = $request->personels[$loop];
             $appointmentService->service_id = $service;
             $findService = BusinessService::find($service);
-            $appointmentService->start_time = Carbon::parse($request->times[$loop])->format('d.m.Y H:i');
-            $appointmentService->end_time = Carbon::parse($request->times[$loop])->addMinute($findService->time)->format('d.m.Y H:i');
+
+            $appointmentService->start_time = Carbon::parse($newTimes[$loop])->format('d.m.Y H:i');
+            $appointmentService->end_time = Carbon::parse($newTimes[$loop])->addMinute($findService->time)->format('d.m.Y H:i');
+
             $appointmentService->save();
+
             $loop++;
-        }*/
-
-        $uniqueArray = array_unique($request->personals);
-
-        foreach ($uniqueArray as $uniquePersonel) {
-            // Her bir unique personel için tekrar döngü oluştur
-            foreach ($request->personels as $key => $personel) {
-                if ($uniquePersonel == $personel) {
-                    $appointmentService = new AppointmentServices();
-                    $appointmentService->appointment_id = $appointment->id;
-                    $appointmentService->personel_id = $personel;
-                    $appointmentService->service_id = $request->services[$key];
-                    $findService = BusinessService::find($request->services[$key]);
-                    $appointmentService->start_time = $request->clocks[$key];
-                    $appointmentService->end_time = Carbon::parse($request->clocks[$key])->addMinute($findService->time)->format('d.m.Y H:i');
-                    $appointmentService->save();
-                }
-            }
         }
         $appointment->save();
         $notification = new BusinessNotification();
         $notification->business_id = $business->id;
         $notification->title = $appointment->customer->name . " hat einen Termin in Ihrem Salon vereinbart";
-        $notification->message =  $appointment->customer->name." hat für den ".$appointment->services->first()->start_time." Uhr einen Termin in Ihrem Salon vereinbart.";
+        $notification->message = $appointment->customer->name . " hat für den " . $appointment->services->first()->start_time . " Uhr einen Termin in Ihrem Salon vereinbart.";
         $notification->link = Str::slug($notification->title);
         $notification->save();
 
         $title = "Ihr Termin wurde erstellt";
-        $body = 'Ihr Termin wurde am '. $appointment->services->first()->start_time .' für '.$business->name.' erfolgreich abgeschlossen.';
+        $body = 'Ihr Termin wurde am ' . $appointment->services->first()->start_time . ' für ' . $business->name . ' erfolgreich abgeschlossen.';
 
-        if (auth('customer')->check() && \auth('customer')->user()->device){
+        if (auth('customer')->check() && \auth('customer')->user()->device) {
             $deviceToken = \auth('customer')->user()->device->token;
             $notification = new \App\Services\Notification();
             $notification->sendPushNotification($deviceToken, $title, $body);
-        } else{
+        } else {
             $notificationCustomer = new CustomerNotificationMobile();
             $notificationCustomer->title = $title;
             $notificationCustomer->content = $body;
@@ -191,7 +220,7 @@ class AppointmentController extends Controller
         $appointment = Appointment::find($appointment);
         $business = $appointment->business;
         $customer = $appointment->customer;
-        $customer->sendSms("Ihr Termin wurde am ".$appointment->services->first()->start_time." für ".$business->name." erfolgreich abgeschlossen.");
+        $customer->sendSms("Ihr Termin wurde am " . $appointment->services->first()->start_time . " für " . $business->name . " erfolgreich abgeschlossen.");
         return view('appointment.step5', compact('appointment', 'business'));
     }
 
