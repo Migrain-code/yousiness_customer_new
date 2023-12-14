@@ -89,14 +89,13 @@ class AuthController extends Controller
         } else {
             $generateCode = rand(100000, 999999);
             $smsConfirmation = new SmsConfirmation();
-            $smsConfirmation->phone = $request->input('phone');
+            $smsConfirmation->phone = clearPhone($request->input('phone'));
             $smsConfirmation->action = "CUSTOMER-REGISTER";
             $smsConfirmation->code = $generateCode;
             $smsConfirmation->expire_at = now()->addMinute(3);
             $smsConfirmation->save();
 
-            $phone = str_replace(array('(', ')', '-', ' '), '', $request->input('phone'));
-            Sms::send($phone, "Für die Registrierung bei ".config('settings.site_title')." ist der Verifizierungscode anzugeben:". $generateCode);
+            Sms::send($smsConfirmation->phone, "Für die Registrierung bei ".config('settings.site_title')." ist der Verifizierungscode anzugeben:". $generateCode);
 
             return response()->json([
                 'status' => "success",
