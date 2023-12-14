@@ -96,7 +96,6 @@ class AuthController extends Controller
             $smsConfirmation->save();
 
             Sms::send($smsConfirmation->phone, "Für die Registrierung bei ".config('settings.site_title')." ist der Verifizierungscode anzugeben:". $generateCode);
-
             return response()->json([
                 'status' => "success",
                 'message' => "Wir haben einen Code an Ihre Mobilnummer gesendet. Bitte überprüfen Sie Ihre Mobilnummer. "
