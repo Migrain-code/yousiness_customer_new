@@ -144,7 +144,7 @@
                                                     <div class="card-body d-flex align-items-center">
                                                         <div class="col">
                                                             <h3>SMS</h3>
-                                                            Wir informieren Sie per SMS-Nachricht.
+                                                            Wir informieren Sie per SMS Nachricht.
                                                         </div>
                                                         <div class="col d-flex align-items-center justify-content-end">
                                                             <label class="switch">
