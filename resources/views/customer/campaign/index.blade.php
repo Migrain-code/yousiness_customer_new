@@ -161,7 +161,7 @@
                     $('#companyName').text(res[0].business.name);
                     $('#startTime').text(res[0].start_time);
                     $('#campaignCode').text(res[0].code);
-                    $('#campaignDiscount').text(res[0].discount);
+                    $('#campaignDiscount').text(res[0].discount+ " %");
                     $('#campaignDescription').text(res[0].description);
                 }
             })
