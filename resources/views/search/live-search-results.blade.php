@@ -20,7 +20,7 @@
             </ul>
         @else
             <ul>
-                <li>Es gab keine Ergebnisse</li>
+                <li>Keine Ergebnisse</li>
             </ul>
         @endif
     </div>
