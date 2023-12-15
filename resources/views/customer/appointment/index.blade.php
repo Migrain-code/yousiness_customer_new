@@ -98,7 +98,6 @@
                                                 <table class="table table-hover table-center mb-0">
                                                     <thead>
                                                     <tr>
-                                                        <th>#</th>
                                                         <th>Termincode</th>
                                                         <th>Salonname</th>
                                                         <th>Datum</th>
@@ -109,7 +108,6 @@
                                                     <tbody>
                                                         @forelse($customer->appointments as $appointment)
                                                             <tr>
-                                                                <td data-label="#">{{$loop->index + 1}}</td>
                                                                 <td data-label="Termincode">#{{$appointment->id}}</td>
                                                                 <td data-label="Salonname">{{$appointment->business->name}}</td>
                                                                 <td data-label="Datum">{{$appointment->start_time}}</td>
@@ -119,7 +117,7 @@
 
                                                         @empty
                                                             <tr>
-                                                                <td colspan="6">
+                                                                <td colspan="5">
                                                                     <div class="alert alert-warning">
                                                                     Sie haben noch keine Vergangene Termine                                                                    </div>
                                                                 </td>
