@@ -110,7 +110,7 @@
                                                             <tr>
                                                                 <td data-label="Termincode">#{{$appointment->id}}</td>
                                                                 <td data-label="Salonname">{{$appointment->business->name}}</td>
-                                                                <td data-label="Datum">{{$appointment->start_time}}</td>
+                                                                <td data-label="Datum">{{$appointment->services->first()->start_time}}</td>
                                                                 <td data-label="Status">{!!$appointment->status('html') !!}</td>
                                                                 <td data-label="Transaktionen"><a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-outline-info">Detail</a></td>
                                                             </tr>
