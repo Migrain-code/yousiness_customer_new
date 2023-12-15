@@ -101,8 +101,8 @@
 
                                                         <th>Bestellcode</th>
                                                         <th>Salonname</th>
-                                                        <th class="text-center">Verbleibende Anzahl</th>
-                                                        <th class="text-center">Gesamtbetrag</th>
+                                                        <th>Verbleibende Anzahl</th>
+                                                        <th>Gesamtbetrag</th>
                                                         <th>Typ</th>
                                                         <th>Auftragsdatum</th>
                                                         <th>Transaktionen</th>
