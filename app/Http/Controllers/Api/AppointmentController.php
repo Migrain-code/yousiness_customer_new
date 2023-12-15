@@ -317,7 +317,7 @@ class AppointmentController extends Controller
             $customer->name = $request->input('name');
             $customer->phone = $request->input('phone');
             $customer->email = null;
-            $customer->image = "admin/users.svg";
+            //$customer->image = "admin/users.svg";
             $customer->password = Hash::make('123456');
             $customer->save();
             $appointment->customer_id = $customer->id;
