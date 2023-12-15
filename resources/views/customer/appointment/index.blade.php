@@ -88,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <h3>Meine Vergangene Termine</h3>
+                                        <h3>Mein Terminübersicht</h3>
                                     </div>
                                 </div>
                                 <div class="card-body">

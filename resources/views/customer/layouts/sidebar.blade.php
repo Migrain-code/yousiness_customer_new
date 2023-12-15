@@ -54,7 +54,7 @@
                     <li @if(request()->routeIs('customer.appointment.index')) class="active" @endif>
                         <a href="{{route('customer.appointment.index')}}">
                             <i class="fas fa-clock"></i>
-                            <span>Meine Vergangene Termine</span>
+                            <span>Mein Terminübersicht</span>
                         </a>
                     </li>
                     <li @if(request()->routeIs('customer.comments')) class="active" @endif>
