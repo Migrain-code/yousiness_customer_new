@@ -114,8 +114,8 @@
 
                                                             <td data-label="Bestellcode"># {{$packet->id}}</td>
                                                             <td data-label="Salonname">{{$packet->business->name}}</td>
-                                                            <td data-label="Die restlichen Stücke">{{$packet->amount}}</td>
-                                                            <td data-label="Die Gesamtzahlung">{{$packet->total}}</td>
+                                                            <td data-label="Verbleibende Anzahl">{{$packet->amount}}</td>
+                                                            <td data-label="Gesamtbetrag">{{$packet->total}} €</td>
                                                             <td data-label="Typ">{{$packageTypes[$packet->type]}}</td>
                                                             <td data-label="Auftragsdatum">
                                                                 {{$packet->created_at->translatedFormat('d F y')}}

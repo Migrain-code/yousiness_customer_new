@@ -112,7 +112,7 @@
                                                                 <td data-label="Bestellcode"># {{$order->id}}</td>
                                                                 <td data-label="Salonname">{{$order->business->name}}</td>
                                                                 <td data-label="Stück">{{$order->piece}}</td>
-                                                                <td data-label="Preis">{{$order->total}}</td>
+                                                                <td data-label="Preis">{{$order->total}} €</td>
                                                                 <td data-label="Zahlungsart">{{$paymentTypes[$order->payment_type]}}</td>
                                                                 <td data-label="Auftragsdatum">{{$order->created_at->translatedFormat('d F y')}} <span class="d-block text-info">{{$order->created_at->translatedFormat('H:i')}}</span>
                                                                 </td>
