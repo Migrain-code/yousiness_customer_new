@@ -25,6 +25,12 @@
                             <span>Mein Konto</span>
                         </a>
                     </li>
+                    <li @if(request()->routeIs('customer.profile.edit')) class="active" @endif>
+                        <a href="{{route('customer.profile.edit')}}">
+                            <i class="fas fa-user-cog"></i>
+                            <span>Persöhnliche Daten</span>
+                        </a>
+                    </li>
                     <li @if(request()->routeIs('customer.favorite.index')) class="active" @endif>
                         <a href="{{route('customer.favorite.index')}}">
                             <i class="fas fa-bookmark"></i>
@@ -81,12 +87,7 @@
                             <span>Berechtigungen</span>
                         </a>
                     </li>
-                    <li @if(request()->routeIs('customer.profile.edit')) class="active" @endif>
-                        <a href="{{route('customer.profile.edit')}}">
-                            <i class="fas fa-user-cog"></i>
-                            <span>Persöhnliche Daten</span>
-                        </a>
-                    </li>
+
                     <li @if(request()->routeIs('customer.profile.password.edit')) class="active" @endif>
                         <a href="{{route('customer.profile.password.edit')}}">
                             <i class="fas fa-lock"></i>
