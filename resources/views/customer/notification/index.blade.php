@@ -60,7 +60,7 @@
                                                                                 <span class="blog-author-name">{{$notification->title}}</span>
                                                                                 <p>{{$notification->content}}</p>
                                                                             </span>
-                                                                            <p class="blog-date">{{$notification->created_at->format('d.M.Y H:i:s')}}</p>
+                                                                            <p class="blog-date">{{$notification->created_at->translatedFormat('d.F.Y H:i:s')}}</p>
                                                                         </div>
                                                                     </div>
                                                                 </li>
