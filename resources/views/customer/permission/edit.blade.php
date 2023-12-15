@@ -129,8 +129,8 @@
                                                 <div class="card col-12" style="border-radius: 15px">
                                                     <div class="card-body d-flex align-items-center">
                                                         <div class="col">
-                                                            <h3>Email</h3>
-                                                            Wir senden Ihnen eine E-Mail an Ihr E-Mail-Konto.
+                                                            <h3>E-Mail</h3>
+                                                            Wir senden Ihnen eine Nachricht an Ihr E-Mail Adresse.
                                                         </div>
                                                         <div class="col d-flex align-items-center justify-content-end">
                                                             <label class="switch">
