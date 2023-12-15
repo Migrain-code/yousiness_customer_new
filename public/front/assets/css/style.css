@@ -383,7 +383,7 @@ table.table td h2 span {
 }
 .card-table .table tr td:first-child,
 .card-table .table tr th:first-child {
-    padding-left: 0px;
+    padding-left: 1rem;
 }
 .card-table .table tr td:last-child,
 .card-table .table tr th:last-child {
