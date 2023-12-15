@@ -112,7 +112,7 @@
                                                                 <td data-label="Salonname">{{$appointment->business->name}}</td>
                                                                 <td data-label="Datum">{{$appointment->services->first()->start_time}}</td>
                                                                 <td data-label="Status">{!!$appointment->status('html') !!}</td>
-                                                                <td data-label="Transaktionen"><a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-primary">Detail</a></td>
+                                                                <td data-label="Transaktionen"><a href="{{route('customer.appointment.detail', $appointment->id)}}" class="btn btn-primary" style="background-color: #6e6e6ecc;border: 1px solid #6e6e6ecc;">Detail</a></td>
                                                             </tr>
 
                                                         @empty
