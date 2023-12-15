@@ -135,7 +135,7 @@
                             <b style="color: #c65f6a">Rabatt:</b><span id="campaignDiscount"></span>
                         </li>
                         <li>
-                            <b style="color: #4f6fa3">Erläuterung:</b><span id="campaignDescription"></span>
+                            <b style="color: #4f6fa3">Beschreibung:</b><span id="campaignDescription"></span>
                         </li>
                     </ul>
 
