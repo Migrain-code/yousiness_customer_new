@@ -64,7 +64,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Mein Konto</li>
                         </ol>
                     </nav>
-                    <h2 class="breadcrumb-title">Vergangene Termine</h2>
+                    <h2 class="breadcrumb-title">Terminübersicht</h2>
                 </div>
 
             </div>
@@ -119,7 +119,7 @@
                                                             <tr>
                                                                 <td colspan="5">
                                                                     <div class="alert alert-warning">
-                                                                    Sie haben noch keine Vergangene Termine                                                                    </div>
+                                                                    Sie haben noch keine Termine                                                                    </div>
                                                                 </td>
                                                             </tr>
                                                         @endforelse
