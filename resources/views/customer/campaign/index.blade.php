@@ -65,15 +65,15 @@
                                                                 <i class="fas fa-check"></i>{{$campaign->campaign->title}}
                                                             </li>
                                                             <li>
-                                                                <i class="far fa-clock"></i> {{\Illuminate\Support\Carbon::parse($campaign->campaign->start_time)->format('d.m.Y H:i')}} Başlangıç
+                                                                <i class="far fa-clock"></i> {{\Illuminate\Support\Carbon::parse($campaign->campaign->start_time)->format('d.m.Y H:i')}}
                                                             </li>
                                                             <li>
-                                                                <i class="far fa-clock"></i> {{\Illuminate\Support\Carbon::parse($campaign->campaign->end_date)->format('d.m.Y H:i')}} Bitiş
+                                                                <i class="far fa-clock"></i> {{\Illuminate\Support\Carbon::parse($campaign->campaign->end_date)->format('d.m.Y H:i')}}
                                                             </li>
                                                         </ul>
                                                         <div class="row row-sm">
                                                             <div class="col-6">
-                                                                <a onclick="showModal('{{$campaign->campaign->id}}')" class="btn btn-outline-warning w-100">Detay</a>
+                                                                <a onclick="showModal('{{$campaign->campaign->id}}')" class="btn btn-outline-warning w-100">Detail</a>
                                                             </div>
 
                                                         </div>
