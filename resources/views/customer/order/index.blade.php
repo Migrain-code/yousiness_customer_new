@@ -100,8 +100,8 @@
                                                     <tr>
                                                         <th>Bestellcode</th>
                                                         <th>Salonname</th>
-                                                        <th class="text-center">Stück</th>
-                                                        <th class="text-center">Preis</th>
+                                                        <th>Stück</th>
+                                                        <th>Preis</th>
                                                         <th>Zahlungsart</th>
                                                         <th>Auftragsdatum</th>
                                                     </tr>
