@@ -125,7 +125,10 @@
                             <div class="col-lg-3 p-0">
                                 <div class="position-relative">
                                     <img onclick="businessDetailLink('{{route("business.detail", $business->slug)}}')" src="{{image($business->wallpaper)}}" class="card-img" alt="User Image">
-                                    <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Hervorgehoben</span>
+                                    @if($business->order_number > 0)
+                                        <span class="badge badge-success" style="position: absolute;top:18px; left: -2px;">Hervorgehoben</span>
+                                    @endif
+
                                 </div>
                             </div>
                             <div class="col-lg-7">
