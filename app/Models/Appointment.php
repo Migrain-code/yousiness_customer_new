@@ -15,8 +15,8 @@ class Appointment extends Model
             'text' => 'Genehmigung ausstehend'
         ],
         1 => [
-            'html' => '<span class="badge light badge-success fw-bolder px-2 py-2">Genehmigt</span>',
-            'text' => 'Onaylandı'
+            'html' => '<span class="badge light badge-success fw-bolder px-2 py-2" style="background-color: #0c4c28">Genehmigt</span>',
+            'text' => 'Genehmigt'
         ],
         2 => [
             'html' => '<span class="badge light badge-info fw-bolder px-2 py-2">Randevu Zamanı</span>',
