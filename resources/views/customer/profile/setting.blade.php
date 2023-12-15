@@ -154,7 +154,7 @@
 
                                         </div>
                                         <div class="submit-section">
-                                            <button type="submit" class="btn btn-primary submit-btn float-end">Aktualisieren</button>
+                                            <button type="submit" class="btn btn-primary submit-btn float-end">Speichern</button>
                                         </div>
                                     </form>
                                     <!-- /Profile Settings Form -->
