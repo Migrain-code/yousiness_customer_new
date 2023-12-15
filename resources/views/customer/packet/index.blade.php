@@ -98,7 +98,7 @@
                                                 <table class="table table-hover table-center mb-0">
                                                     <thead>
                                                     <tr>
-                                                        <th>#</th>
+
                                                         <th>Bestellcode</th>
                                                         <th>Salonname</th>
                                                         <th class="text-center">Verbleibende Anzahl</th>
@@ -111,7 +111,7 @@
                                                     <tbody>
                                                     @forelse($packets as $packet)
                                                         <tr>
-                                                            <td data-label="Zeilennummer">{{$loop->index+1}}</td>
+
                                                             <td data-label="Bestellcode"># {{$packet->id}}</td>
                                                             <td data-label="Salonname">{{$packet->business->name}}</td>
                                                             <td data-label="Die restlichen Stücke">{{$packet->amount}}</td>
@@ -127,7 +127,7 @@
                                                         </tr>
                                                     @empty
                                                         <tr>
-                                                            <td colspan="8">
+                                                            <td colspan="7">
                                                                 <div class="alert alert-warning">
                                                                     Sie haben keine erworbene/n Pakete im System.
                                                                 </div>

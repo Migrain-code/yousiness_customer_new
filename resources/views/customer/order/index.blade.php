@@ -98,7 +98,6 @@
                                                 <table class="table table-hover table-center mb-0">
                                                     <thead>
                                                     <tr>
-                                                        <th>#</th>
                                                         <th>Bestellcode</th>
                                                         <th>Salonname</th>
                                                         <th class="text-center">Stück</th>
@@ -110,7 +109,6 @@
                                                     <tbody>
                                                         @forelse($orders as $order)
                                                             <tr>
-                                                                <td data-label="#">{{$loop->index+1}}</td>
                                                                 <td data-label="Bestellcode"># {{$order->id}}</td>
                                                                 <td data-label="Salonname">{{$order->business->name}}</td>
                                                                 <td data-label="Stück">{{$order->piece}}</td>
@@ -121,7 +119,7 @@
                                                             </tr>
                                                         @empty
                                                             <tr>
-                                                                <td colspan="7">
+                                                                <td colspan="6">
                                                                     <div class="alert alert-warning">
                                                                         Keine Bestellungen vorhanden
                                                                     </div>

@@ -89,7 +89,7 @@
                                             </div>
                                             @endif
                                         @empty
-                                            <div class="alert alert-warning text-center">Sie haben keine Salon/s fovirisiert.</div>
+                                            <div class="alert alert-warning text-center">Sie haben keine Salon/s favorisiert.</div>
                                         @endforelse
 
                                     </div>
