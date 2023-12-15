@@ -458,7 +458,7 @@
 
                                 @if($business->approve_type==0)
                                     <p class="doc-speciality">
-                                        <span class="badge badge-success" style="font-size: 12px"><i class="fas fa-check-circle"></i> Sofortige <br> Genehmigung</span>
+                                        <span class="badge badge-success" style="font-size: 12px;line-height: 0.8rem;"><i class="fas fa-check-circle"></i> Sofortige <br> Genehmigung</span>
                                     </p>
                                 @endif
                             </div>
