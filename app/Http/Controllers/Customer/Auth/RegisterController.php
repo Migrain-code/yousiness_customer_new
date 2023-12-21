@@ -109,18 +109,11 @@ class RegisterController extends Controller
         $customerPermission = new CustomerNotificationPermission();
         $customerPermission->customer_id = $customer->id;
         $customerPermission->save();
-        Auth::guard('customer')->logout();
-        $generatePassword=rand(100000, 999999);
-        $customer->password=Hash::make($generatePassword);
-        $customer->password_status=1;
-        $customer->verify_phone=1;
-        $customer->save();
-        Sms::send($customer->email, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
 
         return $customer;
     }
     protected function registered(Request $request, $user)
     {
-        return to_route('customer.login');
+        return to_route('customer.verify');
     }
 }

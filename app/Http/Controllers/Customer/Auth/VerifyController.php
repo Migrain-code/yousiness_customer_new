@@ -17,7 +17,20 @@ class VerifyController extends Controller
 {
     public function index()
     {
-        return view('customer.auth.verify');
+        $customer = auth('customer')->user();
+        $generatePassword=rand(100000, 999999);
+        $customer->password=Hash::make($generatePassword);
+        $customer->password_status=1;
+        $customer->verify_phone=1;
+        $customer->save();
+        Sms::send($customer->email, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
+
+        auth('customer')->logout();
+        return to_route('customer.login')->with('response', [
+            'status'=>"success",
+            'message' => "Ihre Mobilnummer Überprüfung war erfolgreich. Für die Anmeldung in das System wurde Ihnen Ihr Passwort zugesendet."
+        ]);
+        //return view('customer.auth.verify');
     }
 
     public function phoneVerify()
@@ -52,8 +65,7 @@ class VerifyController extends Controller
 
     public function verifyCode(Request $request)
     {
-
-        $request->validate([
+        /*$request->validate([
             'verification_code' => ['required', 'numeric', 'digits:6'],
         ]);
         $code = SmsConfirmation::where("code", $request->verification_code)->first();
@@ -82,7 +94,7 @@ class VerifyController extends Controller
                 'status'=>"danger",
                 'message'=>"Verifizierungscode ist fehlerhaft."
             ]);
-        }
+        }*/
     }
     public function showForgotView()
     {
