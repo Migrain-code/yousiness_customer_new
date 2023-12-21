@@ -69,7 +69,7 @@ Route::group(['prefix' => 'benutzer', 'as' => 'customer.'], function () {
     Route::get('/verify-phone', [\App\Http\Controllers\Customer\Auth\VerifyController::class, 'index'])->name('verify');
     Route::post('/code/test', [\App\Http\Controllers\Customer\Auth\VerifyController::class, 'verifyCode'])->name('verify.code');
 
-    Route::middleware(['auth:customer', 'active'])->group(function () {
+    Route::middleware(['auth:customer'])->group(function () {
         Route::get('/startseite', [\App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home');
         Route::get('/berechtigungen', [\App\Http\Controllers\Customer\HomeController::class,'permissions'])->name('permissions');
         Route::get('/benachrichtigungen', [\App\Http\Controllers\Customer\HomeController::class,'notifications'])->name('notifications');

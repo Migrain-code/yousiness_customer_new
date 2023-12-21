@@ -33,9 +33,14 @@ Route::prefix('auth')->group(function (){
 Route::prefix('customer')->group(function (){
     Route::get('/get', [CustomerController::class, 'getUser']);
     Route::get('/favorite/list', [CustomerController::class, 'getFavorites']);
+    Route::get('/favorite/delete', [CustomerController::class, 'deleteFavorite']);
+
     Route::get('/deal/list', [CustomerController::class, 'getDealList']);
+
     Route::get('/order/list', [CustomerController::class, 'getOrderList']);
+
     Route::get('/packet/list', [CustomerController::class, 'getPacketList']);
+
     Route::get('/appointment/list', [CustomerController::class, 'getAppointmentList']);
     Route::get('/notify/list', [CustomerController::class, 'getNotifyList']);
     Route::get('/notify/permission/list', [CustomerController::class, 'getNotifyPermissionList']);

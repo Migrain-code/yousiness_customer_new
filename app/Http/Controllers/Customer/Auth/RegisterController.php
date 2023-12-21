@@ -67,6 +67,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $data["email"] = clearPhone($data["email"]);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255', 'unique:customers'],
@@ -93,23 +94,25 @@ class RegisterController extends Controller
         $smsConfirmation->code = $generateCode;
         $smsConfirmation->expire_at = now()->addMinute(3);
         $smsConfirmation->save();
-        $phone=str_replace(array('(', ')', '-', ' '), '', $data["email"]);
-        Sms::send($phone, "Für die Registrierung bei ".config('settings.speed_site_title')." ist der Verifizierungscode anzugeben: ". $generateCode);
+
+        $phone=clearPhone($data["email"]);
+
         $customer = Customer::create([
             'name' => $data['name'],
-            'email' => clearPhone($data['email']),
-            'phone' => clearPhone($data['email']),
+            'email' => $phone,
+            'phone' => $phone,
             'area_code' => $data['country_code'],
-            'status'=>1,
+            'status'=> 1,
             'password' => Hash::make(Str::random(8)),
         ]);
         $customerPermission = new CustomerNotificationPermission();
         $customerPermission->customer_id = $customer->id;
         $customerPermission->save();
+        auth('customer')->loginUsingId($customer->id);
         return $customer;
     }
     protected function registered(Request $request, $user)
     {
-        return to_route('customer.verify');
+        return to_route('customer.home');
     }
 }

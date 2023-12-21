@@ -19,6 +19,7 @@ use App\Http\Resources\ProductSaleResource;
 use App\Models\Appointment;
 use App\Models\Business;
 use App\Models\BusinessComment;
+use App\Models\CustomerFavorite;
 use App\Models\Page;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -78,7 +79,37 @@ class CustomerController extends Controller
         }
         return response()->json(['error' => 'Unauthorized'], 401);
     }
+    /**
+     * POST api/customer/favorite/delete
+     *
+     * Bu müşterinin eklediği favori işletmelerin kayıtlarını döndürecek
+     * gönderilecek veriler
+     * favorite_id | numeric | favorinin id si göndeilecek
+     * @header Bearer {token}
+     *
+     *
+     */
+    public function deleteFavorite(Request $request)
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $favorite = $user->favorites()->find($request->favorite_id);
 
+            if ($favorite->delete()) {
+                return response()->json([
+                    'status' => "success",
+                    'message' => "Salon wurde aus Ihren Favoriten entfernt. ",
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status' => "danger",
+                    'message' => "Favorite Not Found. ",
+                ]);
+            }
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
     /**
      * GET api/customer/deal/list
      *
