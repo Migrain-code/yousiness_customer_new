@@ -16,6 +16,7 @@ use App\Models\User;
 use App\Services\Sms;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -108,7 +109,7 @@ class RegisterController extends Controller
         $customerPermission = new CustomerNotificationPermission();
         $customerPermission->customer_id = $customer->id;
         $customerPermission->save();
-
+        Auth::guard('customer')->logout();
         $generatePassword=rand(100000, 999999);
         $customer->password=Hash::make($generatePassword);
         $customer->password_status=1;
