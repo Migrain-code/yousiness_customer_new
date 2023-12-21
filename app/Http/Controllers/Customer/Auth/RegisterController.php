@@ -116,7 +116,6 @@ class RegisterController extends Controller
         $customer->save();
         Sms::send($customer->email, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
 
-        auth('customer')->logout();
         return $customer;
     }
     protected function registered(Request $request, $user)
