@@ -197,7 +197,7 @@ class AppointmentController extends Controller
         }
         $appointment->save();
 
-        $existCustomer = $business->customers()->where('customer', $appointment->customer_id)->exists();
+        $existCustomer = $business->customers()->where('customer_id', $appointment->customer_id)->exists();
         if (!$existCustomer){
             $businessCustomer = new BusinessCustomer();
             $businessCustomer->business_id = $request->input('customer_id');
