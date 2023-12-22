@@ -33,7 +33,7 @@ Route::prefix('auth')->group(function (){
 Route::prefix('customer')->group(function (){
     Route::get('/get', [CustomerController::class, 'getUser']);
     Route::get('/favorite/list', [CustomerController::class, 'getFavorites']);
-    Route::get('/favorite/delete', [CustomerController::class, 'deleteFavorite']);
+    Route::post('/favorite/delete', [CustomerController::class, 'deleteFavorite']);
 
     Route::get('/deal/list', [CustomerController::class, 'getDealList']);
 
