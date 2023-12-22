@@ -15,6 +15,7 @@ class FavoriteResource extends JsonResource
     public function toArray($request)
     {
         return[
+            'id' => $this->id,
             'business' => new BusinessResource($this->business),
         ];
     }
