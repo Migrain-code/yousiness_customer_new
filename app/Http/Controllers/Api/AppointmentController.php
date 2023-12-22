@@ -9,6 +9,7 @@ use App\Http\Resources\ServiceResource;
 use App\Models\Appointment;
 use App\Models\AppointmentServices;
 use App\Models\Business;
+use App\Models\BusinessCustomer;
 use App\Models\BusinessService;
 use App\Models\Customer;
 use App\Models\CustomerNotificationMobile;
@@ -406,6 +407,13 @@ class AppointmentController extends Controller
         $appointment->campaign_id = $request->campaign_id;
 
         if ($appointment->save()){
+            $existCustomer = $business->customers()->where('customer', $appointment->customer_id)->exists();
+            if (!$existCustomer){
+                $businessCustomer = new BusinessCustomer();
+                $businessCustomer->business_id = $request->input('customer_id');
+                $businessCustomer->customer_id = $appointment->customer_id;
+                $businessCustomer->save();
+            }
             $title = 'Ihr Termin wurde erstellt';
             $body = "Ihr Termin für ".$appointment->business->name." wurde zur den ".$appointment->services->first()->start_time." erstellt.";
 

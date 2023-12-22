@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\AppointmentServices;
 use App\Models\Business;
+use App\Models\BusinessCustomer;
 use App\Models\BusinessNotification;
 use App\Models\BusinessService;
 use App\Models\Customer;
@@ -195,6 +196,15 @@ class AppointmentController extends Controller
             $loop++;
         }
         $appointment->save();
+
+        $existCustomer = $business->customers()->where('customer', $appointment->customer_id)->exists();
+        if (!$existCustomer){
+            $businessCustomer = new BusinessCustomer();
+            $businessCustomer->business_id = $request->input('customer_id');
+            $businessCustomer->customer_id = $appointment->customer_id;
+            $businessCustomer->save();
+        }
+
         $notification = new BusinessNotification();
         $notification->business_id = $business->id;
         $notification->title = $appointment->customer->name . " hat einen Termin in Ihrem Salon vereinbart";
