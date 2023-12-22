@@ -61,7 +61,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="info-list">
-                                                    <div class="title">Dienstname</div>
+                                                    <div class="title">Dienstleistung</div>
                                                     <div class="text" id="account_no">#{{$packet->service->subCategory->name ?? ""}}</div>
                                                 </div>
                                             </div>
@@ -98,32 +98,32 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="account-card bg-info-light">
-                                                <span>{{$packet->amount}} {{$packageTypes[$packet->type]}}</span>Du hast das Recht
+                                                <span>{{$packet->amount}} {{$packageTypes[$packet->type]}}</span>Gekauft
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-lightblue">
-                                                <span>€{{$packet->total}}</span> Zu zahlender Gesamtbetrag
+                                                <span>€{{$packet->total}}</span> Gesamtbetrag
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-success-light">
-                                                <span>{{$packet->usages->sum('amount')}} {{$packageTypes[$packet->type]}}</span> Sie haben ein Paket verwendet
+                                                <span>{{$packet->usages->sum('amount')}} {{$packageTypes[$packet->type]}}</span> Verbraucht
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-warning-light">
-                                                <span>€{{$packet->payments->sum('price')}}</span> Sie haben die Zahlung für Ihr Paket vorgenommen
+                                                <span>€{{$packet->payments->sum('price')}}</span> Bezahlt
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-purple-light">
-                                                <span>{{$packet->amount - $packet->usages->sum('amount')}}</span> Ihre verbleibenden Nutzungsrechte
+                                                <span>{{$packet->amount - $packet->usages->sum('amount')}}</span> Verbleibend
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="account-card bg-primary-light">
-                                                <span>€{{$packet->total -$packet->payments->sum('price')}}</span> Ihre Restzahlung
+                                                <span>€{{$packet->total -$packet->payments->sum('price')}}</span> Restzahlung
                                             </div>
                                         </div>
 
@@ -146,7 +146,7 @@
                                         <tr>
                                             <th>Arbeiter</th>
                                             <th>Datum der Nutzung</th>
-                                            <th>Stück</th>
+                                            <th>Anzahl</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -183,7 +183,7 @@
                                         <thead>
                                         <tr>
                                             <th>Preis</th>
-                                            <th>Stück</th>
+                                            <th>Anzahl</th>
                                             <th>Zahlungsdatum</th>
                                         </tr>
                                         </thead>

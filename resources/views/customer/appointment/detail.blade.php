@@ -120,7 +120,7 @@
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <div class="card-title">Bewerten Sie den Service, den Sie erhalten</div>
+                                        <div class="card-title">Bewerten Sie die Dienstleistung, die Sie erhalten haben.</div>
                                     </div>
                                     <div class="card-body pt-0">
                                         <div class="write-review">
@@ -157,8 +157,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Meine Kommantare</label>
-                                                    <textarea id="review_desc" maxlength="300" class="form-control" rows="10" name="content" placeholder="Yorumunuzu Bu alana giriniz"></textarea>
+                                                    <label>Mein Kommantare</label>
+                                                    <textarea id="review_desc" maxlength="300" class="form-control" rows="10" name="content" placeholder="Geben Sie Ihren Kommentar in dieses Feld ein"></textarea>
 
                                                     <div class="d-flex justify-content-between mt-3"><small class="text-muted">Rest <span id="chars">300</span> Charakter</small></div>
                                                 </div>
@@ -166,11 +166,16 @@
                                                 <div class="form-group">
                                                     <div class="terms-accept d-flex align-items-center">
                                                             <input type="checkbox" id="terms_accept" name="terms" style="height: 20px; width: 20px">
-                                                            <label for="terms_accept" style="padding-top: 7px;margin-left: 5px;"><a href="{{route('page.detail', $globalData['use_pages'][0]->slug)}}" target="_blank">Ich habe die Allgemeinen Geschäftsbedingungen gelesen und akzeptiere sie</a> </label>
+                                                            <label for="terms_accept" style="padding-top: 7px;margin-left: 5px;">
+
+                                                                Ich habe die <a href="{{route('page.detail', $globalData['use_pages'][1]->slug)}}" target="_blank"> Datenschutzerklärung </a>
+                                                                und die <a href="{{route('page.detail', $globalData['use_pages'][2]->slug)}}" target="_blank"> AGB </a> gelesen und verstanden
+                                                                akzeptiere diese durch Absenden.
+                                                            </label>
                                                     </div>
                                                 </div>
                                                 <div class="submit-section">
-                                                    <button type="submit" class="btn btn-primary submit-btn">Kommentar abgeben</button>
+                                                    <button type="submit" class="btn btn-primary submit-btn">Senden</button>
                                                 </div>
                                             </form>
                                             <!-- /Write Review Form -->
