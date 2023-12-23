@@ -87,15 +87,21 @@ class AuthController extends Controller
                 'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
             ]);
         } else {
-            $generateCode = rand(100000, 999999);
-            $smsConfirmation = new SmsConfirmation();
-            $smsConfirmation->phone = clearPhone($request->input('phone'));
-            $smsConfirmation->action = "CUSTOMER-REGISTER";
-            $smsConfirmation->code = $generateCode;
-            $smsConfirmation->expire_at = now()->addMinute(3);
-            $smsConfirmation->save();
+            $generatePassword = rand(100000, 999999);
 
-            Sms::send($smsConfirmation->phone, "Für die Registrierung bei ".config('settings.site_title')." ist der Verifizierungscode anzugeben:". $generateCode);
+            $customer = \App\Models\Customer::create([
+                'name' => $request->input('name'),
+                'email' => $request->input('phone'),
+                'phone' => $request->input('phone'),
+                'area_code' => $request->input('area_code'),
+                'status' => 1,
+                'verify_phone' => 1,
+                'password' => Hash::make($generatePassword),
+            ]);
+            $this->addPermission($customer->id);
+            $phone = clearPhone($request->input('phone'));
+            Sms::send($phone, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
+
             return response()->json([
                 'status' => "success",
                 'message' => "Wir haben einen Code an Ihre Mobilnummer gesendet. Bitte überprüfen Sie Ihre Mobilnummer. "
