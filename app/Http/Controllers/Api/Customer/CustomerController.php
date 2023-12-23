@@ -128,7 +128,7 @@ class CustomerController extends Controller
     {
         $user = Auth::guard('api')->user();
         if ($user) {
-            $favorite = $user->favorites()->find($request->business_id);
+            $favorite = $user->favorites()->where('business_id',$request->business_id)->exists();
 
             if ($favorite) {
                 $favorite->delete();
