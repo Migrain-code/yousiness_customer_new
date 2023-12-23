@@ -100,8 +100,7 @@ class AuthController extends Controller
             ]);
             $this->addPermission($customer->id);
             $phone = clearPhone($request->input('phone'));
-            Sms::send($phone, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
-
+            Sms::send($phone, 'Ihr Passwort für die Anmeldung bei '.config('settings.speed_site_title').' lautet: '.$generatePassword.' Ihr '.config('settings.speed_site_title').' Team');
             return response()->json([
                 'status' => "success",
                 'message' => "Wir haben einen Code an Ihre Mobilnummer gesendet. Bitte überprüfen Sie Ihre Mobilnummer. "
@@ -139,7 +138,9 @@ class AuthController extends Controller
                     ]);
                     $this->addPermission($customer->id);
                     $phone = clearPhone($request->input('phone'));
-                    Sms::send($phone, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
+
+                    Sms::send($phone, 'Ihr Passwort für die Anmeldung bei '.config('settings.speed_site_title').' lautet: '.$generatePassword.' Ihr '.config('settings.speed_site_title').' Team');
+
                     return response()->json([
                         'status' => "success",
                         'message' => "Ihre Mobilnummer wurde verifiziert. Ihr Passwort für die Anmeldung bei Yousiness wurde an Sie gesendet. ."
@@ -178,9 +179,8 @@ class AuthController extends Controller
         } else {
             $generatePassword = rand(100000, 999999);
 
-            $phone = str_replace(array('(', ')', '-', ' '), '', $customer->email);
-            Sms::send($phone, config('settings.speed_site_title') . " Ihr neues Passwort für die Anmeldung am System wurde auf ". $generatePassword." aktualisiert. Wenn Sie Ihr Panel betreten, können Sie Ihr Passwort in ein für Sie geeignetes Passwort ändern.");
-
+            $phone = clearPhone($customer->email);
+            Sms::send($phone, 'Ihr neues Passwort für die Anmeldung bei '.config('settings.speed_site_title').' wurde auf '.$generatePassword.' aktualisiert. Wenn Sie Ihr Profil betreten, können Sie Ihr Passwort ändern. Ihr '.config('settings.speed_site_title').' Team');
             $customer->password = Hash::make($generatePassword);
             $customer->password_status = 1;
             $customer->save();
