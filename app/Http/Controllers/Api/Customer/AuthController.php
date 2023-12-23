@@ -91,8 +91,8 @@ class AuthController extends Controller
 
             $customer = \App\Models\Customer::create([
                 'name' => $request->input('name'),
-                'email' => $request->input('phone'),
-                'phone' => $request->input('phone'),
+                'email' => clearPhone($request->input('phone')),
+                'phone' => clearPhone($request->input('phone')),
                 'area_code' => $request->input('area_code'),
                 'status' => 1,
                 'verify_phone' => 1,
