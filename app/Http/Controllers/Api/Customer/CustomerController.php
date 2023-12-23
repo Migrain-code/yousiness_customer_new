@@ -134,7 +134,8 @@ class CustomerController extends Controller
                 $favorite->delete();
                 return response()->json([
                     'status' => "info",
-                    'message' => "Salon wurde aus Ihren Favoriten entfernt. ",
+                    'message' => "Salon wurde aus Ihren Favoriten entfernt.",
+                    'type' => "deleted",
                 ]);
             }
             else{
@@ -144,7 +145,8 @@ class CustomerController extends Controller
                 $favorite->save();
                 return response()->json([
                     'status' => "success",
-                    'message' => "Salon wurde zu Ihren Favoriten hinzugefügt. ",
+                    'message' => "Salon wurde zu Ihren Favoriten hinzugefügt.",
+                    'type' => "added"
                 ]);
             }
         }
