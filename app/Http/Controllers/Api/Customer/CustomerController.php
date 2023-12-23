@@ -201,7 +201,7 @@ class CustomerController extends Controller
             ];
             return response()->json([
                 'packet' => PacketResource::make($packet),
-                'gekauft' => $packet->amount . $packageTypes[$packet->type],
+                'gekauft' => $packet->amount ." ". $packageTypes[$packet->type],
                 'gesamtbetrag' => $packet->total,
                 'verbraucht' => $packet->usages->sum('amount'). " ".$packageTypes[$packet->type],
                 'bezahlt' => $packet->payments->sum('price') . " €",
