@@ -7,6 +7,7 @@ use App\Http\Resources\AdsResource;
 use App\Http\Resources\BusinessCategoryResource;
 use App\Http\Resources\BusinessDetailResource;
 use App\Http\Resources\BusinessResource;
+use App\Http\Resources\Customer;
 use App\Models\Ads;
 use App\Models\Business;
 use App\Models\BusinessCategory;
@@ -47,20 +48,26 @@ class SalonController extends Controller
      */
     public function get(Request $request)
     {
-        $business = Business::find($request->id);
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $business = Business::find($request->id);
 
-        if ($business){
-            return response()->json([
-                'status' => "success",
-                'salon' => BusinessDetailResource::make($business),
-            ]);
+            if ($business){
+                return response()->json([
+                    'status' => "success",
+                    'salon' => BusinessDetailResource::make($business),
+                    'is_favorite' => $user
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status' => "danger",
+                    'salon' => "Salon konnte nicht gefunden werden. (Kooperationsgespräche werden durchgeführt)"
+                ]);
+            }
         }
-        else{
-            return response()->json([
-                'status' => "danger",
-                'salon' => "Salon konnte nicht gefunden werden. (Kooperationsgespräche werden durchgeführt)"
-            ]);
-        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+
     }
     /**
      *
