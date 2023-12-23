@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PacketResource extends JsonResource
+class PacketPaymentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,11 +16,9 @@ class PacketResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'business' => new BusinessResource($this->business),
-            'remaining' => $this->amount - $this->usages()->sum('amount'),
-            'total' => $this->total,
-            'type' => $this->type == 0 ? "Sitzung" : "Minute",
-            'created_at' => $this->created_at->format('d.m.Y H:i:s'),
+            'price' => $this->price,
+            'amount' => $this->amount,
+            'created_at' => $this->created_at->format('d.m.Y H:i'),
         ];
     }
 }

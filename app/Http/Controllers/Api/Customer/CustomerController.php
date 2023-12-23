@@ -14,12 +14,15 @@ use App\Http\Resources\CustomerNotificationMobileResource;
 use App\Http\Resources\CustomerNotificationPermissionsResource;
 use App\Http\Resources\DealerList;
 use App\Http\Resources\FavoriteResource;
+use App\Http\Resources\PacketPaymentResource;
 use App\Http\Resources\PacketResource;
+use App\Http\Resources\PacketUsageResource;
 use App\Http\Resources\ProductSaleResource;
 use App\Models\Appointment;
 use App\Models\Business;
 use App\Models\BusinessComment;
 use App\Models\CustomerFavorite;
+use App\Models\PackageSale;
 use App\Models\Page;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -178,6 +181,38 @@ class CustomerController extends Controller
         return response()->json(['error' => 'Unauthorized'], 401);
     }
 
+    /**
+     * Post api/customer/packet/detail
+     *
+     * Bu müşterinin işletmelerden almış olduğu paketlerin listesini verecek
+     * package_id | string| required
+     * @header Bearer {token}
+     *
+     *
+     */
+    public function packetDetail(Request $request)
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $packet = PackageSale::find($request->package_id);
+            $packageTypes = [
+                'Sitzung',
+                'Minute'
+            ];
+            return response()->json([
+                'packet' => PacketResource::make($packet),
+                'gekauft' => $packet->amount . $packageTypes[$packet->type],
+                'gesamtbetrag' => $packet->total,
+                'verbraucht' => $packet->usages->sum('amount'). " ".$packageTypes[$packet->type],
+                'bezahlt' => $packet->payments->sum('price') . " €",
+                'verbleibend' => $packet->amount - $packet->usages->sum('amount'),
+                'restzahlung' => $packet->total -$packet->payments->sum('price'). " €",
+                'usages' => PacketUsageResource::collection($packet->usages),
+                'payments' => PacketPaymentResource::collection($packet->payments),
+            ]);
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
     /**
      * GET api/customer/appointment/list
      *

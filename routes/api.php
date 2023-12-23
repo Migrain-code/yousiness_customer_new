@@ -40,6 +40,7 @@ Route::prefix('customer')->group(function (){
     Route::get('/order/list', [CustomerController::class, 'getOrderList']);
 
     Route::get('/packet/list', [CustomerController::class, 'getPacketList']);
+    Route::post('/packet/detail', [CustomerController::class, 'packetDetail']);
 
     Route::get('/appointment/list', [CustomerController::class, 'getAppointmentList']);
     Route::get('/notify/list', [CustomerController::class, 'getNotifyList']);
