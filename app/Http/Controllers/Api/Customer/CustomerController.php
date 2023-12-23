@@ -140,7 +140,7 @@ class CustomerController extends Controller
             else{
                 $favorite = new CustomerFavorite();
                 $favorite->customer_id = $user->id;
-                $favorite->business_id = $request->id;
+                $favorite->business_id = $request->business_id;
                 $favorite->save();
                 return response()->json([
                     'status' => "success",
