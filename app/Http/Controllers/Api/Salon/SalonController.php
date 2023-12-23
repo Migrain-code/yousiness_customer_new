@@ -50,24 +50,22 @@ class SalonController extends Controller
     public function get(Request $request)
     {
         $user = Auth::guard('api')->user();
-        if ($user) {
-            $business = Business::find($request->id);
 
-            if ($business){
-                return response()->json([
-                    'status' => "success",
-                    'salon' => BusinessDetailResource::make($business),
-                    'is_favorite' => $user
-                ]);
-            }
-            else{
-                return response()->json([
-                    'status' => "danger",
-                    'salon' => "Salon konnte nicht gefunden werden. (Kooperationsgespräche werden durchgeführt)"
-                ]);
-            }
+        $business = Business::find($request->id);
+
+        if ($business){
+            return response()->json([
+                'status' => "success",
+                'salon' => BusinessDetailResource::make($business),
+                'is_favorite' => $user->favorites()->where('business_id', $business->id)->exists(),
+            ]);
         }
-        return response()->json(['error' => 'Unauthorized'], 401);
+        else{
+            return response()->json([
+                'status' => "danger",
+                'salon' => "Salon konnte nicht gefunden werden. (Kooperationsgespräche werden durchgeführt)"
+            ]);
+        }
 
     }
     /**
