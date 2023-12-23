@@ -93,7 +93,7 @@ class AuthController extends Controller
                 'name' => $request->input('name'),
                 'email' => clearPhone($request->input('phone')),
                 'phone' => clearPhone($request->input('phone')),
-                'area_code' => $request->input('area_code'),
+                'area_code' => $request->input('area_code')[0],
                 'status' => 1,
                 'verify_phone' => 1,
                 'password' => Hash::make($generatePassword),
