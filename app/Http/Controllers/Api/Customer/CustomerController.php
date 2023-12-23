@@ -115,6 +115,42 @@ class CustomerController extends Controller
         return response()->json(['error' => 'Unauthorized'], 401);
     }
     /**
+     * POST api/customer/favorite/delete
+     *
+     * Bu müşterinin eklediği favori işletmelerin kayıtlarını döndürecek
+     * gönderilecek veriler
+     * business_id | numeric | favorinin id si göndeilecek
+     * @header Bearer {token}
+     *
+     *
+     */
+    public function addFavorite(Request $request)
+    {
+        $user = Auth::guard('api')->user();
+        if ($user) {
+            $favorite = $user->favorites()->find($request->business_id);
+
+            if ($favorite) {
+                $favorite->delete();
+                return response()->json([
+                    'status' => "info",
+                    'message' => "Salon wurde aus Ihren Favoriten entfernt. ",
+                ]);
+            }
+            else{
+                $favorite = new CustomerFavorite();
+                $favorite->customer_id = $user->id;
+                $favorite->business_id = $request->id;
+                $favorite->save();
+                return response()->json([
+                    'status' => "success",
+                    'message' => "Salon wurde zu Ihren Favoriten hinzugefügt. ",
+                ]);
+            }
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+    /**
      * GET api/customer/deal/list
      *
      * Bu müşterinin daha önce randevu aldığı işletmelerin kayıtlarını döndürecek
