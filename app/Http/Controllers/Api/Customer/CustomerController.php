@@ -98,7 +98,8 @@ class CustomerController extends Controller
         if ($user) {
             $favorite = $user->favorites()->find($request->favorite_id);
 
-            if ($favorite->delete()) {
+            if ($favorite) {
+                $favorite->delete();
                 return response()->json([
                     'status' => "success",
                     'message' => "Salon wurde aus Ihren Favoriten entfernt. ",
