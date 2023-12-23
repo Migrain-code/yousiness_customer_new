@@ -13,6 +13,7 @@ use App\Models\Business;
 use App\Models\BusinessCategory;
 use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SalonController extends Controller
 {
