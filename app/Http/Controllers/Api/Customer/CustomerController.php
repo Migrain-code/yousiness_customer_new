@@ -202,6 +202,7 @@ class CustomerController extends Controller
             if ($packet){
                 return response()->json([
                     'packet' => PacketResource::make($packet),
+                    'service' => $packet->service->subCategory->name ?? "",
                     'gekauft' => $packet->amount ." ". $packageTypes[$packet->type],
                     'gesamtbetrag' => $packet->total,
                     'verbraucht' => $packet->usages->sum('amount'). " ".$packageTypes[$packet->type],
