@@ -57,7 +57,7 @@ class SalonController extends Controller
             return response()->json([
                 'status' => "success",
                 'salon' => BusinessDetailResource::make($business),
-                'is_favorite' => $user->favorites()->where('business_id', $business->id)->exists(),
+                'is_favorite' =>isset($user) ? $user->favorites()->where('business_id', $business->id)->exists() : true,
             ]);
         }
         else{
