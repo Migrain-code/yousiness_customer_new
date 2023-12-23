@@ -34,6 +34,7 @@ Route::prefix('customer')->group(function (){
     Route::get('/get', [CustomerController::class, 'getUser']);
     Route::get('/favorite/list', [CustomerController::class, 'getFavorites']);
     Route::post('/favorite/delete', [CustomerController::class, 'deleteFavorite']);
+    Route::post('/favorite/add', [CustomerController::class, 'addFavorite']);
 
     Route::get('/deal/list', [CustomerController::class, 'getDealList']);
 
