@@ -199,17 +199,24 @@ class CustomerController extends Controller
                 'Sitzung',
                 'Minute'
             ];
-            return response()->json([
-                'packet' => PacketResource::make($packet),
-                'gekauft' => $packet->amount ." ". $packageTypes[$packet->type],
-                'gesamtbetrag' => $packet->total,
-                'verbraucht' => $packet->usages->sum('amount'). " ".$packageTypes[$packet->type],
-                'bezahlt' => $packet->payments->sum('price') . " €",
-                'verbleibend' => $packet->amount - $packet->usages->sum('amount'),
-                'restzahlung' => $packet->total -$packet->payments->sum('price'). " €",
-                'usages' => PacketUsageResource::collection($packet->usages),
-                'payments' => PacketPaymentResource::collection($packet->payments),
-            ]);
+            if ($packet){
+                return response()->json([
+                    'packet' => PacketResource::make($packet),
+                    'gekauft' => $packet->amount ." ". $packageTypes[$packet->type],
+                    'gesamtbetrag' => $packet->total,
+                    'verbraucht' => $packet->usages->sum('amount'). " ".$packageTypes[$packet->type],
+                    'bezahlt' => $packet->payments->sum('price') . " €",
+                    'verbleibend' => $packet->amount - $packet->usages->sum('amount'),
+                    'restzahlung' => $packet->total -$packet->payments->sum('price'). " €",
+                    'usages' => PacketUsageResource::collection($packet->usages),
+                    'payments' => PacketPaymentResource::collection($packet->payments),
+                ]);
+            } else{
+                return response()->json([
+                    'status' => 'danger',
+                    'message' => "Paket nicht gefunden."
+                ], 401);
+            }
         }
         return response()->json(['error' => 'Unauthorized'], 401);
     }
