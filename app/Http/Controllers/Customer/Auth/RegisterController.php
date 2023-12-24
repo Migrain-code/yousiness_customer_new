@@ -21,8 +21,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rule;
-
 
 class RegisterController extends Controller
 {
@@ -70,14 +68,10 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $uniqueEmailRule = Rule::unique('customers', 'email')->where(function ($query) use ($data) {
-            $phone = clearPhone($data['email']);
-            $query->where('email', 'like', '%' . $phone . '%');
-        });
-        dd($uniqueEmailRule);
+        $data["email"] = clearPhone($data["email"]);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'max:255', $uniqueEmailRule],
+            'email' => ['required', 'string', 'max:255', 'unique:customers'],
         ], [], [
             'name' => 'Name Nachname',
             'email' => 'Mobilnummer',
@@ -93,10 +87,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
+        if ($this->existPhone(clearPhone($data['email']))){
+            return back()->with('response',[
+                'status' => "warning",
+                'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
+            ]);
+        }
         $generateCode=rand(100000, 999999);
         $smsConfirmation = new SmsConfirmation();
-        $smsConfirmation->phone = $data['email'];
+        $smsConfirmation->phone = clearPhone($data['email']);
         $smsConfirmation->action = "CUSTOMER-REGISTER";
         $smsConfirmation->code = $generateCode;
         $smsConfirmation->expire_at = now()->addMinute(3);
@@ -117,6 +116,18 @@ class RegisterController extends Controller
         $customerPermission->save();
 
         return $customer;
+    }
+
+    public function existPhone($phone)
+    {
+        $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
+
+        if ($existPhone != null) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return $result;
     }
     protected function registered(Request $request, $user)
     {
