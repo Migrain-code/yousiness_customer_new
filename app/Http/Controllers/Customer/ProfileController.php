@@ -28,7 +28,7 @@ class ProfileController extends Controller
         $phone=clearPhone($request->input('email'));
 
         $customer = auth('customer')->user();
-        if ($phone!= $customer->phone && $this->existPhone($phone)) {
+        if ($phone!= $customer->email && $this->existPhone($phone)) {
             return back()->with('response',[
                 'status' => "warning",
                 'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
