@@ -3,6 +3,15 @@
 @section('meta_description', "Mein Benutzerprofil")
 @section('styles')
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <style>
+        .iti {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+    </style>
 @endsection
 @section('content')
     <div class="breadcrumb-bar">
@@ -86,7 +95,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Mobilnummer</label>
-                                                        <input type="text" name="email" class="form-control branch_name phone" value="{{userInfo()->phone}}">
+                                                        <input type="text" name="email" class="form-control branch_name phone" value="{{userInfo()->phone}}" id="phone">
                                                         <span class="help-block"></span>
                                                     </div>
                                                 </div>
@@ -206,4 +215,33 @@
     </script>
     <script src="/front/assets/js/cutomer-menu.js"></script>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.60/inputmask/jquery.inputmask.js"></script>
+
+    <script>
+        const input = document.querySelector("#phone");
+        const iti = window.intlTelInput(input, {
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+                updatePlaceholder(selectedCountryPlaceholder);
+                return selectedCountryPlaceholder;
+            },
+        });
+
+        // Örnek olarak: Numarayı uluslararası formatta alma
+        function getNumber() {
+            return iti.getNumber();
+        }
+
+        input.addEventListener('countrychange', function () {
+            $("#phone").val("");
+        });
+
+        function updatePlaceholder(originalData) {
+            let mask = "";
+            mask = originalData.replace(/[0-9]/g, "9");
+
+            $("#phone").inputmask({"mask": mask});
+        }
+    </script>
 @endsection
