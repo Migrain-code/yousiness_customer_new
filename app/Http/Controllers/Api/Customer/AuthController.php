@@ -62,6 +62,9 @@ class AuthController extends Controller
 
     public function existPhone($phone)
     {
+        if (strlen($phone) == 11 || substr($phone, 0, 1) == 0){
+            $phone = ltrim($phone, '0');
+        }
         $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
 
         if ($existPhone) {
@@ -91,8 +94,8 @@ class AuthController extends Controller
 
             $customer = \App\Models\Customer::create([
                 'name' => $request->input('name'),
-                'email' => clearPhone($request->input('phone')),
-                'phone' => clearPhone($request->input('phone')),
+                'email' => $phone,
+                'phone' => $phone,
                 'area_code' => isset($request->area_code) ? $request->input('area_code')[0] : 0,
                 'status' => 1,
                 'verify_phone' => 1,
