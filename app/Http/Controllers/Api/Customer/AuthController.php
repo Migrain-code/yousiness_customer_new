@@ -64,7 +64,7 @@ class AuthController extends Controller
     {
         $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
 
-        if ($existPhone != null) {
+        if ($existPhone) {
             $result = true;
         } else {
             $result = false;
@@ -80,8 +80,8 @@ class AuthController extends Controller
      */
     public function register(CustomerCreateRequest $request)
     {
-
-        if ($this->existPhone(clearPhone($request->phone))) {
+        $phone = clearPhone($request->phone);
+        if ($this->existPhone($phone)) {
             return response()->json([
                 'status' => "warning",
                 'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
