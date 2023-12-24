@@ -54,7 +54,7 @@
                                 <div class="card-body">
                                     @include('layouts.component.alert')
                                     @include('layouts.component.error')
-                                    <form method="post" action="{{route('customer.profile.update')}}" enctype="multipart/form-data">
+                                    <form method="post" action="{{route('customer.profile.update')}}" id="myForm" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row form-row">
                                             <div class="col-12 col-md-12">
@@ -250,6 +250,14 @@
             iti.setCountry(areaCode);
 
             input.value = '{{$customer->phone}}';
+        });
+
+        document.querySelector("#myForm").addEventListener("submit", function (e) {
+            const fullNumber = iti.getNumber();  // Tam numarayı alır (+ ülke kodu ile birlikte)
+            const countryCode = iti.getSelectedCountryData().iso2;  // Seçilen ülkenin ISO kodunu alır (örn. "us" veya "gb")
+
+            document.querySelector("#country-code").value = countryCode;
+
         });
     </script>
 @endsection
