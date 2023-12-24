@@ -28,12 +28,8 @@ class ProfileController extends Controller
         $phone = clearPhone($request->input('email'));
 
         $customer = auth('customer')->user();
-        $newPhone = $customer->email;
-        if (strlen($newPhone) == 11 || substr($newPhone, 0, 1) == 0) {
-            $newPhone = ltrim($phone, '0');
-        }
 
-        if ($phone != $customer->email || $newPhone == $customer->email) {
+        if ($phone != $customer->email) {
             if ($this->existPhone($phone)) {
                 return back()->with('response', [
                     'status' => "warning",
