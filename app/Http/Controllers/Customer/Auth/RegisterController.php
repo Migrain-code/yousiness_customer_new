@@ -38,19 +38,16 @@ class RegisterController extends Controller
             'email' => "required",
         ], [], [
             'name' => "Name und Nachname",
-            'email' => "Mobilnummer"
+            'email' => "Mobilnummer|unique:customers"
         ]);
         $phone=clearPhone($request->input('email'));
-        $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
-        dd($existPhone);
+
         if ($this->existPhone($phone)) {
             return back()->with('response',[
                 'status' => "warning",
                 'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
             ]);
         }
-
-
         /*$generateCode=rand(100000, 999999);
         $smsConfirmation = new SmsConfirmation();
         $smsConfirmation->phone = $phone;
@@ -81,6 +78,9 @@ class RegisterController extends Controller
 
     public function existPhone($phone)
     {
+        if (strlen($phone) == 11 || substr($phone, 0, 1) == 0){
+            $phone = ltrim($phone, '0');
+        }
         $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
 
         if ($existPhone) {
