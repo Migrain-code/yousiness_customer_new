@@ -40,14 +40,15 @@ class RegisterController extends Controller
             'name' => "Name und Nachname",
             'email' => "Mobilnummer"
         ]);
-        if ($this->existPhone(clearPhone($request->phone))) {
+        $phone=clearPhone($request->input('email'));
+        dd($this->existPhone($phone));
+        if ($this->existPhone($phone)) {
             return back()->with('response',[
                 'status' => "warning",
                 'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
             ]);
         }
 
-        $phone=clearPhone($request->input('email'));
 
         /*$generateCode=rand(100000, 999999);
         $smsConfirmation = new SmsConfirmation();
