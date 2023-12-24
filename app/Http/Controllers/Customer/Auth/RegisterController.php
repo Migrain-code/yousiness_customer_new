@@ -74,6 +74,7 @@ class RegisterController extends Controller
             $phone = clearPhone($data['email']);
             $query->where('email', 'like', '%' . $phone . '%');
         });
+        dd($uniqueEmailRule);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255', $uniqueEmailRule],
