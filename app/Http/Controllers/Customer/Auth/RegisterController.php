@@ -60,7 +60,7 @@ class RegisterController extends Controller
 
         $generatePassword=rand(100000, 999999);
         $customer = Customer::create([
-            'name' => $request->input('email'),
+            'name' => $request->input('name'),
             'email' => $phone,
             'phone' => $phone,
             'area_code' => $request->input('country_code'),
