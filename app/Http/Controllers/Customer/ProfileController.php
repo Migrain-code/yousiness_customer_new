@@ -25,23 +25,24 @@ class ProfileController extends Controller
             'city_id' => "Plz/ Stadt",
             'gender' => "Geschlecht",
         ]);
+        $phone=clearPhone($request->input('email'));
+
         $customer = auth('customer')->user();
+        if ($phone!= $customer->phone && $this->existPhone($phone)) {
+            return back()->with('response',[
+                'status' => "warning",
+                'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
+            ]);
+        }
         $customer->name = $request->input('name');
-        $customer->phone = clearPhone($request->input('email'));
+        $customer->phone = $phone;
         $customer->birthday = $request->input('birthday');
-        $customer->email = clearPhone($request->input('email'));
+        $customer->email = $phone;
         $customer->address = $request->input('address');
         $customer->custom_email = $request->input('custom_email');
         $customer->district_id = $request->input('city_id');
         $customer->gender = $request->input('gender');
-        if ($customer->gender == 1 and  $customer->image == "default/user.png"){
-            $customer->image = "default/woman.png";
-        }
-        else{
-            if ($customer->gender == 2 and  $customer->image == "default/woman.png"){
-                $customer->image = "default/user.png";
-            }
-        }
+
         if ($request->hasFile('profile')) {
             $customer->image = $request->file('profile')->store('customer_profiles');
         }
@@ -52,7 +53,20 @@ class ProfileController extends Controller
             ]);
         }
     }
+    public function existPhone($phone)
+    {
+        if (strlen($phone) == 11 || substr($phone, 0, 1) == 0){
+            $phone = ltrim($phone, '0');
+        }
+        $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
 
+        if ($existPhone) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return $result;
+    }
     public function editPassword()
     {
         return view('customer.profile.change-password');
