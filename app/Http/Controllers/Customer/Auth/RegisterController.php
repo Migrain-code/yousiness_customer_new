@@ -33,6 +33,8 @@ class RegisterController extends Controller
 
     protected function create(Request $request)
     {
+        $phone=clearPhone($request->input('email'));
+        $request->email = $phone;
         $request->validate([
             'name' => "required",
             'email' => "required",
@@ -40,7 +42,6 @@ class RegisterController extends Controller
             'name' => "Name und Nachname",
             'email' => "Mobilnummer|unique:customers"
         ]);
-        $phone=clearPhone($request->input('email'));
 
         if ($this->existPhone($phone)) {
             return back()->with('response',[
