@@ -24,35 +24,6 @@ use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
-    use RegistersUsers;
-
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest:customer');
-    }
 
     public function showRegistrationForm()
     {
@@ -60,62 +31,42 @@ class RegisterController extends Controller
         return view('customer.auth.register');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param array $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    protected function create(Request $request)
     {
-        if ($this->existPhone(clearPhone($data['email']))){
+        if ($this->existPhone(clearPhone($request->phone))) {
             return back()->with('response',[
                 'status' => "warning",
                 'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
             ]);
         }
-        $data["email"] = clearPhone($data["email"]);
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'max:255', 'unique:customers'],
-        ], [], [
-            'name' => 'Name Nachname',
-            'email' => 'Mobilnummer',
-            'password' => 'Password',
-        ]);
-    }
+        $phone=clearPhone($request->input('email'));
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param array $data
-     * @return \Illuminate\Database\Eloquent\Model|Customer
-     */
-    protected function create(array $data)
-    {
-        $generateCode=rand(100000, 999999);
+        /*$generateCode=rand(100000, 999999);
         $smsConfirmation = new SmsConfirmation();
-        $smsConfirmation->phone = clearPhone($data['email']);
+        $smsConfirmation->phone = $phone;
         $smsConfirmation->action = "CUSTOMER-REGISTER";
         $smsConfirmation->code = $generateCode;
         $smsConfirmation->expire_at = now()->addMinute(3);
-        $smsConfirmation->save();
+        $smsConfirmation->save();*/
 
-        $phone=clearPhone($data["email"]);
-
+        $generatePassword=rand(100000, 999999);
         $customer = Customer::create([
-            'name' => $data['name'],
+            'name' => $request->input('email'),
             'email' => $phone,
             'phone' => $phone,
-            'area_code' => $data['country_code'],
+            'area_code' => $request->input('country_code'),
             'status'=> 1,
-            'password' => Hash::make(Str::random(8)),
+            'password' => Hash::make($generatePassword),
+            'password_status'=>1,
+            'verify_phone' => 1,
         ]);
-        $customerPermission = new CustomerNotificationPermission();
-        $customerPermission->customer_id = $customer->id;
-        $customerPermission->save();
 
-        return $customer;
+        Sms::send($customer->email, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
+
+        return to_route('customer.login')->with('response', [
+            'status'=>"success",
+            'message' => "Ihre Mobilnummer Überprüfung war erfolgreich. Für die Anmeldung in das System wurde Ihnen Ihr Passwort zugesendet."
+        ]);
     }
 
     public function existPhone($phone)
@@ -129,8 +80,5 @@ class RegisterController extends Controller
         }
         return $result;
     }
-    protected function registered(Request $request, $user)
-    {
-        return to_route('customer.verify');
-    }
+
 }

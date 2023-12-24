@@ -27,7 +27,7 @@
                                 </div>
                                 @include('layouts.component.error')
                                 @include('layouts.component.alert')
-                                <form action="{{route('customer.register')}}" method="post" id="myForm">
+                                <form action="{{route('customer.register.post')}}" method="post" id="myForm">
                                     @csrf
                                     <input type="hidden" id="country-code" name="country_code">
                                     <div class="form-group form-focus">

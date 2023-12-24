@@ -58,7 +58,7 @@ Route::group(['prefix' => 'benutzer', 'as' => 'customer.'], function () {
     Route::post('/logout', [\App\Http\Controllers\Customer\Auth\LoginController::class, 'logout'])->name('logout');
 
     Route::get('/register', [\App\Http\Controllers\Customer\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
-    Route::post('/register', [\App\Http\Controllers\Customer\Auth\RegisterController::class, 'register']);
+    Route::post('/register', [\App\Http\Controllers\Customer\Auth\RegisterController::class, 'create'])->name('register.post');
 
     Route::get('/passwort-vergessen', [\App\Http\Controllers\Customer\Auth\VerifyController::class, 'showForgotView'])->name('showForgotView');
     Route::post('/sifremi-unuttum', [\App\Http\Controllers\Customer\Auth\VerifyController::class, 'forgotPassword'])->name('forgotPassword');
