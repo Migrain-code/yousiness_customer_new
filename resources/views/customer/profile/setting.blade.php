@@ -56,6 +56,7 @@
                                     @include('layouts.component.error')
                                     <form method="post" action="{{route('customer.profile.update')}}" id="myForm" enctype="multipart/form-data">
                                         @csrf
+                                        <input type="hidden" id="country-code" name="country_code" value="{{$customer->area_code}}">
                                         <div class="row form-row">
                                             <div class="col-12 col-md-12">
                                                 <div class="form-group">
