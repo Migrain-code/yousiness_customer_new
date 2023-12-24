@@ -18,7 +18,7 @@ class Customer extends JsonResource
         return [
            'id' => $this->id,
            'name'=> $this->name,
-           'phone' => $this->area_code." ".$this->email,
+           'phone' => /*$this->area_code." ".*/$this->email,
            'city' => City::make($this->city),
            'district' => District::make($this->district),
            'gender' => $this->gender,
