@@ -103,7 +103,7 @@ class AuthController extends Controller
             ]);
             $this->addPermission($customer->id);
             $phone = clearPhone($request->input('phone'));
-            Sms::send($phone, 'Ihr Passwort für die Anmeldung bei '.config('settings.speed_site_title').' lautet: '.$generatePassword.' Ihr '.config('settings.speed_site_title').' Team');
+            Sms::send($phone, 'Ihr Passwort für die Anmeldung bei Yousiness lautet: '.$generatePassword.' Ihr Yousiness Team');
             return response()->json([
                 'status' => "success",
                 'message' => "Wir haben einen Code an Ihre Mobilnummer gesendet. Bitte überprüfen Sie Ihre Mobilnummer. "
@@ -183,7 +183,7 @@ class AuthController extends Controller
             $generatePassword = rand(100000, 999999);
 
             $phone = clearPhone($customer->email);
-            Sms::send($phone, 'Ihr neues Passwort für die Anmeldung bei '.config('settings.speed_site_title').' wurde auf '.$generatePassword.' aktualisiert. Wenn Sie Ihr Profil betreten, können Sie Ihr Passwort ändern. Ihr '.config('settings.speed_site_title').' Team');
+            Sms::send($phone, 'Ihr neues Passwort für die Anmeldung bei Yousiness wurde auf '.$generatePassword.' aktualisiert. Wenn Sie Ihr Profil betreten, können Sie Ihr Passwort ändern. Ihr Yousiness Team');
             $customer->password = Hash::make($generatePassword);
             $customer->password_status = 1;
             $customer->save();

@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'verify_phone' => 1,
         ]);
 
-        Sms::send($customer->email, "Ihr Passwort für die Anmeldung bei ".config('settings.speed_site_title')." lautet :". $generatePassword);
+        Sms::send($phone, 'Ihr Passwort für die Anmeldung bei Yousiness lautet: '.$generatePassword.' Ihr Yousiness Team');
 
         return to_route('customer.login')->with('response', [
             'status'=>"success",

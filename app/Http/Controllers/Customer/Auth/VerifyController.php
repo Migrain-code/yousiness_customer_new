@@ -117,11 +117,12 @@ class VerifyController extends Controller
         }
         else{
             $generatePassword=rand(100000, 999999);
-            Sms::send(clearPhone($customer->email), config('settings.speed_site_title') . " Ihr neues Passwort für die Anmeldung am System wurde auf ". $generatePassword." aktualisiert. Wenn Sie Ihr Panel betreten, können Sie Ihr Passwort in ein für Sie geeignetes Passwort ändern.");
-
             $customer->password=Hash::make($generatePassword);
             $customer->password_status=1;
             $customer->save();
+
+            Sms::send($customer->email, 'Ihr neues Passwort für die Anmeldung bei Yousiness wurde auf '.$generatePassword.' aktualisiert. Wenn Sie Ihr Profil betreten, können Sie Ihr Passwort ändern. Ihr Yousiness Team');
+
             return to_route('customer.login')->with('response', [
                 'status'=>"success",
                 'message'=>"Ihr neues Passwort wurde als SMS gesendet. Durch Eingabe des eingehenden Passwortes können Sie das System weiterhin nutzen.",
