@@ -243,5 +243,12 @@
 
             $("#phone").inputmask({"mask": mask});
         }
+
+        $(function (){
+            const areaCode = "{{ $customer->area_code }}";
+
+            // intlTelInput kütüphanesindeki ülkeyi seç
+            iti.setCountry(areaCode);
+        });
     </script>
 @endsection
