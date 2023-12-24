@@ -11,28 +11,34 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name'=>"required",
+            'name' => "required",
             'email' => "required",
             'address' => "required",
             'custom_email' => "required",
             'city_id' => "required",
             'gender' => "required",
         ], [], [
-            'name'=>"Name Nachname",
+            'name' => "Name Nachname",
             'email' => "Telefonnummer",
             'address' => "Adresse",
             'custom_email' => "Email",
             'city_id' => "Plz/ Stadt",
             'gender' => "Geschlecht",
         ]);
-        $phone=clearPhone($request->input('email'));
+        $phone = clearPhone($request->input('email'));
 
         $customer = auth('customer')->user();
-        if ($phone!= $customer->email && $this->existPhone($phone)) {
-            return back()->with('response',[
-                'status' => "warning",
-                'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
-            ]);
+
+        if (strlen($phone) == 11 || substr($phone, 0, 1) == 0) {
+            $newPhone = ltrim($phone, '0');
+        }
+        if ($phone != $customer->email || $newPhone != $customer->email) {
+            if ($this->existPhone($phone)) {
+                return back()->with('response', [
+                    'status' => "warning",
+                    'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
+                ]);
+            }
         }
         $customer->name = $request->input('name');
         $customer->phone = $phone;
@@ -54,9 +60,10 @@ class ProfileController extends Controller
             ]);
         }
     }
+
     public function existPhone($phone)
     {
-        if (strlen($phone) == 11 || substr($phone, 0, 1) == 0){
+        if (strlen($phone) == 11 || substr($phone, 0, 1) == 0) {
             $phone = ltrim($phone, '0');
         }
         $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
@@ -68,6 +75,7 @@ class ProfileController extends Controller
         }
         return $result;
     }
+
     public function editPassword()
     {
         return view('customer.profile.change-password');
