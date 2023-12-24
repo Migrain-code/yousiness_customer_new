@@ -27,9 +27,9 @@ class ProfileController extends Controller
         ]);
         $customer = auth('customer')->user();
         $customer->name = $request->input('name');
-        $customer->phone = $request->input('email');
+        $customer->phone = clearPhone($request->input('email'));
         $customer->birthday = $request->input('birthday');
-        $customer->email = $request->input('email');
+        $customer->email = clearPhone($request->input('email'));
         $customer->address = $request->input('address');
         $customer->custom_email = $request->input('custom_email');
         $customer->district_id = $request->input('city_id');
