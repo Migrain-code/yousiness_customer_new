@@ -42,6 +42,7 @@ class ProfileController extends Controller
         $customer->custom_email = $request->input('custom_email');
         $customer->district_id = $request->input('city_id');
         $customer->gender = $request->input('gender');
+        $customer->area_code = $request->input('country_code');
 
         if ($request->hasFile('profile')) {
             $customer->image = $request->file('profile')->store('customer_profiles');
