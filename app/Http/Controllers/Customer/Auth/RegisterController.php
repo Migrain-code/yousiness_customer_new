@@ -41,7 +41,8 @@ class RegisterController extends Controller
             'email' => "Mobilnummer"
         ]);
         $phone=clearPhone($request->input('email'));
-        dd($phone);
+        $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
+        dd($existPhone);
         if ($this->existPhone($phone)) {
             return back()->with('response',[
                 'status' => "warning",
