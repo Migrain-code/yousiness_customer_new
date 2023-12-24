@@ -81,7 +81,7 @@ class RegisterController extends Controller
     {
         $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
 
-        if ($existPhone != null) {
+        if ($existPhone) {
             $result = true;
         } else {
             $result = false;
