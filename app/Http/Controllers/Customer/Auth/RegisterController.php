@@ -33,12 +33,20 @@ class RegisterController extends Controller
 
     protected function create(Request $request)
     {
+        $request->validate([
+            'name' => "required",
+            'email' => "required",
+        ], [], [
+            'name' => "Name und Nachname",
+            'email' => "Mobilnummer"
+        ]);
         if ($this->existPhone(clearPhone($request->phone))) {
             return back()->with('response',[
                 'status' => "warning",
                 'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
             ]);
         }
+
         $phone=clearPhone($request->input('email'));
 
         /*$generateCode=rand(100000, 999999);
