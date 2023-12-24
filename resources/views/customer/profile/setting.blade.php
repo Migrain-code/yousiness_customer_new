@@ -247,8 +247,9 @@
         $(function (){
             const areaCode = "{{ $customer->area_code }}";
 
-            // intlTelInput kütüphanesindeki ülkeyi seç
             iti.setCountry(areaCode);
+
+            input.value = '{{$customer->phone}}';
         });
     </script>
 @endsection
