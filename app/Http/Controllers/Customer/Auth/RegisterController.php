@@ -41,7 +41,7 @@ class RegisterController extends Controller
             'email' => "Mobilnummer"
         ]);
         $phone=clearPhone($request->input('email'));
-
+        dd($this->existPhone($phone));
         if ($this->existPhone($phone)) {
             return back()->with('response',[
                 'status' => "warning",
