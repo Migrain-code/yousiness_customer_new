@@ -28,7 +28,7 @@ class ProfileController extends Controller
         $phone = clearPhone($request->input('email'));
 
         $customer = auth('customer')->user();
-
+        $newPhone = $phone;
         if (strlen($phone) == 11 || substr($phone, 0, 1) == 0) {
             $newPhone = ltrim($phone, '0');
         }
