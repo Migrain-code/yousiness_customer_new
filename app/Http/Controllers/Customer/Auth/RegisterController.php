@@ -68,6 +68,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        if ($this->existPhone(clearPhone($data['email']))){
+            return back()->with('response',[
+                'status' => "warning",
+                'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
+            ]);
+        }
         $data["email"] = clearPhone($data["email"]);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
@@ -87,12 +93,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if ($this->existPhone(clearPhone($data['email']))){
-            return back()->with('response',[
-                'status' => "warning",
-                'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
-            ]);
-        }
         $generateCode=rand(100000, 999999);
         $smsConfirmation = new SmsConfirmation();
         $smsConfirmation->phone = clearPhone($data['email']);
