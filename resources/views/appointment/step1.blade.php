@@ -510,7 +510,7 @@
 
     <script>
         var appUrl = "{{env('APP_URL')}}";
-        var offDay = "{{$business->off_day}}";
+        var offDay = @json($business->offDays()->pluck('day_id')->toArray());
         var businessId = "{{$business->id}}";
     </script>
 

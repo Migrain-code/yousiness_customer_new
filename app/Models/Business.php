@@ -103,6 +103,11 @@ class Business extends Authenticatable
         return $this->hasMany(BusinessCustomer::class, 'business_id', 'id');
     }
 
+    public function offDays()
+    {
+        return $this->hasMany(BusinessOffDay::class, 'business_id', 'id')->latest();
+    }
+
     public function appointments()
     {
         return $this->hasMany(Appointment::class, 'business_id', 'id');

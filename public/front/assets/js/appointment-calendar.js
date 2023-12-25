@@ -3,8 +3,8 @@
     "use strict";
 
     $( document ).ready(function() {
-        let offDay=1;
-        var tatilGunleri = [parseInt(offDay)];
+
+        var tatilGunleri = offDay;
 
         function c(passed_month, passed_year, calNum) {
             var calendar = calNum == 0 ? calendars.cal1 : calendars.cal2;

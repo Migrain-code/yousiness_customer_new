@@ -342,7 +342,8 @@
                                     <div class="days d-flex justify-content-between mt-4">
                                         <span class="day">{{$day->name}}</span>
                                         <span class="clock">
-                                            @if($day->id == $business->off_day)
+
+                                            @if(in_array($day->id, $business->offDays()->pluck('day_id')->toArray()))
                                                 <span class="badge bg-danger-light">Geschlossen</span>
                                             @else
                                                 {{$business->start_time}} - {{$business->end_time}}
