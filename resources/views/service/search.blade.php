@@ -457,7 +457,7 @@
                                 </div>
                                 @if($business->cities->country_id == 4)
                                     <p class="doc-speciality">
-                                        <span class="badge badge-success" style="font-size: 12px;line-height: 0.8rem;"><i class="fas fa-wallet"></i> CASHBACK</span>
+                                        <span  class="badge badge-success" data-toggle="tooltip" data-placement="top" title="Açıklama Test" style="font-size: 12px;line-height: 0.8rem;">CASHBACK</span>
                                     </p>
                                 @else
                                     @if($business->approve_type==0)
@@ -495,6 +495,11 @@
 @endsection
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     @if(request()->routeIs('searchSubService'))
         <script>
             var mySelect3 = new TomSelect("#select-service", {
