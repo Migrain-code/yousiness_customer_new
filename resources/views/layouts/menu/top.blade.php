@@ -31,7 +31,7 @@
                             @else
                                 <li class="active"><a href="{{route('customer.login')}}">Anmelden</a></li>
                             @endif
-                            <li class="active"><a href="/">Geschäftspartner</a></li>
+                            <li class="active"><a href="{{image('')}}">Geschäftspartner</a></li>
                         </div>
 
                         @if(!request()->routeIs('welcome'))
