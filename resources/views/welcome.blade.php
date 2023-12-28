@@ -29,7 +29,10 @@
                 max-width:1200px;
             }
         }
-
+        .feather-arrow-right:before {
+            content: "\e912";
+            margin-right: 5px;
+        }
     </style>
 @endsection
 @section('content')
