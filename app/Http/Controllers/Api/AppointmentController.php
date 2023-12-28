@@ -415,7 +415,7 @@ class AppointmentController extends Controller
                 $businessCustomer->save();
             }
             $title = 'Ihr Termin wurde erstellt';
-            $body = "Ihr Termin für ".$appointment->business->name." wurde zur den ".$appointment->services->first()->start_time." erstellt.";
+            $body = "Ihr Termin für ".$appointment->business->name." wurde für den ".$appointment->services->first()->start_time." erstellt.";
 
             $notification =new CustomerNotificationMobile();
             $notification->customer_id = $appointment->customer->id;
