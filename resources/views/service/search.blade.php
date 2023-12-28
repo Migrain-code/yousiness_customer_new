@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', "Hallen")
-@section('meta_description', "Hallen")
+@section('title', "Salon")
+@section('meta_description', "Salon")
 @section('styles')
     <style>
         .fav-btn{
@@ -97,7 +97,7 @@
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Startseite</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hallen</li>
+                            <li class="breadcrumb-item active" aria-current="page">Salon</li>
                         </ol>
                     </nav>
                     <h2 class="breadcrumb-title">{{$businesses->count()}} ERGEBNISSE</h2>
@@ -146,9 +146,9 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label>Service</label>
+                                                <label>Dienstleistung</label>
                                                 <select class="js-example-basic-single" name="sub_category">
-                                                    <option value="">Bitte Service auswählen</option>
+                                                    <option value="">Dienstleistung auswâhlen</option>
                                                     @forelse($abroadServices as $service)
                                                         <option value="{{$service->id}}">{{$service->name}}</option>
                                                     @empty
@@ -343,8 +343,8 @@
                                     @csrf
                                     <div class="filter-widget" style="margin-left: 5px !important;">
                                         <div class="form-group">
-                                            <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Hallentyp" style="" name="category_id">
-                                                <option value="">Wählen Sie Hallentyp</option>
+                                            <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Salontyp" style="" name="category_id">
+                                                <option value="">Wählen Sie Salontyp</option>
                                                 @forelse($categories as $category1)
                                                     <option value="{{$category1->id}}" @selected($category1->id == $category->id)>{{$category1->name}}</option>
                                                 @empty
@@ -373,8 +373,8 @@
                                     @csrf
                                     <div class="filter-widget" style="margin-left: 5px !important;">
                                         <div class="form-group">
-                                            <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Hallentyp" style="" name="category_id">
-                                                <option value="">Wählen Sie Hallentyp</option>
+                                            <select id="select-salon-type" class="js-example-basic-single" placeholder="Wählen Sie Salontyp" style="" name="category_id">
+                                                <option value="">Wählen Sie Salontyp</option>
                                                 @forelse($categories as $category1)
                                                     <option value="{{$category1->id}}" @selected($category1->id == $category->id)>{{$category1->name}}</option>
                                                 @empty

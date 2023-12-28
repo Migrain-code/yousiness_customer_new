@@ -97,7 +97,7 @@
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Startseite</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Hallen</li>
+                            <li class="breadcrumb-item active" aria-current="page">Salon</li>
                         </ol>
                     </nav>
                     <h2 class="breadcrumb-title">{{$businesses->count()}} Ergebnis</h2>

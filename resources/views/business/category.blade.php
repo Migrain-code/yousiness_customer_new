@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title',"Hallen")
-@section('meta_description', "Hallen")
+@section('title',"Salon")
+@section('meta_description', "Salon")
 @section('styles')
     <style>
         .fav-btn{
