@@ -149,7 +149,8 @@
                                                     <i class="far fa-comment" style="margin-left: 15px"></i> {{$business->comments->count()}} Yorum
                                             </span>
                                         </div>
-                                        <p class="doc-location mt-1"><i class="fas fa-map-marker-alt"></i> {{isset($business->cities) ? $business->cities->name. ", ". $business->cities->country->name : ""}}</p>
+                                        <p class="doc-location mt-1"><i class="fas fa-map-marker-alt"></i> {{isset($business->cities) ? $business->cities->name. ", ". $business->cities->post_code ." / ". $business->cities->country->name : ""}}</p>
+
                                         {{--  <div class="alert alert-success py-1 mt-1">{{setting('speed_site_title')}} %10 İndirim </div> --}}
 
                                         <div class="single-comment mt-1">
