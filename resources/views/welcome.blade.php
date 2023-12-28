@@ -31,7 +31,7 @@
         }
         .feather-arrow-right:before {
             content: "\e912";
-            margin-right: 5px;
+            margin-right: 5px !important;
         }
     </style>
 @endsection
