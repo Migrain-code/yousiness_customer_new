@@ -388,7 +388,7 @@
             </div>
             <div class="row">
                 @forelse($abroadServices as $subCategory)
-                    <div class="col-6 col-custom aos" data-aos="fade-up">
+                    <div class="col-3 aos" data-aos="fade-up">
                         <div class="specialist-card-five d-flex hvr-bounce-to-right">
                             <div class="specialist-img-five">
 
