@@ -488,7 +488,7 @@ class HomeController extends Controller
         ], [], [
             'sub_category' => "Dienstleistung"
         ]);
-
+        $distance = 100; // Yakınlık yarıçapı (örneğin, 100 kilometre)
         $subCategory = ServiceSubCategory::where('id', $request->input('sub_category'))->first();
 
         $service = ServiceCategory::where('id', $subCategory->category_id)->first();
@@ -506,6 +506,10 @@ class HomeController extends Controller
                 } else{
                     $query->whereIn('type_id', [$request->gender_type, 3]);
                 }
+            })
+            ->when($request->filled('lat') && $request->filled('long'), function ($query) use ($request, $distance){
+                $query->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
+                    ->havingRaw("distance < ?", [$distance]);
             })
             ->paginate(setting('speed_pagination_number'));
         $favoriteIds = [];
