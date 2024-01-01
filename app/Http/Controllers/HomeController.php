@@ -482,6 +482,7 @@ class HomeController extends Controller
 
     public function serviceSubSearch(Request $request)
     {
+        $request->dd();
         $request->validate([
             'sub_category' => "required"
         ], [], [
