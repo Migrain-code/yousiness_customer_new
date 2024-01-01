@@ -193,10 +193,10 @@
                                 <form class="" method="get" action="">
 
                                     <div class="filter-widget" style="margin-left: 5px !important;">
-                                        <input type="hidden" name="lat" value="{{isset($lat)}}">
-                                        <input type="hidden" name="long" value="{{isset($lng)}}">
+                                        <input type="hidden" name="lat" value="{{$lat}}">
+                                        <input type="hidden" name="long" value="{{$lng}}">
                                         <div class="form-group">
-                                            <label>Yakınlık (10 - 100) (<span id="rangeText"></span> )</label>
+                                            <label>Radius (10 - 100) (<span id="rangeText"></span> )</label>
 
                                             <input type="range" name="km" class="form-range" id="customRange1" min="10" max="100" value="{{request()->query('km') ? request()->query('km') : 10}}">
 
