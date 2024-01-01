@@ -508,6 +508,8 @@ class HomeController extends Controller
                 }
             })
             ->when($request->filled('lat') && $request->filled('long'), function ($query) use ($request, $distance){
+                $lat = $request->input('lat');
+                $lng = $request->input('long');
                 $query->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
                     ->havingRaw("distance < ?", [$distance]);
             })
