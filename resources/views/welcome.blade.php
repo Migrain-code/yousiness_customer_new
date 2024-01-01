@@ -382,7 +382,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header section-header-five text-center aos" data-aos="fade-up">
-                        <h2 class="title-five">DIENSTLEITUNGEN</h2>
+                        <h2 class="title-five">DIENSTLEISTUNGEN</h2>
                     </div>
                 </div>
             </div>
