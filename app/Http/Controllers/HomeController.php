@@ -461,16 +461,11 @@ class HomeController extends Controller
         $service = ServiceCategory::where('slug', $category)->first();
         $subCategory = ServiceSubCategory::where('slug', $subCategory)->first();
 
-        $subCategory2 = 0;
-        if ($subCategory->is_abroad == 1){
-            $subCategory2 = ServiceSubCategory::where('slug', $subCategory->slug."-m")->first()->id;
-        }
 
         $businesses = Business::where('status', 1)
-            ->whereHas('services', function ($query) use ($service, $subCategory, $subCategory2) {
+            ->whereHas('services', function ($query) use ($service, $subCategory) {
                 $query->where('category', $service->id)
-                    ->where('sub_category', $subCategory->id)
-                    ->orWhere('sub_category', $subCategory2);
+                    ->where('sub_category', $subCategory->id);
             })
             ->has('personel')
             ->whereNotNull('city')
