@@ -482,8 +482,9 @@ class HomeController extends Controller
 
     public function serviceSubSearch(Request $request)
     {
-
-        //$request->dd();
+        if ($request->input('city_id') == "nach_Standort") {
+            return to_route('nachStandort', ['lat' => $request->input('lat'), 'long' => $request->input('long')]);
+        }
         $request->validate([
             'sub_category' => "required"
         ], [], [
@@ -494,9 +495,7 @@ class HomeController extends Controller
         $subCategory = ServiceSubCategory::where('id', $request->input('sub_category'))->first();
 
         $service = ServiceCategory::where('id', $subCategory->category_id)->first();
-        if ($request->input('city_id') == "nach_Standort") {
-            return to_route('nachStandort', ['lat' => $request->input('lat'), 'long' => $request->input('long')]);
-        }
+
         $businesses = Business::where('status', 1)
             ->has('personel')
             ->whereNotNull('city')
