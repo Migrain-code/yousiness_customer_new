@@ -152,8 +152,8 @@ class SearchController extends Controller
     public function searchCity(Request $request)
     {
         $businesses = Business::query()
-            ->when($request->filled('city_id'), function ($q) use ($request) {
-                $q->where('city', $request->city_id);
+            ->when($request->filled('district_id'), function ($q) use ($request) {
+                $q->where('city', $request->district_id);
             })
             ->get();
         if ($businesses->count() > 0){
