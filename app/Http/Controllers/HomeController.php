@@ -470,7 +470,7 @@ class HomeController extends Controller
             ->whereHas('services', function ($query) use ($service, $subCategory, $subCategory2) {
                 $query->where('category', $service->id)
                     ->where('sub_category', $subCategory->id)
-                    ->orWhere('sub_category', $subCategory2->id);
+                    ->orWhere('sub_category', $subCategory2);
             })
             ->has('personel')
             ->whereNotNull('city')
