@@ -53,29 +53,33 @@ class HomeController extends Controller
 
     public function nearMe(Request $request)
     {
+        if($request->filled('lat') && $request->filled('lat')){
+            $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
+            $lng = $request->input('long'); // Kullanıcıdan alınan longitude
+            $km = $request->input('km');
 
-        $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
-        $lng = $request->input('long'); // Kullanıcıdan alınan longitude
-        $km = $request->input('km');
+            $distance = isset($km) ? intval($km) : 100; // Yakınlık yarıçapı (örneğin, 100 kilometre)
 
-        $distance = isset($km) ? intval($km) : 100; // Yakınlık yarıçapı (örneğin, 100 kilometre)
+            $businesses = Business::select('businesses.*')->has('personel')
+                ->when((!empty($lat) && !empty($lng)), function ($q) use ($lat, $lng, $distance) {
+                    $q->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
+                        ->havingRaw("distance < ?", [$distance]);
+                })
+                ->orderBy('distance', 'asc')
+                ->paginate(setting('speed_pagination_number'));
 
-        $businesses = Business::select('businesses.*')->has('personel')
-            ->when((!empty($lat) && !empty($lng)), function ($q) use ($lat, $lng, $distance) {
-                $q->selectRaw("(6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance", [$lat, $lng, $lat])
-                    ->havingRaw("distance < ?", [$distance]);
-            })
-            ->orderBy('distance', 'asc')
-            ->paginate(setting('speed_pagination_number'));
-
-        $favoriteIds = [];
-        if (auth('customer')->check()) {
-            foreach (auth('customer')->user()->favorites as $favorite) {
-                $favoriteIds[] = $favorite->business_id;
+            $favoriteIds = [];
+            if (auth('customer')->check()) {
+                foreach (auth('customer')->user()->favorites as $favorite) {
+                    $favoriteIds[] = $favorite->business_id;
+                }
             }
-        }
 
-        return view('service.search', compact('businesses', 'favoriteIds', 'lat', 'lng'));
+            return view('service.search', compact('businesses', 'favoriteIds', 'lat', 'lng'));
+        }
+        else{
+            return to_route('welcome');
+        }
     }
 
     public function allServices()
