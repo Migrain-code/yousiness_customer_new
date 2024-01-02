@@ -53,7 +53,7 @@ class HomeController extends Controller
 
     public function nearMe(Request $request)
     {
-        if($request->filled('lat') && $request->filled('lat')){
+        if($request->filled('lat') && $request->filled('long')){
             $lat = $request->input('lat'); // Kullanıcıdan alınan latitude
             $lng = $request->input('long'); // Kullanıcıdan alınan longitude
             $km = $request->input('km');
