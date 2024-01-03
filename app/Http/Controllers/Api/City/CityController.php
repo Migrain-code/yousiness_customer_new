@@ -26,7 +26,7 @@ class CityController extends Controller
      * */
     public function index()
     {
-        $cities = \App\Models\Country::all();
+        $cities = \App\Models\Country::whereNotIn('id', [4])->get();
         return response()->json([
            'cities'=> City::collection($cities)
         ]);
