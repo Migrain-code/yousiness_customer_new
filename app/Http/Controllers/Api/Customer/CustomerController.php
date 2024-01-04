@@ -449,7 +449,9 @@ class CustomerController extends Controller
             $user->name = $request->input('name');
             $user->phone = clearPhone($request->input('phone'));
             $user->email = clearPhone($request->input('phone'));
-            $user->birthday = $request->input('birthday');
+            if ($request->input('birthday') != "1970-01-01"){
+                $user->birthday = $request->input('birthday');
+            }
             $user->city_id = $request->input('city_id');
             $user->gender = $request->input('gender');
             $user->district_id = $request->input('district_id');
