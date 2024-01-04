@@ -438,10 +438,17 @@ class CustomerController extends Controller
         $user = Auth::guard('api')->user();
 
         if ($user) {
-
+            if ($user->phone != clearPhone($request->input('phone'))){
+                if ($this->existPhone(clearPhone($request->input('phone')))){
+                    return response()->json([
+                        'status' => "warning",
+                        'message' => "Es ist bereits ein Benutzer mit dieser Mobilnummer registriert."
+                    ]);
+                }
+            }
             $user->name = $request->input('name');
-            $user->phone = $request->input('phone');
-            $user->email = $request->input('phone');
+            $user->phone = clearPhone($request->input('phone'));
+            $user->email = clearPhone($request->input('phone'));
             $user->birthday = $request->input('birthday');
             $user->city_id = $request->input('city_id');
             $user->gender = $request->input('gender');
@@ -464,6 +471,20 @@ class CustomerController extends Controller
             }
         }
         return response()->json(['error' => 'Unauthorized'], 401);
+    }
+    public function existPhone($phone)
+    {
+        if (strlen($phone) == 11 || substr($phone, 0, 1) == 0){
+            $phone = ltrim($phone, '0');
+        }
+        $existPhone = \App\Models\Customer::where('email', 'like', '%' . $phone . '%')->first();
+
+        if ($existPhone) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return $result;
     }
     /**
      * POST api/customer/update/password
