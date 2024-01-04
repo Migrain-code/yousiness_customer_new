@@ -54,12 +54,14 @@ class AppServiceProvider extends ServiceProvider
             return $registrar;
         });
         $request = Request::instance();
-        if (!$request->is('api/*')){
-            $settings = [];
+        $settings = [];
 
-            foreach (Setting::all() as $item) {
-                $settings[$item->name] = $item->value;
-            }
+        foreach (Setting::all() as $item) {
+            $settings[$item->name] = $item->value;
+        }
+        \Config::set('settings', $settings);
+        if (!$request->is('api/*')){
+
             $sections = [];
             foreach (ForBusiness::all() as $item) {
                 $sections[$item->name] = $item->value;
@@ -70,7 +72,7 @@ class AppServiceProvider extends ServiceProvider
             }
 
             \Config::set('sections', $sections);
-            \Config::set('settings', $settings);
+
             \Config::set('main_pages', $main_pages);
             $globalData = [
                 'use_pages' => Page::whereIn('id', [1,2, 3])->get(),
