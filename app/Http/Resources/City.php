@@ -17,7 +17,7 @@ class City extends JsonResource
         return [
             'id' => $this->id,
             'slug' => $this->slug ?? "",
-            'name' => $this->post_code.",".$this->name,
+            'name' => isset($this->post_code) ? $this->post_code.",".$this->name : $this->name,
         ];
     }
 }
