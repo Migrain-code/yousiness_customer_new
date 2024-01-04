@@ -14,7 +14,7 @@ class FaqController extends Controller
 
         return response()->json([
            'faqs' => $faqs,
-           'link' => setting('speed_faq_video_link')
+           'link' => config('settings.speed_faq_video_link')
         ]);
     }
 }
