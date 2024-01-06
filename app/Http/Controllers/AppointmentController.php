@@ -212,17 +212,15 @@ class AppointmentController extends Controller
         $notification->link = Str::slug($notification->title);
         $notification->save();
 
+        if ($business->device){
+            $businessDeviceToken = $business->device->token;
+            $businessNotification = new \App\Services\NotificationBusiness();
+            $businessNotification->sendPushNotification($businessDeviceToken, $notification->title, $notification->message);
+        }
         $title = "Ihr Termin wurde erstellt";
         $body = 'Ihr Termin wurde am ' . $appointment->services->first()->start_time . ' für ' . $business->name . ' erfolgreich abgeschlossen.';
 
-        if ($business->device){
 
-            $businessDeviceToken = $business->device->token;
-
-            $businessNotification = new \App\Services\NotificationBusiness();
-            $businessNotification->sendPushNotification($businessDeviceToken, $notification->title, $notification->message);
-            dd($businessDeviceToken);
-        }
         if (auth('customer')->check() && \auth('customer')->user()->device) {
             $deviceToken = \auth('customer')->user()->device->token;
             $notification = new \App\Services\Notification();
