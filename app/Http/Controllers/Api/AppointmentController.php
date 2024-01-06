@@ -327,7 +327,7 @@ class AppointmentController extends Controller
 
         }
 
-        if ($business->approve_type == 1) {
+        if ($business->approve_type == 0) {
             $appointment->status = 1;
         } else {
             $appointment->status = 0;
