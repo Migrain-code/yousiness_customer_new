@@ -214,6 +214,7 @@ class AppointmentController extends Controller
 
         $title = "Ihr Termin wurde erstellt";
         $body = 'Ihr Termin wurde am ' . $appointment->services->first()->start_time . ' für ' . $business->name . ' erfolgreich abgeschlossen.';
+        dd($business->device);
         if ($business->device){
             $businessDeviceToken = $business->device->token;
             $notification = new \App\Services\Notification();
