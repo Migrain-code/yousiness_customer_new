@@ -141,7 +141,7 @@
                                     <div class="row">
                                         @forelse($appointments as $appointment)
                                             @if($appointment->business)
-                                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div class="col-md-6 col-lg-4 col-xl-4">
                                                     <div class="profile-widget">
                                                         <div class="doc-img">
                                                             <a href="{{route('business.detail', $appointment->business->slug)}}">
