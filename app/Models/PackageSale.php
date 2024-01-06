@@ -12,7 +12,7 @@ class PackageSale extends Model
     public function customer()
     {
         return $this->hasOne(Customer::class,'id', 'customer_id')->withDefault([
-            'name' => 'Müşteri Silinmiş',
+            'name' => 'Gelöschter Kunde',
         ]);
     }
     public function personel()

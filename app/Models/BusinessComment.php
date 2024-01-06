@@ -12,7 +12,7 @@ class BusinessComment extends Model
     public function customer()
     {
         return $this->hasOne(Customer::class, 'id', 'customer_id')->withDefault([
-            'name' => 'Müşteri Silinmiş',
+            'name' => 'Gelöschter Kunde',
             'slug' => 'musteri-silinmis',
         ]);
     }

@@ -214,7 +214,11 @@ class AppointmentController extends Controller
 
         $title = "Ihr Termin wurde erstellt";
         $body = 'Ihr Termin wurde am ' . $appointment->services->first()->start_time . ' für ' . $business->name . ' erfolgreich abgeschlossen.';
-
+        if ($business->device){
+            $businessDeviceToken = $business->device->token;
+            $notification = new \App\Services\Notification();
+            $notification->sendPushNotification($businessDeviceToken, $title, $body);
+        }
         if (auth('customer')->check() && \auth('customer')->user()->device) {
             $deviceToken = \auth('customer')->user()->device->token;
             $notification = new \App\Services\Notification();
