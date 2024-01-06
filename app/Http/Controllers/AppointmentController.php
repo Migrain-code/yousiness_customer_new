@@ -218,9 +218,10 @@ class AppointmentController extends Controller
         if ($business->device){
 
             $businessDeviceToken = $business->device->token;
-            dd($businessDeviceToken);
+
             $businessNotification = new \App\Services\NotificationBusiness();
             $businessNotification->sendPushNotification($businessDeviceToken, $notification->title, $notification->message);
+            dd($businessDeviceToken);
         }
         if (auth('customer')->check() && \auth('customer')->user()->device) {
             $deviceToken = \auth('customer')->user()->device->token;
