@@ -15,9 +15,9 @@ class NotificationBusiness{
     public function __construct()
     {
         $this->client = new Client();
-        $this->firebaseApiKey = env('AAAAeVltbAs:APA91bEmnQgWNhqAHbxiL7vpHg4pDdTNKw6xL1QMp3EvlZ46343PHwdEvG3LW2hKps9HOUUq3yG70vOnkASeeITnbbJX-2bIh42rGYy67WOhakIb_XC8IMrhwxB_xEVLVn3z2HS2aD82');
-        $this->firebaseProjectId = env('ybus-4cada');
-        $this->firebaseSenderId = env('521191386123');
+        $this->firebaseApiKey ='AAAAeVltbAs:APA91bEmnQgWNhqAHbxiL7vpHg4pDdTNKw6xL1QMp3EvlZ46343PHwdEvG3LW2hKps9HOUUq3yG70vOnkASeeITnbbJX-2bIh42rGYy67WOhakIb_XC8IMrhwxB_xEVLVn3z2HS2aD82';
+        $this->firebaseProjectId = 'ybus-4cada';
+        $this->firebaseSenderId = '521191386123';
     }
 
     public function sendPushNotification($deviceToken, $title, $body)
