@@ -37,7 +37,9 @@ class HomeController extends Controller
                 $appointments[] = $appointment;
                 $total = 0;
                 foreach ($appointment->services as $service) {
-                    $total += $service->service->price;
+                    if ($service->service){
+                        $total += $service->service->price;
+                    }
                 }
                 $appointmentTotal += $total;
                 $appointmentTotals[] = $total;
