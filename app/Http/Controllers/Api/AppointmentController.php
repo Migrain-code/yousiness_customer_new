@@ -10,6 +10,7 @@ use App\Models\Appointment;
 use App\Models\AppointmentServices;
 use App\Models\Business;
 use App\Models\BusinessCustomer;
+use App\Models\BusinessNotification;
 use App\Models\BusinessService;
 use App\Models\Customer;
 use App\Models\CustomerNotificationMobile;
@@ -20,6 +21,7 @@ use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AppointmentController extends Controller
 {
@@ -414,18 +416,32 @@ class AppointmentController extends Controller
                 $businessCustomer->customer_id = $appointment->customer_id;
                 $businessCustomer->save();
             }
-            $title = 'Ihr Termin wurde erstellt';
-            $body = "Ihr Termin für ".$appointment->business->name." wurde für den ".$appointment->services->first()->start_time." erstellt.";
+            $notification = new BusinessNotification();
+            $notification->business_id = $business->id;
+            $notification->title = $appointment->customer->name . " hat einen Termin in Ihrem Salon vereinbart";
+            $notification->message = $appointment->customer->name . " hat für den " . $appointment->services->first()->start_time . " Uhr einen Termin in Ihrem Salon vereinbart.";
+            $notification->link = Str::slug($notification->title);
+            $notification->save();
 
-            $notification =new CustomerNotificationMobile();
-            $notification->customer_id = $appointment->customer->id;
-            $notification->title = $title;
-            $notification->content = $body;
-            if ($notification->save()) {
-                return response()->json([
-                    'status' => 'success',
-                    'message' => $body,
-                ]);
+            $title = "Ihr Termin wurde erstellt";
+            $body = 'Ihr Termin wurde am ' . $appointment->services->first()->start_time . ' für ' . $business->name . ' erfolgreich abgeschlossen.';
+
+            if ($appointment->customer && $appointment->customer->device) {
+                $deviceToken = \auth('customer')->user()->device->token;
+                $notification = new \App\Services\Notification();
+                $notification->sendPushNotification($deviceToken, $title, $body);
+
+                $notificationCustomer = new CustomerNotificationMobile();
+                $notificationCustomer->title = $title;
+                $notificationCustomer->content = $body;
+                $notificationCustomer->customer_id = $appointment->customer_id;
+                $notificationCustomer->save();
+            } else {
+                $notificationCustomer = new CustomerNotificationMobile();
+                $notificationCustomer->title = $title;
+                $notificationCustomer->content = $body;
+                $notificationCustomer->customer_id = $appointment->customer_id;
+                $notificationCustomer->save();
             }
         }
     }
