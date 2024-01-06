@@ -99,7 +99,7 @@
                                             <tr>
                                                 <td>{{$service->personel->name}}</td>
                                                 <td>{{$service->start_time}}</td>
-                                                <td>{{$service->service->subCategory->name ?? "Diensleistungen"}}</td>
+                                                <td>{{$service->service->subCategory->name ?? "Dienstleistungen"}}</td>
                                             </tr>
                                         @empty
                                         @endforelse
