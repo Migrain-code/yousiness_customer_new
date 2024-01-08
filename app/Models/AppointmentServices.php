@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class AppointmentServices extends Model
 {
     use HasFactory;
+    public function appointment()
+    {
+        return $this->hasOne(Appointment::class, 'id', 'appointment_id');
+    }
     public function service()
     {
         return $this->hasOne(BusinessService::class, 'id', 'service_id');
