@@ -455,7 +455,7 @@
                                 </div>
                                 @if($business->cities->country_id == 4)
                                     <p class="doc-speciality">
-                                        <span  class="badge badge-success" data-toggle="tooltip" data-placement="top" title="Açıklama Test" style="font-size: 12px;line-height: 0.8rem;">CASHBACK</span>
+                                        <span  class="badge badge-success" data-toggle="tooltip" data-placement="top" title="5% von Behandlungskosten werden zurückerstattet, Details in FAQ" style="font-size: 12px;line-height: 0.8rem;">CASHBACK</span>
                                     </p>
                                 @else
                                     @if($business->approve_type==0)
